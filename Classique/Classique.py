@@ -24,7 +24,7 @@ while(1):
         lower_skin = np.array([0, 20, 70], dtype=np.uint8)
         upper_skin = np.array([20, 255, 255], dtype=np.uint8)
 
-     # extract skin colour image
+    # extract skin colour image
         mask = cv2.inRange(hsv, lower_skin, upper_skin)
 
     # extrapolate the hand to fill dark spots within
