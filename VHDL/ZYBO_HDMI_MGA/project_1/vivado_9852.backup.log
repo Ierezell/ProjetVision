@@ -1,0 +1,271 @@
+#-----------------------------------------------------------
+# Vivado v2018.2.1 (64-bit)
+# SW Build 2288692 on Thu Jul 26 18:24:02 MDT 2018
+# IP Build 2289599 on Thu Jul 26 21:09:20 MDT 2018
+# Start of session at: Wed Nov 14 12:14:38 2018
+# Process ID: 9852
+# Current directory: E:/Conception de systemes VLSI/Laboratoire 4/ZYBO_HDMI_MGA/project_1
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent3816 E:\Conception de systemes VLSI\Laboratoire 4\ZYBO_HDMI_MGA\project_1\project_1.xpr
+# Log file: E:/Conception de systemes VLSI/Laboratoire 4/ZYBO_HDMI_MGA/project_1/vivado.log
+# Journal file: E:/Conception de systemes VLSI/Laboratoire 4/ZYBO_HDMI_MGA/project_1\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {E:/Conception de systemes VLSI/Laboratoire 4/ZYBO_HDMI_MGA/project_1/project_1.xpr}
+INFO: [Project 1-313] Project file moved from 'U:/ZYBO_HDMI_MGA/project_1' since last save.
+Scanning sources...
+Finished scanning sources
+WARNING: [Project 1-509] GeneratedRun file for 'HDMI_bd_rgb2dvi_0_1_synth_1' not found
+WARNING: [filemgmt 56-2] IPUserFilesDir: Could not find the directory 'E:/Conception de systemes VLSI/Laboratoire 4/ZYBO_HDMI_MGA/project_1/project_1.ip_user_files', nor could it be found using path 'U:/ZYBO_HDMI_MGA/project_1/project_1.ip_user_files'.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'e:/Conception de systemes VLSI/Laboratoire 4/ZYBO_HDMI_MGA/repo'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Programs/Xilinx/Vivado/2018.2/data/ip'.
+open_project: Time (s): cpu = 00:00:08 ; elapsed = 00:00:26 . Memory (MB): peak = 812.781 ; gain = 75.043
+update_compile_order -fileset sources_1
+open_bd_design {E:/Conception de systemes VLSI/Laboratoire 4/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/HDMI_bd.bd}
+Adding cell -- xilinx.com:ip:clk_wiz:6.0 - clk_wiz_0
+Adding cell -- xilinx.com:ip:xlconstant:1.1 - VDD
+Adding cell -- digilentinc.com:ip:dvi2rgb:1.8 - dvi2rgb_0
+Adding cell -- digilentinc.com:ip:rgb2dvi:1.4 - rgb2dvi_0
+WARNING: [BD 41-1731] Type mismatch between connected pins: /reset(rst) and /dvi2rgb_0/aRst(undef)
+WARNING: [BD 41-1731] Type mismatch between connected pins: /reset(rst) and /dvi2rgb_0/pRst(undef)
+Successfully read diagram <HDMI_bd> from BD file <E:/Conception de systemes VLSI/Laboratoire 4/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/HDMI_bd.bd>
+open_bd_design: Time (s): cpu = 00:00:08 ; elapsed = 00:00:06 . Memory (MB): peak = 929.762 ; gain = 83.828
+add_files -norecurse -scan_for_includes {{E:/Conception de systemes VLSI/Laboratoire 4/filtrage/filtrage.srcs/sources_1/new/Top_level.vhd}}
+import_files -norecurse {{E:/Conception de systemes VLSI/Laboratoire 4/filtrage/filtrage.srcs/sources_1/new/Top_level.vhd}}
+update_compile_order -fileset sources_1
+add_files -norecurse -scan_for_includes {{E:/Conception de systemes VLSI/Laboratoire 4/filtrage/filtrage.srcs/sources_1/new/Derivee_horizontale_3x1.vhd} {E:/Conception de systemes VLSI/Laboratoire 4/filtrage/filtrage.srcs/sources_1/new/RDC_16bits_parallele.vhd} {E:/Conception de systemes VLSI/Laboratoire 4/filtrage/filtrage.srcs/sources_1/new/Right_shift_8bits.vhd} {E:/Conception de systemes VLSI/Laboratoire 4/filtrage/filtrage.srcs/sources_1/new/rdc_8bits_parallele.vhd} {E:/Conception de systemes VLSI/Laboratoire 4/filtrage/filtrage.srcs/sources_1/new/RGB_to_Y.vhd} {E:/Conception de systemes VLSI/Laboratoire 4/filtrage/filtrage.srcs/sources_1/imports/new/rdc_1bit.vhd}}
+import_files -norecurse {{E:/Conception de systemes VLSI/Laboratoire 4/filtrage/filtrage.srcs/sources_1/new/Derivee_horizontale_3x1.vhd} {E:/Conception de systemes VLSI/Laboratoire 4/filtrage/filtrage.srcs/sources_1/new/RDC_16bits_parallele.vhd} {E:/Conception de systemes VLSI/Laboratoire 4/filtrage/filtrage.srcs/sources_1/new/Right_shift_8bits.vhd} {E:/Conception de systemes VLSI/Laboratoire 4/filtrage/filtrage.srcs/sources_1/new/rdc_8bits_parallele.vhd} {E:/Conception de systemes VLSI/Laboratoire 4/filtrage/filtrage.srcs/sources_1/new/RGB_to_Y.vhd} {E:/Conception de systemes VLSI/Laboratoire 4/filtrage/filtrage.srcs/sources_1/imports/new/rdc_1bit.vhd}}
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files {{E:/Conception de systemes VLSI/Laboratoire 4/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/imports/sources_1/new/RDC_16bits_parallele.vhd}}] -no_script -reset -force -quiet
+remove_files  {{E:/Conception de systemes VLSI/Laboratoire 4/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/imports/sources_1/new/RDC_16bits_parallele.vhd}}
+create_bd_cell -type module -reference Top_level Top_level_0
+INFO: [IP_Flow 19-5107] Inferred bus interface 'RESET' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'CLK' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-4728] Bus Interface 'CLK': Added interface parameter 'ASSOCIATED_RESET' with value 'RESET'.
+WARNING: [IP_Flow 19-3153] Bus Interface 'CLK': ASSOCIATED_BUSIF bus parameter is missing.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'e:/Conception de systemes VLSI/Laboratoire 4/ZYBO_HDMI_MGA/repo'.
+set_property location {2.5 433 346} [get_bd_cells Top_level_0]
+connect_bd_net [get_bd_pins dvi2rgb_0/PixelClk] [get_bd_pins Top_level_0/CLK]
+delete_bd_objs [get_bd_intf_nets dvi2rgb_0_RGB]
+connect_bd_net [get_bd_pins dvi2rgb_0/vid_pHSync] [get_bd_pins rgb2dvi_0/vid_pHSync]
+WARNING: [BD 41-1306] The connection to interface pin /dvi2rgb_0/vid_pHSync is being overridden by the user. This pin will not be connected as a part of interface connection RGB
+WARNING: [BD 41-1306] The connection to interface pin /rgb2dvi_0/vid_pHSync is being overridden by the user. This pin will not be connected as a part of interface connection RGB
+connect_bd_net [get_bd_pins dvi2rgb_0/vid_pVSync] [get_bd_pins rgb2dvi_0/vid_pVSync]
+WARNING: [BD 41-1306] The connection to interface pin /dvi2rgb_0/vid_pVSync is being overridden by the user. This pin will not be connected as a part of interface connection RGB
+WARNING: [BD 41-1306] The connection to interface pin /rgb2dvi_0/vid_pVSync is being overridden by the user. This pin will not be connected as a part of interface connection RGB
+update_module_reference HDMI_bd_Top_level_0_0
+INFO: [IP_Flow 19-5107] Inferred bus interface 'RESET' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'CLK' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-4728] Bus Interface 'CLK': Added interface parameter 'ASSOCIATED_RESET' with value 'RESET'.
+WARNING: [IP_Flow 19-3153] Bus Interface 'CLK': ASSOCIATED_BUSIF bus parameter is missing.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'e:/Conception de systemes VLSI/Laboratoire 4/ZYBO_HDMI_MGA/repo'.
+Upgrading 'E:/Conception de systemes VLSI/Laboratoire 4/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/HDMI_bd.bd'
+INFO: [IP_Flow 19-1972] Upgraded HDMI_bd_Top_level_0_0 from Top_level_v1_0 1.0 to Top_level_v1_0 1.0
+WARNING: [IP_Flow 19-4700] Upgrade has removed port 'B'
+WARNING: [IP_Flow 19-4700] Upgrade has removed port 'G'
+WARNING: [IP_Flow 19-4700] Upgrade has removed port 'R'
+WARNING: [IP_Flow 19-4698] Upgrade has added port 'RGB'
+WARNING: [IP_Flow 19-3298] Detected external port differences while upgrading 'HDMI_bd_Top_level_0_0'. These changes may impact your design.
+CRITICAL WARNING: [Coretcl 2-1280] The upgrade of 'HDMI_bd_Top_level_0_0' has identified issues that may require user intervention. Please verify that the instance is correctly configured, and review any upgrade messages.
+Wrote  : <E:/Conception de systemes VLSI/Laboratoire 4/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/HDMI_bd.bd> 
+Wrote  : <E:/Conception de systemes VLSI/Laboratoire 4/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/ui/bd_a3426369.ui> 
+update_compile_order -fileset sources_1
+connect_bd_net [get_bd_pins dvi2rgb_0/vid_pData] [get_bd_pins Top_level_0/RGB]
+WARNING: [BD 41-1306] The connection to interface pin /dvi2rgb_0/vid_pData is being overridden by the user. This pin will not be connected as a part of interface connection RGB
+update_module_reference HDMI_bd_Top_level_0_0
+INFO: [IP_Flow 19-5107] Inferred bus interface 'RESET' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'CLK' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-4728] Bus Interface 'CLK': Added interface parameter 'ASSOCIATED_RESET' with value 'RESET'.
+WARNING: [IP_Flow 19-3153] Bus Interface 'CLK': ASSOCIATED_BUSIF bus parameter is missing.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'e:/Conception de systemes VLSI/Laboratoire 4/ZYBO_HDMI_MGA/repo'.
+Upgrading 'E:/Conception de systemes VLSI/Laboratoire 4/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/HDMI_bd.bd'
+INFO: [IP_Flow 19-1972] Upgraded HDMI_bd_Top_level_0_0 from Top_level_v1_0 1.0 to Top_level_v1_0 1.0
+WARNING: [IP_Flow 19-4706] Upgraded port 'output' width 24 differs from original width 8
+WARNING: [IP_Flow 19-3298] Detected external port differences while upgrading 'HDMI_bd_Top_level_0_0'. These changes may impact your design.
+CRITICAL WARNING: [Coretcl 2-1280] The upgrade of 'HDMI_bd_Top_level_0_0' has identified issues that may require user intervention. Please verify that the instance is correctly configured, and review any upgrade messages.
+Wrote  : <E:/Conception de systemes VLSI/Laboratoire 4/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/HDMI_bd.bd> 
+Wrote  : <E:/Conception de systemes VLSI/Laboratoire 4/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/ui/bd_a3426369.ui> 
+connect_bd_net [get_bd_pins Top_level_0/output] [get_bd_pins rgb2dvi_0/vid_pData]
+WARNING: [BD 41-1306] The connection to interface pin /rgb2dvi_0/vid_pData is being overridden by the user. This pin will not be connected as a part of interface connection RGB
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_0
+endgroup
+connect_bd_net [get_bd_pins xlconstant_0/dout] [get_bd_pins Top_level_0/EN]
+regenerate_bd_layout
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_1
+endgroup
+set_property -dict [list CONFIG.CONST_VAL {0}] [get_bd_cells xlconstant_1]
+startgroup
+set_property -dict [list CONFIG.CONST_VAL {0}] [get_bd_cells xlconstant_0]
+endgroup
+set_property -dict [list CONFIG.CONST_VAL {1}] [get_bd_cells xlconstant_1]
+delete_bd_objs [get_bd_nets xlconstant_0_dout]
+connect_bd_net [get_bd_pins xlconstant_0/dout] [get_bd_pins Top_level_0/RESET]
+connect_bd_net [get_bd_pins xlconstant_1/dout] [get_bd_pins Top_level_0/EN]
+regenerate_bd_layout
+save_bd_design
+Wrote  : <E:/Conception de systemes VLSI/Laboratoire 4/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/HDMI_bd.bd> 
+Wrote  : <E:/Conception de systemes VLSI/Laboratoire 4/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/ui/bd_a3426369.ui> 
+launch_runs synth_1 -jobs 8
+CRITICAL WARNING: [BD 41-1367] The port name 'output' of cell '/Top_level_0' is a reserved keyword in a Hardware Description Language. Please consider renaming the port.
+WARNING: [BD 41-927] Following properties on pin /dvi2rgb_0/RefClk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=/clk_wiz_0_clk_out1 
+WARNING: [BD 41-927] Following properties on pin /dvi2rgb_0/PixelClk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=HDMI_bd_dvi2rgb_0_1_PixelClk 
+WARNING: [BD 41-927] Following properties on pin /rgb2dvi_0/PixelClk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=HDMI_bd_dvi2rgb_0_1_PixelClk 
+CRITICAL WARNING: [BD 41-759] The input pins (listed below) are either not connected or do not have a source port, and they don't have a tie-off specified. These pins are tied-off to all 0's to avoid error in Implementation flow.
+Please check your design and connect them as needed: 
+/rgb2dvi_0/vid_pVDE
+
+Wrote  : <E:/Conception de systemes VLSI/Laboratoire 4/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/HDMI_bd.bd> 
+VHDL Output written to : E:/Conception de systemes VLSI/Laboratoire 4/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd
+VHDL Output written to : E:/Conception de systemes VLSI/Laboratoire 4/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/sim/HDMI_bd.vhd
+VHDL Output written to : E:/Conception de systemes VLSI/Laboratoire 4/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/hdl/HDMI_bd_wrapper.vhd
+INFO: [BD 41-1029] Generation completed for the IP Integrator block clk_wiz_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block VDD .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block dvi2rgb_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rgb2dvi_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block Top_level_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconstant_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconstant_1 .
+Exporting to file E:/Conception de systemes VLSI/Laboratoire 4/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/hw_handoff/HDMI_bd.hwh
+Generated Block Design Tcl file E:/Conception de systemes VLSI/Laboratoire 4/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/hw_handoff/HDMI_bd_bd.tcl
+Generated Hardware Definition File E:/Conception de systemes VLSI/Laboratoire 4/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.hwdef
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP HDMI_bd_xlconstant_1_0, cache-ID = c365e7cae252bd75; cache size = 68.204 MB.
+[Wed Nov 14 12:26:50 2018] Launched HDMI_bd_rgb2dvi_0_1_synth_1, HDMI_bd_Top_level_0_0_synth_1, HDMI_bd_xlconstant_0_0_synth_1...
+Run output will be captured here:
+HDMI_bd_rgb2dvi_0_1_synth_1: E:/Conception de systemes VLSI/Laboratoire 4/ZYBO_HDMI_MGA/project_1/project_1.runs/HDMI_bd_rgb2dvi_0_1_synth_1/runme.log
+HDMI_bd_Top_level_0_0_synth_1: E:/Conception de systemes VLSI/Laboratoire 4/ZYBO_HDMI_MGA/project_1/project_1.runs/HDMI_bd_Top_level_0_0_synth_1/runme.log
+HDMI_bd_xlconstant_0_0_synth_1: E:/Conception de systemes VLSI/Laboratoire 4/ZYBO_HDMI_MGA/project_1/project_1.runs/HDMI_bd_xlconstant_0_0_synth_1/runme.log
+[Wed Nov 14 12:26:50 2018] Launched synth_1...
+Run output will be captured here: E:/Conception de systemes VLSI/Laboratoire 4/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/runme.log
+launch_runs: Time (s): cpu = 00:00:04 ; elapsed = 00:00:12 . Memory (MB): peak = 1091.293 ; gain = 107.730
+connect_bd_net [get_bd_pins dvi2rgb_0/vid_pVDE] [get_bd_pins rgb2dvi_0/vid_pVDE]
+WARNING: [BD 41-1306] The connection to interface pin /dvi2rgb_0/vid_pVDE is being overridden by the user. This pin will not be connected as a part of interface connection RGB
+WARNING: [BD 41-1306] The connection to interface pin /rgb2dvi_0/vid_pVDE is being overridden by the user. This pin will not be connected as a part of interface connection RGB
+reset_run synth_1
+reset_run HDMI_bd_rgb2dvi_0_1_synth_1
+reset_run HDMI_bd_Top_level_0_0_synth_1
+reset_run HDMI_bd_xlconstant_0_0_synth_1
+update_module_reference HDMI_bd_Top_level_0_0
+INFO: [IP_Flow 19-5107] Inferred bus interface 'RESET' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'CLK' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-4728] Bus Interface 'CLK': Added interface parameter 'ASSOCIATED_RESET' with value 'RESET'.
+WARNING: [IP_Flow 19-3153] Bus Interface 'CLK': ASSOCIATED_BUSIF bus parameter is missing.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'e:/Conception de systemes VLSI/Laboratoire 4/ZYBO_HDMI_MGA/repo'.
+Upgrading 'E:/Conception de systemes VLSI/Laboratoire 4/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/HDMI_bd.bd'
+INFO: [IP_Flow 19-1972] Upgraded HDMI_bd_Top_level_0_0 from Top_level_v1_0 1.0 to Top_level_v1_0 1.0
+WARNING: [IP_Flow 19-4700] Upgrade has removed port 'output'
+WARNING: [IP_Flow 19-4698] Upgrade has added port 'outputD'
+WARNING: [IP_Flow 19-3298] Detected external port differences while upgrading 'HDMI_bd_Top_level_0_0'. These changes may impact your design.
+CRITICAL WARNING: [BD 41-1167] The pin 'output' is not found on the upgraded version of the cell '/Top_level_0'. Its connection to the net 'Top_level_0_output' has been removed.
+CRITICAL WARNING: [Coretcl 2-1280] The upgrade of 'HDMI_bd_Top_level_0_0' has identified issues that may require user intervention. Please verify that the instance is correctly configured, and review any upgrade messages.
+WARNING: [BD 41-597] NET <Top_level_0_output> has no source
+Wrote  : <E:/Conception de systemes VLSI/Laboratoire 4/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/HDMI_bd.bd> 
+Wrote  : <E:/Conception de systemes VLSI/Laboratoire 4/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/ui/bd_a3426369.ui> 
+connect_bd_net [get_bd_pins Top_level_0/outputD] [get_bd_pins rgb2dvi_0/vid_pData]
+save_bd_design
+Wrote  : <E:/Conception de systemes VLSI/Laboratoire 4/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/HDMI_bd.bd> 
+launch_runs synth_1 -jobs 8
+WARNING: [BD 41-927] Following properties on pin /dvi2rgb_0/RefClk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=/clk_wiz_0_clk_out1 
+WARNING: [BD 41-927] Following properties on pin /dvi2rgb_0/PixelClk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=HDMI_bd_dvi2rgb_0_1_PixelClk 
+WARNING: [BD 41-927] Following properties on pin /rgb2dvi_0/PixelClk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=HDMI_bd_dvi2rgb_0_1_PixelClk 
+Wrote  : <E:/Conception de systemes VLSI/Laboratoire 4/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/HDMI_bd.bd> 
+VHDL Output written to : E:/Conception de systemes VLSI/Laboratoire 4/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd
+VHDL Output written to : E:/Conception de systemes VLSI/Laboratoire 4/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/sim/HDMI_bd.vhd
+VHDL Output written to : E:/Conception de systemes VLSI/Laboratoire 4/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/hdl/HDMI_bd_wrapper.vhd
+INFO: [BD 41-1029] Generation completed for the IP Integrator block clk_wiz_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block VDD .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block dvi2rgb_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rgb2dvi_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block Top_level_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconstant_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconstant_1 .
+Exporting to file E:/Conception de systemes VLSI/Laboratoire 4/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/hw_handoff/HDMI_bd.hwh
+Generated Block Design Tcl file E:/Conception de systemes VLSI/Laboratoire 4/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/hw_handoff/HDMI_bd_bd.tcl
+Generated Hardware Definition File E:/Conception de systemes VLSI/Laboratoire 4/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.hwdef
+[Wed Nov 14 12:31:18 2018] Launched HDMI_bd_rgb2dvi_0_1_synth_1, HDMI_bd_xlconstant_0_0_synth_1, HDMI_bd_Top_level_0_0_synth_1...
+Run output will be captured here:
+HDMI_bd_rgb2dvi_0_1_synth_1: E:/Conception de systemes VLSI/Laboratoire 4/ZYBO_HDMI_MGA/project_1/project_1.runs/HDMI_bd_rgb2dvi_0_1_synth_1/runme.log
+HDMI_bd_xlconstant_0_0_synth_1: E:/Conception de systemes VLSI/Laboratoire 4/ZYBO_HDMI_MGA/project_1/project_1.runs/HDMI_bd_xlconstant_0_0_synth_1/runme.log
+HDMI_bd_Top_level_0_0_synth_1: E:/Conception de systemes VLSI/Laboratoire 4/ZYBO_HDMI_MGA/project_1/project_1.runs/HDMI_bd_Top_level_0_0_synth_1/runme.log
+[Wed Nov 14 12:31:19 2018] Launched synth_1...
+Run output will be captured here: E:/Conception de systemes VLSI/Laboratoire 4/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/runme.log
+launch_runs: Time (s): cpu = 00:00:02 ; elapsed = 00:00:13 . Memory (MB): peak = 1131.875 ; gain = 27.891
+launch_runs impl_1 -jobs 8
+[Wed Nov 14 12:34:20 2018] Launched impl_1...
+Run output will be captured here: E:/Conception de systemes VLSI/Laboratoire 4/ZYBO_HDMI_MGA/project_1/project_1.runs/impl_1/runme.log
+open_run impl_1
+INFO: [Netlist 29-17] Analyzing 82 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2018.2.1
+INFO: [Device 21-403] Loading part xc7z020clg400-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.132 . Memory (MB): peak = 1944.117 ; gain = 0.000
+Restored from archive | CPU: 0.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.132 . Memory (MB): peak = 1944.117 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 8 instances were transformed.
+  IOBUF => IOBUF (IBUF, OBUFT): 2 instances
+  RAM32M => RAM32M (RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMS32, RAMS32): 6 instances
+
+open_run: Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 2032.727 ; gain = 879.852
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+[Wed Nov 14 12:37:51 2018] Launched impl_1...
+Run output will be captured here: E:/Conception de systemes VLSI/Laboratoire 4/ZYBO_HDMI_MGA/project_1/project_1.runs/impl_1/runme.log
+open_hw
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2018.2.1
+  **** Build date : Jul 26 2018-19:38:10
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+
+connect_hw_server: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 2083.273 ; gain = 0.000
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210351A787A3A
+open_hw_target: Time (s): cpu = 00:00:02 ; elapsed = 00:00:08 . Memory (MB): peak = 2711.746 ; gain = 628.473
+set_property PROGRAM.FILE {E:/Conception de systemes VLSI/Laboratoire 4/ZYBO_HDMI_MGA/project_1/project_1.runs/impl_1/HDMI_bd_wrapper.bit} [get_hw_devices xc7z020_1]
+current_hw_device [get_hw_devices xc7z020_1]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7z020_1] 0]
+INFO: [Labtools 27-1434] Device xc7z020 (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3361] The debug hub core was not detected.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active.
+2. Make sure the BSCAN_SWITCH_USER_MASK device property in Vivado Hardware Manager reflects the user scan chain setting in the design and refresh the device.  To determine the user scan chain setting in the design, open the implemented design and use 'get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub]'.
+For more details on setting the scan chain property, consult the Vivado Debug and Programming User Guide (UG908).
+set_property PROBES.FILE {} [get_hw_devices xc7z020_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z020_1]
+set_property PROGRAM.FILE {E:/Conception de systemes VLSI/Laboratoire 4/ZYBO_HDMI_MGA/project_1/project_1.runs/impl_1/HDMI_bd_wrapper.bit} [get_hw_devices xc7z020_1]
+program_hw_devices [get_hw_devices xc7z020_1]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7z020_1] 0]
+INFO: [Labtools 27-1434] Device xc7z020 (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3361] The debug hub core was not detected.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active.
+2. Make sure the BSCAN_SWITCH_USER_MASK device property in Vivado Hardware Manager reflects the user scan chain setting in the design and refresh the device.  To determine the user scan chain setting in the design, open the implemented design and use 'get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub]'.
+For more details on setting the scan chain property, consult the Vivado Debug and Programming User Guide (UG908).
+close_hw
+open_bd_design {E:/Conception de systemes VLSI/Laboratoire 4/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/HDMI_bd.bd}
+exit
+INFO: [Common 17-206] Exiting Vivado at Wed Nov 14 12:46:43 2018...
