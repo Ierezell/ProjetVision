@@ -3,6 +3,8 @@ import numpy as np
 import math
 cap = cv2.VideoCapture(0)
 
+# modification de Sébastien
+
 while(1):
 
     try:
