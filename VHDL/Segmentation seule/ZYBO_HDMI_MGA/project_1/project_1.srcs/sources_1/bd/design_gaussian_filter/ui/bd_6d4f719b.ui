@@ -1,0 +1,45 @@
+{
+   ExpandedHierarchyInLayout: "",
+   PinnedBlocks: "",
+   guistr: "# # String gsaved with Nlview 6.8.5  2018-01-30 bk=1.4354 VDI=40 GEI=35 GUI=JA:1.6 non-TLS
+#  -string -flagsOSRD
+preplace port CLK_0 -pg 1 -y 300 -defaultsOSRD
+preplace port CE_0 -pg 1 -y 200 -defaultsOSRD
+preplace port EN_0 -pg 1 -y 340 -defaultsOSRD
+preplace port RESET_0 -pg 1 -y 320 -defaultsOSRD
+preplace portBus input_0 -pg 1 -y 280 -defaultsOSRD
+preplace portBus DATA_OUT_0 -pg 1 -y 180 -defaultsOSRD
+preplace inst fir_compiler_0 -pg 1 -lvl 6 -y 0 -defaultsOSRD
+preplace inst rdc_5x8bits_0 -pg 1 -lvl 1 -y 310 -defaultsOSRD
+preplace inst Normalize_gaussian_o_0 -pg 1 -lvl 6 -y 180 -defaultsOSRD
+preplace inst mult_gen_0 -pg 1 -lvl 2 -y 80 -defaultsOSRD
+preplace inst c_addsub_1 -pg 1 -lvl 3 -y 450 -defaultsOSRD
+preplace inst mult_gen_1 -pg 1 -lvl 2 -y 380 -defaultsOSRD
+preplace inst c_addsub_2 -pg 1 -lvl 5 -y 180 -defaultsOSRD
+preplace inst c_addsub_3 -pg 1 -lvl 4 -y 300 -defaultsOSRD
+preplace inst mult_gen_3 -pg 1 -lvl 2 -y 280 -defaultsOSRD
+preplace inst c_addsub_4 -pg 1 -lvl 4 -y 100 -defaultsOSRD
+preplace netloc mult_gen_1_P 1 2 1 430
+preplace netloc rdc_5x8bits_0_output0 1 1 3 240J 440 440J 270 N
+preplace netloc rdc_5x8bits_0_output1 1 1 1 230J
+preplace netloc RESET_0_1 1 0 1 NJ
+preplace netloc c_addsub_3_S 1 4 1 860
+preplace netloc rdc_5x8bits_0_output2 1 1 1 220J
+preplace netloc Normalize_gaussian_o_0_DATA_OUT 1 6 1 N
+preplace netloc c_addsub_1_S 1 3 1 650
+preplace netloc rdc_5x8bits_0_output3 1 1 1 230J
+preplace netloc rdc_5x8bits_0_output4 1 1 2 200J 450 470
+preplace netloc mult_gen_3_P 1 2 2 460 290 N
+preplace netloc EN_0_1 1 0 1 NJ
+preplace netloc input_0_1 1 0 1 NJ
+preplace netloc mult_gen_0_P 1 2 2 440 70 N
+preplace netloc CLK_0_1 1 0 5 -70 410 210J 460 460 320 660 190 NJ
+preplace netloc CE_0_1 1 0 5 NJ 200 NJ 200 450 200 670 210 NJ
+preplace netloc c_addsub_2_S 1 5 1 N
+preplace netloc c_addsub_4_S 1 4 1 850
+levelinfo -pg 1 -90 70 340 560 760 1000 1250 1420 -top -80 -bot 610
+",
+}
+{
+   da_clkrst_cnt: "1",
+}

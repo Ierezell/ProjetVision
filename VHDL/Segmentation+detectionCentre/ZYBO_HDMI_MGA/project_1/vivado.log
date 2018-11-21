@@ -1,0 +1,217 @@
+#-----------------------------------------------------------
+# Vivado v2018.2.1 (64-bit)
+# SW Build 2288692 on Thu Jul 26 18:24:02 MDT 2018
+# IP Build 2289599 on Thu Jul 26 21:09:20 MDT 2018
+# Start of session at: Wed Nov 21 11:16:35 2018
+# Process ID: 8124
+# Current directory: E:/Segmentation_SEB/ZYBO_HDMI_MGA/project_1
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent1508 E:\Segmentation_SEB\ZYBO_HDMI_MGA\project_1\project_1.xpr
+# Log file: E:/Segmentation_SEB/ZYBO_HDMI_MGA/project_1/vivado.log
+# Journal file: E:/Segmentation_SEB/ZYBO_HDMI_MGA/project_1\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project E:/Segmentation_SEB/ZYBO_HDMI_MGA/project_1/project_1.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'e:/Segmentation_SEB/ZYBO_HDMI_MGA/repo'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Programs/Xilinx/Vivado/2018.2/data/ip'.
+open_project: Time (s): cpu = 00:00:11 ; elapsed = 00:00:07 . Memory (MB): peak = 894.250 ; gain = 160.391
+update_compile_order -fileset sources_1
+open_bd_design {E:/Segmentation_SEB/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/HDMI_bd.bd}
+Adding cell -- xilinx.com:ip:clk_wiz:6.0 - clk_wiz_0
+Adding cell -- xilinx.com:ip:xlconstant:1.1 - VDD
+Adding cell -- digilentinc.com:ip:dvi2rgb:1.8 - dvi2rgb_0
+Adding cell -- digilentinc.com:ip:rgb2dvi:1.4 - rgb2dvi_0
+Adding cell -- xilinx.com:ip:xlconstant:1.1 - xlconstant_0
+Adding cell -- xilinx.com:ip:xlconstant:1.1 - xlconstant_1
+Adding cell -- xilinx.com:module_ref:Filtrage:1.0 - Filtrage_0
+WARNING: [BD 41-1731] Type mismatch between connected pins: /reset(rst) and /dvi2rgb_0/aRst(undef)
+WARNING: [BD 41-1731] Type mismatch between connected pins: /reset(rst) and /dvi2rgb_0/pRst(undef)
+Successfully read diagram <HDMI_bd> from BD file <E:/Segmentation_SEB/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/HDMI_bd.bd>
+open_bd_design: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1000.109 ; gain = 84.453
+open_bd_design {E:/Segmentation_SEB/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/HDMI_bd.bd}
+regenerate_bd_layout
+startgroup
+set_property location {3.5 1179 98} [get_bd_cells rgb2dvi_0]
+set_property location {4 1179 98} [get_bd_cells VDD]
+endgroup
+set_property top detection_centre_wrapper [current_fileset]
+update_compile_order -fileset sources_1
+set_property top HDMI_bd_wrapper [current_fileset]
+update_compile_order -fileset sources_1
+make_wrapper -files [get_files E:/Segmentation_SEB/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/detection_centre/detection_centre.bd] -fileset [get_filesets sources_1] -inst_template
+WARNING: [BD 41-1731] Type mismatch between connected pins: /detect_end_image_0/fin(undef) and /div_xAxis/aclken(ce)
+WARNING: [BD 41-1731] Type mismatch between connected pins: /detect_end_image_0/fin(undef) and /div_yAxis/aclken(ce)
+WARNING: [BD 41-1731] Type mismatch between connected pins: /rdc_1bit_0/Q(undef) and /add_xAxis/SCLR(rst)
+INFO: [BD 41-1662] The design 'detection_centre.bd' is already validated. Therefore parameter propagation will not be re-run.
+CRITICAL WARNING: [BD 41-759] The input pins (listed below) are either not connected or do not have a source port, and they don't have a tie-off specified. These pins are tied-off to all 0's to avoid error in Implementation flow.
+Please check your design and connect them as needed: 
+/detect_end_image_0/ligne
+
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/div_yAxis/s_axis_dividend_tdata'(24) to net 'add_yAxis_S'(18) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/div_xAxis/s_axis_dividend_tdata'(24) to net 'add_xAxis_S'(18) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/div_xAxis/s_axis_divisor_tdata'(16) to net 'BlankPixel_counter_Q'(11) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/div_yAxis/s_axis_divisor_tdata'(16) to net 'BlankPixel_counter_Q'(11) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+VHDL Output written to : E:/Segmentation_SEB/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/detection_centre/synth/detection_centre.vhd
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/div_yAxis/s_axis_dividend_tdata'(24) to net 'add_yAxis_S'(18) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/div_xAxis/s_axis_dividend_tdata'(24) to net 'add_xAxis_S'(18) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/div_xAxis/s_axis_divisor_tdata'(16) to net 'BlankPixel_counter_Q'(11) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/div_yAxis/s_axis_divisor_tdata'(16) to net 'BlankPixel_counter_Q'(11) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+VHDL Output written to : E:/Segmentation_SEB/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/detection_centre/sim/detection_centre.vhd
+VHDL Output written to : E:/Segmentation_SEB/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/detection_centre/hdl/detection_centre_wrapper.vhd
+WARNING: [Vivado 12-3482] The generated wrapper file has already been imported into the project, the imported file is:
+'E:/Segmentation_SEB/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/imports/hdl/detection_centre_wrapper.vhd'
+open_bd_design {E:/Segmentation_SEB/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/HDMI_bd.bd}
+open_bd_design {E:/Segmentation_SEB/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/HDMI_bd.bd}
+report_ip_status -name ip_status 
+make_wrapper -files [get_files E:/Segmentation_SEB/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/detection_centre/detection_centre.bd] -fileset [get_filesets sources_1] -inst_template
+WARNING: [BD 41-1731] Type mismatch between connected pins: /detect_end_image_0/fin(undef) and /div_xAxis/aclken(ce)
+WARNING: [BD 41-1731] Type mismatch between connected pins: /detect_end_image_0/fin(undef) and /div_yAxis/aclken(ce)
+WARNING: [BD 41-1731] Type mismatch between connected pins: /rdc_1bit_0/Q(undef) and /add_xAxis/SCLR(rst)
+INFO: [BD 41-1662] The design 'detection_centre.bd' is already validated. Therefore parameter propagation will not be re-run.
+CRITICAL WARNING: [BD 41-759] The input pins (listed below) are either not connected or do not have a source port, and they don't have a tie-off specified. These pins are tied-off to all 0's to avoid error in Implementation flow.
+Please check your design and connect them as needed: 
+/detect_end_image_0/ligne
+
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/div_yAxis/s_axis_dividend_tdata'(24) to net 'add_yAxis_S'(18) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/div_xAxis/s_axis_dividend_tdata'(24) to net 'add_xAxis_S'(18) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/div_xAxis/s_axis_divisor_tdata'(16) to net 'BlankPixel_counter_Q'(11) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/div_yAxis/s_axis_divisor_tdata'(16) to net 'BlankPixel_counter_Q'(11) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+VHDL Output written to : E:/Segmentation_SEB/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/detection_centre/synth/detection_centre.vhd
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/div_yAxis/s_axis_dividend_tdata'(24) to net 'add_yAxis_S'(18) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/div_xAxis/s_axis_dividend_tdata'(24) to net 'add_xAxis_S'(18) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/div_xAxis/s_axis_divisor_tdata'(16) to net 'BlankPixel_counter_Q'(11) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/div_yAxis/s_axis_divisor_tdata'(16) to net 'BlankPixel_counter_Q'(11) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+VHDL Output written to : E:/Segmentation_SEB/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/detection_centre/sim/detection_centre.vhd
+VHDL Output written to : E:/Segmentation_SEB/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/detection_centre/hdl/detection_centre_wrapper.vhd
+WARNING: [Vivado 12-3482] The generated wrapper file has already been imported into the project, the imported file is:
+'E:/Segmentation_SEB/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/imports/hdl/detection_centre_wrapper.vhd'
+add_files -norecurse E:/Segmentation_SEB/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/new/detection_centre.vhd
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files E:/Segmentation_SEB/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/imports/hdl/detection_centre_wrapper.vhd] -no_script -reset -force -quiet
+remove_files  E:/Segmentation_SEB/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/imports/hdl/detection_centre_wrapper.vhd
+export_ip_user_files -of_objects  [get_files E:/Segmentation_SEB/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/new/detection_centre.vhd] -no_script -reset -force -quiet
+remove_files  E:/Segmentation_SEB/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/new/detection_centre.vhd
+create_bd_design "test"
+Wrote  : <E:/Segmentation_SEB/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/test/test.bd> 
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files E:/Segmentation_SEB/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/test/test.bd] -no_script -reset -force -quiet
+remove_files  E:/Segmentation_SEB/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/test/test.bd
+file delete -force E:/Segmentation_SEB/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/test
+open_bd_design {E:/Segmentation_SEB/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/detection_centre/detection_centre.bd}
+Adding cell -- xilinx.com:ip:c_counter_binary:12.0 - BlankPixel_counter
+Adding cell -- xilinx.com:ip:c_counter_binary:12.0 - Ligne_counter
+Adding cell -- xilinx.com:ip:c_addsub:12.0 - add_xAxis
+Adding cell -- xilinx.com:ip:c_addsub:12.0 - add_yAxis
+Adding cell -- xilinx.com:ip:c_counter_binary:12.0 - column_counter
+Adding cell -- xilinx.com:ip:div_gen:5.1 - div_xAxis
+Adding cell -- xilinx.com:module_ref:detect_end_image:1.0 - detect_end_image_0
+Adding cell -- xilinx.com:module_ref:rdc_1bit:1.0 - rdc_1bit_0
+Adding cell -- xilinx.com:ip:xlconstant:1.1 - xlconstant_0
+Adding cell -- xilinx.com:ip:div_gen:5.1 - div_yAxis
+Adding cell -- xilinx.com:module_ref:divideur_select_output:1.0 - divideur_select_outp_0
+Adding cell -- xilinx.com:module_ref:divideur_select_output:1.0 - divideur_select_outp_1
+WARNING: [BD 41-1731] Type mismatch between connected pins: /detect_end_image_0/fin(undef) and /div_xAxis/aclken(ce)
+WARNING: [BD 41-1731] Type mismatch between connected pins: /detect_end_image_0/fin(undef) and /div_yAxis/aclken(ce)
+WARNING: [BD 41-1731] Type mismatch between connected pins: /rdc_1bit_0/Q(undef) and /add_xAxis/SCLR(rst)
+Successfully read diagram <detection_centre> from BD file <E:/Segmentation_SEB/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/detection_centre/detection_centre.bd>
+open_bd_design {E:/Segmentation_SEB/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/detection_centre/detection_centre.bd}
+open_bd_design {E:/Segmentation_SEB/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/HDMI_bd.bd}
+current_bd_design detection_centre
+set tmpCopyObjs [concat  [get_bd_cells {Ligne_counter divideur_select_outp_0 add_yAxis divideur_select_outp_1 rdc_1bit_0 column_counter div_yAxis xlconstant_0 BlankPixel_counter div_xAxis add_xAxis detect_end_image_0}] [get_bd_ports {CE_ligne_count CE_column_count RESET CLK Pixel_White_Black nb_ligne yMoy xMoy nb_column}] [get_bd_nets {CE_column_count_1 div_yAxis_m_axis_dout_tdata column_counter_Q div_xAxis_m_axis_dout_tdata xlconstant_0_dout CLK_1 divideur_select_outp_0_Output RESET_counter_ligne_and_column_1 CE_ligne_count_1 add_xAxis_S divideur_select_outp_1_Output add_yAxis_S rdc_1bit_0_Q Ligne_counter_Q BlankPixel_counter_Q Pixel_White_Black_1 Net}]]
+current_bd_design HDMI_bd
+copy_bd_objs -from_design detection_centre / $tmpCopyObjs
+WARNING: [IP_Flow 19-3374] An attempt to modify the value of disabled parameter 'Final_Count_Value' from '1' to '4AF' has been ignored for IP 'Ligne_counter'
+WARNING: [IP_Flow 19-3374] An attempt to modify the value of disabled parameter 'Final_Count_Value' from '1' to '63F' has been ignored for IP 'column_counter'
+WARNING: [BD 41-1306] The connection to interface pin /div_xAxis/s_axis_divisor_tdata is being overridden by the user. This pin will not be connected as a part of interface connection S_AXIS_DIVISOR
+WARNING: [BD 41-1306] The connection to interface pin /div_yAxis/s_axis_divisor_tdata is being overridden by the user. This pin will not be connected as a part of interface connection S_AXIS_DIVISOR
+WARNING: [BD 41-1306] The connection to interface pin /div_xAxis/s_axis_divisor_tvalid is being overridden by the user. This pin will not be connected as a part of interface connection S_AXIS_DIVISOR
+WARNING: [BD 41-1306] The connection to interface pin /div_xAxis/s_axis_dividend_tvalid is being overridden by the user. This pin will not be connected as a part of interface connection S_AXIS_DIVIDEND
+WARNING: [BD 41-1306] The connection to interface pin /div_yAxis/s_axis_divisor_tvalid is being overridden by the user. This pin will not be connected as a part of interface connection S_AXIS_DIVISOR
+WARNING: [BD 41-1306] The connection to interface pin /div_yAxis/s_axis_dividend_tvalid is being overridden by the user. This pin will not be connected as a part of interface connection S_AXIS_DIVIDEND
+WARNING: [BD 41-1731] Type mismatch between connected pins: /detect_end_image_0/fin(undef) and /div_xAxis/aclken(ce)
+WARNING: [BD 41-1731] Type mismatch between connected pins: /detect_end_image_0/fin(undef) and /div_yAxis/aclken(ce)
+WARNING: [BD 41-1306] The connection to interface pin /div_xAxis/s_axis_dividend_tdata is being overridden by the user. This pin will not be connected as a part of interface connection S_AXIS_DIVIDEND
+WARNING: [BD 41-1306] The connection to interface pin /div_yAxis/s_axis_dividend_tdata is being overridden by the user. This pin will not be connected as a part of interface connection S_AXIS_DIVIDEND
+WARNING: [BD 41-1306] The connection to interface pin /div_xAxis/m_axis_dout_tdata is being overridden by the user. This pin will not be connected as a part of interface connection M_AXIS_DOUT
+WARNING: [BD 41-1306] The connection to interface pin /div_yAxis/m_axis_dout_tdata is being overridden by the user. This pin will not be connected as a part of interface connection M_AXIS_DOUT
+WARNING: [BD 41-1731] Type mismatch between connected pins: /rdc_1bit_0/Q(undef) and /add_xAxis/SCLR(rst)
+copy_bd_objs: Time (s): cpu = 00:00:02 ; elapsed = 00:00:16 . Memory (MB): peak = 1256.141 ; gain = 49.070
+startgroup
+set_property location {14 3367 -210} [get_bd_cells xlconstant_0]
+set_property location {14 3447 -310} [get_bd_cells xlconstant_1]
+set_property location {15 3777 -240} [get_bd_cells Filtrage_0]
+endgroup
+group_bd_cells detection_centre [get_bd_cells Ligne_counter] [get_bd_cells add_yAxis] [get_bd_cells divideur_select_outp_0] [get_bd_cells divideur_select_outp_1] [get_bd_cells rdc_1bit_0] [get_bd_cells column_counter] [get_bd_cells div_yAxis] [get_bd_cells BlankPixel_counter] [get_bd_cells xlconstant_2] [get_bd_cells div_xAxis] [get_bd_cells add_xAxis] [get_bd_cells detect_end_image_0]
+startgroup
+set_property location {10.5 2924 722} [get_bd_cells detection_centre]
+endgroup
+startgroup
+set_property location {0.5 242 680} [get_bd_cells detection_centre]
+endgroup
+delete_bd_objs [get_bd_nets Pixel_White_Black_1] [get_bd_nets RESET_counter_ligne_and_column_1] [get_bd_nets CE_ligne_count_1] [get_bd_nets CLK_2] [get_bd_nets CE_column_count_1] [get_bd_ports CE_ligne_count] [get_bd_ports CLK1] [get_bd_ports CE_column_count] [get_bd_ports Pixel_White_Black] [get_bd_ports RESET1]
+set_property location {1.5 1503 630} [get_bd_cells detection_centre]
+set_property location {3 3595 677} [get_bd_cells detection_centre]
+delete_bd_objs [get_bd_nets Ligne_counter_Q] [get_bd_nets column_counter_Q] [get_bd_nets divideur_select_outp_1_Output] [get_bd_nets divideur_select_outp_0_Output] [get_bd_ports nb_ligne] [get_bd_ports yMoy] [get_bd_ports nb_column] [get_bd_ports xMoy]
+set_property name CLK [get_bd_pins detection_centre/CLK1]
+set_property name RESET [get_bd_pins detection_centre/RESET1]
+set_property location {2 3575 463} [get_bd_cells detection_centre]
+set_property location {566 58} [get_bd_ports reset]
+set_property location {4310 178} [get_bd_intf_ports hdmi_in_ddc]
+startgroup
+set_property location {98 153} [get_bd_intf_ports hdmi_in]
+set_property location {98 73} [get_bd_ports reset]
+set_property location {98 103} [get_bd_ports CLK]
+endgroup
+regenerate_bd_layout
+set_property location {3.5 1073 342} [get_bd_cells rgb2dvi_0]
+set_property location {4 1043 75} [get_bd_cells VDD]
+set_property location {3 786 30} [get_bd_cells detection_centre]
+connect_bd_net [get_bd_pins Filtrage_0/BlancNoir] [get_bd_pins detection_centre/Pixel_White_Black]
+WARNING: [BD 41-1731] Type mismatch between connected pins: /Filtrage_0/BlancNoir(undef) and /detection_centre/Pixel_White_Black(ce)
+connect_bd_net [get_bd_pins dvi2rgb_0/PixelClk] [get_bd_pins detection_centre/CLK]
+connect_bd_net [get_bd_pins xlconstant_0/dout] [get_bd_pins detection_centre/RESET]
+connect_bd_net [get_bd_pins dvi2rgb_0/vid_pHSync] [get_bd_pins detection_centre/CE_ligne_count]
+WARNING: [BD 41-1306] The connection to interface pin /dvi2rgb_0/vid_pHSync is being overridden by the user. This pin will not be connected as a part of interface connection RGB
+WARNING: [BD 41-1731] Type mismatch between connected pins: /dvi2rgb_0/vid_pHSync(undef) and /detection_centre/CE_ligne_count(ce)
+connect_bd_net [get_bd_pins dvi2rgb_0/vid_pVSync] [get_bd_pins detection_centre/CE_column_count]
+WARNING: [BD 41-1306] The connection to interface pin /dvi2rgb_0/vid_pVSync is being overridden by the user. This pin will not be connected as a part of interface connection RGB
+WARNING: [BD 41-1731] Type mismatch between connected pins: /dvi2rgb_0/vid_pVSync(undef) and /detection_centre/CE_column_count(ce)
+connect_bd_net [get_bd_pins detection_centre/Ligne_counter/Q] [get_bd_pins detection_centre/add_yAxis/B]
+move_bd_cells [get_bd_cells /] [get_bd_cells detection_centre/Ligne_counter]
+WARNING: [BD 41-1731] Type mismatch between connected pins: /dvi2rgb_0/vid_pHSync(undef) and /detection_centre/CE_ligne_count(ce)
+move_bd_cells [get_bd_cells /] [get_bd_cells detection_centre/column_counter]
+WARNING: [BD 41-1731] Type mismatch between connected pins: /dvi2rgb_0/vid_pVSync(undef) and /detection_centre/CE_column_count(ce)
+move_bd_cells [get_bd_cells /] [get_bd_cells detection_centre/Ligne_counter]
+WARNING: [BD 41-1731] Type mismatch between connected pins: /dvi2rgb_0/vid_pHSync(undef) and /detection_centre/CE_ligne_count(ce)
+move_bd_cells [get_bd_cells /] [get_bd_cells detection_centre/xlconstant_2]
+move_bd_cells [get_bd_cells detection_centre] [get_bd_cells xlconstant_2]
+move_bd_cells [get_bd_cells /] [get_bd_cells detection_centre/rdc_1bit_0]
+WARNING: [BD 41-1731] Type mismatch between connected pins: /rdc_1bit_0/Q(undef) and /detection_centre/SCLR(rst)
+undo
+INFO: [Common 17-17] undo 'move_bd_cells [get_bd_cells /] [get_bd_cells detection_centre/rdc_1bit_0]'
+WARNING: [BD 41-1731] Type mismatch between connected pins: /detection_centre/add_xAxis/SCLR(rst) and /detection_centre/rdc_1bit_0/Q(undef)
+delete_bd_objs [get_bd_nets detection_centre/RESET_counter_ligne_and_column_1]
+connect_bd_net [get_bd_pins detection_centre/detect_end_image_0/fin] [get_bd_pins detection_centre/column_counter/SCLR]
+WARNING: [BD 41-1731] Type mismatch between connected pins: /detection_centre/detect_end_image_0/fin(undef) and /detection_centre/column_counter/SCLR(rst)
+connect_bd_net [get_bd_pins detection_centre/detect_end_image_0/fin] [get_bd_pins detection_centre/Ligne_counter/SCLR]
+WARNING: [BD 41-1731] Type mismatch between connected pins: /detection_centre/detect_end_image_0/fin(undef) and /detection_centre/Ligne_counter/SCLR(rst)
+connect_bd_net [get_bd_pins detection_centre/RESET] [get_bd_pins detection_centre/rdc_1bit_0/RESET]
+connect_bd_net [get_bd_pins detection_centre/rdc_1bit_0/Q] [get_bd_pins detection_centre/add_yAxis/SCLR]
+WARNING: [BD 41-1731] Type mismatch between connected pins: /detection_centre/rdc_1bit_0/Q(undef) and /detection_centre/add_yAxis/SCLR(rst)
+connect_bd_net [get_bd_pins detection_centre/rdc_1bit_0/Q] [get_bd_pins detection_centre/BlankPixel_counter/SCLR]
+WARNING: [BD 41-1731] Type mismatch between connected pins: /detection_centre/rdc_1bit_0/Q(undef) and /detection_centre/BlankPixel_counter/SCLR(rst)
+save_bd_design
+Wrote  : <E:/Segmentation_SEB/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/HDMI_bd.bd> 
+Wrote  : <E:/Segmentation_SEB/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/ui/bd_a3426369.ui> 
+update_compile_order -fileset sources_1
+set_property location {2.5 785 -36} [get_bd_cells detection_centre]
+set_property location {3 878 14} [get_bd_cells detection_centre]
+set_property location {3 751 325} [get_bd_cells Filtrage_0]
+set_property location {3.5 1106 137} [get_bd_cells detection_centre]
+save_bd_design
+Wrote  : <E:/Segmentation_SEB/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/ui/bd_a3426369.ui> 
+exit
+INFO: [Common 17-206] Exiting Vivado at Wed Nov 21 11:51:17 2018...
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               INFO: [Common 17-206] Exiting Vivado at Wed Nov 21 11:16:35 2018...
