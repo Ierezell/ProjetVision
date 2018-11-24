@@ -33,13 +33,14 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity Seuillage is
     Port ( INPUT : in STD_LOGIC_VECTOR (7 downto 0);
-           OUTPUT : out STD_LOGIC);
+           OUTPUT1 : out STD_LOGIC;
+           OUTPUT2 : out STD_LOGIC_VECTOR (23 downto 0));
 end Seuillage;
 
 architecture Behavioral of Seuillage is
 
 begin
-OUTPUT <= '1' when INPUT > "10000000" else
-          '0';
+OUTPUT1 <= '1' when INPUT > "10010000" else '0';
 
+OUTPUT2 <= "111111111111111111111111" when INPUT > "10010000" else "000000000000000000000000";
 end Behavioral;

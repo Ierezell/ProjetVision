@@ -2,111 +2,56 @@
 # Vivado v2018.2.1 (64-bit)
 # SW Build 2288692 on Thu Jul 26 18:24:02 MDT 2018
 # IP Build 2289599 on Thu Jul 26 21:09:20 MDT 2018
-# Start of session at: Wed Nov 21 11:16:35 2018
-# Process ID: 8124
-# Current directory: E:/Segmentation_SEB/ZYBO_HDMI_MGA/project_1
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent1508 E:\Segmentation_SEB\ZYBO_HDMI_MGA\project_1\project_1.xpr
-# Log file: E:/Segmentation_SEB/ZYBO_HDMI_MGA/project_1/vivado.log
-# Journal file: E:/Segmentation_SEB/ZYBO_HDMI_MGA/project_1\vivado.jou
+# Start of session at: Sat Nov 24 00:40:55 2018
+# Process ID: 3356
+# Current directory: E:/VLSI/Projet/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent5580 E:\VLSI\Projet\Segmentation+detectionCentre\ZYBO_HDMI_MGA\project_1\project_1.xpr
+# Log file: E:/VLSI/Projet/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/vivado.log
+# Journal file: E:/VLSI/Projet/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1\vivado.jou
 #-----------------------------------------------------------
 start_gui
-open_project E:/Segmentation_SEB/ZYBO_HDMI_MGA/project_1/project_1.xpr
+open_project E:/VLSI/Projet/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.xpr
+open_bd_design {E:/VLSI/Projet/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/HDMI_bd.bd}
 update_compile_order -fileset sources_1
-open_bd_design {E:/Segmentation_SEB/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/HDMI_bd.bd}
-open_bd_design {E:/Segmentation_SEB/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/HDMI_bd.bd}
-regenerate_bd_layout
-startgroup
-set_property location {3.5 1179 98} [get_bd_cells rgb2dvi_0]
-set_property location {4 1179 98} [get_bd_cells VDD]
-endgroup
-# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
-set_property source_mgmt_mode None [current_project]
-set_property top detection_centre_wrapper [current_fileset]
-# Re-enabling previously disabled source management mode.
-set_property source_mgmt_mode All [current_project]
-update_compile_order -fileset sources_1
-# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
-set_property source_mgmt_mode None [current_project]
-set_property top HDMI_bd_wrapper [current_fileset]
-# Re-enabling previously disabled source management mode.
-set_property source_mgmt_mode All [current_project]
-update_compile_order -fileset sources_1
-make_wrapper -files [get_files E:/Segmentation_SEB/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/detection_centre/detection_centre.bd] -fileset [get_filesets sources_1] -inst_template
-open_bd_design {E:/Segmentation_SEB/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/HDMI_bd.bd}
-open_bd_design {E:/Segmentation_SEB/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/HDMI_bd.bd}
-report_ip_status -name ip_status 
-make_wrapper -files [get_files E:/Segmentation_SEB/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/detection_centre/detection_centre.bd] -fileset [get_filesets sources_1] -inst_template
-add_files -norecurse E:/Segmentation_SEB/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/new/detection_centre.vhd
-update_compile_order -fileset sources_1
-export_ip_user_files -of_objects  [get_files E:/Segmentation_SEB/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/imports/hdl/detection_centre_wrapper.vhd] -no_script -reset -force -quiet
-remove_files  E:/Segmentation_SEB/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/imports/hdl/detection_centre_wrapper.vhd
-export_ip_user_files -of_objects  [get_files E:/Segmentation_SEB/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/new/detection_centre.vhd] -no_script -reset -force -quiet
-remove_files  E:/Segmentation_SEB/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/new/detection_centre.vhd
-create_bd_design "test"
-update_compile_order -fileset sources_1
-export_ip_user_files -of_objects  [get_files E:/Segmentation_SEB/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/test/test.bd] -no_script -reset -force -quiet
-remove_files  E:/Segmentation_SEB/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/test/test.bd
-file delete -force E:/Segmentation_SEB/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/test
-open_bd_design {E:/Segmentation_SEB/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/detection_centre/detection_centre.bd}
-open_bd_design {E:/Segmentation_SEB/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/detection_centre/detection_centre.bd}
-open_bd_design {E:/Segmentation_SEB/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/HDMI_bd.bd}
-current_bd_design detection_centre
-set tmpCopyObjs [concat  [get_bd_cells {Ligne_counter divideur_select_outp_0 add_yAxis divideur_select_outp_1 rdc_1bit_0 column_counter div_yAxis xlconstant_0 BlankPixel_counter div_xAxis add_xAxis detect_end_image_0}] [get_bd_ports {CE_ligne_count CE_column_count RESET CLK Pixel_White_Black nb_ligne yMoy xMoy nb_column}] [get_bd_nets {CE_column_count_1 div_yAxis_m_axis_dout_tdata column_counter_Q div_xAxis_m_axis_dout_tdata xlconstant_0_dout CLK_1 divideur_select_outp_0_Output RESET_counter_ligne_and_column_1 CE_ligne_count_1 add_xAxis_S divideur_select_outp_1_Output add_yAxis_S rdc_1bit_0_Q Ligne_counter_Q BlankPixel_counter_Q Pixel_White_Black_1 Net}]]
-current_bd_design HDMI_bd
-copy_bd_objs -from_design detection_centre / $tmpCopyObjs
-startgroup
-set_property location {14 3367 -210} [get_bd_cells xlconstant_0]
-set_property location {14 3447 -310} [get_bd_cells xlconstant_1]
-set_property location {15 3777 -240} [get_bd_cells Filtrage_0]
-endgroup
-group_bd_cells detection_centre [get_bd_cells Ligne_counter] [get_bd_cells add_yAxis] [get_bd_cells divideur_select_outp_0] [get_bd_cells divideur_select_outp_1] [get_bd_cells rdc_1bit_0] [get_bd_cells column_counter] [get_bd_cells div_yAxis] [get_bd_cells BlankPixel_counter] [get_bd_cells xlconstant_2] [get_bd_cells div_xAxis] [get_bd_cells add_xAxis] [get_bd_cells detect_end_image_0]
-startgroup
-set_property location {10.5 2924 722} [get_bd_cells detection_centre]
-endgroup
-startgroup
-set_property location {0.5 242 680} [get_bd_cells detection_centre]
-endgroup
-delete_bd_objs [get_bd_nets Pixel_White_Black_1] [get_bd_nets RESET_counter_ligne_and_column_1] [get_bd_nets CE_ligne_count_1] [get_bd_nets CLK_2] [get_bd_nets CE_column_count_1] [get_bd_ports CE_ligne_count] [get_bd_ports CLK1] [get_bd_ports CE_column_count] [get_bd_ports Pixel_White_Black] [get_bd_ports RESET1]
-set_property location {1.5 1503 630} [get_bd_cells detection_centre]
-set_property location {3 3595 677} [get_bd_cells detection_centre]
-delete_bd_objs [get_bd_nets Ligne_counter_Q] [get_bd_nets column_counter_Q] [get_bd_nets divideur_select_outp_1_Output] [get_bd_nets divideur_select_outp_0_Output] [get_bd_ports nb_ligne] [get_bd_ports yMoy] [get_bd_ports nb_column] [get_bd_ports xMoy]
-set_property name CLK [get_bd_pins detection_centre/CLK1]
-set_property name RESET [get_bd_pins detection_centre/RESET1]
-set_property location {2 3575 463} [get_bd_cells detection_centre]
-set_property location {566 58} [get_bd_ports reset]
-set_property location {4310 178} [get_bd_intf_ports hdmi_in_ddc]
-startgroup
-set_property location {98 153} [get_bd_intf_ports hdmi_in]
-set_property location {98 73} [get_bd_ports reset]
-set_property location {98 103} [get_bd_ports CLK]
-endgroup
-regenerate_bd_layout
-set_property location {3.5 1073 342} [get_bd_cells rgb2dvi_0]
-set_property location {4 1043 75} [get_bd_cells VDD]
-set_property location {3 786 30} [get_bd_cells detection_centre]
-connect_bd_net [get_bd_pins Filtrage_0/BlancNoir] [get_bd_pins detection_centre/Pixel_White_Black]
-connect_bd_net [get_bd_pins dvi2rgb_0/PixelClk] [get_bd_pins detection_centre/CLK]
-connect_bd_net [get_bd_pins xlconstant_0/dout] [get_bd_pins detection_centre/RESET]
-connect_bd_net [get_bd_pins dvi2rgb_0/vid_pHSync] [get_bd_pins detection_centre/CE_ligne_count]
-connect_bd_net [get_bd_pins dvi2rgb_0/vid_pVSync] [get_bd_pins detection_centre/CE_column_count]
-connect_bd_net [get_bd_pins detection_centre/Ligne_counter/Q] [get_bd_pins detection_centre/add_yAxis/B]
-move_bd_cells [get_bd_cells /] [get_bd_cells detection_centre/Ligne_counter]
-move_bd_cells [get_bd_cells /] [get_bd_cells detection_centre/column_counter]
-move_bd_cells [get_bd_cells /] [get_bd_cells detection_centre/Ligne_counter]
-move_bd_cells [get_bd_cells /] [get_bd_cells detection_centre/xlconstant_2]
-move_bd_cells [get_bd_cells detection_centre] [get_bd_cells xlconstant_2]
-move_bd_cells [get_bd_cells /] [get_bd_cells detection_centre/rdc_1bit_0]
+create_bd_cell -type module -reference Seuillage Segmentation/Seuillage_1
+delete_bd_objs [get_bd_nets Segmentation/Seuillage_0_OUTPUT] [get_bd_nets Segmentation/abs_8bits_signed_0_OUTPUT] [get_bd_cells Segmentation/Seuillage_0]
+connect_bd_net [get_bd_pins Segmentation/abs_8bits_signed_0/OUTPUT] [get_bd_pins Segmentation/Seuillage_1/INPUT]
+connect_bd_net [get_bd_pins Segmentation/PixelNoirBanc] [get_bd_pins Segmentation/Seuillage_1/OUTPUT]
+delete_bd_objs [get_bd_nets Segmentation/Seuillage_1_OUTPUT]
+connect_bd_net [get_bd_pins Segmentation/PixelNoirBanc] [get_bd_pins Segmentation/Seuillage_1/OUTPUT]
+delete_bd_objs [get_bd_nets Segmentation_PixelNoirBanc] [get_bd_nets Segmentation/Seuillage_1_OUTPUT] [get_bd_pins Segmentation/PixelNoirBanc]
 undo
-delete_bd_objs [get_bd_nets detection_centre/RESET_counter_ligne_and_column_1]
-connect_bd_net [get_bd_pins detection_centre/detect_end_image_0/fin] [get_bd_pins detection_centre/column_counter/SCLR]
-connect_bd_net [get_bd_pins detection_centre/detect_end_image_0/fin] [get_bd_pins detection_centre/Ligne_counter/SCLR]
-connect_bd_net [get_bd_pins detection_centre/RESET] [get_bd_pins detection_centre/rdc_1bit_0/RESET]
-connect_bd_net [get_bd_pins detection_centre/rdc_1bit_0/Q] [get_bd_pins detection_centre/add_yAxis/SCLR]
-connect_bd_net [get_bd_pins detection_centre/rdc_1bit_0/Q] [get_bd_pins detection_centre/BlankPixel_counter/SCLR]
-save_bd_design
+delete_bd_objs [get_bd_nets Moyenneur_ouput] [get_bd_nets Segmentation_PixelNoirBanc] [get_bd_cells Segmentation]
+undo
+undo
+redo
+redo
 update_compile_order -fileset sources_1
-set_property location {2.5 785 -36} [get_bd_cells detection_centre]
-set_property location {3 878 14} [get_bd_cells detection_centre]
-set_property location {3 751 325} [get_bd_cells Filtrage_0]
-set_property location {3.5 1106 137} [get_bd_cells detection_centre]
+undo
+redo
+undo
+set_property location {4.5 1453 768} [get_bd_cells Segmentation]
+update_compile_order -fileset sources_1
+delete_bd_objs [get_bd_nets Segmentation_PixelNoirBanc] [get_bd_nets Segmentation/Seuillage_1_OUTPUT] [get_bd_pins Segmentation/PixelNoirBanc]
+connect_bd_net [get_bd_pins Segmentation/Seuillage_1/OUTPUT] [get_bd_pins rgb2dvi_0/vid_pData]
+delete_bd_objs [get_bd_nets Segmentation_OUTPUT1]
+create_bd_cell -type module -reference Seuillage Seuillage_0
+move_bd_cells [get_bd_cells Segmentation] [get_bd_cells Seuillage_0]
+delete_bd_objs [get_bd_cells Segmentation/Seuillage_0]
+delete_bd_objs [get_bd_nets Segmentation/Seuillage_1_OUTPUT] [get_bd_nets Segmentation/abs_8bits_signed_0_OUTPUT] [get_bd_cells Segmentation/Seuillage_1]
+create_bd_cell -type module -reference Seuillage Seuillage_0
+delete_bd_objs [get_bd_cells Seuillage_0]
+update_module_reference HDMI_bd_Filtrage_0_0
+update_module_reference {HDMI_bd_Seuillage_0_0 HDMI_bd_Seuillage_0_1 HDMI_bd_Seuillage_0_2 HDMI_bd_Seuillage_1_0}
+create_bd_cell -type module -reference Seuillage Segmentation/Seuillage_0
+move_bd_cells [get_bd_cells /] [get_bd_cells Segmentation/Seuillage_0]
+move_bd_cells [get_bd_cells Segmentation] [get_bd_cells Seuillage_0]
+connect_bd_net [get_bd_pins Segmentation/abs_8bits_signed_0/OUTPUT] [get_bd_pins Segmentation/Seuillage_0/INPUT]
+set_property location {6.5 2611 895} [get_bd_cells Segmentation/Seuillage_0]
+move_bd_cells [get_bd_cells /] [get_bd_cells Segmentation/Seuillage_0]
+set_property USER_COMMENTS.comment_0 {}  [current_bd_design]
+move_bd_cells [get_bd_cells Segmentation] [get_bd_cells Seuillage_0]
+connect_bd_net [get_bd_pins rgb2dvi_0/vid_pData] [get_bd_pins Segmentation/Seuillage_0/OUTPUT2]
+connect_bd_net [get_bd_pins Segmentation/OUTPUT1] [get_bd_pins Segmentation/Seuillage_0/OUTPUT1]
+delete_bd_objs [get_bd_nets Segmentation/Seuillage_0_OUTPUT1] [get_bd_pins Segmentation/OUTPUT1]
 save_bd_design

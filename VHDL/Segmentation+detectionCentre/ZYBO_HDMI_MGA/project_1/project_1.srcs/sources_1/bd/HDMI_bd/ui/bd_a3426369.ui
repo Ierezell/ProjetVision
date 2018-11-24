@@ -1,37 +1,46 @@
 {
    ExpandedHierarchyInLayout: "",
+   commentid: "",
    guistr: "# # String gsaved with Nlview 6.8.5  2018-01-30 bk=1.4354 VDI=40 GEI=35 GUI=JA:1.6 non-TLS
 #  -string -flagsOSRD
-preplace port CLK -pg 1 -y 80 -defaultsOSRD
-preplace port hdmi_out -pg 1 -y 340 -defaultsOSRD
-preplace port hdmi_in -pg 1 -y 140 -defaultsOSRD
-preplace port hdmi_in_ddc -pg 1 -y 180 -defaultsOSRD
-preplace port reset -pg 1 -y 60 -defaultsOSRD
-preplace portBus hdmi_in_hpd -pg 1 -y 70 -defaultsOSRD
-preplace inst detection_centre -pg 1 -lvl 4 -y 140 -defaultsOSRD
-preplace inst xlconstant_0 -pg 1 -lvl 2 -y 500 -defaultsOSRD
-preplace inst xlconstant_1 -pg 1 -lvl 2 -y 400 -defaultsOSRD
-preplace inst Filtrage_0 -pg 1 -lvl 3 -y 320 -defaultsOSRD
-preplace inst rgb2dvi_0 -pg 1 -lvl 5 -y 370 -defaultsOSRD
-preplace inst VDD -pg 1 -lvl 5 -y 70 -defaultsOSRD
-preplace inst clk_wiz_0 -pg 1 -lvl 1 -y 70 -defaultsOSRD
-preplace inst dvi2rgb_0 -pg 1 -lvl 2 -y 190 -defaultsOSRD
-preplace netloc xlconstant_1_dout 1 2 1 560J
+preplace port CLK -pg 1 -y 180 -defaultsOSRD
+preplace port hdmi_out -pg 1 -y 520 -defaultsOSRD
+preplace port hdmi_in -pg 1 -y 240 -defaultsOSRD
+preplace port hdmi_in_ddc -pg 1 -y 300 -defaultsOSRD
+preplace port reset -pg 1 -y 160 -defaultsOSRD
+preplace portBus hdmi_in_hpd -pg 1 -y 60 -defaultsOSRD
+preplace inst detection_centre -pg 1 -lvl 4 -y 420 -defaultsOSRD
+preplace inst RGB_to_Y_0 -pg 1 -lvl 2 -y 730 -defaultsOSRD
+preplace inst retard_affichage -pg 1 -lvl 6 -y 650 -defaultsOSRD
+preplace inst xlconstant_1 -pg 1 -lvl 2 -y 480 -defaultsOSRD
+preplace inst Filtrage_0 -pg 1 -lvl 3 -y 350 -defaultsOSRD
+preplace inst Segmentation -pg 1 -lvl 5 -y 608 -defaultsOSRD
+preplace inst rgb2dvi_0 -pg 1 -lvl 7 -y 570 -defaultsOSRD
+preplace inst Moyenneur -pg 1 -lvl 3 -y 700 -defaultsOSRD
+preplace inst RESET -pg 1 -lvl 2 -y 580 -defaultsOSRD
+preplace inst VDD -pg 1 -lvl 4 -y 60 -defaultsOSRD
+preplace inst clk_wiz_0 -pg 1 -lvl 1 -y 170 -defaultsOSRD
+preplace inst dvi2rgb_0 -pg 1 -lvl 2 -y 270 -defaultsOSRD
+preplace netloc xlconstant_1_dout 1 2 1 450J
 preplace netloc CLK_1 1 0 1 NJ
-preplace netloc dvi2rgb_0_vid_pVDE 1 2 3 N 200 920 390 N
-preplace netloc rgb2dvi_0_TMDS 1 5 1 1530
-preplace netloc hdmi_in_1 1 0 2 NJ 140 260J
-preplace netloc dvi2rgb_0_DDC 1 2 4 NJ 220 930J 230 NJ 230 1530J
-preplace netloc dvi2rgb_0_vid_pHSync 1 2 2 N 160 910
-preplace netloc xlconstant_0_dout 1 2 2 540J 120 N
-preplace netloc dvi2rgb_0_vid_pVSync 1 2 2 N 180 950
-preplace netloc dvi2rgb_0_vid_pData 1 2 1 560
-preplace netloc clk_wiz_0_clk_out1 1 1 1 270
-preplace netloc Filtrage_0_BlancNoir 1 3 1 940
-preplace netloc VDD_dout 1 5 1 N
-preplace netloc reset_1 1 0 5 20 0 280 320 550J 230 910 410 N
-preplace netloc dvi2rgb_0_PixelClk 1 2 3 570 190 960 380 1260
-levelinfo -pg 1 0 170 410 770 1110 1400 1550 -top -580 -bot 1310
+preplace netloc RGB_to_Y_0_Y 1 2 1 470
+preplace netloc CLK_2 1 2 4 400 470 800 320 1140 518 1470
+preplace netloc Moyenneur_ouput 1 3 2 780 620 1120
+preplace netloc dvi2rgb_0_vid_pVDE 1 2 5 440J 460 750 300 N 300 N 300 3010
+preplace netloc Segmentation_OUTPUT2 1 5 2 1460 530 NJ
+preplace netloc rgb2dvi_0_TMDS 1 7 1 3360
+preplace netloc hdmi_in_1 1 0 2 NJ 240 NJ
+preplace netloc dvi2rgb_0_DDC 1 2 6 430J 260 NJ 260 NJ 260 NJ 260 NJ 260 3360J
+preplace netloc dvi2rgb_0_vid_pHSync 1 2 5 N 240 790J 280 N 280 N 280 3030
+preplace netloc xlconstant_0_dout 1 2 4 460 480 810 510 1130 528 1450
+preplace netloc dvi2rgb_0_vid_pVSync 1 2 5 420 440 770J 290 N 290 N 290 3020
+preplace netloc dvi2rgb_0_vid_pData 1 1 2 130 420 410
+preplace netloc clk_wiz_0_clk_out1 1 1 1 130
+preplace netloc mux_2bits_0_S 1 6 1 3020
+preplace netloc Filtrage_0_BlancNoir 1 3 1 780
+preplace netloc VDD_dout 1 4 4 NJ 60 N 60 N 60 N
+preplace netloc reset_1 1 0 7 -70 250 120 410 430J 450 760J 310 N 310 N 310 3000
+levelinfo -pg 1 -90 30 270 610 970 1340 2919 3221 3380 -top 0 -bot 1030
 ",
 }
 0

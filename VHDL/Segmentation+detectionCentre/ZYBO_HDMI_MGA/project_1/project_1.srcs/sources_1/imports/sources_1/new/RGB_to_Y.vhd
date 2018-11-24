@@ -32,32 +32,39 @@ use IEEE.NUMERIC_STD.ALL;
 --use UNISIM.VComponents.all;
 
 entity RGB_to_Y is
-    Port ( R : in STD_LOGIC_VECTOR (7 downto 0);
-           G : in STD_LOGIC_VECTOR (7 downto 0);
-           B : in STD_LOGIC_VECTOR (7 downto 0);
+    Port ( RGB : in STD_LOGIC_VECTOR (23 downto 0);
            Y : out STD_LOGIC_VECTOR (7 downto 0));
 end RGB_to_Y;
 
 architecture Behavioral of RGB_to_Y is
-signal R2, R3, G2, B2, B3: std_logic_vector(7 downto 0);
-signal Ri: integer;
+signal Red, Green2,Green4, Blue: std_logic_vector(7 downto 0);
+
 
 begin
 
-RS1: entity work.Right_shift_8bits
-Port map ( INPUT => R, OUTPUT => R2 );
-RS2: entity work.Right_shift_8bits
-Port map ( INPUT => R2, OUTPUT => R3 );
-RS3: entity work.Right_shift_8bits
-Port map ( INPUT => G, OUTPUT => G2 );
-RS4: entity work.Right_shift_8bits
-Port map ( INPUT => B, OUTPUT => B2 );
-RS5: entity work.Right_shift_8bits
-Port map ( INPUT => B2, OUTPUT => B3 );
+--RS1: entity work.Right_shift_8bits
+--Port map ( INPUT => R, OUTPUT => R2 );
+--RS2: entity work.Right_shift_8bits
+--Port map ( INPUT => R2, OUTPUT => R3 );
+--RS3: entity work.Right_shift_8bits
+--Port map ( INPUT => G, OUTPUT => G2 );
+--RS4: entity work.Right_shift_8bits
+--Port map ( INPUT => B, OUTPUT => B2 );
+--RS5: entity work.Right_shift_8bits
+--Port map ( INPUT => B2, OUTPUT => B3 );
 
-Y <= R3 + B3 + G2; --0.25*R+0.25*B+0.5*G
+reddiv4 : entity work.div_4
+Port map ( INPUT => RGB(23 downto 16), OUTPUT => Red );
+greendiv4 : entity work.div_4
+Port map ( INPUT => RGB(7 downto 0), OUTPUT => Green2 );
+greendiv2 : entity work.div_2
+Port map ( INPUT => RGB(7 downto 0), OUTPUT => Green4 );
+bluediv8 : entity work.div_8
+Port map ( INPUT => RGB(15 downto 8), OUTPUT => Blue );
 
+Y <= (Red + Green2) + (Green4 + Blue);
 
-Ri <= to_integer(unsigned(R));
+--Y <= R3 + B3 + G2; --0.25*R+0.25*B+0.5*G
+
 
 end Behavioral;
