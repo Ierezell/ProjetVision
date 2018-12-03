@@ -9,6 +9,6 @@
     ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 
 source HDMI_bd_div_xAxis_0.tcl -notrace
-INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP HDMI_bd_div_xAxis_0, cache-ID = 5aee1d8f94ed91fa.
-config_ip_cache: Time (s): cpu = 00:00:02 ; elapsed = 00:00:09 . Memory (MB): peak = 287.570 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Sat Nov 24 00:30:42 2018...
+INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP HDMI_bd_div_xAxis_0, cache-ID = 1ebd25db5ccee9d6.
+config_ip_cache: Time (s): cpu = 00:00:02 ; elapsed = 00:00:25 . Memory (MB): peak = 287.574 ; gain = 0.289
+INFO: [Common 17-206] Exiting Vivado at Sun Dec  2 21:00:13 2018...

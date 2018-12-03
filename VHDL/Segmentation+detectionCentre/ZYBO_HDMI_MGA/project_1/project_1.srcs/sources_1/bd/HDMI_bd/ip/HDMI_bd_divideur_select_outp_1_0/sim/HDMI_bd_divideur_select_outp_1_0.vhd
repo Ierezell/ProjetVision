@@ -55,8 +55,8 @@ USE ieee.numeric_std.ALL;
 
 ENTITY HDMI_bd_divideur_select_outp_1_0 IS
   PORT (
-    Input : IN STD_LOGIC_VECTOR(39 DOWNTO 0);
-    Output : OUT STD_LOGIC_VECTOR(11 DOWNTO 0)
+    Entree : IN STD_LOGIC_VECTOR(39 DOWNTO 0);
+    Sortie : OUT STD_LOGIC_VECTOR(11 DOWNTO 0)
   );
 END HDMI_bd_divideur_select_outp_1_0;
 
@@ -65,8 +65,8 @@ ARCHITECTURE HDMI_bd_divideur_select_outp_1_0_arch OF HDMI_bd_divideur_select_ou
   ATTRIBUTE DowngradeIPIdentifiedWarnings OF HDMI_bd_divideur_select_outp_1_0_arch: ARCHITECTURE IS "yes";
   COMPONENT divideur_select_output IS
     PORT (
-      Input : IN STD_LOGIC_VECTOR(39 DOWNTO 0);
-      Output : OUT STD_LOGIC_VECTOR(11 DOWNTO 0)
+      Entree : IN STD_LOGIC_VECTOR(39 DOWNTO 0);
+      Sortie : OUT STD_LOGIC_VECTOR(11 DOWNTO 0)
     );
   END COMPONENT divideur_select_output;
   ATTRIBUTE IP_DEFINITION_SOURCE : STRING;
@@ -74,7 +74,7 @@ ARCHITECTURE HDMI_bd_divideur_select_outp_1_0_arch OF HDMI_bd_divideur_select_ou
 BEGIN
   U0 : divideur_select_output
     PORT MAP (
-      Input => Input,
-      Output => Output
+      Entree => Entree,
+      Sortie => Sortie
     );
 END HDMI_bd_divideur_select_outp_1_0_arch;

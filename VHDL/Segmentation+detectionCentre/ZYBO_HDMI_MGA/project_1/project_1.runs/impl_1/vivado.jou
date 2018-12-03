@@ -2,11 +2,11 @@
 # Vivado v2018.2.1 (64-bit)
 # SW Build 2288692 on Thu Jul 26 18:24:02 MDT 2018
 # IP Build 2289599 on Thu Jul 26 21:09:20 MDT 2018
-# Start of session at: Fri Nov 16 15:27:22 2018
-# Process ID: 6564
-# Current directory: E:/Conception de systemes VLSI/Laboratoire 4/ZYBO_HDMI_MGA/project_1/project_1.runs/impl_1
+# Start of session at: Sun Dec  2 21:03:48 2018
+# Process ID: 6232
+# Current directory: E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/impl_1
 # Command line: vivado.exe -log HDMI_bd_wrapper.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source HDMI_bd_wrapper.tcl -notrace
-# Log file: E:/Conception de systemes VLSI/Laboratoire 4/ZYBO_HDMI_MGA/project_1/project_1.runs/impl_1/HDMI_bd_wrapper.vdi
-# Journal file: E:/Conception de systemes VLSI/Laboratoire 4/ZYBO_HDMI_MGA/project_1/project_1.runs/impl_1\vivado.jou
+# Log file: E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/impl_1/HDMI_bd_wrapper.vdi
+# Journal file: E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/impl_1\vivado.jou
 #-----------------------------------------------------------
 source HDMI_bd_wrapper.tcl -notrace

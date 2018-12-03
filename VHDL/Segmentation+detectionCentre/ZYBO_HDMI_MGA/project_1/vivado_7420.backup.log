@@ -1,0 +1,417 @@
+#-----------------------------------------------------------
+# Vivado v2018.2.1 (64-bit)
+# SW Build 2288692 on Thu Jul 26 18:24:02 MDT 2018
+# IP Build 2289599 on Thu Jul 26 21:09:20 MDT 2018
+# Start of session at: Wed Nov 28 12:41:09 2018
+# Process ID: 7420
+# Current directory: C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent5384 C:\Users\NMLEM1\Desktop\Segmentation+detectionCentre\ZYBO_HDMI_MGA\project_1\project_1.xpr
+# Log file: C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/vivado.log
+# Journal file: C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/repo'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Programs/Xilinx/Vivado/2018.2/data/ip'.
+WARNING: [IP_Flow 19-3664] IP 'detection_centre_divideur_select_outp_0_0' generated file not found 'c:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/detection_centre/ip/detection_centre_divideur_select_outp_0_0/detection_centre_divideur_select_outp_0_0.dcp'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'detection_centre_divideur_select_outp_0_0' generated file not found 'c:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/detection_centre/ip/detection_centre_divideur_select_outp_0_0/detection_centre_divideur_select_outp_0_0_stub.v'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'detection_centre_divideur_select_outp_0_0' generated file not found 'c:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/detection_centre/ip/detection_centre_divideur_select_outp_0_0/detection_centre_divideur_select_outp_0_0_stub.vhdl'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'detection_centre_divideur_select_outp_0_0' generated file not found 'c:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/detection_centre/ip/detection_centre_divideur_select_outp_0_0/detection_centre_divideur_select_outp_0_0_sim_netlist.v'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'detection_centre_divideur_select_outp_0_0' generated file not found 'c:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/detection_centre/ip/detection_centre_divideur_select_outp_0_0/detection_centre_divideur_select_outp_0_0_sim_netlist.vhdl'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'detection_centre_divideur_select_outp_0_1' generated file not found 'c:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/detection_centre/ip/detection_centre_divideur_select_outp_0_1/detection_centre_divideur_select_outp_0_1.dcp'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'detection_centre_divideur_select_outp_0_1' generated file not found 'c:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/detection_centre/ip/detection_centre_divideur_select_outp_0_1/detection_centre_divideur_select_outp_0_1_stub.v'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'detection_centre_divideur_select_outp_0_1' generated file not found 'c:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/detection_centre/ip/detection_centre_divideur_select_outp_0_1/detection_centre_divideur_select_outp_0_1_stub.vhdl'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'detection_centre_divideur_select_outp_0_1' generated file not found 'c:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/detection_centre/ip/detection_centre_divideur_select_outp_0_1/detection_centre_divideur_select_outp_0_1_sim_netlist.v'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'detection_centre_divideur_select_outp_0_1' generated file not found 'c:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/detection_centre/ip/detection_centre_divideur_select_outp_0_1/detection_centre_divideur_select_outp_0_1_sim_netlist.vhdl'. Please regenerate to continue.
+open_project: Time (s): cpu = 00:00:17 ; elapsed = 00:00:10 . Memory (MB): peak = 909.953 ; gain = 177.148
+update_compile_order -fileset sources_1
+open_bd_design {C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/HDMI_bd.bd}
+Adding cell -- xilinx.com:ip:clk_wiz:6.0 - clk_wiz_0
+Adding cell -- xilinx.com:ip:xlconstant:1.1 - VDD
+Adding cell -- digilentinc.com:ip:dvi2rgb:1.8 - dvi2rgb_0
+Adding cell -- digilentinc.com:ip:rgb2dvi:1.4 - rgb2dvi_0
+Adding cell -- xilinx.com:module_ref:RGB_to_Y:1.0 - RGB_to_Y_0
+Adding cell -- xilinx.com:ip:xlconstant:1.1 - xlconstant_0
+Adding cell -- xilinx.com:module_ref:affiche_centre:1.0 - affiche_centre_0
+WARNING: [BD 41-1731] Type mismatch between connected pins: /reset(rst) and /dvi2rgb_0/aRst(undef)
+WARNING: [BD 41-1731] Type mismatch between connected pins: /reset(rst) and /dvi2rgb_0/pRst(undef)
+Adding cell -- xilinx.com:ip:c_counter_binary:12.0 - BlankPixel_counter
+Adding cell -- xilinx.com:ip:c_counter_binary:12.0 - Ligne_counter
+Adding cell -- xilinx.com:ip:c_addsub:12.0 - add_xAxis
+Adding cell -- xilinx.com:ip:c_addsub:12.0 - add_yAxis
+Adding cell -- xilinx.com:ip:c_counter_binary:12.0 - column_counter
+Adding cell -- xilinx.com:ip:div_gen:5.1 - div_xAxis
+Adding cell -- xilinx.com:ip:div_gen:5.1 - div_yAxis
+Adding cell -- xilinx.com:module_ref:divideur_select_output:1.0 - divideur_select_outp_0
+Adding cell -- xilinx.com:module_ref:divideur_select_output:1.0 - divideur_select_outp_1
+Adding cell -- xilinx.com:module_ref:rdc_1bit:1.0 - rdc_1bit_0
+Adding cell -- xilinx.com:ip:xlconstant:1.1 - xlconstant_1
+Adding cell -- xilinx.com:ip:xlconstant:1.1 - SCLR
+Adding cell -- xilinx.com:module_ref:detect_end_image:1.0 - detect_end_image_0
+WARNING: [BD 41-1731] Type mismatch between connected pins: /Detect_centre/rdc_1bit_0/Q(undef) and /Detect_centre/add_xAxis/SCLR(rst)
+WARNING: [BD 41-1731] Type mismatch between connected pins: /Detect_centre/detect_end_image_0/fin(undef) and /Detect_centre/div_xAxis/aclken(ce)
+WARNING: [BD 41-1731] Type mismatch between connected pins: /Detect_centre/detect_end_image_0/fin(undef) and /Detect_centre/div_yAxis/aclken(ce)
+Adding cell -- xilinx.com:ip:mult_gen:12.0 - mult_gen_0
+Adding cell -- xilinx.com:ip:mult_gen:12.0 - mult_gen_1
+Adding cell -- xilinx.com:ip:mult_gen:12.0 - mult_gen_2
+Adding cell -- xilinx.com:ip:c_addsub:12.0 - c_addsub_0
+Adding cell -- xilinx.com:ip:c_addsub:12.0 - c_addsub_1
+Adding cell -- xilinx.com:ip:c_addsub:12.0 - c_addsub_2
+Adding cell -- xilinx.com:ip:c_addsub:12.0 - c_addsub_3
+Adding cell -- xilinx.com:ip:xlconstant:1.1 - ENABLE
+Adding cell -- xilinx.com:module_ref:div_16:1.0 - div_16_0
+Adding cell -- xilinx.com:module_ref:reg_Nbits:1.0 - reg_Nbits_0
+Adding cell -- xilinx.com:module_ref:reg_Nbits:1.0 - reg_Nbits_1
+Adding cell -- xilinx.com:module_ref:reg_Nbits:1.0 - reg_Nbits_2
+Adding cell -- xilinx.com:module_ref:reg_Nbits:1.0 - reg_Nbits_3
+Adding cell -- xilinx.com:ip:c_addsub:12.0 - c_addsub_0
+Adding cell -- xilinx.com:ip:xlconstant:1.1 - ENABLE
+Adding cell -- xilinx.com:module_ref:abs_8bits_signed:1.0 - abs_8bits_signed_0
+Adding cell -- xilinx.com:module_ref:reg_Nbits:1.0 - reg_Nbits_0
+Adding cell -- xilinx.com:module_ref:reg_Nbits:1.0 - reg_Nbits_1
+Adding cell -- xilinx.com:module_ref:Seuillage:1.0 - Seuillage_0
+WARNING: [BD 41-1731] Type mismatch between connected pins: /dvi2rgb_0/vid_pVSync(undef) and /Detect_centre/CE_column_count(ce)
+WARNING: [BD 41-1731] Type mismatch between connected pins: /dvi2rgb_0/vid_pHSync(undef) and /Detect_centre/CE_ligne_count(ce)
+Successfully read diagram <HDMI_bd> from BD file <C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/HDMI_bd.bd>
+open_bd_design: Time (s): cpu = 00:00:08 ; elapsed = 00:00:07 . Memory (MB): peak = 1053.266 ; gain = 122.473
+reset_run detection_centre_divideur_select_outp_0_0_synth_1
+reset_run detection_centre_divideur_select_outp_0_1_synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 8
+WARNING: [filemgmt 20-1318] Duplicate Design Unit 'detection_centre' found in library 'xil_defaultlib'
+[Wed Nov 28 12:42:20 2018] Launched detection_centre_divideur_select_outp_0_0_synth_1, detection_centre_divideur_select_outp_0_1_synth_1...
+Run output will be captured here:
+detection_centre_divideur_select_outp_0_0_synth_1: C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/detection_centre_divideur_select_outp_0_0_synth_1/runme.log
+detection_centre_divideur_select_outp_0_1_synth_1: C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/detection_centre_divideur_select_outp_0_1_synth_1/runme.log
+[Wed Nov 28 12:42:21 2018] Launched synth_1...
+Run output will be captured here: C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/runme.log
+generate_target Simulation [get_files C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/c_counter_binary/c_counter_binary.bd]
+WARNING: [BD 41-1731] Type mismatch between connected pins: /detect_end_image_0/fin(undef) and /div_xAxis/aclken(ce)
+WARNING: [BD 41-1731] Type mismatch between connected pins: /detect_end_image_0/fin(undef) and /div_yAxis/aclken(ce)
+WARNING: [BD 41-1731] Type mismatch between connected pins: /rdc_1bit_1/Q(undef) and /add_xAxis/CE(ce)
+WARNING: [BD 41-1731] Type mismatch between connected pins: /rdc_1bit_1/Q(undef) and /BlankPixel_counter/CE(ce)
+WARNING: [BD 41-1731] Type mismatch between connected pins: /rdc_1bit_1/Q(undef) and /add_yAxis/CE(ce)
+WARNING: [BD 41-1731] Type mismatch between connected pins: /rdc_1bit_0/Q(undef) and /add_xAxis/SCLR(rst)
+WARNING: [BD 41-1731] Type mismatch between connected pins: /rdc_1bit_0/Q(undef) and /add_yAxis/SCLR(rst)
+WARNING: [BD 41-1731] Type mismatch between connected pins: /rdc_1bit_0/Q(undef) and /BlankPixel_counter/SCLR(rst)
+ERROR: [BD 41-758] The following clock pins are not connected to a valid clock source: 
+/detect_end_image_0/CLK
+
+ERROR: [BD 41-1031] Hdl Generation failed for the IP Integrator design C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/c_counter_binary/c_counter_binary.bd 
+ERROR: [Common 17-39] 'generate_target' failed due to earlier errors.
+open_bd_design {C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/detection_centre/detection_centre.bd}
+Adding cell -- xilinx.com:module_ref:divideur_select_output:1.0 - divideur_select_outp_0
+Adding cell -- xilinx.com:ip:c_addsub:12.0 - add_yAxis
+Adding cell -- xilinx.com:ip:c_counter_binary:12.0 - Ligne_counter
+Adding cell -- xilinx.com:module_ref:divideur_select_output:1.0 - divideur_select_outp_1
+Adding cell -- xilinx.com:ip:c_counter_binary:12.0 - column_counter
+Adding cell -- xilinx.com:ip:div_gen:5.1 - div_yAxis
+Adding cell -- xilinx.com:ip:c_counter_binary:12.0 - BlankPixel_counter
+Adding cell -- xilinx.com:ip:xlconstant:1.1 - xlconstant_0
+Adding cell -- xilinx.com:ip:c_addsub:12.0 - add_xAxis
+Adding cell -- xilinx.com:ip:div_gen:5.1 - div_xAxis
+Adding cell -- xilinx.com:module_ref:rdc_1bit:1.0 - rdc_1bit_0
+Adding cell -- xilinx.com:module_ref:rdc_1bit:1.0 - rdc_1bit_1
+Adding cell -- xilinx.com:module_ref:detect_end_image:1.0 - detect_end_image_0
+WARNING: [BD 41-1731] Type mismatch between connected pins: /detect_end_image_0/fin(undef) and /div_xAxis/aclken(ce)
+WARNING: [BD 41-1731] Type mismatch between connected pins: /detect_end_image_0/fin(undef) and /div_yAxis/aclken(ce)
+WARNING: [BD 41-1731] Type mismatch between connected pins: /rdc_1bit_0/Q(undef) and /add_xAxis/SCLR(rst)
+WARNING: [BD 41-1731] Type mismatch between connected pins: /rdc_1bit_0/Q(undef) and /add_yAxis/SCLR(rst)
+WARNING: [BD 41-1731] Type mismatch between connected pins: /rdc_1bit_0/Q(undef) and /BlankPixel_counter/SCLR(rst)
+WARNING: [BD 41-1731] Type mismatch between connected pins: /rdc_1bit_1/Q(undef) and /add_xAxis/CE(ce)
+WARNING: [BD 41-1731] Type mismatch between connected pins: /rdc_1bit_1/Q(undef) and /BlankPixel_counter/CE(ce)
+WARNING: [BD 41-1731] Type mismatch between connected pins: /rdc_1bit_1/Q(undef) and /add_yAxis/CE(ce)
+Successfully read diagram <detection_centre> from BD file <C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/detection_centre/detection_centre.bd>
+open_bd_design {C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/c_counter_binary/c_counter_binary.bd}
+Adding cell -- xilinx.com:ip:c_counter_binary:12.0 - BlankPixel_counter
+Adding cell -- xilinx.com:ip:c_counter_binary:12.0 - Ligne_counter
+Adding cell -- xilinx.com:ip:c_addsub:12.0 - add_xAxis
+Adding cell -- xilinx.com:ip:c_addsub:12.0 - add_yAxis
+Adding cell -- xilinx.com:ip:c_counter_binary:12.0 - column_counter
+Adding cell -- xilinx.com:ip:div_gen:5.1 - div_xAxis
+Adding cell -- xilinx.com:ip:div_gen:5.1 - div_yAxis
+Adding cell -- xilinx.com:module_ref:divideur_select_output:1.0 - divideur_select_outp_0
+Adding cell -- xilinx.com:module_ref:divideur_select_output:1.0 - divideur_select_outp_1
+Adding cell -- xilinx.com:module_ref:rdc_1bit:1.0 - rdc_1bit_0
+Adding cell -- xilinx.com:module_ref:rdc_1bit:1.0 - rdc_1bit_1
+Adding cell -- xilinx.com:ip:xlconstant:1.1 - xlconstant_0
+Adding cell -- xilinx.com:module_ref:detect_end_image:1.0 - detect_end_image_0
+WARNING: [BD 41-1731] Type mismatch between connected pins: /detect_end_image_0/fin(undef) and /div_xAxis/aclken(ce)
+WARNING: [BD 41-1731] Type mismatch between connected pins: /detect_end_image_0/fin(undef) and /div_yAxis/aclken(ce)
+WARNING: [BD 41-1731] Type mismatch between connected pins: /rdc_1bit_1/Q(undef) and /add_xAxis/CE(ce)
+WARNING: [BD 41-1731] Type mismatch between connected pins: /rdc_1bit_1/Q(undef) and /BlankPixel_counter/CE(ce)
+WARNING: [BD 41-1731] Type mismatch between connected pins: /rdc_1bit_1/Q(undef) and /add_yAxis/CE(ce)
+WARNING: [BD 41-1731] Type mismatch between connected pins: /rdc_1bit_0/Q(undef) and /add_xAxis/SCLR(rst)
+WARNING: [BD 41-1731] Type mismatch between connected pins: /rdc_1bit_0/Q(undef) and /add_yAxis/SCLR(rst)
+WARNING: [BD 41-1731] Type mismatch between connected pins: /rdc_1bit_0/Q(undef) and /BlankPixel_counter/SCLR(rst)
+Successfully read diagram <c_counter_binary> from BD file <C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/c_counter_binary/c_counter_binary.bd>
+connect_bd_net [get_bd_ports CLK] [get_bd_pins detect_end_image_0/CLK]
+save_bd_design
+Wrote  : <C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/c_counter_binary/c_counter_binary.bd> 
+Wrote  : <C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/c_counter_binary/ui/bd_8ec3d9e0.ui> 
+open_bd_design {C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/detection_centre/detection_centre.bd}
+generate_target Simulation [get_files C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/c_counter_binary/c_counter_binary.bd]
+INFO: [xilinx.com:ip:c_addsub:12.0-913] /add_xAxis A_Width has been set to manual on the GUI. It will not be updated during validation with a propagated value.
+INFO: [xilinx.com:ip:c_addsub:12.0-913] /add_xAxis A_Type has been set to manual on the GUI. It will not be updated during validation with a propagated value.
+INFO: [xilinx.com:ip:c_addsub:12.0-913] /add_xAxis B_Width has been set to manual on the GUI. It will not be updated during validation with a propagated value.
+INFO: [xilinx.com:ip:c_addsub:12.0-913] /add_xAxis B_Type has been set to manual on the GUI. It will not be updated during validation with a propagated value.
+INFO: [xilinx.com:ip:div_gen:5.1-913] /div_yAxis dividend_and_quotient_width has been set to manual on the GUI. It will not be updated during validation with a propagated value.
+INFO: [xilinx.com:ip:div_gen:5.1-913] /div_yAxis operand_sign has been set to manual on the GUI. It will not be updated during validation with a propagated value.
+INFO: [xilinx.com:ip:div_gen:5.1-913] /div_yAxis divisor_width has been set to manual on the GUI. It will not be updated during validation with a propagated value.
+INFO: [xilinx.com:ip:div_gen:5.1-913] /div_xAxis dividend_and_quotient_width has been set to manual on the GUI. It will not be updated during validation with a propagated value.
+INFO: [xilinx.com:ip:div_gen:5.1-913] /div_xAxis operand_sign has been set to manual on the GUI. It will not be updated during validation with a propagated value.
+INFO: [xilinx.com:ip:div_gen:5.1-913] /div_xAxis divisor_width has been set to manual on the GUI. It will not be updated during validation with a propagated value.
+INFO: [xilinx.com:ip:c_addsub:12.0-913] /add_yAxis A_Width has been set to manual on the GUI. It will not be updated during validation with a propagated value.
+INFO: [xilinx.com:ip:c_addsub:12.0-913] /add_yAxis A_Type has been set to manual on the GUI. It will not be updated during validation with a propagated value.
+INFO: [xilinx.com:ip:c_addsub:12.0-913] /add_yAxis B_Width has been set to manual on the GUI. It will not be updated during validation with a propagated value.
+INFO: [xilinx.com:ip:c_addsub:12.0-913] /add_yAxis B_Type has been set to manual on the GUI. It will not be updated during validation with a propagated value.
+Wrote  : <C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/c_counter_binary/c_counter_binary.bd> 
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/div_xAxis/s_axis_divisor_tdata'(16) to net 'BlankPixel_counter_Q'(11) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/div_yAxis/s_axis_divisor_tdata'(16) to net 'BlankPixel_counter_Q'(11) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/div_xAxis/s_axis_dividend_tdata'(24) to net 'add_xAxis_S'(18) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/div_yAxis/s_axis_dividend_tdata'(24) to net 'add_yAxis_S'(18) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+VHDL Output written to : C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/c_counter_binary/synth/c_counter_binary.vhd
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/div_xAxis/s_axis_divisor_tdata'(16) to net 'BlankPixel_counter_Q'(11) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/div_yAxis/s_axis_divisor_tdata'(16) to net 'BlankPixel_counter_Q'(11) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/div_xAxis/s_axis_dividend_tdata'(24) to net 'add_xAxis_S'(18) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/div_yAxis/s_axis_dividend_tdata'(24) to net 'add_yAxis_S'(18) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+VHDL Output written to : C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/c_counter_binary/sim/c_counter_binary.vhd
+VHDL Output written to : C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/c_counter_binary/hdl/c_counter_binary_wrapper.vhd
+INFO: [BD 41-1029] Generation completed for the IP Integrator block BlankPixel_counter .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block Ligne_counter .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block add_xAxis .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block add_yAxis .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block column_counter .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block detect_end_image_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block div_xAxis .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block div_yAxis .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block divideur_select_outp_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block divideur_select_outp_1 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rdc_1bit_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rdc_1bit_1 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconstant_0 .
+Exporting to file C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/c_counter_binary/hw_handoff/c_counter_binary.hwh
+Generated Block Design Tcl file C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/c_counter_binary/hw_handoff/c_counter_binary_bd.tcl
+Generated Hardware Definition File C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/c_counter_binary/synth/c_counter_binary.hwdef
+export_ip_user_files -of_objects [get_files C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/c_counter_binary/c_counter_binary.bd] -no_script -sync -force -quiet
+export_simulation -of_objects [get_files C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/c_counter_binary/c_counter_binary.bd] -directory C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.ip_user_files/sim_scripts -ip_user_files_dir C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.ip_user_files -ipstatic_source_dir C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.ip_user_files/ipstatic -lib_map_path [list {modelsim=C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.cache/compile_simlib/modelsim} {questa=C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.cache/compile_simlib/questa} {riviera=C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.cache/compile_simlib/riviera} {activehdl=C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+launch_simulation
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'C:/Programs/Xilinx/Vivado/2018.2/data/xsim/xsim.ini' copied to run dir:'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'c_counter_binary_wrapper' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.sim/sim_1/behav/xsim/dgl_1080p_cea.data'
+INFO: [SIM-utils-43] Exported 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.sim/sim_1/behav/xsim/dgl_1280_1024_cea.data'
+INFO: [SIM-utils-43] Exported 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.sim/sim_1/behav/xsim/dgl_720p_cea.data'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj c_counter_binary_wrapper_vlog.prj"
+"xvhdl --incr --relax -prj c_counter_binary_wrapper_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.ip_user_files/bd/c_counter_binary/sim/c_counter_binary.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity c_counter_binary
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.ip_user_files/bd/c_counter_binary/ip/c_counter_binary_detect_end_image_0_1/sim/c_counter_binary_detect_end_image_0_1.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity c_counter_binary_detect_end_image_0_1
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/c_counter_binary/hdl/c_counter_binary_wrapper.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity c_counter_binary_wrapper
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: C:/Programs/Xilinx/Vivado/2018.2/bin/unwrapped/win64.o/xelab.exe -wto 4de401f60d8a4a99b8c94bc34a7b0475 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L xbip_utils_v3_0_9 -L c_reg_fd_v12_0_5 -L xbip_dsp48_wrapper_v3_0_4 -L xbip_pipe_v3_0_5 -L xbip_dsp48_addsub_v3_0_5 -L xbip_addsub_v3_0_5 -L c_addsub_v12_0_12 -L c_gate_bit_v12_0_5 -L xbip_counter_v3_0_5 -L c_counter_binary_v12_0_12 -L axi_utils_v2_0_5 -L xbip_bram18k_v3_0_5 -L mult_gen_v12_0_14 -L floating_point_v7_0_15 -L xbip_dsp48_mult_v3_0_5 -L xbip_dsp48_multadd_v3_0_5 -L div_gen_v5_1_13 -L xlconstant_v1_1_5 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot c_counter_binary_wrapper_behav xil_defaultlib.c_counter_binary_wrapper xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package unisim.vcomponents
+Compiling package c_counter_binary_v12_0_12.c_counter_binary_v12_0_12_viv_co...
+Compiling package xbip_utils_v3_0_9.xbip_utils_v3_0_9_pkg
+Compiling package xbip_counter_v3_0_5.xbip_counter_v3_0_5_viv_comp
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling package xbip_counter_v3_0_5.xbip_counter_v3_0_5_pkg
+Compiling package c_counter_binary_v12_0_12.c_counter_binary_v12_0_12_pkg
+Compiling package c_addsub_v12_0_12.c_addsub_v12_0_12_pkg_legacy
+Compiling package c_reg_fd_v12_0_5.c_reg_fd_v12_0_5_viv_comp
+Compiling package c_addsub_v12_0_12.c_addsub_v12_0_12_pkg
+Compiling package c_addsub_v12_0_12.c_addsub_v12_0_12_viv_comp
+Compiling package xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv_comp
+Compiling package xbip_addsub_v3_0_5.xbip_addsub_v3_0_5_viv_comp
+Compiling package div_gen_v5_1_13.div_gen_v5_1_13_viv_comp
+Compiling package axi_utils_v2_0_5.axi_utils_v2_0_5_pkg
+Compiling package ieee.math_real
+Compiling package axi_utils_v2_0_5.global_util_pkg
+Compiling package axi_utils_v2_0_5.axi_utils_comps
+Compiling package xbip_bram18k_v3_0_5.xbip_bram18k_v3_0_5_pkg
+Compiling package div_gen_v5_1_13.div_gen_pkg
+Compiling package ieee.std_logic_signed
+Compiling package div_gen_v5_1_13.pkg_addsub
+Compiling package vl.vl_types
+Compiling module xil_defaultlib.glbl
+Compiling architecture structural of entity c_reg_fd_v12_0_5.c_reg_fd_v12_0_5_viv [\c_reg_fd_v12_0_5_viv(c_width=11...]
+Compiling architecture muxcy_v of entity unisim.MUXCY [muxcy_default]
+Compiling architecture xorcy_v of entity unisim.XORCY [xorcy_default]
+Compiling architecture rtl of entity c_addsub_v12_0_12.c_addsub_v12_0_12_lut6_legacy [\c_addsub_v12_0_12_lut6_legacy(c...]
+Compiling architecture synth of entity c_addsub_v12_0_12.c_addsub_v12_0_12_fabric_legacy [\c_addsub_v12_0_12_fabric_legacy...]
+Compiling architecture synth of entity c_addsub_v12_0_12.c_addsub_v12_0_12_legacy [\c_addsub_v12_0_12_legacy(c_fami...]
+Compiling architecture synth of entity c_counter_binary_v12_0_12.c_counter_binary_v12_0_12_legacy [\c_counter_binary_v12_0_12_legac...]
+Compiling architecture synth of entity c_counter_binary_v12_0_12.c_counter_binary_v12_0_12_viv [\c_counter_binary_v12_0_12_viv(c...]
+Compiling architecture xilinx of entity c_counter_binary_v12_0_12.c_counter_binary_v12_0_12 [\c_counter_binary_v12_0_12(c_xde...]
+Compiling architecture c_counter_binary_blankpixel_counter_0_arch of entity xil_defaultlib.c_counter_binary_BlankPixel_counter_0 [c_counter_binary_blankpixel_coun...]
+Compiling architecture synth of entity c_counter_binary_v12_0_12.c_counter_binary_v12_0_12_legacy [\c_counter_binary_v12_0_12_legac...]
+Compiling architecture synth of entity c_counter_binary_v12_0_12.c_counter_binary_v12_0_12_viv [\c_counter_binary_v12_0_12_viv(c...]
+Compiling architecture xilinx of entity c_counter_binary_v12_0_12.c_counter_binary_v12_0_12 [\c_counter_binary_v12_0_12(c_xde...]
+Compiling architecture c_counter_binary_ligne_counter_0_arch of entity xil_defaultlib.c_counter_binary_Ligne_counter_0 [c_counter_binary_ligne_counter_0...]
+Compiling architecture structural of entity c_reg_fd_v12_0_5.c_reg_fd_v12_0_5_viv [\c_reg_fd_v12_0_5_viv(c_width=18...]
+Compiling architecture rtl of entity c_addsub_v12_0_12.c_addsub_v12_0_12_lut6_legacy [\c_addsub_v12_0_12_lut6_legacy(c...]
+Compiling architecture synth of entity c_addsub_v12_0_12.c_addsub_v12_0_12_fabric_legacy [\c_addsub_v12_0_12_fabric_legacy...]
+Compiling architecture synth of entity c_addsub_v12_0_12.c_addsub_v12_0_12_legacy [\c_addsub_v12_0_12_legacy(c_fami...]
+Compiling architecture synth of entity c_addsub_v12_0_12.c_addsub_v12_0_12_viv [\c_addsub_v12_0_12_viv(c_xdevice...]
+Compiling architecture xilinx of entity c_addsub_v12_0_12.c_addsub_v12_0_12 [\c_addsub_v12_0_12(c_xdevicefami...]
+Compiling architecture c_counter_binary_add_xaxis_1_arch of entity xil_defaultlib.c_counter_binary_add_xAxis_1 [c_counter_binary_add_xaxis_1_def...]
+Compiling architecture c_counter_binary_add_yaxis_0_arch of entity xil_defaultlib.c_counter_binary_add_yAxis_0 [c_counter_binary_add_yaxis_0_def...]
+Compiling architecture synth of entity c_counter_binary_v12_0_12.c_counter_binary_v12_0_12_legacy [\c_counter_binary_v12_0_12_legac...]
+Compiling architecture synth of entity c_counter_binary_v12_0_12.c_counter_binary_v12_0_12_viv [\c_counter_binary_v12_0_12_viv(c...]
+Compiling architecture xilinx of entity c_counter_binary_v12_0_12.c_counter_binary_v12_0_12 [\c_counter_binary_v12_0_12(c_xde...]
+Compiling architecture c_counter_binary_column_counter_0_arch of entity xil_defaultlib.c_counter_binary_column_counter_0 [c_counter_binary_column_counter_...]
+Compiling architecture behavioral of entity xil_defaultlib.detect_end_image [detect_end_image_default]
+Compiling architecture c_counter_binary_detect_end_image_0_1_arch of entity xil_defaultlib.c_counter_binary_detect_end_image_0_1 [c_counter_binary_detect_end_imag...]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_latency=...]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_latency=...]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_latency=...]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_latency=...]
+Compiling architecture rtl of entity div_gen_v5_1_13.c_addsub_lut6 [\c_addsub_lut6(c_width=12,c_add_...]
+Compiling architecture synth of entity div_gen_v5_1_13.c_addsub_viv [\c_addsub_viv(c_a_width=12,c_b_w...]
+Compiling architecture virtex of entity div_gen_v5_1_13.addsubreg_v [\addsubreg_v(c_bus_width=12,c_ai...]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_latency=...]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_latency=...]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_latency=...]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_latency=...]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_latency=...]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_latency=...]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_latency=...]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_latency=...]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_latency=...]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_latency=...]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_latency=...]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_latency=...]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_latency=...]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_latency=...]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_latency=...]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_latency=...]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_latency=...]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_latency=...]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_latency=...]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_latency=...]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_latency=...]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_latency=...]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_latency=...]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_latency=...]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_latency=...]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_latency=...]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_latency=...]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_latency=...]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_latency=...]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_latency=...]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_latency=...]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_latency=...]
+Compiling architecture rtl of entity div_gen_v5_1_13.c_addsub_lut6 [\c_addsub_lut6(c_width=12,c_add_...]
+Compiling architecture synth of entity div_gen_v5_1_13.c_addsub_viv [\c_addsub_viv(c_a_width=12,c_b_w...]
+Compiling architecture virtex of entity div_gen_v5_1_13.addsubreg_v [\addsubreg_v(c_bus_width=12,c_ha...]
+Compiling architecture virtex of entity div_gen_v5_1_13.dividervdc_v [\dividervdc_v(bus_num=18,bus_div...]
+Compiling architecture synth of entity div_gen_v5_1_13.bip_sdivider_synth [\bip_sdivider_synth(c_xdevicefam...]
+Compiling architecture synth of entity div_gen_v5_1_13.div_gen_synth [\div_gen_synth(c_xdevicefamily="...]
+Compiling architecture synth of entity xbip_pipe_v3_0_5.xbip_pipe_v3_0_5_viv [\xbip_pipe_v3_0_5_viv(c_latency=...]
+Compiling architecture synth of entity div_gen_v5_1_13.div_gen_v5_1_13_viv [\div_gen_v5_1_13_viv(c_xdevicefa...]
+Compiling architecture xilinx of entity div_gen_v5_1_13.div_gen_v5_1_13 [\div_gen_v5_1_13(c_xdevicefamily...]
+Compiling architecture c_counter_binary_div_xaxis_1_arch of entity xil_defaultlib.c_counter_binary_div_xAxis_1 [c_counter_binary_div_xaxis_1_def...]
+Compiling architecture c_counter_binary_div_yaxis_0_arch of entity xil_defaultlib.c_counter_binary_div_yAxis_0 [c_counter_binary_div_yaxis_0_def...]
+Compiling architecture behavioral of entity xil_defaultlib.divideur_select_output [divideur_select_output_default]
+Compiling architecture c_counter_binary_divideur_select_outp_0_0_arch of entity xil_defaultlib.c_counter_binary_divideur_select_outp_0_0 [c_counter_binary_divideur_select...]
+Compiling architecture c_counter_binary_divideur_select_outp_1_0_arch of entity xil_defaultlib.c_counter_binary_divideur_select_outp_1_0 [c_counter_binary_divideur_select...]
+Compiling architecture behavioral of entity xil_defaultlib.rdc_1bit [rdc_1bit_default]
+Compiling architecture c_counter_binary_rdc_1bit_0_0_arch of entity xil_defaultlib.c_counter_binary_rdc_1bit_0_0 [c_counter_binary_rdc_1bit_0_0_de...]
+Compiling architecture c_counter_binary_rdc_1bit_1_0_arch of entity xil_defaultlib.c_counter_binary_rdc_1bit_1_0 [c_counter_binary_rdc_1bit_1_0_de...]
+Compiling module xlconstant_v1_1_5.xlconstant_v1_1_5_xlconstant(CON...
+Compiling module xil_defaultlib.c_counter_binary_xlconstant_0_1
+Compiling architecture structure of entity xil_defaultlib.c_counter_binary [c_counter_binary_default]
+Compiling architecture structure of entity xil_defaultlib.c_counter_binary_wrapper
+Built simulation snapshot c_counter_binary_wrapper_behav
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 1315.582 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '7' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "c_counter_binary_wrapper_behav -key {Behavioral:sim_1:Functional:c_counter_binary_wrapper} -tclbatch {c_counter_binary_wrapper.tcl} -view {C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/detection_centre_wrapper_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2018.2
+Time resolution is 1 ps
+open_wave_config C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/detection_centre_wrapper_behav.wcfg
+source c_counter_binary_wrapper.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 10ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'c_counter_binary_wrapper_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 10ns
+launch_simulation: Time (s): cpu = 00:00:09 ; elapsed = 00:00:21 . Memory (MB): peak = 1335.863 ; gain = 24.582
+add_force {/c_counter_binary_wrapper/CLK} -radix hex {1 0ns} {0 5000ps} -repeat_every 10000ps
+add_force {/c_counter_binary_wrapper/CE_column_count} -radix hex {1 0ns}
+add_force {/c_counter_binary_wrapper/CE_ligne_count} -radix hex {1 0ns}
+add_force {/c_counter_binary_wrapper/Pixel_White_Black} -radix hex {0 0ns}
+add_force {/c_counter_binary_wrapper/RESET} -radix hex {1 0ns}
+run 12 ns
+add_force {/c_counter_binary_wrapper/RESET} -radix hex {0 0ns}
+run 12 us
+current_bd_design [get_bd_designs c_counter_binary]
+update_module_reference {HDMI_bd_detect_end_image_0_2 c_counter_binary_detect_end_image_0_1 detection_centre_detect_end_image_0_0}
+INFO: [IP_Flow 19-5107] Inferred bus interface 'CLK' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+WARNING: [IP_Flow 19-3153] Bus Interface 'CLK': ASSOCIATED_BUSIF bus parameter is missing.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/repo'.
+Upgrading 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/HDMI_bd.bd'
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/HDMI_bd_detect_end_image_0_2_synth_1
+
+INFO: [IP_Flow 19-1972] Upgraded HDMI_bd_detect_end_image_0_2 from detect_end_image_v1_0 1.0 to detect_end_image_v1_0 1.0
+WARNING: [BD 41-1731] Type mismatch between connected pins: /Detect_centre/div_xAxis/aclken(ce) and /Detect_centre/detect_end_image_0_upgraded_ipi/fin(undef)
+WARNING: [BD 41-1731] Type mismatch between connected pins: /Detect_centre/div_yAxis/aclken(ce) and /Detect_centre/detect_end_image_0_upgraded_ipi/fin(undef)
+Wrote  : <C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/HDMI_bd.bd> 
+Wrote  : <C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/ui/bd_a3426369.ui> 
+Wrote  : <C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/ui/bd_43bf9f4e.ui> 
+Upgrading 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/c_counter_binary/c_counter_binary.bd'
+INFO: [IP_Flow 19-1972] Upgraded c_counter_binary_detect_end_image_0_1 from detect_end_image_v1_0 1.0 to detect_end_image_v1_0 1.0
+WARNING: [BD 41-1731] Type mismatch between connected pins: /div_xAxis/aclken(ce) and /detect_end_image_0_upgraded_ipi/fin(undef)
+WARNING: [BD 41-1731] Type mismatch between connected pins: /div_yAxis/aclken(ce) and /detect_end_image_0_upgraded_ipi/fin(undef)
+Wrote  : <C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/c_counter_binary/c_counter_binary.bd> 
+Upgrading 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/detection_centre/detection_centre.bd'
+INFO: [IP_Flow 19-1972] Upgraded detection_centre_detect_end_image_0_0 from detect_end_image_v1_0 1.0 to detect_end_image_v1_0 1.0
+WARNING: [BD 41-1731] Type mismatch between connected pins: /div_xAxis/aclken(ce) and /detect_end_image_0_upgraded_ipi/fin(undef)
+WARNING: [BD 41-1731] Type mismatch between connected pins: /div_yAxis/aclken(ce) and /detect_end_image_0_upgraded_ipi/fin(undef)
+Wrote  : <C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/detection_centre/detection_centre.bd> 
+Wrote  : <C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/detection_centre/ui/bd_5a8beaf5.ui> 
+update_module_reference: Time (s): cpu = 00:00:05 ; elapsed = 00:00:10 . Memory (MB): peak = 1353.715 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+exit
+INFO: [Common 17-206] Exiting Vivado at Wed Nov 28 12:46:29 2018...

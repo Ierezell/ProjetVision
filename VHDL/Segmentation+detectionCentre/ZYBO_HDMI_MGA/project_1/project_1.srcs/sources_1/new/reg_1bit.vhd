@@ -56,4 +56,6 @@ begin
     end if;
 end process;
 
+Q<=t;
+
 end Behavioral;

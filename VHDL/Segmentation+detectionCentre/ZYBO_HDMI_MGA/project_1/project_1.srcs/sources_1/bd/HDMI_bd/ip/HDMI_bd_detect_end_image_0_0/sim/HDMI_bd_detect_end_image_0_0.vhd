@@ -57,6 +57,7 @@ ENTITY HDMI_bd_detect_end_image_0_0 IS
   PORT (
     column : IN STD_LOGIC_VECTOR(10 DOWNTO 0);
     ligne : IN STD_LOGIC_VECTOR(10 DOWNTO 0);
+    CLK : IN STD_LOGIC;
     fin : OUT STD_LOGIC
   );
 END HDMI_bd_detect_end_image_0_0;
@@ -68,16 +69,22 @@ ARCHITECTURE HDMI_bd_detect_end_image_0_0_arch OF HDMI_bd_detect_end_image_0_0 I
     PORT (
       column : IN STD_LOGIC_VECTOR(10 DOWNTO 0);
       ligne : IN STD_LOGIC_VECTOR(10 DOWNTO 0);
+      CLK : IN STD_LOGIC;
       fin : OUT STD_LOGIC
     );
   END COMPONENT detect_end_image;
   ATTRIBUTE IP_DEFINITION_SOURCE : STRING;
   ATTRIBUTE IP_DEFINITION_SOURCE OF HDMI_bd_detect_end_image_0_0_arch: ARCHITECTURE IS "module_ref";
+  ATTRIBUTE X_INTERFACE_INFO : STRING;
+  ATTRIBUTE X_INTERFACE_PARAMETER : STRING;
+  ATTRIBUTE X_INTERFACE_PARAMETER OF CLK: SIGNAL IS "XIL_INTERFACENAME CLK, FREQ_HZ 100000000, PHASE 0.000, CLK_DOMAIN HDMI_bd_dvi2rgb_0_1_PixelClk";
+  ATTRIBUTE X_INTERFACE_INFO OF CLK: SIGNAL IS "xilinx.com:signal:clock:1.0 CLK CLK";
 BEGIN
   U0 : detect_end_image
     PORT MAP (
       column => column,
       ligne => ligne,
+      CLK => CLK,
       fin => fin
     );
 END HDMI_bd_detect_end_image_0_0_arch;

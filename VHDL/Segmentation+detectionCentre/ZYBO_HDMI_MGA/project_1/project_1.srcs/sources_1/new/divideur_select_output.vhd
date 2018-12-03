@@ -32,14 +32,18 @@ use IEEE.STD_LOGIC_1164.ALL;
 --use UNISIM.VComponents.all;
 
 entity divideur_select_output is
-    Port ( Input : in STD_LOGIC_VECTOR (39 downto 0);
-           Output : out STD_LOGIC_VECTOR (11 downto 0));
+    Port ( Entree : in STD_LOGIC_VECTOR (39 downto 0);
+           Sortie : out STD_LOGIC_VECTOR (11 downto 0));
 end divideur_select_output;
 
 architecture Behavioral of divideur_select_output is
 
+signal inutile : STD_LOGIC_VECTOR (27 downto 0);
+
 begin
 
-Output<=Input(27 downto 16);
+inutile(27 downto 16) <= Entree(39 downto 28);
+inutile(15 downto 0) <= Entree ( 15 downto 0);
+Sortie<=Entree(27 downto 16);
 
 end Behavioral;

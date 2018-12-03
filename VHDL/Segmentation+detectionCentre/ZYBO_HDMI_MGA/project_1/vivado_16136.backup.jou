@@ -1,0 +1,19 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Thu Nov 29 19:52:30 2018
+# Process ID: 16136
+# Current directory: E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent11916 E:\VLSI\Segmentation+detectionCentre\ZYBO_HDMI_MGA\project_1\project_1.xpr
+# Log file: E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/vivado.log
+# Journal file: E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.xpr
+reset_run detection_centre_divideur_select_outp_0_0_synth_1
+reset_run detection_centre_divideur_select_outp_0_1_synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+update_compile_order -fileset sources_1

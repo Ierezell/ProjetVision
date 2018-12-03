@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='E:/VLSI/Projet/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/HDMI_bd_Ligne_counter_0_synth_1'
+HD_PWD='E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/HDMI_bd_ligne_counter_0_synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
@@ -40,4 +40,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log HDMI_bd_Ligne_counter_0.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source HDMI_bd_Ligne_counter_0.tcl
+EAStep vivado -log HDMI_bd_ligne_counter_0.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source HDMI_bd_ligne_counter_0.tcl

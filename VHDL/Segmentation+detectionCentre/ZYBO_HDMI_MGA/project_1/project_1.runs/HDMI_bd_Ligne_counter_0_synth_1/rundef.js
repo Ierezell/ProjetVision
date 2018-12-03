@@ -23,7 +23,7 @@ eval( EAInclude(ISEJScriptLib) );
 
 
 ISEStep( "vivado",
-         "-log HDMI_bd_Ligne_counter_0.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source HDMI_bd_Ligne_counter_0.tcl" );
+         "-log HDMI_bd_ligne_counter_0.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source HDMI_bd_ligne_counter_0.tcl" );
 
 
 

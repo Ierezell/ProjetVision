@@ -1,4 +1,4 @@
-NumberHits:1
-Timestamp: Sat Nov 24 05:30:41 UTC 2018
+NumberHits:3
+Timestamp: Wed Nov 28 17:36:25 UTC 2018
 VLNV: xilinx.com:ip:div_gen:5.1
 SynthRuntime: 165

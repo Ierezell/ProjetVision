@@ -1,0 +1,7 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"divideur_Nbit_by_Mbits_func_synth.vhd" \
+"../../../../../project_1.srcs/sources_1/new/divideur_Nbit_by_Mbits.vhd" \
+
+# Do not sort compile order
+nosort

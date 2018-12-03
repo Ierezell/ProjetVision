@@ -32,15 +32,15 @@ use IEEE.STD_LOGIC_1164.ALL;
 --use UNISIM.VComponents.all;
 
 entity Seuillage is
-    Port ( INPUT : in STD_LOGIC_VECTOR (7 downto 0);
-           OUTPUT1 : out STD_LOGIC;
-           OUTPUT2 : out STD_LOGIC_VECTOR (23 downto 0));
+    Port ( entree : in STD_LOGIC_VECTOR (7 downto 0);
+           PixelNoirBlanc : out STD_LOGIC;
+           RGB_out : out STD_LOGIC_VECTOR (23 downto 0));
 end Seuillage;
 
 architecture Behavioral of Seuillage is
 
 begin
-OUTPUT1 <= '1' when INPUT > "10010000" else '0';
+PixelNoirBlanc <= '1' when entree > "00010000" else '0';
 
-OUTPUT2 <= "111111111111111111111111" when INPUT > "10010000" else "000000000000000000000000";
+RGB_out <= "111111111111111111111111" when entree > "00010000" else "000000000000000000000000";
 end Behavioral;

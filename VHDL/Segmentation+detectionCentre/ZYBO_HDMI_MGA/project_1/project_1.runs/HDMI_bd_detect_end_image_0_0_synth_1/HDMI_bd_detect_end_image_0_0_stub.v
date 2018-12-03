@@ -1,8 +1,8 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.2.1 (win64) Build 2288692 Thu Jul 26 18:24:02 MDT 2018
-// Date        : Sat Nov 24 00:32:51 2018
-// Host        : pcetu-132 running 64-bit major release  (build 9200)
+// Date        : Sun Dec  2 20:55:47 2018
+// Host        : pcetu-135 running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode synth_stub -rename_top decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix -prefix
 //               decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ HDMI_bd_detect_end_image_0_0_stub.v
 // Design      : HDMI_bd_detect_end_image_0_0
@@ -14,9 +14,10 @@
 // The synthesis directives are for Synopsys Synplify support to prevent IO buffer insertion.
 // Please paste the declaration into a Verilog source file or add the file as an additional source.
 (* x_core_info = "detect_end_image,Vivado 2018.2.1" *)
-module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix(column, ligne, fin)
-/* synthesis syn_black_box black_box_pad_pin="column[10:0],ligne[10:0],fin" */;
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix(column, ligne, CLK, fin)
+/* synthesis syn_black_box black_box_pad_pin="column[10:0],ligne[10:0],CLK,fin" */;
   input [10:0]column;
   input [10:0]ligne;
+  input CLK;
   output fin;
 endmodule

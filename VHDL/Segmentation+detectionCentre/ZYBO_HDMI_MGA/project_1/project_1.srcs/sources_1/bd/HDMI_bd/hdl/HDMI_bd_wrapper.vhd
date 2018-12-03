@@ -1,8 +1,8 @@
 --Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2018.2.1 (win64) Build 2288692 Thu Jul 26 18:24:02 MDT 2018
---Date        : Sat Nov 24 00:20:19 2018
---Host        : pcetu-132 running 64-bit major release  (build 9200)
+--Date        : Sun Dec  2 20:49:00 2018
+--Host        : pcetu-135 running 64-bit major release  (build 9200)
 --Command     : generate_target HDMI_bd_wrapper.bd
 --Design      : HDMI_bd_wrapper
 --Purpose     : IP block netlist
@@ -14,6 +14,7 @@ use UNISIM.VCOMPONENTS.ALL;
 entity HDMI_bd_wrapper is
   port (
     CLK : in STD_LOGIC;
+    USER_RESET : in STD_LOGIC;
     hdmi_in_clk_n : in STD_LOGIC;
     hdmi_in_clk_p : in STD_LOGIC;
     hdmi_in_data_n : in STD_LOGIC_VECTOR ( 2 downto 0 );
@@ -47,8 +48,9 @@ architecture STRUCTURE of HDMI_bd_wrapper is
     hdmi_out_data_p : out STD_LOGIC_VECTOR ( 2 downto 0 );
     hdmi_out_data_n : out STD_LOGIC_VECTOR ( 2 downto 0 );
     CLK : in STD_LOGIC;
+    hdmi_in_hpd : out STD_LOGIC_VECTOR ( 0 to 0 );
     reset : in STD_LOGIC;
-    hdmi_in_hpd : out STD_LOGIC_VECTOR ( 0 to 0 )
+    USER_RESET : in STD_LOGIC
   );
   end component HDMI_bd;
   component IOBUF is
@@ -69,6 +71,7 @@ begin
 HDMI_bd_i: component HDMI_bd
      port map (
       CLK => CLK,
+      USER_RESET => USER_RESET,
       hdmi_in_clk_n => hdmi_in_clk_n,
       hdmi_in_clk_p => hdmi_in_clk_p,
       hdmi_in_data_n(2 downto 0) => hdmi_in_data_n(2 downto 0),

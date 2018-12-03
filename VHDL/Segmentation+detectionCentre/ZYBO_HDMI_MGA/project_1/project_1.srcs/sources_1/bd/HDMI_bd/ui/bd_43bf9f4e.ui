@@ -1,0 +1,53 @@
+{
+   ExpandedHierarchyInLayout: "",
+   commentid: "",
+   guistr: "# # String gsaved with Nlview 6.8.5  2018-01-30 bk=1.4354 VDI=40 GEI=35 GUI=JA:1.6 non-TLS-threadsafe
+#  -string -flagsOSRD
+preplace port CE_column_count -pg 1 -y 240 -defaultsOSRD
+preplace port RESET -pg 1 -y 50 -defaultsOSRD
+preplace port CLK -pg 1 -y 210 -defaultsOSRD
+preplace port CE_ligne_count -pg 1 -y 30 -defaultsOSRD
+preplace port Pixel_White_Black -pg 1 -y 90 -defaultsOSRD
+preplace portBus nb_column -pg 1 -y 220 -defaultsOSRD
+preplace portBus xMoy -pg 1 -y 800 -defaultsOSRD
+preplace portBus yMoy -pg 1 -y 390 -defaultsOSRD
+preplace portBus nb_ligne -pg 1 -y 10 -defaultsOSRD
+preplace inst divideur_select_outp_1 -pg 1 -lvl 4 -y -610 -defaultsOSRD
+preplace inst column_counter -pg 1 -lvl 9 -y -610 -defaultsOSRD
+preplace inst xlconstant_0 -pg 1 -lvl 1 -y -610 -defaultsOSRD
+preplace inst rdc_1bit_1 -pg 1 -lvl 2 -y -610 -defaultsOSRD
+preplace inst div_yAxis -pg 1 -lvl 6 -y -610 -defaultsOSRD
+preplace inst div_xAxis -pg 1 -lvl 7 -y -610 -defaultsOSRD
+preplace inst Blank_pixel_counter -pg 1 -lvl 15 -y -610 -defaultsOSRD
+preplace inst add_Nbits_0 -pg 1 -lvl 11 -y -610 -defaultsOSRD
+preplace inst adapt_input_ouput_0 -pg 1 -lvl 14 -y -610 -defaultsOSRD
+preplace inst ligne_counter -pg 1 -lvl 3 -y -610 -defaultsOSRD
+preplace inst add_Nbits_1 -pg 1 -lvl 10 -y -610 -defaultsOSRD
+preplace inst adapt_input_ouput_1 -pg 1 -lvl 13 -y -610 -defaultsOSRD
+preplace inst adapt_input_ouput_2 -pg 1 -lvl 12 -y -610 -defaultsOSRD
+preplace inst detect_end_image_0 -pg 1 -lvl 8 -y -610 -defaultsOSRD
+preplace inst divideur_select_outp_0 -pg 1 -lvl 5 -y -610 -defaultsOSRD
+preplace netloc column_counter_Q 1 7 9 2190 -690 N -690 2660 -680 N -680 N -680 N -680 N -680 3950 -700 4210
+preplace netloc adapt_input_ouput_2_sortie 1 5 8 1260 -420 N -420 N -420 N -420 N -420 N -420 N -420 3400
+preplace netloc Ligne_counter_Q 1 3 13 650 -550 N -550 1230 -470 N -470 2180 -530 N -530 N -530 2900 -690 N -690 N -690 N -690 N -690 4200
+preplace netloc divideur_select_outp_0_Output 1 5 11 1220 380 N 380 N 380 N 380 N 380 N 380 N 380 N 380 N 380 N 380 4200
+preplace netloc adapt_input_ouput_0_sortie 1 5 10 1250 -430 1700 -430 N -430 N -430 N -430 N -430 N -430 N -430 N -430 3950
+preplace netloc CLK_1 1 0 15 40J 20 210 -700 420 -690 N -690 N -690 1240 -480 1720 -480 2160 -700 2410 -700 N -700 N -700 N -700 N -700 N -700 3940
+preplace netloc CE_column_count_1 1 0 9 NJ 240 N 240 N 240 N 240 N 240 N 240 N 240 2190 -520 2420
+preplace netloc div_yAxis_m_axis_dout_tdata 1 3 4 660 -490 N -490 N -490 1690
+preplace netloc Pixel_White_Black_1 1 0 2 30J 10 220
+preplace netloc adapt_input_ouput_1_sortie 1 6 8 1730 -490 N -490 N -490 N -490 N -490 N -490 N -490 3670
+preplace netloc CE_ligne_count_1 1 0 3 NJ 30 N 30 420
+preplace netloc add_xAxis_S 1 10 3 2910 -530 3130 -550 3410
+preplace netloc add_yAxis_S 1 9 3 2670 -540 2890 -540 3140
+preplace netloc xlconstant_0_dout 1 1 1 200
+preplace netloc divideur_select_outp_1_Output 1 4 12 920 -520 1200 390 N 390 N 390 N 390 N 390 N 390 N 390 N 390 N 390 N 390 N
+preplace netloc div_xAxis_m_axis_dout_tdata 1 4 4 930 250 N 250 N 250 2150
+preplace netloc Net1 1 2 13 400 -510 N -510 N -510 1210 -450 N -450 2170 -710 N -710 N -710 N -710 N -710 N -710 N -710 3960
+preplace netloc Net 1 5 4 1270 -460 1710 -460 N -460 2410
+preplace netloc ligne_counter2_Q 1 13 3 3680 -530 N -530 4190
+preplace netloc RESET_counter_ligne_and_column_1 1 0 15 20J -670 220 -710 410 -500 N -500 N -500 1190 -440 N -440 N -440 2430 -520 N -520 N -520 N -520 N -520 N -520 3970
+levelinfo -pg 1 0 120 310 540 790 1060 1480 1940 2300 2550 2780 3020 3270 3540 3810 4080 4230 -top -730 -bot 990
+",
+}
+0

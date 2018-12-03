@@ -34,7 +34,7 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 entity declench_retard is
     Port ( CLK : in STD_LOGIC;
            RESET : in STD_LOGIC;
-           OUTPUT : out STD_LOGIC);
+           Activation_out : out STD_LOGIC);
 end declench_retard;
 
 architecture Behavioral of declench_retard is
@@ -44,26 +44,28 @@ signal sortie : STD_LOGIC;
 
 begin
 
-process(RESET,CLK,T)
+process(RESET,CLK)
 begin
     if RESET='0' then
         T<="00";
     elsif CLK='1' AND CLK'event then
-        T<= T + "1";
+        T<= T + '1';
     else
         T<=T;
     end if;
 end process;
 
-process(T)
+process(RESET,CLK,T)
 begin
-    if T="10" then
-        sortie<='1';
+    if RESET='0' then
+        sortie<='0';
+    elsif CLK='1' AND CLK'event AND T="10" then
+         sortie<='1';
     else
         sortie<=sortie;
     end if;
 end process;
 
-OUTPUT<=sortie;
+Activation_out<=sortie;
 
 end Behavioral;

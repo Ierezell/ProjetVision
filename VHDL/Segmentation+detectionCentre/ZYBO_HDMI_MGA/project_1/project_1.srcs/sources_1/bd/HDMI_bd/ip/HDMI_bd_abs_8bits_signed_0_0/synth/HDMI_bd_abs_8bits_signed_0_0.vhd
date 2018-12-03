@@ -55,8 +55,8 @@ USE ieee.numeric_std.ALL;
 
 ENTITY HDMI_bd_abs_8bits_signed_0_0 IS
   PORT (
-    INPUT : IN STD_LOGIC_VECTOR(8 DOWNTO 0);
-    OUTPUT : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
+    entree : IN STD_LOGIC_VECTOR(8 DOWNTO 0);
+    sortie : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
   );
 END HDMI_bd_abs_8bits_signed_0_0;
 
@@ -65,8 +65,8 @@ ARCHITECTURE HDMI_bd_abs_8bits_signed_0_0_arch OF HDMI_bd_abs_8bits_signed_0_0 I
   ATTRIBUTE DowngradeIPIdentifiedWarnings OF HDMI_bd_abs_8bits_signed_0_0_arch: ARCHITECTURE IS "yes";
   COMPONENT abs_8bits_signed IS
     PORT (
-      INPUT : IN STD_LOGIC_VECTOR(8 DOWNTO 0);
-      OUTPUT : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
+      entree : IN STD_LOGIC_VECTOR(8 DOWNTO 0);
+      sortie : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
     );
   END COMPONENT abs_8bits_signed;
   ATTRIBUTE X_CORE_INFO : STRING;
@@ -80,7 +80,7 @@ ARCHITECTURE HDMI_bd_abs_8bits_signed_0_0_arch OF HDMI_bd_abs_8bits_signed_0_0 I
 BEGIN
   U0 : abs_8bits_signed
     PORT MAP (
-      INPUT => INPUT,
-      OUTPUT => OUTPUT
+      entree => entree,
+      sortie => sortie
     );
 END HDMI_bd_abs_8bits_signed_0_0_arch;

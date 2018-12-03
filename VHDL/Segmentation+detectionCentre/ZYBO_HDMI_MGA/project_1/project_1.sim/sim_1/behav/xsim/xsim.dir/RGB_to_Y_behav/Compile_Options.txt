@@ -1,0 +1,1 @@
+-wto "4de401f60d8a4a99b8c94bc34a7b0475" --incr --debug "typical" --relax --mt "2" -L "xil_defaultlib" -L "secureip" -L "xpm" --snapshot "RGB_to_Y_behav" "xil_defaultlib.RGB_to_Y" -log "elaborate.log" 

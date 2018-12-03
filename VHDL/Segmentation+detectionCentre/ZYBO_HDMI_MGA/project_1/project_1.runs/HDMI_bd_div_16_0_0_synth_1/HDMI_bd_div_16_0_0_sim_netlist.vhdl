@@ -1,7 +1,7 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2018.2.1 (win64) Build 2288692 Thu Jul 26 18:24:02 MDT 2018
--- Date        : Sat Nov 24 00:37:00 2018
+-- Date        : Wed Nov 28 12:39:52 2018
 -- Host        : pcetu-132 running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim -rename_top decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix -prefix
 --               decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ HDMI_bd_div_16_0_0_sim_netlist.vhdl
@@ -16,8 +16,8 @@ library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
 entity decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix is
   port (
-    INPUT : in STD_LOGIC_VECTOR ( 13 downto 0 );
-    OUTPUT : out STD_LOGIC_VECTOR ( 7 downto 0 )
+    entree : in STD_LOGIC_VECTOR ( 13 downto 0 );
+    sortie : out STD_LOGIC_VECTOR ( 7 downto 0 )
   );
   attribute NotValidForBitStream : boolean;
   attribute NotValidForBitStream of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix : entity is true;
@@ -32,8 +32,8 @@ entity decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix is
 end decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix;
 
 architecture STRUCTURE of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix is
-  signal \^input\ : STD_LOGIC_VECTOR ( 13 downto 0 );
+  signal \^entree\ : STD_LOGIC_VECTOR ( 13 downto 0 );
 begin
-  OUTPUT(7 downto 0) <= \^input\(11 downto 4);
-  \^input\(11 downto 4) <= INPUT(11 downto 4);
+  \^entree\(11 downto 4) <= entree(11 downto 4);
+  sortie(7 downto 0) <= \^entree\(11 downto 4);
 end STRUCTURE;

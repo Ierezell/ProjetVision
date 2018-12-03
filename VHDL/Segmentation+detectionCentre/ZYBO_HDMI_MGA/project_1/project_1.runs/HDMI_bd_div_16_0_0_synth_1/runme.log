@@ -14,23 +14,23 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 10220 
+INFO: Helper process launched with PID 7788 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:05 . Memory (MB): peak = 390.891 ; gain = 100.797
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 390.129 ; gain = 101.328
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'HDMI_bd_div_16_0_0' [e:/VLSI/Projet/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/ip/HDMI_bd_div_16_0_0/synth/HDMI_bd_div_16_0_0.vhd:63]
-INFO: [Synth 8-3491] module 'div_16' declared at 'E:/VLSI/Projet/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/new/div_16.vhd:34' bound to instance 'U0' of component 'div_16' [e:/VLSI/Projet/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/ip/HDMI_bd_div_16_0_0/synth/HDMI_bd_div_16_0_0.vhd:81]
-INFO: [Synth 8-638] synthesizing module 'div_16' [E:/VLSI/Projet/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/new/div_16.vhd:39]
-INFO: [Synth 8-256] done synthesizing module 'div_16' (1#1) [E:/VLSI/Projet/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/new/div_16.vhd:39]
-INFO: [Synth 8-256] done synthesizing module 'HDMI_bd_div_16_0_0' (2#1) [e:/VLSI/Projet/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/ip/HDMI_bd_div_16_0_0/synth/HDMI_bd_div_16_0_0.vhd:63]
-WARNING: [Synth 8-3331] design div_16 has unconnected port INPUT[13]
-WARNING: [Synth 8-3331] design div_16 has unconnected port INPUT[12]
-WARNING: [Synth 8-3331] design div_16 has unconnected port INPUT[3]
-WARNING: [Synth 8-3331] design div_16 has unconnected port INPUT[2]
-WARNING: [Synth 8-3331] design div_16 has unconnected port INPUT[1]
-WARNING: [Synth 8-3331] design div_16 has unconnected port INPUT[0]
+INFO: [Synth 8-638] synthesizing module 'HDMI_bd_div_16_0_0' [c:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/ip/HDMI_bd_div_16_0_0/synth/HDMI_bd_div_16_0_0.vhd:63]
+INFO: [Synth 8-3491] module 'div_16' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/new/div_16.vhd:34' bound to instance 'U0' of component 'div_16' [c:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/ip/HDMI_bd_div_16_0_0/synth/HDMI_bd_div_16_0_0.vhd:81]
+INFO: [Synth 8-638] synthesizing module 'div_16' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/new/div_16.vhd:39]
+INFO: [Synth 8-256] done synthesizing module 'div_16' (1#1) [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/new/div_16.vhd:39]
+INFO: [Synth 8-256] done synthesizing module 'HDMI_bd_div_16_0_0' (2#1) [c:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/ip/HDMI_bd_div_16_0_0/synth/HDMI_bd_div_16_0_0.vhd:63]
+WARNING: [Synth 8-3331] design div_16 has unconnected port entree[13]
+WARNING: [Synth 8-3331] design div_16 has unconnected port entree[12]
+WARNING: [Synth 8-3331] design div_16 has unconnected port entree[3]
+WARNING: [Synth 8-3331] design div_16 has unconnected port entree[2]
+WARNING: [Synth 8-3331] design div_16 has unconnected port entree[1]
+WARNING: [Synth 8-3331] design div_16 has unconnected port entree[0]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:07 . Memory (MB): peak = 446.375 ; gain = 156.281
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 445.352 ; gain = 156.551
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -43,10 +43,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:07 . Memory (MB): peak = 446.375 ; gain = 156.281
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 445.352 ; gain = 156.551
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:07 . Memory (MB): peak = 446.375 ; gain = 156.281
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 445.352 ; gain = 156.551
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7z020clg400-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -59,25 +59,25 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 WARNING: [Constraints 18-5210] No constraint will be written out.
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.126 . Memory (MB): peak = 708.098 ; gain = 1.617
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.097 . Memory (MB): peak = 707.230 ; gain = 1.125
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:25 . Memory (MB): peak = 708.098 ; gain = 418.004
+Finished Constraint Validation : Time (s): cpu = 00:00:17 ; elapsed = 00:00:26 . Memory (MB): peak = 707.230 ; gain = 418.430
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:25 . Memory (MB): peak = 708.098 ; gain = 418.004
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:17 ; elapsed = 00:00:26 . Memory (MB): peak = 707.230 ; gain = 418.430
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:26 . Memory (MB): peak = 708.098 ; gain = 418.004
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:17 ; elapsed = 00:00:26 . Memory (MB): peak = 707.230 ; gain = 418.430
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:32 . Memory (MB): peak = 708.098 ; gain = 418.004
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:17 ; elapsed = 00:00:26 . Memory (MB): peak = 707.230 ; gain = 418.430
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -113,14 +113,14 @@ Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
 WARNING: [Synth 8-3330] design HDMI_bd_div_16_0_0 has an empty top module
-WARNING: [Synth 8-3331] design HDMI_bd_div_16_0_0 has unconnected port INPUT[13]
-WARNING: [Synth 8-3331] design HDMI_bd_div_16_0_0 has unconnected port INPUT[12]
-WARNING: [Synth 8-3331] design HDMI_bd_div_16_0_0 has unconnected port INPUT[3]
-WARNING: [Synth 8-3331] design HDMI_bd_div_16_0_0 has unconnected port INPUT[2]
-WARNING: [Synth 8-3331] design HDMI_bd_div_16_0_0 has unconnected port INPUT[1]
-WARNING: [Synth 8-3331] design HDMI_bd_div_16_0_0 has unconnected port INPUT[0]
+WARNING: [Synth 8-3331] design HDMI_bd_div_16_0_0 has unconnected port entree[13]
+WARNING: [Synth 8-3331] design HDMI_bd_div_16_0_0 has unconnected port entree[12]
+WARNING: [Synth 8-3331] design HDMI_bd_div_16_0_0 has unconnected port entree[3]
+WARNING: [Synth 8-3331] design HDMI_bd_div_16_0_0 has unconnected port entree[2]
+WARNING: [Synth 8-3331] design HDMI_bd_div_16_0_0 has unconnected port entree[1]
+WARNING: [Synth 8-3331] design HDMI_bd_div_16_0_0 has unconnected port entree[0]
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:36 . Memory (MB): peak = 708.098 ; gain = 418.004
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:27 . Memory (MB): peak = 707.230 ; gain = 418.430
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -132,13 +132,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:22 ; elapsed = 00:00:50 . Memory (MB): peak = 781.762 ; gain = 491.668
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:31 ; elapsed = 00:00:43 . Memory (MB): peak = 776.609 ; gain = 487.809
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:22 ; elapsed = 00:00:50 . Memory (MB): peak = 781.762 ; gain = 491.668
+Finished Timing Optimization : Time (s): cpu = 00:00:31 ; elapsed = 00:00:43 . Memory (MB): peak = 776.609 ; gain = 487.809
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -150,7 +150,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:22 ; elapsed = 00:00:50 . Memory (MB): peak = 781.762 ; gain = 491.668
+Finished Technology Mapping : Time (s): cpu = 00:00:31 ; elapsed = 00:00:43 . Memory (MB): peak = 776.609 ; gain = 487.809
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -174,7 +174,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:23 ; elapsed = 00:00:51 . Memory (MB): peak = 782.891 ; gain = 492.797
+Finished IO Insertion : Time (s): cpu = 00:00:32 ; elapsed = 00:00:44 . Memory (MB): peak = 777.910 ; gain = 489.109
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -187,7 +187,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:23 ; elapsed = 00:00:51 . Memory (MB): peak = 782.891 ; gain = 492.797
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:32 ; elapsed = 00:00:44 . Memory (MB): peak = 777.910 ; gain = 489.109
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -199,25 +199,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:23 ; elapsed = 00:00:51 . Memory (MB): peak = 782.891 ; gain = 492.797
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:32 ; elapsed = 00:00:44 . Memory (MB): peak = 777.910 ; gain = 489.109
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:23 ; elapsed = 00:00:51 . Memory (MB): peak = 782.891 ; gain = 492.797
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:32 ; elapsed = 00:00:44 . Memory (MB): peak = 777.910 ; gain = 489.109
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:23 ; elapsed = 00:00:51 . Memory (MB): peak = 782.891 ; gain = 492.797
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:32 ; elapsed = 00:00:44 . Memory (MB): peak = 777.910 ; gain = 489.109
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:23 ; elapsed = 00:00:51 . Memory (MB): peak = 782.891 ; gain = 492.797
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:32 ; elapsed = 00:00:44 . Memory (MB): peak = 777.910 ; gain = 489.109
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -242,11 +242,11 @@ Report Instance Areas:
 |1     |top      |       |     0|
 +------+---------+-------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:23 ; elapsed = 00:00:51 . Memory (MB): peak = 782.891 ; gain = 492.797
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:32 ; elapsed = 00:00:44 . Memory (MB): peak = 777.910 ; gain = 489.109
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 7 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:14 ; elapsed = 00:00:41 . Memory (MB): peak = 782.891 ; gain = 231.074
-Synthesis Optimization Complete : Time (s): cpu = 00:00:23 ; elapsed = 00:00:51 . Memory (MB): peak = 782.891 ; gain = 492.797
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:19 ; elapsed = 00:00:29 . Memory (MB): peak = 777.910 ; gain = 227.230
+Synthesis Optimization Complete : Time (s): cpu = 00:00:32 ; elapsed = 00:00:45 . Memory (MB): peak = 777.910 ; gain = 489.109
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
@@ -256,11 +256,11 @@ No Unisim elements were transformed.
 INFO: [Common 17-83] Releasing license: Synthesis
 14 Infos, 14 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:25 ; elapsed = 00:00:56 . Memory (MB): peak = 805.074 ; gain = 527.957
+synth_design: Time (s): cpu = 00:00:34 ; elapsed = 00:00:47 . Memory (MB): peak = 800.832 ; gain = 525.090
 WARNING: [Constraints 18-5210] No constraint will be written out.
-INFO: [Common 17-1381] The checkpoint 'E:/VLSI/Projet/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/HDMI_bd_div_16_0_0_synth_1/HDMI_bd_div_16_0_0.dcp' has been generated.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/HDMI_bd_div_16_0_0_synth_1/HDMI_bd_div_16_0_0.dcp' has been generated.
 WARNING: [Constraints 18-5210] No constraint will be written out.
-INFO: [Common 17-1381] The checkpoint 'E:/VLSI/Projet/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/HDMI_bd_div_16_0_0_synth_1/HDMI_bd_div_16_0_0.dcp' has been generated.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/HDMI_bd_div_16_0_0_synth_1/HDMI_bd_div_16_0_0.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file HDMI_bd_div_16_0_0_utilization_synth.rpt -pb HDMI_bd_div_16_0_0_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.223 . Memory (MB): peak = 805.633 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Sat Nov 24 00:37:08 2018...
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.053 . Memory (MB): peak = 801.117 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Wed Nov 28 12:39:52 2018...

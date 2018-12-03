@@ -1,10 +1,10 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2018.2.1 (win64) Build 2288692 Thu Jul 26 18:24:02 MDT 2018
--- Date        : Sat Nov 24 00:26:24 2018
--- Host        : pcetu-132 running 64-bit major release  (build 9200)
+-- Date        : Sun Dec  2 21:00:09 2018
+-- Host        : pcetu-135 running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim
---               E:/VLSI/Projet/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/ip/HDMI_bd_divideur_select_outp_1_0/HDMI_bd_divideur_select_outp_1_0_sim_netlist.vhdl
+--               e:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/ip/HDMI_bd_divideur_select_outp_1_0/HDMI_bd_divideur_select_outp_1_0_sim_netlist.vhdl
 -- Design      : HDMI_bd_divideur_select_outp_1_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -16,8 +16,8 @@ library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
 entity HDMI_bd_divideur_select_outp_1_0 is
   port (
-    Input : in STD_LOGIC_VECTOR ( 39 downto 0 );
-    Output : out STD_LOGIC_VECTOR ( 11 downto 0 )
+    Entree : in STD_LOGIC_VECTOR ( 39 downto 0 );
+    Sortie : out STD_LOGIC_VECTOR ( 11 downto 0 )
   );
   attribute NotValidForBitStream : boolean;
   attribute NotValidForBitStream of HDMI_bd_divideur_select_outp_1_0 : entity is true;
@@ -32,8 +32,8 @@ entity HDMI_bd_divideur_select_outp_1_0 is
 end HDMI_bd_divideur_select_outp_1_0;
 
 architecture STRUCTURE of HDMI_bd_divideur_select_outp_1_0 is
-  signal \^input\ : STD_LOGIC_VECTOR ( 39 downto 0 );
+  signal \^entree\ : STD_LOGIC_VECTOR ( 39 downto 0 );
 begin
-  Output(11 downto 0) <= \^input\(27 downto 16);
-  \^input\(27 downto 16) <= Input(27 downto 16);
+  Sortie(11 downto 0) <= \^entree\(27 downto 16);
+  \^entree\(27 downto 16) <= Entree(27 downto 16);
 end STRUCTURE;

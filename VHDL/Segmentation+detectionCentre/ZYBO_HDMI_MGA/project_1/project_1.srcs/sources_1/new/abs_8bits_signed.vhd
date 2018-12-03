@@ -32,20 +32,20 @@ use IEEE.STD_LOGIC_1164.ALL;
 --use UNISIM.VComponents.all;
 
 entity abs_8bits_signed is
-    Port ( INPUT : in STD_LOGIC_VECTOR (8 downto 0);
-           OUTPUT : out STD_LOGIC_VECTOR (7 downto 0));
+    Port ( entree : in STD_LOGIC_VECTOR (8 downto 0);
+           sortie : out STD_LOGIC_VECTOR (7 downto 0));
 end abs_8bits_signed;
 
 architecture Behavioral of abs_8bits_signed is
 
 begin
 
-process(INPUT)
+process(entree)
 begin
-    if INPUT(8)='1' then
-        OUTPUT<=NOT(INPUT(7 downto 0));
+    if entree(8)='1' then
+        sortie<=NOT(entree(7 downto 0));
     else
-        OUTPUT<=INPUT(7 downto 0);
+        sortie<=entree(7 downto 0);
     end if;
 end process;
 

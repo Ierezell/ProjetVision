@@ -1,0 +1,25 @@
+{
+   ExpandedHierarchyInLayout: "",
+   PinnedBlocks: "/div_gen_0|/xlconstant_0|",
+   PinnedPorts: "CLK|divisor|dividende|sortie|sortie_ok|",
+   guistr: "# # String gsaved with Nlview 6.8.5  2018-01-30 bk=1.4354 VDI=40 GEI=35 GUI=JA:1.6 non-TLS
+#  -string -flagsOSRD
+preplace port CLK -pg 1 -y 70 -defaultsOSRD
+preplace port sortie_ok -pg 1 -y 60 -defaultsOSRD
+preplace portBus divisor -pg 1 -y -10 -defaultsOSRD
+preplace portBus sortie -pg 1 -y 10 -defaultsOSRD
+preplace portBus dividende -pg 1 -y -80 -defaultsOSRD
+preplace inst xlconstant_0 -pg 1 -lvl 1 -y -50 -defaultsOSRD
+preplace inst div_gen_0 -pg 1 -lvl 3 -y 50 -defaultsOSRD
+preplace inst adapt_input_ouput_0 -pg 1 -lvl 2 -y -90 -defaultsOSRD
+preplace netloc adapt_input_ouput_0_sortie 1 2 1 620
+preplace netloc div_gen_0_m_axis_dout_tvalid 1 3 1 1050
+preplace netloc CLK_1 1 0 3 N 70 N 70 600
+preplace netloc dividende_1 1 0 2 -90J -110 110
+preplace netloc divisor_1 1 0 3 -90J 10 NJ 10 N
+preplace netloc xlconstant_0_dout 1 1 2 110 -30 610
+preplace netloc div_gen_0_m_axis_dout_tdata 1 3 1 1050
+levelinfo -pg 1 -110 30 470 840 1070 -top -150 -bot 240
+",
+}
+

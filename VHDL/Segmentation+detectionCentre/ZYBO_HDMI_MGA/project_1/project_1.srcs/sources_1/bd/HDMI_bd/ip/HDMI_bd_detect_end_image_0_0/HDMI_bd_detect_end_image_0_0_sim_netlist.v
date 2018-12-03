@@ -1,10 +1,10 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.2.1 (win64) Build 2288692 Thu Jul 26 18:24:02 MDT 2018
-// Date        : Sat Nov 24 00:32:56 2018
-// Host        : pcetu-132 running 64-bit major release  (build 9200)
+// Date        : Sun Dec  2 20:55:51 2018
+// Host        : pcetu-135 running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
-//               E:/VLSI/Projet/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/ip/HDMI_bd_detect_end_image_0_0/HDMI_bd_detect_end_image_0_0_sim_netlist.v
+//               e:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/ip/HDMI_bd_detect_end_image_0_0/HDMI_bd_detect_end_image_0_0_sim_netlist.v
 // Design      : HDMI_bd_detect_end_image_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -18,16 +18,98 @@
 module HDMI_bd_detect_end_image_0_0
    (column,
     ligne,
+    CLK,
     fin);
   input [10:0]column;
   input [10:0]ligne;
+  (* x_interface_info = "xilinx.com:signal:clock:1.0 CLK CLK" *) (* x_interface_parameter = "XIL_INTERFACENAME CLK, FREQ_HZ 100000000, PHASE 0.000, CLK_DOMAIN HDMI_bd_dvi2rgb_0_1_PixelClk" *) input CLK;
   output fin;
 
-  wire \<const0> ;
+  wire CLK;
+  wire [10:0]column;
+  wire fin;
+  wire [10:0]ligne;
 
-  assign fin = \<const0> ;
-  GND GND
-       (.G(\<const0> ));
+  HDMI_bd_detect_end_image_0_0_detect_end_image U0
+       (.CLK(CLK),
+        .column(column),
+        .fin(fin),
+        .ligne(ligne));
+endmodule
+
+(* ORIG_REF_NAME = "detect_end_image" *) 
+module HDMI_bd_detect_end_image_0_0_detect_end_image
+   (fin,
+    ligne,
+    column,
+    CLK);
+  output fin;
+  input [10:0]ligne;
+  input [10:0]column;
+  input CLK;
+
+  wire CLK;
+  wire T_i_1_n_0;
+  wire T_i_2_n_0;
+  wire T_i_3_n_0;
+  wire T_i_4_n_0;
+  wire T_i_5_n_0;
+  wire [10:0]column;
+  wire fin;
+  wire [10:0]ligne;
+
+  LUT4 #(
+    .INIT(16'h8000)) 
+    T_i_1
+       (.I0(T_i_2_n_0),
+        .I1(T_i_3_n_0),
+        .I2(T_i_4_n_0),
+        .I3(T_i_5_n_0),
+        .O(T_i_1_n_0));
+  LUT6 #(
+    .INIT(64'h0000800000000000)) 
+    T_i_2
+       (.I0(ligne[1]),
+        .I1(ligne[2]),
+        .I2(column[10]),
+        .I3(ligne[0]),
+        .I4(ligne[4]),
+        .I5(ligne[3]),
+        .O(T_i_2_n_0));
+  LUT4 #(
+    .INIT(16'h8000)) 
+    T_i_3
+       (.I0(column[1]),
+        .I1(column[0]),
+        .I2(column[3]),
+        .I3(column[2]),
+        .O(T_i_3_n_0));
+  LUT6 #(
+    .INIT(64'h0000100000000000)) 
+    T_i_4
+       (.I0(column[6]),
+        .I1(column[7]),
+        .I2(column[4]),
+        .I3(column[5]),
+        .I4(column[8]),
+        .I5(column[9]),
+        .O(T_i_4_n_0));
+  LUT6 #(
+    .INIT(64'h0000002000000000)) 
+    T_i_5
+       (.I0(ligne[7]),
+        .I1(ligne[8]),
+        .I2(ligne[5]),
+        .I3(ligne[6]),
+        .I4(ligne[9]),
+        .I5(ligne[10]),
+        .O(T_i_5_n_0));
+  FDRE T_reg
+       (.C(CLK),
+        .CE(1'b1),
+        .D(T_i_1_n_0),
+        .Q(fin),
+        .R(1'b0));
 endmodule
 `ifndef GLBL
 `define GLBL

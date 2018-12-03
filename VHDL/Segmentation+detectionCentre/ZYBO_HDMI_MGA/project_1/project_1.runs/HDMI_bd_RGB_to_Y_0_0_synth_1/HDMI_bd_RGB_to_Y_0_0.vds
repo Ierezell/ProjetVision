@@ -2,12 +2,12 @@
 # Vivado v2018.2.1 (64-bit)
 # SW Build 2288692 on Thu Jul 26 18:24:02 MDT 2018
 # IP Build 2289599 on Thu Jul 26 21:09:20 MDT 2018
-# Start of session at: Sat Nov 24 00:31:15 2018
-# Process ID: 7384
-# Current directory: E:/VLSI/Projet/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/HDMI_bd_RGB_to_Y_0_0_synth_1
+# Start of session at: Wed Nov 28 12:37:51 2018
+# Process ID: 2632
+# Current directory: C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/HDMI_bd_RGB_to_Y_0_0_synth_1
 # Command line: vivado.exe -log HDMI_bd_RGB_to_Y_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source HDMI_bd_RGB_to_Y_0_0.tcl
-# Log file: E:/VLSI/Projet/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/HDMI_bd_RGB_to_Y_0_0_synth_1/HDMI_bd_RGB_to_Y_0_0.vds
-# Journal file: E:/VLSI/Projet/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/HDMI_bd_RGB_to_Y_0_0_synth_1\vivado.jou
+# Log file: C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/HDMI_bd_RGB_to_Y_0_0_synth_1/HDMI_bd_RGB_to_Y_0_0.vds
+# Journal file: C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/HDMI_bd_RGB_to_Y_0_0_synth_1\vivado.jou
 #-----------------------------------------------------------
 source HDMI_bd_RGB_to_Y_0_0.tcl -notrace
 Command: synth_design -top HDMI_bd_RGB_to_Y_0_0 -part xc7z020clg400-1 -mode out_of_context
@@ -15,21 +15,21 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 2584 
+INFO: Helper process launched with PID 7756 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 390.836 ; gain = 101.461
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 390.758 ; gain = 101.582
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'HDMI_bd_RGB_to_Y_0_0' [e:/VLSI/Projet/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/ip/HDMI_bd_RGB_to_Y_0_0/synth/HDMI_bd_RGB_to_Y_0_0.vhd:63]
-INFO: [Synth 8-3491] module 'RGB_to_Y' declared at 'E:/VLSI/Projet/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/imports/sources_1/new/RGB_to_Y.vhd:34' bound to instance 'U0' of component 'RGB_to_Y' [e:/VLSI/Projet/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/ip/HDMI_bd_RGB_to_Y_0_0/synth/HDMI_bd_RGB_to_Y_0_0.vhd:81]
-INFO: [Synth 8-638] synthesizing module 'RGB_to_Y' [E:/VLSI/Projet/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/imports/sources_1/new/RGB_to_Y.vhd:39]
-INFO: [Synth 8-638] synthesizing module 'div_4' [E:/VLSI/Projet/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/new/div_4.vhd:39]
-INFO: [Synth 8-256] done synthesizing module 'div_4' (1#1) [E:/VLSI/Projet/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/new/div_4.vhd:39]
-INFO: [Synth 8-638] synthesizing module 'Div_2' [E:/VLSI/Projet/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/new/Div_2.vhd:39]
-INFO: [Synth 8-256] done synthesizing module 'Div_2' (2#1) [E:/VLSI/Projet/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/new/Div_2.vhd:39]
-INFO: [Synth 8-638] synthesizing module 'div_8' [E:/VLSI/Projet/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/new/div_8.vhd:39]
-INFO: [Synth 8-256] done synthesizing module 'div_8' (3#1) [E:/VLSI/Projet/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/new/div_8.vhd:39]
-INFO: [Synth 8-256] done synthesizing module 'RGB_to_Y' (4#1) [E:/VLSI/Projet/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/imports/sources_1/new/RGB_to_Y.vhd:39]
-INFO: [Synth 8-256] done synthesizing module 'HDMI_bd_RGB_to_Y_0_0' (5#1) [e:/VLSI/Projet/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/ip/HDMI_bd_RGB_to_Y_0_0/synth/HDMI_bd_RGB_to_Y_0_0.vhd:63]
+INFO: [Synth 8-638] synthesizing module 'HDMI_bd_RGB_to_Y_0_0' [c:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/ip/HDMI_bd_RGB_to_Y_0_0/synth/HDMI_bd_RGB_to_Y_0_0.vhd:63]
+INFO: [Synth 8-3491] module 'RGB_to_Y' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/imports/sources_1/new/RGB_to_Y.vhd:34' bound to instance 'U0' of component 'RGB_to_Y' [c:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/ip/HDMI_bd_RGB_to_Y_0_0/synth/HDMI_bd_RGB_to_Y_0_0.vhd:81]
+INFO: [Synth 8-638] synthesizing module 'RGB_to_Y' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/imports/sources_1/new/RGB_to_Y.vhd:39]
+INFO: [Synth 8-638] synthesizing module 'div_4' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/new/div_4.vhd:39]
+INFO: [Synth 8-256] done synthesizing module 'div_4' (1#1) [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/new/div_4.vhd:39]
+INFO: [Synth 8-638] synthesizing module 'Div_2' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/new/Div_2.vhd:39]
+INFO: [Synth 8-256] done synthesizing module 'Div_2' (2#1) [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/new/Div_2.vhd:39]
+INFO: [Synth 8-638] synthesizing module 'div_8' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/new/div_8.vhd:39]
+INFO: [Synth 8-256] done synthesizing module 'div_8' (3#1) [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/new/div_8.vhd:39]
+INFO: [Synth 8-256] done synthesizing module 'RGB_to_Y' (4#1) [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/imports/sources_1/new/RGB_to_Y.vhd:39]
+INFO: [Synth 8-256] done synthesizing module 'HDMI_bd_RGB_to_Y_0_0' (5#1) [c:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/ip/HDMI_bd_RGB_to_Y_0_0/synth/HDMI_bd_RGB_to_Y_0_0.vhd:63]
 WARNING: [Synth 8-3331] design div_8 has unconnected port INPUT[2]
 WARNING: [Synth 8-3331] design div_8 has unconnected port INPUT[1]
 WARNING: [Synth 8-3331] design div_8 has unconnected port INPUT[0]
@@ -37,7 +37,7 @@ WARNING: [Synth 8-3331] design Div_2 has unconnected port INPUT[0]
 WARNING: [Synth 8-3331] design div_4 has unconnected port INPUT[1]
 WARNING: [Synth 8-3331] design div_4 has unconnected port INPUT[0]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:07 . Memory (MB): peak = 445.797 ; gain = 156.422
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 446.246 ; gain = 157.070
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -50,10 +50,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:11 . Memory (MB): peak = 445.797 ; gain = 156.422
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 446.246 ; gain = 157.070
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:11 . Memory (MB): peak = 445.797 ; gain = 156.422
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 446.246 ; gain = 157.070
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7z020clg400-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -66,25 +66,25 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 WARNING: [Constraints 18-5210] No constraint will be written out.
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.332 . Memory (MB): peak = 720.953 ; gain = 1.484
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.084 . Memory (MB): peak = 720.789 ; gain = 1.488
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:01:11 . Memory (MB): peak = 720.953 ; gain = 431.578
+Finished Constraint Validation : Time (s): cpu = 00:00:16 ; elapsed = 00:00:20 . Memory (MB): peak = 720.789 ; gain = 431.613
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:01:11 . Memory (MB): peak = 720.953 ; gain = 431.578
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:16 ; elapsed = 00:00:20 . Memory (MB): peak = 720.789 ; gain = 431.613
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:01:11 . Memory (MB): peak = 720.953 ; gain = 431.578
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:20 . Memory (MB): peak = 720.789 ; gain = 431.613
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:01:14 . Memory (MB): peak = 720.953 ; gain = 431.578
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:17 ; elapsed = 00:00:20 . Memory (MB): peak = 720.789 ; gain = 431.613
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -132,7 +132,7 @@ WARNING: [Synth 8-3331] design HDMI_bd_RGB_to_Y_0_0 has unconnected port RGB[9]
 WARNING: [Synth 8-3331] design HDMI_bd_RGB_to_Y_0_0 has unconnected port RGB[8]
 WARNING: [Synth 8-3331] design HDMI_bd_RGB_to_Y_0_0 has unconnected port RGB[0]
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:01:19 . Memory (MB): peak = 720.953 ; gain = 431.578
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:21 . Memory (MB): peak = 720.789 ; gain = 431.613
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -144,13 +144,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:01:28 . Memory (MB): peak = 785.656 ; gain = 496.281
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:30 ; elapsed = 00:00:36 . Memory (MB): peak = 786.434 ; gain = 497.258
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:01:28 . Memory (MB): peak = 785.656 ; gain = 496.281
+Finished Timing Optimization : Time (s): cpu = 00:00:30 ; elapsed = 00:00:36 . Memory (MB): peak = 786.508 ; gain = 497.332
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -162,7 +162,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:20 ; elapsed = 00:01:28 . Memory (MB): peak = 786.094 ; gain = 496.719
+Finished Technology Mapping : Time (s): cpu = 00:00:30 ; elapsed = 00:00:36 . Memory (MB): peak = 786.941 ; gain = 497.766
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -186,7 +186,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:21 ; elapsed = 00:01:30 . Memory (MB): peak = 787.223 ; gain = 497.848
+Finished IO Insertion : Time (s): cpu = 00:00:31 ; elapsed = 00:00:38 . Memory (MB): peak = 788.066 ; gain = 498.891
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -199,7 +199,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:21 ; elapsed = 00:01:30 . Memory (MB): peak = 787.223 ; gain = 497.848
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:31 ; elapsed = 00:00:38 . Memory (MB): peak = 788.066 ; gain = 498.891
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -211,25 +211,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:21 ; elapsed = 00:01:30 . Memory (MB): peak = 787.223 ; gain = 497.848
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:31 ; elapsed = 00:00:38 . Memory (MB): peak = 788.066 ; gain = 498.891
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:21 ; elapsed = 00:01:30 . Memory (MB): peak = 787.223 ; gain = 497.848
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:31 ; elapsed = 00:00:38 . Memory (MB): peak = 788.066 ; gain = 498.891
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:21 ; elapsed = 00:01:30 . Memory (MB): peak = 787.223 ; gain = 497.848
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:31 ; elapsed = 00:00:38 . Memory (MB): peak = 788.066 ; gain = 498.891
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:21 ; elapsed = 00:01:30 . Memory (MB): peak = 787.223 ; gain = 497.848
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:31 ; elapsed = 00:00:38 . Memory (MB): peak = 788.066 ; gain = 498.891
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -261,11 +261,11 @@ Report Instance Areas:
 |2     |  U0     |RGB_to_Y |    23|
 +------+---------+---------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:21 ; elapsed = 00:01:30 . Memory (MB): peak = 787.223 ; gain = 497.848
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:31 ; elapsed = 00:00:38 . Memory (MB): peak = 788.066 ; gain = 498.891
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 6 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:12 ; elapsed = 00:00:36 . Memory (MB): peak = 787.223 ; gain = 222.691
-Synthesis Optimization Complete : Time (s): cpu = 00:00:21 ; elapsed = 00:01:30 . Memory (MB): peak = 787.223 ; gain = 497.848
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:19 ; elapsed = 00:00:26 . Memory (MB): peak = 788.066 ; gain = 224.348
+Synthesis Optimization Complete : Time (s): cpu = 00:00:32 ; elapsed = 00:00:38 . Memory (MB): peak = 788.066 ; gain = 498.891
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 2 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -277,11 +277,11 @@ No Unisim elements were transformed.
 INFO: [Common 17-83] Releasing license: Synthesis
 22 Infos, 13 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:23 ; elapsed = 00:01:36 . Memory (MB): peak = 810.398 ; gain = 533.844
+synth_design: Time (s): cpu = 00:00:34 ; elapsed = 00:00:41 . Memory (MB): peak = 811.734 ; gain = 535.563
 WARNING: [Constraints 18-5210] No constraint will be written out.
-INFO: [Common 17-1381] The checkpoint 'E:/VLSI/Projet/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/HDMI_bd_RGB_to_Y_0_0_synth_1/HDMI_bd_RGB_to_Y_0_0.dcp' has been generated.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/HDMI_bd_RGB_to_Y_0_0_synth_1/HDMI_bd_RGB_to_Y_0_0.dcp' has been generated.
 WARNING: [Constraints 18-5210] No constraint will be written out.
-INFO: [Common 17-1381] The checkpoint 'E:/VLSI/Projet/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/HDMI_bd_RGB_to_Y_0_0_synth_1/HDMI_bd_RGB_to_Y_0_0.dcp' has been generated.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/HDMI_bd_RGB_to_Y_0_0_synth_1/HDMI_bd_RGB_to_Y_0_0.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file HDMI_bd_RGB_to_Y_0_0_utilization_synth.rpt -pb HDMI_bd_RGB_to_Y_0_0_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.143 . Memory (MB): peak = 810.398 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Sat Nov 24 00:33:24 2018...
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.056 . Memory (MB): peak = 812.309 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Wed Nov 28 12:38:47 2018...
