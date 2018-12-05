@@ -2,6 +2,7 @@ vlib work
 vlib riviera
 
 vlib riviera/xil_defaultlib
+vlib riviera/xpm
 vlib riviera/xbip_utils_v3_0_9
 vlib riviera/axi_utils_v2_0_5
 vlib riviera/xbip_pipe_v3_0_5
@@ -16,6 +17,7 @@ vlib riviera/div_gen_v5_1_13
 vlib riviera/xlconstant_v1_1_5
 
 vmap xil_defaultlib riviera/xil_defaultlib
+vmap xpm riviera/xpm
 vmap xbip_utils_v3_0_9 riviera/xbip_utils_v3_0_9
 vmap axi_utils_v2_0_5 riviera/axi_utils_v2_0_5
 vmap xbip_pipe_v3_0_5 riviera/xbip_pipe_v3_0_5
@@ -28,6 +30,12 @@ vmap xbip_dsp48_mult_v3_0_5 riviera/xbip_dsp48_mult_v3_0_5
 vmap xbip_dsp48_multadd_v3_0_5 riviera/xbip_dsp48_multadd_v3_0_5
 vmap div_gen_v5_1_13 riviera/div_gen_v5_1_13
 vmap xlconstant_v1_1_5 riviera/xlconstant_v1_1_5
+
+vlog -work xil_defaultlib  -sv2k12 \
+"D:/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv" \
+
+vcom -work xpm -93 \
+"D:/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_VCOMP.vhd" \
 
 vcom -work xil_defaultlib -93 \
 "../../../bd/c_counter_binary/ip/c_counter_binary_detect_end_image_0_1/sim/c_counter_binary_detect_end_image_0_1.vhd" \
@@ -88,6 +96,10 @@ vcom -work xil_defaultlib -93 \
 "../../../bd/c_counter_binary/ip/c_counter_binary_ligne_counter_0/sim/c_counter_binary_ligne_counter_0.vhd" \
 "../../../bd/c_counter_binary/ip/c_counter_binary_add_Nbits_0_0/sim/c_counter_binary_add_Nbits_0_0.vhd" \
 "../../../bd/c_counter_binary/ip/c_counter_binary_add_Nbits_0_1/sim/c_counter_binary_add_Nbits_0_1.vhd" \
+"../../../bd/c_counter_binary/ip/c_counter_binary_reg_Nbits_0_0/sim/c_counter_binary_reg_Nbits_0_0.vhd" \
+"../../../bd/c_counter_binary/ip/c_counter_binary_reg_Nbits_0_1/sim/c_counter_binary_reg_Nbits_0_1.vhd" \
+"../../../bd/c_counter_binary/ip/c_counter_binary_adapt_input_ouput_1_0/sim/c_counter_binary_adapt_input_ouput_1_0.vhd" \
+"../../../bd/c_counter_binary/ip/c_counter_binary_adapt_input_ouput_3_0/sim/c_counter_binary_adapt_input_ouput_3_0.vhd" \
 
 vlog -work xil_defaultlib \
 "glbl.v"

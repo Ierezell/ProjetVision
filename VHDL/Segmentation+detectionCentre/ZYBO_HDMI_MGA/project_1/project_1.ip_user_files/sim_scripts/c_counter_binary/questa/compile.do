@@ -2,6 +2,7 @@ vlib questa_lib/work
 vlib questa_lib/msim
 
 vlib questa_lib/msim/xil_defaultlib
+vlib questa_lib/msim/xpm
 vlib questa_lib/msim/xbip_utils_v3_0_9
 vlib questa_lib/msim/axi_utils_v2_0_5
 vlib questa_lib/msim/xbip_pipe_v3_0_5
@@ -16,6 +17,7 @@ vlib questa_lib/msim/div_gen_v5_1_13
 vlib questa_lib/msim/xlconstant_v1_1_5
 
 vmap xil_defaultlib questa_lib/msim/xil_defaultlib
+vmap xpm questa_lib/msim/xpm
 vmap xbip_utils_v3_0_9 questa_lib/msim/xbip_utils_v3_0_9
 vmap axi_utils_v2_0_5 questa_lib/msim/axi_utils_v2_0_5
 vmap xbip_pipe_v3_0_5 questa_lib/msim/xbip_pipe_v3_0_5
@@ -28,6 +30,12 @@ vmap xbip_dsp48_mult_v3_0_5 questa_lib/msim/xbip_dsp48_mult_v3_0_5
 vmap xbip_dsp48_multadd_v3_0_5 questa_lib/msim/xbip_dsp48_multadd_v3_0_5
 vmap div_gen_v5_1_13 questa_lib/msim/div_gen_v5_1_13
 vmap xlconstant_v1_1_5 questa_lib/msim/xlconstant_v1_1_5
+
+vlog -work xil_defaultlib -64 -sv \
+"D:/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv" \
+
+vcom -work xpm -64 -93 \
+"D:/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_VCOMP.vhd" \
 
 vcom -work xil_defaultlib -64 -93 \
 "../../../bd/c_counter_binary/ip/c_counter_binary_detect_end_image_0_1/sim/c_counter_binary_detect_end_image_0_1.vhd" \
@@ -88,6 +96,10 @@ vcom -work xil_defaultlib -64 -93 \
 "../../../bd/c_counter_binary/ip/c_counter_binary_ligne_counter_0/sim/c_counter_binary_ligne_counter_0.vhd" \
 "../../../bd/c_counter_binary/ip/c_counter_binary_add_Nbits_0_0/sim/c_counter_binary_add_Nbits_0_0.vhd" \
 "../../../bd/c_counter_binary/ip/c_counter_binary_add_Nbits_0_1/sim/c_counter_binary_add_Nbits_0_1.vhd" \
+"../../../bd/c_counter_binary/ip/c_counter_binary_reg_Nbits_0_0/sim/c_counter_binary_reg_Nbits_0_0.vhd" \
+"../../../bd/c_counter_binary/ip/c_counter_binary_reg_Nbits_0_1/sim/c_counter_binary_reg_Nbits_0_1.vhd" \
+"../../../bd/c_counter_binary/ip/c_counter_binary_adapt_input_ouput_1_0/sim/c_counter_binary_adapt_input_ouput_1_0.vhd" \
+"../../../bd/c_counter_binary/ip/c_counter_binary_adapt_input_ouput_3_0/sim/c_counter_binary_adapt_input_ouput_3_0.vhd" \
 
 vlog -work xil_defaultlib \
 "glbl.v"

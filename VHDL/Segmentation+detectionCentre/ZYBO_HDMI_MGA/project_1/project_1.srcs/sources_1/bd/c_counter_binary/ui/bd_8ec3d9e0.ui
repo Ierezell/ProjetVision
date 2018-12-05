@@ -3,56 +3,58 @@
    comment_0: "ce bloc est le plus a jour
 ",
    commentid: "comment_0|",
-   font_comment_0: "13",
-   guistr: "# # String gsaved with Nlview 6.8.5  2018-01-30 bk=1.4354 VDI=40 GEI=35 GUI=JA:1.6 non-TLS-threadsafe
+   font_comment_0: "14",
+   guistr: "# # String gsaved with Nlview 6.8.5  2018-01-30 bk=1.4354 VDI=40 GEI=35 GUI=JA:1.6 non-TLS
 #  -string -flagsOSRD
-preplace port CE_column_count -pg 1 -y 730 -defaultsOSRD
-preplace port CLK -pg 1 -y 590 -defaultsOSRD
-preplace port RESET -pg 1 -y 780 -defaultsOSRD
-preplace port CE_ligne_count -pg 1 -y 210 -defaultsOSRD
-preplace port Pixel_White_Black -pg 1 -y 550 -defaultsOSRD
-preplace portBus nb_column -pg 1 -y 660 -defaultsOSRD
-preplace portBus xMoy -pg 1 -y 350 -defaultsOSRD
-preplace portBus yMoy -pg 1 -y 800 -defaultsOSRD
-preplace portBus nb_ligne -pg 1 -y 470 -defaultsOSRD
-preplace inst divideur_select_outp_1 -pg 1 -lvl 8 -y 860 -defaultsOSRD
-preplace inst column_counter -pg 1 -lvl 8 -y 580 -defaultsOSRD
-preplace inst xlconstant_0 -pg 1 -lvl 1 -y 790 -defaultsOSRD
-preplace inst rdc_1bit_1 -pg 1 -lvl 2 -y 560 -defaultsOSRD
-preplace inst div_yAxis -pg 1 -lvl 7 -y 480 -defaultsOSRD
-preplace inst Blank_pixel_counter -pg 1 -lvl 4 -y 290 -defaultsOSRD
-preplace inst div_xAxis -pg 1 -lvl 7 -y 180 -defaultsOSRD
-preplace inst add_Nbits_0 -pg 1 -lvl 3 -y 120 -defaultsOSRD
-preplace inst adapt_input_ouput_0 -pg 1 -lvl 6 -y 270 -defaultsOSRD
-preplace inst ligne_counter -pg 1 -lvl 8 -y 430 -defaultsOSRD
-preplace inst add_Nbits_1 -pg 1 -lvl 3 -y 510 -defaultsOSRD
-preplace inst adapt_input_ouput_1 -pg 1 -lvl 5 -y 100 -defaultsOSRD
-preplace inst adapt_input_ouput_2 -pg 1 -lvl 5 -y 440 -defaultsOSRD
-preplace inst detect_end_image_0 -pg 1 -lvl 1 -y 640 -defaultsOSRD
-preplace inst divideur_select_outp_0 -pg 1 -lvl 8 -y 280 -defaultsOSRD
-preplace netloc adapt_input_ouput_2_sortie 1 5 2 NJ 440 1540
-preplace netloc column_counter_Q 1 0 9 -60 720 NJ 720 420 740 NJ 740 NJ 740 NJ 740 NJ 740 NJ 740 2330
-preplace netloc Ligne_counter_Q 1 0 9 -70 380 NJ 380 400 380 NJ 380 NJ 380 NJ 380 1570J 340 NJ 340 2320
-preplace netloc adapt_input_ouput_0_sortie 1 6 1 1580
-preplace netloc CE_column_count_1 1 0 8 NJ 730 NJ 730 NJ 730 NJ 730 N 730 N 730 1580 600 N
-preplace netloc divideur_select_outp_0_Output 1 8 1 2330J
-preplace netloc CLK_1 1 0 8 -80J 560 170 270 N 270 680 210 N 210 N 210 1550 330 2050
-preplace netloc div_yAxis_m_axis_dout_tdata 1 7 1 2020J
-preplace netloc Pixel_White_Black_1 1 0 2 NJ 550 NJ
-preplace netloc adapt_input_ouput_1_sortie 1 5 2 NJ 100 1570
-preplace netloc CE_ligne_count_1 1 0 8 NJ 210 NJ 210 NJ 210 670J 370 930 350 N 350 N 350 2040
-preplace netloc add_xAxis_S 1 2 3 410 190 670J 100 NJ
-preplace netloc add_yAxis_S 1 2 3 430 580 680 440 N
-preplace netloc xlconstant_0_dout 1 1 1 180
-preplace netloc divideur_select_outp_1_Output 1 8 1 2320J
-preplace netloc div_xAxis_m_axis_dout_tdata 1 7 1 2050J
-preplace netloc Net1 1 2 2 410 310 N
-preplace netloc Net 1 1 6 160 650 NJ 650 N 650 N 650 N 650 1560
-preplace netloc ligne_counter2_Q 1 4 2 930 270 NJ
-preplace netloc RESET_counter_ligne_and_column_1 1 0 8 -90 540 160 390 NJ 390 680J 390 940 360 N 360 N 360 2030
-preplace cgraphic comment_0 place left 215 120 textcolor 4 linecolor 3 linewidth 2
-levelinfo -pg 1 -110 50 310 560 820 1130 1410 1810 2190 2360 -top -80 -bot 1050
+preplace port CE_column_count -pg 1 -y 910 -defaultsOSRD
+preplace port RESET -pg 1 -y 380 -defaultsOSRD
+preplace port CLK -pg 1 -y 580 -defaultsOSRD
+preplace port CE_ligne_count -pg 1 -y 1050 -defaultsOSRD
+preplace port Pixel_White_Black -pg 1 -y 460 -defaultsOSRD
+preplace portBus nb_column -pg 1 -y 890 -defaultsOSRD
+preplace portBus xMoy -pg 1 -y 1150 -defaultsOSRD
+preplace portBus yMoy -pg 1 -y 410 -defaultsOSRD
+preplace portBus nb_ligne -pg 1 -y 1030 -defaultsOSRD
+preplace inst divideur_select_outp_1 -pg 1 -lvl 6 -y 410 -defaultsOSRD
+preplace inst column_counter -pg 1 -lvl 6 -y 890 -defaultsOSRD
+preplace inst div_yAxis -pg 1 -lvl 5 -y 400 -defaultsOSRD
+preplace inst Additionneur_Nbits_0 -pg 1 -lvl 3 -y 260 -defaultsOSRD
+preplace inst Additionneur_Nbits_1 -pg 1 -lvl 3 -y 640 -defaultsOSRD
+preplace inst Blank_pixel_counter -pg 1 -lvl 3 -y 80 -defaultsOSRD
+preplace inst div_xAxis -pg 1 -lvl 5 -y 620 -defaultsOSRD
+preplace inst adapt_input_ouput_0 -pg 1 -lvl 4 -y 80 -defaultsOSRD
+preplace inst ligne_counter -pg 1 -lvl 6 -y 1030 -defaultsOSRD
+preplace inst adapt_input_ouput_1 -pg 1 -lvl 4 -y 640 -defaultsOSRD
+preplace inst adapt_input_ouput_2 -pg 1 -lvl 4 -y 420 -defaultsOSRD
+preplace inst adapt_input_ouput_3 -pg 1 -lvl 2 -y 670 -defaultsOSRD
+preplace inst adapt_input_ouput_4 -pg 1 -lvl 2 -y 230 -defaultsOSRD
+preplace inst detect_end_image_0 -pg 1 -lvl 4 -y 820 -defaultsOSRD
+preplace inst divideur_select_outp_0 -pg 1 -lvl 6 -y 1150 -defaultsOSRD
+preplace netloc column_counter_Q 1 1 6 120 780 NJ 780 760 900 1080J 810 NJ 810 1780
+preplace netloc adapt_input_ouput_2_sortie 1 4 1 N
+preplace netloc adapt_input_ouput_0_sortie 1 4 1 1070
+preplace netloc CE_column_count_1 1 0 6 NJ 910 NJ 910 NJ 910 NJ 910 NJ 910 NJ
+preplace netloc divideur_select_outp_0_Output 1 6 1 NJ
+preplace netloc CLK_1 1 0 6 NJ 580 N 580 490 760 770 720 1080 750 1520
+preplace netloc div_yAxis_m_axis_dout_tdata 1 5 1 NJ
+preplace netloc adapt_input_ouput_1_sortie 1 4 1 NJ
+preplace netloc CE_ligne_count_1 1 0 6 NJ 1050 NJ 1050 NJ 1050 NJ 1050 NJ 1050 NJ
+preplace netloc ligne_counter_Q 1 1 6 130 770 NJ 770 790 730 1070J 740 NJ 740 1790
+preplace netloc adapt_input_ouput_3_sortie 1 2 1 520J
+preplace netloc adapt_input_ouput_4_sortie 1 2 1 500J
+preplace netloc divideur_select_outp_1_Output 1 6 1 NJ
+preplace netloc Additionneur_Nbits_0_S 1 2 2 540 160 760
+preplace netloc div_xAxis_m_axis_dout_tdata 1 5 1 1510J
+preplace netloc Net1 1 0 3 N 460 N 460 530
+preplace netloc Net 1 4 1 1050
+preplace netloc Additionneur_Nbits_1_S 1 2 2 540 740 760
+preplace netloc ligne_counter2_Q 1 3 1 NJ
+preplace netloc RESET_counter_ligne_and_column_1 1 0 6 NJ 380 N 380 510 750 780J 740 1060J 820 1500
+preplace cgraphic comment_0 place top 0 10 textcolor 4 linecolor 3
+levelinfo -pg 1 -10 100 360 650 920 1290 1650 1810 -top -20 -bot 1230
 ",
+   linktoobj_comment_0: "",
+   linktotype_comment_0: "bd_design",
 }
 0
 {

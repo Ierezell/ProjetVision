@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<bd:repository xmlns:bd="http://www.xilinx.com/bd" bd:BoundaryCRC="0x469C5B73FC9C019" bd:device="xc7z020clg400-1" bd:isValidated="true" bd:synthFlowMode="Hierarchical" bd:tool_version="2018.2.1" bd:top="c_counter_binary" bd:version="1.00.a">
+<bd:repository xmlns:bd="http://www.xilinx.com/bd" bd:BoundaryCRC="0x469C5B73FC9C019" bd:device="xc7z020clg400-1" bd:isValidated="true" bd:synthFlowMode="None" bd:tool_version="2018.2.2" bd:top="c_counter_binary" bd:version="1.00.a">
 
   <spirit:component xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009">
     <spirit:vendor>xilinx.com</spirit:vendor>
@@ -13,35 +13,6 @@
       </spirit:parameter>
     </spirit:parameters>
     <spirit:busInterfaces>
-      <spirit:busInterface>
-        <spirit:name>RST.RESET</spirit:name>
-        <spirit:displayName>Reset</spirit:displayName>
-        <spirit:description>Reset</spirit:description>
-        <spirit:busType spirit:library="signal" spirit:name="reset" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:abstractionType spirit:library="signal" spirit:name="reset_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:slave/>
-        <spirit:portMaps>
-          <spirit:portMap>
-            <spirit:logicalPort>
-              <spirit:name>RST</spirit:name>
-            </spirit:logicalPort>
-            <spirit:physicalPort>
-              <spirit:name>RESET</spirit:name>
-            </spirit:physicalPort>
-          </spirit:portMap>
-        </spirit:portMaps>
-        <spirit:parameters>
-          <spirit:parameter>
-            <spirit:name>POLARITY</spirit:name>
-            <spirit:value>ACTIVE_LOW</spirit:value>
-            <spirit:vendorExtensions>
-              <bd:configElementInfos>
-                <bd:configElementInfo bd:valueSource="default"/>
-              </bd:configElementInfos>
-            </spirit:vendorExtensions>
-          </spirit:parameter>
-        </spirit:parameters>
-      </spirit:busInterface>
       <spirit:busInterface>
         <spirit:name>CLK.CLK</spirit:name>
         <spirit:displayName>Clk</spirit:displayName>
@@ -98,6 +69,35 @@
           </spirit:parameter>
         </spirit:parameters>
       </spirit:busInterface>
+      <spirit:busInterface>
+        <spirit:name>RST.RESET</spirit:name>
+        <spirit:displayName>Reset</spirit:displayName>
+        <spirit:description>Reset</spirit:description>
+        <spirit:busType spirit:library="signal" spirit:name="reset" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:abstractionType spirit:library="signal" spirit:name="reset_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:slave/>
+        <spirit:portMaps>
+          <spirit:portMap>
+            <spirit:logicalPort>
+              <spirit:name>RST</spirit:name>
+            </spirit:logicalPort>
+            <spirit:physicalPort>
+              <spirit:name>RESET</spirit:name>
+            </spirit:physicalPort>
+          </spirit:portMap>
+        </spirit:portMaps>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>POLARITY</spirit:name>
+            <spirit:value>ACTIVE_LOW</spirit:value>
+            <spirit:vendorExtensions>
+              <bd:configElementInfos>
+                <bd:configElementInfo bd:valueSource="default"/>
+              </bd:configElementInfos>
+            </spirit:vendorExtensions>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:busInterface>
     </spirit:busInterfaces>
     <spirit:model>
       <spirit:views>
@@ -109,13 +109,9 @@
       </spirit:views>
       <spirit:ports>
         <spirit:port>
-          <spirit:name>nb_ligne</spirit:name>
+          <spirit:name>CLK</spirit:name>
           <spirit:wire>
-            <spirit:direction>out</spirit:direction>
-            <spirit:vector>
-              <spirit:left>10</spirit:left>
-              <spirit:right>0</spirit:right>
-            </spirit:vector>
+            <spirit:direction>in</spirit:direction>
           </spirit:wire>
         </spirit:port>
         <spirit:port>
@@ -125,13 +121,9 @@
           </spirit:wire>
         </spirit:port>
         <spirit:port>
-          <spirit:name>nb_column</spirit:name>
+          <spirit:name>RESET</spirit:name>
           <spirit:wire>
-            <spirit:direction>out</spirit:direction>
-            <spirit:vector>
-              <spirit:left>10</spirit:left>
-              <spirit:right>0</spirit:right>
-            </spirit:vector>
+            <spirit:direction>in</spirit:direction>
           </spirit:wire>
         </spirit:port>
         <spirit:port>
@@ -167,15 +159,23 @@
           </spirit:wire>
         </spirit:port>
         <spirit:port>
-          <spirit:name>RESET</spirit:name>
+          <spirit:name>nb_ligne</spirit:name>
           <spirit:wire>
-            <spirit:direction>in</spirit:direction>
+            <spirit:direction>out</spirit:direction>
+            <spirit:vector>
+              <spirit:left>10</spirit:left>
+              <spirit:right>0</spirit:right>
+            </spirit:vector>
           </spirit:wire>
         </spirit:port>
         <spirit:port>
-          <spirit:name>CLK</spirit:name>
+          <spirit:name>nb_column</spirit:name>
           <spirit:wire>
-            <spirit:direction>in</spirit:direction>
+            <spirit:direction>out</spirit:direction>
+            <spirit:vector>
+              <spirit:left>10</spirit:left>
+              <spirit:right>0</spirit:right>
+            </spirit:vector>
           </spirit:wire>
         </spirit:port>
       </spirit:ports>
@@ -226,24 +226,6 @@
           <spirit:configurableElementValue spirit:referenceId="OutTLASTBehv">Null</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="latency">20</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="ACLKEN">false</spirit:configurableElementValue>
-        </spirit:configurableElementValues>
-      </spirit:componentInstance>
-      <spirit:componentInstance>
-        <spirit:instanceName>rdc_1bit_1</spirit:instanceName>
-        <spirit:componentRef spirit:library="module_ref" spirit:name="rdc_1bit" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">c_counter_binary_rdc_1bit_1_0</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="bd:referenceName">rdc_1bit</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="bd:subInstancePath"></spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="bd:referenceType">hdl</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="bd:BoundaryCRC">0x0</spirit:configurableElementValue>
-        </spirit:configurableElementValues>
-      </spirit:componentInstance>
-      <spirit:componentInstance>
-        <spirit:instanceName>xlconstant_0</spirit:instanceName>
-        <spirit:componentRef spirit:library="ip" spirit:name="xlconstant" spirit:vendor="xilinx.com" spirit:version="1.1"/>
-        <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">c_counter_binary_xlconstant_0_1</spirit:configurableElementValue>
         </spirit:configurableElementValues>
       </spirit:componentInstance>
       <spirit:componentInstance>
@@ -319,30 +301,6 @@
         </spirit:configurableElementValues>
       </spirit:componentInstance>
       <spirit:componentInstance>
-        <spirit:instanceName>add_Nbits_0</spirit:instanceName>
-        <spirit:componentRef spirit:library="module_ref" spirit:name="add_Nbits" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">c_counter_binary_add_Nbits_0_0</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="N">18</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="bd:referenceName">add_Nbits</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="bd:subInstancePath"></spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="bd:referenceType">hdl</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="bd:BoundaryCRC">0x0</spirit:configurableElementValue>
-        </spirit:configurableElementValues>
-      </spirit:componentInstance>
-      <spirit:componentInstance>
-        <spirit:instanceName>add_Nbits_1</spirit:instanceName>
-        <spirit:componentRef spirit:library="module_ref" spirit:name="add_Nbits" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">c_counter_binary_add_Nbits_0_1</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="N">18</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="bd:referenceName">add_Nbits</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="bd:subInstancePath"></spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="bd:referenceType">hdl</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="bd:BoundaryCRC">0x0</spirit:configurableElementValue>
-        </spirit:configurableElementValues>
-      </spirit:componentInstance>
-      <spirit:componentInstance>
         <spirit:instanceName>ligne_counter</spirit:instanceName>
         <spirit:componentRef spirit:library="module_ref" spirit:name="Counter" spirit:vendor="xilinx.com" spirit:version="1.0"/>
         <spirit:configurableElementValues>
@@ -378,6 +336,56 @@
           <spirit:configurableElementValue spirit:referenceId="bd:BoundaryCRC">0x0</spirit:configurableElementValue>
         </spirit:configurableElementValues>
       </spirit:componentInstance>
+      <spirit:componentInstance>
+        <spirit:instanceName>adapt_input_ouput_3</spirit:instanceName>
+        <spirit:componentRef spirit:library="module_ref" spirit:name="adapt_input_ouput" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">c_counter_binary_adapt_input_ouput_1_0</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="N">11</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="M">18</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="bd:referenceName">adapt_input_ouput</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="bd:subInstancePath"></spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="bd:referenceType">hdl</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="bd:BoundaryCRC">0x0</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
+      <spirit:componentInstance>
+        <spirit:instanceName>adapt_input_ouput_4</spirit:instanceName>
+        <spirit:componentRef spirit:library="module_ref" spirit:name="adapt_input_ouput" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">c_counter_binary_adapt_input_ouput_3_0</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="N">11</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="M">18</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="bd:referenceName">adapt_input_ouput</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="bd:subInstancePath"></spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="bd:referenceType">hdl</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="bd:BoundaryCRC">0x0</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
+      <spirit:componentInstance>
+        <spirit:instanceName>Additionneur_Nbits_0</spirit:instanceName>
+        <spirit:componentRef spirit:library="module_ref" spirit:name="Additionneur_Nbits" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">c_counter_binary_Additionneur_Nbits_0_0</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="N">18</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="bd:referenceName">Additionneur_Nbits</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="bd:subInstancePath"></spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="bd:referenceType">hdl</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="bd:BoundaryCRC">0x0</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
+      <spirit:componentInstance>
+        <spirit:instanceName>Additionneur_Nbits_1</spirit:instanceName>
+        <spirit:componentRef spirit:library="module_ref" spirit:name="Additionneur_Nbits" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">c_counter_binary_Additionneur_Nbits_1_0</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="N">18</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="bd:referenceName">Additionneur_Nbits</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="bd:subInstancePath"></spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="bd:referenceType">hdl</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="bd:BoundaryCRC">0x0</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
     </spirit:componentInstances>
     <spirit:adHocConnections>
       <spirit:adHocConnection>
@@ -385,18 +393,12 @@
         <spirit:externalPortReference spirit:portRef="CLK"/>
         <spirit:internalPortReference spirit:componentRef="div_xAxis" spirit:portRef="aclk"/>
         <spirit:internalPortReference spirit:componentRef="div_yAxis" spirit:portRef="aclk"/>
-        <spirit:internalPortReference spirit:componentRef="rdc_1bit_1" spirit:portRef="CLK"/>
         <spirit:internalPortReference spirit:componentRef="detect_end_image_0" spirit:portRef="CLK"/>
         <spirit:internalPortReference spirit:componentRef="ligne_counter" spirit:portRef="CLK"/>
         <spirit:internalPortReference spirit:componentRef="Blank_pixel_counter" spirit:portRef="CLK"/>
         <spirit:internalPortReference spirit:componentRef="column_counter" spirit:portRef="CLK"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
-        <spirit:name>Ligne_counter_Q</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="ligne_counter" spirit:portRef="Q"/>
-        <spirit:externalPortReference spirit:portRef="nb_ligne"/>
-        <spirit:internalPortReference spirit:componentRef="detect_end_image_0" spirit:portRef="ligne"/>
-        <spirit:internalPortReference spirit:componentRef="add_Nbits_0" spirit:portRef="B"/>
+        <spirit:internalPortReference spirit:componentRef="Additionneur_Nbits_0" spirit:portRef="CLK"/>
+        <spirit:internalPortReference spirit:componentRef="Additionneur_Nbits_1" spirit:portRef="CLK"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>Net</spirit:name>
@@ -408,28 +410,19 @@
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>Net1</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="rdc_1bit_1" spirit:portRef="Q"/>
-        <spirit:internalPortReference spirit:componentRef="Blank_pixel_counter" spirit:portRef="EN"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
-        <spirit:name>Pixel_White_Black_1</spirit:name>
         <spirit:externalPortReference spirit:portRef="Pixel_White_Black"/>
-        <spirit:internalPortReference spirit:componentRef="rdc_1bit_1" spirit:portRef="D"/>
+        <spirit:internalPortReference spirit:componentRef="Blank_pixel_counter" spirit:portRef="EN"/>
+        <spirit:internalPortReference spirit:componentRef="Additionneur_Nbits_1" spirit:portRef="EN"/>
+        <spirit:internalPortReference spirit:componentRef="Additionneur_Nbits_0" spirit:portRef="EN"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>RESET_counter_ligne_and_column_1</spirit:name>
         <spirit:externalPortReference spirit:portRef="RESET"/>
-        <spirit:internalPortReference spirit:componentRef="rdc_1bit_1" spirit:portRef="RESET"/>
         <spirit:internalPortReference spirit:componentRef="ligne_counter" spirit:portRef="RESET"/>
         <spirit:internalPortReference spirit:componentRef="Blank_pixel_counter" spirit:portRef="RESET"/>
         <spirit:internalPortReference spirit:componentRef="column_counter" spirit:portRef="RESET"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
-        <spirit:name>column_counter_Q</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="column_counter" spirit:portRef="Q"/>
-        <spirit:externalPortReference spirit:portRef="nb_column"/>
-        <spirit:internalPortReference spirit:componentRef="detect_end_image_0" spirit:portRef="column"/>
-        <spirit:internalPortReference spirit:componentRef="add_Nbits_1" spirit:portRef="B"/>
+        <spirit:internalPortReference spirit:componentRef="Additionneur_Nbits_0" spirit:portRef="RESET"/>
+        <spirit:internalPortReference spirit:componentRef="Additionneur_Nbits_1" spirit:portRef="RESET"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>div_xAxis_m_axis_dout_tdata</spirit:name>
@@ -452,11 +445,6 @@
         <spirit:externalPortReference spirit:portRef="yMoy"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
-        <spirit:name>xlconstant_0_dout</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="xlconstant_0" spirit:portRef="dout"/>
-        <spirit:internalPortReference spirit:componentRef="rdc_1bit_1" spirit:portRef="EN"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
         <spirit:name>CE_ligne_count_1</spirit:name>
         <spirit:externalPortReference spirit:portRef="CE_ligne_count"/>
         <spirit:internalPortReference spirit:componentRef="ligne_counter" spirit:portRef="EN"/>
@@ -473,12 +461,6 @@
         <spirit:internalPortReference spirit:componentRef="div_yAxis" spirit:portRef="s_axis_divisor_tdata"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
-        <spirit:name>add_yAxis_S</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="add_Nbits_1" spirit:portRef="S"/>
-        <spirit:internalPortReference spirit:componentRef="adapt_input_ouput_2" spirit:portRef="entree"/>
-        <spirit:internalPortReference spirit:componentRef="add_Nbits_1" spirit:portRef="A"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
         <spirit:name>adapt_input_ouput_2_sortie</spirit:name>
         <spirit:internalPortReference spirit:componentRef="adapt_input_ouput_2" spirit:portRef="sortie"/>
         <spirit:internalPortReference spirit:componentRef="div_yAxis" spirit:portRef="s_axis_dividend_tdata"/>
@@ -489,15 +471,45 @@
         <spirit:internalPortReference spirit:componentRef="div_xAxis" spirit:portRef="s_axis_dividend_tdata"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
-        <spirit:name>add_xAxis_S</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="add_Nbits_0" spirit:portRef="S"/>
-        <spirit:internalPortReference spirit:componentRef="adapt_input_ouput_1" spirit:portRef="entree"/>
-        <spirit:internalPortReference spirit:componentRef="add_Nbits_0" spirit:portRef="A"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
         <spirit:name>ligne_counter2_Q</spirit:name>
         <spirit:internalPortReference spirit:componentRef="Blank_pixel_counter" spirit:portRef="Q"/>
         <spirit:internalPortReference spirit:componentRef="adapt_input_ouput_0" spirit:portRef="entree"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>ligne_counter_Q</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="ligne_counter" spirit:portRef="Q"/>
+        <spirit:externalPortReference spirit:portRef="nb_ligne"/>
+        <spirit:internalPortReference spirit:componentRef="detect_end_image_0" spirit:portRef="ligne"/>
+        <spirit:internalPortReference spirit:componentRef="adapt_input_ouput_3" spirit:portRef="entree"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>column_counter_Q</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="column_counter" spirit:portRef="Q"/>
+        <spirit:externalPortReference spirit:portRef="nb_column"/>
+        <spirit:internalPortReference spirit:componentRef="detect_end_image_0" spirit:portRef="column"/>
+        <spirit:internalPortReference spirit:componentRef="adapt_input_ouput_4" spirit:portRef="entree"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>Additionneur_Nbits_0_S</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="Additionneur_Nbits_0" spirit:portRef="S"/>
+        <spirit:internalPortReference spirit:componentRef="adapt_input_ouput_2" spirit:portRef="entree"/>
+        <spirit:internalPortReference spirit:componentRef="Additionneur_Nbits_0" spirit:portRef="A"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>adapt_input_ouput_4_sortie</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="adapt_input_ouput_4" spirit:portRef="sortie"/>
+        <spirit:internalPortReference spirit:componentRef="Additionneur_Nbits_0" spirit:portRef="B"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>adapt_input_ouput_3_sortie</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="adapt_input_ouput_3" spirit:portRef="sortie"/>
+        <spirit:internalPortReference spirit:componentRef="Additionneur_Nbits_1" spirit:portRef="B"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>Additionneur_Nbits_1_S</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="Additionneur_Nbits_1" spirit:portRef="S"/>
+        <spirit:internalPortReference spirit:componentRef="adapt_input_ouput_1" spirit:portRef="entree"/>
+        <spirit:internalPortReference spirit:componentRef="Additionneur_Nbits_1" spirit:portRef="A"/>
       </spirit:adHocConnection>
     </spirit:adHocConnections>
     <spirit:vendorExtensions>

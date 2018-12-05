@@ -55,7 +55,7 @@ signal CE_column_count,CE_ligne_count,CLK,Pixel_White_Black,RESET:STD_LOGIC;
 signal nb_column,nb_ligne: STD_LOGIC_VECTOR ( 10 downto 0 );
 signal xMoy,yMoy:STD_LOGIC_VECTOR ( 11 downto 0 );
 
-constant clock_period : time := 4ns;
+constant clock_period : time := 10ns;
 
 begin
 

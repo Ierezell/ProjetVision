@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Sun Dec  2 20:49:06 2018" VIVADOVERSION="2018.2.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Mon Dec  3 00:48:54 2018" VIVADOVERSION="2018.2">
 
   <SYSTEMINFO ARCH="zynq" BOARD="digilentinc.com:zybo-z7-20:part0:1.0" DEVICE="7z020" NAME="HDMI_bd" PACKAGE="clg400" SPEEDGRADE="-1"/>
 
@@ -204,6 +204,7 @@
             <CONNECTION INSTANCE="Detect_centre_ligne_counter" PORT="Q"/>
           </CONNECTIONS>
         </PORT>
+        <PORT DIR="I" NAME="RESET" SIGIS="rst"/>
         <PORT DIR="O" NAME="Co" SIGIS="undef"/>
         <PORT DIR="O" LEFT="17" NAME="S" RIGHT="0" SIGIS="undef" SIGNAME="Detect_centre_add_Nbits_0_S">
           <CONNECTIONS>
@@ -232,6 +233,7 @@
             <CONNECTION INSTANCE="Detect_centre_column_counter" PORT="Q"/>
           </CONNECTIONS>
         </PORT>
+        <PORT DIR="I" NAME="RESET" SIGIS="rst"/>
         <PORT DIR="O" NAME="Co" SIGIS="undef"/>
         <PORT DIR="O" LEFT="17" NAME="S" RIGHT="0" SIGIS="undef" SIGNAME="Detect_centre_add_Nbits_1_S">
           <CONNECTIONS>
@@ -2348,7 +2350,7 @@
     </MODULE>
     <MODULE FULLNAME="/dvi2rgb_0" HWVERSION="1.8" INSTANCE="dvi2rgb_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="dvi2rgb" VLNV="digilentinc.com:ip:dvi2rgb:1.8">
       <DOCUMENTS>
-        <DOCUMENT SOURCE="e:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/repo/vivado-library/ip/dvi2rgb/docs/dvi2rgb.pdf"/>
+        <DOCUMENT SOURCE="d:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/repo/vivado-library/ip/dvi2rgb/docs/dvi2rgb.pdf"/>
       </DOCUMENTS>
       <PARAMETERS>
         <PARAMETER NAME="kEmulateDDC" VALUE="true"/>
@@ -2720,7 +2722,7 @@
     </MODULE>
     <MODULE FULLNAME="/rgb2dvi_0" HWVERSION="1.4" INSTANCE="rgb2dvi_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="rgb2dvi" VLNV="digilentinc.com:ip:rgb2dvi:1.4">
       <DOCUMENTS>
-        <DOCUMENT SOURCE="e:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/repo/vivado-library/ip/rgb2dvi/docs/rgb2dvi.pdf"/>
+        <DOCUMENT SOURCE="d:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/repo/vivado-library/ip/rgb2dvi/docs/rgb2dvi.pdf"/>
       </DOCUMENTS>
       <PARAMETERS>
         <PARAMETER NAME="kGenerateSerialClk" VALUE="true"/>

@@ -1,8 +1,8 @@
 --Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
---Tool Version: Vivado v.2018.2.1 (win64) Build 2288692 Thu Jul 26 18:24:02 MDT 2018
---Date        : Sun Dec  2 20:49:00 2018
---Host        : pcetu-135 running 64-bit major release  (build 9200)
+--Tool Version: Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
+--Date        : Mon Dec  3 00:48:52 2018
+--Host        : Nicolas running 64-bit major release  (build 9200)
 --Command     : generate_target HDMI_bd.bd
 --Design      : HDMI_bd
 --Purpose     : IP block netlist
@@ -52,22 +52,6 @@ architecture STRUCTURE of Detect_centre_imp_Y7EHMB is
     sortie : out STD_LOGIC_VECTOR ( 23 downto 0 )
   );
   end component HDMI_bd_adapt_input_ouput_2_0;
-  component HDMI_bd_add_Nbits_0_0 is
-  port (
-    A : in STD_LOGIC_VECTOR ( 17 downto 0 );
-    B : in STD_LOGIC_VECTOR ( 17 downto 0 );
-    Co : out STD_LOGIC;
-    S : out STD_LOGIC_VECTOR ( 17 downto 0 )
-  );
-  end component HDMI_bd_add_Nbits_0_0;
-  component HDMI_bd_add_Nbits_1_0 is
-  port (
-    A : in STD_LOGIC_VECTOR ( 17 downto 0 );
-    B : in STD_LOGIC_VECTOR ( 17 downto 0 );
-    Co : out STD_LOGIC;
-    S : out STD_LOGIC_VECTOR ( 17 downto 0 )
-  );
-  end component HDMI_bd_add_Nbits_1_0;
   component HDMI_bd_column_counter_0 is
   port (
     CLK : in STD_LOGIC;
@@ -140,6 +124,24 @@ architecture STRUCTURE of Detect_centre_imp_Y7EHMB is
     dout : out STD_LOGIC_VECTOR ( 0 to 0 )
   );
   end component HDMI_bd_xlconstant_0_2;
+  component HDMI_bd_add_Nbits_0_0 is
+  port (
+    A : in STD_LOGIC_VECTOR ( 17 downto 0 );
+    B : in STD_LOGIC_VECTOR ( 17 downto 0 );
+    RESET : in STD_LOGIC;
+    Co : out STD_LOGIC;
+    S : out STD_LOGIC_VECTOR ( 17 downto 0 )
+  );
+  end component HDMI_bd_add_Nbits_0_0;
+  component HDMI_bd_add_Nbits_1_0 is
+  port (
+    A : in STD_LOGIC_VECTOR ( 17 downto 0 );
+    B : in STD_LOGIC_VECTOR ( 17 downto 0 );
+    RESET : in STD_LOGIC;
+    Co : out STD_LOGIC;
+    S : out STD_LOGIC_VECTOR ( 17 downto 0 )
+  );
+  end component HDMI_bd_add_Nbits_1_0;
   signal CE_column_count_1 : STD_LOGIC;
   signal CE_ligne_count_1 : STD_LOGIC;
   signal CLK_1 : STD_LOGIC;
@@ -204,6 +206,7 @@ add_Nbits_0: component HDMI_bd_add_Nbits_0_0
       B(17 downto 11) => NLW_add_Nbits_0_B_UNCONNECTED(17 downto 11),
       B(10 downto 0) => Ligne_counter_Q(10 downto 0),
       Co => NLW_add_Nbits_0_Co_UNCONNECTED,
+      RESET => '0',
       S(17 downto 0) => add_xAxis_S(17 downto 0)
     );
 add_Nbits_1: component HDMI_bd_add_Nbits_1_0
@@ -212,6 +215,7 @@ add_Nbits_1: component HDMI_bd_add_Nbits_1_0
       B(17 downto 11) => NLW_add_Nbits_1_B_UNCONNECTED(17 downto 11),
       B(10 downto 0) => column_counter_Q(10 downto 0),
       Co => NLW_add_Nbits_1_Co_UNCONNECTED,
+      RESET => '0',
       S(17 downto 0) => add_yAxis_S(17 downto 0)
     );
 column_counter: component HDMI_bd_column_counter_0
@@ -797,10 +801,10 @@ entity HDMI_bd is
     hdmi_out_data_p : out STD_LOGIC_VECTOR ( 2 downto 0 );
     reset : in STD_LOGIC
   );
-  attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of HDMI_bd : entity is "HDMI_bd,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=HDMI_bd,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=52,numReposBlks=48,numNonXlnxBlks=2,numHierBlks=4,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=30,numPkgbdBlks=0,bdsource=USER,synth_mode=OOC_per_IP}";
-  attribute HW_HANDOFF : string;
-  attribute HW_HANDOFF of HDMI_bd : entity is "HDMI_bd.hwdef";
+  attribute core_generation_info : string;
+  attribute core_generation_info of HDMI_bd : entity is "HDMI_bd,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=HDMI_bd,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=52,numReposBlks=48,numNonXlnxBlks=2,numHierBlks=4,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=30,numPkgbdBlks=0,bdsource=USER,synth_mode=OOC_per_IP}";
+  attribute hw_handoff : string;
+  attribute hw_handoff of HDMI_bd : entity is "HDMI_bd.hwdef";
 end HDMI_bd;
 
 architecture STRUCTURE of HDMI_bd is
@@ -906,28 +910,28 @@ architecture STRUCTURE of HDMI_bd is
   signal NLW_Segmentation_RBG_OUT_UNCONNECTED : STD_LOGIC_VECTOR ( 23 downto 0 );
   signal NLW_clk_wiz_0_locked_UNCONNECTED : STD_LOGIC;
   signal NLW_dvi2rgb_0_aPixelClkLckd_UNCONNECTED : STD_LOGIC;
-  attribute X_INTERFACE_INFO : string;
-  attribute X_INTERFACE_INFO of CLK : signal is "xilinx.com:signal:clock:1.0 CLK.CLK CLK";
-  attribute X_INTERFACE_PARAMETER : string;
-  attribute X_INTERFACE_PARAMETER of CLK : signal is "XIL_INTERFACENAME CLK.CLK, CLK_DOMAIN HDMI_bd_CLK, FREQ_HZ 125000000, PHASE 0.000";
-  attribute X_INTERFACE_INFO of USER_RESET : signal is "xilinx.com:signal:reset:1.0 RST.USER_RESET RST";
-  attribute X_INTERFACE_PARAMETER of USER_RESET : signal is "XIL_INTERFACENAME RST.USER_RESET, POLARITY ACTIVE_LOW";
-  attribute X_INTERFACE_INFO of hdmi_in_clk_n : signal is "digilentinc.com:interface:tmds:1.0 hdmi_in CLK_N";
-  attribute X_INTERFACE_INFO of hdmi_in_clk_p : signal is "digilentinc.com:interface:tmds:1.0 hdmi_in CLK_P";
-  attribute X_INTERFACE_INFO of hdmi_in_ddc_scl_i : signal is "xilinx.com:interface:iic:1.0 hdmi_in_ddc SCL_I";
-  attribute X_INTERFACE_INFO of hdmi_in_ddc_scl_o : signal is "xilinx.com:interface:iic:1.0 hdmi_in_ddc SCL_O";
-  attribute X_INTERFACE_INFO of hdmi_in_ddc_scl_t : signal is "xilinx.com:interface:iic:1.0 hdmi_in_ddc SCL_T";
-  attribute X_INTERFACE_INFO of hdmi_in_ddc_sda_i : signal is "xilinx.com:interface:iic:1.0 hdmi_in_ddc SDA_I";
-  attribute X_INTERFACE_INFO of hdmi_in_ddc_sda_o : signal is "xilinx.com:interface:iic:1.0 hdmi_in_ddc SDA_O";
-  attribute X_INTERFACE_INFO of hdmi_in_ddc_sda_t : signal is "xilinx.com:interface:iic:1.0 hdmi_in_ddc SDA_T";
-  attribute X_INTERFACE_INFO of hdmi_out_clk_n : signal is "digilentinc.com:interface:tmds:1.0 hdmi_out CLK_N";
-  attribute X_INTERFACE_INFO of hdmi_out_clk_p : signal is "digilentinc.com:interface:tmds:1.0 hdmi_out CLK_P";
-  attribute X_INTERFACE_INFO of reset : signal is "xilinx.com:signal:reset:1.0 RST.RESET RST";
-  attribute X_INTERFACE_PARAMETER of reset : signal is "XIL_INTERFACENAME RST.RESET, POLARITY ACTIVE_HIGH";
-  attribute X_INTERFACE_INFO of hdmi_in_data_n : signal is "digilentinc.com:interface:tmds:1.0 hdmi_in DATA_N";
-  attribute X_INTERFACE_INFO of hdmi_in_data_p : signal is "digilentinc.com:interface:tmds:1.0 hdmi_in DATA_P";
-  attribute X_INTERFACE_INFO of hdmi_out_data_n : signal is "digilentinc.com:interface:tmds:1.0 hdmi_out DATA_N";
-  attribute X_INTERFACE_INFO of hdmi_out_data_p : signal is "digilentinc.com:interface:tmds:1.0 hdmi_out DATA_P";
+  attribute x_interface_info : string;
+  attribute x_interface_info of CLK : signal is "xilinx.com:signal:clock:1.0 CLK.CLK CLK";
+  attribute x_interface_parameter : string;
+  attribute x_interface_parameter of CLK : signal is "XIL_INTERFACENAME CLK.CLK, CLK_DOMAIN HDMI_bd_CLK, FREQ_HZ 125000000, PHASE 0.000";
+  attribute x_interface_info of USER_RESET : signal is "xilinx.com:signal:reset:1.0 RST.USER_RESET RST";
+  attribute x_interface_parameter of USER_RESET : signal is "XIL_INTERFACENAME RST.USER_RESET, POLARITY ACTIVE_LOW";
+  attribute x_interface_info of hdmi_in_clk_n : signal is "digilentinc.com:interface:tmds:1.0 hdmi_in CLK_N";
+  attribute x_interface_info of hdmi_in_clk_p : signal is "digilentinc.com:interface:tmds:1.0 hdmi_in CLK_P";
+  attribute x_interface_info of hdmi_in_ddc_scl_i : signal is "xilinx.com:interface:iic:1.0 hdmi_in_ddc SCL_I";
+  attribute x_interface_info of hdmi_in_ddc_scl_o : signal is "xilinx.com:interface:iic:1.0 hdmi_in_ddc SCL_O";
+  attribute x_interface_info of hdmi_in_ddc_scl_t : signal is "xilinx.com:interface:iic:1.0 hdmi_in_ddc SCL_T";
+  attribute x_interface_info of hdmi_in_ddc_sda_i : signal is "xilinx.com:interface:iic:1.0 hdmi_in_ddc SDA_I";
+  attribute x_interface_info of hdmi_in_ddc_sda_o : signal is "xilinx.com:interface:iic:1.0 hdmi_in_ddc SDA_O";
+  attribute x_interface_info of hdmi_in_ddc_sda_t : signal is "xilinx.com:interface:iic:1.0 hdmi_in_ddc SDA_T";
+  attribute x_interface_info of hdmi_out_clk_n : signal is "digilentinc.com:interface:tmds:1.0 hdmi_out CLK_N";
+  attribute x_interface_info of hdmi_out_clk_p : signal is "digilentinc.com:interface:tmds:1.0 hdmi_out CLK_P";
+  attribute x_interface_info of reset : signal is "xilinx.com:signal:reset:1.0 RST.RESET RST";
+  attribute x_interface_parameter of reset : signal is "XIL_INTERFACENAME RST.RESET, POLARITY ACTIVE_HIGH";
+  attribute x_interface_info of hdmi_in_data_n : signal is "digilentinc.com:interface:tmds:1.0 hdmi_in DATA_N";
+  attribute x_interface_info of hdmi_in_data_p : signal is "digilentinc.com:interface:tmds:1.0 hdmi_in DATA_P";
+  attribute x_interface_info of hdmi_out_data_n : signal is "digilentinc.com:interface:tmds:1.0 hdmi_out DATA_N";
+  attribute x_interface_info of hdmi_out_data_p : signal is "digilentinc.com:interface:tmds:1.0 hdmi_out DATA_P";
 begin
   CLK_1 <= CLK;
   RESET_2 <= USER_RESET;

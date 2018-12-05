@@ -40,7 +40,7 @@ if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
 
 # The design that will be created by this Tcl script contains the following 
 # module references:
-# Counter, adapt_input_ouput, adapt_input_ouput, adapt_input_ouput, add_Nbits, add_Nbits, Counter, detect_end_image, divideur_select_output, divideur_select_output, Counter, rdc_1bit
+# Additionneur_Nbits, Additionneur_Nbits, Counter, adapt_input_ouput, adapt_input_ouput, adapt_input_ouput, adapt_input_ouput, adapt_input_ouput, Counter, detect_end_image, divideur_select_output, divideur_select_output, Counter
 
 # Please add the sources of those modules before sourcing this Tcl script.
 
@@ -179,6 +179,34 @@ proc create_root_design { parentCell } {
   set xMoy [ create_bd_port -dir O -from 11 -to 0 xMoy ]
   set yMoy [ create_bd_port -dir O -from 11 -to 0 yMoy ]
 
+  # Create instance: Additionneur_Nbits_0, and set properties
+  set block_name Additionneur_Nbits
+  set block_cell_name Additionneur_Nbits_0
+  if { [catch {set Additionneur_Nbits_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $Additionneur_Nbits_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+    set_property -dict [ list \
+   CONFIG.N {18} \
+ ] $Additionneur_Nbits_0
+
+  # Create instance: Additionneur_Nbits_1, and set properties
+  set block_name Additionneur_Nbits
+  set block_cell_name Additionneur_Nbits_1
+  if { [catch {set Additionneur_Nbits_1 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $Additionneur_Nbits_1 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+    set_property -dict [ list \
+   CONFIG.N {18} \
+ ] $Additionneur_Nbits_1
+
   # Create instance: Blank_pixel_counter, and set properties
   set block_name Counter
   set block_cell_name Blank_pixel_counter
@@ -238,33 +266,35 @@ proc create_root_design { parentCell } {
    CONFIG.N {18} \
  ] $adapt_input_ouput_2
 
-  # Create instance: add_Nbits_0, and set properties
-  set block_name add_Nbits
-  set block_cell_name add_Nbits_0
-  if { [catch {set add_Nbits_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+  # Create instance: adapt_input_ouput_3, and set properties
+  set block_name adapt_input_ouput
+  set block_cell_name adapt_input_ouput_3
+  if { [catch {set adapt_input_ouput_3 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
      catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
      return 1
-   } elseif { $add_Nbits_0 eq "" } {
+   } elseif { $adapt_input_ouput_3 eq "" } {
      catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
      return 1
    }
     set_property -dict [ list \
-   CONFIG.N {18} \
- ] $add_Nbits_0
+   CONFIG.M {18} \
+   CONFIG.N {11} \
+ ] $adapt_input_ouput_3
 
-  # Create instance: add_Nbits_1, and set properties
-  set block_name add_Nbits
-  set block_cell_name add_Nbits_1
-  if { [catch {set add_Nbits_1 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+  # Create instance: adapt_input_ouput_4, and set properties
+  set block_name adapt_input_ouput
+  set block_cell_name adapt_input_ouput_4
+  if { [catch {set adapt_input_ouput_4 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
      catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
      return 1
-   } elseif { $add_Nbits_1 eq "" } {
+   } elseif { $adapt_input_ouput_4 eq "" } {
      catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
      return 1
    }
     set_property -dict [ list \
-   CONFIG.N {18} \
- ] $add_Nbits_1
+   CONFIG.M {18} \
+   CONFIG.N {11} \
+ ] $adapt_input_ouput_4
 
   # Create instance: column_counter, and set properties
   set block_name Counter
@@ -363,41 +393,27 @@ proc create_root_design { parentCell } {
    CONFIG.N {11} \
  ] $ligne_counter
 
-  # Create instance: rdc_1bit_1, and set properties
-  set block_name rdc_1bit
-  set block_cell_name rdc_1bit_1
-  if { [catch {set rdc_1bit_1 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
-     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
-     return 1
-   } elseif { $rdc_1bit_1 eq "" } {
-     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
-     return 1
-   }
-  
-  # Create instance: xlconstant_0, and set properties
-  set xlconstant_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_0 ]
-
   # Create port connections
+  connect_bd_net -net Additionneur_Nbits_0_S [get_bd_pins Additionneur_Nbits_0/A] [get_bd_pins Additionneur_Nbits_0/S] [get_bd_pins adapt_input_ouput_2/entree]
+  connect_bd_net -net Additionneur_Nbits_1_S [get_bd_pins Additionneur_Nbits_1/A] [get_bd_pins Additionneur_Nbits_1/S] [get_bd_pins adapt_input_ouput_1/entree]
   connect_bd_net -net CE_column_count_1 [get_bd_ports CE_column_count] [get_bd_pins column_counter/EN]
   connect_bd_net -net CE_ligne_count_1 [get_bd_ports CE_ligne_count] [get_bd_pins ligne_counter/EN]
-  connect_bd_net -net CLK_1 [get_bd_ports CLK] [get_bd_pins Blank_pixel_counter/CLK] [get_bd_pins column_counter/CLK] [get_bd_pins detect_end_image_0/CLK] [get_bd_pins div_xAxis/aclk] [get_bd_pins div_yAxis/aclk] [get_bd_pins ligne_counter/CLK] [get_bd_pins rdc_1bit_1/CLK]
-  connect_bd_net -net Ligne_counter_Q [get_bd_ports nb_ligne] [get_bd_pins add_Nbits_0/B] [get_bd_pins detect_end_image_0/ligne] [get_bd_pins ligne_counter/Q]
+  connect_bd_net -net CLK_1 [get_bd_ports CLK] [get_bd_pins Additionneur_Nbits_0/CLK] [get_bd_pins Additionneur_Nbits_1/CLK] [get_bd_pins Blank_pixel_counter/CLK] [get_bd_pins column_counter/CLK] [get_bd_pins detect_end_image_0/CLK] [get_bd_pins div_xAxis/aclk] [get_bd_pins div_yAxis/aclk] [get_bd_pins ligne_counter/CLK]
   connect_bd_net -net Net [get_bd_pins detect_end_image_0/fin] [get_bd_pins div_xAxis/s_axis_dividend_tvalid] [get_bd_pins div_xAxis/s_axis_divisor_tvalid] [get_bd_pins div_yAxis/s_axis_dividend_tvalid] [get_bd_pins div_yAxis/s_axis_divisor_tvalid]
-  connect_bd_net -net Net1 [get_bd_pins Blank_pixel_counter/EN] [get_bd_pins rdc_1bit_1/Q]
-  connect_bd_net -net Pixel_White_Black_1 [get_bd_ports Pixel_White_Black] [get_bd_pins rdc_1bit_1/D]
-  connect_bd_net -net RESET_counter_ligne_and_column_1 [get_bd_ports RESET] [get_bd_pins Blank_pixel_counter/RESET] [get_bd_pins column_counter/RESET] [get_bd_pins ligne_counter/RESET] [get_bd_pins rdc_1bit_1/RESET]
+  connect_bd_net -net Net1 [get_bd_ports Pixel_White_Black] [get_bd_pins Additionneur_Nbits_0/EN] [get_bd_pins Additionneur_Nbits_1/EN] [get_bd_pins Blank_pixel_counter/EN]
+  connect_bd_net -net RESET_counter_ligne_and_column_1 [get_bd_ports RESET] [get_bd_pins Additionneur_Nbits_0/RESET] [get_bd_pins Additionneur_Nbits_1/RESET] [get_bd_pins Blank_pixel_counter/RESET] [get_bd_pins column_counter/RESET] [get_bd_pins ligne_counter/RESET]
   connect_bd_net -net adapt_input_ouput_0_sortie [get_bd_pins adapt_input_ouput_0/sortie] [get_bd_pins div_xAxis/s_axis_divisor_tdata] [get_bd_pins div_yAxis/s_axis_divisor_tdata]
   connect_bd_net -net adapt_input_ouput_1_sortie [get_bd_pins adapt_input_ouput_1/sortie] [get_bd_pins div_xAxis/s_axis_dividend_tdata]
   connect_bd_net -net adapt_input_ouput_2_sortie [get_bd_pins adapt_input_ouput_2/sortie] [get_bd_pins div_yAxis/s_axis_dividend_tdata]
-  connect_bd_net -net add_xAxis_S [get_bd_pins adapt_input_ouput_1/entree] [get_bd_pins add_Nbits_0/A] [get_bd_pins add_Nbits_0/S]
-  connect_bd_net -net add_yAxis_S [get_bd_pins adapt_input_ouput_2/entree] [get_bd_pins add_Nbits_1/A] [get_bd_pins add_Nbits_1/S]
-  connect_bd_net -net column_counter_Q [get_bd_ports nb_column] [get_bd_pins add_Nbits_1/B] [get_bd_pins column_counter/Q] [get_bd_pins detect_end_image_0/column]
+  connect_bd_net -net adapt_input_ouput_3_sortie [get_bd_pins Additionneur_Nbits_1/B] [get_bd_pins adapt_input_ouput_3/sortie]
+  connect_bd_net -net adapt_input_ouput_4_sortie [get_bd_pins Additionneur_Nbits_0/B] [get_bd_pins adapt_input_ouput_4/sortie]
+  connect_bd_net -net column_counter_Q [get_bd_ports nb_column] [get_bd_pins adapt_input_ouput_4/entree] [get_bd_pins column_counter/Q] [get_bd_pins detect_end_image_0/column]
   connect_bd_net -net div_xAxis_m_axis_dout_tdata [get_bd_pins div_xAxis/m_axis_dout_tdata] [get_bd_pins divideur_select_outp_0/Entree]
   connect_bd_net -net div_yAxis_m_axis_dout_tdata [get_bd_pins div_yAxis/m_axis_dout_tdata] [get_bd_pins divideur_select_outp_1/Entree]
   connect_bd_net -net divideur_select_outp_0_Output [get_bd_ports xMoy] [get_bd_pins divideur_select_outp_0/Sortie]
   connect_bd_net -net divideur_select_outp_1_Output [get_bd_ports yMoy] [get_bd_pins divideur_select_outp_1/Sortie]
   connect_bd_net -net ligne_counter2_Q [get_bd_pins Blank_pixel_counter/Q] [get_bd_pins adapt_input_ouput_0/entree]
-  connect_bd_net -net xlconstant_0_dout [get_bd_pins rdc_1bit_1/EN] [get_bd_pins xlconstant_0/dout]
+  connect_bd_net -net ligne_counter_Q [get_bd_ports nb_ligne] [get_bd_pins adapt_input_ouput_3/entree] [get_bd_pins detect_end_image_0/ligne] [get_bd_pins ligne_counter/Q]
 
   # Create address segments
 

@@ -6,20 +6,19 @@
       <db_ref path="c_counter_binary_wrapper_tb_func_synth.wdb" id="1">
          <top_modules>
             <top_module name="c_counter_binary_wrapper_tb" />
-            <top_module name="glbl" />
          </top_modules>
       </db_ref>
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="255157521fs"></ZoomEndTime>
-      <Cursor1Time time="0fs"></Cursor1Time>
+      <ZoomEndTime time="58372137fs"></ZoomEndTime>
+      <Cursor1Time time="10000000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="175"></NameColumnWidth>
-      <ValueColumnWidth column_width="82"></ValueColumnWidth>
+      <ValueColumnWidth column_width="58"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="10" />
+   <WVObjectSize size="29" />
    <wvobject fp_name="/c_counter_binary_wrapper_tb/CE_column_count" type="logic">
       <obj_property name="ElementShortName">CE_column_count</obj_property>
       <obj_property name="ObjectShortName">CE_column_count</obj_property>
@@ -59,5 +58,81 @@
    <wvobject fp_name="/c_counter_binary_wrapper_tb/clock_period" type="other">
       <obj_property name="ElementShortName">clock_period</obj_property>
       <obj_property name="ObjectShortName">clock_period</obj_property>
+   </wvobject>
+   <wvobject fp_name="/c_counter_binary_wrapper_tb/uut/c_counter_binary_i/Additionneur_Nbits_1/A" type="array">
+      <obj_property name="ElementShortName">A[17:0]</obj_property>
+      <obj_property name="ObjectShortName">A[17:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/c_counter_binary_wrapper_tb/uut/c_counter_binary_i/Additionneur_Nbits_1/B" type="array">
+      <obj_property name="ElementShortName">B[17:0]</obj_property>
+      <obj_property name="ObjectShortName">B[17:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/c_counter_binary_wrapper_tb/uut/c_counter_binary_i/Additionneur_Nbits_1/RESET" type="logic">
+      <obj_property name="ElementShortName">RESET</obj_property>
+      <obj_property name="ObjectShortName">RESET</obj_property>
+   </wvobject>
+   <wvobject fp_name="/c_counter_binary_wrapper_tb/uut/c_counter_binary_i/Additionneur_Nbits_1/CLK" type="logic">
+      <obj_property name="ElementShortName">CLK</obj_property>
+      <obj_property name="ObjectShortName">CLK</obj_property>
+   </wvobject>
+   <wvobject fp_name="/c_counter_binary_wrapper_tb/uut/c_counter_binary_i/Additionneur_Nbits_1/Co" type="logic">
+      <obj_property name="ElementShortName">Co</obj_property>
+      <obj_property name="ObjectShortName">Co</obj_property>
+   </wvobject>
+   <wvobject fp_name="/c_counter_binary_wrapper_tb/uut/c_counter_binary_i/Additionneur_Nbits_1/S" type="array">
+      <obj_property name="ElementShortName">S[17:0]</obj_property>
+      <obj_property name="ObjectShortName">S[17:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/c_counter_binary_wrapper_tb/uut/c_counter_binary_i/Additionneur_Nbits_1/\&lt;const0&gt;\" type="logic">
+      <obj_property name="ElementShortName">\&lt;const0&gt;\</obj_property>
+      <obj_property name="ObjectShortName">\&lt;const0&gt;\</obj_property>
+   </wvobject>
+   <wvobject fp_name="/c_counter_binary_wrapper_tb/uut/c_counter_binary_i/Additionneur_Nbits_0/A" type="array">
+      <obj_property name="ElementShortName">A[17:0]</obj_property>
+      <obj_property name="ObjectShortName">A[17:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/c_counter_binary_wrapper_tb/uut/c_counter_binary_i/Additionneur_Nbits_0/B" type="array">
+      <obj_property name="ElementShortName">B[17:0]</obj_property>
+      <obj_property name="ObjectShortName">B[17:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/c_counter_binary_wrapper_tb/uut/c_counter_binary_i/Additionneur_Nbits_0/RESET" type="logic">
+      <obj_property name="ElementShortName">RESET</obj_property>
+      <obj_property name="ObjectShortName">RESET</obj_property>
+   </wvobject>
+   <wvobject fp_name="/c_counter_binary_wrapper_tb/uut/c_counter_binary_i/Additionneur_Nbits_0/CLK" type="logic">
+      <obj_property name="ElementShortName">CLK</obj_property>
+      <obj_property name="ObjectShortName">CLK</obj_property>
+   </wvobject>
+   <wvobject fp_name="/c_counter_binary_wrapper_tb/uut/c_counter_binary_i/Additionneur_Nbits_0/Co" type="logic">
+      <obj_property name="ElementShortName">Co</obj_property>
+      <obj_property name="ObjectShortName">Co</obj_property>
+   </wvobject>
+   <wvobject fp_name="/c_counter_binary_wrapper_tb/uut/c_counter_binary_i/Additionneur_Nbits_0/S" type="array">
+      <obj_property name="ElementShortName">S[17:0]</obj_property>
+      <obj_property name="ObjectShortName">S[17:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/c_counter_binary_wrapper_tb/uut/c_counter_binary_i/Additionneur_Nbits_0/\&lt;const0&gt;\" type="logic">
+      <obj_property name="ElementShortName">\&lt;const0&gt;\</obj_property>
+      <obj_property name="ObjectShortName">\&lt;const0&gt;\</obj_property>
+   </wvobject>
+   <wvobject fp_name="/c_counter_binary_wrapper_tb/uut/c_counter_binary_i/rdc_1bit_1/RESET" type="logic">
+      <obj_property name="ElementShortName">RESET</obj_property>
+      <obj_property name="ObjectShortName">RESET</obj_property>
+   </wvobject>
+   <wvobject fp_name="/c_counter_binary_wrapper_tb/uut/c_counter_binary_i/rdc_1bit_1/D" type="logic">
+      <obj_property name="ElementShortName">D</obj_property>
+      <obj_property name="ObjectShortName">D</obj_property>
+   </wvobject>
+   <wvobject fp_name="/c_counter_binary_wrapper_tb/uut/c_counter_binary_i/rdc_1bit_1/EN" type="logic">
+      <obj_property name="ElementShortName">EN</obj_property>
+      <obj_property name="ObjectShortName">EN</obj_property>
+   </wvobject>
+   <wvobject fp_name="/c_counter_binary_wrapper_tb/uut/c_counter_binary_i/rdc_1bit_1/CLK" type="logic">
+      <obj_property name="ElementShortName">CLK</obj_property>
+      <obj_property name="ObjectShortName">CLK</obj_property>
+   </wvobject>
+   <wvobject fp_name="/c_counter_binary_wrapper_tb/uut/c_counter_binary_i/rdc_1bit_1/Q" type="logic">
+      <obj_property name="ElementShortName">Q</obj_property>
+      <obj_property name="ObjectShortName">Q</obj_property>
    </wvobject>
 </wave_config>

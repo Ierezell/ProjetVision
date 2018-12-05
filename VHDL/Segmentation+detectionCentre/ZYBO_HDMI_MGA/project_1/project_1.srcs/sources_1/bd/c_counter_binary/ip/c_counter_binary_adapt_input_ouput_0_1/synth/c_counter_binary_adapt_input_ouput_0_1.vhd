@@ -74,11 +74,11 @@ ARCHITECTURE c_counter_binary_adapt_input_ouput_0_1_arch OF c_counter_binary_ada
     );
   END COMPONENT adapt_input_ouput;
   ATTRIBUTE X_CORE_INFO : STRING;
-  ATTRIBUTE X_CORE_INFO OF c_counter_binary_adapt_input_ouput_0_1_arch: ARCHITECTURE IS "adapt_input_ouput,Vivado 2018.2.1";
+  ATTRIBUTE X_CORE_INFO OF c_counter_binary_adapt_input_ouput_0_1_arch: ARCHITECTURE IS "adapt_input_ouput,Vivado 2018.2";
   ATTRIBUTE CHECK_LICENSE_TYPE : STRING;
   ATTRIBUTE CHECK_LICENSE_TYPE OF c_counter_binary_adapt_input_ouput_0_1_arch : ARCHITECTURE IS "c_counter_binary_adapt_input_ouput_0_1,adapt_input_ouput,{}";
   ATTRIBUTE CORE_GENERATION_INFO : STRING;
-  ATTRIBUTE CORE_GENERATION_INFO OF c_counter_binary_adapt_input_ouput_0_1_arch: ARCHITECTURE IS "c_counter_binary_adapt_input_ouput_0_1,adapt_input_ouput,{x_ipProduct=Vivado 2018.2.1,x_ipVendor=xilinx.com,x_ipLibrary=module_ref,x_ipName=adapt_input_ouput,x_ipVersion=1.0,x_ipCoreRevision=1,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED,N=18,M=24}";
+  ATTRIBUTE CORE_GENERATION_INFO OF c_counter_binary_adapt_input_ouput_0_1_arch: ARCHITECTURE IS "c_counter_binary_adapt_input_ouput_0_1,adapt_input_ouput,{x_ipProduct=Vivado 2018.2,x_ipVendor=xilinx.com,x_ipLibrary=module_ref,x_ipName=adapt_input_ouput,x_ipVersion=1.0,x_ipCoreRevision=1,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED,N=18,M=24}";
   ATTRIBUTE IP_DEFINITION_SOURCE : STRING;
   ATTRIBUTE IP_DEFINITION_SOURCE OF c_counter_binary_adapt_input_ouput_0_1_arch: ARCHITECTURE IS "module_ref";
 BEGIN

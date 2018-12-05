@@ -1,32 +1,65 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Sat Dec  1 14:06:35 2018" VIVADOVERSION="2018.2">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Mon Dec  3 23:38:56 2018" VIVADOVERSION="2018.2">
 
   <SYSTEMINFO ARCH="zynq" BOARD="digilentinc.com:zybo-z7-20:part0:1.0" DEVICE="7z020" NAME="test" PACKAGE="clg400" SPEEDGRADE="-1"/>
 
   <EXTERNALPORTS>
-    <PORT DIR="I" NAME="CLK" SIGIS="undef" SIGNAME="External_Ports_CLK">
+    <PORT DIR="I" NAME="CE_column_count" SIGIS="undef" SIGNAME="External_Ports_CE_column_count">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="div_gen_0" PORT="aclk"/>
+        <CONNECTION INSTANCE="column_counter" PORT="EN"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" LEFT="15" NAME="divisor" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_divisor">
+    <PORT DIR="I" NAME="CE_ligne_count" SIGIS="undef" SIGNAME="External_Ports_CE_ligne_count">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="div_gen_0" PORT="s_axis_divisor_tdata"/>
+        <CONNECTION INSTANCE="ligne_counter" PORT="EN"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" LEFT="15" NAME="dividende" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_dividende">
+    <PORT CLKFREQUENCY="100000000" DIR="I" NAME="CLK" SIGIS="clk" SIGNAME="External_Ports_CLK">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="adapt_input_ouput_0" PORT="entree"/>
+        <CONNECTION INSTANCE="rdc_1bit_1" PORT="CLK"/>
+        <CONNECTION INSTANCE="detect_end_image_0" PORT="CLK"/>
+        <CONNECTION INSTANCE="ligne_counter" PORT="CLK"/>
+        <CONNECTION INSTANCE="Blank_pixel_counter" PORT="CLK"/>
+        <CONNECTION INSTANCE="column_counter" PORT="CLK"/>
+        <CONNECTION INSTANCE="reg_Nbits_0" PORT="CLK"/>
+        <CONNECTION INSTANCE="reg_Nbits_1" PORT="CLK"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" LEFT="39" NAME="sortie" RIGHT="0" SIGIS="undef" SIGNAME="div_gen_0_m_axis_dout_tdata">
+    <PORT DIR="I" NAME="Pixel_White_Black" SIGIS="undef" SIGNAME="External_Ports_Pixel_White_Black">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="div_gen_0" PORT="m_axis_dout_tdata"/>
+        <CONNECTION INSTANCE="rdc_1bit_1" PORT="D"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="sortie_ok" SIGIS="undef" SIGNAME="div_gen_0_m_axis_dout_tvalid">
+    <PORT DIR="I" NAME="RESET" SIGIS="rst" SIGNAME="External_Ports_RESET">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="div_gen_0" PORT="m_axis_dout_tvalid"/>
+        <CONNECTION INSTANCE="rdc_1bit_1" PORT="RESET"/>
+        <CONNECTION INSTANCE="ligne_counter" PORT="RESET"/>
+        <CONNECTION INSTANCE="Blank_pixel_counter" PORT="RESET"/>
+        <CONNECTION INSTANCE="column_counter" PORT="RESET"/>
+        <CONNECTION INSTANCE="reg_Nbits_0" PORT="RESET"/>
+        <CONNECTION INSTANCE="reg_Nbits_1" PORT="RESET"/>
+        <CONNECTION INSTANCE="add_Nbits_0" PORT="RESET"/>
+        <CONNECTION INSTANCE="add_Nbits_1" PORT="RESET"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="10" NAME="nb_column" RIGHT="0" SIGIS="undef" SIGNAME="column_counter_Q">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="column_counter" PORT="Q"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="10" NAME="nb_ligne" RIGHT="0" SIGIS="undef" SIGNAME="ligne_counter_Q">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="ligne_counter" PORT="Q"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="11" NAME="xMoy" RIGHT="0" SIGIS="undef" SIGNAME="divideur_select_outp_0_Sortie">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="divideur_select_outp_0" PORT="Sortie"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="11" NAME="yMoy" RIGHT="0" SIGIS="undef" SIGNAME="divideur_select_outp_1_Sortie">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="divideur_select_outp_1" PORT="Sortie"/>
       </CONNECTIONS>
     </PORT>
   </EXTERNALPORTS>
@@ -34,189 +67,462 @@
   <EXTERNALINTERFACES/>
 
   <MODULES>
-    <MODULE FULLNAME="/adapt_input_ouput_0" HWVERSION="1.0" INSTANCE="adapt_input_ouput_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="adapt_input_ouput" VLNV="xilinx.com:module_ref:adapt_input_ouput:1.0">
+    <MODULE FULLNAME="/Blank_pixel_counter" HWVERSION="1.0" INSTANCE="Blank_pixel_counter" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="Counter" VLNV="xilinx.com:module_ref:Counter:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
-        <PARAMETER NAME="N" VALUE="16"/>
-        <PARAMETER NAME="M" VALUE="24"/>
-        <PARAMETER NAME="Component_Name" VALUE="test_adapt_input_ouput_0_0"/>
+        <PARAMETER NAME="N" VALUE="11"/>
+        <PARAMETER NAME="Component_Name" VALUE="test_Blank_pixel_counter_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT DIR="I" LEFT="15" NAME="entree" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_dividende">
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="CLK" SIGIS="clk" SIGNAME="External_Ports_CLK">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="dividende"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="CLK"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="23" NAME="sortie" RIGHT="0" SIGIS="undef" SIGNAME="adapt_input_ouput_0_sortie">
+        <PORT DIR="I" NAME="RESET" SIGIS="rst" SIGNAME="External_Ports_RESET">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="div_gen_0" PORT="s_axis_dividend_tdata"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="RESET"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="EN" SIGIS="undef" SIGNAME="rdc_1bit_1_Q">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="rdc_1bit_1" PORT="Q"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="10" NAME="Q" RIGHT="0" SIGIS="undef" SIGNAME="Blank_pixel_counter_Q">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="adapt_input_ouput_0" PORT="entree"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
-    <MODULE FULLNAME="/div_gen_0" HWVERSION="5.1" INSTANCE="div_gen_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="div_gen" VLNV="xilinx.com:ip:div_gen:5.1">
-      <DOCUMENTS>
-        <DOCUMENT SOURCE="http://www.xilinx.com/cgi-bin/docs/ipdoc?c=div_gen;v=v5_1;d=pg151-div-gen.pdf"/>
-      </DOCUMENTS>
+    <MODULE FULLNAME="/adapt_input_ouput_0" HWVERSION="1.0" INSTANCE="adapt_input_ouput_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="adapt_input_ouput" VLNV="xilinx.com:module_ref:adapt_input_ouput:1.0">
+      <DOCUMENTS/>
       <PARAMETERS>
-        <PARAMETER NAME="C_XDEVICEFAMILY" VALUE="zynq"/>
-        <PARAMETER NAME="C_HAS_ARESETN" VALUE="0"/>
-        <PARAMETER NAME="C_HAS_ACLKEN" VALUE="0"/>
-        <PARAMETER NAME="C_LATENCY" VALUE="20"/>
-        <PARAMETER NAME="ALGORITHM_TYPE" VALUE="1"/>
-        <PARAMETER NAME="DIVISOR_WIDTH" VALUE="11"/>
-        <PARAMETER NAME="DIVIDEND_WIDTH" VALUE="18"/>
-        <PARAMETER NAME="SIGNED_B" VALUE="0"/>
-        <PARAMETER NAME="DIVCLK_SEL" VALUE="1"/>
-        <PARAMETER NAME="FRACTIONAL_B" VALUE="0"/>
-        <PARAMETER NAME="FRACTIONAL_WIDTH" VALUE="11"/>
-        <PARAMETER NAME="C_HAS_DIV_BY_ZERO" VALUE="0"/>
-        <PARAMETER NAME="C_THROTTLE_SCHEME" VALUE="3"/>
-        <PARAMETER NAME="C_TLAST_RESOLUTION" VALUE="0"/>
-        <PARAMETER NAME="C_HAS_S_AXIS_DIVISOR_TUSER" VALUE="0"/>
-        <PARAMETER NAME="C_HAS_S_AXIS_DIVISOR_TLAST" VALUE="0"/>
-        <PARAMETER NAME="C_S_AXIS_DIVISOR_TDATA_WIDTH" VALUE="16"/>
-        <PARAMETER NAME="C_S_AXIS_DIVISOR_TUSER_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="C_HAS_S_AXIS_DIVIDEND_TUSER" VALUE="0"/>
-        <PARAMETER NAME="C_HAS_S_AXIS_DIVIDEND_TLAST" VALUE="0"/>
-        <PARAMETER NAME="C_S_AXIS_DIVIDEND_TDATA_WIDTH" VALUE="24"/>
-        <PARAMETER NAME="C_S_AXIS_DIVIDEND_TUSER_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="C_M_AXIS_DOUT_TDATA_WIDTH" VALUE="40"/>
-        <PARAMETER NAME="C_M_AXIS_DOUT_TUSER_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="Component_Name" VALUE="test_div_gen_0_0"/>
-        <PARAMETER NAME="algorithm_type" VALUE="Radix2"/>
-        <PARAMETER NAME="dividend_and_quotient_width" VALUE="18"/>
-        <PARAMETER NAME="dividend_has_tuser" VALUE="false"/>
-        <PARAMETER NAME="dividend_tuser_width" VALUE="1"/>
-        <PARAMETER NAME="dividend_has_tlast" VALUE="false"/>
-        <PARAMETER NAME="divisor_width" VALUE="11"/>
-        <PARAMETER NAME="divisor_has_tuser" VALUE="false"/>
-        <PARAMETER NAME="divisor_tuser_width" VALUE="1"/>
-        <PARAMETER NAME="divisor_has_tlast" VALUE="false"/>
-        <PARAMETER NAME="remainder_type" VALUE="Remainder"/>
-        <PARAMETER NAME="fractional_width" VALUE="11"/>
-        <PARAMETER NAME="operand_sign" VALUE="Unsigned"/>
-        <PARAMETER NAME="clocks_per_division" VALUE="1"/>
-        <PARAMETER NAME="divide_by_zero_detect" VALUE="false"/>
-        <PARAMETER NAME="FlowControl" VALUE="NonBlocking"/>
-        <PARAMETER NAME="OptimizeGoal" VALUE="Performance"/>
-        <PARAMETER NAME="OutTready" VALUE="false"/>
-        <PARAMETER NAME="OutTLASTBehv" VALUE="Null"/>
-        <PARAMETER NAME="latency_configuration" VALUE="Automatic"/>
-        <PARAMETER NAME="latency" VALUE="20"/>
-        <PARAMETER NAME="ACLKEN" VALUE="false"/>
-        <PARAMETER NAME="ARESETN" VALUE="false"/>
+        <PARAMETER NAME="N" VALUE="11"/>
+        <PARAMETER NAME="M" VALUE="40"/>
+        <PARAMETER NAME="Component_Name" VALUE="test_adapt_input_ouput_0_1"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT CLKFREQUENCY="1000000" DIR="I" NAME="aclk" SIGIS="clk" SIGNAME="External_Ports_CLK">
+        <PORT DIR="I" LEFT="10" NAME="entree" RIGHT="0" SIGIS="undef" SIGNAME="Blank_pixel_counter_Q">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="Blank_pixel_counter" PORT="Q"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="39" NAME="sortie" RIGHT="0" SIGIS="undef"/>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE FULLNAME="/adapt_input_ouput_1" HWVERSION="1.0" INSTANCE="adapt_input_ouput_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="adapt_input_ouput" VLNV="xilinx.com:module_ref:adapt_input_ouput:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="N" VALUE="18"/>
+        <PARAMETER NAME="M" VALUE="40"/>
+        <PARAMETER NAME="Component_Name" VALUE="test_adapt_input_ouput_1_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="17" NAME="entree" RIGHT="0" SIGIS="undef" SIGNAME="add_Nbits_0_S">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="add_Nbits_0" PORT="S"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="39" NAME="sortie" RIGHT="0" SIGIS="undef" SIGNAME="adapt_input_ouput_1_sortie">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="divideur_select_outp_0" PORT="Entree"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE FULLNAME="/adapt_input_ouput_2" HWVERSION="1.0" INSTANCE="adapt_input_ouput_2" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="adapt_input_ouput" VLNV="xilinx.com:module_ref:adapt_input_ouput:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="N" VALUE="18"/>
+        <PARAMETER NAME="M" VALUE="40"/>
+        <PARAMETER NAME="Component_Name" VALUE="test_adapt_input_ouput_2_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="17" NAME="entree" RIGHT="0" SIGIS="undef" SIGNAME="add_Nbits_1_S">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="add_Nbits_1" PORT="S"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="39" NAME="sortie" RIGHT="0" SIGIS="undef" SIGNAME="adapt_input_ouput_2_sortie">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="divideur_select_outp_1" PORT="Entree"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE FULLNAME="/adapt_input_ouput_3" HWVERSION="1.0" INSTANCE="adapt_input_ouput_3" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="adapt_input_ouput" VLNV="xilinx.com:module_ref:adapt_input_ouput:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="N" VALUE="11"/>
+        <PARAMETER NAME="M" VALUE="18"/>
+        <PARAMETER NAME="Component_Name" VALUE="test_adapt_input_ouput_3_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="10" NAME="entree" RIGHT="0" SIGIS="undef" SIGNAME="ligne_counter_Q">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="ligne_counter" PORT="Q"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="17" NAME="sortie" RIGHT="0" SIGIS="undef" SIGNAME="adapt_input_ouput_3_sortie">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="add_Nbits_0" PORT="B"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE FULLNAME="/adapt_input_ouput_4" HWVERSION="1.0" INSTANCE="adapt_input_ouput_4" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="adapt_input_ouput" VLNV="xilinx.com:module_ref:adapt_input_ouput:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="N" VALUE="11"/>
+        <PARAMETER NAME="M" VALUE="18"/>
+        <PARAMETER NAME="Component_Name" VALUE="test_adapt_input_ouput_4_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="10" NAME="entree" RIGHT="0" SIGIS="undef" SIGNAME="column_counter_Q">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="column_counter" PORT="Q"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="17" NAME="sortie" RIGHT="0" SIGIS="undef" SIGNAME="adapt_input_ouput_4_sortie">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="add_Nbits_1" PORT="B"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE FULLNAME="/add_Nbits_0" HWVERSION="1.0" INSTANCE="add_Nbits_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="add_Nbits" VLNV="xilinx.com:module_ref:add_Nbits:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="N" VALUE="18"/>
+        <PARAMETER NAME="Component_Name" VALUE="test_add_Nbits_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="17" NAME="A" RIGHT="0" SIGIS="undef" SIGNAME="reg_Nbits_0_Q">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="reg_Nbits_0" PORT="Q"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="17" NAME="B" RIGHT="0" SIGIS="undef" SIGNAME="adapt_input_ouput_3_sortie">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="adapt_input_ouput_3" PORT="sortie"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="RESET" SIGIS="rst" SIGNAME="External_Ports_RESET">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="RESET"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="Co" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="17" NAME="S" RIGHT="0" SIGIS="undef" SIGNAME="add_Nbits_0_S">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="adapt_input_ouput_1" PORT="entree"/>
+            <CONNECTION INSTANCE="reg_Nbits_0" PORT="D"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE FULLNAME="/add_Nbits_1" HWVERSION="1.0" INSTANCE="add_Nbits_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="add_Nbits" VLNV="xilinx.com:module_ref:add_Nbits:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="N" VALUE="18"/>
+        <PARAMETER NAME="Component_Name" VALUE="test_add_Nbits_1_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="17" NAME="A" RIGHT="0" SIGIS="undef" SIGNAME="reg_Nbits_1_Q">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="reg_Nbits_1" PORT="Q"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="17" NAME="B" RIGHT="0" SIGIS="undef" SIGNAME="adapt_input_ouput_4_sortie">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="adapt_input_ouput_4" PORT="sortie"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="RESET" SIGIS="rst" SIGNAME="External_Ports_RESET">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="RESET"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="Co" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="17" NAME="S" RIGHT="0" SIGIS="undef" SIGNAME="add_Nbits_1_S">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="adapt_input_ouput_2" PORT="entree"/>
+            <CONNECTION INSTANCE="reg_Nbits_1" PORT="D"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE FULLNAME="/column_counter" HWVERSION="1.0" INSTANCE="column_counter" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="Counter" VLNV="xilinx.com:module_ref:Counter:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="N" VALUE="11"/>
+        <PARAMETER NAME="Component_Name" VALUE="test_column_counter_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="CLK" SIGIS="clk" SIGNAME="External_Ports_CLK">
           <CONNECTIONS>
             <CONNECTION INSTANCE="External_Ports" PORT="CLK"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="s_axis_divisor_tvalid" SIGIS="undef" SIGNAME="xlconstant_0_dout">
+        <PORT DIR="I" NAME="RESET" SIGIS="rst" SIGNAME="External_Ports_RESET">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="xlconstant_0" PORT="dout"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="RESET"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="15" NAME="s_axis_divisor_tdata" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_divisor">
+        <PORT DIR="I" NAME="EN" SIGIS="undef" SIGNAME="External_Ports_CE_column_count">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="divisor"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="CE_column_count"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="s_axis_dividend_tvalid" SIGIS="undef" SIGNAME="xlconstant_0_dout">
+        <PORT DIR="O" LEFT="10" NAME="Q" RIGHT="0" SIGIS="undef" SIGNAME="column_counter_Q">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="xlconstant_0" PORT="dout"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="23" NAME="s_axis_dividend_tdata" RIGHT="0" SIGIS="undef" SIGNAME="adapt_input_ouput_0_sortie">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="adapt_input_ouput_0" PORT="sortie"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="m_axis_dout_tvalid" SIGIS="undef" SIGNAME="div_gen_0_m_axis_dout_tvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="sortie_ok"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="39" NAME="m_axis_dout_tdata" RIGHT="0" SIGIS="undef" SIGNAME="div_gen_0_m_axis_dout_tdata">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="sortie"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="nb_column"/>
+            <CONNECTION INSTANCE="detect_end_image_0" PORT="column"/>
+            <CONNECTION INSTANCE="adapt_input_ouput_4" PORT="entree"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
-      <BUSINTERFACES>
-        <BUSINTERFACE BUSNAME="__NOC__" NAME="M_AXIS_DOUT" TYPE="INITIATOR" VLNV="xilinx.com:interface:axis:1.0">
-          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="5"/>
-          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
-          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
-          <PARAMETER NAME="TUSER_WIDTH" VALUE="0"/>
-          <PARAMETER NAME="HAS_TREADY" VALUE="0"/>
-          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
-          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
-          <PARAMETER NAME="HAS_TLAST" VALUE="0"/>
-          <PARAMETER NAME="FREQ_HZ" VALUE="1000000"/>
-          <PARAMETER NAME="PHASE" VALUE="0.000"/>
-          <PARAMETER NAME="CLK_DOMAIN"/>
-          <PARAMETER NAME="LAYERED_METADATA" VALUE="xilinx.com:interface:datatypes:1.0 {TDATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type automatic dependency {} format long minimum {} maximum {}} value 34} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} struct {field_fractional {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value fractional} enabled {attribs {resolve_type generated dependency fract_enabled format bool minimum {} maximum {}} value false} datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type generated dependency fract_width format long minimum {} maximum {}} value 0} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} real {fixed {fractwidth {attribs {resolve_type generated dependency fract_remainder_fractwidth format long minimum {} maximum {}} value 0} signed {attribs {resolve_type generated dependency fract_remainder_signed format bool minimum {} maximum {}} value false}}}}} field_remainder {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value remainder} enabled {attribs {resolve_type generated dependency remainder_enabled format bool minimum {} maximum {}} value true} datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type generated dependency remainder_width format long minimum {} maximum {}} value 11} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} real {fixed {fractwidth {attribs {resolve_type generated dependency fract_remainder_fractwidth format long minimum {} maximum {}} value 0} signed {attribs {resolve_type generated dependency fract_remainder_signed format bool minimum {} maximum {}} value false}}}}} field_quotient {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value quotient} enabled {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value true} datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type generated dependency quotient_width format long minimum {} maximum {}} value 18} bitoffset {attribs {resolve_type generated dependency quotient_offset format long minimum {} maximum {}} value 16} integer {signed {attribs {resolve_type generated dependency quotient_signed format bool minimum {} maximum {}} value false}}}}}}} TDATA_WIDTH 40 TUSER {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type automatic dependency {} format long minimum {} maximum {}} value 0} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} struct {field_divide_by_zero {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value divide_by_zero} enabled {attribs {resolve_type generated dependency divbyzero_enabled format bool minimum {} maximum {}} value false} datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type generated dependency divbyzero_width format long minimum {} maximum {}} value 0} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0}}} field_divisor_tuser {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value divisor_tuser} enabled {attribs {resolve_type generated dependency divisor_enabled format bool minimum {} maximum {}} value false} datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type generated dependency divisor_width format long minimum {} maximum {}} value 0} bitoffset {attribs {resolve_type generated dependency divisor_offset format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}} field_dividend_tuser {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value dividend_tuser} enabled {attribs {resolve_type generated dependency dividend_enabled format bool minimum {} maximum {}} value false} datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type generated dependency dividend_width format long minimum {} maximum {}} value 0} bitoffset {attribs {resolve_type generated dependency dividend_offset format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}}}}} TUSER_WIDTH 0}"/>
-          <PORTMAPS>
-            <PORTMAP LOGICAL="TDATA" PHYSICAL="m_axis_dout_tdata"/>
-            <PORTMAP LOGICAL="TVALID" PHYSICAL="m_axis_dout_tvalid"/>
-          </PORTMAPS>
-        </BUSINTERFACE>
-        <BUSINTERFACE BUSNAME="__NOC__" NAME="S_AXIS_DIVISOR" TYPE="TARGET" VLNV="xilinx.com:interface:axis:1.0">
-          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="2"/>
-          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
-          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
-          <PARAMETER NAME="TUSER_WIDTH" VALUE="0"/>
-          <PARAMETER NAME="HAS_TREADY" VALUE="0"/>
-          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
-          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
-          <PARAMETER NAME="HAS_TLAST" VALUE="0"/>
-          <PARAMETER NAME="FREQ_HZ" VALUE="1000000"/>
-          <PARAMETER NAME="PHASE" VALUE="0.000"/>
-          <PARAMETER NAME="CLK_DOMAIN"/>
-          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
-          <PORTMAPS>
-            <PORTMAP LOGICAL="TDATA" PHYSICAL="s_axis_divisor_tdata"/>
-            <PORTMAP LOGICAL="TVALID" PHYSICAL="s_axis_divisor_tvalid"/>
-          </PORTMAPS>
-        </BUSINTERFACE>
-        <BUSINTERFACE BUSNAME="__NOC__" NAME="S_AXIS_DIVIDEND" TYPE="TARGET" VLNV="xilinx.com:interface:axis:1.0">
-          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="3"/>
-          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
-          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
-          <PARAMETER NAME="TUSER_WIDTH" VALUE="0"/>
-          <PARAMETER NAME="HAS_TREADY" VALUE="0"/>
-          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
-          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
-          <PARAMETER NAME="HAS_TLAST" VALUE="0"/>
-          <PARAMETER NAME="FREQ_HZ" VALUE="1000000"/>
-          <PARAMETER NAME="PHASE" VALUE="0.000"/>
-          <PARAMETER NAME="CLK_DOMAIN"/>
-          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
-          <PORTMAPS>
-            <PORTMAP LOGICAL="TDATA" PHYSICAL="s_axis_dividend_tdata"/>
-            <PORTMAP LOGICAL="TVALID" PHYSICAL="s_axis_dividend_tvalid"/>
-          </PORTMAPS>
-        </BUSINTERFACE>
-      </BUSINTERFACES>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE FULLNAME="/detect_end_image_0" HWVERSION="1.0" INSTANCE="detect_end_image_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="detect_end_image" VLNV="xilinx.com:module_ref:detect_end_image:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="test_detect_end_image_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="10" NAME="column" RIGHT="0" SIGIS="undef" SIGNAME="column_counter_Q">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="column_counter" PORT="Q"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="10" NAME="ligne" RIGHT="0" SIGIS="undef" SIGNAME="ligne_counter_Q">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="ligne_counter" PORT="Q"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="CLK" SIGIS="clk" SIGNAME="External_Ports_CLK">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="CLK"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="fin" SIGIS="undef"/>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE FULLNAME="/divideur_select_outp_0" HWVERSION="1.0" INSTANCE="divideur_select_outp_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="divideur_select_output" VLNV="xilinx.com:module_ref:divideur_select_output:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="test_divideur_select_outp_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="39" NAME="Entree" RIGHT="0" SIGIS="undef" SIGNAME="adapt_input_ouput_1_sortie">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="adapt_input_ouput_1" PORT="sortie"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="11" NAME="Sortie" RIGHT="0" SIGIS="undef" SIGNAME="divideur_select_outp_0_Sortie">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="xMoy"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE FULLNAME="/divideur_select_outp_1" HWVERSION="1.0" INSTANCE="divideur_select_outp_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="divideur_select_output" VLNV="xilinx.com:module_ref:divideur_select_output:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="test_divideur_select_outp_1_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="39" NAME="Entree" RIGHT="0" SIGIS="undef" SIGNAME="adapt_input_ouput_2_sortie">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="adapt_input_ouput_2" PORT="sortie"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="11" NAME="Sortie" RIGHT="0" SIGIS="undef" SIGNAME="divideur_select_outp_1_Sortie">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="yMoy"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE FULLNAME="/ligne_counter" HWVERSION="1.0" INSTANCE="ligne_counter" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="Counter" VLNV="xilinx.com:module_ref:Counter:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="N" VALUE="11"/>
+        <PARAMETER NAME="Component_Name" VALUE="test_ligne_counter_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="CLK" SIGIS="clk" SIGNAME="External_Ports_CLK">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="CLK"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="RESET" SIGIS="rst" SIGNAME="External_Ports_RESET">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="RESET"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="EN" SIGIS="undef" SIGNAME="External_Ports_CE_ligne_count">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="CE_ligne_count"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="10" NAME="Q" RIGHT="0" SIGIS="undef" SIGNAME="ligne_counter_Q">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="nb_ligne"/>
+            <CONNECTION INSTANCE="detect_end_image_0" PORT="ligne"/>
+            <CONNECTION INSTANCE="adapt_input_ouput_3" PORT="entree"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE FULLNAME="/rdc_1bit_1" HWVERSION="1.0" INSTANCE="rdc_1bit_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="rdc_1bit" VLNV="xilinx.com:module_ref:rdc_1bit:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="test_rdc_1bit_1_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" NAME="RESET" SIGIS="rst" SIGNAME="External_Ports_RESET">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="RESET"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="D" SIGIS="undef" SIGNAME="External_Ports_Pixel_White_Black">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="Pixel_White_Black"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="EN" SIGIS="undef" SIGNAME="xlconstant_0_dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="xlconstant_0" PORT="dout"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="CLK" SIGIS="clk" SIGNAME="External_Ports_CLK">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="CLK"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="Q" SIGIS="undef" SIGNAME="rdc_1bit_1_Q">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="Blank_pixel_counter" PORT="EN"/>
+            <CONNECTION INSTANCE="reg_Nbits_0" PORT="EN"/>
+            <CONNECTION INSTANCE="reg_Nbits_1" PORT="EN"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE FULLNAME="/reg_Nbits_0" HWVERSION="1.0" INSTANCE="reg_Nbits_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="reg_Nbits" VLNV="xilinx.com:module_ref:reg_Nbits:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="N" VALUE="18"/>
+        <PARAMETER NAME="Component_Name" VALUE="test_reg_Nbits_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="17" NAME="D" RIGHT="0" SIGIS="undef" SIGNAME="add_Nbits_0_S">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="add_Nbits_0" PORT="S"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="CLK" SIGIS="clk" SIGNAME="External_Ports_CLK">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="CLK"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="RESET" SIGIS="rst" SIGNAME="External_Ports_RESET">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="RESET"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="EN" SIGIS="undef" SIGNAME="rdc_1bit_1_Q">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="rdc_1bit_1" PORT="Q"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="17" NAME="Q" RIGHT="0" SIGIS="undef" SIGNAME="reg_Nbits_0_Q">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="add_Nbits_0" PORT="A"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE FULLNAME="/reg_Nbits_1" HWVERSION="1.0" INSTANCE="reg_Nbits_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="reg_Nbits" VLNV="xilinx.com:module_ref:reg_Nbits:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="N" VALUE="18"/>
+        <PARAMETER NAME="Component_Name" VALUE="test_reg_Nbits_1_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="17" NAME="D" RIGHT="0" SIGIS="undef" SIGNAME="add_Nbits_1_S">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="add_Nbits_1" PORT="S"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="CLK" SIGIS="clk" SIGNAME="External_Ports_CLK">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="CLK"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="RESET" SIGIS="rst" SIGNAME="External_Ports_RESET">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="RESET"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="EN" SIGIS="undef" SIGNAME="rdc_1bit_1_Q">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="rdc_1bit_1" PORT="Q"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="17" NAME="Q" RIGHT="0" SIGIS="undef" SIGNAME="reg_Nbits_1_Q">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="add_Nbits_1" PORT="A"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
     </MODULE>
     <MODULE FULLNAME="/xlconstant_0" HWVERSION="1.1" INSTANCE="xlconstant_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlconstant" VLNV="xilinx.com:ip:xlconstant:1.1">
       <DOCUMENTS/>
       <PARAMETERS>
         <PARAMETER NAME="CONST_WIDTH" VALUE="1"/>
         <PARAMETER NAME="CONST_VAL" VALUE="0x1"/>
-        <PARAMETER NAME="Component_Name" VALUE="test_xlconstant_0_0"/>
+        <PARAMETER NAME="Component_Name" VALUE="test_xlconstant_0_1"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
         <PORT DIR="O" LEFT="0" NAME="dout" RIGHT="0" SIGIS="undef" SIGNAME="xlconstant_0_dout">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="div_gen_0" PORT="s_axis_dividend_tvalid"/>
-            <CONNECTION INSTANCE="div_gen_0" PORT="s_axis_divisor_tvalid"/>
+            <CONNECTION INSTANCE="rdc_1bit_1" PORT="EN"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>

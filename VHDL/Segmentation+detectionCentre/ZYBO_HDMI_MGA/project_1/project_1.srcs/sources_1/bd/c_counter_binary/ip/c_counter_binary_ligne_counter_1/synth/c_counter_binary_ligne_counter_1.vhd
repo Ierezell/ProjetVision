@@ -77,18 +77,18 @@ ARCHITECTURE c_counter_binary_ligne_counter_1_arch OF c_counter_binary_ligne_cou
     );
   END COMPONENT Counter;
   ATTRIBUTE X_CORE_INFO : STRING;
-  ATTRIBUTE X_CORE_INFO OF c_counter_binary_ligne_counter_1_arch: ARCHITECTURE IS "Counter,Vivado 2018.2.1";
+  ATTRIBUTE X_CORE_INFO OF c_counter_binary_ligne_counter_1_arch: ARCHITECTURE IS "Counter,Vivado 2018.2";
   ATTRIBUTE CHECK_LICENSE_TYPE : STRING;
   ATTRIBUTE CHECK_LICENSE_TYPE OF c_counter_binary_ligne_counter_1_arch : ARCHITECTURE IS "c_counter_binary_ligne_counter_1,Counter,{}";
   ATTRIBUTE CORE_GENERATION_INFO : STRING;
-  ATTRIBUTE CORE_GENERATION_INFO OF c_counter_binary_ligne_counter_1_arch: ARCHITECTURE IS "c_counter_binary_ligne_counter_1,Counter,{x_ipProduct=Vivado 2018.2.1,x_ipVendor=xilinx.com,x_ipLibrary=module_ref,x_ipName=Counter,x_ipVersion=1.0,x_ipCoreRevision=1,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED,N=11}";
+  ATTRIBUTE CORE_GENERATION_INFO OF c_counter_binary_ligne_counter_1_arch: ARCHITECTURE IS "c_counter_binary_ligne_counter_1,Counter,{x_ipProduct=Vivado 2018.2,x_ipVendor=xilinx.com,x_ipLibrary=module_ref,x_ipName=Counter,x_ipVersion=1.0,x_ipCoreRevision=1,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED,N=11}";
   ATTRIBUTE IP_DEFINITION_SOURCE : STRING;
   ATTRIBUTE IP_DEFINITION_SOURCE OF c_counter_binary_ligne_counter_1_arch: ARCHITECTURE IS "module_ref";
   ATTRIBUTE X_INTERFACE_INFO : STRING;
   ATTRIBUTE X_INTERFACE_PARAMETER : STRING;
   ATTRIBUTE X_INTERFACE_PARAMETER OF RESET: SIGNAL IS "XIL_INTERFACENAME RESET, POLARITY ACTIVE_LOW";
   ATTRIBUTE X_INTERFACE_INFO OF RESET: SIGNAL IS "xilinx.com:signal:reset:1.0 RESET RST";
-  ATTRIBUTE X_INTERFACE_PARAMETER OF CLK: SIGNAL IS "XIL_INTERFACENAME CLK, ASSOCIATED_RESET RESET, FREQ_HZ 100000000, PHASE 0.000";
+  ATTRIBUTE X_INTERFACE_PARAMETER OF CLK: SIGNAL IS "XIL_INTERFACENAME CLK, ASSOCIATED_RESET RESET, FREQ_HZ 100000000, PHASE 0.000, CLK_DOMAIN c_counter_binary_CLK";
   ATTRIBUTE X_INTERFACE_INFO OF CLK: SIGNAL IS "xilinx.com:signal:clock:1.0 CLK CLK";
 BEGIN
   U0 : Counter

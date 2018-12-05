@@ -35,6 +35,7 @@ entity add_Nbits is
     Generic (N: integer :=8);
     Port ( A : in STD_LOGIC_VECTOR ( N-1 downto 0);
        B : in STD_LOGIC_VECTOR ( N-1 downto 0);
+       RESET : in STD_LOGIC;
        Co : out STD_LOGIC;
        S : out STD_LOGIC_VECTOR ( N-1 downto 0));
 end add_Nbits;
@@ -42,6 +43,7 @@ end add_Nbits;
 architecture Behavioral of add_Nbits is
 
 signal retenue : STD_LOGIC_VECTOR ( N-1 downto 1);
+signal sortie : STD_LOGIC_VECTOR ( N-1 downto 0);
 
 begin
 
@@ -52,7 +54,7 @@ additionneur : for i in 0 to N-1 generate
                        B=>B(i),
                        Ci=>'0',
                        Co=>retenue(i+1),
-                       S=>S(i));
+                       S=>sortie(i));
         end generate;
         add_int : if i>0 and i <N-1 generate
         middle_add : entity work.add_1bit
@@ -60,7 +62,7 @@ additionneur : for i in 0 to N-1 generate
                B=>B(i),
                Ci=>retenue(i),
                Co=>retenue(i+1),
-               S=>S(i));
+               S=>sortie(i));
         end generate;
         add_out : if i=N-1 generate
                 last_add : entity work.add_1bit
@@ -68,9 +70,18 @@ additionneur : for i in 0 to N-1 generate
                        B=>B(i),
                        Ci=>retenue(i),
                        Co=>Co,
-                       S=>S(i));
+                       S=>sortie(i));
                 end generate;
 end generate;
 
+process(RESET)
+begin
+    if RESET='0' then
+        sortie<=(others=>'0');
+    else
+        sortie<=sortie;    
+    end if;
+end process;
 
+S<=sortie;
 end Behavioral;

@@ -1,0 +1,516 @@
+#-----------------------------------------------------------
+# Vivado v2018.2.1 (64-bit)
+# SW Build 2288692 on Thu Jul 26 18:24:02 MDT 2018
+# IP Build 2289599 on Thu Jul 26 21:09:20 MDT 2018
+# Start of session at: Sun Dec  2 17:23:08 2018
+# Process ID: 12396
+# Current directory: E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent5416 E:\VLSI\Segmentation+detectionCentre\ZYBO_HDMI_MGA\project_1\project_1.xpr
+# Log file: E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/vivado.log
+# Journal file: E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.xpr
+update_compile_order -fileset sources_1
+open_bd_design {E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/detection_centre/detection_centre.bd}
+export_ip_user_files -of_objects  [get_files E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/detection_centre/detection_centre.bd] -no_script -reset -force -quiet
+remove_files  E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/detection_centre/detection_centre.bd
+file delete -force E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/detection_centre
+open_bd_design {E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/test/test.bd}
+open_bd_design {E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/HDMI_bd.bd}
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+reset_run synth_1
+connect_bd_net [get_bd_pins Segmentation/D] [get_bd_pins Segmentation/reg_Nbits_0/D]
+save_bd_design
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+open_run synth_1 -name synth_1
+set_property is_loc_fixed true [get_ports [list  USER_RESET]]
+set_property is_loc_fixed true [get_ports [list  USER_RESET]]
+set_property IOSTANDARD LVCMOS18 [get_ports [list USER_RESET]]
+set_property is_loc_fixed true [get_ports [list  USER_RESET]]
+place_ports USER_RESET R14
+set_property is_loc_fixed false [get_ports [list  USER_RESET]]
+set_property is_loc_fixed true [get_ports [list  USER_RESET]]
+set_property target_constrs_file E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/constrs_1/imports/constraints/Zybo-Z7-Master.xdc [current_fileset -constrset]
+save_constraints -force
+reset_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+set_property IOSTANDARD LVCMOS33 [get_ports [list USER_RESET]]
+save_constraints
+reset_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+open_hw
+connect_hw_server
+open_hw_target
+set_property PROGRAM.FILE {E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/impl_1/HDMI_bd_wrapper.bit} [get_hw_devices xc7z020_1]
+current_hw_device [get_hw_devices xc7z020_1]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7z020_1] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7z020_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z020_1]
+set_property PROGRAM.FILE {E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/impl_1/HDMI_bd_wrapper.bit} [get_hw_devices xc7z020_1]
+program_hw_devices [get_hw_devices xc7z020_1]
+refresh_hw_device [lindex [get_hw_devices xc7z020_1] 0]
+open_bd_design {E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/HDMI_bd.bd}
+delete_bd_objs [get_bd_nets RGB_to_Y_0_Y]
+connect_bd_net [get_bd_pins Moyenneur/sortie] [get_bd_pins Segmentation/D] -boundary_type upper
+connect_bd_net [get_bd_pins RGB_to_Y_0/Y] [get_bd_pins Moyenneur/D]
+save_bd_design
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+set_property PROBES.FILE {} [get_hw_devices xc7z020_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z020_1]
+set_property PROGRAM.FILE {E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/impl_1/HDMI_bd_wrapper.bit} [get_hw_devices xc7z020_1]
+program_hw_devices [get_hw_devices xc7z020_1]
+refresh_hw_device [lindex [get_hw_devices xc7z020_1] 0]
+open_bd_design {E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/HDMI_bd.bd}
+delete_bd_objs [get_bd_nets Segmentation_RBG_OUT]
+connect_bd_net [get_bd_pins rgb2dvi_0/vid_pData] [get_bd_pins affiche_centre_0/RGB_OUT]
+save_bd_design
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+generate_target Simulation [get_files E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/c_counter_binary/c_counter_binary.bd]
+export_ip_user_files -of_objects [get_files E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/c_counter_binary/c_counter_binary.bd] -no_script -sync -force -quiet
+export_simulation -of_objects [get_files E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/c_counter_binary/c_counter_binary.bd] -directory E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.ip_user_files/sim_scripts -ip_user_files_dir E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.ip_user_files -ipstatic_source_dir E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.ip_user_files/ipstatic -lib_map_path [list {modelsim=E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.cache/compile_simlib/modelsim} {questa=E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.cache/compile_simlib/questa} {riviera=E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.cache/compile_simlib/riviera} {activehdl=E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+launch_simulation
+open_wave_config E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/detection_centre_wrapper_behav.wcfg
+source c_counter_binary_wrapper_tb.tcl
+save_wave_config {E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/detection_centre_wrapper_behav.wcfg}
+set_property -name {xsim.simulate.runtime} -value {10ms} -objects [get_filesets sim_1]
+relaunch_sim
+run all
+set_property -name {xsim.simulate.runtime} -value {100ms} -objects [get_filesets sim_1]
+set_property PROBES.FILE {} [get_hw_devices xc7z020_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z020_1]
+set_property PROGRAM.FILE {E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/impl_1/HDMI_bd_wrapper.bit} [get_hw_devices xc7z020_1]
+program_hw_devices [get_hw_devices xc7z020_1]
+refresh_hw_device [lindex [get_hw_devices xc7z020_1] 0]
+close_sim
+generate_target Simulation [get_files E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/c_counter_binary/c_counter_binary.bd]
+export_ip_user_files -of_objects [get_files E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/c_counter_binary/c_counter_binary.bd] -no_script -sync -force -quiet
+export_simulation -of_objects [get_files E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/c_counter_binary/c_counter_binary.bd] -directory E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.ip_user_files/sim_scripts -ip_user_files_dir E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.ip_user_files -ipstatic_source_dir E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.ip_user_files/ipstatic -lib_map_path [list {modelsim=E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.cache/compile_simlib/modelsim} {questa=E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.cache/compile_simlib/questa} {riviera=E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.cache/compile_simlib/riviera} {activehdl=E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+launch_simulation
+open_wave_config E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/detection_centre_wrapper_behav.wcfg
+source c_counter_binary_wrapper_tb.tcl
+set_property -name {xsim.simulate.runtime} -value {100us} -objects [get_filesets sim_1]
+open_bd_design {E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/HDMI_bd.bd}
+create_bd_cell -type hier filtrage_intensif
+create_bd_cell -type module -reference reg_1bit filtrage_intensif/reg_1bit_0
+set_property location {0.5 1 53} [get_bd_cells filtrage_intensif/reg_1bit_0]
+copy_bd_objs filtrage_intensif  [get_bd_cells {filtrage_intensif/reg_1bit_0}]
+copy_bd_objs filtrage_intensif  [get_bd_cells {filtrage_intensif/reg_1bit_0}]
+set_property location {0.5 -469 64} [get_bd_cells filtrage_intensif/reg_1bit_0]
+set_property location {1.5 -236 65} [get_bd_cells filtrage_intensif/reg_1bit_1]
+set_property location {3 -44 59} [get_bd_cells filtrage_intensif/reg_1bit_2]
+copy_bd_objs filtrage_intensif  [get_bd_cells {filtrage_intensif/reg_1bit_2}]
+set_property location {3.5 229 70} [get_bd_cells filtrage_intensif/reg_1bit_3]
+set_property location {2 -243 52} [get_bd_cells filtrage_intensif/reg_1bit_1]
+connect_bd_net [get_bd_pins filtrage_intensif/reg_1bit_0/Q] [get_bd_pins filtrage_intensif/reg_1bit_1/D]
+connect_bd_net [get_bd_pins filtrage_intensif/reg_1bit_1/Q] [get_bd_pins filtrage_intensif/reg_1bit_2/D]
+connect_bd_net [get_bd_pins filtrage_intensif/reg_1bit_2/Q] [get_bd_pins filtrage_intensif/reg_1bit_3/D]
+connect_bd_net [get_bd_pins filtrage_intensif/reg_1bit_3/CLK] [get_bd_pins filtrage_intensif/reg_1bit_2/CLK]
+connect_bd_net [get_bd_pins filtrage_intensif/reg_1bit_2/CLK] [get_bd_pins filtrage_intensif/reg_1bit_1/CLK]
+connect_bd_net [get_bd_pins filtrage_intensif/reg_1bit_1/CLK] [get_bd_pins filtrage_intensif/reg_1bit_0/CLK]
+connect_bd_net [get_bd_pins filtrage_intensif/reg_1bit_0/RESET] [get_bd_pins filtrage_intensif/reg_1bit_1/RESET]
+connect_bd_net [get_bd_pins filtrage_intensif/reg_1bit_2/RESET] [get_bd_pins filtrage_intensif/reg_1bit_1/RESET]
+connect_bd_net [get_bd_pins filtrage_intensif/reg_1bit_3/RESET] [get_bd_pins filtrage_intensif/reg_1bit_0/RESET]
+connect_bd_net [get_bd_pins filtrage_intensif/reg_1bit_3/EN] [get_bd_pins filtrage_intensif/reg_1bit_2/EN]
+connect_bd_net [get_bd_pins filtrage_intensif/reg_1bit_2/EN] [get_bd_pins filtrage_intensif/reg_1bit_1/EN]
+connect_bd_net [get_bd_pins filtrage_intensif/reg_1bit_1/EN] [get_bd_pins filtrage_intensif/reg_1bit_0/EN]
+create_bd_pin -dir I filtrage_intensif/PixelNoirBlanc
+set_property location {-623 48} [get_bd_pins filtrage_intensif/PixelNoirBlanc]
+startgroup
+connect_bd_net [get_bd_pins filtrage_intensif/PixelNoirBlanc] [get_bd_pins filtrage_intensif/reg_1bit_0/D]
+endgroup
+close [ open E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/new/ET_logique_5entree.vhd w ]
+add_files E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/new/ET_logique_5entree.vhd
+update_compile_order -fileset sources_1
+create_bd_pin -dir O filtrage_intensif/PixelNoirBlanc_out
+set_property name PixelNoirBlanc_in [get_bd_pins filtrage_intensif/PixelNoirBlanc]
+create_bd_cell -type module -reference ET_logique_5entree filtrage_intensif/ET_logique_5entree_0
+create_bd_cell -type module -reference ET_logique_5entree filtrage_intensif/ET_logique_5entree_0
+connect_bd_net [get_bd_pins filtrage_intensif/PixelNoirBlanc_out] [get_bd_pins filtrage_intensif/ET_logique_5entree_0/PixelNoirBlanc]
+connect_bd_net [get_bd_pins filtrage_intensif/reg_1bit_3/Q] [get_bd_pins filtrage_intensif/ET_logique_5entree_0/entree5]
+connect_bd_net [get_bd_pins filtrage_intensif/reg_1bit_2/Q] [get_bd_pins filtrage_intensif/ET_logique_5entree_0/entree4]
+connect_bd_net [get_bd_pins filtrage_intensif/ET_logique_5entree_0/entree3] [get_bd_pins filtrage_intensif/reg_1bit_1/Q]
+connect_bd_net [get_bd_pins filtrage_intensif/reg_1bit_0/Q] [get_bd_pins filtrage_intensif/ET_logique_5entree_0/entree2]
+connect_bd_net [get_bd_pins filtrage_intensif/PixelNoirBlanc_in] [get_bd_pins filtrage_intensif/ET_logique_5entree_0/entree1]
+save_bd_design
+update_compile_order -fileset sources_1
+set_property location {5 1355 -3} [get_bd_cells filtrage_intensif]
+set_property location {5 1388 -16} [get_bd_cells filtrage_intensif]
+set_property location {5.5 1431 -23} [get_bd_cells filtrage_intensif]
+delete_bd_objs [get_bd_nets Segmentation_PixelNoirBlanc]
+connect_bd_net [get_bd_pins filtrage_intensif/PixelNoirBlanc_in] [get_bd_pins Segmentation/PixelNoirBlanc] -boundary_type upper
+connect_bd_net [get_bd_pins filtrage_intensif/PixelNoirBlanc_out] [get_bd_pins Detect_centre/Pixel_White_Black] -boundary_type upper
+connect_bd_net [get_bd_pins filtrage_intensif/PixelNoirBlanc_out] [get_bd_pins affiche_centre_0/PixelNoirBlanc]
+save_bd_design
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+create_bd_pin -dir I filtrage_intensif/CLK
+create_bd_pin -dir I filtrage_intensif/EN
+create_bd_pin -dir I filtrage_intensif/RESET
+startgroup
+connect_bd_net [get_bd_pins filtrage_intensif/RESET] [get_bd_pins filtrage_intensif/reg_1bit_0/RESET]
+endgroup
+connect_bd_net [get_bd_pins filtrage_intensif/EN] [get_bd_pins filtrage_intensif/reg_1bit_0/EN]
+connect_bd_net [get_bd_pins filtrage_intensif/CLK] [get_bd_pins filtrage_intensif/reg_1bit_0/CLK]
+save_bd_design
+connect_bd_net [get_bd_pins filtrage_intensif/CLK] [get_bd_pins dvi2rgb_0/PixelClk]
+connect_bd_net [get_bd_ports USER_RESET] [get_bd_pins filtrage_intensif/RESET]
+delete_bd_objs [get_bd_pins filtrage_intensif/EN]
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 filtrage_intensif/xlconstant_0
+endgroup
+set_property location {1 -479 59} [get_bd_cells filtrage_intensif/xlconstant_0]
+connect_bd_net [get_bd_pins filtrage_intensif/reg_1bit_0/EN] [get_bd_pins filtrage_intensif/xlconstant_0/dout]
+save_bd_design
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+open_bd_design {E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/c_counter_binary/c_counter_binary.bd}
+open_bd_design {E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/c_counter_binary/c_counter_binary.bd}
+update_module_reference HDMI_bd_ET_logique_5entree_0_0
+save_wave_config {E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/detection_centre_wrapper_behav.wcfg}
+close_sim
+generate_target Simulation [get_files E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/c_counter_binary/c_counter_binary.bd]
+export_ip_user_files -of_objects [get_files E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/c_counter_binary/c_counter_binary.bd] -no_script -sync -force -quiet
+export_simulation -of_objects [get_files E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/c_counter_binary/c_counter_binary.bd] -directory E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.ip_user_files/sim_scripts -ip_user_files_dir E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.ip_user_files -ipstatic_source_dir E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.ip_user_files/ipstatic -lib_map_path [list {modelsim=E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.cache/compile_simlib/modelsim} {questa=E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.cache/compile_simlib/questa} {riviera=E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.cache/compile_simlib/riviera} {activehdl=E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+launch_simulation
+open_wave_config E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/detection_centre_wrapper_behav.wcfg
+source c_counter_binary_wrapper_tb.tcl
+set_property -name {xsim.simulate.runtime} -value {1000us} -objects [get_filesets sim_1]
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+close_sim
+launch_simulation
+open_wave_config E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/detection_centre_wrapper_behav.wcfg
+source c_counter_binary_wrapper_tb.tcl
+open_bd_design {E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/c_counter_binary/c_counter_binary.bd}
+set_property PROBES.FILE {} [get_hw_devices xc7z020_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z020_1]
+set_property PROGRAM.FILE {E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/impl_1/HDMI_bd_wrapper.bit} [get_hw_devices xc7z020_1]
+program_hw_devices [get_hw_devices xc7z020_1]
+refresh_hw_device [lindex [get_hw_devices xc7z020_1] 0]
+open_bd_design {E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/HDMI_bd.bd}
+copy_bd_objs filtrage_intensif  [get_bd_cells {filtrage_intensif/reg_1bit_3}]
+set_property location {6.5 675 83} [get_bd_cells filtrage_intensif/reg_1bit_4]
+set_property location {6 668 -135} [get_bd_cells filtrage_intensif/ET_logique_5entree_0]
+connect_bd_net [get_bd_pins filtrage_intensif/RESET] [get_bd_pins filtrage_intensif/reg_1bit_4/RESET]
+connect_bd_net [get_bd_pins filtrage_intensif/reg_1bit_4/EN] [get_bd_pins filtrage_intensif/xlconstant_0/dout]
+connect_bd_net [get_bd_pins filtrage_intensif/reg_1bit_4/D] [get_bd_pins filtrage_intensif/reg_1bit_3/Q]
+connect_bd_net [get_bd_pins filtrage_intensif/CLK] [get_bd_pins filtrage_intensif/reg_1bit_4/CLK]
+validate_bd_design
+save_bd_design
+update_module_reference HDMI_bd_ET_logique_5entree_0_0
+connect_bd_net [get_bd_pins filtrage_intensif/reg_1bit_4/Q] [get_bd_pins filtrage_intensif/ET_logique_5entree_0/entree6]
+save_bd_design
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+set_property PROBES.FILE {} [get_hw_devices xc7z020_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z020_1]
+set_property PROGRAM.FILE {E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/impl_1/HDMI_bd_wrapper.bit} [get_hw_devices xc7z020_1]
+program_hw_devices [get_hw_devices xc7z020_1]
+refresh_hw_device [lindex [get_hw_devices xc7z020_1] 0]
+open_bd_design {E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/c_counter_binary/c_counter_binary.bd}
+reset_simulation -simset sim_1 -mode post-synthesis -type functional
+set_property PROBES.FILE {} [get_hw_devices xc7z020_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z020_1]
+set_property PROGRAM.FILE {E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/impl_1/HDMI_bd_wrapper.bit} [get_hw_devices xc7z020_1]
+program_hw_devices [get_hw_devices xc7z020_1]
+refresh_hw_device [lindex [get_hw_devices xc7z020_1] 0]
+open_bd_design {E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/c_counter_binary/c_counter_binary.bd}
+open_bd_design {E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/HDMI_bd.bd}
+update_module_reference HDMI_bd_affiche_centre_0_0
+set_property location {6 1426 111} [get_bd_cells filtrage_intensif]
+save_bd_design
+close_design
+launch_simulation -mode post-synthesis -type functional
+open_wave_config E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/detection_centre_wrapper_behav.wcfg
+source c_counter_binary_wrapper_tb.tcl
+open_bd_design {E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/c_counter_binary/c_counter_binary.bd}
+close_sim
+launch_simulation -mode post-synthesis -type functional
+open_wave_config E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/detection_centre_wrapper_behav.wcfg
+source c_counter_binary_wrapper_tb.tcl
+open_bd_design {E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/c_counter_binary/c_counter_binary.bd}
+close [ open E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/new/counter_tb.vhd w ]
+add_files E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/new/counter_tb.vhd
+export_ip_user_files -of_objects  [get_files E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/imports/sources_1/new/rdc_8bits_parallele.vhd] -no_script -reset -force -quiet
+remove_files  E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/imports/sources_1/new/rdc_8bits_parallele.vhd
+file delete -force E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/imports/sources_1/new/rdc_8bits_parallele.vhd
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top HDMI_bd_wrapper [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top c_counter_binary_wrapper_tb [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+set_property top counter_tb [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+launch_simulation -mode post-synthesis -type functional
+open_wave_config E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/detection_centre_wrapper_behav.wcfg
+source counter_tb.tcl
+add_force {/counter_tb/CLK} -radix hex {1 0ns} {0 5000ps} -repeat_every 10000ps
+add_force {/counter_tb/RESET} -radix hex {0 0ns}
+add_force {/counter_tb/EN} -radix hex {1 0ns}
+run 10 ns
+run 10 ns
+restart
+run 10 ns
+add_force {/counter_tb/CLK} -radix hex {1 0ns} {0 5000ps} -repeat_every 10000ps
+add_force {/counter_tb/RESET} -radix hex {0 0ns}
+add_force {/counter_tb/EN} -radix hex {1 0ns}
+run 10 ns
+run 10 ns
+add_force {/counter_tb/RESET} -radix hex {1 0ns}
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run all
+save_wave_config {E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/detection_centre_wrapper_behav.wcfg}
+open_bd_design {E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/c_counter_binary/c_counter_binary.bd}
+add_files -norecurse {E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/new/add_1bit.vhd E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/new/add_Nbits.vhd}
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
+copy_bd_objs /  [get_bd_cells {ligne_counter}]
+connect_bd_net [get_bd_ports CLK] [get_bd_pins ligne_counter2/CLK]
+connect_bd_net [get_bd_ports RESET] [get_bd_pins ligne_counter2/RESET]
+connect_bd_net [get_bd_pins ligne_counter2/EN] [get_bd_pins rdc_1bit_1/Q]
+delete_bd_objs [get_bd_nets BlankPixel_counter_Q] [get_bd_cells BlankPixel_counter]
+set_property location {3.5 746 295} [get_bd_cells ligne_counter2]
+connect_bd_net [get_bd_pins ligne_counter2/Q] [get_bd_pins adapt_input_ouput_0/entree]
+save_bd_design
+set_property USER_COMMENTS.comment_0 {Enter Comments here}  [current_bd_design]
+set_property USER_COMMENTS.comment_0 {ce bloc est le plus a jour
+}  [current_bd_design]
+save_bd_design
+set_property top add_Nbits [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+launch_simulation
+open_wave_config E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/detection_centre_wrapper_behav.wcfg
+source add_Nbits.tcl
+restart
+add_force {/add_Nbits/A} -radix hex {1 0ns}
+add_force {/add_Nbits/B} -radix hex {A 0ns}
+run 10 ns
+run 10 ns
+run 10 ns
+add_force {/add_Nbits/A} -radix hex {A 0ns}
+run 10 ns
+open_bd_design {E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/c_counter_binary/c_counter_binary.bd}
+create_bd_cell -type module -reference add_Nbits add_Nbits_0
+set_property -dict [list CONFIG.N {18}] [get_bd_cells add_Nbits_0]
+connect_bd_net [get_bd_pins add_Nbits_0/A] [get_bd_pins add_xAxis/S]
+connect_bd_net [get_bd_pins add_Nbits_0/B] [get_bd_pins ligne_counter/Q]
+delete_bd_objs [get_bd_cells add_xAxis]
+set_property location {3 529 119} [get_bd_cells add_Nbits_0]
+connect_bd_net [get_bd_pins add_Nbits_0/S] [get_bd_pins add_Nbits_0/A]
+copy_bd_objs /  [get_bd_cells {add_Nbits_0}]
+set_property location {3 586 629} [get_bd_cells add_Nbits_1]
+connect_bd_net [get_bd_pins add_Nbits_1/B] [get_bd_pins ligne_counter1/Q]
+connect_bd_net [get_bd_pins add_Nbits_1/A] [get_bd_pins add_yAxis/S]
+delete_bd_objs [get_bd_nets rdc_1bit_0_Q] [get_bd_cells add_yAxis]
+set_property location {3 546 508} [get_bd_cells add_Nbits_1]
+connect_bd_net [get_bd_pins add_Nbits_1/S] [get_bd_pins adapt_input_ouput_2/entree]
+save_bd_design
+reset_run synth_1
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
+save_wave_config {E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/detection_centre_wrapper_behav.wcfg}
+set_property top c_counter_binary_wrapper_tb [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+current_sim simulation_6
+close_sim
+close_design
+generate_target Simulation [get_files E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/c_counter_binary/c_counter_binary.bd]
+export_ip_user_files -of_objects [get_files E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/c_counter_binary/c_counter_binary.bd] -no_script -sync -force -quiet
+export_simulation -of_objects [get_files E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/c_counter_binary/c_counter_binary.bd] -directory E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.ip_user_files/sim_scripts -ip_user_files_dir E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.ip_user_files -ipstatic_source_dir E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.ip_user_files/ipstatic -lib_map_path [list {modelsim=E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.cache/compile_simlib/modelsim} {questa=E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.cache/compile_simlib/questa} {riviera=E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.cache/compile_simlib/riviera} {activehdl=E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+launch_simulation -mode post-synthesis -type functional
+open_wave_config E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/detection_centre_wrapper_behav.wcfg
+source c_counter_binary_wrapper_tb.tcl
+update_compile_order -fileset sim_1
+restart
+save_wave_config {E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/detection_centre_wrapper_behav.wcfg}
+relaunch_sim
+open_bd_design {E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/c_counter_binary/c_counter_binary.bd}
+update_module_reference {HDMI_bd_ligne_counter1_1 HDMI_bd_ligne_counter_1 c_counter_binary_Counter_0_0 c_counter_binary_ligne_counter_0 c_counter_binary_ligne_counter_1}
+reset_run synth_1
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
+close_sim
+close_design
+generate_target Simulation [get_files E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/c_counter_binary/c_counter_binary.bd]
+current_sim simulation_8
+export_ip_user_files -of_objects [get_files E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/c_counter_binary/c_counter_binary.bd] -no_script -sync -force -quiet
+export_simulation -of_objects [get_files E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/c_counter_binary/c_counter_binary.bd] -directory E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.ip_user_files/sim_scripts -ip_user_files_dir E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.ip_user_files -ipstatic_source_dir E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.ip_user_files/ipstatic -lib_map_path [list {modelsim=E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.cache/compile_simlib/modelsim} {questa=E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.cache/compile_simlib/questa} {riviera=E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.cache/compile_simlib/riviera} {activehdl=E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+launch_simulation -mode post-synthesis -type functional
+open_wave_config E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/detection_centre_wrapper_behav.wcfg
+source c_counter_binary_wrapper_tb.tcl
+add_force {/c_counter_binary_wrapper_tb/nb_column} -radix hex {0 0ns}
+run 10 ns
+add_force {/c_counter_binary_wrapper_tb/nb_ligne} -radix hex {0 0ns}
+add_force {/c_counter_binary_wrapper_tb/xMoy} -radix hex {0 0ns}
+add_force {/c_counter_binary_wrapper_tb/yMoy} -radix hex {0 0ns}
+run 10 ns
+remove_forces { {/c_counter_binary_wrapper_tb/nb_column} }
+remove_forces { {/c_counter_binary_wrapper_tb/nb_ligne} }
+remove_forces { {/c_counter_binary_wrapper_tb/xMoy} }
+remove_forces { {/c_counter_binary_wrapper_tb/yMoy} }
+run 10 ns
+run 10 ns
+open_bd_design {E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/c_counter_binary/c_counter_binary.bd}
+set_property top counter_tb [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+update_compile_order -fileset sim_1
+current_sim simulation_7
+close_sim
+launch_simulation -mode post-synthesis -type functional
+open_wave_config E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/detection_centre_wrapper_behav.wcfg
+source counter_tb.tcl
+restart
+add_force {/counter_tb/CLK} -radix hex {1 0ns} {0 5000ps} -repeat_every 10000ps
+reset_run synth_1
+update_module_reference {HDMI_bd_ligne_counter1_1 HDMI_bd_ligne_counter_1 c_counter_binary_Counter_0_0 c_counter_binary_ligne_counter_0 c_counter_binary_ligne_counter_1}
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
+add_force {/counter_tb/CLK} -radix hex {1 0ns} {0 5000ps} -repeat_every 10000ps
+add_force {/counter_tb/RESET} -radix hex {0 0ns}
+add_force {/counter_tb/EN} -radix hex {1 0ns}
+run 10 ns
+add_force {/counter_tb/RESET} -radix hex {1 0ns}
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+add_force {/counter_tb/RESET} -radix hex {0 0ns}
+run 10 ns
+add_force {/counter_tb/RESET} -radix hex {1 0ns}
+run 10 ns
+run 10 ns
+current_sim simulation_4
+close_sim
+close_sim
+close_sim
+close_sim
+open_bd_design {E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/c_counter_binary/c_counter_binary.bd}
+launch_runs impl_1 -jobs 8
+wait_on_run impl_1
+reset_simulation -simset sim_1 -mode post-synthesis -type functional
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+set_property name Blank_pixel_counter [get_bd_cells ligne_counter2]
+set_property name column_counter [get_bd_cells ligne_counter1]
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top c_counter_binary_wrapper [current_fileset]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sources_1
+set_property PROBES.FILE {} [get_hw_devices xc7z020_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z020_1]
+set_property PROGRAM.FILE {E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/impl_1/HDMI_bd_wrapper.bit} [get_hw_devices xc7z020_1]
+program_hw_devices [get_hw_devices xc7z020_1]
+refresh_hw_device [lindex [get_hw_devices xc7z020_1] 0]
+save_bd_design
+reset_run synth_1
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
+open_bd_design {E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/c_counter_binary/c_counter_binary.bd}
+delete_bd_objs [get_bd_ports RESET]
+startgroup
+create_bd_port -dir I -type rst RESET
+endgroup
+connect_bd_net [get_bd_ports RESET] [get_bd_pins rdc_1bit_1/RESET]
+save_bd_design
+delete_bd_objs [get_bd_ports CLK]
+create_bd_port -dir I -type clk CLK
+connect_bd_net [get_bd_ports CLK] [get_bd_pins detect_end_image_0/CLK]
+save_bd_design
+delete_bd_objs [get_bd_cells rdc_1bit_0]
+set_property top c_counter_binary_wrapper_tb [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+update_compile_order -fileset sim_1
+save_bd_design
+close_design
+generate_target Simulation [get_files E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/c_counter_binary/c_counter_binary.bd]
+export_ip_user_files -of_objects [get_files E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/c_counter_binary/c_counter_binary.bd] -no_script -sync -force -quiet
+export_simulation -of_objects [get_files E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/c_counter_binary/c_counter_binary.bd] -directory E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.ip_user_files/sim_scripts -ip_user_files_dir E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.ip_user_files -ipstatic_source_dir E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.ip_user_files/ipstatic -lib_map_path [list {modelsim=E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.cache/compile_simlib/modelsim} {questa=E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.cache/compile_simlib/questa} {riviera=E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.cache/compile_simlib/riviera} {activehdl=E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+launch_simulation -mode post-synthesis -type functional
+open_wave_config E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/detection_centre_wrapper_behav.wcfg
+source c_counter_binary_wrapper_tb.tcl
+open_bd_design {E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/c_counter_binary/c_counter_binary.bd}
+open_bd_design {E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/HDMI_bd.bd}
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top HDMI_bd_wrapper [current_fileset]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+startgroup
+delete_bd_objs [get_bd_nets Detect_centre/CE_column_count_1] [get_bd_nets Detect_centre/div_yAxis_m_axis_dout_tdata] [get_bd_nets Detect_centre/adapt_input_ouput_2_sortie] [get_bd_nets Detect_centre/column_counter_Q] [get_bd_nets Detect_centre/div_xAxis_m_axis_dout_tdata] [get_bd_nets Detect_centre/xlconstant_0_dout] [get_bd_nets Detect_centre/CLK_1] [get_bd_nets Detect_centre/adapt_input_ouput_0_sortie] [get_bd_nets Detect_centre/divideur_select_outp_0_Output] [get_bd_nets Detect_centre/RESET_counter_ligne_and_column_1] [get_bd_nets Detect_centre/CE_ligne_count_1] [get_bd_nets Detect_centre/add_xAxis_S] [get_bd_nets Detect_centre/divideur_select_outp_1_Output] [get_bd_nets Detect_centre/add_yAxis_S] [get_bd_nets Detect_centre/rdc_1bit_0_Q] [get_bd_nets Detect_centre/Ligne_counter_Q] [get_bd_nets Detect_centre/BlankPixel_counter_Q] [get_bd_nets Detect_centre/Pixel_White_Black_1] [get_bd_nets Detect_centre/Net] [get_bd_nets Detect_centre/Net1] [get_bd_nets Detect_centre/adapt_input_ouput_1_sortie]
+delete_bd_objs [get_bd_nets Detect_centre_nb_ligne] [get_bd_nets Detect_centre_yMoy] [get_bd_nets Detect_centre_xMoy] [get_bd_nets Detect_centre_nb_column] [get_bd_pins Detect_centre/CE_ligne_count] [get_bd_pins Detect_centre/CE_column_count] [get_bd_pins Detect_centre/RESET] [get_bd_pins Detect_centre/CLK] [get_bd_pins Detect_centre/Pixel_White_Black] [get_bd_pins Detect_centre/nb_ligne] [get_bd_pins Detect_centre/yMoy] [get_bd_pins Detect_centre/xMoy] [get_bd_pins Detect_centre/nb_column]
+delete_bd_objs [get_bd_cells Detect_centre/divideur_select_outp_0] [get_bd_cells Detect_centre/add_yAxis] [get_bd_cells Detect_centre/divideur_select_outp_1] [get_bd_cells Detect_centre/rdc_1bit_0] [get_bd_cells Detect_centre/adapt_input_ouput_0] [get_bd_cells Detect_centre/xlconstant_0] [get_bd_cells Detect_centre/rdc_1bit_1] [get_bd_cells Detect_centre/div_yAxis] [get_bd_cells Detect_centre/BlankPixel_counter] [get_bd_cells Detect_centre/ligne_counter] [get_bd_cells Detect_centre/adapt_input_ouput_1] [get_bd_cells Detect_centre/adapt_input_ouput_2] [get_bd_cells Detect_centre/ligne_counter1] [get_bd_cells Detect_centre/div_xAxis] [get_bd_cells Detect_centre/add_xAxis] [get_bd_cells Detect_centre/detect_end_image_0]
+endgroup
+set_property USER_COMMENTS.comment_0 {ce bloc est le plus a jour
+}  [current_bd_design]
+current_bd_design c_counter_binary
+set tmpCopyObjs [concat  [get_bd_cells {divideur_select_outp_0 Blank_pixel_counter divideur_select_outp_1 adapt_input_ouput_0 add_Nbits_0 column_counter adapt_input_ouput_1 add_Nbits_1 ligne_counter div_yAxis rdc_1bit_1 xlconstant_0 adapt_input_ouput_2 div_xAxis detect_end_image_0}] [get_bd_ports {CE_ligne_count nb_ligne CE_column_count yMoy xMoy RESET CLK nb_column Pixel_White_Black}] [get_bd_nets {CE_column_count_1 adapt_input_ouput_2_sortie column_counter_Q div_yAxis_m_axis_dout_tdata adapt_input_ouput_0_sortie divideur_select_outp_0_Output CLK_1 xlconstant_0_dout div_xAxis_m_axis_dout_tdata CE_ligne_count_1 RESET_counter_ligne_and_column_1 add_xAxis_S add_yAxis_S divideur_select_outp_1_Output Ligne_counter_Q Pixel_White_Black_1 adapt_input_ouput_1_sortie Net1 Net ligne_counter2_Q}]]
+current_bd_design HDMI_bd
+copy_bd_objs -from_design c_counter_binary Detect_centre $tmpCopyObjs
+set_property USER_COMMENTS.comment_0 {}  [current_bd_design]
+update_compile_order -fileset sources_1
+save_bd_design
+update_compile_order -fileset sources_1
+update_module_reference HDMI_bd_affiche_centre_0_0
+connect_bd_net [get_bd_pins Detect_centre/CLK] [get_bd_pins dvi2rgb_0/PixelClk]
+connect_bd_net [get_bd_ports USER_RESET] [get_bd_pins Detect_centre/RESET]
+connect_bd_net [get_bd_pins dvi2rgb_0/vid_pVSync] [get_bd_pins Detect_centre/CE_ligne_count]
+connect_bd_net [get_bd_pins Detect_centre/CE_column_count] [get_bd_pins dvi2rgb_0/vid_pHSync]
+connect_bd_net [get_bd_pins Detect_centre/Pixel_White_Black] [get_bd_pins filtrage_intensif/PixelNoirBlanc_out] -boundary_type upper
+connect_bd_net [get_bd_pins Detect_centre/nb_column] [get_bd_pins affiche_centre_0/nb_column]
+connect_bd_net [get_bd_pins Detect_centre/nb_ligne] [get_bd_pins affiche_centre_0/nb_ligne]
+connect_bd_net [get_bd_pins Detect_centre/xMoy] [get_bd_pins affiche_centre_0/m_Xaxis_dout_tdata]
+connect_bd_net [get_bd_pins Detect_centre/yMoy] [get_bd_pins affiche_centre_0/m_Yaxis_dout_tdata]
+save_bd_design
+set_property location {7 1882 36} [get_bd_cells Detect_centre]
+set_property location {7 1835 198} [get_bd_cells affiche_centre_0]
+save_bd_design
+reset_run synth_1
+reset_run c_counter_binary_div_yAxis_0_synth_1
+reset_run c_counter_binary_div_xAxis_1_synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+set_property PROBES.FILE {} [get_hw_devices xc7z020_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z020_1]
+set_property PROGRAM.FILE {E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/impl_1/HDMI_bd_wrapper.bit} [get_hw_devices xc7z020_1]
+program_hw_devices [get_hw_devices xc7z020_1]
+refresh_hw_device [lindex [get_hw_devices xc7z020_1] 0]
+open_bd_design {E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/HDMI_bd.bd}
+close_sim

@@ -1,3 +1,9 @@
+-makelib xcelium_lib/xil_defaultlib -sv \
+  "D:/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv" \
+-endlib
+-makelib xcelium_lib/xpm \
+  "D:/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_VCOMP.vhd" \
+-endlib
 -makelib xcelium_lib/xil_defaultlib \
   "../../../bd/c_counter_binary/ip/c_counter_binary_detect_end_image_0_1/sim/c_counter_binary_detect_end_image_0_1.vhd" \
 -endlib
@@ -57,6 +63,10 @@
   "../../../bd/c_counter_binary/ip/c_counter_binary_ligne_counter_0/sim/c_counter_binary_ligne_counter_0.vhd" \
   "../../../bd/c_counter_binary/ip/c_counter_binary_add_Nbits_0_0/sim/c_counter_binary_add_Nbits_0_0.vhd" \
   "../../../bd/c_counter_binary/ip/c_counter_binary_add_Nbits_0_1/sim/c_counter_binary_add_Nbits_0_1.vhd" \
+  "../../../bd/c_counter_binary/ip/c_counter_binary_reg_Nbits_0_0/sim/c_counter_binary_reg_Nbits_0_0.vhd" \
+  "../../../bd/c_counter_binary/ip/c_counter_binary_reg_Nbits_0_1/sim/c_counter_binary_reg_Nbits_0_1.vhd" \
+  "../../../bd/c_counter_binary/ip/c_counter_binary_adapt_input_ouput_1_0/sim/c_counter_binary_adapt_input_ouput_1_0.vhd" \
+  "../../../bd/c_counter_binary/ip/c_counter_binary_adapt_input_ouput_3_0/sim/c_counter_binary_adapt_input_ouput_3_0.vhd" \
 -endlib
 -makelib xcelium_lib/xil_defaultlib \
   glbl.v

@@ -1,12 +1,12 @@
 #-----------------------------------------------------------
-# Vivado v2018.2.1 (64-bit)
-# SW Build 2288692 on Thu Jul 26 18:24:02 MDT 2018
-# IP Build 2289599 on Thu Jul 26 21:09:20 MDT 2018
-# Start of session at: Sun Dec  2 21:00:47 2018
-# Process ID: 7256
-# Current directory: E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1
-# Command line: vivado.exe -log HDMI_bd_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source HDMI_bd_wrapper.tcl
-# Log file: E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/HDMI_bd_wrapper.vds
-# Journal file: E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1\vivado.jou
+# Vivado v2018.2.2 (64-bit)
+# SW Build 2348494 on Mon Oct  1 18:25:44 MDT 2018
+# IP Build 2318053 on Mon Oct  1 21:44:26 MDT 2018
+# Start of session at: Tue Dec  4 23:48:29 2018
+# Process ID: 9096
+# Current directory: D:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1
+# Command line: vivado.exe -log c_counter_binary_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source c_counter_binary_wrapper.tcl
+# Log file: D:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/c_counter_binary_wrapper.vds
+# Journal file: D:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1\vivado.jou
 #-----------------------------------------------------------
-source HDMI_bd_wrapper.tcl -notrace
+source c_counter_binary_wrapper.tcl -notrace

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<bd:repository xmlns:bd="http://www.xilinx.com/bd" bd:BoundaryCRC="0x6345DCA5DAF5170B" bd:device="xc7z020clg400-1" bd:isValidated="true" bd:synthFlowMode="Hierarchical" bd:tool_version="2018.2" bd:top="test" bd:version="1.00.a">
+<bd:repository xmlns:bd="http://www.xilinx.com/bd" bd:BoundaryCRC="0x469C5B73FC9C019" bd:device="xc7z020clg400-1" bd:synthFlowMode="Hierarchical" bd:tool_version="2018.2.2" bd:top="test" bd:version="1.00.a">
 
   <spirit:component xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009">
     <spirit:vendor>xilinx.com</spirit:vendor>
@@ -20,50 +20,6 @@
           <spirit:hierarchyRef spirit:library="BlockDiagram" spirit:name="test_imp" spirit:vendor="xilinx.com" spirit:version="1.00.a"/>
         </spirit:view>
       </spirit:views>
-      <spirit:ports>
-        <spirit:port>
-          <spirit:name>CLK</spirit:name>
-          <spirit:wire>
-            <spirit:direction>in</spirit:direction>
-          </spirit:wire>
-        </spirit:port>
-        <spirit:port>
-          <spirit:name>divisor</spirit:name>
-          <spirit:wire>
-            <spirit:direction>in</spirit:direction>
-            <spirit:vector>
-              <spirit:left>15</spirit:left>
-              <spirit:right>0</spirit:right>
-            </spirit:vector>
-          </spirit:wire>
-        </spirit:port>
-        <spirit:port>
-          <spirit:name>dividende</spirit:name>
-          <spirit:wire>
-            <spirit:direction>in</spirit:direction>
-            <spirit:vector>
-              <spirit:left>15</spirit:left>
-              <spirit:right>0</spirit:right>
-            </spirit:vector>
-          </spirit:wire>
-        </spirit:port>
-        <spirit:port>
-          <spirit:name>sortie</spirit:name>
-          <spirit:wire>
-            <spirit:direction>out</spirit:direction>
-            <spirit:vector>
-              <spirit:left>39</spirit:left>
-              <spirit:right>0</spirit:right>
-            </spirit:vector>
-          </spirit:wire>
-        </spirit:port>
-        <spirit:port>
-          <spirit:name>sortie_ok</spirit:name>
-          <spirit:wire>
-            <spirit:direction>out</spirit:direction>
-          </spirit:wire>
-        </spirit:port>
-      </spirit:ports>
     </spirit:model>
   </spirit:component>
 
@@ -72,82 +28,6 @@
     <spirit:library>BlockDiagram</spirit:library>
     <spirit:name>test_imp</spirit:name>
     <spirit:version>1.00.a</spirit:version>
-    <spirit:componentInstances>
-      <spirit:componentInstance>
-        <spirit:instanceName>div_gen_0</spirit:instanceName>
-        <spirit:componentRef spirit:library="ip" spirit:name="div_gen" spirit:vendor="xilinx.com" spirit:version="5.1"/>
-        <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">test_div_gen_0_0</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="dividend_and_quotient_width">18</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="divisor_width">11</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="divisor_has_tuser">false</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="divisor_has_tlast">false</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="fractional_width">11</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="operand_sign">Unsigned</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="FlowControl">NonBlocking</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="OutTLASTBehv">Null</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="latency">20</spirit:configurableElementValue>
-        </spirit:configurableElementValues>
-      </spirit:componentInstance>
-      <spirit:componentInstance>
-        <spirit:instanceName>xlconstant_0</spirit:instanceName>
-        <spirit:componentRef spirit:library="ip" spirit:name="xlconstant" spirit:vendor="xilinx.com" spirit:version="1.1"/>
-        <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">test_xlconstant_0_0</spirit:configurableElementValue>
-        </spirit:configurableElementValues>
-      </spirit:componentInstance>
-      <spirit:componentInstance>
-        <spirit:instanceName>adapt_input_ouput_0</spirit:instanceName>
-        <spirit:componentRef spirit:library="module_ref" spirit:name="adapt_input_ouput" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">test_adapt_input_ouput_0_0</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="N">16</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="M">24</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="bd:referenceName">adapt_input_ouput</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="bd:subInstancePath"></spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="bd:referenceType">hdl</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="bd:BoundaryCRC">0x0</spirit:configurableElementValue>
-        </spirit:configurableElementValues>
-      </spirit:componentInstance>
-    </spirit:componentInstances>
-    <spirit:adHocConnections>
-      <spirit:adHocConnection>
-        <spirit:name>CLK_1</spirit:name>
-        <spirit:externalPortReference spirit:portRef="CLK"/>
-        <spirit:internalPortReference spirit:componentRef="div_gen_0" spirit:portRef="aclk"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
-        <spirit:name>xlconstant_0_dout</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="xlconstant_0" spirit:portRef="dout"/>
-        <spirit:internalPortReference spirit:componentRef="div_gen_0" spirit:portRef="s_axis_dividend_tvalid"/>
-        <spirit:internalPortReference spirit:componentRef="div_gen_0" spirit:portRef="s_axis_divisor_tvalid"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
-        <spirit:name>div_gen_0_m_axis_dout_tdata</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="div_gen_0" spirit:portRef="m_axis_dout_tdata"/>
-        <spirit:externalPortReference spirit:portRef="sortie"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
-        <spirit:name>div_gen_0_m_axis_dout_tvalid</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="div_gen_0" spirit:portRef="m_axis_dout_tvalid"/>
-        <spirit:externalPortReference spirit:portRef="sortie_ok"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
-        <spirit:name>dividende_1</spirit:name>
-        <spirit:externalPortReference spirit:portRef="dividende"/>
-        <spirit:internalPortReference spirit:componentRef="adapt_input_ouput_0" spirit:portRef="entree"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
-        <spirit:name>adapt_input_ouput_0_sortie</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="adapt_input_ouput_0" spirit:portRef="sortie"/>
-        <spirit:internalPortReference spirit:componentRef="div_gen_0" spirit:portRef="s_axis_dividend_tdata"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
-        <spirit:name>divisor_1</spirit:name>
-        <spirit:externalPortReference spirit:portRef="divisor"/>
-        <spirit:internalPortReference spirit:componentRef="div_gen_0" spirit:portRef="s_axis_divisor_tdata"/>
-      </spirit:adHocConnection>
-    </spirit:adHocConnections>
   </spirit:design>
 
 </bd:repository>
