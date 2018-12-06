@@ -40,7 +40,7 @@ if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
 
 # The design that will be created by this Tcl script contains the following 
 # module references:
-# RGB_to_Y, affiche_centre, Counter, adapt_input_ouput, adapt_input_ouput, adapt_input_ouput, add_Nbits, add_Nbits, Counter, detect_end_image, divideur_select_output, divideur_select_output, Counter, rdc_1bit, div_16, reg_Nbits, reg_Nbits, reg_Nbits, reg_Nbits, Seuillage, abs_8bits_signed, reg_Nbits, reg_Nbits, reg_Nbits, ET_logique_5entree, reg_1bit, reg_1bit, reg_1bit, reg_1bit, reg_1bit
+# RGB_to_Y, affiche_centre, Additionneur_Nbits, Additionneur_Nbits, Counter, adapt_input_ouput, adapt_input_ouput, adapt_input_ouput, adapt_input_ouput, adapt_input_ouput, counter_autoreload, detect_end_image, divideur_select_output, divideur_select_output, counter_autoreload, div_16, reg_Nbits, reg_Nbits, reg_Nbits, reg_Nbits, Seuillage, abs_8bits_signed, reg_Nbits, reg_Nbits, reg_Nbits, ET_logique_5entree, reg_1bit, reg_1bit, reg_1bit, reg_1bit, reg_1bit, reg_1bit
 
 # Please add the sources of those modules before sourcing this Tcl script.
 
@@ -237,20 +237,32 @@ proc create_hier_cell_filtrage_intensif { parentCell nameHier } {
      return 1
    }
   
+  # Create instance: reg_1bit_5, and set properties
+  set block_name reg_1bit
+  set block_cell_name reg_1bit_5
+  if { [catch {set reg_1bit_5 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $reg_1bit_5 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
   # Create instance: xlconstant_0, and set properties
   set xlconstant_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_0 ]
 
   # Create port connections
   connect_bd_net -net ET_logique_5entree_0_PixelNoirBlanc [get_bd_pins PixelNoirBlanc_out] [get_bd_pins ET_logique_5entree_0/PixelNoirBlanc]
-  connect_bd_net -net Net [get_bd_pins CLK] [get_bd_pins reg_1bit_0/CLK] [get_bd_pins reg_1bit_1/CLK] [get_bd_pins reg_1bit_2/CLK] [get_bd_pins reg_1bit_3/CLK] [get_bd_pins reg_1bit_4/CLK]
-  connect_bd_net -net Net1 [get_bd_pins RESET] [get_bd_pins reg_1bit_0/RESET] [get_bd_pins reg_1bit_1/RESET] [get_bd_pins reg_1bit_2/RESET] [get_bd_pins reg_1bit_3/RESET] [get_bd_pins reg_1bit_4/RESET]
-  connect_bd_net -net Net2 [get_bd_pins reg_1bit_0/EN] [get_bd_pins reg_1bit_1/EN] [get_bd_pins reg_1bit_2/EN] [get_bd_pins reg_1bit_3/EN] [get_bd_pins reg_1bit_4/EN] [get_bd_pins xlconstant_0/dout]
+  connect_bd_net -net Net [get_bd_pins CLK] [get_bd_pins reg_1bit_0/CLK] [get_bd_pins reg_1bit_1/CLK] [get_bd_pins reg_1bit_2/CLK] [get_bd_pins reg_1bit_3/CLK] [get_bd_pins reg_1bit_4/CLK] [get_bd_pins reg_1bit_5/CLK]
+  connect_bd_net -net Net1 [get_bd_pins RESET] [get_bd_pins reg_1bit_0/RESET] [get_bd_pins reg_1bit_1/RESET] [get_bd_pins reg_1bit_2/RESET] [get_bd_pins reg_1bit_3/RESET] [get_bd_pins reg_1bit_4/RESET] [get_bd_pins reg_1bit_5/RESET]
+  connect_bd_net -net Net2 [get_bd_pins reg_1bit_0/EN] [get_bd_pins reg_1bit_1/EN] [get_bd_pins reg_1bit_2/EN] [get_bd_pins reg_1bit_3/EN] [get_bd_pins reg_1bit_4/EN] [get_bd_pins reg_1bit_5/EN] [get_bd_pins xlconstant_0/dout]
   connect_bd_net -net PixelNoirBlanc_1 [get_bd_pins PixelNoirBlanc_in] [get_bd_pins ET_logique_5entree_0/entree1] [get_bd_pins reg_1bit_0/D]
   connect_bd_net -net reg_1bit_0_Q [get_bd_pins ET_logique_5entree_0/entree2] [get_bd_pins reg_1bit_0/Q] [get_bd_pins reg_1bit_1/D]
   connect_bd_net -net reg_1bit_1_Q [get_bd_pins ET_logique_5entree_0/entree3] [get_bd_pins reg_1bit_1/Q] [get_bd_pins reg_1bit_2/D]
   connect_bd_net -net reg_1bit_2_Q [get_bd_pins ET_logique_5entree_0/entree4] [get_bd_pins reg_1bit_2/Q] [get_bd_pins reg_1bit_3/D]
   connect_bd_net -net reg_1bit_3_Q [get_bd_pins ET_logique_5entree_0/entree5] [get_bd_pins reg_1bit_3/Q] [get_bd_pins reg_1bit_4/D]
-  connect_bd_net -net reg_1bit_4_Q [get_bd_pins ET_logique_5entree_0/entree6] [get_bd_pins reg_1bit_4/Q]
+  connect_bd_net -net reg_1bit_4_Q [get_bd_pins ET_logique_5entree_0/entree6] [get_bd_pins reg_1bit_4/Q] [get_bd_pins reg_1bit_5/D]
+  connect_bd_net -net reg_1bit_5_Q [get_bd_pins ET_logique_5entree_0/entree7] [get_bd_pins reg_1bit_5/Q]
 
   # Restore current instance
   current_bd_instance $oldCurInst
@@ -297,7 +309,7 @@ proc create_hier_cell_Segmentation { parentCell nameHier } {
   create_bd_pin -dir I -from 7 -to 0 D
   create_bd_pin -dir O PixelNoirBlanc
   create_bd_pin -dir O -from 23 -to 0 RBG_OUT
-  create_bd_pin -dir I -type rst RESET
+  create_bd_pin -dir I RESET
 
   # Create instance: ENABLE, and set properties
   set ENABLE [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 ENABLE ]
@@ -436,7 +448,7 @@ proc create_hier_cell_Moyenneur { parentCell nameHier } {
   # Create pins
   create_bd_pin -dir I -type clk CLK
   create_bd_pin -dir I -from 7 -to 0 D
-  create_bd_pin -dir I -type rst RESET
+  create_bd_pin -dir I RESET
   create_bd_pin -dir O -from 7 -to 0 sortie
 
   # Create instance: ENABLE, and set properties
@@ -657,15 +669,44 @@ proc create_hier_cell_Detect_centre { parentCell nameHier } {
   # Create interface pins
 
   # Create pins
-  create_bd_pin -dir I CE_column_count
-  create_bd_pin -dir I CE_ligne_count
   create_bd_pin -dir I -type clk CLK
+  create_bd_pin -dir I EN_count
   create_bd_pin -dir I Pixel_White_Black
-  create_bd_pin -dir I -type rst RESET
+  create_bd_pin -dir I RESET
   create_bd_pin -dir O -from 10 -to 0 nb_column
   create_bd_pin -dir O -from 10 -to 0 nb_ligne
   create_bd_pin -dir O -from 11 -to 0 xMoy
+  create_bd_pin -dir O xmoy_tvalid
   create_bd_pin -dir O -from 11 -to 0 yMoy
+  create_bd_pin -dir O ymoy_tvalid
+
+  # Create instance: Additionneur_Nbits_0, and set properties
+  set block_name Additionneur_Nbits
+  set block_cell_name Additionneur_Nbits_0
+  if { [catch {set Additionneur_Nbits_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $Additionneur_Nbits_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+    set_property -dict [ list \
+   CONFIG.N {18} \
+ ] $Additionneur_Nbits_0
+
+  # Create instance: Additionneur_Nbits_1, and set properties
+  set block_name Additionneur_Nbits
+  set block_cell_name Additionneur_Nbits_1
+  if { [catch {set Additionneur_Nbits_1 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $Additionneur_Nbits_1 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+    set_property -dict [ list \
+   CONFIG.N {18} \
+ ] $Additionneur_Nbits_1
 
   # Create instance: Blank_pixel_counter, and set properties
   set block_name Counter
@@ -726,47 +767,49 @@ proc create_hier_cell_Detect_centre { parentCell nameHier } {
    CONFIG.N {18} \
  ] $adapt_input_ouput_2
 
-  # Create instance: add_Nbits_0, and set properties
-  set block_name add_Nbits
-  set block_cell_name add_Nbits_0
-  if { [catch {set add_Nbits_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+  # Create instance: adapt_input_ouput_3, and set properties
+  set block_name adapt_input_ouput
+  set block_cell_name adapt_input_ouput_3
+  if { [catch {set adapt_input_ouput_3 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
      catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
      return 1
-   } elseif { $add_Nbits_0 eq "" } {
+   } elseif { $adapt_input_ouput_3 eq "" } {
      catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
      return 1
    }
     set_property -dict [ list \
-   CONFIG.N {18} \
- ] $add_Nbits_0
+   CONFIG.M {18} \
+   CONFIG.N {11} \
+ ] $adapt_input_ouput_3
 
-  # Create instance: add_Nbits_1, and set properties
-  set block_name add_Nbits
-  set block_cell_name add_Nbits_1
-  if { [catch {set add_Nbits_1 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+  # Create instance: adapt_input_ouput_4, and set properties
+  set block_name adapt_input_ouput
+  set block_cell_name adapt_input_ouput_4
+  if { [catch {set adapt_input_ouput_4 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
      catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
      return 1
-   } elseif { $add_Nbits_1 eq "" } {
+   } elseif { $adapt_input_ouput_4 eq "" } {
      catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
      return 1
    }
     set_property -dict [ list \
-   CONFIG.N {18} \
- ] $add_Nbits_1
+   CONFIG.M {18} \
+   CONFIG.N {11} \
+ ] $adapt_input_ouput_4
 
-  # Create instance: column_counter, and set properties
-  set block_name Counter
-  set block_cell_name column_counter
-  if { [catch {set column_counter [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+  # Create instance: column_counter1, and set properties
+  set block_name counter_autoreload
+  set block_cell_name column_counter1
+  if { [catch {set column_counter1 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
      catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
      return 1
-   } elseif { $column_counter eq "" } {
+   } elseif { $column_counter1 eq "" } {
      catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
      return 1
    }
     set_property -dict [ list \
    CONFIG.N {11} \
- ] $column_counter
+ ] $column_counter1
 
   # Create instance: detect_end_image_0, and set properties
   set block_name detect_end_image
@@ -837,55 +880,59 @@ proc create_hier_cell_Detect_centre { parentCell nameHier } {
      return 1
    }
   
-  # Create instance: ligne_counter, and set properties
-  set block_name Counter
-  set block_cell_name ligne_counter
-  if { [catch {set ligne_counter [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+  # Create instance: ligne_counter1, and set properties
+  set block_name counter_autoreload
+  set block_cell_name ligne_counter1
+  if { [catch {set ligne_counter1 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
      catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
      return 1
-   } elseif { $ligne_counter eq "" } {
+   } elseif { $ligne_counter1 eq "" } {
      catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
      return 1
    }
     set_property -dict [ list \
    CONFIG.N {11} \
- ] $ligne_counter
+ ] $ligne_counter1
 
-  # Create instance: rdc_1bit_1, and set properties
-  set block_name rdc_1bit
-  set block_cell_name rdc_1bit_1
-  if { [catch {set rdc_1bit_1 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
-     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
-     return 1
-   } elseif { $rdc_1bit_1 eq "" } {
-     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
-     return 1
-   }
-  
   # Create instance: xlconstant_0, and set properties
   set xlconstant_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_0 ]
+  set_property -dict [ list \
+   CONFIG.CONST_VAL {1599} \
+   CONFIG.CONST_WIDTH {11} \
+ ] $xlconstant_0
+
+  # Create instance: xlconstant_1, and set properties
+  set xlconstant_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_1 ]
+  set_property -dict [ list \
+   CONFIG.CONST_VAL {1199} \
+   CONFIG.CONST_WIDTH {11} \
+ ] $xlconstant_1
 
   # Create port connections
-  connect_bd_net -net CE_column_count_1 [get_bd_pins CE_column_count] [get_bd_pins column_counter/EN]
-  connect_bd_net -net CE_ligne_count_1 [get_bd_pins CE_ligne_count] [get_bd_pins ligne_counter/EN]
-  connect_bd_net -net CLK_1 [get_bd_pins CLK] [get_bd_pins Blank_pixel_counter/CLK] [get_bd_pins column_counter/CLK] [get_bd_pins detect_end_image_0/CLK] [get_bd_pins div_xAxis/aclk] [get_bd_pins div_yAxis/aclk] [get_bd_pins ligne_counter/CLK] [get_bd_pins rdc_1bit_1/CLK]
-  connect_bd_net -net Ligne_counter_Q [get_bd_pins nb_ligne] [get_bd_pins add_Nbits_0/B] [get_bd_pins detect_end_image_0/ligne] [get_bd_pins ligne_counter/Q]
+  connect_bd_net -net Additionneur_Nbits_0_S [get_bd_pins Additionneur_Nbits_0/A] [get_bd_pins Additionneur_Nbits_0/S] [get_bd_pins adapt_input_ouput_2/entree]
+  connect_bd_net -net Additionneur_Nbits_1_S [get_bd_pins Additionneur_Nbits_1/A] [get_bd_pins Additionneur_Nbits_1/S] [get_bd_pins adapt_input_ouput_1/entree]
+  connect_bd_net -net CLK_1 [get_bd_pins CLK] [get_bd_pins Additionneur_Nbits_0/CLK] [get_bd_pins Additionneur_Nbits_1/CLK] [get_bd_pins Blank_pixel_counter/CLK] [get_bd_pins column_counter1/CLK] [get_bd_pins detect_end_image_0/CLK] [get_bd_pins div_xAxis/aclk] [get_bd_pins div_yAxis/aclk] [get_bd_pins ligne_counter1/CLK]
+  connect_bd_net -net EN_count_1 [get_bd_pins EN_count] [get_bd_pins column_counter1/EN]
   connect_bd_net -net Net [get_bd_pins detect_end_image_0/fin] [get_bd_pins div_xAxis/s_axis_dividend_tvalid] [get_bd_pins div_xAxis/s_axis_divisor_tvalid] [get_bd_pins div_yAxis/s_axis_dividend_tvalid] [get_bd_pins div_yAxis/s_axis_divisor_tvalid]
-  connect_bd_net -net Net1 [get_bd_pins Blank_pixel_counter/EN] [get_bd_pins rdc_1bit_1/Q]
-  connect_bd_net -net Pixel_White_Black_1 [get_bd_pins Pixel_White_Black] [get_bd_pins rdc_1bit_1/D]
-  connect_bd_net -net RESET_counter_ligne_and_column_1 [get_bd_pins RESET] [get_bd_pins Blank_pixel_counter/RESET] [get_bd_pins column_counter/RESET] [get_bd_pins ligne_counter/RESET] [get_bd_pins rdc_1bit_1/RESET]
+  connect_bd_net -net Net1 [get_bd_pins Pixel_White_Black] [get_bd_pins Additionneur_Nbits_0/EN] [get_bd_pins Additionneur_Nbits_1/EN] [get_bd_pins Blank_pixel_counter/EN]
+  connect_bd_net -net RESET_counter_ligne_and_column_1 [get_bd_pins RESET] [get_bd_pins Additionneur_Nbits_0/RESET] [get_bd_pins Additionneur_Nbits_1/RESET] [get_bd_pins Blank_pixel_counter/RESET] [get_bd_pins column_counter1/RESET] [get_bd_pins ligne_counter1/RESET]
   connect_bd_net -net adapt_input_ouput_0_sortie [get_bd_pins adapt_input_ouput_0/sortie] [get_bd_pins div_xAxis/s_axis_divisor_tdata] [get_bd_pins div_yAxis/s_axis_divisor_tdata]
   connect_bd_net -net adapt_input_ouput_1_sortie [get_bd_pins adapt_input_ouput_1/sortie] [get_bd_pins div_xAxis/s_axis_dividend_tdata]
   connect_bd_net -net adapt_input_ouput_2_sortie [get_bd_pins adapt_input_ouput_2/sortie] [get_bd_pins div_yAxis/s_axis_dividend_tdata]
-  connect_bd_net -net add_xAxis_S [get_bd_pins adapt_input_ouput_1/entree] [get_bd_pins add_Nbits_0/A] [get_bd_pins add_Nbits_0/S]
-  connect_bd_net -net add_yAxis_S [get_bd_pins adapt_input_ouput_2/entree] [get_bd_pins add_Nbits_1/A] [get_bd_pins add_Nbits_1/S]
-  connect_bd_net -net column_counter_Q [get_bd_pins nb_column] [get_bd_pins add_Nbits_1/B] [get_bd_pins column_counter/Q] [get_bd_pins detect_end_image_0/column]
+  connect_bd_net -net adapt_input_ouput_3_sortie [get_bd_pins Additionneur_Nbits_1/B] [get_bd_pins adapt_input_ouput_3/sortie]
+  connect_bd_net -net adapt_input_ouput_4_sortie [get_bd_pins Additionneur_Nbits_0/B] [get_bd_pins adapt_input_ouput_4/sortie]
+  connect_bd_net -net column_counter1_endOfCount [get_bd_pins column_counter1/endOfCount] [get_bd_pins ligne_counter1/EN]
+  connect_bd_net -net column_counter_Q [get_bd_pins nb_column] [get_bd_pins adapt_input_ouput_4/entree] [get_bd_pins column_counter1/Q] [get_bd_pins detect_end_image_0/column]
   connect_bd_net -net div_xAxis_m_axis_dout_tdata [get_bd_pins div_xAxis/m_axis_dout_tdata] [get_bd_pins divideur_select_outp_0/Entree]
+  connect_bd_net -net div_xAxis_m_axis_dout_tvalid [get_bd_pins xmoy_tvalid] [get_bd_pins div_xAxis/m_axis_dout_tvalid]
   connect_bd_net -net div_yAxis_m_axis_dout_tdata [get_bd_pins div_yAxis/m_axis_dout_tdata] [get_bd_pins divideur_select_outp_1/Entree]
+  connect_bd_net -net div_yAxis_m_axis_dout_tvalid [get_bd_pins ymoy_tvalid] [get_bd_pins div_yAxis/m_axis_dout_tvalid]
   connect_bd_net -net divideur_select_outp_0_Output [get_bd_pins xMoy] [get_bd_pins divideur_select_outp_0/Sortie]
   connect_bd_net -net divideur_select_outp_1_Output [get_bd_pins yMoy] [get_bd_pins divideur_select_outp_1/Sortie]
   connect_bd_net -net ligne_counter2_Q [get_bd_pins Blank_pixel_counter/Q] [get_bd_pins adapt_input_ouput_0/entree]
-  connect_bd_net -net xlconstant_0_dout [get_bd_pins rdc_1bit_1/EN] [get_bd_pins xlconstant_0/dout]
+  connect_bd_net -net ligne_counter_Q [get_bd_pins nb_ligne] [get_bd_pins adapt_input_ouput_3/entree] [get_bd_pins detect_end_image_0/ligne] [get_bd_pins ligne_counter1/Q]
+  connect_bd_net -net xlconstant_0_dout [get_bd_pins column_counter1/comparator] [get_bd_pins xlconstant_0/dout]
+  connect_bd_net -net xlconstant_1_dout [get_bd_pins ligne_counter1/comparator] [get_bd_pins xlconstant_1/dout]
 
   # Restore current instance
   current_bd_instance $oldCurInst
@@ -934,7 +981,7 @@ proc create_root_design { parentCell } {
   set_property -dict [ list \
    CONFIG.FREQ_HZ {125000000} \
  ] $CLK
-  set USER_RESET [ create_bd_port -dir I -type rst USER_RESET ]
+  set USER_RESET [ create_bd_port -dir I USER_RESET ]
   set hdmi_in_hpd [ create_bd_port -dir O -from 0 -to 0 hdmi_in_hpd ]
   set reset [ create_bd_port -dir I -type rst reset ]
   set_property -dict [ list \
@@ -1023,22 +1070,21 @@ proc create_root_design { parentCell } {
   # Create port connections
   connect_bd_net -net CLK_1 [get_bd_ports CLK] [get_bd_pins clk_wiz_0/clk_in1]
   connect_bd_net -net CLK_2 [get_bd_pins Detect_centre/CLK] [get_bd_pins Moyenneur/CLK] [get_bd_pins Segmentation/CLK] [get_bd_pins dvi2rgb_0/PixelClk] [get_bd_pins filtrage_intensif/CLK] [get_bd_pins rgb2dvi_0/PixelClk]
+  connect_bd_net -net D_1 [get_bd_pins RGB_to_Y_0/Y] [get_bd_pins Segmentation/D]
   connect_bd_net -net Detect_centre_nb_column [get_bd_pins Detect_centre/nb_column] [get_bd_pins affiche_centre_0/nb_column]
   connect_bd_net -net Detect_centre_nb_ligne [get_bd_pins Detect_centre/nb_ligne] [get_bd_pins affiche_centre_0/nb_ligne]
   connect_bd_net -net Detect_centre_xMoy [get_bd_pins Detect_centre/xMoy] [get_bd_pins affiche_centre_0/m_Xaxis_dout_tdata]
   connect_bd_net -net Detect_centre_yMoy [get_bd_pins Detect_centre/yMoy] [get_bd_pins affiche_centre_0/m_Yaxis_dout_tdata]
-  connect_bd_net -net Moyenneur_sortie [get_bd_pins Moyenneur/sortie] [get_bd_pins Segmentation/D]
   connect_bd_net -net PixelNoirBlanc_in_1 [get_bd_pins Segmentation/PixelNoirBlanc] [get_bd_pins filtrage_intensif/PixelNoirBlanc_in]
-  connect_bd_net -net RESET_2 [get_bd_ports USER_RESET] [get_bd_pins Detect_centre/RESET] [get_bd_pins Moyenneur/RESET] [get_bd_pins Segmentation/RESET] [get_bd_pins filtrage_intensif/RESET]
-  connect_bd_net -net RGB_to_Y_0_Y [get_bd_pins Moyenneur/D] [get_bd_pins RGB_to_Y_0/Y]
   connect_bd_net -net VDD_dout [get_bd_ports hdmi_in_hpd] [get_bd_pins VDD/dout]
   connect_bd_net -net affiche_centre_0_RGB_OUT [get_bd_pins affiche_centre_0/RGB_OUT] [get_bd_pins rgb2dvi_0/vid_pData]
   connect_bd_net -net clk_wiz_0_clk_out1 [get_bd_pins clk_wiz_0/clk_out1] [get_bd_pins dvi2rgb_0/RefClk]
   connect_bd_net -net dvi2rgb_0_vid_pData [get_bd_pins RGB_to_Y_0/RGB] [get_bd_pins dvi2rgb_0/vid_pData]
-  connect_bd_net -net dvi2rgb_0_vid_pHSync [get_bd_pins Detect_centre/CE_column_count] [get_bd_pins dvi2rgb_0/vid_pHSync] [get_bd_pins rgb2dvi_0/vid_pHSync]
-  connect_bd_net -net dvi2rgb_0_vid_pVDE [get_bd_pins dvi2rgb_0/vid_pVDE] [get_bd_pins rgb2dvi_0/vid_pVDE]
-  connect_bd_net -net dvi2rgb_0_vid_pVSync [get_bd_pins Detect_centre/CE_ligne_count] [get_bd_pins dvi2rgb_0/vid_pVSync] [get_bd_pins rgb2dvi_0/vid_pVSync]
+  connect_bd_net -net dvi2rgb_0_vid_pHSync [get_bd_pins dvi2rgb_0/vid_pHSync] [get_bd_pins rgb2dvi_0/vid_pHSync]
+  connect_bd_net -net dvi2rgb_0_vid_pVDE [get_bd_pins Detect_centre/EN_count] [get_bd_pins dvi2rgb_0/vid_pVDE] [get_bd_pins rgb2dvi_0/vid_pVDE]
+  connect_bd_net -net dvi2rgb_0_vid_pVSync [get_bd_pins dvi2rgb_0/vid_pVSync] [get_bd_pins rgb2dvi_0/vid_pVSync]
   connect_bd_net -net filtrage_intensif_PixelNoirBlanc_out [get_bd_pins Detect_centre/Pixel_White_Black] [get_bd_pins affiche_centre_0/PixelNoirBlanc] [get_bd_pins filtrage_intensif/PixelNoirBlanc_out]
+  connect_bd_net -net reg_1bit_0_Q [get_bd_ports USER_RESET] [get_bd_pins Detect_centre/RESET] [get_bd_pins Moyenneur/RESET] [get_bd_pins Segmentation/RESET] [get_bd_pins filtrage_intensif/RESET]
   connect_bd_net -net reset_1 [get_bd_ports reset] [get_bd_pins clk_wiz_0/reset] [get_bd_pins dvi2rgb_0/aRst] [get_bd_pins dvi2rgb_0/pRst] [get_bd_pins rgb2dvi_0/aRst]
 
   # Create address segments

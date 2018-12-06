@@ -33,13 +33,13 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity ET_logique_5entree is
   Port ( PixelNoirBlanc: out STD_LOGIC;
-         entree1,entree2,entree3,entree4,entree5,entree6: in STD_LOGIC );
+         entree1,entree2,entree3,entree4,entree5,entree6,entree7: in STD_LOGIC );
 end ET_logique_5entree;
 
 architecture Behavioral of ET_logique_5entree is
 
 begin
 
-PixelNoirBlanc<=entree1 AND entree2 AND entree3 AND entree4 AND entree5 AND entree6;
+PixelNoirBlanc<=entree1 AND entree2 AND entree3 AND entree4 AND entree5 AND entree6 AND entree7 ;
 
 end Behavioral;

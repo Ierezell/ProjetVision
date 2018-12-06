@@ -39,8 +39,8 @@ architecture Behavioral of c_counter_binary_wrapper_tb is
 
 component c_counter_binary_wrapper is
   port (
-    CE_column_count : in STD_LOGIC;
-    CE_ligne_count : in STD_LOGIC;
+    --CE_column_count : in STD_LOGIC;
+    --CE_ligne_count : in STD_LOGIC;
     CLK : in STD_LOGIC;
     Pixel_White_Black : in STD_LOGIC;
     RESET : in STD_LOGIC;
@@ -59,23 +59,23 @@ constant clock_period : time := 10ns;
 
 begin
 
-uut: c_counter_binary_wrapper port map (CE_column_count=>CE_column_count,CE_ligne_count=>CE_ligne_count,CLK=>CLK,Pixel_White_Black=>Pixel_White_Black,RESET=>RESET,nb_column=>nb_column,nb_ligne=>nb_ligne,xMoy=>xMoy,yMoy=>yMoy);
+uut: c_counter_binary_wrapper port map (CLK=>CLK,Pixel_White_Black=>Pixel_White_Black,RESET=>RESET,nb_column=>nb_column,nb_ligne=>nb_ligne,xMoy=>xMoy,yMoy=>yMoy); --CE_column_count=>CE_column_count,CE_ligne_count=>CE_ligne_count,
 
 RESET<='0', '1' after 20ns;
 CE_column_count<='1';
 Pixel_White_Black<='0' ,'1' after 40ns, '0' after 50ns;
-process(CLK)
-begin
-    if CLK='1' AND CLK'event then
-        if nb_column=x"63F" then
-            CE_ligne_count<='1';
-        else
-            CE_ligne_count<='0';
-        end if;
-    else
-        CE_ligne_count<=CE_ligne_count;
-    end if;
-end process;
+--process(CLK)
+--begin
+--    if CLK='1' AND CLK'event then
+--        if nb_column=x"63F" then
+--            CE_ligne_count<='1';
+--        else
+--            CE_ligne_count<='0';
+--        end if;
+--    else
+--        CE_ligne_count<=CE_ligne_count;
+--    end if;
+--end process;
 
 process
 begin

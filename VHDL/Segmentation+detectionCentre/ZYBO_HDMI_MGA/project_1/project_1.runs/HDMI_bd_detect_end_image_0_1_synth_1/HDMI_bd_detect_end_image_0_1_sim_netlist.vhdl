@@ -1,8 +1,8 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
--- Tool Version: Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
--- Date        : Sat Dec  1 17:39:59 2018
--- Host        : Nicolas running 64-bit major release  (build 9200)
+-- Tool Version: Vivado v.2018.2.1 (win64) Build 2288692 Thu Jul 26 18:24:02 MDT 2018
+-- Date        : Wed Dec  5 09:42:31 2018
+-- Host        : pcetu-135 running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim -rename_top decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix -prefix
 --               decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ HDMI_bd_detect_end_image_0_1_sim_netlist.vhdl
 -- Design      : HDMI_bd_detect_end_image_0_1
@@ -67,15 +67,15 @@ T_i_3: unisim.vcomponents.LUT4
     );
 T_i_4: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"0000000000000020"
+      INIT => X"0000100000000000"
     )
         port map (
-      I0 => column(7),
-      I1 => column(6),
-      I2 => column(5),
-      I3 => column(4),
-      I4 => column(9),
-      I5 => column(8),
+      I0 => column(6),
+      I1 => column(7),
+      I2 => column(4),
+      I3 => column(5),
+      I4 => column(8),
+      I5 => column(9),
       O => T_i_4_n_0
     );
 T_i_5: unisim.vcomponents.LUT6
@@ -120,7 +120,7 @@ entity decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix is
   attribute ip_definition_source : string;
   attribute ip_definition_source of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix : entity is "module_ref";
   attribute x_core_info : string;
-  attribute x_core_info of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix : entity is "detect_end_image,Vivado 2018.2";
+  attribute x_core_info of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix : entity is "detect_end_image,Vivado 2018.2.1";
 end decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix;
 
 architecture STRUCTURE of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix is

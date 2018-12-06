@@ -1,8 +1,8 @@
 --Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
---Tool Version: Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
---Date        : Mon Dec  3 00:48:52 2018
---Host        : Nicolas running 64-bit major release  (build 9200)
+--Tool Version: Vivado v.2018.2.1 (win64) Build 2288692 Thu Jul 26 18:24:02 MDT 2018
+--Date        : Wed Dec  5 14:32:09 2018
+--Host        : pcetu-135 running 64-bit major release  (build 9200)
 --Command     : generate_target HDMI_bd_wrapper.bd
 --Design      : HDMI_bd_wrapper
 --Purpose     : IP block netlist

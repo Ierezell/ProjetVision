@@ -40,7 +40,7 @@ if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
 
 # The design that will be created by this Tcl script contains the following 
 # module references:
-# Additionneur_Nbits, Additionneur_Nbits, Counter, adapt_input_ouput, adapt_input_ouput, adapt_input_ouput, adapt_input_ouput, adapt_input_ouput, Counter, detect_end_image, divideur_select_output, divideur_select_output, Counter
+# Additionneur_Nbits, Additionneur_Nbits, Counter, adapt_input_ouput, adapt_input_ouput, adapt_input_ouput, adapt_input_ouput, adapt_input_ouput, counter_autoreload, detect_end_image, divideur_select_output, divideur_select_output, counter_autoreload
 
 # Please add the sources of those modules before sourcing this Tcl script.
 
@@ -169,8 +169,6 @@ proc create_root_design { parentCell } {
   # Create interface ports
 
   # Create ports
-  set CE_column_count [ create_bd_port -dir I CE_column_count ]
-  set CE_ligne_count [ create_bd_port -dir I CE_ligne_count ]
   set CLK [ create_bd_port -dir I -type clk CLK ]
   set Pixel_White_Black [ create_bd_port -dir I Pixel_White_Black ]
   set RESET [ create_bd_port -dir I -type rst RESET ]
@@ -297,7 +295,7 @@ proc create_root_design { parentCell } {
  ] $adapt_input_ouput_4
 
   # Create instance: column_counter, and set properties
-  set block_name Counter
+  set block_name counter_autoreload
   set block_cell_name column_counter
   if { [catch {set column_counter [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
      catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
@@ -380,7 +378,7 @@ proc create_root_design { parentCell } {
    }
   
   # Create instance: ligne_counter, and set properties
-  set block_name Counter
+  set block_name counter_autoreload
   set block_cell_name ligne_counter
   if { [catch {set ligne_counter [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
      catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
@@ -393,11 +391,30 @@ proc create_root_design { parentCell } {
    CONFIG.N {11} \
  ] $ligne_counter
 
+  # Create instance: xlconstant_0, and set properties
+  set xlconstant_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_0 ]
+  set_property -dict [ list \
+   CONFIG.CONST_VAL {1599} \
+   CONFIG.CONST_WIDTH {11} \
+ ] $xlconstant_0
+
+  # Create instance: xlconstant_1, and set properties
+  set xlconstant_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_1 ]
+  set_property -dict [ list \
+   CONFIG.CONST_VAL {1199} \
+   CONFIG.CONST_WIDTH {11} \
+ ] $xlconstant_1
+
+  # Create instance: xlconstant_2, and set properties
+  set xlconstant_2 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_2 ]
+  set_property -dict [ list \
+   CONFIG.CONST_VAL {1} \
+   CONFIG.CONST_WIDTH {1} \
+ ] $xlconstant_2
+
   # Create port connections
   connect_bd_net -net Additionneur_Nbits_0_S [get_bd_pins Additionneur_Nbits_0/A] [get_bd_pins Additionneur_Nbits_0/S] [get_bd_pins adapt_input_ouput_2/entree]
   connect_bd_net -net Additionneur_Nbits_1_S [get_bd_pins Additionneur_Nbits_1/A] [get_bd_pins Additionneur_Nbits_1/S] [get_bd_pins adapt_input_ouput_1/entree]
-  connect_bd_net -net CE_column_count_1 [get_bd_ports CE_column_count] [get_bd_pins column_counter/EN]
-  connect_bd_net -net CE_ligne_count_1 [get_bd_ports CE_ligne_count] [get_bd_pins ligne_counter/EN]
   connect_bd_net -net CLK_1 [get_bd_ports CLK] [get_bd_pins Additionneur_Nbits_0/CLK] [get_bd_pins Additionneur_Nbits_1/CLK] [get_bd_pins Blank_pixel_counter/CLK] [get_bd_pins column_counter/CLK] [get_bd_pins detect_end_image_0/CLK] [get_bd_pins div_xAxis/aclk] [get_bd_pins div_yAxis/aclk] [get_bd_pins ligne_counter/CLK]
   connect_bd_net -net Net [get_bd_pins detect_end_image_0/fin] [get_bd_pins div_xAxis/s_axis_dividend_tvalid] [get_bd_pins div_xAxis/s_axis_divisor_tvalid] [get_bd_pins div_yAxis/s_axis_dividend_tvalid] [get_bd_pins div_yAxis/s_axis_divisor_tvalid]
   connect_bd_net -net Net1 [get_bd_ports Pixel_White_Black] [get_bd_pins Additionneur_Nbits_0/EN] [get_bd_pins Additionneur_Nbits_1/EN] [get_bd_pins Blank_pixel_counter/EN]
@@ -408,12 +425,16 @@ proc create_root_design { parentCell } {
   connect_bd_net -net adapt_input_ouput_3_sortie [get_bd_pins Additionneur_Nbits_1/B] [get_bd_pins adapt_input_ouput_3/sortie]
   connect_bd_net -net adapt_input_ouput_4_sortie [get_bd_pins Additionneur_Nbits_0/B] [get_bd_pins adapt_input_ouput_4/sortie]
   connect_bd_net -net column_counter_Q [get_bd_ports nb_column] [get_bd_pins adapt_input_ouput_4/entree] [get_bd_pins column_counter/Q] [get_bd_pins detect_end_image_0/column]
+  connect_bd_net -net column_counter_endOfCount [get_bd_pins column_counter/endOfCount] [get_bd_pins ligne_counter/EN]
   connect_bd_net -net div_xAxis_m_axis_dout_tdata [get_bd_pins div_xAxis/m_axis_dout_tdata] [get_bd_pins divideur_select_outp_0/Entree]
   connect_bd_net -net div_yAxis_m_axis_dout_tdata [get_bd_pins div_yAxis/m_axis_dout_tdata] [get_bd_pins divideur_select_outp_1/Entree]
   connect_bd_net -net divideur_select_outp_0_Output [get_bd_ports xMoy] [get_bd_pins divideur_select_outp_0/Sortie]
   connect_bd_net -net divideur_select_outp_1_Output [get_bd_ports yMoy] [get_bd_pins divideur_select_outp_1/Sortie]
   connect_bd_net -net ligne_counter2_Q [get_bd_pins Blank_pixel_counter/Q] [get_bd_pins adapt_input_ouput_0/entree]
   connect_bd_net -net ligne_counter_Q [get_bd_ports nb_ligne] [get_bd_pins adapt_input_ouput_3/entree] [get_bd_pins detect_end_image_0/ligne] [get_bd_pins ligne_counter/Q]
+  connect_bd_net -net xlconstant_0_dout [get_bd_pins column_counter/comparator] [get_bd_pins xlconstant_0/dout]
+  connect_bd_net -net xlconstant_1_dout [get_bd_pins ligne_counter/comparator] [get_bd_pins xlconstant_1/dout]
+  connect_bd_net -net xlconstant_2_dout [get_bd_pins column_counter/EN] [get_bd_pins xlconstant_2/dout]
 
   # Create address segments
 

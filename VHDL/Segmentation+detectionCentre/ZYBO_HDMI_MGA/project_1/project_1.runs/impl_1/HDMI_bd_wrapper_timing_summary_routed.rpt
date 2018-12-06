@@ -1,0 +1,1866 @@
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.2.1 (win64) Build 2288692 Thu Jul 26 18:24:02 MDT 2018
+| Date         : Wed Dec  5 14:38:19 2018
+| Host         : pcetu-135 running 64-bit major release  (build 9200)
+| Command      : report_timing_summary -max_paths 10 -file HDMI_bd_wrapper_timing_summary_routed.rpt -pb HDMI_bd_wrapper_timing_summary_routed.pb -rpx HDMI_bd_wrapper_timing_summary_routed.rpx -warn_on_violation
+| Design       : HDMI_bd_wrapper
+| Device       : 7z020-clg400
+| Speed File   : -1  PRODUCTION 1.11 2014-09-11
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Summary Report
+
+------------------------------------------------------------------------------------------------
+| Timer Settings
+| --------------
+------------------------------------------------------------------------------------------------
+
+  Enable Multi Corner Analysis               :  Yes
+  Enable Pessimism Removal                   :  Yes
+  Pessimism Removal Resolution               :  Nearest Common Node
+  Enable Input Delay Default Clock           :  No
+  Enable Preset / Clear Arcs                 :  No
+  Disable Flight Delays                      :  No
+  Ignore I/O Paths                           :  No
+  Timing Early Launch at Borrowing Latches   :  false
+
+  Corner  Analyze    Analyze    
+  Name    Max Paths  Min Paths  
+  ------  ---------  ---------  
+  Slow    Yes        Yes        
+  Fast    Yes        Yes        
+
+
+
+check_timing report
+
+Table of Contents
+-----------------
+1. checking no_clock
+2. checking constant_clock
+3. checking pulse_width_clock
+4. checking unconstrained_internal_endpoints
+5. checking no_input_delay
+6. checking no_output_delay
+7. checking multiple_clock
+8. checking generated_clocks
+9. checking loops
+10. checking partial_input_delay
+11. checking partial_output_delay
+12. checking latch_loops
+
+1. checking no_clock
+--------------------
+ There are 579 register/latch pins with no clock driven by root clock pin: hdmi_in_clk_p (HIGH)
+
+
+2. checking constant_clock
+--------------------------
+ There are 0 register/latch pins with constant_clock.
+
+
+3. checking pulse_width_clock
+-----------------------------
+ There are 0 register/latch pins which need pulse_width check
+
+
+4. checking unconstrained_internal_endpoints
+--------------------------------------------
+ There are 1202 pins that are not constrained for maximum delay. (HIGH)
+
+ There are 6 pins that are not constrained for maximum delay due to constant clock. (MEDIUM)
+
+
+5. checking no_input_delay
+--------------------------
+ There are 7 input ports with no input delay specified. (HIGH)
+
+ There are 0 input ports with no input delay but user has a false path constraint.
+
+
+6. checking no_output_delay
+---------------------------
+ There are 5 ports with no output delay specified. (HIGH)
+
+ There are 0 ports with no output delay but user has a false path constraint
+
+ There are 0 ports with no output delay but with a timing clock defined on it or propagating through it
+
+
+7. checking multiple_clock
+--------------------------
+ There are 0 register/latch pins with multiple clocks.
+
+
+8. checking generated_clocks
+----------------------------
+ There are 0 generated clocks that are not connected to a clock source.
+
+
+9. checking loops
+-----------------
+ There are 0 combinational loops in the design.
+
+
+10. checking partial_input_delay
+--------------------------------
+ There are 0 input ports with partial input delay specified.
+
+
+11. checking partial_output_delay
+---------------------------------
+ There are 0 ports with partial output delay specified.
+
+
+12. checking latch_loops
+------------------------
+ There are 0 combinational latch loops in the design through latch input
+
+
+
+------------------------------------------------------------------------------------------------
+| Design Timing Summary
+| ---------------------
+------------------------------------------------------------------------------------------------
+
+    WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+    -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+      1.349        0.000                      0                  358        0.122        0.000                      0                  358        0.264        0.000                       0                   172  
+
+
+All user specified timing constraints are met.
+
+
+------------------------------------------------------------------------------------------------
+| Clock Summary
+| -------------
+------------------------------------------------------------------------------------------------
+
+Clock                           Waveform(ns)         Period(ns)      Frequency(MHz)
+-----                           ------------         ----------      --------------
+CLK                             {0.000 4.000}        8.000           125.000         
+  clk_out1_HDMI_bd_clk_wiz_0_0  {0.000 2.500}        5.000           200.000         
+  clkfbout_HDMI_bd_clk_wiz_0_0  {0.000 4.000}        8.000           125.000         
+
+
+------------------------------------------------------------------------------------------------
+| Intra Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+Clock                               WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+-----                               -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+CLK                                                                                                                                                                               2.000        0.000                       0                     1  
+  clk_out1_HDMI_bd_clk_wiz_0_0        1.349        0.000                      0                  355        0.122        0.000                      0                  355        0.264        0.000                       0                   168  
+  clkfbout_HDMI_bd_clk_wiz_0_0                                                                                                                                                    5.845        0.000                       0                     3  
+
+
+------------------------------------------------------------------------------------------------
+| Inter Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------    --------          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+
+
+------------------------------------------------------------------------------------------------
+| Other Path Groups Table
+| -----------------------
+------------------------------------------------------------------------------------------------
+
+Path Group                    From Clock                    To Clock                          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------                    ----------                    --------                          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+**async_default**             clk_out1_HDMI_bd_clk_wiz_0_0  clk_out1_HDMI_bd_clk_wiz_0_0        3.188        0.000                      0                    3        0.404        0.000                      0                    3  
+
+
+------------------------------------------------------------------------------------------------
+| Timing Details
+| --------------
+------------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------------
+From Clock:  CLK
+  To Clock:  CLK
+
+Setup :           NA  Failing Endpoints,  Worst Slack           NA  ,  Total Violation           NA
+Hold  :           NA  Failing Endpoints,  Worst Slack           NA  ,  Total Violation           NA
+PW    :            0  Failing Endpoints,  Worst Slack        2.000ns,  Total Violation        0.000ns
+---------------------------------------------------------------------------------------------------
+
+
+Pulse Width Checks
+--------------------------------------------------------------------------------------
+Clock Name:         CLK
+Waveform(ns):       { 0.000 4.000 }
+Period(ns):         8.000
+Sources:            { CLK }
+
+Check Type        Corner  Lib Pin           Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location        Pin
+Min Period        n/a     PLLE2_ADV/CLKIN1  n/a            1.249         8.000       6.751      PLLE2_ADV_X1Y2  HDMI_bd_i/clk_wiz_0/inst/plle2_adv_inst/CLKIN1
+Max Period        n/a     PLLE2_ADV/CLKIN1  n/a            52.633        8.000       44.633     PLLE2_ADV_X1Y2  HDMI_bd_i/clk_wiz_0/inst/plle2_adv_inst/CLKIN1
+Low Pulse Width   Slow    PLLE2_ADV/CLKIN1  n/a            2.000         4.000       2.000      PLLE2_ADV_X1Y2  HDMI_bd_i/clk_wiz_0/inst/plle2_adv_inst/CLKIN1
+Low Pulse Width   Fast    PLLE2_ADV/CLKIN1  n/a            2.000         4.000       2.000      PLLE2_ADV_X1Y2  HDMI_bd_i/clk_wiz_0/inst/plle2_adv_inst/CLKIN1
+High Pulse Width  Slow    PLLE2_ADV/CLKIN1  n/a            2.000         4.000       2.000      PLLE2_ADV_X1Y2  HDMI_bd_i/clk_wiz_0/inst/plle2_adv_inst/CLKIN1
+High Pulse Width  Fast    PLLE2_ADV/CLKIN1  n/a            2.000         4.000       2.000      PLLE2_ADV_X1Y2  HDMI_bd_i/clk_wiz_0/inst/plle2_adv_inst/CLKIN1
+
+
+
+---------------------------------------------------------------------------------------------------
+From Clock:  clk_out1_HDMI_bd_clk_wiz_0_0
+  To Clock:  clk_out1_HDMI_bd_clk_wiz_0_0
+
+Setup :            0  Failing Endpoints,  Worst Slack        1.349ns,  Total Violation        0.000ns
+Hold  :            0  Failing Endpoints,  Worst Slack        0.122ns,  Total Violation        0.000ns
+PW    :            0  Failing Endpoints,  Worst Slack        0.264ns,  Total Violation        0.000ns
+---------------------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             1.349ns  (required time - arrival time)
+  Source:                 HDMI_bd_i/dvi2rgb_0/U0/GenerateDDC.DDC_EEPROM/I2C_SlaveController/dSda_reg/C
+                            (rising edge-triggered cell FDRE clocked by clk_out1_HDMI_bd_clk_wiz_0_0  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            HDMI_bd_i/dvi2rgb_0/U0/GenerateDDC.DDC_EEPROM/I2C_SlaveController/FSM_gray_state_reg[2]/D
+                            (rising edge-triggered cell FDRE clocked by clk_out1_HDMI_bd_clk_wiz_0_0  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             clk_out1_HDMI_bd_clk_wiz_0_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            5.000ns  (clk_out1_HDMI_bd_clk_wiz_0_0 rise@5.000ns - clk_out1_HDMI_bd_clk_wiz_0_0 rise@0.000ns)
+  Data Path Delay:        3.641ns  (logic 1.080ns (29.663%)  route 2.561ns (70.337%))
+  Logic Levels:           3  (LUT3=1 LUT6=2)
+  Clock Path Skew:        -0.024ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    -1.981ns = ( 3.019 - 5.000 ) 
+    Source Clock Delay      (SCD):    -2.339ns
+    Clock Pessimism Removal (CPR):    -0.382ns
+  Clock Uncertainty:      0.065ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.109ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out1_HDMI_bd_clk_wiz_0_0 rise edge)
+                                                      0.000     0.000 r  
+    K17                                               0.000     0.000 r  CLK (IN)
+                         net (fo=0)                   0.000     0.000    HDMI_bd_i/clk_wiz_0/inst/clk_in1
+    K17                  IBUF (Prop_ibuf_I_O)         1.475     1.475 r  HDMI_bd_i/clk_wiz_0/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           1.306     2.781    HDMI_bd_i/clk_wiz_0/inst/clk_in1_HDMI_bd_clk_wiz_0_0
+    PLLE2_ADV_X1Y2       PLLE2_ADV (Prop_plle2_adv_CLKIN1_CLKOUT0)
+                                                     -9.282    -6.501 r  HDMI_bd_i/clk_wiz_0/inst/plle2_adv_inst/CLKOUT0
+                         net (fo=1, routed)           2.200    -4.301    HDMI_bd_i/clk_wiz_0/inst/clk_out1_HDMI_bd_clk_wiz_0_0
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101    -4.200 r  HDMI_bd_i/clk_wiz_0/inst/clkout1_buf/O
+                         net (fo=166, routed)         1.861    -2.339    HDMI_bd_i/dvi2rgb_0/U0/GenerateDDC.DDC_EEPROM/I2C_SlaveController/RefClk
+    SLICE_X109Y59        FDRE                                         r  HDMI_bd_i/dvi2rgb_0/U0/GenerateDDC.DDC_EEPROM/I2C_SlaveController/dSda_reg/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X109Y59        FDRE (Prop_fdre_C_Q)         0.456    -1.883 f  HDMI_bd_i/dvi2rgb_0/U0/GenerateDDC.DDC_EEPROM/I2C_SlaveController/dSda_reg/Q
+                         net (fo=13, routed)          0.854    -1.030    HDMI_bd_i/dvi2rgb_0/U0/GenerateDDC.DDC_EEPROM/I2C_SlaveController/dSda
+    SLICE_X108Y58        LUT3 (Prop_lut3_I1_O)        0.152    -0.878 f  HDMI_bd_i/dvi2rgb_0/U0/GenerateDDC.DDC_EEPROM/I2C_SlaveController/dataByte[7]_i_4/O
+                         net (fo=13, routed)          0.693    -0.185    HDMI_bd_i/dvi2rgb_0/U0/GenerateDDC.DDC_EEPROM/I2C_SlaveController/dataByte[7]_i_4_n_0
+    SLICE_X107Y57        LUT6 (Prop_lut6_I1_O)        0.348     0.163 r  HDMI_bd_i/dvi2rgb_0/U0/GenerateDDC.DDC_EEPROM/I2C_SlaveController/FSM_gray_state[2]_i_4/O
+                         net (fo=3, routed)           1.014     1.178    HDMI_bd_i/dvi2rgb_0/U0/GenerateDDC.DDC_EEPROM/I2C_SlaveController/FSM_gray_state[2]_i_4_n_0
+    SLICE_X108Y58        LUT6 (Prop_lut6_I2_O)        0.124     1.302 r  HDMI_bd_i/dvi2rgb_0/U0/GenerateDDC.DDC_EEPROM/I2C_SlaveController/FSM_gray_state[2]_i_1/O
+                         net (fo=1, routed)           0.000     1.302    HDMI_bd_i/dvi2rgb_0/U0/GenerateDDC.DDC_EEPROM/I2C_SlaveController/FSM_gray_state[2]_i_1_n_0
+    SLICE_X108Y58        FDRE                                         r  HDMI_bd_i/dvi2rgb_0/U0/GenerateDDC.DDC_EEPROM/I2C_SlaveController/FSM_gray_state_reg[2]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_HDMI_bd_clk_wiz_0_0 rise edge)
+                                                      5.000     5.000 r  
+    K17                                               0.000     5.000 r  CLK (IN)
+                         net (fo=0)                   0.000     5.000    HDMI_bd_i/clk_wiz_0/inst/clk_in1
+    K17                  IBUF (Prop_ibuf_I_O)         1.404     6.404 r  HDMI_bd_i/clk_wiz_0/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           1.181     7.585    HDMI_bd_i/clk_wiz_0/inst/clk_in1_HDMI_bd_clk_wiz_0_0
+    PLLE2_ADV_X1Y2       PLLE2_ADV (Prop_plle2_adv_CLKIN1_CLKOUT0)
+                                                     -8.346    -0.761 r  HDMI_bd_i/clk_wiz_0/inst/plle2_adv_inst/CLKOUT0
+                         net (fo=1, routed)           2.007     1.246    HDMI_bd_i/clk_wiz_0/inst/clk_out1_HDMI_bd_clk_wiz_0_0
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091     1.337 r  HDMI_bd_i/clk_wiz_0/inst/clkout1_buf/O
+                         net (fo=166, routed)         1.682     3.019    HDMI_bd_i/dvi2rgb_0/U0/GenerateDDC.DDC_EEPROM/I2C_SlaveController/RefClk
+    SLICE_X108Y58        FDRE                                         r  HDMI_bd_i/dvi2rgb_0/U0/GenerateDDC.DDC_EEPROM/I2C_SlaveController/FSM_gray_state_reg[2]/C
+                         clock pessimism             -0.382     2.637    
+                         clock uncertainty           -0.065     2.572    
+    SLICE_X108Y58        FDRE (Setup_fdre_C_D)        0.079     2.651    HDMI_bd_i/dvi2rgb_0/U0/GenerateDDC.DDC_EEPROM/I2C_SlaveController/FSM_gray_state_reg[2]
+  -------------------------------------------------------------------
+                         required time                          2.651    
+                         arrival time                          -1.302    
+  -------------------------------------------------------------------
+                         slack                                  1.349    
+
+Slack (MET) :             1.393ns  (required time - arrival time)
+  Source:                 HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt_reg[3]/C
+                            (rising edge-triggered cell FDRE clocked by clk_out1_HDMI_bd_clk_wiz_0_0  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt_reg[0]/CE
+                            (rising edge-triggered cell FDRE clocked by clk_out1_HDMI_bd_clk_wiz_0_0  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             clk_out1_HDMI_bd_clk_wiz_0_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            5.000ns  (clk_out1_HDMI_bd_clk_wiz_0_0 rise@5.000ns - clk_out1_HDMI_bd_clk_wiz_0_0 rise@0.000ns)
+  Data Path Delay:        3.373ns  (logic 0.766ns (22.712%)  route 2.607ns (77.288%))
+  Logic Levels:           2  (LUT4=1 LUT6=1)
+  Clock Path Skew:        0.000ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    -2.059ns = ( 2.941 - 5.000 ) 
+    Source Clock Delay      (SCD):    -2.420ns
+    Clock Pessimism Removal (CPR):    -0.361ns
+  Clock Uncertainty:      0.065ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.109ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out1_HDMI_bd_clk_wiz_0_0 rise edge)
+                                                      0.000     0.000 r  
+    K17                                               0.000     0.000 r  CLK (IN)
+                         net (fo=0)                   0.000     0.000    HDMI_bd_i/clk_wiz_0/inst/clk_in1
+    K17                  IBUF (Prop_ibuf_I_O)         1.475     1.475 r  HDMI_bd_i/clk_wiz_0/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           1.306     2.781    HDMI_bd_i/clk_wiz_0/inst/clk_in1_HDMI_bd_clk_wiz_0_0
+    PLLE2_ADV_X1Y2       PLLE2_ADV (Prop_plle2_adv_CLKIN1_CLKOUT0)
+                                                     -9.282    -6.501 r  HDMI_bd_i/clk_wiz_0/inst/plle2_adv_inst/CLKOUT0
+                         net (fo=1, routed)           2.200    -4.301    HDMI_bd_i/clk_wiz_0/inst/clk_out1_HDMI_bd_clk_wiz_0_0
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101    -4.200 r  HDMI_bd_i/clk_wiz_0/inst/clkout1_buf/O
+                         net (fo=166, routed)         1.780    -2.420    HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/RefClk
+    SLICE_X104Y64        FDRE                                         r  HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt_reg[3]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X104Y64        FDRE (Prop_fdre_C_Q)         0.518    -1.902 f  HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt_reg[3]/Q
+                         net (fo=2, routed)           1.106    -0.796    HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/SyncBaseOvf/rTimeoutCnt_reg[3]
+    SLICE_X105Y64        LUT4 (Prop_lut4_I0_O)        0.124    -0.672 r  HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/SyncBaseOvf/iIn_q_i_4__4/O
+                         net (fo=2, routed)           0.791     0.119    HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/SyncBaseOvf_n_3
+    SLICE_X105Y67        LUT6 (Prop_lut6_I2_O)        0.124     0.243 r  HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt[0]_i_1__1/O
+                         net (fo=24, routed)          0.710     0.952    HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt[0]_i_1__1_n_0
+    SLICE_X104Y64        FDRE                                         r  HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt_reg[0]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_HDMI_bd_clk_wiz_0_0 rise edge)
+                                                      5.000     5.000 r  
+    K17                                               0.000     5.000 r  CLK (IN)
+                         net (fo=0)                   0.000     5.000    HDMI_bd_i/clk_wiz_0/inst/clk_in1
+    K17                  IBUF (Prop_ibuf_I_O)         1.404     6.404 r  HDMI_bd_i/clk_wiz_0/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           1.181     7.585    HDMI_bd_i/clk_wiz_0/inst/clk_in1_HDMI_bd_clk_wiz_0_0
+    PLLE2_ADV_X1Y2       PLLE2_ADV (Prop_plle2_adv_CLKIN1_CLKOUT0)
+                                                     -8.346    -0.761 r  HDMI_bd_i/clk_wiz_0/inst/plle2_adv_inst/CLKOUT0
+                         net (fo=1, routed)           2.007     1.246    HDMI_bd_i/clk_wiz_0/inst/clk_out1_HDMI_bd_clk_wiz_0_0
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091     1.337 r  HDMI_bd_i/clk_wiz_0/inst/clkout1_buf/O
+                         net (fo=166, routed)         1.604     2.941    HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/RefClk
+    SLICE_X104Y64        FDRE                                         r  HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt_reg[0]/C
+                         clock pessimism             -0.361     2.580    
+                         clock uncertainty           -0.065     2.515    
+    SLICE_X104Y64        FDRE (Setup_fdre_C_CE)      -0.169     2.346    HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt_reg[0]
+  -------------------------------------------------------------------
+                         required time                          2.346    
+                         arrival time                          -0.952    
+  -------------------------------------------------------------------
+                         slack                                  1.393    
+
+Slack (MET) :             1.393ns  (required time - arrival time)
+  Source:                 HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt_reg[3]/C
+                            (rising edge-triggered cell FDRE clocked by clk_out1_HDMI_bd_clk_wiz_0_0  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt_reg[1]/CE
+                            (rising edge-triggered cell FDRE clocked by clk_out1_HDMI_bd_clk_wiz_0_0  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             clk_out1_HDMI_bd_clk_wiz_0_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            5.000ns  (clk_out1_HDMI_bd_clk_wiz_0_0 rise@5.000ns - clk_out1_HDMI_bd_clk_wiz_0_0 rise@0.000ns)
+  Data Path Delay:        3.373ns  (logic 0.766ns (22.712%)  route 2.607ns (77.288%))
+  Logic Levels:           2  (LUT4=1 LUT6=1)
+  Clock Path Skew:        0.000ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    -2.059ns = ( 2.941 - 5.000 ) 
+    Source Clock Delay      (SCD):    -2.420ns
+    Clock Pessimism Removal (CPR):    -0.361ns
+  Clock Uncertainty:      0.065ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.109ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out1_HDMI_bd_clk_wiz_0_0 rise edge)
+                                                      0.000     0.000 r  
+    K17                                               0.000     0.000 r  CLK (IN)
+                         net (fo=0)                   0.000     0.000    HDMI_bd_i/clk_wiz_0/inst/clk_in1
+    K17                  IBUF (Prop_ibuf_I_O)         1.475     1.475 r  HDMI_bd_i/clk_wiz_0/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           1.306     2.781    HDMI_bd_i/clk_wiz_0/inst/clk_in1_HDMI_bd_clk_wiz_0_0
+    PLLE2_ADV_X1Y2       PLLE2_ADV (Prop_plle2_adv_CLKIN1_CLKOUT0)
+                                                     -9.282    -6.501 r  HDMI_bd_i/clk_wiz_0/inst/plle2_adv_inst/CLKOUT0
+                         net (fo=1, routed)           2.200    -4.301    HDMI_bd_i/clk_wiz_0/inst/clk_out1_HDMI_bd_clk_wiz_0_0
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101    -4.200 r  HDMI_bd_i/clk_wiz_0/inst/clkout1_buf/O
+                         net (fo=166, routed)         1.780    -2.420    HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/RefClk
+    SLICE_X104Y64        FDRE                                         r  HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt_reg[3]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X104Y64        FDRE (Prop_fdre_C_Q)         0.518    -1.902 f  HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt_reg[3]/Q
+                         net (fo=2, routed)           1.106    -0.796    HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/SyncBaseOvf/rTimeoutCnt_reg[3]
+    SLICE_X105Y64        LUT4 (Prop_lut4_I0_O)        0.124    -0.672 r  HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/SyncBaseOvf/iIn_q_i_4__4/O
+                         net (fo=2, routed)           0.791     0.119    HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/SyncBaseOvf_n_3
+    SLICE_X105Y67        LUT6 (Prop_lut6_I2_O)        0.124     0.243 r  HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt[0]_i_1__1/O
+                         net (fo=24, routed)          0.710     0.952    HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt[0]_i_1__1_n_0
+    SLICE_X104Y64        FDRE                                         r  HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt_reg[1]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_HDMI_bd_clk_wiz_0_0 rise edge)
+                                                      5.000     5.000 r  
+    K17                                               0.000     5.000 r  CLK (IN)
+                         net (fo=0)                   0.000     5.000    HDMI_bd_i/clk_wiz_0/inst/clk_in1
+    K17                  IBUF (Prop_ibuf_I_O)         1.404     6.404 r  HDMI_bd_i/clk_wiz_0/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           1.181     7.585    HDMI_bd_i/clk_wiz_0/inst/clk_in1_HDMI_bd_clk_wiz_0_0
+    PLLE2_ADV_X1Y2       PLLE2_ADV (Prop_plle2_adv_CLKIN1_CLKOUT0)
+                                                     -8.346    -0.761 r  HDMI_bd_i/clk_wiz_0/inst/plle2_adv_inst/CLKOUT0
+                         net (fo=1, routed)           2.007     1.246    HDMI_bd_i/clk_wiz_0/inst/clk_out1_HDMI_bd_clk_wiz_0_0
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091     1.337 r  HDMI_bd_i/clk_wiz_0/inst/clkout1_buf/O
+                         net (fo=166, routed)         1.604     2.941    HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/RefClk
+    SLICE_X104Y64        FDRE                                         r  HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt_reg[1]/C
+                         clock pessimism             -0.361     2.580    
+                         clock uncertainty           -0.065     2.515    
+    SLICE_X104Y64        FDRE (Setup_fdre_C_CE)      -0.169     2.346    HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt_reg[1]
+  -------------------------------------------------------------------
+                         required time                          2.346    
+                         arrival time                          -0.952    
+  -------------------------------------------------------------------
+                         slack                                  1.393    
+
+Slack (MET) :             1.393ns  (required time - arrival time)
+  Source:                 HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt_reg[3]/C
+                            (rising edge-triggered cell FDRE clocked by clk_out1_HDMI_bd_clk_wiz_0_0  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt_reg[2]/CE
+                            (rising edge-triggered cell FDRE clocked by clk_out1_HDMI_bd_clk_wiz_0_0  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             clk_out1_HDMI_bd_clk_wiz_0_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            5.000ns  (clk_out1_HDMI_bd_clk_wiz_0_0 rise@5.000ns - clk_out1_HDMI_bd_clk_wiz_0_0 rise@0.000ns)
+  Data Path Delay:        3.373ns  (logic 0.766ns (22.712%)  route 2.607ns (77.288%))
+  Logic Levels:           2  (LUT4=1 LUT6=1)
+  Clock Path Skew:        0.000ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    -2.059ns = ( 2.941 - 5.000 ) 
+    Source Clock Delay      (SCD):    -2.420ns
+    Clock Pessimism Removal (CPR):    -0.361ns
+  Clock Uncertainty:      0.065ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.109ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out1_HDMI_bd_clk_wiz_0_0 rise edge)
+                                                      0.000     0.000 r  
+    K17                                               0.000     0.000 r  CLK (IN)
+                         net (fo=0)                   0.000     0.000    HDMI_bd_i/clk_wiz_0/inst/clk_in1
+    K17                  IBUF (Prop_ibuf_I_O)         1.475     1.475 r  HDMI_bd_i/clk_wiz_0/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           1.306     2.781    HDMI_bd_i/clk_wiz_0/inst/clk_in1_HDMI_bd_clk_wiz_0_0
+    PLLE2_ADV_X1Y2       PLLE2_ADV (Prop_plle2_adv_CLKIN1_CLKOUT0)
+                                                     -9.282    -6.501 r  HDMI_bd_i/clk_wiz_0/inst/plle2_adv_inst/CLKOUT0
+                         net (fo=1, routed)           2.200    -4.301    HDMI_bd_i/clk_wiz_0/inst/clk_out1_HDMI_bd_clk_wiz_0_0
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101    -4.200 r  HDMI_bd_i/clk_wiz_0/inst/clkout1_buf/O
+                         net (fo=166, routed)         1.780    -2.420    HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/RefClk
+    SLICE_X104Y64        FDRE                                         r  HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt_reg[3]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X104Y64        FDRE (Prop_fdre_C_Q)         0.518    -1.902 f  HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt_reg[3]/Q
+                         net (fo=2, routed)           1.106    -0.796    HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/SyncBaseOvf/rTimeoutCnt_reg[3]
+    SLICE_X105Y64        LUT4 (Prop_lut4_I0_O)        0.124    -0.672 r  HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/SyncBaseOvf/iIn_q_i_4__4/O
+                         net (fo=2, routed)           0.791     0.119    HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/SyncBaseOvf_n_3
+    SLICE_X105Y67        LUT6 (Prop_lut6_I2_O)        0.124     0.243 r  HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt[0]_i_1__1/O
+                         net (fo=24, routed)          0.710     0.952    HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt[0]_i_1__1_n_0
+    SLICE_X104Y64        FDRE                                         r  HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt_reg[2]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_HDMI_bd_clk_wiz_0_0 rise edge)
+                                                      5.000     5.000 r  
+    K17                                               0.000     5.000 r  CLK (IN)
+                         net (fo=0)                   0.000     5.000    HDMI_bd_i/clk_wiz_0/inst/clk_in1
+    K17                  IBUF (Prop_ibuf_I_O)         1.404     6.404 r  HDMI_bd_i/clk_wiz_0/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           1.181     7.585    HDMI_bd_i/clk_wiz_0/inst/clk_in1_HDMI_bd_clk_wiz_0_0
+    PLLE2_ADV_X1Y2       PLLE2_ADV (Prop_plle2_adv_CLKIN1_CLKOUT0)
+                                                     -8.346    -0.761 r  HDMI_bd_i/clk_wiz_0/inst/plle2_adv_inst/CLKOUT0
+                         net (fo=1, routed)           2.007     1.246    HDMI_bd_i/clk_wiz_0/inst/clk_out1_HDMI_bd_clk_wiz_0_0
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091     1.337 r  HDMI_bd_i/clk_wiz_0/inst/clkout1_buf/O
+                         net (fo=166, routed)         1.604     2.941    HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/RefClk
+    SLICE_X104Y64        FDRE                                         r  HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt_reg[2]/C
+                         clock pessimism             -0.361     2.580    
+                         clock uncertainty           -0.065     2.515    
+    SLICE_X104Y64        FDRE (Setup_fdre_C_CE)      -0.169     2.346    HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt_reg[2]
+  -------------------------------------------------------------------
+                         required time                          2.346    
+                         arrival time                          -0.952    
+  -------------------------------------------------------------------
+                         slack                                  1.393    
+
+Slack (MET) :             1.393ns  (required time - arrival time)
+  Source:                 HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt_reg[3]/C
+                            (rising edge-triggered cell FDRE clocked by clk_out1_HDMI_bd_clk_wiz_0_0  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt_reg[3]/CE
+                            (rising edge-triggered cell FDRE clocked by clk_out1_HDMI_bd_clk_wiz_0_0  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             clk_out1_HDMI_bd_clk_wiz_0_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            5.000ns  (clk_out1_HDMI_bd_clk_wiz_0_0 rise@5.000ns - clk_out1_HDMI_bd_clk_wiz_0_0 rise@0.000ns)
+  Data Path Delay:        3.373ns  (logic 0.766ns (22.712%)  route 2.607ns (77.288%))
+  Logic Levels:           2  (LUT4=1 LUT6=1)
+  Clock Path Skew:        0.000ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    -2.059ns = ( 2.941 - 5.000 ) 
+    Source Clock Delay      (SCD):    -2.420ns
+    Clock Pessimism Removal (CPR):    -0.361ns
+  Clock Uncertainty:      0.065ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.109ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out1_HDMI_bd_clk_wiz_0_0 rise edge)
+                                                      0.000     0.000 r  
+    K17                                               0.000     0.000 r  CLK (IN)
+                         net (fo=0)                   0.000     0.000    HDMI_bd_i/clk_wiz_0/inst/clk_in1
+    K17                  IBUF (Prop_ibuf_I_O)         1.475     1.475 r  HDMI_bd_i/clk_wiz_0/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           1.306     2.781    HDMI_bd_i/clk_wiz_0/inst/clk_in1_HDMI_bd_clk_wiz_0_0
+    PLLE2_ADV_X1Y2       PLLE2_ADV (Prop_plle2_adv_CLKIN1_CLKOUT0)
+                                                     -9.282    -6.501 r  HDMI_bd_i/clk_wiz_0/inst/plle2_adv_inst/CLKOUT0
+                         net (fo=1, routed)           2.200    -4.301    HDMI_bd_i/clk_wiz_0/inst/clk_out1_HDMI_bd_clk_wiz_0_0
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101    -4.200 r  HDMI_bd_i/clk_wiz_0/inst/clkout1_buf/O
+                         net (fo=166, routed)         1.780    -2.420    HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/RefClk
+    SLICE_X104Y64        FDRE                                         r  HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt_reg[3]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X104Y64        FDRE (Prop_fdre_C_Q)         0.518    -1.902 f  HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt_reg[3]/Q
+                         net (fo=2, routed)           1.106    -0.796    HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/SyncBaseOvf/rTimeoutCnt_reg[3]
+    SLICE_X105Y64        LUT4 (Prop_lut4_I0_O)        0.124    -0.672 r  HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/SyncBaseOvf/iIn_q_i_4__4/O
+                         net (fo=2, routed)           0.791     0.119    HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/SyncBaseOvf_n_3
+    SLICE_X105Y67        LUT6 (Prop_lut6_I2_O)        0.124     0.243 r  HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt[0]_i_1__1/O
+                         net (fo=24, routed)          0.710     0.952    HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt[0]_i_1__1_n_0
+    SLICE_X104Y64        FDRE                                         r  HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt_reg[3]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_HDMI_bd_clk_wiz_0_0 rise edge)
+                                                      5.000     5.000 r  
+    K17                                               0.000     5.000 r  CLK (IN)
+                         net (fo=0)                   0.000     5.000    HDMI_bd_i/clk_wiz_0/inst/clk_in1
+    K17                  IBUF (Prop_ibuf_I_O)         1.404     6.404 r  HDMI_bd_i/clk_wiz_0/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           1.181     7.585    HDMI_bd_i/clk_wiz_0/inst/clk_in1_HDMI_bd_clk_wiz_0_0
+    PLLE2_ADV_X1Y2       PLLE2_ADV (Prop_plle2_adv_CLKIN1_CLKOUT0)
+                                                     -8.346    -0.761 r  HDMI_bd_i/clk_wiz_0/inst/plle2_adv_inst/CLKOUT0
+                         net (fo=1, routed)           2.007     1.246    HDMI_bd_i/clk_wiz_0/inst/clk_out1_HDMI_bd_clk_wiz_0_0
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091     1.337 r  HDMI_bd_i/clk_wiz_0/inst/clkout1_buf/O
+                         net (fo=166, routed)         1.604     2.941    HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/RefClk
+    SLICE_X104Y64        FDRE                                         r  HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt_reg[3]/C
+                         clock pessimism             -0.361     2.580    
+                         clock uncertainty           -0.065     2.515    
+    SLICE_X104Y64        FDRE (Setup_fdre_C_CE)      -0.169     2.346    HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt_reg[3]
+  -------------------------------------------------------------------
+                         required time                          2.346    
+                         arrival time                          -0.952    
+  -------------------------------------------------------------------
+                         slack                                  1.393    
+
+Slack (MET) :             1.423ns  (required time - arrival time)
+  Source:                 HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt_reg[3]/C
+                            (rising edge-triggered cell FDRE clocked by clk_out1_HDMI_bd_clk_wiz_0_0  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt_reg[20]/CE
+                            (rising edge-triggered cell FDRE clocked by clk_out1_HDMI_bd_clk_wiz_0_0  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             clk_out1_HDMI_bd_clk_wiz_0_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            5.000ns  (clk_out1_HDMI_bd_clk_wiz_0_0 rise@5.000ns - clk_out1_HDMI_bd_clk_wiz_0_0 rise@0.000ns)
+  Data Path Delay:        3.312ns  (logic 0.766ns (23.130%)  route 2.546ns (76.870%))
+  Logic Levels:           2  (LUT4=1 LUT6=1)
+  Clock Path Skew:        -0.031ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    -2.065ns = ( 2.935 - 5.000 ) 
+    Source Clock Delay      (SCD):    -2.420ns
+    Clock Pessimism Removal (CPR):    -0.386ns
+  Clock Uncertainty:      0.065ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.109ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out1_HDMI_bd_clk_wiz_0_0 rise edge)
+                                                      0.000     0.000 r  
+    K17                                               0.000     0.000 r  CLK (IN)
+                         net (fo=0)                   0.000     0.000    HDMI_bd_i/clk_wiz_0/inst/clk_in1
+    K17                  IBUF (Prop_ibuf_I_O)         1.475     1.475 r  HDMI_bd_i/clk_wiz_0/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           1.306     2.781    HDMI_bd_i/clk_wiz_0/inst/clk_in1_HDMI_bd_clk_wiz_0_0
+    PLLE2_ADV_X1Y2       PLLE2_ADV (Prop_plle2_adv_CLKIN1_CLKOUT0)
+                                                     -9.282    -6.501 r  HDMI_bd_i/clk_wiz_0/inst/plle2_adv_inst/CLKOUT0
+                         net (fo=1, routed)           2.200    -4.301    HDMI_bd_i/clk_wiz_0/inst/clk_out1_HDMI_bd_clk_wiz_0_0
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101    -4.200 r  HDMI_bd_i/clk_wiz_0/inst/clkout1_buf/O
+                         net (fo=166, routed)         1.780    -2.420    HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/RefClk
+    SLICE_X104Y64        FDRE                                         r  HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt_reg[3]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X104Y64        FDRE (Prop_fdre_C_Q)         0.518    -1.902 f  HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt_reg[3]/Q
+                         net (fo=2, routed)           1.106    -0.796    HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/SyncBaseOvf/rTimeoutCnt_reg[3]
+    SLICE_X105Y64        LUT4 (Prop_lut4_I0_O)        0.124    -0.672 r  HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/SyncBaseOvf/iIn_q_i_4__4/O
+                         net (fo=2, routed)           0.791     0.119    HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/SyncBaseOvf_n_3
+    SLICE_X105Y67        LUT6 (Prop_lut6_I2_O)        0.124     0.243 r  HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt[0]_i_1__1/O
+                         net (fo=24, routed)          0.649     0.891    HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt[0]_i_1__1_n_0
+    SLICE_X104Y69        FDRE                                         r  HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt_reg[20]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_HDMI_bd_clk_wiz_0_0 rise edge)
+                                                      5.000     5.000 r  
+    K17                                               0.000     5.000 r  CLK (IN)
+                         net (fo=0)                   0.000     5.000    HDMI_bd_i/clk_wiz_0/inst/clk_in1
+    K17                  IBUF (Prop_ibuf_I_O)         1.404     6.404 r  HDMI_bd_i/clk_wiz_0/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           1.181     7.585    HDMI_bd_i/clk_wiz_0/inst/clk_in1_HDMI_bd_clk_wiz_0_0
+    PLLE2_ADV_X1Y2       PLLE2_ADV (Prop_plle2_adv_CLKIN1_CLKOUT0)
+                                                     -8.346    -0.761 r  HDMI_bd_i/clk_wiz_0/inst/plle2_adv_inst/CLKOUT0
+                         net (fo=1, routed)           2.007     1.246    HDMI_bd_i/clk_wiz_0/inst/clk_out1_HDMI_bd_clk_wiz_0_0
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091     1.337 r  HDMI_bd_i/clk_wiz_0/inst/clkout1_buf/O
+                         net (fo=166, routed)         1.598     2.935    HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/RefClk
+    SLICE_X104Y69        FDRE                                         r  HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt_reg[20]/C
+                         clock pessimism             -0.386     2.549    
+                         clock uncertainty           -0.065     2.484    
+    SLICE_X104Y69        FDRE (Setup_fdre_C_CE)      -0.169     2.315    HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt_reg[20]
+  -------------------------------------------------------------------
+                         required time                          2.315    
+                         arrival time                          -0.891    
+  -------------------------------------------------------------------
+                         slack                                  1.423    
+
+Slack (MET) :             1.423ns  (required time - arrival time)
+  Source:                 HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt_reg[3]/C
+                            (rising edge-triggered cell FDRE clocked by clk_out1_HDMI_bd_clk_wiz_0_0  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt_reg[21]/CE
+                            (rising edge-triggered cell FDRE clocked by clk_out1_HDMI_bd_clk_wiz_0_0  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             clk_out1_HDMI_bd_clk_wiz_0_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            5.000ns  (clk_out1_HDMI_bd_clk_wiz_0_0 rise@5.000ns - clk_out1_HDMI_bd_clk_wiz_0_0 rise@0.000ns)
+  Data Path Delay:        3.312ns  (logic 0.766ns (23.130%)  route 2.546ns (76.870%))
+  Logic Levels:           2  (LUT4=1 LUT6=1)
+  Clock Path Skew:        -0.031ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    -2.065ns = ( 2.935 - 5.000 ) 
+    Source Clock Delay      (SCD):    -2.420ns
+    Clock Pessimism Removal (CPR):    -0.386ns
+  Clock Uncertainty:      0.065ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.109ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out1_HDMI_bd_clk_wiz_0_0 rise edge)
+                                                      0.000     0.000 r  
+    K17                                               0.000     0.000 r  CLK (IN)
+                         net (fo=0)                   0.000     0.000    HDMI_bd_i/clk_wiz_0/inst/clk_in1
+    K17                  IBUF (Prop_ibuf_I_O)         1.475     1.475 r  HDMI_bd_i/clk_wiz_0/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           1.306     2.781    HDMI_bd_i/clk_wiz_0/inst/clk_in1_HDMI_bd_clk_wiz_0_0
+    PLLE2_ADV_X1Y2       PLLE2_ADV (Prop_plle2_adv_CLKIN1_CLKOUT0)
+                                                     -9.282    -6.501 r  HDMI_bd_i/clk_wiz_0/inst/plle2_adv_inst/CLKOUT0
+                         net (fo=1, routed)           2.200    -4.301    HDMI_bd_i/clk_wiz_0/inst/clk_out1_HDMI_bd_clk_wiz_0_0
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101    -4.200 r  HDMI_bd_i/clk_wiz_0/inst/clkout1_buf/O
+                         net (fo=166, routed)         1.780    -2.420    HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/RefClk
+    SLICE_X104Y64        FDRE                                         r  HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt_reg[3]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X104Y64        FDRE (Prop_fdre_C_Q)         0.518    -1.902 f  HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt_reg[3]/Q
+                         net (fo=2, routed)           1.106    -0.796    HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/SyncBaseOvf/rTimeoutCnt_reg[3]
+    SLICE_X105Y64        LUT4 (Prop_lut4_I0_O)        0.124    -0.672 r  HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/SyncBaseOvf/iIn_q_i_4__4/O
+                         net (fo=2, routed)           0.791     0.119    HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/SyncBaseOvf_n_3
+    SLICE_X105Y67        LUT6 (Prop_lut6_I2_O)        0.124     0.243 r  HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt[0]_i_1__1/O
+                         net (fo=24, routed)          0.649     0.891    HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt[0]_i_1__1_n_0
+    SLICE_X104Y69        FDRE                                         r  HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt_reg[21]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_HDMI_bd_clk_wiz_0_0 rise edge)
+                                                      5.000     5.000 r  
+    K17                                               0.000     5.000 r  CLK (IN)
+                         net (fo=0)                   0.000     5.000    HDMI_bd_i/clk_wiz_0/inst/clk_in1
+    K17                  IBUF (Prop_ibuf_I_O)         1.404     6.404 r  HDMI_bd_i/clk_wiz_0/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           1.181     7.585    HDMI_bd_i/clk_wiz_0/inst/clk_in1_HDMI_bd_clk_wiz_0_0
+    PLLE2_ADV_X1Y2       PLLE2_ADV (Prop_plle2_adv_CLKIN1_CLKOUT0)
+                                                     -8.346    -0.761 r  HDMI_bd_i/clk_wiz_0/inst/plle2_adv_inst/CLKOUT0
+                         net (fo=1, routed)           2.007     1.246    HDMI_bd_i/clk_wiz_0/inst/clk_out1_HDMI_bd_clk_wiz_0_0
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091     1.337 r  HDMI_bd_i/clk_wiz_0/inst/clkout1_buf/O
+                         net (fo=166, routed)         1.598     2.935    HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/RefClk
+    SLICE_X104Y69        FDRE                                         r  HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt_reg[21]/C
+                         clock pessimism             -0.386     2.549    
+                         clock uncertainty           -0.065     2.484    
+    SLICE_X104Y69        FDRE (Setup_fdre_C_CE)      -0.169     2.315    HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt_reg[21]
+  -------------------------------------------------------------------
+                         required time                          2.315    
+                         arrival time                          -0.891    
+  -------------------------------------------------------------------
+                         slack                                  1.423    
+
+Slack (MET) :             1.423ns  (required time - arrival time)
+  Source:                 HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt_reg[3]/C
+                            (rising edge-triggered cell FDRE clocked by clk_out1_HDMI_bd_clk_wiz_0_0  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt_reg[22]/CE
+                            (rising edge-triggered cell FDRE clocked by clk_out1_HDMI_bd_clk_wiz_0_0  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             clk_out1_HDMI_bd_clk_wiz_0_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            5.000ns  (clk_out1_HDMI_bd_clk_wiz_0_0 rise@5.000ns - clk_out1_HDMI_bd_clk_wiz_0_0 rise@0.000ns)
+  Data Path Delay:        3.312ns  (logic 0.766ns (23.130%)  route 2.546ns (76.870%))
+  Logic Levels:           2  (LUT4=1 LUT6=1)
+  Clock Path Skew:        -0.031ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    -2.065ns = ( 2.935 - 5.000 ) 
+    Source Clock Delay      (SCD):    -2.420ns
+    Clock Pessimism Removal (CPR):    -0.386ns
+  Clock Uncertainty:      0.065ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.109ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out1_HDMI_bd_clk_wiz_0_0 rise edge)
+                                                      0.000     0.000 r  
+    K17                                               0.000     0.000 r  CLK (IN)
+                         net (fo=0)                   0.000     0.000    HDMI_bd_i/clk_wiz_0/inst/clk_in1
+    K17                  IBUF (Prop_ibuf_I_O)         1.475     1.475 r  HDMI_bd_i/clk_wiz_0/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           1.306     2.781    HDMI_bd_i/clk_wiz_0/inst/clk_in1_HDMI_bd_clk_wiz_0_0
+    PLLE2_ADV_X1Y2       PLLE2_ADV (Prop_plle2_adv_CLKIN1_CLKOUT0)
+                                                     -9.282    -6.501 r  HDMI_bd_i/clk_wiz_0/inst/plle2_adv_inst/CLKOUT0
+                         net (fo=1, routed)           2.200    -4.301    HDMI_bd_i/clk_wiz_0/inst/clk_out1_HDMI_bd_clk_wiz_0_0
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101    -4.200 r  HDMI_bd_i/clk_wiz_0/inst/clkout1_buf/O
+                         net (fo=166, routed)         1.780    -2.420    HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/RefClk
+    SLICE_X104Y64        FDRE                                         r  HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt_reg[3]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X104Y64        FDRE (Prop_fdre_C_Q)         0.518    -1.902 f  HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt_reg[3]/Q
+                         net (fo=2, routed)           1.106    -0.796    HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/SyncBaseOvf/rTimeoutCnt_reg[3]
+    SLICE_X105Y64        LUT4 (Prop_lut4_I0_O)        0.124    -0.672 r  HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/SyncBaseOvf/iIn_q_i_4__4/O
+                         net (fo=2, routed)           0.791     0.119    HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/SyncBaseOvf_n_3
+    SLICE_X105Y67        LUT6 (Prop_lut6_I2_O)        0.124     0.243 r  HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt[0]_i_1__1/O
+                         net (fo=24, routed)          0.649     0.891    HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt[0]_i_1__1_n_0
+    SLICE_X104Y69        FDRE                                         r  HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt_reg[22]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_HDMI_bd_clk_wiz_0_0 rise edge)
+                                                      5.000     5.000 r  
+    K17                                               0.000     5.000 r  CLK (IN)
+                         net (fo=0)                   0.000     5.000    HDMI_bd_i/clk_wiz_0/inst/clk_in1
+    K17                  IBUF (Prop_ibuf_I_O)         1.404     6.404 r  HDMI_bd_i/clk_wiz_0/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           1.181     7.585    HDMI_bd_i/clk_wiz_0/inst/clk_in1_HDMI_bd_clk_wiz_0_0
+    PLLE2_ADV_X1Y2       PLLE2_ADV (Prop_plle2_adv_CLKIN1_CLKOUT0)
+                                                     -8.346    -0.761 r  HDMI_bd_i/clk_wiz_0/inst/plle2_adv_inst/CLKOUT0
+                         net (fo=1, routed)           2.007     1.246    HDMI_bd_i/clk_wiz_0/inst/clk_out1_HDMI_bd_clk_wiz_0_0
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091     1.337 r  HDMI_bd_i/clk_wiz_0/inst/clkout1_buf/O
+                         net (fo=166, routed)         1.598     2.935    HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/RefClk
+    SLICE_X104Y69        FDRE                                         r  HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt_reg[22]/C
+                         clock pessimism             -0.386     2.549    
+                         clock uncertainty           -0.065     2.484    
+    SLICE_X104Y69        FDRE (Setup_fdre_C_CE)      -0.169     2.315    HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt_reg[22]
+  -------------------------------------------------------------------
+                         required time                          2.315    
+                         arrival time                          -0.891    
+  -------------------------------------------------------------------
+                         slack                                  1.423    
+
+Slack (MET) :             1.423ns  (required time - arrival time)
+  Source:                 HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt_reg[3]/C
+                            (rising edge-triggered cell FDRE clocked by clk_out1_HDMI_bd_clk_wiz_0_0  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt_reg[23]/CE
+                            (rising edge-triggered cell FDRE clocked by clk_out1_HDMI_bd_clk_wiz_0_0  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             clk_out1_HDMI_bd_clk_wiz_0_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            5.000ns  (clk_out1_HDMI_bd_clk_wiz_0_0 rise@5.000ns - clk_out1_HDMI_bd_clk_wiz_0_0 rise@0.000ns)
+  Data Path Delay:        3.312ns  (logic 0.766ns (23.130%)  route 2.546ns (76.870%))
+  Logic Levels:           2  (LUT4=1 LUT6=1)
+  Clock Path Skew:        -0.031ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    -2.065ns = ( 2.935 - 5.000 ) 
+    Source Clock Delay      (SCD):    -2.420ns
+    Clock Pessimism Removal (CPR):    -0.386ns
+  Clock Uncertainty:      0.065ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.109ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out1_HDMI_bd_clk_wiz_0_0 rise edge)
+                                                      0.000     0.000 r  
+    K17                                               0.000     0.000 r  CLK (IN)
+                         net (fo=0)                   0.000     0.000    HDMI_bd_i/clk_wiz_0/inst/clk_in1
+    K17                  IBUF (Prop_ibuf_I_O)         1.475     1.475 r  HDMI_bd_i/clk_wiz_0/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           1.306     2.781    HDMI_bd_i/clk_wiz_0/inst/clk_in1_HDMI_bd_clk_wiz_0_0
+    PLLE2_ADV_X1Y2       PLLE2_ADV (Prop_plle2_adv_CLKIN1_CLKOUT0)
+                                                     -9.282    -6.501 r  HDMI_bd_i/clk_wiz_0/inst/plle2_adv_inst/CLKOUT0
+                         net (fo=1, routed)           2.200    -4.301    HDMI_bd_i/clk_wiz_0/inst/clk_out1_HDMI_bd_clk_wiz_0_0
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101    -4.200 r  HDMI_bd_i/clk_wiz_0/inst/clkout1_buf/O
+                         net (fo=166, routed)         1.780    -2.420    HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/RefClk
+    SLICE_X104Y64        FDRE                                         r  HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt_reg[3]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X104Y64        FDRE (Prop_fdre_C_Q)         0.518    -1.902 f  HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt_reg[3]/Q
+                         net (fo=2, routed)           1.106    -0.796    HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/SyncBaseOvf/rTimeoutCnt_reg[3]
+    SLICE_X105Y64        LUT4 (Prop_lut4_I0_O)        0.124    -0.672 r  HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/SyncBaseOvf/iIn_q_i_4__4/O
+                         net (fo=2, routed)           0.791     0.119    HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/SyncBaseOvf_n_3
+    SLICE_X105Y67        LUT6 (Prop_lut6_I2_O)        0.124     0.243 r  HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt[0]_i_1__1/O
+                         net (fo=24, routed)          0.649     0.891    HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt[0]_i_1__1_n_0
+    SLICE_X104Y69        FDRE                                         r  HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt_reg[23]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_HDMI_bd_clk_wiz_0_0 rise edge)
+                                                      5.000     5.000 r  
+    K17                                               0.000     5.000 r  CLK (IN)
+                         net (fo=0)                   0.000     5.000    HDMI_bd_i/clk_wiz_0/inst/clk_in1
+    K17                  IBUF (Prop_ibuf_I_O)         1.404     6.404 r  HDMI_bd_i/clk_wiz_0/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           1.181     7.585    HDMI_bd_i/clk_wiz_0/inst/clk_in1_HDMI_bd_clk_wiz_0_0
+    PLLE2_ADV_X1Y2       PLLE2_ADV (Prop_plle2_adv_CLKIN1_CLKOUT0)
+                                                     -8.346    -0.761 r  HDMI_bd_i/clk_wiz_0/inst/plle2_adv_inst/CLKOUT0
+                         net (fo=1, routed)           2.007     1.246    HDMI_bd_i/clk_wiz_0/inst/clk_out1_HDMI_bd_clk_wiz_0_0
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091     1.337 r  HDMI_bd_i/clk_wiz_0/inst/clkout1_buf/O
+                         net (fo=166, routed)         1.598     2.935    HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/RefClk
+    SLICE_X104Y69        FDRE                                         r  HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt_reg[23]/C
+                         clock pessimism             -0.386     2.549    
+                         clock uncertainty           -0.065     2.484    
+    SLICE_X104Y69        FDRE (Setup_fdre_C_CE)      -0.169     2.315    HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt_reg[23]
+  -------------------------------------------------------------------
+                         required time                          2.315    
+                         arrival time                          -0.891    
+  -------------------------------------------------------------------
+                         slack                                  1.423    
+
+Slack (MET) :             1.501ns  (required time - arrival time)
+  Source:                 HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt_reg[3]/C
+                            (rising edge-triggered cell FDRE clocked by clk_out1_HDMI_bd_clk_wiz_0_0  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt_reg[10]/CE
+                            (rising edge-triggered cell FDRE clocked by clk_out1_HDMI_bd_clk_wiz_0_0  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             clk_out1_HDMI_bd_clk_wiz_0_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            5.000ns  (clk_out1_HDMI_bd_clk_wiz_0_0 rise@5.000ns - clk_out1_HDMI_bd_clk_wiz_0_0 rise@0.000ns)
+  Data Path Delay:        3.238ns  (logic 0.766ns (23.657%)  route 2.472ns (76.343%))
+  Logic Levels:           2  (LUT4=1 LUT6=1)
+  Clock Path Skew:        -0.027ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    -2.061ns = ( 2.939 - 5.000 ) 
+    Source Clock Delay      (SCD):    -2.420ns
+    Clock Pessimism Removal (CPR):    -0.386ns
+  Clock Uncertainty:      0.065ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.109ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out1_HDMI_bd_clk_wiz_0_0 rise edge)
+                                                      0.000     0.000 r  
+    K17                                               0.000     0.000 r  CLK (IN)
+                         net (fo=0)                   0.000     0.000    HDMI_bd_i/clk_wiz_0/inst/clk_in1
+    K17                  IBUF (Prop_ibuf_I_O)         1.475     1.475 r  HDMI_bd_i/clk_wiz_0/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           1.306     2.781    HDMI_bd_i/clk_wiz_0/inst/clk_in1_HDMI_bd_clk_wiz_0_0
+    PLLE2_ADV_X1Y2       PLLE2_ADV (Prop_plle2_adv_CLKIN1_CLKOUT0)
+                                                     -9.282    -6.501 r  HDMI_bd_i/clk_wiz_0/inst/plle2_adv_inst/CLKOUT0
+                         net (fo=1, routed)           2.200    -4.301    HDMI_bd_i/clk_wiz_0/inst/clk_out1_HDMI_bd_clk_wiz_0_0
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101    -4.200 r  HDMI_bd_i/clk_wiz_0/inst/clkout1_buf/O
+                         net (fo=166, routed)         1.780    -2.420    HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/RefClk
+    SLICE_X104Y64        FDRE                                         r  HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt_reg[3]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X104Y64        FDRE (Prop_fdre_C_Q)         0.518    -1.902 f  HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt_reg[3]/Q
+                         net (fo=2, routed)           1.106    -0.796    HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/SyncBaseOvf/rTimeoutCnt_reg[3]
+    SLICE_X105Y64        LUT4 (Prop_lut4_I0_O)        0.124    -0.672 r  HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/SyncBaseOvf/iIn_q_i_4__4/O
+                         net (fo=2, routed)           0.791     0.119    HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/SyncBaseOvf_n_3
+    SLICE_X105Y67        LUT6 (Prop_lut6_I2_O)        0.124     0.243 r  HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt[0]_i_1__1/O
+                         net (fo=24, routed)          0.575     0.818    HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt[0]_i_1__1_n_0
+    SLICE_X104Y66        FDRE                                         r  HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt_reg[10]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_HDMI_bd_clk_wiz_0_0 rise edge)
+                                                      5.000     5.000 r  
+    K17                                               0.000     5.000 r  CLK (IN)
+                         net (fo=0)                   0.000     5.000    HDMI_bd_i/clk_wiz_0/inst/clk_in1
+    K17                  IBUF (Prop_ibuf_I_O)         1.404     6.404 r  HDMI_bd_i/clk_wiz_0/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           1.181     7.585    HDMI_bd_i/clk_wiz_0/inst/clk_in1_HDMI_bd_clk_wiz_0_0
+    PLLE2_ADV_X1Y2       PLLE2_ADV (Prop_plle2_adv_CLKIN1_CLKOUT0)
+                                                     -8.346    -0.761 r  HDMI_bd_i/clk_wiz_0/inst/plle2_adv_inst/CLKOUT0
+                         net (fo=1, routed)           2.007     1.246    HDMI_bd_i/clk_wiz_0/inst/clk_out1_HDMI_bd_clk_wiz_0_0
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091     1.337 r  HDMI_bd_i/clk_wiz_0/inst/clkout1_buf/O
+                         net (fo=166, routed)         1.602     2.939    HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/RefClk
+    SLICE_X104Y66        FDRE                                         r  HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt_reg[10]/C
+                         clock pessimism             -0.386     2.553    
+                         clock uncertainty           -0.065     2.488    
+    SLICE_X104Y66        FDRE (Setup_fdre_C_CE)      -0.169     2.319    HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt_reg[10]
+  -------------------------------------------------------------------
+                         required time                          2.319    
+                         arrival time                          -0.818    
+  -------------------------------------------------------------------
+                         slack                                  1.501    
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             0.122ns  (arrival time - required time)
+  Source:                 HDMI_bd_i/dvi2rgb_0/U0/GenerateDDC.DDC_EEPROM/I2C_SlaveController/SyncSDA/oSyncStages_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by clk_out1_HDMI_bd_clk_wiz_0_0  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            HDMI_bd_i/dvi2rgb_0/U0/GenerateDDC.DDC_EEPROM/I2C_SlaveController/SyncSDA/oSyncStages_reg[1]/D
+                            (rising edge-triggered cell FDRE clocked by clk_out1_HDMI_bd_clk_wiz_0_0  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             clk_out1_HDMI_bd_clk_wiz_0_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_out1_HDMI_bd_clk_wiz_0_0 rise@0.000ns - clk_out1_HDMI_bd_clk_wiz_0_0 rise@0.000ns)
+  Data Path Delay:        0.197ns  (logic 0.141ns (71.611%)  route 0.056ns (28.389%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    -0.290ns
+    Source Clock Delay      (SCD):    -0.523ns
+    Clock Pessimism Removal (CPR):    0.232ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out1_HDMI_bd_clk_wiz_0_0 rise edge)
+                                                      0.000     0.000 r  
+    K17                                               0.000     0.000 r  CLK (IN)
+                         net (fo=0)                   0.000     0.000    HDMI_bd_i/clk_wiz_0/inst/clk_in1
+    K17                  IBUF (Prop_ibuf_I_O)         0.243     0.243 r  HDMI_bd_i/clk_wiz_0/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           0.440     0.683    HDMI_bd_i/clk_wiz_0/inst/clk_in1_HDMI_bd_clk_wiz_0_0
+    PLLE2_ADV_X1Y2       PLLE2_ADV (Prop_plle2_adv_CLKIN1_CLKOUT0)
+                                                     -2.576    -1.893 r  HDMI_bd_i/clk_wiz_0/inst/plle2_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.711    -1.181    HDMI_bd_i/clk_wiz_0/inst/clk_out1_HDMI_bd_clk_wiz_0_0
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026    -1.155 r  HDMI_bd_i/clk_wiz_0/inst/clkout1_buf/O
+                         net (fo=166, routed)         0.633    -0.523    HDMI_bd_i/dvi2rgb_0/U0/GenerateDDC.DDC_EEPROM/I2C_SlaveController/SyncSDA/RefClk
+    SLICE_X113Y62        FDRE                                         r  HDMI_bd_i/dvi2rgb_0/U0/GenerateDDC.DDC_EEPROM/I2C_SlaveController/SyncSDA/oSyncStages_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X113Y62        FDRE (Prop_fdre_C_Q)         0.141    -0.382 r  HDMI_bd_i/dvi2rgb_0/U0/GenerateDDC.DDC_EEPROM/I2C_SlaveController/SyncSDA/oSyncStages_reg[0]/Q
+                         net (fo=1, routed)           0.056    -0.326    HDMI_bd_i/dvi2rgb_0/U0/GenerateDDC.DDC_EEPROM/I2C_SlaveController/SyncSDA/oSyncStages[0]
+    SLICE_X113Y62        FDRE                                         r  HDMI_bd_i/dvi2rgb_0/U0/GenerateDDC.DDC_EEPROM/I2C_SlaveController/SyncSDA/oSyncStages_reg[1]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_HDMI_bd_clk_wiz_0_0 rise edge)
+                                                      0.000     0.000 r  
+    K17                                               0.000     0.000 r  CLK (IN)
+                         net (fo=0)                   0.000     0.000    HDMI_bd_i/clk_wiz_0/inst/clk_in1
+    K17                  IBUF (Prop_ibuf_I_O)         0.431     0.431 r  HDMI_bd_i/clk_wiz_0/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           0.481     0.912    HDMI_bd_i/clk_wiz_0/inst/clk_in1_HDMI_bd_clk_wiz_0_0
+    PLLE2_ADV_X1Y2       PLLE2_ADV (Prop_plle2_adv_CLKIN1_CLKOUT0)
+                                                     -2.903    -1.991 r  HDMI_bd_i/clk_wiz_0/inst/plle2_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.768    -1.223    HDMI_bd_i/clk_wiz_0/inst/clk_out1_HDMI_bd_clk_wiz_0_0
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029    -1.194 r  HDMI_bd_i/clk_wiz_0/inst/clkout1_buf/O
+                         net (fo=166, routed)         0.904    -0.290    HDMI_bd_i/dvi2rgb_0/U0/GenerateDDC.DDC_EEPROM/I2C_SlaveController/SyncSDA/RefClk
+    SLICE_X113Y62        FDRE                                         r  HDMI_bd_i/dvi2rgb_0/U0/GenerateDDC.DDC_EEPROM/I2C_SlaveController/SyncSDA/oSyncStages_reg[1]/C
+                         clock pessimism             -0.232    -0.523    
+    SLICE_X113Y62        FDRE (Hold_fdre_C_D)         0.075    -0.448    HDMI_bd_i/dvi2rgb_0/U0/GenerateDDC.DDC_EEPROM/I2C_SlaveController/SyncSDA/oSyncStages_reg[1]
+  -------------------------------------------------------------------
+                         required time                          0.448    
+                         arrival time                          -0.326    
+  -------------------------------------------------------------------
+                         slack                                  0.122    
+
+Slack (MET) :             0.122ns  (arrival time - required time)
+  Source:                 HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/SyncBaseRst/SyncAsyncx/oSyncStages_reg[0]/C
+                            (rising edge-triggered cell FDPE clocked by clk_out1_HDMI_bd_clk_wiz_0_0  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/SyncBaseRst/SyncAsyncx/oSyncStages_reg[1]/D
+                            (rising edge-triggered cell FDPE clocked by clk_out1_HDMI_bd_clk_wiz_0_0  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             clk_out1_HDMI_bd_clk_wiz_0_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_out1_HDMI_bd_clk_wiz_0_0 rise@0.000ns - clk_out1_HDMI_bd_clk_wiz_0_0 rise@0.000ns)
+  Data Path Delay:        0.197ns  (logic 0.141ns (71.611%)  route 0.056ns (28.389%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    -0.322ns
+    Source Clock Delay      (SCD):    -0.553ns
+    Clock Pessimism Removal (CPR):    0.230ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out1_HDMI_bd_clk_wiz_0_0 rise edge)
+                                                      0.000     0.000 r  
+    K17                                               0.000     0.000 r  CLK (IN)
+                         net (fo=0)                   0.000     0.000    HDMI_bd_i/clk_wiz_0/inst/clk_in1
+    K17                  IBUF (Prop_ibuf_I_O)         0.243     0.243 r  HDMI_bd_i/clk_wiz_0/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           0.440     0.683    HDMI_bd_i/clk_wiz_0/inst/clk_in1_HDMI_bd_clk_wiz_0_0
+    PLLE2_ADV_X1Y2       PLLE2_ADV (Prop_plle2_adv_CLKIN1_CLKOUT0)
+                                                     -2.576    -1.893 r  HDMI_bd_i/clk_wiz_0/inst/plle2_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.711    -1.181    HDMI_bd_i/clk_wiz_0/inst/clk_out1_HDMI_bd_clk_wiz_0_0
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026    -1.155 r  HDMI_bd_i/clk_wiz_0/inst/clkout1_buf/O
+                         net (fo=166, routed)         0.603    -0.553    HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/SyncBaseRst/SyncAsyncx/RefClk
+    SLICE_X105Y66        FDPE                                         r  HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/SyncBaseRst/SyncAsyncx/oSyncStages_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X105Y66        FDPE (Prop_fdpe_C_Q)         0.141    -0.412 r  HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/SyncBaseRst/SyncAsyncx/oSyncStages_reg[0]/Q
+                         net (fo=1, routed)           0.056    -0.356    HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/SyncBaseRst/SyncAsyncx/oSyncStages[0]
+    SLICE_X105Y66        FDPE                                         r  HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/SyncBaseRst/SyncAsyncx/oSyncStages_reg[1]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_HDMI_bd_clk_wiz_0_0 rise edge)
+                                                      0.000     0.000 r  
+    K17                                               0.000     0.000 r  CLK (IN)
+                         net (fo=0)                   0.000     0.000    HDMI_bd_i/clk_wiz_0/inst/clk_in1
+    K17                  IBUF (Prop_ibuf_I_O)         0.431     0.431 r  HDMI_bd_i/clk_wiz_0/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           0.481     0.912    HDMI_bd_i/clk_wiz_0/inst/clk_in1_HDMI_bd_clk_wiz_0_0
+    PLLE2_ADV_X1Y2       PLLE2_ADV (Prop_plle2_adv_CLKIN1_CLKOUT0)
+                                                     -2.903    -1.991 r  HDMI_bd_i/clk_wiz_0/inst/plle2_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.768    -1.223    HDMI_bd_i/clk_wiz_0/inst/clk_out1_HDMI_bd_clk_wiz_0_0
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029    -1.194 r  HDMI_bd_i/clk_wiz_0/inst/clkout1_buf/O
+                         net (fo=166, routed)         0.872    -0.322    HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/SyncBaseRst/SyncAsyncx/RefClk
+    SLICE_X105Y66        FDPE                                         r  HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/SyncBaseRst/SyncAsyncx/oSyncStages_reg[1]/C
+                         clock pessimism             -0.230    -0.553    
+    SLICE_X105Y66        FDPE (Hold_fdpe_C_D)         0.075    -0.478    HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/SyncBaseRst/SyncAsyncx/oSyncStages_reg[1]
+  -------------------------------------------------------------------
+                         required time                          0.478    
+                         arrival time                          -0.356    
+  -------------------------------------------------------------------
+                         slack                                  0.122    
+
+Slack (MET) :             0.122ns  (arrival time - required time)
+  Source:                 HDMI_bd_i/dvi2rgb_0/U0/GenerateDDC.DDC_EEPROM/I2C_SlaveController/SyncSCL/oSyncStages_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by clk_out1_HDMI_bd_clk_wiz_0_0  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            HDMI_bd_i/dvi2rgb_0/U0/GenerateDDC.DDC_EEPROM/I2C_SlaveController/SyncSCL/oSyncStages_reg[1]/D
+                            (rising edge-triggered cell FDRE clocked by clk_out1_HDMI_bd_clk_wiz_0_0  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             clk_out1_HDMI_bd_clk_wiz_0_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_out1_HDMI_bd_clk_wiz_0_0 rise@0.000ns - clk_out1_HDMI_bd_clk_wiz_0_0 rise@0.000ns)
+  Data Path Delay:        0.197ns  (logic 0.141ns (71.611%)  route 0.056ns (28.389%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    -0.286ns
+    Source Clock Delay      (SCD):    -0.520ns
+    Clock Pessimism Removal (CPR):    0.233ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out1_HDMI_bd_clk_wiz_0_0 rise edge)
+                                                      0.000     0.000 r  
+    K17                                               0.000     0.000 r  CLK (IN)
+                         net (fo=0)                   0.000     0.000    HDMI_bd_i/clk_wiz_0/inst/clk_in1
+    K17                  IBUF (Prop_ibuf_I_O)         0.243     0.243 r  HDMI_bd_i/clk_wiz_0/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           0.440     0.683    HDMI_bd_i/clk_wiz_0/inst/clk_in1_HDMI_bd_clk_wiz_0_0
+    PLLE2_ADV_X1Y2       PLLE2_ADV (Prop_plle2_adv_CLKIN1_CLKOUT0)
+                                                     -2.576    -1.893 r  HDMI_bd_i/clk_wiz_0/inst/plle2_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.711    -1.181    HDMI_bd_i/clk_wiz_0/inst/clk_out1_HDMI_bd_clk_wiz_0_0
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026    -1.155 r  HDMI_bd_i/clk_wiz_0/inst/clkout1_buf/O
+                         net (fo=166, routed)         0.636    -0.520    HDMI_bd_i/dvi2rgb_0/U0/GenerateDDC.DDC_EEPROM/I2C_SlaveController/SyncSCL/RefClk
+    SLICE_X113Y56        FDRE                                         r  HDMI_bd_i/dvi2rgb_0/U0/GenerateDDC.DDC_EEPROM/I2C_SlaveController/SyncSCL/oSyncStages_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X113Y56        FDRE (Prop_fdre_C_Q)         0.141    -0.379 r  HDMI_bd_i/dvi2rgb_0/U0/GenerateDDC.DDC_EEPROM/I2C_SlaveController/SyncSCL/oSyncStages_reg[0]/Q
+                         net (fo=1, routed)           0.056    -0.323    HDMI_bd_i/dvi2rgb_0/U0/GenerateDDC.DDC_EEPROM/I2C_SlaveController/SyncSCL/oSyncStages[0]
+    SLICE_X113Y56        FDRE                                         r  HDMI_bd_i/dvi2rgb_0/U0/GenerateDDC.DDC_EEPROM/I2C_SlaveController/SyncSCL/oSyncStages_reg[1]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_HDMI_bd_clk_wiz_0_0 rise edge)
+                                                      0.000     0.000 r  
+    K17                                               0.000     0.000 r  CLK (IN)
+                         net (fo=0)                   0.000     0.000    HDMI_bd_i/clk_wiz_0/inst/clk_in1
+    K17                  IBUF (Prop_ibuf_I_O)         0.431     0.431 r  HDMI_bd_i/clk_wiz_0/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           0.481     0.912    HDMI_bd_i/clk_wiz_0/inst/clk_in1_HDMI_bd_clk_wiz_0_0
+    PLLE2_ADV_X1Y2       PLLE2_ADV (Prop_plle2_adv_CLKIN1_CLKOUT0)
+                                                     -2.903    -1.991 r  HDMI_bd_i/clk_wiz_0/inst/plle2_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.768    -1.223    HDMI_bd_i/clk_wiz_0/inst/clk_out1_HDMI_bd_clk_wiz_0_0
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029    -1.194 r  HDMI_bd_i/clk_wiz_0/inst/clkout1_buf/O
+                         net (fo=166, routed)         0.908    -0.286    HDMI_bd_i/dvi2rgb_0/U0/GenerateDDC.DDC_EEPROM/I2C_SlaveController/SyncSCL/RefClk
+    SLICE_X113Y56        FDRE                                         r  HDMI_bd_i/dvi2rgb_0/U0/GenerateDDC.DDC_EEPROM/I2C_SlaveController/SyncSCL/oSyncStages_reg[1]/C
+                         clock pessimism             -0.233    -0.520    
+    SLICE_X113Y56        FDRE (Hold_fdre_C_D)         0.075    -0.445    HDMI_bd_i/dvi2rgb_0/U0/GenerateDDC.DDC_EEPROM/I2C_SlaveController/SyncSCL/oSyncStages_reg[1]
+  -------------------------------------------------------------------
+                         required time                          0.445    
+                         arrival time                          -0.323    
+  -------------------------------------------------------------------
+                         slack                                  0.122    
+
+Slack (MET) :             0.122ns  (arrival time - required time)
+  Source:                 HDMI_bd_i/dvi2rgb_0/U0/TMDS_ClockingX/RdyLostReset/SyncAsyncx/oSyncStages_reg[0]/C
+                            (rising edge-triggered cell FDPE clocked by clk_out1_HDMI_bd_clk_wiz_0_0  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            HDMI_bd_i/dvi2rgb_0/U0/TMDS_ClockingX/RdyLostReset/SyncAsyncx/oSyncStages_reg[1]/D
+                            (rising edge-triggered cell FDPE clocked by clk_out1_HDMI_bd_clk_wiz_0_0  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             clk_out1_HDMI_bd_clk_wiz_0_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_out1_HDMI_bd_clk_wiz_0_0 rise@0.000ns - clk_out1_HDMI_bd_clk_wiz_0_0 rise@0.000ns)
+  Data Path Delay:        0.197ns  (logic 0.141ns (71.611%)  route 0.056ns (28.389%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    -0.301ns
+    Source Clock Delay      (SCD):    -0.532ns
+    Clock Pessimism Removal (CPR):    0.230ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out1_HDMI_bd_clk_wiz_0_0 rise edge)
+                                                      0.000     0.000 r  
+    K17                                               0.000     0.000 r  CLK (IN)
+                         net (fo=0)                   0.000     0.000    HDMI_bd_i/clk_wiz_0/inst/clk_in1
+    K17                  IBUF (Prop_ibuf_I_O)         0.243     0.243 r  HDMI_bd_i/clk_wiz_0/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           0.440     0.683    HDMI_bd_i/clk_wiz_0/inst/clk_in1_HDMI_bd_clk_wiz_0_0
+    PLLE2_ADV_X1Y2       PLLE2_ADV (Prop_plle2_adv_CLKIN1_CLKOUT0)
+                                                     -2.576    -1.893 r  HDMI_bd_i/clk_wiz_0/inst/plle2_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.711    -1.181    HDMI_bd_i/clk_wiz_0/inst/clk_out1_HDMI_bd_clk_wiz_0_0
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026    -1.155 r  HDMI_bd_i/clk_wiz_0/inst/clkout1_buf/O
+                         net (fo=166, routed)         0.624    -0.532    HDMI_bd_i/dvi2rgb_0/U0/TMDS_ClockingX/RdyLostReset/SyncAsyncx/RefClk
+    SLICE_X111Y76        FDPE                                         r  HDMI_bd_i/dvi2rgb_0/U0/TMDS_ClockingX/RdyLostReset/SyncAsyncx/oSyncStages_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X111Y76        FDPE (Prop_fdpe_C_Q)         0.141    -0.391 r  HDMI_bd_i/dvi2rgb_0/U0/TMDS_ClockingX/RdyLostReset/SyncAsyncx/oSyncStages_reg[0]/Q
+                         net (fo=1, routed)           0.056    -0.335    HDMI_bd_i/dvi2rgb_0/U0/TMDS_ClockingX/RdyLostReset/SyncAsyncx/oSyncStages[0]
+    SLICE_X111Y76        FDPE                                         r  HDMI_bd_i/dvi2rgb_0/U0/TMDS_ClockingX/RdyLostReset/SyncAsyncx/oSyncStages_reg[1]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_HDMI_bd_clk_wiz_0_0 rise edge)
+                                                      0.000     0.000 r  
+    K17                                               0.000     0.000 r  CLK (IN)
+                         net (fo=0)                   0.000     0.000    HDMI_bd_i/clk_wiz_0/inst/clk_in1
+    K17                  IBUF (Prop_ibuf_I_O)         0.431     0.431 r  HDMI_bd_i/clk_wiz_0/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           0.481     0.912    HDMI_bd_i/clk_wiz_0/inst/clk_in1_HDMI_bd_clk_wiz_0_0
+    PLLE2_ADV_X1Y2       PLLE2_ADV (Prop_plle2_adv_CLKIN1_CLKOUT0)
+                                                     -2.903    -1.991 r  HDMI_bd_i/clk_wiz_0/inst/plle2_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.768    -1.223    HDMI_bd_i/clk_wiz_0/inst/clk_out1_HDMI_bd_clk_wiz_0_0
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029    -1.194 r  HDMI_bd_i/clk_wiz_0/inst/clkout1_buf/O
+                         net (fo=166, routed)         0.893    -0.301    HDMI_bd_i/dvi2rgb_0/U0/TMDS_ClockingX/RdyLostReset/SyncAsyncx/RefClk
+    SLICE_X111Y76        FDPE                                         r  HDMI_bd_i/dvi2rgb_0/U0/TMDS_ClockingX/RdyLostReset/SyncAsyncx/oSyncStages_reg[1]/C
+                         clock pessimism             -0.230    -0.532    
+    SLICE_X111Y76        FDPE (Hold_fdpe_C_D)         0.075    -0.457    HDMI_bd_i/dvi2rgb_0/U0/TMDS_ClockingX/RdyLostReset/SyncAsyncx/oSyncStages_reg[1]
+  -------------------------------------------------------------------
+                         required time                          0.457    
+                         arrival time                          -0.335    
+  -------------------------------------------------------------------
+                         slack                                  0.122    
+
+Slack (MET) :             0.160ns  (arrival time - required time)
+  Source:                 HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[2].DecoderX/SyncBaseRst/SyncAsyncx/oSyncStages_reg[0]/C
+                            (rising edge-triggered cell FDPE clocked by clk_out1_HDMI_bd_clk_wiz_0_0  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[2].DecoderX/SyncBaseRst/SyncAsyncx/oSyncStages_reg[1]/D
+                            (rising edge-triggered cell FDPE clocked by clk_out1_HDMI_bd_clk_wiz_0_0  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             clk_out1_HDMI_bd_clk_wiz_0_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_out1_HDMI_bd_clk_wiz_0_0 rise@0.000ns - clk_out1_HDMI_bd_clk_wiz_0_0 rise@0.000ns)
+  Data Path Delay:        0.220ns  (logic 0.164ns (74.580%)  route 0.056ns (25.420%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    -0.332ns
+    Source Clock Delay      (SCD):    -0.561ns
+    Clock Pessimism Removal (CPR):    0.228ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out1_HDMI_bd_clk_wiz_0_0 rise edge)
+                                                      0.000     0.000 r  
+    K17                                               0.000     0.000 r  CLK (IN)
+                         net (fo=0)                   0.000     0.000    HDMI_bd_i/clk_wiz_0/inst/clk_in1
+    K17                  IBUF (Prop_ibuf_I_O)         0.243     0.243 r  HDMI_bd_i/clk_wiz_0/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           0.440     0.683    HDMI_bd_i/clk_wiz_0/inst/clk_in1_HDMI_bd_clk_wiz_0_0
+    PLLE2_ADV_X1Y2       PLLE2_ADV (Prop_plle2_adv_CLKIN1_CLKOUT0)
+                                                     -2.576    -1.893 r  HDMI_bd_i/clk_wiz_0/inst/plle2_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.711    -1.181    HDMI_bd_i/clk_wiz_0/inst/clk_out1_HDMI_bd_clk_wiz_0_0
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026    -1.155 r  HDMI_bd_i/clk_wiz_0/inst/clkout1_buf/O
+                         net (fo=166, routed)         0.595    -0.561    HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[2].DecoderX/SyncBaseRst/SyncAsyncx/RefClk
+    SLICE_X102Y75        FDPE                                         r  HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[2].DecoderX/SyncBaseRst/SyncAsyncx/oSyncStages_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X102Y75        FDPE (Prop_fdpe_C_Q)         0.164    -0.397 r  HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[2].DecoderX/SyncBaseRst/SyncAsyncx/oSyncStages_reg[0]/Q
+                         net (fo=1, routed)           0.056    -0.341    HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[2].DecoderX/SyncBaseRst/SyncAsyncx/oSyncStages[0]
+    SLICE_X102Y75        FDPE                                         r  HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[2].DecoderX/SyncBaseRst/SyncAsyncx/oSyncStages_reg[1]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_HDMI_bd_clk_wiz_0_0 rise edge)
+                                                      0.000     0.000 r  
+    K17                                               0.000     0.000 r  CLK (IN)
+                         net (fo=0)                   0.000     0.000    HDMI_bd_i/clk_wiz_0/inst/clk_in1
+    K17                  IBUF (Prop_ibuf_I_O)         0.431     0.431 r  HDMI_bd_i/clk_wiz_0/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           0.481     0.912    HDMI_bd_i/clk_wiz_0/inst/clk_in1_HDMI_bd_clk_wiz_0_0
+    PLLE2_ADV_X1Y2       PLLE2_ADV (Prop_plle2_adv_CLKIN1_CLKOUT0)
+                                                     -2.903    -1.991 r  HDMI_bd_i/clk_wiz_0/inst/plle2_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.768    -1.223    HDMI_bd_i/clk_wiz_0/inst/clk_out1_HDMI_bd_clk_wiz_0_0
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029    -1.194 r  HDMI_bd_i/clk_wiz_0/inst/clkout1_buf/O
+                         net (fo=166, routed)         0.862    -0.332    HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[2].DecoderX/SyncBaseRst/SyncAsyncx/RefClk
+    SLICE_X102Y75        FDPE                                         r  HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[2].DecoderX/SyncBaseRst/SyncAsyncx/oSyncStages_reg[1]/C
+                         clock pessimism             -0.228    -0.561    
+    SLICE_X102Y75        FDPE (Hold_fdpe_C_D)         0.060    -0.501    HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[2].DecoderX/SyncBaseRst/SyncAsyncx/oSyncStages_reg[1]
+  -------------------------------------------------------------------
+                         required time                          0.501    
+                         arrival time                          -0.341    
+  -------------------------------------------------------------------
+                         slack                                  0.160    
+
+Slack (MET) :             0.160ns  (arrival time - required time)
+  Source:                 HDMI_bd_i/dvi2rgb_0/U0/TMDS_ClockingX/MMCM_LockSync/oSyncStages_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by clk_out1_HDMI_bd_clk_wiz_0_0  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            HDMI_bd_i/dvi2rgb_0/U0/TMDS_ClockingX/MMCM_LockSync/oSyncStages_reg[1]/D
+                            (rising edge-triggered cell FDRE clocked by clk_out1_HDMI_bd_clk_wiz_0_0  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             clk_out1_HDMI_bd_clk_wiz_0_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_out1_HDMI_bd_clk_wiz_0_0 rise@0.000ns - clk_out1_HDMI_bd_clk_wiz_0_0 rise@0.000ns)
+  Data Path Delay:        0.220ns  (logic 0.164ns (74.580%)  route 0.056ns (25.420%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    -0.302ns
+    Source Clock Delay      (SCD):    -0.533ns
+    Clock Pessimism Removal (CPR):    0.230ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out1_HDMI_bd_clk_wiz_0_0 rise edge)
+                                                      0.000     0.000 r  
+    K17                                               0.000     0.000 r  CLK (IN)
+                         net (fo=0)                   0.000     0.000    HDMI_bd_i/clk_wiz_0/inst/clk_in1
+    K17                  IBUF (Prop_ibuf_I_O)         0.243     0.243 r  HDMI_bd_i/clk_wiz_0/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           0.440     0.683    HDMI_bd_i/clk_wiz_0/inst/clk_in1_HDMI_bd_clk_wiz_0_0
+    PLLE2_ADV_X1Y2       PLLE2_ADV (Prop_plle2_adv_CLKIN1_CLKOUT0)
+                                                     -2.576    -1.893 r  HDMI_bd_i/clk_wiz_0/inst/plle2_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.711    -1.181    HDMI_bd_i/clk_wiz_0/inst/clk_out1_HDMI_bd_clk_wiz_0_0
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026    -1.155 r  HDMI_bd_i/clk_wiz_0/inst/clkout1_buf/O
+                         net (fo=166, routed)         0.623    -0.533    HDMI_bd_i/dvi2rgb_0/U0/TMDS_ClockingX/MMCM_LockSync/RefClk
+    SLICE_X112Y74        FDRE                                         r  HDMI_bd_i/dvi2rgb_0/U0/TMDS_ClockingX/MMCM_LockSync/oSyncStages_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X112Y74        FDRE (Prop_fdre_C_Q)         0.164    -0.369 r  HDMI_bd_i/dvi2rgb_0/U0/TMDS_ClockingX/MMCM_LockSync/oSyncStages_reg[0]/Q
+                         net (fo=1, routed)           0.056    -0.313    HDMI_bd_i/dvi2rgb_0/U0/TMDS_ClockingX/MMCM_LockSync/oSyncStages[0]
+    SLICE_X112Y74        FDRE                                         r  HDMI_bd_i/dvi2rgb_0/U0/TMDS_ClockingX/MMCM_LockSync/oSyncStages_reg[1]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_HDMI_bd_clk_wiz_0_0 rise edge)
+                                                      0.000     0.000 r  
+    K17                                               0.000     0.000 r  CLK (IN)
+                         net (fo=0)                   0.000     0.000    HDMI_bd_i/clk_wiz_0/inst/clk_in1
+    K17                  IBUF (Prop_ibuf_I_O)         0.431     0.431 r  HDMI_bd_i/clk_wiz_0/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           0.481     0.912    HDMI_bd_i/clk_wiz_0/inst/clk_in1_HDMI_bd_clk_wiz_0_0
+    PLLE2_ADV_X1Y2       PLLE2_ADV (Prop_plle2_adv_CLKIN1_CLKOUT0)
+                                                     -2.903    -1.991 r  HDMI_bd_i/clk_wiz_0/inst/plle2_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.768    -1.223    HDMI_bd_i/clk_wiz_0/inst/clk_out1_HDMI_bd_clk_wiz_0_0
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029    -1.194 r  HDMI_bd_i/clk_wiz_0/inst/clkout1_buf/O
+                         net (fo=166, routed)         0.892    -0.302    HDMI_bd_i/dvi2rgb_0/U0/TMDS_ClockingX/MMCM_LockSync/RefClk
+    SLICE_X112Y74        FDRE                                         r  HDMI_bd_i/dvi2rgb_0/U0/TMDS_ClockingX/MMCM_LockSync/oSyncStages_reg[1]/C
+                         clock pessimism             -0.230    -0.533    
+    SLICE_X112Y74        FDRE (Hold_fdre_C_D)         0.060    -0.473    HDMI_bd_i/dvi2rgb_0/U0/TMDS_ClockingX/MMCM_LockSync/oSyncStages_reg[1]
+  -------------------------------------------------------------------
+                         required time                          0.473    
+                         arrival time                          -0.313    
+  -------------------------------------------------------------------
+                         slack                                  0.160    
+
+Slack (MET) :             0.160ns  (arrival time - required time)
+  Source:                 HDMI_bd_i/dvi2rgb_0/U0/TMDS_ClockingX/LockLostReset/SyncAsyncx/oSyncStages_reg[0]/C
+                            (rising edge-triggered cell FDPE clocked by clk_out1_HDMI_bd_clk_wiz_0_0  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            HDMI_bd_i/dvi2rgb_0/U0/TMDS_ClockingX/LockLostReset/SyncAsyncx/oSyncStages_reg[1]/D
+                            (rising edge-triggered cell FDPE clocked by clk_out1_HDMI_bd_clk_wiz_0_0  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             clk_out1_HDMI_bd_clk_wiz_0_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_out1_HDMI_bd_clk_wiz_0_0 rise@0.000ns - clk_out1_HDMI_bd_clk_wiz_0_0 rise@0.000ns)
+  Data Path Delay:        0.220ns  (logic 0.164ns (74.580%)  route 0.056ns (25.420%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    -0.299ns
+    Source Clock Delay      (SCD):    -0.530ns
+    Clock Pessimism Removal (CPR):    0.230ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out1_HDMI_bd_clk_wiz_0_0 rise edge)
+                                                      0.000     0.000 r  
+    K17                                               0.000     0.000 r  CLK (IN)
+                         net (fo=0)                   0.000     0.000    HDMI_bd_i/clk_wiz_0/inst/clk_in1
+    K17                  IBUF (Prop_ibuf_I_O)         0.243     0.243 r  HDMI_bd_i/clk_wiz_0/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           0.440     0.683    HDMI_bd_i/clk_wiz_0/inst/clk_in1_HDMI_bd_clk_wiz_0_0
+    PLLE2_ADV_X1Y2       PLLE2_ADV (Prop_plle2_adv_CLKIN1_CLKOUT0)
+                                                     -2.576    -1.893 r  HDMI_bd_i/clk_wiz_0/inst/plle2_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.711    -1.181    HDMI_bd_i/clk_wiz_0/inst/clk_out1_HDMI_bd_clk_wiz_0_0
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026    -1.155 r  HDMI_bd_i/clk_wiz_0/inst/clkout1_buf/O
+                         net (fo=166, routed)         0.626    -0.530    HDMI_bd_i/dvi2rgb_0/U0/TMDS_ClockingX/LockLostReset/SyncAsyncx/RefClk
+    SLICE_X112Y77        FDPE                                         r  HDMI_bd_i/dvi2rgb_0/U0/TMDS_ClockingX/LockLostReset/SyncAsyncx/oSyncStages_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X112Y77        FDPE (Prop_fdpe_C_Q)         0.164    -0.366 r  HDMI_bd_i/dvi2rgb_0/U0/TMDS_ClockingX/LockLostReset/SyncAsyncx/oSyncStages_reg[0]/Q
+                         net (fo=1, routed)           0.056    -0.310    HDMI_bd_i/dvi2rgb_0/U0/TMDS_ClockingX/LockLostReset/SyncAsyncx/oSyncStages[0]
+    SLICE_X112Y77        FDPE                                         r  HDMI_bd_i/dvi2rgb_0/U0/TMDS_ClockingX/LockLostReset/SyncAsyncx/oSyncStages_reg[1]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_HDMI_bd_clk_wiz_0_0 rise edge)
+                                                      0.000     0.000 r  
+    K17                                               0.000     0.000 r  CLK (IN)
+                         net (fo=0)                   0.000     0.000    HDMI_bd_i/clk_wiz_0/inst/clk_in1
+    K17                  IBUF (Prop_ibuf_I_O)         0.431     0.431 r  HDMI_bd_i/clk_wiz_0/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           0.481     0.912    HDMI_bd_i/clk_wiz_0/inst/clk_in1_HDMI_bd_clk_wiz_0_0
+    PLLE2_ADV_X1Y2       PLLE2_ADV (Prop_plle2_adv_CLKIN1_CLKOUT0)
+                                                     -2.903    -1.991 r  HDMI_bd_i/clk_wiz_0/inst/plle2_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.768    -1.223    HDMI_bd_i/clk_wiz_0/inst/clk_out1_HDMI_bd_clk_wiz_0_0
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029    -1.194 r  HDMI_bd_i/clk_wiz_0/inst/clkout1_buf/O
+                         net (fo=166, routed)         0.895    -0.299    HDMI_bd_i/dvi2rgb_0/U0/TMDS_ClockingX/LockLostReset/SyncAsyncx/RefClk
+    SLICE_X112Y77        FDPE                                         r  HDMI_bd_i/dvi2rgb_0/U0/TMDS_ClockingX/LockLostReset/SyncAsyncx/oSyncStages_reg[1]/C
+                         clock pessimism             -0.230    -0.530    
+    SLICE_X112Y77        FDPE (Hold_fdpe_C_D)         0.060    -0.470    HDMI_bd_i/dvi2rgb_0/U0/TMDS_ClockingX/LockLostReset/SyncAsyncx/oSyncStages_reg[1]
+  -------------------------------------------------------------------
+                         required time                          0.470    
+                         arrival time                          -0.310    
+  -------------------------------------------------------------------
+                         slack                                  0.160    
+
+Slack (MET) :             0.163ns  (arrival time - required time)
+  Source:                 HDMI_bd_i/dvi2rgb_0/U0/GenerateDDC.DDC_EEPROM/I2C_SlaveController/dataByte_reg[2]/C
+                            (rising edge-triggered cell FDRE clocked by clk_out1_HDMI_bd_clk_wiz_0_0  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            HDMI_bd_i/dvi2rgb_0/U0/GenerateDDC.DDC_EEPROM/sAddr_reg[2]/D
+                            (rising edge-triggered cell FDRE clocked by clk_out1_HDMI_bd_clk_wiz_0_0  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             clk_out1_HDMI_bd_clk_wiz_0_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_out1_HDMI_bd_clk_wiz_0_0 rise@0.000ns - clk_out1_HDMI_bd_clk_wiz_0_0 rise@0.000ns)
+  Data Path Delay:        0.296ns  (logic 0.186ns (62.809%)  route 0.110ns (37.191%))
+  Logic Levels:           1  (LUT5=1)
+  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    -0.289ns
+    Source Clock Delay      (SCD):    -0.521ns
+    Clock Pessimism Removal (CPR):    0.218ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out1_HDMI_bd_clk_wiz_0_0 rise edge)
+                                                      0.000     0.000 r  
+    K17                                               0.000     0.000 r  CLK (IN)
+                         net (fo=0)                   0.000     0.000    HDMI_bd_i/clk_wiz_0/inst/clk_in1
+    K17                  IBUF (Prop_ibuf_I_O)         0.243     0.243 r  HDMI_bd_i/clk_wiz_0/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           0.440     0.683    HDMI_bd_i/clk_wiz_0/inst/clk_in1_HDMI_bd_clk_wiz_0_0
+    PLLE2_ADV_X1Y2       PLLE2_ADV (Prop_plle2_adv_CLKIN1_CLKOUT0)
+                                                     -2.576    -1.893 r  HDMI_bd_i/clk_wiz_0/inst/plle2_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.711    -1.181    HDMI_bd_i/clk_wiz_0/inst/clk_out1_HDMI_bd_clk_wiz_0_0
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026    -1.155 r  HDMI_bd_i/clk_wiz_0/inst/clkout1_buf/O
+                         net (fo=166, routed)         0.635    -0.521    HDMI_bd_i/dvi2rgb_0/U0/GenerateDDC.DDC_EEPROM/I2C_SlaveController/RefClk
+    SLICE_X109Y56        FDRE                                         r  HDMI_bd_i/dvi2rgb_0/U0/GenerateDDC.DDC_EEPROM/I2C_SlaveController/dataByte_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X109Y56        FDRE (Prop_fdre_C_Q)         0.141    -0.380 r  HDMI_bd_i/dvi2rgb_0/U0/GenerateDDC.DDC_EEPROM/I2C_SlaveController/dataByte_reg[2]/Q
+                         net (fo=5, routed)           0.110    -0.269    HDMI_bd_i/dvi2rgb_0/U0/GenerateDDC.DDC_EEPROM/I2C_SlaveController/sI2C_DataIn[2]
+    SLICE_X108Y56        LUT5 (Prop_lut5_I0_O)        0.045    -0.224 r  HDMI_bd_i/dvi2rgb_0/U0/GenerateDDC.DDC_EEPROM/I2C_SlaveController/sAddr_rep[2]_i_1/O
+                         net (fo=2, routed)           0.000    -0.224    HDMI_bd_i/dvi2rgb_0/U0/GenerateDDC.DDC_EEPROM/I2C_SlaveController_n_12
+    SLICE_X108Y56        FDRE                                         r  HDMI_bd_i/dvi2rgb_0/U0/GenerateDDC.DDC_EEPROM/sAddr_reg[2]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_HDMI_bd_clk_wiz_0_0 rise edge)
+                                                      0.000     0.000 r  
+    K17                                               0.000     0.000 r  CLK (IN)
+                         net (fo=0)                   0.000     0.000    HDMI_bd_i/clk_wiz_0/inst/clk_in1
+    K17                  IBUF (Prop_ibuf_I_O)         0.431     0.431 r  HDMI_bd_i/clk_wiz_0/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           0.481     0.912    HDMI_bd_i/clk_wiz_0/inst/clk_in1_HDMI_bd_clk_wiz_0_0
+    PLLE2_ADV_X1Y2       PLLE2_ADV (Prop_plle2_adv_CLKIN1_CLKOUT0)
+                                                     -2.903    -1.991 r  HDMI_bd_i/clk_wiz_0/inst/plle2_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.768    -1.223    HDMI_bd_i/clk_wiz_0/inst/clk_out1_HDMI_bd_clk_wiz_0_0
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029    -1.194 r  HDMI_bd_i/clk_wiz_0/inst/clkout1_buf/O
+                         net (fo=166, routed)         0.905    -0.289    HDMI_bd_i/dvi2rgb_0/U0/GenerateDDC.DDC_EEPROM/RefClk
+    SLICE_X108Y56        FDRE                                         r  HDMI_bd_i/dvi2rgb_0/U0/GenerateDDC.DDC_EEPROM/sAddr_reg[2]/C
+                         clock pessimism             -0.218    -0.508    
+    SLICE_X108Y56        FDRE (Hold_fdre_C_D)         0.120    -0.388    HDMI_bd_i/dvi2rgb_0/U0/GenerateDDC.DDC_EEPROM/sAddr_reg[2]
+  -------------------------------------------------------------------
+                         required time                          0.388    
+                         arrival time                          -0.224    
+  -------------------------------------------------------------------
+                         slack                                  0.163    
+
+Slack (MET) :             0.173ns  (arrival time - required time)
+  Source:                 HDMI_bd_i/dvi2rgb_0/U0/GenerateDDC.DDC_EEPROM/I2C_SlaveController/bitCount_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by clk_out1_HDMI_bd_clk_wiz_0_0  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            HDMI_bd_i/dvi2rgb_0/U0/GenerateDDC.DDC_EEPROM/I2C_SlaveController/bitCount_reg[2]/D
+                            (rising edge-triggered cell FDRE clocked by clk_out1_HDMI_bd_clk_wiz_0_0  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             clk_out1_HDMI_bd_clk_wiz_0_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_out1_HDMI_bd_clk_wiz_0_0 rise@0.000ns - clk_out1_HDMI_bd_clk_wiz_0_0 rise@0.000ns)
+  Data Path Delay:        0.278ns  (logic 0.186ns (66.993%)  route 0.092ns (33.007%))
+  Logic Levels:           1  (LUT6=1)
+  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    -0.290ns
+    Source Clock Delay      (SCD):    -0.522ns
+    Clock Pessimism Removal (CPR):    0.218ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out1_HDMI_bd_clk_wiz_0_0 rise edge)
+                                                      0.000     0.000 r  
+    K17                                               0.000     0.000 r  CLK (IN)
+                         net (fo=0)                   0.000     0.000    HDMI_bd_i/clk_wiz_0/inst/clk_in1
+    K17                  IBUF (Prop_ibuf_I_O)         0.243     0.243 r  HDMI_bd_i/clk_wiz_0/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           0.440     0.683    HDMI_bd_i/clk_wiz_0/inst/clk_in1_HDMI_bd_clk_wiz_0_0
+    PLLE2_ADV_X1Y2       PLLE2_ADV (Prop_plle2_adv_CLKIN1_CLKOUT0)
+                                                     -2.576    -1.893 r  HDMI_bd_i/clk_wiz_0/inst/plle2_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.711    -1.181    HDMI_bd_i/clk_wiz_0/inst/clk_out1_HDMI_bd_clk_wiz_0_0
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026    -1.155 r  HDMI_bd_i/clk_wiz_0/inst/clkout1_buf/O
+                         net (fo=166, routed)         0.634    -0.522    HDMI_bd_i/dvi2rgb_0/U0/GenerateDDC.DDC_EEPROM/I2C_SlaveController/RefClk
+    SLICE_X107Y58        FDRE                                         r  HDMI_bd_i/dvi2rgb_0/U0/GenerateDDC.DDC_EEPROM/I2C_SlaveController/bitCount_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X107Y58        FDRE (Prop_fdre_C_Q)         0.141    -0.381 r  HDMI_bd_i/dvi2rgb_0/U0/GenerateDDC.DDC_EEPROM/I2C_SlaveController/bitCount_reg[0]/Q
+                         net (fo=5, routed)           0.092    -0.289    HDMI_bd_i/dvi2rgb_0/U0/GenerateDDC.DDC_EEPROM/I2C_SlaveController/bitCount_reg_n_0_[0]
+    SLICE_X106Y58        LUT6 (Prop_lut6_I3_O)        0.045    -0.244 r  HDMI_bd_i/dvi2rgb_0/U0/GenerateDDC.DDC_EEPROM/I2C_SlaveController/bitCount[2]_i_1/O
+                         net (fo=1, routed)           0.000    -0.244    HDMI_bd_i/dvi2rgb_0/U0/GenerateDDC.DDC_EEPROM/I2C_SlaveController/bitCount[2]_i_1_n_0
+    SLICE_X106Y58        FDRE                                         r  HDMI_bd_i/dvi2rgb_0/U0/GenerateDDC.DDC_EEPROM/I2C_SlaveController/bitCount_reg[2]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_HDMI_bd_clk_wiz_0_0 rise edge)
+                                                      0.000     0.000 r  
+    K17                                               0.000     0.000 r  CLK (IN)
+                         net (fo=0)                   0.000     0.000    HDMI_bd_i/clk_wiz_0/inst/clk_in1
+    K17                  IBUF (Prop_ibuf_I_O)         0.431     0.431 r  HDMI_bd_i/clk_wiz_0/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           0.481     0.912    HDMI_bd_i/clk_wiz_0/inst/clk_in1_HDMI_bd_clk_wiz_0_0
+    PLLE2_ADV_X1Y2       PLLE2_ADV (Prop_plle2_adv_CLKIN1_CLKOUT0)
+                                                     -2.903    -1.991 r  HDMI_bd_i/clk_wiz_0/inst/plle2_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.768    -1.223    HDMI_bd_i/clk_wiz_0/inst/clk_out1_HDMI_bd_clk_wiz_0_0
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029    -1.194 r  HDMI_bd_i/clk_wiz_0/inst/clkout1_buf/O
+                         net (fo=166, routed)         0.904    -0.290    HDMI_bd_i/dvi2rgb_0/U0/GenerateDDC.DDC_EEPROM/I2C_SlaveController/RefClk
+    SLICE_X106Y58        FDRE                                         r  HDMI_bd_i/dvi2rgb_0/U0/GenerateDDC.DDC_EEPROM/I2C_SlaveController/bitCount_reg[2]/C
+                         clock pessimism             -0.218    -0.509    
+    SLICE_X106Y58        FDRE (Hold_fdre_C_D)         0.092    -0.417    HDMI_bd_i/dvi2rgb_0/U0/GenerateDDC.DDC_EEPROM/I2C_SlaveController/bitCount_reg[2]
+  -------------------------------------------------------------------
+                         required time                          0.417    
+                         arrival time                          -0.244    
+  -------------------------------------------------------------------
+                         slack                                  0.173    
+
+Slack (MET) :             0.190ns  (arrival time - required time)
+  Source:                 HDMI_bd_i/dvi2rgb_0/U0/TMDS_ClockingX/rMMCM_Reset_q_reg[1]/C
+                            (rising edge-triggered cell FDPE clocked by clk_out1_HDMI_bd_clk_wiz_0_0  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            HDMI_bd_i/dvi2rgb_0/U0/TMDS_ClockingX/rMMCM_Reset_q_reg[0]/D
+                            (rising edge-triggered cell FDPE clocked by clk_out1_HDMI_bd_clk_wiz_0_0  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             clk_out1_HDMI_bd_clk_wiz_0_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_out1_HDMI_bd_clk_wiz_0_0 rise@0.000ns - clk_out1_HDMI_bd_clk_wiz_0_0 rise@0.000ns)
+  Data Path Delay:        0.281ns  (logic 0.227ns (80.665%)  route 0.054ns (19.335%))
+  Logic Levels:           1  (LUT2=1)
+  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    -0.302ns
+    Source Clock Delay      (SCD):    -0.533ns
+    Clock Pessimism Removal (CPR):    0.230ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out1_HDMI_bd_clk_wiz_0_0 rise edge)
+                                                      0.000     0.000 r  
+    K17                                               0.000     0.000 r  CLK (IN)
+                         net (fo=0)                   0.000     0.000    HDMI_bd_i/clk_wiz_0/inst/clk_in1
+    K17                  IBUF (Prop_ibuf_I_O)         0.243     0.243 r  HDMI_bd_i/clk_wiz_0/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           0.440     0.683    HDMI_bd_i/clk_wiz_0/inst/clk_in1_HDMI_bd_clk_wiz_0_0
+    PLLE2_ADV_X1Y2       PLLE2_ADV (Prop_plle2_adv_CLKIN1_CLKOUT0)
+                                                     -2.576    -1.893 r  HDMI_bd_i/clk_wiz_0/inst/plle2_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.711    -1.181    HDMI_bd_i/clk_wiz_0/inst/clk_out1_HDMI_bd_clk_wiz_0_0
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026    -1.155 r  HDMI_bd_i/clk_wiz_0/inst/clkout1_buf/O
+                         net (fo=166, routed)         0.623    -0.533    HDMI_bd_i/dvi2rgb_0/U0/TMDS_ClockingX/RefClk
+    SLICE_X113Y74        FDPE                                         r  HDMI_bd_i/dvi2rgb_0/U0/TMDS_ClockingX/rMMCM_Reset_q_reg[1]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X113Y74        FDPE (Prop_fdpe_C_Q)         0.128    -0.405 r  HDMI_bd_i/dvi2rgb_0/U0/TMDS_ClockingX/rMMCM_Reset_q_reg[1]/Q
+                         net (fo=1, routed)           0.054    -0.350    HDMI_bd_i/dvi2rgb_0/U0/TMDS_ClockingX/rMMCM_Reset_q[1]
+    SLICE_X113Y74        LUT2 (Prop_lut2_I1_O)        0.099    -0.251 r  HDMI_bd_i/dvi2rgb_0/U0/TMDS_ClockingX/rMMCM_Reset_q[0]_i_1/O
+                         net (fo=1, routed)           0.000    -0.251    HDMI_bd_i/dvi2rgb_0/U0/TMDS_ClockingX/rMMCM_Reset_q[0]_i_1_n_0
+    SLICE_X113Y74        FDPE                                         r  HDMI_bd_i/dvi2rgb_0/U0/TMDS_ClockingX/rMMCM_Reset_q_reg[0]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_HDMI_bd_clk_wiz_0_0 rise edge)
+                                                      0.000     0.000 r  
+    K17                                               0.000     0.000 r  CLK (IN)
+                         net (fo=0)                   0.000     0.000    HDMI_bd_i/clk_wiz_0/inst/clk_in1
+    K17                  IBUF (Prop_ibuf_I_O)         0.431     0.431 r  HDMI_bd_i/clk_wiz_0/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           0.481     0.912    HDMI_bd_i/clk_wiz_0/inst/clk_in1_HDMI_bd_clk_wiz_0_0
+    PLLE2_ADV_X1Y2       PLLE2_ADV (Prop_plle2_adv_CLKIN1_CLKOUT0)
+                                                     -2.903    -1.991 r  HDMI_bd_i/clk_wiz_0/inst/plle2_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.768    -1.223    HDMI_bd_i/clk_wiz_0/inst/clk_out1_HDMI_bd_clk_wiz_0_0
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029    -1.194 r  HDMI_bd_i/clk_wiz_0/inst/clkout1_buf/O
+                         net (fo=166, routed)         0.892    -0.302    HDMI_bd_i/dvi2rgb_0/U0/TMDS_ClockingX/RefClk
+    SLICE_X113Y74        FDPE                                         r  HDMI_bd_i/dvi2rgb_0/U0/TMDS_ClockingX/rMMCM_Reset_q_reg[0]/C
+                         clock pessimism             -0.230    -0.533    
+    SLICE_X113Y74        FDPE (Hold_fdpe_C_D)         0.091    -0.442    HDMI_bd_i/dvi2rgb_0/U0/TMDS_ClockingX/rMMCM_Reset_q_reg[0]
+  -------------------------------------------------------------------
+                         required time                          0.442    
+                         arrival time                          -0.251    
+  -------------------------------------------------------------------
+                         slack                                  0.190    
+
+
+
+
+
+Pulse Width Checks
+--------------------------------------------------------------------------------------
+Clock Name:         clk_out1_HDMI_bd_clk_wiz_0_0
+Waveform(ns):       { 0.000 2.500 }
+Period(ns):         5.000
+Sources:            { HDMI_bd_i/clk_wiz_0/inst/plle2_adv_inst/CLKOUT0 }
+
+Check Type        Corner  Lib Pin            Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location         Pin
+Min Period        n/a     IDELAYCTRL/REFCLK  n/a            3.225         5.000       1.775      IDELAYCTRL_X1Y1  HDMI_bd_i/dvi2rgb_0/U0/TMDS_ClockingX/IDelayCtrlX/REFCLK
+Min Period        n/a     BUFG/I             n/a            2.155         5.000       2.845      BUFGCTRL_X0Y16   HDMI_bd_i/clk_wiz_0/inst/clkout1_buf/I
+Min Period        n/a     PLLE2_ADV/CLKOUT0  n/a            1.249         5.000       3.751      PLLE2_ADV_X1Y2   HDMI_bd_i/clk_wiz_0/inst/plle2_adv_inst/CLKOUT0
+Min Period        n/a     FDRE/C             n/a            1.000         5.000       4.000      SLICE_X104Y67    HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt_reg[13]/C
+Min Period        n/a     FDRE/C             n/a            1.000         5.000       4.000      SLICE_X104Y67    HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt_reg[14]/C
+Min Period        n/a     FDRE/C             n/a            1.000         5.000       4.000      SLICE_X104Y67    HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt_reg[15]/C
+Min Period        n/a     FDRE/C             n/a            1.000         5.000       4.000      SLICE_X104Y68    HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt_reg[16]/C
+Min Period        n/a     FDRE/C             n/a            1.000         5.000       4.000      SLICE_X104Y68    HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt_reg[17]/C
+Min Period        n/a     FDRE/C             n/a            1.000         5.000       4.000      SLICE_X104Y68    HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt_reg[18]/C
+Min Period        n/a     FDRE/C             n/a            1.000         5.000       4.000      SLICE_X104Y68    HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt_reg[19]/C
+Max Period        n/a     IDELAYCTRL/REFCLK  n/a            5.264         5.000       0.264      IDELAYCTRL_X1Y1  HDMI_bd_i/dvi2rgb_0/U0/TMDS_ClockingX/IDelayCtrlX/REFCLK
+Max Period        n/a     PLLE2_ADV/CLKOUT0  n/a            160.000       5.000       155.000    PLLE2_ADV_X1Y2   HDMI_bd_i/clk_wiz_0/inst/plle2_adv_inst/CLKOUT0
+Low Pulse Width   Slow    FDRE/C             n/a            0.500         2.500       2.000      SLICE_X104Y67    HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt_reg[13]/C
+Low Pulse Width   Fast    FDRE/C             n/a            0.500         2.500       2.000      SLICE_X104Y67    HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt_reg[13]/C
+Low Pulse Width   Slow    FDRE/C             n/a            0.500         2.500       2.000      SLICE_X104Y67    HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt_reg[14]/C
+Low Pulse Width   Fast    FDRE/C             n/a            0.500         2.500       2.000      SLICE_X104Y67    HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt_reg[14]/C
+Low Pulse Width   Slow    FDRE/C             n/a            0.500         2.500       2.000      SLICE_X104Y67    HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt_reg[15]/C
+Low Pulse Width   Fast    FDRE/C             n/a            0.500         2.500       2.000      SLICE_X104Y67    HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt_reg[15]/C
+Low Pulse Width   Fast    FDRE/C             n/a            0.500         2.500       2.000      SLICE_X104Y68    HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt_reg[16]/C
+Low Pulse Width   Fast    FDRE/C             n/a            0.500         2.500       2.000      SLICE_X104Y68    HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt_reg[17]/C
+Low Pulse Width   Fast    FDRE/C             n/a            0.500         2.500       2.000      SLICE_X104Y68    HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt_reg[18]/C
+Low Pulse Width   Fast    FDRE/C             n/a            0.500         2.500       2.000      SLICE_X104Y68    HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt_reg[19]/C
+High Pulse Width  Slow    FDRE/C             n/a            0.500         2.500       2.000      SLICE_X104Y68    HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt_reg[16]/C
+High Pulse Width  Slow    FDRE/C             n/a            0.500         2.500       2.000      SLICE_X104Y68    HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt_reg[17]/C
+High Pulse Width  Slow    FDRE/C             n/a            0.500         2.500       2.000      SLICE_X104Y68    HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt_reg[18]/C
+High Pulse Width  Slow    FDRE/C             n/a            0.500         2.500       2.000      SLICE_X104Y68    HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt_reg[19]/C
+High Pulse Width  Fast    FDRE/C             n/a            0.500         2.500       2.000      SLICE_X104Y69    HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt_reg[20]/C
+High Pulse Width  Fast    FDRE/C             n/a            0.500         2.500       2.000      SLICE_X104Y69    HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt_reg[21]/C
+High Pulse Width  Fast    FDRE/C             n/a            0.500         2.500       2.000      SLICE_X104Y69    HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt_reg[22]/C
+High Pulse Width  Fast    FDRE/C             n/a            0.500         2.500       2.000      SLICE_X104Y69    HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[0].DecoderX/rTimeoutCnt_reg[23]/C
+High Pulse Width  Slow    FDRE/C             n/a            0.500         2.500       2.000      SLICE_X103Y68    HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[1].DecoderX/rTimeoutCnt_reg[13]/C
+High Pulse Width  Slow    FDRE/C             n/a            0.500         2.500       2.000      SLICE_X103Y68    HDMI_bd_i/dvi2rgb_0/U0/DataDecoders[1].DecoderX/rTimeoutCnt_reg[14]/C
+
+
+
+---------------------------------------------------------------------------------------------------
+From Clock:  clkfbout_HDMI_bd_clk_wiz_0_0
+  To Clock:  clkfbout_HDMI_bd_clk_wiz_0_0
+
+Setup :           NA  Failing Endpoints,  Worst Slack           NA  ,  Total Violation           NA
+Hold  :           NA  Failing Endpoints,  Worst Slack           NA  ,  Total Violation           NA
+PW    :            0  Failing Endpoints,  Worst Slack        5.845ns,  Total Violation        0.000ns
+---------------------------------------------------------------------------------------------------
+
+
+Pulse Width Checks
+--------------------------------------------------------------------------------------
+Clock Name:         clkfbout_HDMI_bd_clk_wiz_0_0
+Waveform(ns):       { 0.000 4.000 }
+Period(ns):         8.000
+Sources:            { HDMI_bd_i/clk_wiz_0/inst/plle2_adv_inst/CLKFBOUT }
+
+Check Type  Corner  Lib Pin             Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location        Pin
+Min Period  n/a     BUFG/I              n/a            2.155         8.000       5.845      BUFGCTRL_X0Y18  HDMI_bd_i/clk_wiz_0/inst/clkf_buf/I
+Min Period  n/a     PLLE2_ADV/CLKFBOUT  n/a            1.249         8.000       6.751      PLLE2_ADV_X1Y2  HDMI_bd_i/clk_wiz_0/inst/plle2_adv_inst/CLKFBOUT
+Min Period  n/a     PLLE2_ADV/CLKFBIN   n/a            1.249         8.000       6.751      PLLE2_ADV_X1Y2  HDMI_bd_i/clk_wiz_0/inst/plle2_adv_inst/CLKFBIN
+Max Period  n/a     PLLE2_ADV/CLKFBIN   n/a            52.633        8.000       44.633     PLLE2_ADV_X1Y2  HDMI_bd_i/clk_wiz_0/inst/plle2_adv_inst/CLKFBIN
+Max Period  n/a     PLLE2_ADV/CLKFBOUT  n/a            160.000       8.000       152.000    PLLE2_ADV_X1Y2  HDMI_bd_i/clk_wiz_0/inst/plle2_adv_inst/CLKFBOUT
+
+
+
+---------------------------------------------------------------------------------------------------
+Path Group:  **async_default**
+From Clock:  clk_out1_HDMI_bd_clk_wiz_0_0
+  To Clock:  clk_out1_HDMI_bd_clk_wiz_0_0
+
+Setup :            0  Failing Endpoints,  Worst Slack        3.188ns,  Total Violation        0.000ns
+Hold  :            0  Failing Endpoints,  Worst Slack        0.404ns,  Total Violation        0.000ns
+---------------------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             3.188ns  (required time - arrival time)
+  Source:                 HDMI_bd_i/dvi2rgb_0/U0/TMDS_ClockingX/LockLostReset/SyncAsyncx/oSyncStages_reg[1]/C
+                            (rising edge-triggered cell FDPE clocked by clk_out1_HDMI_bd_clk_wiz_0_0  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            HDMI_bd_i/dvi2rgb_0/U0/TMDS_ClockingX/rMMCM_Reset_q_reg[0]/PRE
+                            (recovery check against rising-edge clock clk_out1_HDMI_bd_clk_wiz_0_0  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             **async_default**
+  Path Type:              Recovery (Max at Slow Process Corner)
+  Requirement:            5.000ns  (clk_out1_HDMI_bd_clk_wiz_0_0 rise@5.000ns - clk_out1_HDMI_bd_clk_wiz_0_0 rise@0.000ns)
+  Data Path Delay:        1.152ns  (logic 0.478ns (41.485%)  route 0.674ns (58.515%))
+  Logic Levels:           0  
+  Clock Path Skew:        -0.065ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    -1.994ns = ( 3.006 - 5.000 ) 
+    Source Clock Delay      (SCD):    -2.352ns
+    Clock Pessimism Removal (CPR):    -0.423ns
+  Clock Uncertainty:      0.065ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.109ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out1_HDMI_bd_clk_wiz_0_0 rise edge)
+                                                      0.000     0.000 r  
+    K17                                               0.000     0.000 r  CLK (IN)
+                         net (fo=0)                   0.000     0.000    HDMI_bd_i/clk_wiz_0/inst/clk_in1
+    K17                  IBUF (Prop_ibuf_I_O)         1.475     1.475 r  HDMI_bd_i/clk_wiz_0/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           1.306     2.781    HDMI_bd_i/clk_wiz_0/inst/clk_in1_HDMI_bd_clk_wiz_0_0
+    PLLE2_ADV_X1Y2       PLLE2_ADV (Prop_plle2_adv_CLKIN1_CLKOUT0)
+                                                     -9.282    -6.501 r  HDMI_bd_i/clk_wiz_0/inst/plle2_adv_inst/CLKOUT0
+                         net (fo=1, routed)           2.200    -4.301    HDMI_bd_i/clk_wiz_0/inst/clk_out1_HDMI_bd_clk_wiz_0_0
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101    -4.200 r  HDMI_bd_i/clk_wiz_0/inst/clkout1_buf/O
+                         net (fo=166, routed)         1.848    -2.352    HDMI_bd_i/dvi2rgb_0/U0/TMDS_ClockingX/LockLostReset/SyncAsyncx/RefClk
+    SLICE_X112Y77        FDPE                                         r  HDMI_bd_i/dvi2rgb_0/U0/TMDS_ClockingX/LockLostReset/SyncAsyncx/oSyncStages_reg[1]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X112Y77        FDPE (Prop_fdpe_C_Q)         0.478    -1.874 f  HDMI_bd_i/dvi2rgb_0/U0/TMDS_ClockingX/LockLostReset/SyncAsyncx/oSyncStages_reg[1]/Q
+                         net (fo=8, routed)           0.674    -1.200    HDMI_bd_i/dvi2rgb_0/U0/TMDS_ClockingX/rLockLostRst
+    SLICE_X113Y74        FDPE                                         f  HDMI_bd_i/dvi2rgb_0/U0/TMDS_ClockingX/rMMCM_Reset_q_reg[0]/PRE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_HDMI_bd_clk_wiz_0_0 rise edge)
+                                                      5.000     5.000 r  
+    K17                                               0.000     5.000 r  CLK (IN)
+                         net (fo=0)                   0.000     5.000    HDMI_bd_i/clk_wiz_0/inst/clk_in1
+    K17                  IBUF (Prop_ibuf_I_O)         1.404     6.404 r  HDMI_bd_i/clk_wiz_0/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           1.181     7.585    HDMI_bd_i/clk_wiz_0/inst/clk_in1_HDMI_bd_clk_wiz_0_0
+    PLLE2_ADV_X1Y2       PLLE2_ADV (Prop_plle2_adv_CLKIN1_CLKOUT0)
+                                                     -8.346    -0.761 r  HDMI_bd_i/clk_wiz_0/inst/plle2_adv_inst/CLKOUT0
+                         net (fo=1, routed)           2.007     1.246    HDMI_bd_i/clk_wiz_0/inst/clk_out1_HDMI_bd_clk_wiz_0_0
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091     1.337 r  HDMI_bd_i/clk_wiz_0/inst/clkout1_buf/O
+                         net (fo=166, routed)         1.669     3.006    HDMI_bd_i/dvi2rgb_0/U0/TMDS_ClockingX/RefClk
+    SLICE_X113Y74        FDPE                                         r  HDMI_bd_i/dvi2rgb_0/U0/TMDS_ClockingX/rMMCM_Reset_q_reg[0]/C
+                         clock pessimism             -0.423     2.583    
+                         clock uncertainty           -0.065     2.518    
+    SLICE_X113Y74        FDPE (Recov_fdpe_C_PRE)     -0.530     1.988    HDMI_bd_i/dvi2rgb_0/U0/TMDS_ClockingX/rMMCM_Reset_q_reg[0]
+  -------------------------------------------------------------------
+                         required time                          1.988    
+                         arrival time                           1.200    
+  -------------------------------------------------------------------
+                         slack                                  3.188    
+
+Slack (MET) :             3.188ns  (required time - arrival time)
+  Source:                 HDMI_bd_i/dvi2rgb_0/U0/TMDS_ClockingX/LockLostReset/SyncAsyncx/oSyncStages_reg[1]/C
+                            (rising edge-triggered cell FDPE clocked by clk_out1_HDMI_bd_clk_wiz_0_0  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            HDMI_bd_i/dvi2rgb_0/U0/TMDS_ClockingX/rMMCM_Reset_q_reg[1]/PRE
+                            (recovery check against rising-edge clock clk_out1_HDMI_bd_clk_wiz_0_0  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             **async_default**
+  Path Type:              Recovery (Max at Slow Process Corner)
+  Requirement:            5.000ns  (clk_out1_HDMI_bd_clk_wiz_0_0 rise@5.000ns - clk_out1_HDMI_bd_clk_wiz_0_0 rise@0.000ns)
+  Data Path Delay:        1.152ns  (logic 0.478ns (41.485%)  route 0.674ns (58.515%))
+  Logic Levels:           0  
+  Clock Path Skew:        -0.065ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    -1.994ns = ( 3.006 - 5.000 ) 
+    Source Clock Delay      (SCD):    -2.352ns
+    Clock Pessimism Removal (CPR):    -0.423ns
+  Clock Uncertainty:      0.065ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.109ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out1_HDMI_bd_clk_wiz_0_0 rise edge)
+                                                      0.000     0.000 r  
+    K17                                               0.000     0.000 r  CLK (IN)
+                         net (fo=0)                   0.000     0.000    HDMI_bd_i/clk_wiz_0/inst/clk_in1
+    K17                  IBUF (Prop_ibuf_I_O)         1.475     1.475 r  HDMI_bd_i/clk_wiz_0/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           1.306     2.781    HDMI_bd_i/clk_wiz_0/inst/clk_in1_HDMI_bd_clk_wiz_0_0
+    PLLE2_ADV_X1Y2       PLLE2_ADV (Prop_plle2_adv_CLKIN1_CLKOUT0)
+                                                     -9.282    -6.501 r  HDMI_bd_i/clk_wiz_0/inst/plle2_adv_inst/CLKOUT0
+                         net (fo=1, routed)           2.200    -4.301    HDMI_bd_i/clk_wiz_0/inst/clk_out1_HDMI_bd_clk_wiz_0_0
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101    -4.200 r  HDMI_bd_i/clk_wiz_0/inst/clkout1_buf/O
+                         net (fo=166, routed)         1.848    -2.352    HDMI_bd_i/dvi2rgb_0/U0/TMDS_ClockingX/LockLostReset/SyncAsyncx/RefClk
+    SLICE_X112Y77        FDPE                                         r  HDMI_bd_i/dvi2rgb_0/U0/TMDS_ClockingX/LockLostReset/SyncAsyncx/oSyncStages_reg[1]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X112Y77        FDPE (Prop_fdpe_C_Q)         0.478    -1.874 f  HDMI_bd_i/dvi2rgb_0/U0/TMDS_ClockingX/LockLostReset/SyncAsyncx/oSyncStages_reg[1]/Q
+                         net (fo=8, routed)           0.674    -1.200    HDMI_bd_i/dvi2rgb_0/U0/TMDS_ClockingX/rLockLostRst
+    SLICE_X113Y74        FDPE                                         f  HDMI_bd_i/dvi2rgb_0/U0/TMDS_ClockingX/rMMCM_Reset_q_reg[1]/PRE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_HDMI_bd_clk_wiz_0_0 rise edge)
+                                                      5.000     5.000 r  
+    K17                                               0.000     5.000 r  CLK (IN)
+                         net (fo=0)                   0.000     5.000    HDMI_bd_i/clk_wiz_0/inst/clk_in1
+    K17                  IBUF (Prop_ibuf_I_O)         1.404     6.404 r  HDMI_bd_i/clk_wiz_0/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           1.181     7.585    HDMI_bd_i/clk_wiz_0/inst/clk_in1_HDMI_bd_clk_wiz_0_0
+    PLLE2_ADV_X1Y2       PLLE2_ADV (Prop_plle2_adv_CLKIN1_CLKOUT0)
+                                                     -8.346    -0.761 r  HDMI_bd_i/clk_wiz_0/inst/plle2_adv_inst/CLKOUT0
+                         net (fo=1, routed)           2.007     1.246    HDMI_bd_i/clk_wiz_0/inst/clk_out1_HDMI_bd_clk_wiz_0_0
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091     1.337 r  HDMI_bd_i/clk_wiz_0/inst/clkout1_buf/O
+                         net (fo=166, routed)         1.669     3.006    HDMI_bd_i/dvi2rgb_0/U0/TMDS_ClockingX/RefClk
+    SLICE_X113Y74        FDPE                                         r  HDMI_bd_i/dvi2rgb_0/U0/TMDS_ClockingX/rMMCM_Reset_q_reg[1]/C
+                         clock pessimism             -0.423     2.583    
+                         clock uncertainty           -0.065     2.518    
+    SLICE_X113Y74        FDPE (Recov_fdpe_C_PRE)     -0.530     1.988    HDMI_bd_i/dvi2rgb_0/U0/TMDS_ClockingX/rMMCM_Reset_q_reg[1]
+  -------------------------------------------------------------------
+                         required time                          1.988    
+                         arrival time                           1.200    
+  -------------------------------------------------------------------
+                         slack                                  3.188    
+
+Slack (MET) :             3.475ns  (required time - arrival time)
+  Source:                 HDMI_bd_i/dvi2rgb_0/U0/TMDS_ClockingX/RdyLostReset/SyncAsyncx/oSyncStages_reg[1]/C
+                            (rising edge-triggered cell FDPE clocked by clk_out1_HDMI_bd_clk_wiz_0_0  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            HDMI_bd_i/dvi2rgb_0/U0/TMDS_ClockingX/aLocked_reg/CLR
+                            (recovery check against rising-edge clock clk_out1_HDMI_bd_clk_wiz_0_0  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             **async_default**
+  Path Type:              Recovery (Max at Slow Process Corner)
+  Requirement:            5.000ns  (clk_out1_HDMI_bd_clk_wiz_0_0 rise@5.000ns - clk_out1_HDMI_bd_clk_wiz_0_0 rise@0.000ns)
+  Data Path Delay:        0.944ns  (logic 0.419ns (44.384%)  route 0.525ns (55.616%))
+  Logic Levels:           0  
+  Clock Path Skew:        -0.022ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    -1.992ns = ( 3.008 - 5.000 ) 
+    Source Clock Delay      (SCD):    -2.353ns
+    Clock Pessimism Removal (CPR):    -0.383ns
+  Clock Uncertainty:      0.065ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.109ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out1_HDMI_bd_clk_wiz_0_0 rise edge)
+                                                      0.000     0.000 r  
+    K17                                               0.000     0.000 r  CLK (IN)
+                         net (fo=0)                   0.000     0.000    HDMI_bd_i/clk_wiz_0/inst/clk_in1
+    K17                  IBUF (Prop_ibuf_I_O)         1.475     1.475 r  HDMI_bd_i/clk_wiz_0/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           1.306     2.781    HDMI_bd_i/clk_wiz_0/inst/clk_in1_HDMI_bd_clk_wiz_0_0
+    PLLE2_ADV_X1Y2       PLLE2_ADV (Prop_plle2_adv_CLKIN1_CLKOUT0)
+                                                     -9.282    -6.501 r  HDMI_bd_i/clk_wiz_0/inst/plle2_adv_inst/CLKOUT0
+                         net (fo=1, routed)           2.200    -4.301    HDMI_bd_i/clk_wiz_0/inst/clk_out1_HDMI_bd_clk_wiz_0_0
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101    -4.200 r  HDMI_bd_i/clk_wiz_0/inst/clkout1_buf/O
+                         net (fo=166, routed)         1.847    -2.353    HDMI_bd_i/dvi2rgb_0/U0/TMDS_ClockingX/RdyLostReset/SyncAsyncx/RefClk
+    SLICE_X111Y76        FDPE                                         r  HDMI_bd_i/dvi2rgb_0/U0/TMDS_ClockingX/RdyLostReset/SyncAsyncx/oSyncStages_reg[1]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X111Y76        FDPE (Prop_fdpe_C_Q)         0.419    -1.934 f  HDMI_bd_i/dvi2rgb_0/U0/TMDS_ClockingX/RdyLostReset/SyncAsyncx/oSyncStages_reg[1]/Q
+                         net (fo=1, routed)           0.525    -1.409    HDMI_bd_i/dvi2rgb_0/U0/TMDS_ClockingX/rRdyRst
+    SLICE_X112Y76        FDCE                                         f  HDMI_bd_i/dvi2rgb_0/U0/TMDS_ClockingX/aLocked_reg/CLR
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_HDMI_bd_clk_wiz_0_0 rise edge)
+                                                      5.000     5.000 r  
+    K17                                               0.000     5.000 r  CLK (IN)
+                         net (fo=0)                   0.000     5.000    HDMI_bd_i/clk_wiz_0/inst/clk_in1
+    K17                  IBUF (Prop_ibuf_I_O)         1.404     6.404 r  HDMI_bd_i/clk_wiz_0/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           1.181     7.585    HDMI_bd_i/clk_wiz_0/inst/clk_in1_HDMI_bd_clk_wiz_0_0
+    PLLE2_ADV_X1Y2       PLLE2_ADV (Prop_plle2_adv_CLKIN1_CLKOUT0)
+                                                     -8.346    -0.761 r  HDMI_bd_i/clk_wiz_0/inst/plle2_adv_inst/CLKOUT0
+                         net (fo=1, routed)           2.007     1.246    HDMI_bd_i/clk_wiz_0/inst/clk_out1_HDMI_bd_clk_wiz_0_0
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091     1.337 r  HDMI_bd_i/clk_wiz_0/inst/clkout1_buf/O
+                         net (fo=166, routed)         1.671     3.008    HDMI_bd_i/dvi2rgb_0/U0/TMDS_ClockingX/RefClk
+    SLICE_X112Y76        FDCE                                         r  HDMI_bd_i/dvi2rgb_0/U0/TMDS_ClockingX/aLocked_reg/C
+                         clock pessimism             -0.383     2.625    
+                         clock uncertainty           -0.065     2.560    
+    SLICE_X112Y76        FDCE (Recov_fdce_C_CLR)     -0.494     2.066    HDMI_bd_i/dvi2rgb_0/U0/TMDS_ClockingX/aLocked_reg
+  -------------------------------------------------------------------
+                         required time                          2.066    
+                         arrival time                           1.409    
+  -------------------------------------------------------------------
+                         slack                                  3.475    
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             0.404ns  (arrival time - required time)
+  Source:                 HDMI_bd_i/dvi2rgb_0/U0/TMDS_ClockingX/RdyLostReset/SyncAsyncx/oSyncStages_reg[1]/C
+                            (rising edge-triggered cell FDPE clocked by clk_out1_HDMI_bd_clk_wiz_0_0  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            HDMI_bd_i/dvi2rgb_0/U0/TMDS_ClockingX/aLocked_reg/CLR
+                            (removal check against rising-edge clock clk_out1_HDMI_bd_clk_wiz_0_0  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             **async_default**
+  Path Type:              Removal (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_out1_HDMI_bd_clk_wiz_0_0 rise@0.000ns - clk_out1_HDMI_bd_clk_wiz_0_0 rise@0.000ns)
+  Data Path Delay:        0.296ns  (logic 0.128ns (43.239%)  route 0.168ns (56.761%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    -0.301ns
+    Source Clock Delay      (SCD):    -0.532ns
+    Clock Pessimism Removal (CPR):    0.217ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out1_HDMI_bd_clk_wiz_0_0 rise edge)
+                                                      0.000     0.000 r  
+    K17                                               0.000     0.000 r  CLK (IN)
+                         net (fo=0)                   0.000     0.000    HDMI_bd_i/clk_wiz_0/inst/clk_in1
+    K17                  IBUF (Prop_ibuf_I_O)         0.243     0.243 r  HDMI_bd_i/clk_wiz_0/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           0.440     0.683    HDMI_bd_i/clk_wiz_0/inst/clk_in1_HDMI_bd_clk_wiz_0_0
+    PLLE2_ADV_X1Y2       PLLE2_ADV (Prop_plle2_adv_CLKIN1_CLKOUT0)
+                                                     -2.576    -1.893 r  HDMI_bd_i/clk_wiz_0/inst/plle2_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.711    -1.181    HDMI_bd_i/clk_wiz_0/inst/clk_out1_HDMI_bd_clk_wiz_0_0
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026    -1.155 r  HDMI_bd_i/clk_wiz_0/inst/clkout1_buf/O
+                         net (fo=166, routed)         0.624    -0.532    HDMI_bd_i/dvi2rgb_0/U0/TMDS_ClockingX/RdyLostReset/SyncAsyncx/RefClk
+    SLICE_X111Y76        FDPE                                         r  HDMI_bd_i/dvi2rgb_0/U0/TMDS_ClockingX/RdyLostReset/SyncAsyncx/oSyncStages_reg[1]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X111Y76        FDPE (Prop_fdpe_C_Q)         0.128    -0.404 f  HDMI_bd_i/dvi2rgb_0/U0/TMDS_ClockingX/RdyLostReset/SyncAsyncx/oSyncStages_reg[1]/Q
+                         net (fo=1, routed)           0.168    -0.235    HDMI_bd_i/dvi2rgb_0/U0/TMDS_ClockingX/rRdyRst
+    SLICE_X112Y76        FDCE                                         f  HDMI_bd_i/dvi2rgb_0/U0/TMDS_ClockingX/aLocked_reg/CLR
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_HDMI_bd_clk_wiz_0_0 rise edge)
+                                                      0.000     0.000 r  
+    K17                                               0.000     0.000 r  CLK (IN)
+                         net (fo=0)                   0.000     0.000    HDMI_bd_i/clk_wiz_0/inst/clk_in1
+    K17                  IBUF (Prop_ibuf_I_O)         0.431     0.431 r  HDMI_bd_i/clk_wiz_0/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           0.481     0.912    HDMI_bd_i/clk_wiz_0/inst/clk_in1_HDMI_bd_clk_wiz_0_0
+    PLLE2_ADV_X1Y2       PLLE2_ADV (Prop_plle2_adv_CLKIN1_CLKOUT0)
+                                                     -2.903    -1.991 r  HDMI_bd_i/clk_wiz_0/inst/plle2_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.768    -1.223    HDMI_bd_i/clk_wiz_0/inst/clk_out1_HDMI_bd_clk_wiz_0_0
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029    -1.194 r  HDMI_bd_i/clk_wiz_0/inst/clkout1_buf/O
+                         net (fo=166, routed)         0.893    -0.301    HDMI_bd_i/dvi2rgb_0/U0/TMDS_ClockingX/RefClk
+    SLICE_X112Y76        FDCE                                         r  HDMI_bd_i/dvi2rgb_0/U0/TMDS_ClockingX/aLocked_reg/C
+                         clock pessimism             -0.217    -0.519    
+    SLICE_X112Y76        FDCE (Remov_fdce_C_CLR)     -0.121    -0.640    HDMI_bd_i/dvi2rgb_0/U0/TMDS_ClockingX/aLocked_reg
+  -------------------------------------------------------------------
+                         required time                          0.640    
+                         arrival time                          -0.235    
+  -------------------------------------------------------------------
+                         slack                                  0.404    
+
+Slack (MET) :             0.550ns  (arrival time - required time)
+  Source:                 HDMI_bd_i/dvi2rgb_0/U0/TMDS_ClockingX/LockLostReset/SyncAsyncx/oSyncStages_reg[1]/C
+                            (rising edge-triggered cell FDPE clocked by clk_out1_HDMI_bd_clk_wiz_0_0  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            HDMI_bd_i/dvi2rgb_0/U0/TMDS_ClockingX/rMMCM_Reset_q_reg[0]/PRE
+                            (removal check against rising-edge clock clk_out1_HDMI_bd_clk_wiz_0_0  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             **async_default**
+  Path Type:              Removal (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_out1_HDMI_bd_clk_wiz_0_0 rise@0.000ns - clk_out1_HDMI_bd_clk_wiz_0_0 rise@0.000ns)
+  Data Path Delay:        0.434ns  (logic 0.148ns (34.084%)  route 0.286ns (65.916%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.032ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    -0.302ns
+    Source Clock Delay      (SCD):    -0.530ns
+    Clock Pessimism Removal (CPR):    0.195ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out1_HDMI_bd_clk_wiz_0_0 rise edge)
+                                                      0.000     0.000 r  
+    K17                                               0.000     0.000 r  CLK (IN)
+                         net (fo=0)                   0.000     0.000    HDMI_bd_i/clk_wiz_0/inst/clk_in1
+    K17                  IBUF (Prop_ibuf_I_O)         0.243     0.243 r  HDMI_bd_i/clk_wiz_0/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           0.440     0.683    HDMI_bd_i/clk_wiz_0/inst/clk_in1_HDMI_bd_clk_wiz_0_0
+    PLLE2_ADV_X1Y2       PLLE2_ADV (Prop_plle2_adv_CLKIN1_CLKOUT0)
+                                                     -2.576    -1.893 r  HDMI_bd_i/clk_wiz_0/inst/plle2_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.711    -1.181    HDMI_bd_i/clk_wiz_0/inst/clk_out1_HDMI_bd_clk_wiz_0_0
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026    -1.155 r  HDMI_bd_i/clk_wiz_0/inst/clkout1_buf/O
+                         net (fo=166, routed)         0.626    -0.530    HDMI_bd_i/dvi2rgb_0/U0/TMDS_ClockingX/LockLostReset/SyncAsyncx/RefClk
+    SLICE_X112Y77        FDPE                                         r  HDMI_bd_i/dvi2rgb_0/U0/TMDS_ClockingX/LockLostReset/SyncAsyncx/oSyncStages_reg[1]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X112Y77        FDPE (Prop_fdpe_C_Q)         0.148    -0.382 f  HDMI_bd_i/dvi2rgb_0/U0/TMDS_ClockingX/LockLostReset/SyncAsyncx/oSyncStages_reg[1]/Q
+                         net (fo=8, routed)           0.286    -0.095    HDMI_bd_i/dvi2rgb_0/U0/TMDS_ClockingX/rLockLostRst
+    SLICE_X113Y74        FDPE                                         f  HDMI_bd_i/dvi2rgb_0/U0/TMDS_ClockingX/rMMCM_Reset_q_reg[0]/PRE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_HDMI_bd_clk_wiz_0_0 rise edge)
+                                                      0.000     0.000 r  
+    K17                                               0.000     0.000 r  CLK (IN)
+                         net (fo=0)                   0.000     0.000    HDMI_bd_i/clk_wiz_0/inst/clk_in1
+    K17                  IBUF (Prop_ibuf_I_O)         0.431     0.431 r  HDMI_bd_i/clk_wiz_0/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           0.481     0.912    HDMI_bd_i/clk_wiz_0/inst/clk_in1_HDMI_bd_clk_wiz_0_0
+    PLLE2_ADV_X1Y2       PLLE2_ADV (Prop_plle2_adv_CLKIN1_CLKOUT0)
+                                                     -2.903    -1.991 r  HDMI_bd_i/clk_wiz_0/inst/plle2_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.768    -1.223    HDMI_bd_i/clk_wiz_0/inst/clk_out1_HDMI_bd_clk_wiz_0_0
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029    -1.194 r  HDMI_bd_i/clk_wiz_0/inst/clkout1_buf/O
+                         net (fo=166, routed)         0.892    -0.302    HDMI_bd_i/dvi2rgb_0/U0/TMDS_ClockingX/RefClk
+    SLICE_X113Y74        FDPE                                         r  HDMI_bd_i/dvi2rgb_0/U0/TMDS_ClockingX/rMMCM_Reset_q_reg[0]/C
+                         clock pessimism             -0.195    -0.498    
+    SLICE_X113Y74        FDPE (Remov_fdpe_C_PRE)     -0.148    -0.646    HDMI_bd_i/dvi2rgb_0/U0/TMDS_ClockingX/rMMCM_Reset_q_reg[0]
+  -------------------------------------------------------------------
+                         required time                          0.646    
+                         arrival time                          -0.095    
+  -------------------------------------------------------------------
+                         slack                                  0.550    
+
+Slack (MET) :             0.550ns  (arrival time - required time)
+  Source:                 HDMI_bd_i/dvi2rgb_0/U0/TMDS_ClockingX/LockLostReset/SyncAsyncx/oSyncStages_reg[1]/C
+                            (rising edge-triggered cell FDPE clocked by clk_out1_HDMI_bd_clk_wiz_0_0  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            HDMI_bd_i/dvi2rgb_0/U0/TMDS_ClockingX/rMMCM_Reset_q_reg[1]/PRE
+                            (removal check against rising-edge clock clk_out1_HDMI_bd_clk_wiz_0_0  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             **async_default**
+  Path Type:              Removal (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_out1_HDMI_bd_clk_wiz_0_0 rise@0.000ns - clk_out1_HDMI_bd_clk_wiz_0_0 rise@0.000ns)
+  Data Path Delay:        0.434ns  (logic 0.148ns (34.084%)  route 0.286ns (65.916%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.032ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    -0.302ns
+    Source Clock Delay      (SCD):    -0.530ns
+    Clock Pessimism Removal (CPR):    0.195ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out1_HDMI_bd_clk_wiz_0_0 rise edge)
+                                                      0.000     0.000 r  
+    K17                                               0.000     0.000 r  CLK (IN)
+                         net (fo=0)                   0.000     0.000    HDMI_bd_i/clk_wiz_0/inst/clk_in1
+    K17                  IBUF (Prop_ibuf_I_O)         0.243     0.243 r  HDMI_bd_i/clk_wiz_0/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           0.440     0.683    HDMI_bd_i/clk_wiz_0/inst/clk_in1_HDMI_bd_clk_wiz_0_0
+    PLLE2_ADV_X1Y2       PLLE2_ADV (Prop_plle2_adv_CLKIN1_CLKOUT0)
+                                                     -2.576    -1.893 r  HDMI_bd_i/clk_wiz_0/inst/plle2_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.711    -1.181    HDMI_bd_i/clk_wiz_0/inst/clk_out1_HDMI_bd_clk_wiz_0_0
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026    -1.155 r  HDMI_bd_i/clk_wiz_0/inst/clkout1_buf/O
+                         net (fo=166, routed)         0.626    -0.530    HDMI_bd_i/dvi2rgb_0/U0/TMDS_ClockingX/LockLostReset/SyncAsyncx/RefClk
+    SLICE_X112Y77        FDPE                                         r  HDMI_bd_i/dvi2rgb_0/U0/TMDS_ClockingX/LockLostReset/SyncAsyncx/oSyncStages_reg[1]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X112Y77        FDPE (Prop_fdpe_C_Q)         0.148    -0.382 f  HDMI_bd_i/dvi2rgb_0/U0/TMDS_ClockingX/LockLostReset/SyncAsyncx/oSyncStages_reg[1]/Q
+                         net (fo=8, routed)           0.286    -0.095    HDMI_bd_i/dvi2rgb_0/U0/TMDS_ClockingX/rLockLostRst
+    SLICE_X113Y74        FDPE                                         f  HDMI_bd_i/dvi2rgb_0/U0/TMDS_ClockingX/rMMCM_Reset_q_reg[1]/PRE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_HDMI_bd_clk_wiz_0_0 rise edge)
+                                                      0.000     0.000 r  
+    K17                                               0.000     0.000 r  CLK (IN)
+                         net (fo=0)                   0.000     0.000    HDMI_bd_i/clk_wiz_0/inst/clk_in1
+    K17                  IBUF (Prop_ibuf_I_O)         0.431     0.431 r  HDMI_bd_i/clk_wiz_0/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           0.481     0.912    HDMI_bd_i/clk_wiz_0/inst/clk_in1_HDMI_bd_clk_wiz_0_0
+    PLLE2_ADV_X1Y2       PLLE2_ADV (Prop_plle2_adv_CLKIN1_CLKOUT0)
+                                                     -2.903    -1.991 r  HDMI_bd_i/clk_wiz_0/inst/plle2_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.768    -1.223    HDMI_bd_i/clk_wiz_0/inst/clk_out1_HDMI_bd_clk_wiz_0_0
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029    -1.194 r  HDMI_bd_i/clk_wiz_0/inst/clkout1_buf/O
+                         net (fo=166, routed)         0.892    -0.302    HDMI_bd_i/dvi2rgb_0/U0/TMDS_ClockingX/RefClk
+    SLICE_X113Y74        FDPE                                         r  HDMI_bd_i/dvi2rgb_0/U0/TMDS_ClockingX/rMMCM_Reset_q_reg[1]/C
+                         clock pessimism             -0.195    -0.498    
+    SLICE_X113Y74        FDPE (Remov_fdpe_C_PRE)     -0.148    -0.646    HDMI_bd_i/dvi2rgb_0/U0/TMDS_ClockingX/rMMCM_Reset_q_reg[1]
+  -------------------------------------------------------------------
+                         required time                          0.646    
+                         arrival time                          -0.095    
+  -------------------------------------------------------------------
+                         slack                                  0.550    
+
+
+
+
+

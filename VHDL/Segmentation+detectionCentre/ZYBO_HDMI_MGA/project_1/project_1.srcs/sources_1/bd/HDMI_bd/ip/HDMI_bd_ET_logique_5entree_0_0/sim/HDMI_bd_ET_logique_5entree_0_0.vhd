@@ -61,7 +61,8 @@ ENTITY HDMI_bd_ET_logique_5entree_0_0 IS
     entree3 : IN STD_LOGIC;
     entree4 : IN STD_LOGIC;
     entree5 : IN STD_LOGIC;
-    entree6 : IN STD_LOGIC
+    entree6 : IN STD_LOGIC;
+    entree7 : IN STD_LOGIC
   );
 END HDMI_bd_ET_logique_5entree_0_0;
 
@@ -76,7 +77,8 @@ ARCHITECTURE HDMI_bd_ET_logique_5entree_0_0_arch OF HDMI_bd_ET_logique_5entree_0
       entree3 : IN STD_LOGIC;
       entree4 : IN STD_LOGIC;
       entree5 : IN STD_LOGIC;
-      entree6 : IN STD_LOGIC
+      entree6 : IN STD_LOGIC;
+      entree7 : IN STD_LOGIC
     );
   END COMPONENT ET_logique_5entree;
   ATTRIBUTE IP_DEFINITION_SOURCE : STRING;
@@ -90,6 +92,7 @@ BEGIN
       entree3 => entree3,
       entree4 => entree4,
       entree5 => entree5,
-      entree6 => entree6
+      entree6 => entree6,
+      entree7 => entree7
     );
 END HDMI_bd_ET_logique_5entree_0_0_arch;

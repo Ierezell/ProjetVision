@@ -1,10 +1,10 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.2.1 (win64) Build 2288692 Thu Jul 26 18:24:02 MDT 2018
-// Date        : Sun Dec  2 17:06:00 2018
+// Date        : Wed Dec  5 14:09:19 2018
 // Host        : pcetu-135 running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode synth_stub
-//               e:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/ip/HDMI_bd_reg_Nbits_1_0/HDMI_bd_reg_Nbits_1_0_stub.v
+//               C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/ip/HDMI_bd_reg_Nbits_1_0/HDMI_bd_reg_Nbits_1_0_stub.v
 // Design      : HDMI_bd_reg_Nbits_1_0
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7z020clg400-1

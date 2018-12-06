@@ -47,7 +47,7 @@ begin
 
 process(m_Xaxis_dout_tdata,m_Yaxis_dout_tdata,nb_column,nb_ligne,PixelNoirBlanc)
 begin
-    if (nb_column=x"aF" AND nb_ligne=x"aF") then 
+    if ( nb_column>x"320" and nb_column<x"360") then --nb_ligne=x"aF" AND
         RGB_OUT<=x"FF0000";
     elsif PixelNoirBlanc='1' then 
         RGB_OUT <= x"FFFFFF"; --"111111111111111111111111" when PixelNoirBlanc='1' else "000000000000000000000000";

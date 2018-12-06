@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Tue Dec  4 20:03:41 2018" VIVADOVERSION="2018.2.2">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed Dec  5 11:57:39 2018" VIVADOVERSION="2018.2.1">
 
   <SYSTEMINFO ARCH="zynq" BOARD="digilentinc.com:zybo-z7-20:part0:1.0" DEVICE="7z020" NAME="c_counter_binary" PACKAGE="clg400" SPEEDGRADE="-1"/>
 
@@ -9,11 +9,11 @@
         <CONNECTION INSTANCE="div_xAxis" PORT="aclk"/>
         <CONNECTION INSTANCE="div_yAxis" PORT="aclk"/>
         <CONNECTION INSTANCE="detect_end_image_0" PORT="CLK"/>
-        <CONNECTION INSTANCE="ligne_counter" PORT="CLK"/>
         <CONNECTION INSTANCE="Blank_pixel_counter" PORT="CLK"/>
-        <CONNECTION INSTANCE="column_counter" PORT="CLK"/>
         <CONNECTION INSTANCE="Additionneur_Nbits_0" PORT="CLK"/>
         <CONNECTION INSTANCE="Additionneur_Nbits_1" PORT="CLK"/>
+        <CONNECTION INSTANCE="ligne_counter" PORT="CLK"/>
+        <CONNECTION INSTANCE="column_counter" PORT="CLK"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="I" NAME="Pixel_White_Black" SIGIS="undef" SIGNAME="External_Ports_Pixel_White_Black">
@@ -25,11 +25,11 @@
     </PORT>
     <PORT DIR="I" NAME="RESET" SIGIS="rst" SIGNAME="External_Ports_RESET">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="ligne_counter" PORT="RESET"/>
         <CONNECTION INSTANCE="Blank_pixel_counter" PORT="RESET"/>
-        <CONNECTION INSTANCE="column_counter" PORT="RESET"/>
         <CONNECTION INSTANCE="Additionneur_Nbits_0" PORT="RESET"/>
         <CONNECTION INSTANCE="Additionneur_Nbits_1" PORT="RESET"/>
+        <CONNECTION INSTANCE="ligne_counter" PORT="RESET"/>
+        <CONNECTION INSTANCE="column_counter" PORT="RESET"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="O" LEFT="11" NAME="xMoy" RIGHT="0" SIGIS="undef" SIGNAME="divideur_select_outp_0_Sortie">
@@ -40,16 +40,6 @@
     <PORT DIR="O" LEFT="11" NAME="yMoy" RIGHT="0" SIGIS="undef" SIGNAME="divideur_select_outp_1_Sortie">
       <CONNECTIONS>
         <CONNECTION INSTANCE="divideur_select_outp_1" PORT="Sortie"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" NAME="CE_ligne_count" SIGIS="undef" SIGNAME="External_Ports_CE_ligne_count">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="ligne_counter" PORT="EN"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" NAME="CE_column_count" SIGIS="undef" SIGNAME="External_Ports_CE_column_count">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="column_counter" PORT="EN"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="O" LEFT="10" NAME="nb_ligne" RIGHT="0" SIGIS="undef" SIGNAME="ligne_counter_Q">
@@ -295,11 +285,11 @@
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
-    <MODULE FULLNAME="/column_counter" HWVERSION="1.0" INSTANCE="column_counter" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="Counter" VLNV="xilinx.com:module_ref:Counter:1.0">
+    <MODULE FULLNAME="/column_counter" HWVERSION="1.0" INSTANCE="column_counter" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="counter_autoreload" VLNV="xilinx.com:module_ref:counter_autoreload:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
         <PARAMETER NAME="N" VALUE="11"/>
-        <PARAMETER NAME="Component_Name" VALUE="c_counter_binary_ligne_counter_1"/>
+        <PARAMETER NAME="Component_Name" VALUE="c_counter_binary_counter_autoreload_0_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
@@ -313,9 +303,19 @@
             <CONNECTION INSTANCE="External_Ports" PORT="RESET"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="EN" SIGIS="undef" SIGNAME="External_Ports_CE_column_count">
+        <PORT DIR="I" NAME="EN" SIGIS="undef" SIGNAME="xlconstant_2_dout">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="CE_column_count"/>
+            <CONNECTION INSTANCE="xlconstant_2" PORT="dout"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="10" NAME="comparator" RIGHT="0" SIGIS="undef" SIGNAME="xlconstant_0_dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="xlconstant_0" PORT="dout"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="endOfCount" SIGIS="undef" SIGNAME="column_counter_endOfCount">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="ligne_counter" PORT="EN"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="10" NAME="Q" RIGHT="0" SIGIS="undef" SIGNAME="column_counter_Q">
@@ -689,11 +689,11 @@
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
-    <MODULE FULLNAME="/ligne_counter" HWVERSION="1.0" INSTANCE="ligne_counter" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="Counter" VLNV="xilinx.com:module_ref:Counter:1.0">
+    <MODULE FULLNAME="/ligne_counter" HWVERSION="1.0" INSTANCE="ligne_counter" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="counter_autoreload" VLNV="xilinx.com:module_ref:counter_autoreload:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
         <PARAMETER NAME="N" VALUE="11"/>
-        <PARAMETER NAME="Component_Name" VALUE="c_counter_binary_Counter_0_0"/>
+        <PARAMETER NAME="Component_Name" VALUE="c_counter_binary_column_counter_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
@@ -707,16 +707,73 @@
             <CONNECTION INSTANCE="External_Ports" PORT="RESET"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="EN" SIGIS="undef" SIGNAME="External_Ports_CE_ligne_count">
+        <PORT DIR="I" NAME="EN" SIGIS="undef" SIGNAME="column_counter_endOfCount">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="CE_ligne_count"/>
+            <CONNECTION INSTANCE="column_counter" PORT="endOfCount"/>
           </CONNECTIONS>
         </PORT>
+        <PORT DIR="I" LEFT="10" NAME="comparator" RIGHT="0" SIGIS="undef" SIGNAME="xlconstant_1_dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="xlconstant_1" PORT="dout"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="endOfCount" SIGIS="undef"/>
         <PORT DIR="O" LEFT="10" NAME="Q" RIGHT="0" SIGIS="undef" SIGNAME="ligne_counter_Q">
           <CONNECTIONS>
             <CONNECTION INSTANCE="External_Ports" PORT="nb_ligne"/>
             <CONNECTION INSTANCE="detect_end_image_0" PORT="ligne"/>
             <CONNECTION INSTANCE="adapt_input_ouput_3" PORT="entree"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE FULLNAME="/xlconstant_0" HWVERSION="1.1" INSTANCE="xlconstant_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlconstant" VLNV="xilinx.com:ip:xlconstant:1.1">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="CONST_WIDTH" VALUE="11"/>
+        <PARAMETER NAME="CONST_VAL" VALUE="0x63F"/>
+        <PARAMETER NAME="Component_Name" VALUE="c_counter_binary_xlconstant_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="O" LEFT="10" NAME="dout" RIGHT="0" SIGIS="undef" SIGNAME="xlconstant_0_dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="column_counter" PORT="comparator"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE FULLNAME="/xlconstant_1" HWVERSION="1.1" INSTANCE="xlconstant_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlconstant" VLNV="xilinx.com:ip:xlconstant:1.1">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="CONST_WIDTH" VALUE="11"/>
+        <PARAMETER NAME="CONST_VAL" VALUE="0x4AF"/>
+        <PARAMETER NAME="Component_Name" VALUE="c_counter_binary_xlconstant_0_1"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="O" LEFT="10" NAME="dout" RIGHT="0" SIGIS="undef" SIGNAME="xlconstant_1_dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="ligne_counter" PORT="comparator"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE FULLNAME="/xlconstant_2" HWVERSION="1.1" INSTANCE="xlconstant_2" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlconstant" VLNV="xilinx.com:ip:xlconstant:1.1">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="CONST_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="CONST_VAL" VALUE="0x1"/>
+        <PARAMETER NAME="Component_Name" VALUE="c_counter_binary_xlconstant_0_2"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="O" LEFT="0" NAME="dout" RIGHT="0" SIGIS="undef" SIGNAME="xlconstant_2_dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="column_counter" PORT="EN"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>

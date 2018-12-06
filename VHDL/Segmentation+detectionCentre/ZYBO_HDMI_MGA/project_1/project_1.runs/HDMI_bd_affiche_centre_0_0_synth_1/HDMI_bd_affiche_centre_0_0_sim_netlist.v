@@ -1,7 +1,7 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.2.1 (win64) Build 2288692 Thu Jul 26 18:24:02 MDT 2018
-// Date        : Sun Dec  2 20:59:40 2018
+// Date        : Wed Dec  5 13:47:40 2018
 // Host        : pcetu-135 running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim -rename_top decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix -prefix
 //               decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ HDMI_bd_affiche_centre_0_0_sim_netlist.v
@@ -30,31 +30,69 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix
   output [23:0]RGB_OUT;
 
   wire PixelNoirBlanc;
+  wire [23:15]\^RGB_OUT ;
+  wire \RGB_OUT[16]_INST_0_i_1_n_0 ;
+  wire \RGB_OUT[16]_INST_0_i_2_n_0 ;
+  wire [10:0]nb_column;
 
-  assign RGB_OUT[23] = PixelNoirBlanc;
-  assign RGB_OUT[22] = PixelNoirBlanc;
-  assign RGB_OUT[21] = PixelNoirBlanc;
-  assign RGB_OUT[20] = PixelNoirBlanc;
-  assign RGB_OUT[19] = PixelNoirBlanc;
-  assign RGB_OUT[18] = PixelNoirBlanc;
-  assign RGB_OUT[17] = PixelNoirBlanc;
-  assign RGB_OUT[16] = PixelNoirBlanc;
-  assign RGB_OUT[15] = PixelNoirBlanc;
-  assign RGB_OUT[14] = PixelNoirBlanc;
-  assign RGB_OUT[13] = PixelNoirBlanc;
-  assign RGB_OUT[12] = PixelNoirBlanc;
-  assign RGB_OUT[11] = PixelNoirBlanc;
-  assign RGB_OUT[10] = PixelNoirBlanc;
-  assign RGB_OUT[9] = PixelNoirBlanc;
-  assign RGB_OUT[8] = PixelNoirBlanc;
-  assign RGB_OUT[7] = PixelNoirBlanc;
-  assign RGB_OUT[6] = PixelNoirBlanc;
-  assign RGB_OUT[5] = PixelNoirBlanc;
-  assign RGB_OUT[4] = PixelNoirBlanc;
-  assign RGB_OUT[3] = PixelNoirBlanc;
-  assign RGB_OUT[2] = PixelNoirBlanc;
-  assign RGB_OUT[1] = PixelNoirBlanc;
-  assign RGB_OUT[0] = PixelNoirBlanc;
+  assign RGB_OUT[23] = \^RGB_OUT [23];
+  assign RGB_OUT[22] = \^RGB_OUT [23];
+  assign RGB_OUT[21] = \^RGB_OUT [23];
+  assign RGB_OUT[20] = \^RGB_OUT [23];
+  assign RGB_OUT[19] = \^RGB_OUT [23];
+  assign RGB_OUT[18] = \^RGB_OUT [23];
+  assign RGB_OUT[17] = \^RGB_OUT [23];
+  assign RGB_OUT[16] = \^RGB_OUT [23];
+  assign RGB_OUT[15] = \^RGB_OUT [15];
+  assign RGB_OUT[14] = \^RGB_OUT [15];
+  assign RGB_OUT[13] = \^RGB_OUT [15];
+  assign RGB_OUT[12] = \^RGB_OUT [15];
+  assign RGB_OUT[11] = \^RGB_OUT [15];
+  assign RGB_OUT[10] = \^RGB_OUT [15];
+  assign RGB_OUT[9] = \^RGB_OUT [15];
+  assign RGB_OUT[8] = \^RGB_OUT [15];
+  assign RGB_OUT[7] = \^RGB_OUT [15];
+  assign RGB_OUT[6] = \^RGB_OUT [15];
+  assign RGB_OUT[5] = \^RGB_OUT [15];
+  assign RGB_OUT[4] = \^RGB_OUT [15];
+  assign RGB_OUT[3] = \^RGB_OUT [15];
+  assign RGB_OUT[2] = \^RGB_OUT [15];
+  assign RGB_OUT[1] = \^RGB_OUT [15];
+  assign RGB_OUT[0] = \^RGB_OUT [15];
+  LUT4 #(
+    .INIT(16'hB0E0)) 
+    \RGB_OUT[0]_INST_0 
+       (.I0(\RGB_OUT[16]_INST_0_i_1_n_0 ),
+        .I1(\RGB_OUT[16]_INST_0_i_2_n_0 ),
+        .I2(PixelNoirBlanc),
+        .I3(nb_column[5]),
+        .O(\^RGB_OUT [15]));
+  LUT4 #(
+    .INIT(16'hFF41)) 
+    \RGB_OUT[16]_INST_0 
+       (.I0(\RGB_OUT[16]_INST_0_i_1_n_0 ),
+        .I1(\RGB_OUT[16]_INST_0_i_2_n_0 ),
+        .I2(nb_column[5]),
+        .I3(PixelNoirBlanc),
+        .O(\^RGB_OUT [23]));
+  LUT5 #(
+    .INIT(32'hFEFFFFFF)) 
+    \RGB_OUT[16]_INST_0_i_1 
+       (.I0(nb_column[6]),
+        .I1(nb_column[9]),
+        .I2(nb_column[10]),
+        .I3(nb_column[8]),
+        .I4(nb_column[7]),
+        .O(\RGB_OUT[16]_INST_0_i_1_n_0 ));
+  LUT5 #(
+    .INIT(32'h0001FFFF)) 
+    \RGB_OUT[16]_INST_0_i_2 
+       (.I0(nb_column[2]),
+        .I1(nb_column[3]),
+        .I2(nb_column[0]),
+        .I3(nb_column[1]),
+        .I4(nb_column[4]),
+        .O(\RGB_OUT[16]_INST_0_i_2_n_0 ));
 endmodule
 `ifndef GLBL
 `define GLBL

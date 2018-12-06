@@ -1,13 +1,13 @@
 #-----------------------------------------------------------
-# Vivado v2018.2 (64-bit)
-# SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
-# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
-# Start of session at: Sat Dec  1 17:39:08 2018
-# Process ID: 10400
-# Current directory: D:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/HDMI_bd_detect_end_image_0_1_synth_1
+# Vivado v2018.2.1 (64-bit)
+# SW Build 2288692 on Thu Jul 26 18:24:02 MDT 2018
+# IP Build 2289599 on Thu Jul 26 21:09:20 MDT 2018
+# Start of session at: Wed Dec  5 09:41:38 2018
+# Process ID: 8288
+# Current directory: C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/HDMI_bd_detect_end_image_0_1_synth_1
 # Command line: vivado.exe -log HDMI_bd_detect_end_image_0_1.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source HDMI_bd_detect_end_image_0_1.tcl
-# Log file: D:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/HDMI_bd_detect_end_image_0_1_synth_1/HDMI_bd_detect_end_image_0_1.vds
-# Journal file: D:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/HDMI_bd_detect_end_image_0_1_synth_1\vivado.jou
+# Log file: C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/HDMI_bd_detect_end_image_0_1_synth_1/HDMI_bd_detect_end_image_0_1.vds
+# Journal file: C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/HDMI_bd_detect_end_image_0_1_synth_1\vivado.jou
 #-----------------------------------------------------------
 source HDMI_bd_detect_end_image_0_1.tcl -notrace
 Command: synth_design -top HDMI_bd_detect_end_image_0_1 -part xc7z020clg400-1 -mode out_of_context
@@ -15,17 +15,17 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 13340 
+INFO: Helper process launched with PID 9532 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:04 . Memory (MB): peak = 411.516 ; gain = 101.852
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 390.930 ; gain = 100.656
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'HDMI_bd_detect_end_image_0_1' [d:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/ip/HDMI_bd_detect_end_image_0_1/synth/HDMI_bd_detect_end_image_0_1.vhd:65]
-INFO: [Synth 8-3491] module 'detect_end_image' declared at 'D:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/new/detect_end_image.vhd:35' bound to instance 'U0' of component 'detect_end_image' [d:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/ip/HDMI_bd_detect_end_image_0_1/synth/HDMI_bd_detect_end_image_0_1.vhd:89]
-INFO: [Synth 8-638] synthesizing module 'detect_end_image' [D:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/new/detect_end_image.vhd:42]
-INFO: [Synth 8-256] done synthesizing module 'detect_end_image' (1#1) [D:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/new/detect_end_image.vhd:42]
-INFO: [Synth 8-256] done synthesizing module 'HDMI_bd_detect_end_image_0_1' (2#1) [d:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/ip/HDMI_bd_detect_end_image_0_1/synth/HDMI_bd_detect_end_image_0_1.vhd:65]
+INFO: [Synth 8-638] synthesizing module 'HDMI_bd_detect_end_image_0_1' [c:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/ip/HDMI_bd_detect_end_image_0_1_1/synth/HDMI_bd_detect_end_image_0_1.vhd:65]
+INFO: [Synth 8-3491] module 'detect_end_image' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/new/detect_end_image.vhd:35' bound to instance 'U0' of component 'detect_end_image' [c:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/ip/HDMI_bd_detect_end_image_0_1_1/synth/HDMI_bd_detect_end_image_0_1.vhd:89]
+INFO: [Synth 8-638] synthesizing module 'detect_end_image' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/new/detect_end_image.vhd:42]
+INFO: [Synth 8-256] done synthesizing module 'detect_end_image' (1#1) [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/new/detect_end_image.vhd:42]
+INFO: [Synth 8-256] done synthesizing module 'HDMI_bd_detect_end_image_0_1' (2#1) [c:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/ip/HDMI_bd_detect_end_image_0_1_1/synth/HDMI_bd_detect_end_image_0_1.vhd:65]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 467.676 ; gain = 158.012
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 446.141 ; gain = 155.867
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -38,10 +38,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 467.676 ; gain = 158.012
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 446.141 ; gain = 155.867
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 467.676 ; gain = 158.012
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 446.141 ; gain = 155.867
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7z020clg400-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -54,25 +54,25 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 WARNING: [Constraints 18-5210] No constraint will be written out.
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.063 . Memory (MB): peak = 740.539 ; gain = 1.113
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.085 . Memory (MB): peak = 720.711 ; gain = 1.105
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:17 . Memory (MB): peak = 740.539 ; gain = 430.875
+Finished Constraint Validation : Time (s): cpu = 00:00:16 ; elapsed = 00:00:21 . Memory (MB): peak = 720.711 ; gain = 430.438
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:17 . Memory (MB): peak = 740.539 ; gain = 430.875
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:16 ; elapsed = 00:00:21 . Memory (MB): peak = 720.711 ; gain = 430.438
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:17 . Memory (MB): peak = 740.539 ; gain = 430.875
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:21 . Memory (MB): peak = 720.711 ; gain = 430.438
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:17 . Memory (MB): peak = 740.539 ; gain = 430.875
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:16 ; elapsed = 00:00:21 . Memory (MB): peak = 720.711 ; gain = 430.438
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -114,7 +114,7 @@ Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:18 . Memory (MB): peak = 740.539 ; gain = 430.875
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:22 . Memory (MB): peak = 720.711 ; gain = 430.438
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -126,13 +126,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:24 ; elapsed = 00:00:30 . Memory (MB): peak = 816.535 ; gain = 506.871
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:30 ; elapsed = 00:00:37 . Memory (MB): peak = 797.938 ; gain = 507.664
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:24 ; elapsed = 00:00:30 . Memory (MB): peak = 816.535 ; gain = 506.871
+Finished Timing Optimization : Time (s): cpu = 00:00:30 ; elapsed = 00:00:37 . Memory (MB): peak = 797.938 ; gain = 507.664
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -144,7 +144,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:24 ; elapsed = 00:00:30 . Memory (MB): peak = 826.574 ; gain = 516.910
+Finished Technology Mapping : Time (s): cpu = 00:00:30 ; elapsed = 00:00:37 . Memory (MB): peak = 807.980 ; gain = 517.707
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -168,7 +168,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:25 ; elapsed = 00:00:31 . Memory (MB): peak = 826.574 ; gain = 516.910
+Finished IO Insertion : Time (s): cpu = 00:00:31 ; elapsed = 00:00:39 . Memory (MB): peak = 807.980 ; gain = 517.707
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -181,7 +181,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:25 ; elapsed = 00:00:31 . Memory (MB): peak = 826.574 ; gain = 516.910
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:31 ; elapsed = 00:00:39 . Memory (MB): peak = 807.980 ; gain = 517.707
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -193,25 +193,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:25 ; elapsed = 00:00:31 . Memory (MB): peak = 826.574 ; gain = 516.910
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:31 ; elapsed = 00:00:39 . Memory (MB): peak = 807.980 ; gain = 517.707
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:25 ; elapsed = 00:00:31 . Memory (MB): peak = 826.574 ; gain = 516.910
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:31 ; elapsed = 00:00:39 . Memory (MB): peak = 807.980 ; gain = 517.707
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:25 ; elapsed = 00:00:31 . Memory (MB): peak = 826.574 ; gain = 516.910
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:31 ; elapsed = 00:00:39 . Memory (MB): peak = 807.980 ; gain = 517.707
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:25 ; elapsed = 00:00:31 . Memory (MB): peak = 826.574 ; gain = 516.910
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:31 ; elapsed = 00:00:39 . Memory (MB): peak = 807.980 ; gain = 517.707
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -240,11 +240,11 @@ Report Instance Areas:
 |2     |  U0     |detect_end_image |     6|
 +------+---------+-----------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:25 ; elapsed = 00:00:31 . Memory (MB): peak = 826.574 ; gain = 516.910
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:31 ; elapsed = 00:00:39 . Memory (MB): peak = 807.980 ; gain = 517.707
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:15 ; elapsed = 00:00:22 . Memory (MB): peak = 826.574 ; gain = 244.047
-Synthesis Optimization Complete : Time (s): cpu = 00:00:25 ; elapsed = 00:00:31 . Memory (MB): peak = 826.574 ; gain = 516.910
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:19 ; elapsed = 00:00:28 . Memory (MB): peak = 807.980 ; gain = 243.137
+Synthesis Optimization Complete : Time (s): cpu = 00:00:32 ; elapsed = 00:00:39 . Memory (MB): peak = 807.980 ; gain = 517.707
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
@@ -254,11 +254,11 @@ No Unisim elements were transformed.
 INFO: [Common 17-83] Releasing license: Synthesis
 14 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:27 ; elapsed = 00:00:34 . Memory (MB): peak = 838.449 ; gain = 541.656
+synth_design: Time (s): cpu = 00:00:34 ; elapsed = 00:00:42 . Memory (MB): peak = 824.383 ; gain = 547.113
 WARNING: [Constraints 18-5210] No constraint will be written out.
-INFO: [Common 17-1381] The checkpoint 'D:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/HDMI_bd_detect_end_image_0_1_synth_1/HDMI_bd_detect_end_image_0_1.dcp' has been generated.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/HDMI_bd_detect_end_image_0_1_synth_1/HDMI_bd_detect_end_image_0_1.dcp' has been generated.
 WARNING: [Constraints 18-5210] No constraint will be written out.
-INFO: [Common 17-1381] The checkpoint 'D:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/HDMI_bd_detect_end_image_0_1_synth_1/HDMI_bd_detect_end_image_0_1.dcp' has been generated.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/HDMI_bd_detect_end_image_0_1_synth_1/HDMI_bd_detect_end_image_0_1.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file HDMI_bd_detect_end_image_0_1_utilization_synth.rpt -pb HDMI_bd_detect_end_image_0_1_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.045 . Memory (MB): peak = 838.449 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Sat Dec  1 17:39:59 2018...
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.062 . Memory (MB): peak = 824.383 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Wed Dec  5 09:42:32 2018...

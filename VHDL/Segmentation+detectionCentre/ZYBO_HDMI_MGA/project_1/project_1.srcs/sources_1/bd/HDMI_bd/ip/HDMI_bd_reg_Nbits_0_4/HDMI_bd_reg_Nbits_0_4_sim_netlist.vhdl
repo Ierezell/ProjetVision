@@ -1,10 +1,10 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2018.2.1 (win64) Build 2288692 Thu Jul 26 18:24:02 MDT 2018
--- Date        : Sun Dec  2 17:04:33 2018
+-- Date        : Wed Dec  5 14:09:13 2018
 -- Host        : pcetu-135 running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim
---               E:/VLSI/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/ip/HDMI_bd_reg_Nbits_0_4/HDMI_bd_reg_Nbits_0_4_sim_netlist.vhdl
+--               C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/ip/HDMI_bd_reg_Nbits_0_4/HDMI_bd_reg_Nbits_0_4_sim_netlist.vhdl
 -- Design      : HDMI_bd_reg_Nbits_0_4
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -352,7 +352,7 @@ architecture STRUCTURE of HDMI_bd_reg_Nbits_0_4 is
   attribute x_interface_parameter : string;
   attribute x_interface_parameter of CLK : signal is "XIL_INTERFACENAME CLK, ASSOCIATED_RESET RESET, FREQ_HZ 100000000, PHASE 0.000, CLK_DOMAIN HDMI_bd_dvi2rgb_0_1_PixelClk";
   attribute x_interface_info of RESET : signal is "xilinx.com:signal:reset:1.0 RESET RST";
-  attribute x_interface_parameter of RESET : signal is "XIL_INTERFACENAME RESET, POLARITY ACTIVE_LOW";
+  attribute x_interface_parameter of RESET : signal is "XIL_INTERFACENAME RESET, POLARITY ACTIVE_HIGH";
 begin
 U0: entity work.HDMI_bd_reg_Nbits_0_4_reg_Nbits
      port map (

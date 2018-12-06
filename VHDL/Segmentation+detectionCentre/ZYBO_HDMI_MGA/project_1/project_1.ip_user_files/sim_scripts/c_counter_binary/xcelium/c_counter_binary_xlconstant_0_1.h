@@ -57,8 +57,8 @@
 #include "systemc.h"
 class c_counter_binary_xlconstant_0_1 : public sc_module {
   public:
-  xlconstant_v1_1_5<1,1> mod;
-  sc_out< sc_bv<1> > dout;
+  xlconstant_v1_1_5<11,1199> mod;
+  sc_out< sc_bv<11> > dout;
 c_counter_binary_xlconstant_0_1 (sc_core::sc_module_name name) :sc_module(name), mod("mod") {
     mod.dout(dout);
   }

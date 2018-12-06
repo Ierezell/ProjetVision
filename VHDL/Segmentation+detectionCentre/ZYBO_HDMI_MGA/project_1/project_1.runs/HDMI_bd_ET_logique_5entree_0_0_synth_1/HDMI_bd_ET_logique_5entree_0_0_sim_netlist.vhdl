@@ -1,7 +1,7 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2018.2.1 (win64) Build 2288692 Thu Jul 26 18:24:02 MDT 2018
--- Date        : Sun Dec  2 18:39:45 2018
+-- Date        : Wed Dec  5 10:03:46 2018
 -- Host        : pcetu-135 running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim -rename_top decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix -prefix
 --               decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ HDMI_bd_ET_logique_5entree_0_0_sim_netlist.vhdl
@@ -17,29 +17,40 @@ use UNISIM.VCOMPONENTS.ALL;
 entity decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ET_logique_5entree is
   port (
     PixelNoirBlanc : out STD_LOGIC;
+    entree7 : in STD_LOGIC;
     entree6 : in STD_LOGIC;
     entree1 : in STD_LOGIC;
-    entree3 : in STD_LOGIC;
-    entree2 : in STD_LOGIC;
+    entree4 : in STD_LOGIC;
     entree5 : in STD_LOGIC;
-    entree4 : in STD_LOGIC
+    entree2 : in STD_LOGIC;
+    entree3 : in STD_LOGIC
   );
 end decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ET_logique_5entree;
 
 architecture STRUCTURE of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ET_logique_5entree is
+  signal PixelNoirBlanc_INST_0_i_1_n_0 : STD_LOGIC;
 begin
-\PixelNoirBlanc__0\: unisim.vcomponents.LUT6
+PixelNoirBlanc_INST_0: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"8000000000000000"
+      INIT => X"0080"
     )
         port map (
-      I0 => entree6,
-      I1 => entree1,
-      I2 => entree3,
-      I3 => entree2,
-      I4 => entree5,
-      I5 => entree4,
+      I0 => entree7,
+      I1 => entree6,
+      I2 => entree1,
+      I3 => PixelNoirBlanc_INST_0_i_1_n_0,
       O => PixelNoirBlanc
+    );
+PixelNoirBlanc_INST_0_i_1: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"7FFF"
+    )
+        port map (
+      I0 => entree4,
+      I1 => entree5,
+      I2 => entree2,
+      I3 => entree3,
+      O => PixelNoirBlanc_INST_0_i_1_n_0
     );
 end STRUCTURE;
 library IEEE;
@@ -54,7 +65,8 @@ entity decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix is
     entree3 : in STD_LOGIC;
     entree4 : in STD_LOGIC;
     entree5 : in STD_LOGIC;
-    entree6 : in STD_LOGIC
+    entree6 : in STD_LOGIC;
+    entree7 : in STD_LOGIC
   );
   attribute NotValidForBitStream : boolean;
   attribute NotValidForBitStream of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix : entity is true;
@@ -78,6 +90,7 @@ U0: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ET_logique_5entree
       entree3 => entree3,
       entree4 => entree4,
       entree5 => entree5,
-      entree6 => entree6
+      entree6 => entree6,
+      entree7 => entree7
     );
 end STRUCTURE;

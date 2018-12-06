@@ -59,6 +59,7 @@ ENTITY c_counter_binary_Additionneur_Nbits_1_0 IS
     B : IN STD_LOGIC_VECTOR(17 DOWNTO 0);
     RESET : IN STD_LOGIC;
     CLK : IN STD_LOGIC;
+    EN : IN STD_LOGIC;
     Co : OUT STD_LOGIC;
     S : OUT STD_LOGIC_VECTOR(17 DOWNTO 0)
   );
@@ -76,6 +77,7 @@ ARCHITECTURE c_counter_binary_Additionneur_Nbits_1_0_arch OF c_counter_binary_Ad
       B : IN STD_LOGIC_VECTOR(17 DOWNTO 0);
       RESET : IN STD_LOGIC;
       CLK : IN STD_LOGIC;
+      EN : IN STD_LOGIC;
       Co : OUT STD_LOGIC;
       S : OUT STD_LOGIC_VECTOR(17 DOWNTO 0)
     );
@@ -98,6 +100,7 @@ BEGIN
       B => B,
       RESET => RESET,
       CLK => CLK,
+      EN => EN,
       Co => Co,
       S => S
     );

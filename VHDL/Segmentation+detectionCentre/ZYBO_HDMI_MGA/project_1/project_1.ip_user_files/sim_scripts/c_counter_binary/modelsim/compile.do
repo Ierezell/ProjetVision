@@ -32,10 +32,10 @@ vmap div_gen_v5_1_13 modelsim_lib/msim/div_gen_v5_1_13
 vmap xlconstant_v1_1_5 modelsim_lib/msim/xlconstant_v1_1_5
 
 vlog -work xil_defaultlib -64 -incr -sv \
-"D:/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv" \
+"C:/Programs/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv" \
 
 vcom -work xpm -64 -93 \
-"D:/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_VCOMP.vhd" \
+"C:/Programs/Xilinx/Vivado/2018.2/data/ip/xpm/xpm_VCOMP.vhd" \
 
 vcom -work xil_defaultlib -64 -93 \
 "../../../bd/c_counter_binary/ip/c_counter_binary_detect_end_image_0_1/sim/c_counter_binary_detect_end_image_0_1.vhd" \
@@ -78,28 +78,29 @@ vcom -work xil_defaultlib -64 -93 \
 "../../../bd/c_counter_binary/ip/c_counter_binary_div_yAxis_0/sim/c_counter_binary_div_yAxis_0.vhd" \
 "../../../bd/c_counter_binary/ip/c_counter_binary_divideur_select_outp_0_0/sim/c_counter_binary_divideur_select_outp_0_0.vhd" \
 "../../../bd/c_counter_binary/ip/c_counter_binary_divideur_select_outp_1_0/sim/c_counter_binary_divideur_select_outp_1_0.vhd" \
-"../../../bd/c_counter_binary/ip/c_counter_binary_rdc_1bit_1_0/sim/c_counter_binary_rdc_1bit_1_0.vhd" \
-
-vlog -work xlconstant_v1_1_5 -64 -incr \
-"../../../../project_1.srcs/sources_1/bd/c_counter_binary/ipshared/f1c3/hdl/xlconstant_v1_1_vl_rfs.v" \
-
-vlog -work xil_defaultlib -64 -incr \
-"../../../bd/c_counter_binary/ip/c_counter_binary_xlconstant_0_1/sim/c_counter_binary_xlconstant_0_1.v" \
-
-vcom -work xil_defaultlib -64 -93 \
-"../../../bd/c_counter_binary/ip/c_counter_binary_Counter_0_0/sim/c_counter_binary_Counter_0_0.vhd" \
-"../../../bd/c_counter_binary/ip/c_counter_binary_ligne_counter_1/sim/c_counter_binary_ligne_counter_1.vhd" \
 "../../../bd/c_counter_binary/ip/c_counter_binary_adapt_input_ouput_0_0/sim/c_counter_binary_adapt_input_ouput_0_0.vhd" \
 "../../../bd/c_counter_binary/ip/c_counter_binary_adapt_input_ouput_0_1/sim/c_counter_binary_adapt_input_ouput_0_1.vhd" \
 "../../../bd/c_counter_binary/ip/c_counter_binary_adapt_input_ouput_0_2/sim/c_counter_binary_adapt_input_ouput_0_2.vhd" \
 "../../../bd/c_counter_binary/sim/c_counter_binary.vhd" \
 "../../../bd/c_counter_binary/ip/c_counter_binary_ligne_counter_0/sim/c_counter_binary_ligne_counter_0.vhd" \
-"../../../bd/c_counter_binary/ip/c_counter_binary_add_Nbits_0_0/sim/c_counter_binary_add_Nbits_0_0.vhd" \
-"../../../bd/c_counter_binary/ip/c_counter_binary_add_Nbits_0_1/sim/c_counter_binary_add_Nbits_0_1.vhd" \
-"../../../bd/c_counter_binary/ip/c_counter_binary_reg_Nbits_0_0/sim/c_counter_binary_reg_Nbits_0_0.vhd" \
-"../../../bd/c_counter_binary/ip/c_counter_binary_reg_Nbits_0_1/sim/c_counter_binary_reg_Nbits_0_1.vhd" \
 "../../../bd/c_counter_binary/ip/c_counter_binary_adapt_input_ouput_1_0/sim/c_counter_binary_adapt_input_ouput_1_0.vhd" \
 "../../../bd/c_counter_binary/ip/c_counter_binary_adapt_input_ouput_3_0/sim/c_counter_binary_adapt_input_ouput_3_0.vhd" \
+"../../../bd/c_counter_binary/ip/c_counter_binary_Additionneur_Nbits_0_0/sim/c_counter_binary_Additionneur_Nbits_0_0.vhd" \
+"../../../bd/c_counter_binary/ip/c_counter_binary_Additionneur_Nbits_1_0/sim/c_counter_binary_Additionneur_Nbits_1_0.vhd" \
+"../../../bd/c_counter_binary/ip/c_counter_binary_counter_autoreload_0_0/sim/c_counter_binary_counter_autoreload_0_0.vhd" \
+
+vlog -work xlconstant_v1_1_5 -64 -incr \
+"../../../../project_1.srcs/sources_1/bd/c_counter_binary/ipshared/f1c3/hdl/xlconstant_v1_1_vl_rfs.v" \
+
+vlog -work xil_defaultlib -64 -incr \
+"../../../bd/c_counter_binary/ip/c_counter_binary_xlconstant_0_0/sim/c_counter_binary_xlconstant_0_0.v" \
+
+vcom -work xil_defaultlib -64 -93 \
+"../../../bd/c_counter_binary/ip/c_counter_binary_column_counter_0/sim/c_counter_binary_column_counter_0.vhd" \
+
+vlog -work xil_defaultlib -64 -incr \
+"../../../bd/c_counter_binary/ip/c_counter_binary_xlconstant_0_1/sim/c_counter_binary_xlconstant_0_1.v" \
+"../../../bd/c_counter_binary/ip/c_counter_binary_xlconstant_0_2/sim/c_counter_binary_xlconstant_0_2.v" \
 
 vlog -work xil_defaultlib \
 "glbl.v"
