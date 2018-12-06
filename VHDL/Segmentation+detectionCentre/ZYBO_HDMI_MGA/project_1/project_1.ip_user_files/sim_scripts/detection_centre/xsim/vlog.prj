@@ -1,0 +1,6 @@
+verilog xil_defaultlib  \
+"../../../bd/detection_centre/ip/detection_centre_xlconstant_0_0/sim/detection_centre_xlconstant_0_0.v" \
+
+verilog xil_defaultlib "glbl.v"
+
+nosort

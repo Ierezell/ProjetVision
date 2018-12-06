@@ -1,0 +1,12 @@
+
+{ 
+    crc :  9070426122726801616  , 
+    ccp_crc :  0  , 
+    cmdline : " -wto 4de401f60d8a4a99b8c94bc34a7b0475 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip -L xpm --snapshot Moyenneur_3x1_behav xil_defaultlib.Moyenneur_3x1" , 
+    buildDate : "Jul 26 2018" , 
+    buildTime : "19:36:16" , 
+    linkCmd : "C:\\Programs\\Xilinx\\Vivado\\2018.2\\data\\..\\tps\\mingw\\6.2.0\\win64.o\\nt\\bin\\gcc.exe -Wa,-W  -O -Wl,--stack,104857600 -o \"xsim.dir/Moyenneur_3x1_behav/xsimk.exe\"   \"xsim.dir/Moyenneur_3x1_behav/obj/xsim_0.win64.obj\" \"xsim.dir/Moyenneur_3x1_behav/obj/xsim_1.win64.obj\" \"C:\\Programs\\Xilinx\\Vivado\\2018.2\\lib\\win64.o\\\\librdi_simulator_kernel.dll\"  \"C:\\Programs\\Xilinx\\Vivado\\2018.2\\lib\\win64.o\\\\librdi_simbridge_kernel.dll\"" , 
+    aggregate_nets : 
+    [ 
+    ] 
+} 

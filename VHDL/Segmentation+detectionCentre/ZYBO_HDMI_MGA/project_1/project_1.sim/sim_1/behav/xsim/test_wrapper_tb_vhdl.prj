@@ -1,0 +1,33 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../project_1.srcs/sources_1/new/Counter.vhd" \
+"../../../../project_1.srcs/sources_1/new/adapt_input_ouput.vhd" \
+"../../../../project_1.srcs/sources_1/new/add_1bit.vhd" \
+"../../../../project_1.srcs/sources_1/new/add_Nbits.vhd" \
+"../../../../project_1.srcs/sources_1/new/detect_end_image.vhd" \
+"../../../../project_1.srcs/sources_1/new/divideur_select_output.vhd" \
+"../../../../project_1.srcs/sources_1/imports/sources_1/imports/new/rdc_1bit.vhd" \
+"../../../../project_1.srcs/sources_1/new/reg_1bit.vhd" \
+"../../../../project_1.srcs/sources_1/new/reg_Nbits.vhd" \
+"../../../../project_1.ip_user_files/bd/test/sim/test.vhd" \
+"../../../../project_1.ip_user_files/bd/test/ip/test_Blank_pixel_counter_0/sim/test_Blank_pixel_counter_0.vhd" \
+"../../../../project_1.ip_user_files/bd/test/ip/test_adapt_input_ouput_0_1/sim/test_adapt_input_ouput_0_1.vhd" \
+"../../../../project_1.ip_user_files/bd/test/ip/test_adapt_input_ouput_1_0/sim/test_adapt_input_ouput_1_0.vhd" \
+"../../../../project_1.ip_user_files/bd/test/ip/test_adapt_input_ouput_2_0/sim/test_adapt_input_ouput_2_0.vhd" \
+"../../../../project_1.ip_user_files/bd/test/ip/test_adapt_input_ouput_3_0/sim/test_adapt_input_ouput_3_0.vhd" \
+"../../../../project_1.ip_user_files/bd/test/ip/test_adapt_input_ouput_4_0/sim/test_adapt_input_ouput_4_0.vhd" \
+"../../../../project_1.ip_user_files/bd/test/ip/test_add_Nbits_0_0/sim/test_add_Nbits_0_0.vhd" \
+"../../../../project_1.ip_user_files/bd/test/ip/test_add_Nbits_1_0/sim/test_add_Nbits_1_0.vhd" \
+"../../../../project_1.ip_user_files/bd/test/ip/test_column_counter_0/sim/test_column_counter_0.vhd" \
+"../../../../project_1.ip_user_files/bd/test/ip/test_detect_end_image_0_0/sim/test_detect_end_image_0_0.vhd" \
+"../../../../project_1.ip_user_files/bd/test/ip/test_divideur_select_outp_0_0/sim/test_divideur_select_outp_0_0.vhd" \
+"../../../../project_1.ip_user_files/bd/test/ip/test_divideur_select_outp_1_0/sim/test_divideur_select_outp_1_0.vhd" \
+"../../../../project_1.ip_user_files/bd/test/ip/test_ligne_counter_0/sim/test_ligne_counter_0.vhd" \
+"../../../../project_1.ip_user_files/bd/test/ip/test_rdc_1bit_1_0/sim/test_rdc_1bit_1_0.vhd" \
+"../../../../project_1.ip_user_files/bd/test/ip/test_reg_Nbits_0_0/sim/test_reg_Nbits_0_0.vhd" \
+"../../../../project_1.ip_user_files/bd/test/ip/test_reg_Nbits_1_0/sim/test_reg_Nbits_1_0.vhd" \
+"../../../../project_1.srcs/sources_1/bd/test/hdl/test_wrapper.vhd" \
+"../../../../project_1.srcs/sim_1/new/test_wrapper_tb.vhd" \
+
+# Do not sort compile order
+nosort

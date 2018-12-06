@@ -1,0 +1,397 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Sat Dec  1 13:06:46 2018
+# Process ID: 3896
+# Current directory: D:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent6388 D:\nicol\Documents\GitHub\ProjetVision\VHDL\Segmentation+detectionCentre\ZYBO_HDMI_MGA\project_1\project_1.xpr
+# Log file: D:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/vivado.log
+# Journal file: D:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.xpr
+update_compile_order -fileset sources_1
+launch_simulation
+export_ip_user_files -of_objects  [get_files D:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/new/divideur_Nbit_by_Mbits.vhd] -no_script -reset -force -quiet
+remove_files  D:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/new/divideur_Nbit_by_Mbits.vhd
+set_property top HDMI_bd_wrapper [get_filesets sim_1]
+create_ip -name div_gen -vendor xilinx.com -library ip -version 5.1 -module_name div_gen_0 -dir d:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/ip
+set_property -dict [list CONFIG.algorithm_type {LutMult} CONFIG.latency_configuration {Automatic} CONFIG.dividend_and_quotient_width {12} CONFIG.divisor_width {11} CONFIG.fractional_width {11} CONFIG.latency {10}] [get_ips div_gen_0]
+generate_target {instantiation_template} [get_files d:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/ip/div_gen_0/div_gen_0.xci]
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files d:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/ip/div_gen_0/div_gen_0.xci] -no_script -reset -force -quiet
+remove_files  d:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/ip/div_gen_0/div_gen_0.xci
+create_bd_design "test"
+update_compile_order -fileset sources_1
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:div_gen:5.1 div_gen_0
+endgroup
+create_bd_port -dir I CLK
+connect_bd_net [get_bd_ports CLK] [get_bd_pins div_gen_0/aclk]
+set_property location {-85 70} [get_bd_ports CLK]
+startgroup
+set_property -dict [list CONFIG.dividend_and_quotient_width.VALUE_SRC USER CONFIG.divisor_width.VALUE_SRC USER CONFIG.operand_sign.VALUE_SRC USER] [get_bd_cells div_gen_0]
+set_property -dict [list CONFIG.dividend_and_quotient_width {12} CONFIG.divisor_width {20} CONFIG.operand_sign {Unsigned} CONFIG.fractional_width {20} CONFIG.latency {14}] [get_bd_cells div_gen_0]
+endgroup
+startgroup
+set_property -dict [list CONFIG.dividend_and_quotient_width {20} CONFIG.divisor_width {12} CONFIG.fractional_width {12} CONFIG.latency {22}] [get_bd_cells div_gen_0]
+endgroup
+startgroup
+set_property -dict [list CONFIG.dividend_and_quotient_width {16} CONFIG.divisor_width {16} CONFIG.divisor_width {16} CONFIG.fractional_width {16} CONFIG.latency {18}] [get_bd_cells div_gen_0]
+endgroup
+startgroup
+set_property -dict [list CONFIG.divisor_has_tuser {false} CONFIG.divisor_has_tlast {false} CONFIG.FlowControl {NonBlocking} CONFIG.OutTLASTBehv {Null} CONFIG.latency {18}] [get_bd_cells div_gen_0]
+endgroup
+create_bd_port -dir I -from 15 -to 0 divisor
+copy_bd_objs /  [get_bd_ports {divisor}]
+set_property name dividende [get_bd_ports divisor1]
+connect_bd_net [get_bd_ports dividende] [get_bd_pins div_gen_0/s_axis_dividend_tdata]
+connect_bd_net [get_bd_ports divisor] [get_bd_pins div_gen_0/s_axis_divisor_tdata]
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_0
+endgroup
+connect_bd_net [get_bd_pins xlconstant_0/dout] [get_bd_pins div_gen_0/s_axis_dividend_tvalid]
+connect_bd_net [get_bd_pins xlconstant_0/dout] [get_bd_pins div_gen_0/s_axis_divisor_tvalid]
+create_bd_port -dir O resultat
+delete_bd_objs [get_bd_ports resultat]
+create_bd_port -dir O -from 31 -to 0 sortie
+startgroup
+connect_bd_net [get_bd_ports sortie] [get_bd_pins div_gen_0/m_axis_dout_tdata]
+endgroup
+create_bd_port -dir O sortie_ok
+startgroup
+connect_bd_net [get_bd_ports sortie_ok] [get_bd_pins div_gen_0/m_axis_dout_tvalid]
+endgroup
+set_property location {611 7} [get_bd_ports sortie]
+save_bd_design
+generate_target all [get_files  D:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/test/test.bd]
+catch { config_ip_cache -export [get_ips -all test_div_gen_0_0] }
+catch { config_ip_cache -export [get_ips -all test_xlconstant_0_0] }
+export_ip_user_files -of_objects [get_files D:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/test/test.bd] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] D:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/test/test.bd]
+launch_runs -jobs 4 test_div_gen_0_0_synth_1
+export_simulation -of_objects [get_files D:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/test/test.bd] -directory D:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.ip_user_files/sim_scripts -ip_user_files_dir D:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.ip_user_files -ipstatic_source_dir D:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.ip_user_files/ipstatic -lib_map_path [list {modelsim=D:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.cache/compile_simlib/modelsim} {questa=D:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.cache/compile_simlib/questa} {riviera=D:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.cache/compile_simlib/riviera} {activehdl=D:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+make_wrapper -files [get_files D:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/test/test.bd] -top
+add_files -norecurse D:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/test/hdl/test_wrapper.vhd
+update_compile_order -fileset sources_1
+set_property top test_wrapper [get_filesets sim_1]
+launch_simulation
+open_wave_config D:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/detection_centre_wrapper_behav.wcfg
+source test_wrapper.tcl
+add_force {/test_wrapper/CLK} -radix hex {1 0ns} {0 5000ps} -repeat_every 10000ps
+add_force {/test_wrapper/dividende} -radix hex {A 0ns}
+add_force {/test_wrapper/divisor} -radix hex {3 0ns}
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+add_force {/test_wrapper/dividende} -radix hex {F 0ns}
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+open_bd_design {D:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/c_counter_binary/c_counter_binary.bd}
+startgroup
+set_property -dict [list CONFIG.divisor_width {11} CONFIG.fractional_width {11} CONFIG.latency {20}] [get_bd_cells div_yAxis]
+endgroup
+open_bd_design {D:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/test/test.bd}
+startgroup
+set_property -dict [list CONFIG.dividend_and_quotient_width {18} CONFIG.divisor_width {11} CONFIG.divisor_width {11} CONFIG.fractional_width {11} CONFIG.latency {20}] [get_bd_cells div_gen_0]
+endgroup
+save_wave_config {D:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/detection_centre_wrapper_behav.wcfg}
+close_sim
+save_bd_design
+current_bd_design [get_bd_designs c_counter_binary]
+save_bd_design
+generate_target Simulation [get_files D:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/test/test.bd]
+export_ip_user_files -of_objects [get_files D:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/test/test.bd] -no_script -sync -force -quiet
+export_simulation -of_objects [get_files D:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/test/test.bd] -directory D:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.ip_user_files/sim_scripts -ip_user_files_dir D:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.ip_user_files -ipstatic_source_dir D:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.ip_user_files/ipstatic -lib_map_path [list {modelsim=D:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.cache/compile_simlib/modelsim} {questa=D:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.cache/compile_simlib/questa} {riviera=D:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.cache/compile_simlib/riviera} {activehdl=D:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+launch_simulation
+open_wave_config D:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/detection_centre_wrapper_behav.wcfg
+source test_wrapper.tcl
+restart
+add_force {/test_wrapper/CLK} -radix hex {1 0ns} {0 5000ps} -repeat_every 10000ps
+add_force {/test_wrapper/dividende} -radix hex {10 0ns}
+add_force {/test_wrapper/divisor} -radix hex {4 0ns}
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+open_bd_design {D:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/test/test.bd}
+close [ open D:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/new/adapt_input.vhd w ]
+add_files D:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/new/adapt_input.vhd
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files D:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/new/adapt_input.vhd] -no_script -reset -force -quiet
+remove_files  D:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/new/adapt_input.vhd
+add_files -norecurse D:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/new/adapt_input_ouput.vhd
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files D:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/new/Sum_Coord.vhd] -no_script -reset -force -quiet
+remove_files  D:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/new/Sum_Coord.vhd
+export_ip_user_files -of_objects  [get_files D:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/detection_centre/hdl/detection_centre_wrapper.vhd] -no_script -reset -force -quiet
+remove_files  D:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/detection_centre/hdl/detection_centre_wrapper.vhd
+file delete -force D:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/detection_centre/hdl/detection_centre_wrapper.vhd
+set_property is_enabled false [get_files  D:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/detection_centre/detection_centre.bd]
+set_property is_enabled false [get_files  {D:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/new/mux_2bits.vhd D:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/new/min_3pixel.vhd D:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/new/declench_retard.vhd D:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/imports/sources_1/new/Derivee_3_1_horizontale.vhd}]
+set_property is_enabled false [get_files  D:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/new/detection_centre.vhd]
+export_ip_user_files -of_objects  [get_files D:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/imports/sources_1/new/Right_shift_8bits.vhd] -no_script -reset -force -quiet
+remove_files  D:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/imports/sources_1/new/Right_shift_8bits.vhd
+open_bd_design {D:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/test/test.bd}
+create_bd_cell -type module -reference adapt_input_ouput adapt_input_ouput_0
+create_bd_cell -type module -reference adapt_input_ouput adapt_input_ouput_1
+set_property location {3 418 154} [get_bd_cells adapt_input_ouput_1]
+delete_bd_objs [get_bd_nets dividende_1]
+delete_bd_objs [get_bd_nets divisor_1]
+connect_bd_net [get_bd_ports dividende] [get_bd_pins adapt_input_ouput_0/entree]
+connect_bd_net [get_bd_pins adapt_input_ouput_1/sortie] [get_bd_pins div_gen_0/s_axis_divisor_tdata]
+connect_bd_net [get_bd_pins adapt_input_ouput_0/sortie] [get_bd_pins div_gen_0/s_axis_dividend_tdata]
+connect_bd_net [get_bd_ports divisor] [get_bd_pins adapt_input_ouput_1/entree]
+startgroup
+set_property -dict [list CONFIG.N {15} CONFIG.M {23}] [get_bd_cells adapt_input_ouput_0]
+endgroup
+startgroup
+set_property -dict [list CONFIG.N {16} CONFIG.M {24}] [get_bd_cells adapt_input_ouput_0]
+endgroup
+delete_bd_objs [get_bd_nets divisor_1] [get_bd_nets adapt_input_ouput_1_sortie] [get_bd_cells adapt_input_ouput_1]
+current_bd_design [get_bd_designs c_counter_binary]
+close_bd_design [get_bd_designs c_counter_binary]
+connect_bd_net [get_bd_ports divisor] [get_bd_pins div_gen_0/s_axis_divisor_tdata]
+save_bd_design
+generate_target all [get_files  D:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/test/test.bd]
+catch { config_ip_cache -export [get_ips -all test_div_gen_0_0] }
+export_ip_user_files -of_objects [get_files D:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/test/test.bd] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] D:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/test/test.bd]
+launch_runs -jobs 4 {test_div_gen_0_0_synth_1 test_adapt_input_ouput_0_0_synth_1}
+export_simulation -of_objects [get_files D:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/test/test.bd] -directory D:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.ip_user_files/sim_scripts -ip_user_files_dir D:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.ip_user_files -ipstatic_source_dir D:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.ip_user_files/ipstatic -lib_map_path [list {modelsim=D:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.cache/compile_simlib/modelsim} {questa=D:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.cache/compile_simlib/questa} {riviera=D:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.cache/compile_simlib/riviera} {activehdl=D:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+make_wrapper -files [get_files D:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/test/test.bd] -top
+close_sim
+launch_simulation
+open_wave_config D:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/detection_centre_wrapper_behav.wcfg
+source test_wrapper.tcl
+restart
+reset_run synth_1
+launch_runs synth_1 -jobs 3
+wait_on_run synth_1
+add_force {/test_wrapper/CLK} -radix hex {1 0ns} {0 5000ps} -repeat_every 10000ps
+add_force {/test_wrapper/dividende} -radix hex {A 0ns}
+add_force {/test_wrapper/divisor} -radix hex {3 0ns}
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+add_force {/test_wrapper/dividende} -radix hex {10 0ns}
+add_force {/test_wrapper/divisor} -radix hex {4 0ns}
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 200 ns
+run 200 ns
+close_sim
+open_bd_design {D:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/c_counter_binary/c_counter_binary.bd}
+startgroup
+set_property -dict [list CONFIG.ACLKEN {false}] [get_bd_cells div_xAxis]
+endgroup
+startgroup
+set_property -dict [list CONFIG.ACLKEN {false}] [get_bd_cells div_yAxis]
+endgroup
+create_bd_cell -type module -reference adapt_input_ouput adapt_input_ouput_0
+set_property location {4 864 268} [get_bd_cells adapt_input_ouput_0]
+delete_bd_objs [get_bd_nets BlankPixel_counter_Q]
+connect_bd_net [get_bd_pins BlankPixel_counter/Q] [get_bd_pins adapt_input_ouput_0/entree]
+connect_bd_net [get_bd_pins adapt_input_ouput_0/sortie] [get_bd_pins div_xAxis/s_axis_divisor_tdata]
+connect_bd_net [get_bd_pins adapt_input_ouput_0/sortie] [get_bd_pins div_yAxis/s_axis_divisor_tdata]
+startgroup
+set_property -dict [list CONFIG.N {11} CONFIG.M {16}] [get_bd_cells adapt_input_ouput_0]
+endgroup
+copy_bd_objs /  [get_bd_cells {adapt_input_ouput_0}]
+set_property location {4.5 1002 97} [get_bd_cells adapt_input_ouput_1]
+copy_bd_objs /  [get_bd_cells {adapt_input_ouput_0}]
+delete_bd_objs [get_bd_nets add_yAxis_S]
+connect_bd_net [get_bd_pins add_yAxis/S] [get_bd_pins add_yAxis/A]
+connect_bd_net [get_bd_pins add_yAxis/S] [get_bd_pins adapt_input_ouput_2/entree]
+delete_bd_objs [get_bd_nets add_yAxis_S]
+undo
+connect_bd_net [get_bd_pins adapt_input_ouput_2/sortie] [get_bd_pins div_yAxis/s_axis_dividend_tdata]
+delete_bd_objs [get_bd_nets add_xAxis_S]
+connect_bd_net [get_bd_pins div_xAxis/s_axis_dividend_tdata] [get_bd_pins adapt_input_ouput_1/sortie]
+connect_bd_net [get_bd_pins adapt_input_ouput_1/entree] [get_bd_pins add_xAxis/S]
+connect_bd_net [get_bd_pins add_xAxis/A] [get_bd_pins add_xAxis/S]
+startgroup
+set_property -dict [list CONFIG.N {18}] [get_bd_cells adapt_input_ouput_1]
+endgroup
+startgroup
+set_property -dict [list CONFIG.M {24}] [get_bd_cells adapt_input_ouput_1]
+endgroup
+save_bd_design
+startgroup
+endgroup
+set_property location {5 1034 438} [get_bd_cells adapt_input_ouput_2]
+startgroup
+set_property -dict [list CONFIG.N {18} CONFIG.M {24}] [get_bd_cells adapt_input_ouput_2]
+endgroup
+save_bd_design
+launch_simulation
+open_wave_config D:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/detection_centre_wrapper_behav.wcfg
+source test_wrapper.tcl
+run 200 ns
+restart
+add_force {/test_wrapper/CLK} -radix hex {1 0ns} {0 5000ps} -repeat_every 10000ps
+add_force {/test_wrapper/dividende} -radix hex {20 0ns}
+add_force {/test_wrapper/divisor} -radix hex {2 0ns}
+run 200 ns
+run 200 ns
+set_property top c_counter_binary_wrapper [get_filesets sim_1]
+close_sim
+generate_target Simulation [get_files D:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/c_counter_binary/c_counter_binary.bd]
+export_ip_user_files -of_objects [get_files D:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/c_counter_binary/c_counter_binary.bd] -no_script -sync -force -quiet
+export_simulation -of_objects [get_files D:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/c_counter_binary/c_counter_binary.bd] -directory D:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.ip_user_files/sim_scripts -ip_user_files_dir D:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.ip_user_files -ipstatic_source_dir D:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.ip_user_files/ipstatic -lib_map_path [list {modelsim=D:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.cache/compile_simlib/modelsim} {questa=D:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.cache/compile_simlib/questa} {riviera=D:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.cache/compile_simlib/riviera} {activehdl=D:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+launch_simulation
+open_wave_config D:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/detection_centre_wrapper_behav.wcfg
+source c_counter_binary_wrapper.tcl
+add_force {/c_counter_binary_wrapper/CE_column_count} -radix hex {1 0ns}
+add_force {/c_counter_binary_wrapper/CE_ligne_count} -radix hex {1 0ns}
+add_force {/c_counter_binary_wrapper/CLK} -radix hex {1 0ns} {0 5000ps} -repeat_every 10000ps
+add_force {/c_counter_binary_wrapper/Pixel_White_Black} -radix hex {0 0ns}
+add_force {/c_counter_binary_wrapper/RESET} -radix hex {0 0ns}
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+open_bd_design {D:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/c_counter_binary/c_counter_binary.bd}
+open_bd_design {D:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/HDMI_bd.bd}
+current_bd_design c_counter_binary
+set tmpCopyObjs [concat  [get_bd_cells {divideur_select_outp_0 add_yAxis divideur_select_outp_1 rdc_1bit_0 adapt_input_ouput_0 xlconstant_0 rdc_1bit_1 div_yAxis BlankPixel_counter adapt_input_ouput_1 ligne_counter adapt_input_ouput_2 ligne_counter1 div_xAxis add_xAxis detect_end_image_0}] [get_bd_ports {CE_ligne_count CE_column_count RESET CLK Pixel_White_Black nb_ligne yMoy xMoy nb_column}] [get_bd_nets {CE_column_count_1 div_yAxis_m_axis_dout_tdata column_counter_Q adapt_input_ouput_2_sortie div_xAxis_m_axis_dout_tdata xlconstant_0_dout CLK_1 divideur_select_outp_0_Output adapt_input_ouput_0_sortie RESET_counter_ligne_and_column_1 CE_ligne_count_1 add_xAxis_S divideur_select_outp_1_Output add_yAxis_S rdc_1bit_0_Q Ligne_counter_Q BlankPixel_counter_Q Pixel_White_Black_1 Net Net1 adapt_input_ouput_1_sortie}]]
+current_bd_design HDMI_bd
+copy_bd_objs -from_design c_counter_binary / $tmpCopyObjs
+undo
+open_bd_design {D:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/test/test.bd}
+current_bd_design [get_bd_designs c_counter_binary]
+current_bd_design [get_bd_designs HDMI_bd]
+startgroup
+delete_bd_objs [get_bd_nets Detect_centre/CE_column_count_1] [get_bd_nets Detect_centre/xlconstant_0_dout1] [get_bd_nets Detect_centre/div_yAxis_m_axis_dout_tdata] [get_bd_nets Detect_centre/column_counter_Q] [get_bd_nets Detect_centre/div_xAxis_m_axis_dout_tdata] [get_bd_nets Detect_centre/RESET_counter_ligne_and_column_1] [get_bd_nets Detect_centre/CLK_3] [get_bd_nets Detect_centre/CE_ligne_count_1] [get_bd_nets Detect_centre/add_xAxis_S] [get_bd_nets Detect_centre/SCLR_dout] [get_bd_nets Detect_centre/add_yAxis_S] [get_bd_nets Detect_centre/rdc_1bit_0_Q] [get_bd_nets Detect_centre/Ligne_counter_Q] [get_bd_nets Detect_centre/divideur_select_outp_0_Sortie] [get_bd_nets Detect_centre/BlankPixel_counter_Q] [get_bd_nets Detect_centre/divideur_select_outp_1_Sortie] [get_bd_nets Detect_centre/Pixel_White_Black_1] [get_bd_nets Detect_centre/Net]
+delete_bd_objs [get_bd_nets Detect_centre_m_Yaxis_dout_tdata] [get_bd_nets Detect_centre_nb_column] [get_bd_nets Detect_centre_m_Xaxis_dout_tdata] [get_bd_nets Detect_centre_nb_ligne] [get_bd_pins Detect_centre/CE_ligne_count] [get_bd_pins Detect_centre/CE_column_count] [get_bd_pins Detect_centre/RESET] [get_bd_pins Detect_centre/CLK] [get_bd_pins Detect_centre/Pixel_White_Black] [get_bd_pins Detect_centre/m_Yaxis_dout_tdata] [get_bd_pins Detect_centre/m_Xaxis_dout_tdata] [get_bd_pins Detect_centre/nb_ligne] [get_bd_pins Detect_centre/nb_column]
+delete_bd_objs [get_bd_cells Detect_centre/Ligne_counter] [get_bd_cells Detect_centre/divideur_select_outp_0] [get_bd_cells Detect_centre/add_yAxis] [get_bd_cells Detect_centre/divideur_select_outp_1] [get_bd_cells Detect_centre/rdc_1bit_0] [get_bd_cells Detect_centre/column_counter] [get_bd_cells Detect_centre/div_yAxis] [get_bd_cells Detect_centre/BlankPixel_counter] [get_bd_cells Detect_centre/xlconstant_1] [get_bd_cells Detect_centre/div_xAxis] [get_bd_cells Detect_centre/add_xAxis] [get_bd_cells Detect_centre/SCLR] [get_bd_cells Detect_centre/detect_end_image_0]
+endgroup
+current_bd_design [get_bd_designs c_counter_binary]
+update_compile_order -fileset sources_1
+current_bd_design [get_bd_designs HDMI_bd]
+current_bd_design c_counter_binary
+set tmpCopyObjs [concat  [get_bd_cells {divideur_select_outp_0 add_yAxis divideur_select_outp_1 rdc_1bit_0 adapt_input_ouput_0 xlconstant_0 rdc_1bit_1 div_yAxis BlankPixel_counter adapt_input_ouput_1 ligne_counter adapt_input_ouput_2 ligne_counter1 div_xAxis add_xAxis detect_end_image_0}] [get_bd_ports {CE_ligne_count CE_column_count RESET CLK Pixel_White_Black nb_ligne yMoy xMoy nb_column}] [get_bd_nets {CE_column_count_1 div_yAxis_m_axis_dout_tdata column_counter_Q adapt_input_ouput_2_sortie div_xAxis_m_axis_dout_tdata xlconstant_0_dout CLK_1 divideur_select_outp_0_Output adapt_input_ouput_0_sortie RESET_counter_ligne_and_column_1 CE_ligne_count_1 add_xAxis_S divideur_select_outp_1_Output add_yAxis_S rdc_1bit_0_Q Ligne_counter_Q BlankPixel_counter_Q Pixel_White_Black_1 Net Net1 adapt_input_ouput_1_sortie}]]
+current_bd_design HDMI_bd
+copy_bd_objs -from_design c_counter_binary Detect_centre $tmpCopyObjs
+connect_bd_net [get_bd_pins Detect_centre/nb_column] [get_bd_pins affiche_centre_0/nb_column]
+connect_bd_net [get_bd_pins Detect_centre/nb_ligne] [get_bd_pins affiche_centre_0/nb_ligne]
+connect_bd_net [get_bd_pins Detect_centre/xMoy] [get_bd_pins affiche_centre_0/m_Xaxis_dout_tdata]
+connect_bd_net [get_bd_pins Detect_centre/yMoy] [get_bd_pins affiche_centre_0/m_Yaxis_dout_tdata]
+set_property location {7.5 1684 274} [get_bd_cells Detect_centre]
+set_property location {5 1144 396} [get_bd_cells Detect_centre]
+connect_bd_net [get_bd_pins Detect_centre/RESET] [get_bd_pins xlconstant_0/dout]
+connect_bd_net [get_bd_pins Segmentation/PixelNoirBlanc] [get_bd_pins Detect_centre/Pixel_White_Black] -boundary_type upper
+connect_bd_net [get_bd_pins dvi2rgb_0/PixelClk] [get_bd_pins Detect_centre/CLK]
+connect_bd_net [get_bd_pins dvi2rgb_0/vid_pHSync] [get_bd_pins Detect_centre/CE_column_count]
+connect_bd_net [get_bd_pins dvi2rgb_0/vid_pVSync] [get_bd_pins Detect_centre/CE_ligne_count]
+set_property location {5.5 1734 281} [get_bd_cells Detect_centre]
+set_property location {6 1759 262} [get_bd_cells Detect_centre]
+regenerate_bd_layout
+set_property location {5 1090 124} [get_bd_cells Segmentation]
+delete_bd_objs [get_bd_nets xlconstant_0_dout]
+connect_bd_net [get_bd_pins Detect_centre/RESET] [get_bd_pins Segmentation/RESET] -boundary_type upper
+connect_bd_net [get_bd_pins Segmentation/RESET] [get_bd_pins Moyenneur/RESET] -boundary_type upper
+connect_bd_net [get_bd_ports reset] [get_bd_pins Moyenneur/RESET]
+delete_bd_objs [get_bd_cells xlconstant_0]
+save_bd_design
+reset_run synth_1
+update_compile_order -fileset sources_1
+launch_runs impl_1 -to_step write_bitstream -jobs 3
+wait_on_run impl_1
+open_run impl_1
+open_bd_design {D:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/HDMI_bd.bd}
+create_bd_cell -type hier Detect_1doigt
+current_bd_design [get_bd_designs c_counter_binary]
+close_bd_design [get_bd_designs c_counter_binary]
+current_bd_design [get_bd_designs test]
+close_bd_design [get_bd_designs test]
+save_bd_design
+save_wave_config {D:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/detection_centre_wrapper_behav.wcfg}
+close_sim

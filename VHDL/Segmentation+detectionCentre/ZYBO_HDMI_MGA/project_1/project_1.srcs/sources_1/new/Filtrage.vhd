@@ -70,8 +70,7 @@ Port map ( R => RGBin(23 downto 16),
  Port map (INPUT => sigYdm,
            OUTPUT => pixelBlancNoir);
 
-RGBout <= (others=>'1') when pixelBlancNoir='1' 
-            else (others=>'0');
+RGBout <= "11111111" when pixelBlancNoir='1' else "00000000";
             
 BlancNoir <= pixelBlancNoir;
 

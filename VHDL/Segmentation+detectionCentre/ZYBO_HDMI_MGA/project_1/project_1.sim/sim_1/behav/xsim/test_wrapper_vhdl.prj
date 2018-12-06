@@ -1,0 +1,10 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../project_1.srcs/sources_1/new/adapt_input_ouput.vhd" \
+"../../../../project_1.ip_user_files/bd/test/ip/test_div_gen_0_0/sim/test_div_gen_0_0.vhd" \
+"../../../../project_1.ip_user_files/bd/test/sim/test.vhd" \
+"../../../../project_1.ip_user_files/bd/test/ip/test_adapt_input_ouput_0_0/sim/test_adapt_input_ouput_0_0.vhd" \
+"../../../../project_1.srcs/sources_1/bd/test/hdl/test_wrapper.vhd" \
+
+# Do not sort compile order
+nosort

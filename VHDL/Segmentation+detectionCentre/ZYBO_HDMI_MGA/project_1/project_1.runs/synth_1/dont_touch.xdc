@@ -18,13 +18,145 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==HDMI_bd_dvi2rgb
 # IP: bd/HDMI_bd/ip/HDMI_bd_rgb2dvi_0_1/HDMI_bd_rgb2dvi_0_1.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==HDMI_bd_rgb2dvi_0_1 || ORIG_REF_NAME==HDMI_bd_rgb2dvi_0_1} -quiet] -quiet
 
-# IP: bd/HDMI_bd/ip/HDMI_bd_xlconstant_0_0/HDMI_bd_xlconstant_0_0.xci
+# IP: bd/HDMI_bd/ip/HDMI_bd_RGB_to_Y_0_0/HDMI_bd_RGB_to_Y_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==HDMI_bd_RGB_to_Y_0_0 || ORIG_REF_NAME==HDMI_bd_RGB_to_Y_0_0} -quiet] -quiet
+
+# IP: bd/HDMI_bd/ip/HDMI_bd_abs_8bits_signed_0_0/HDMI_bd_abs_8bits_signed_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==HDMI_bd_abs_8bits_signed_0_0 || ORIG_REF_NAME==HDMI_bd_abs_8bits_signed_0_0} -quiet] -quiet
+
+# IP: bd/HDMI_bd/ip/HDMI_bd_xlconstant_0_3/HDMI_bd_xlconstant_0_3.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==HDMI_bd_xlconstant_0_3 || ORIG_REF_NAME==HDMI_bd_xlconstant_0_3} -quiet] -quiet
+
+# IP: bd/HDMI_bd/ip/HDMI_bd_div_16_0_0/HDMI_bd_div_16_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==HDMI_bd_div_16_0_0 || ORIG_REF_NAME==HDMI_bd_div_16_0_0} -quiet] -quiet
+
+# IP: bd/HDMI_bd/ip/HDMI_bd_mult_gen_0_0/HDMI_bd_mult_gen_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==HDMI_bd_mult_gen_0_0 || ORIG_REF_NAME==HDMI_bd_mult_gen_0_0} -quiet] -quiet
+
+# IP: bd/HDMI_bd/ip/HDMI_bd_mult_gen_0_2/HDMI_bd_mult_gen_0_2.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==HDMI_bd_mult_gen_0_2 || ORIG_REF_NAME==HDMI_bd_mult_gen_0_2} -quiet] -quiet
+
+# IP: bd/HDMI_bd/ip/HDMI_bd_mult_gen_0_3/HDMI_bd_mult_gen_0_3.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==HDMI_bd_mult_gen_0_3 || ORIG_REF_NAME==HDMI_bd_mult_gen_0_3} -quiet] -quiet
+
+# IP: bd/HDMI_bd/ip/HDMI_bd_c_addsub_0_0/HDMI_bd_c_addsub_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==HDMI_bd_c_addsub_0_0 || ORIG_REF_NAME==HDMI_bd_c_addsub_0_0} -quiet] -quiet
+
+# IP: bd/HDMI_bd/ip/HDMI_bd_c_addsub_0_1/HDMI_bd_c_addsub_0_1.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==HDMI_bd_c_addsub_0_1 || ORIG_REF_NAME==HDMI_bd_c_addsub_0_1} -quiet] -quiet
+
+# IP: bd/HDMI_bd/ip/HDMI_bd_c_addsub_0_2/HDMI_bd_c_addsub_0_2.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==HDMI_bd_c_addsub_0_2 || ORIG_REF_NAME==HDMI_bd_c_addsub_0_2} -quiet] -quiet
+
+# IP: bd/HDMI_bd/ip/HDMI_bd_c_addsub_2_0/HDMI_bd_c_addsub_2_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==HDMI_bd_c_addsub_2_0 || ORIG_REF_NAME==HDMI_bd_c_addsub_2_0} -quiet] -quiet
+
+# IP: bd/HDMI_bd/ip/HDMI_bd_xlconstant_1_2/HDMI_bd_xlconstant_1_2.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==HDMI_bd_xlconstant_1_2 || ORIG_REF_NAME==HDMI_bd_xlconstant_1_2} -quiet] -quiet
+
+# IP: bd/HDMI_bd/ip/HDMI_bd_Seuillage_0_3/HDMI_bd_Seuillage_0_3.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==HDMI_bd_Seuillage_0_3 || ORIG_REF_NAME==HDMI_bd_Seuillage_0_3} -quiet] -quiet
+
+# IP: bd/HDMI_bd/ip/HDMI_bd_reg_Nbits_0_0/HDMI_bd_reg_Nbits_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==HDMI_bd_reg_Nbits_0_0 || ORIG_REF_NAME==HDMI_bd_reg_Nbits_0_0} -quiet] -quiet
+
+# IP: bd/HDMI_bd/ip/HDMI_bd_reg_Nbits_0_1/HDMI_bd_reg_Nbits_0_1.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==HDMI_bd_reg_Nbits_0_1 || ORIG_REF_NAME==HDMI_bd_reg_Nbits_0_1} -quiet] -quiet
+
+# IP: bd/HDMI_bd/ip/HDMI_bd_reg_Nbits_0_2/HDMI_bd_reg_Nbits_0_2.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==HDMI_bd_reg_Nbits_0_2 || ORIG_REF_NAME==HDMI_bd_reg_Nbits_0_2} -quiet] -quiet
+
+# IP: bd/HDMI_bd/ip/HDMI_bd_reg_Nbits_0_3/HDMI_bd_reg_Nbits_0_3.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==HDMI_bd_reg_Nbits_0_3 || ORIG_REF_NAME==HDMI_bd_reg_Nbits_0_3} -quiet] -quiet
+
+# IP: bd/HDMI_bd/ip/HDMI_bd_reg_Nbits_0_4/HDMI_bd_reg_Nbits_0_4.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==HDMI_bd_reg_Nbits_0_4 || ORIG_REF_NAME==HDMI_bd_reg_Nbits_0_4} -quiet] -quiet
+
+# IP: bd/HDMI_bd/ip/HDMI_bd_reg_Nbits_0_5/HDMI_bd_reg_Nbits_0_5.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==HDMI_bd_reg_Nbits_0_5 || ORIG_REF_NAME==HDMI_bd_reg_Nbits_0_5} -quiet] -quiet
+
+# IP: bd/HDMI_bd/ip/HDMI_bd_affiche_centre_0_0/HDMI_bd_affiche_centre_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==HDMI_bd_affiche_centre_0_0 || ORIG_REF_NAME==HDMI_bd_affiche_centre_0_0} -quiet] -quiet
+
+# IP: bd/HDMI_bd/ip/HDMI_bd_reg_Nbits_1_0/HDMI_bd_reg_Nbits_1_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==HDMI_bd_reg_Nbits_1_0 || ORIG_REF_NAME==HDMI_bd_reg_Nbits_1_0} -quiet] -quiet
+
+# IP: bd/HDMI_bd/ip/HDMI_bd_c_addsub_0_4/HDMI_bd_c_addsub_0_4.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==HDMI_bd_c_addsub_0_4 || ORIG_REF_NAME==HDMI_bd_c_addsub_0_4} -quiet] -quiet
+
+# IP: bd/HDMI_bd/ip/HDMI_bd_reg_1bit_0_0/HDMI_bd_reg_1bit_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==HDMI_bd_reg_1bit_0_0 || ORIG_REF_NAME==HDMI_bd_reg_1bit_0_0} -quiet] -quiet
+
+# IP: bd/HDMI_bd/ip/HDMI_bd_reg_1bit_0_1/HDMI_bd_reg_1bit_0_1.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==HDMI_bd_reg_1bit_0_1 || ORIG_REF_NAME==HDMI_bd_reg_1bit_0_1} -quiet] -quiet
+
+# IP: bd/HDMI_bd/ip/HDMI_bd_reg_1bit_0_2/HDMI_bd_reg_1bit_0_2.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==HDMI_bd_reg_1bit_0_2 || ORIG_REF_NAME==HDMI_bd_reg_1bit_0_2} -quiet] -quiet
+
+# IP: bd/HDMI_bd/ip/HDMI_bd_reg_1bit_2_0/HDMI_bd_reg_1bit_2_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==HDMI_bd_reg_1bit_2_0 || ORIG_REF_NAME==HDMI_bd_reg_1bit_2_0} -quiet] -quiet
+
+# IP: bd/HDMI_bd/ip/HDMI_bd_ET_logique_5entree_0_0/HDMI_bd_ET_logique_5entree_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==HDMI_bd_ET_logique_5entree_0_0 || ORIG_REF_NAME==HDMI_bd_ET_logique_5entree_0_0} -quiet] -quiet
+
+# IP: bd/HDMI_bd/ip/HDMI_bd_xlconstant_0_0_1/HDMI_bd_xlconstant_0_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==HDMI_bd_xlconstant_0_0 || ORIG_REF_NAME==HDMI_bd_xlconstant_0_0} -quiet] -quiet
 
-# IP: bd/HDMI_bd/ip/HDMI_bd_xlconstant_1_0/HDMI_bd_xlconstant_1_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==HDMI_bd_xlconstant_1_0 || ORIG_REF_NAME==HDMI_bd_xlconstant_1_0} -quiet] -quiet
+# IP: bd/HDMI_bd/ip/HDMI_bd_reg_1bit_3_0/HDMI_bd_reg_1bit_3_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==HDMI_bd_reg_1bit_3_0 || ORIG_REF_NAME==HDMI_bd_reg_1bit_3_0} -quiet] -quiet
 
-# IP: bd/HDMI_bd/ip/HDMI_bd_Filtrage_0_0/HDMI_bd_Filtrage_0_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==HDMI_bd_Filtrage_0_0 || ORIG_REF_NAME==HDMI_bd_Filtrage_0_0} -quiet] -quiet
+# IP: bd/HDMI_bd/ip/HDMI_bd_Additionneur_Nbits_0_0/HDMI_bd_Additionneur_Nbits_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==HDMI_bd_Additionneur_Nbits_0_0 || ORIG_REF_NAME==HDMI_bd_Additionneur_Nbits_0_0} -quiet] -quiet
+
+# IP: bd/HDMI_bd/ip/HDMI_bd_Additionneur_Nbits_1_0/HDMI_bd_Additionneur_Nbits_1_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==HDMI_bd_Additionneur_Nbits_1_0 || ORIG_REF_NAME==HDMI_bd_Additionneur_Nbits_1_0} -quiet] -quiet
+
+# IP: bd/HDMI_bd/ip/HDMI_bd_Blank_pixel_counter_1/HDMI_bd_Blank_pixel_counter_1.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==HDMI_bd_Blank_pixel_counter_1 || ORIG_REF_NAME==HDMI_bd_Blank_pixel_counter_1} -quiet] -quiet
+
+# IP: bd/HDMI_bd/ip/HDMI_bd_adapt_input_ouput_0_1_1/HDMI_bd_adapt_input_ouput_0_1.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==HDMI_bd_adapt_input_ouput_0_1 || ORIG_REF_NAME==HDMI_bd_adapt_input_ouput_0_1} -quiet] -quiet
+
+# IP: bd/HDMI_bd/ip/HDMI_bd_adapt_input_ouput_1_1_1/HDMI_bd_adapt_input_ouput_1_1.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==HDMI_bd_adapt_input_ouput_1_1 || ORIG_REF_NAME==HDMI_bd_adapt_input_ouput_1_1} -quiet] -quiet
+
+# IP: bd/HDMI_bd/ip/HDMI_bd_adapt_input_ouput_2_1_1/HDMI_bd_adapt_input_ouput_2_1.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==HDMI_bd_adapt_input_ouput_2_1 || ORIG_REF_NAME==HDMI_bd_adapt_input_ouput_2_1} -quiet] -quiet
+
+# IP: bd/HDMI_bd/ip/HDMI_bd_adapt_input_ouput_3_0/HDMI_bd_adapt_input_ouput_3_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==HDMI_bd_adapt_input_ouput_3_0 || ORIG_REF_NAME==HDMI_bd_adapt_input_ouput_3_0} -quiet] -quiet
+
+# IP: bd/HDMI_bd/ip/HDMI_bd_adapt_input_ouput_4_0/HDMI_bd_adapt_input_ouput_4_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==HDMI_bd_adapt_input_ouput_4_0 || ORIG_REF_NAME==HDMI_bd_adapt_input_ouput_4_0} -quiet] -quiet
+
+# IP: bd/HDMI_bd/ip/HDMI_bd_detect_end_image_0_1_1/HDMI_bd_detect_end_image_0_1.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==HDMI_bd_detect_end_image_0_1 || ORIG_REF_NAME==HDMI_bd_detect_end_image_0_1} -quiet] -quiet
+
+# IP: bd/HDMI_bd/ip/HDMI_bd_div_xAxis_1_1/HDMI_bd_div_xAxis_1.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==HDMI_bd_div_xAxis_1 || ORIG_REF_NAME==HDMI_bd_div_xAxis_1} -quiet] -quiet
+
+# IP: bd/HDMI_bd/ip/HDMI_bd_div_yAxis_1_1/HDMI_bd_div_yAxis_1.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==HDMI_bd_div_yAxis_1 || ORIG_REF_NAME==HDMI_bd_div_yAxis_1} -quiet] -quiet
+
+# IP: bd/HDMI_bd/ip/HDMI_bd_divideur_select_outp_0_1_1/HDMI_bd_divideur_select_outp_0_1.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==HDMI_bd_divideur_select_outp_0_1 || ORIG_REF_NAME==HDMI_bd_divideur_select_outp_0_1} -quiet] -quiet
+
+# IP: bd/HDMI_bd/ip/HDMI_bd_divideur_select_outp_1_1_1/HDMI_bd_divideur_select_outp_1_1.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==HDMI_bd_divideur_select_outp_1_1 || ORIG_REF_NAME==HDMI_bd_divideur_select_outp_1_1} -quiet] -quiet
+
+# IP: bd/HDMI_bd/ip/HDMI_bd_reg_1bit_4_0/HDMI_bd_reg_1bit_4_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==HDMI_bd_reg_1bit_4_0 || ORIG_REF_NAME==HDMI_bd_reg_1bit_4_0} -quiet] -quiet
+
+# IP: bd/HDMI_bd/ip/HDMI_bd_column_counter_0/HDMI_bd_column_counter_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==HDMI_bd_column_counter_0 || ORIG_REF_NAME==HDMI_bd_column_counter_0} -quiet] -quiet
+
+# IP: bd/HDMI_bd/ip/HDMI_bd_ligne_counter_0/HDMI_bd_ligne_counter_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==HDMI_bd_ligne_counter_0 || ORIG_REF_NAME==HDMI_bd_ligne_counter_0} -quiet] -quiet
+
+# IP: bd/HDMI_bd/ip/HDMI_bd_xlconstant_0_2/HDMI_bd_xlconstant_0_2.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==HDMI_bd_xlconstant_0_2 || ORIG_REF_NAME==HDMI_bd_xlconstant_0_2} -quiet] -quiet
+
+# IP: bd/HDMI_bd/ip/HDMI_bd_xlconstant_1_0_2/HDMI_bd_xlconstant_1_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==HDMI_bd_xlconstant_1_0 || ORIG_REF_NAME==HDMI_bd_xlconstant_1_0} -quiet] -quiet
 
 # XDC: bd/HDMI_bd/HDMI_bd_ooc.xdc

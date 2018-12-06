@@ -1,0 +1,14 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"c_counter_binary_wrapper_tb_func_synth.vhd" \
+"../../../../../project_1.srcs/sources_1/new/detect_end_image.vhd" \
+"../../../../../project_1.srcs/sources_1/new/divideur_select_output.vhd" \
+"../../../../../project_1.srcs/sources_1/new/adapt_input_ouput.vhd" \
+"../../../../../project_1.srcs/sources_1/new/Counter.vhd" \
+"../../../../../project_1.srcs/sources_1/new/Additionneur_Nbits.vhd" \
+"../../../../../project_1.srcs/sources_1/new/counter_autoreload.vhd" \
+"../../../../../project_1.srcs/sources_1/bd/c_counter_binary/hdl/c_counter_binary_wrapper.vhd" \
+"../../../../../project_1.srcs/sim_1/new/c_counter_binary_wrapper_tb.vhd" \
+
+# Do not sort compile order
+nosort

@@ -2,10 +2,10 @@
 <Root MajorVersion="0" MinorVersion="36">
   <CompositeFile CompositeFileTopName="HDMI_bd" CanBeSetAsTop="false" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="STALE" Timestamp="1542813146"/>
-    <Generation Name="IMPLEMENTATION" State="STALE" Timestamp="1542813146"/>
-    <Generation Name="SIMULATION" State="STALE" Timestamp="1542813146"/>
-    <Generation Name="HW_HANDOFF" State="STALE" Timestamp="1542813146"/>
+    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1544038329"/>
+    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1544038329"/>
+    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1544038329"/>
+    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1544038329"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
       <File Name="ip\HDMI_bd_clk_wiz_0_0\HDMI_bd_clk_wiz_0_0.xci" Type="IP">
         <Instance HierarchyPath="clk_wiz_0"/>
@@ -49,24 +49,376 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip\HDMI_bd_xlconstant_0_0\HDMI_bd_xlconstant_0_0.xci" Type="IP">
-        <Instance HierarchyPath="xlconstant_0"/>
+      <File Name="ip\HDMI_bd_RGB_to_Y_0_0\HDMI_bd_RGB_to_Y_0_0.xci" Type="IP">
+        <Instance HierarchyPath="RGB_to_Y_0"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip\HDMI_bd_xlconstant_1_0\HDMI_bd_xlconstant_1_0.xci" Type="IP">
-        <Instance HierarchyPath="xlconstant_1"/>
+      <File Name="ip\HDMI_bd_abs_8bits_signed_0_0\HDMI_bd_abs_8bits_signed_0_0.xci" Type="IP">
+        <Instance HierarchyPath="Segmentation/abs_8bits_signed_0"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip\HDMI_bd_Filtrage_0_0\HDMI_bd_Filtrage_0_0.xci" Type="IP">
-        <Instance HierarchyPath="Filtrage_0"/>
+      <File Name="ip\HDMI_bd_xlconstant_0_3\HDMI_bd_xlconstant_0_3.xci" Type="IP">
+        <Instance HierarchyPath="Segmentation/ENABLE"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\HDMI_bd_div_16_0_0\HDMI_bd_div_16_0_0.xci" Type="IP">
+        <Instance HierarchyPath="Moyenneur/div_16_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\HDMI_bd_mult_gen_0_0\HDMI_bd_mult_gen_0_0.xci" Type="IP">
+        <Instance HierarchyPath="Moyenneur/mult_gen_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\HDMI_bd_mult_gen_0_2\HDMI_bd_mult_gen_0_2.xci" Type="IP">
+        <Instance HierarchyPath="Moyenneur/mult_gen_1"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\HDMI_bd_mult_gen_0_3\HDMI_bd_mult_gen_0_3.xci" Type="IP">
+        <Instance HierarchyPath="Moyenneur/mult_gen_2"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\HDMI_bd_c_addsub_0_0\HDMI_bd_c_addsub_0_0.xci" Type="IP">
+        <Instance HierarchyPath="Moyenneur/c_addsub_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\HDMI_bd_c_addsub_0_1\HDMI_bd_c_addsub_0_1.xci" Type="IP">
+        <Instance HierarchyPath="Moyenneur/c_addsub_1"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\HDMI_bd_c_addsub_0_2\HDMI_bd_c_addsub_0_2.xci" Type="IP">
+        <Instance HierarchyPath="Moyenneur/c_addsub_2"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\HDMI_bd_c_addsub_2_0\HDMI_bd_c_addsub_2_0.xci" Type="IP">
+        <Instance HierarchyPath="Moyenneur/c_addsub_3"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\HDMI_bd_xlconstant_1_2\HDMI_bd_xlconstant_1_2.xci" Type="IP">
+        <Instance HierarchyPath="Moyenneur/ENABLE"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\HDMI_bd_Seuillage_0_3\HDMI_bd_Seuillage_0_3.xci" Type="IP">
+        <Instance HierarchyPath="Segmentation/Seuillage_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\HDMI_bd_reg_Nbits_0_0\HDMI_bd_reg_Nbits_0_0.xci" Type="IP">
+        <Instance HierarchyPath="Moyenneur/reg_Nbits_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\HDMI_bd_reg_Nbits_0_1\HDMI_bd_reg_Nbits_0_1.xci" Type="IP">
+        <Instance HierarchyPath="Moyenneur/reg_Nbits_1"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\HDMI_bd_reg_Nbits_0_2\HDMI_bd_reg_Nbits_0_2.xci" Type="IP">
+        <Instance HierarchyPath="Moyenneur/reg_Nbits_2"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\HDMI_bd_reg_Nbits_0_3\HDMI_bd_reg_Nbits_0_3.xci" Type="IP">
+        <Instance HierarchyPath="Moyenneur/reg_Nbits_3"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\HDMI_bd_reg_Nbits_0_4\HDMI_bd_reg_Nbits_0_4.xci" Type="IP">
+        <Instance HierarchyPath="Segmentation/reg_Nbits_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\HDMI_bd_reg_Nbits_0_5\HDMI_bd_reg_Nbits_0_5.xci" Type="IP">
+        <Instance HierarchyPath="Segmentation/reg_Nbits_1"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\HDMI_bd_affiche_centre_0_0\HDMI_bd_affiche_centre_0_0.xci" Type="IP">
+        <Instance HierarchyPath="affiche_centre_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\HDMI_bd_reg_Nbits_1_0\HDMI_bd_reg_Nbits_1_0.xci" Type="IP">
+        <Instance HierarchyPath="Segmentation/reg_Nbits_2"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\HDMI_bd_c_addsub_0_4\HDMI_bd_c_addsub_0_4.xci" Type="IP">
+        <Instance HierarchyPath="Segmentation/c_addsub_1"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\HDMI_bd_reg_1bit_0_0\HDMI_bd_reg_1bit_0_0.xci" Type="IP">
+        <Instance HierarchyPath="filtrage_intensif/reg_1bit_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\HDMI_bd_reg_1bit_0_1\HDMI_bd_reg_1bit_0_1.xci" Type="IP">
+        <Instance HierarchyPath="filtrage_intensif/reg_1bit_1"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\HDMI_bd_reg_1bit_0_2\HDMI_bd_reg_1bit_0_2.xci" Type="IP">
+        <Instance HierarchyPath="filtrage_intensif/reg_1bit_2"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\HDMI_bd_reg_1bit_2_0\HDMI_bd_reg_1bit_2_0.xci" Type="IP">
+        <Instance HierarchyPath="filtrage_intensif/reg_1bit_3"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\HDMI_bd_ET_logique_5entree_0_0\HDMI_bd_ET_logique_5entree_0_0.xci" Type="IP">
+        <Instance HierarchyPath="filtrage_intensif/ET_logique_5entree_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\HDMI_bd_xlconstant_0_0_1\HDMI_bd_xlconstant_0_0.xci" Type="IP">
+        <Instance HierarchyPath="filtrage_intensif/xlconstant_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\HDMI_bd_reg_1bit_3_0\HDMI_bd_reg_1bit_3_0.xci" Type="IP">
+        <Instance HierarchyPath="filtrage_intensif/reg_1bit_4"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\HDMI_bd_Additionneur_Nbits_0_0\HDMI_bd_Additionneur_Nbits_0_0.xci" Type="IP">
+        <Instance HierarchyPath="Detect_centre/Additionneur_Nbits_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\HDMI_bd_Additionneur_Nbits_1_0\HDMI_bd_Additionneur_Nbits_1_0.xci" Type="IP">
+        <Instance HierarchyPath="Detect_centre/Additionneur_Nbits_1"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\HDMI_bd_Blank_pixel_counter_1\HDMI_bd_Blank_pixel_counter_1.xci" Type="IP">
+        <Instance HierarchyPath="Detect_centre/Blank_pixel_counter"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\HDMI_bd_adapt_input_ouput_0_1_1\HDMI_bd_adapt_input_ouput_0_1.xci" Type="IP">
+        <Instance HierarchyPath="Detect_centre/adapt_input_ouput_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\HDMI_bd_adapt_input_ouput_1_1_1\HDMI_bd_adapt_input_ouput_1_1.xci" Type="IP">
+        <Instance HierarchyPath="Detect_centre/adapt_input_ouput_1"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\HDMI_bd_adapt_input_ouput_2_1_1\HDMI_bd_adapt_input_ouput_2_1.xci" Type="IP">
+        <Instance HierarchyPath="Detect_centre/adapt_input_ouput_2"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\HDMI_bd_adapt_input_ouput_3_0\HDMI_bd_adapt_input_ouput_3_0.xci" Type="IP">
+        <Instance HierarchyPath="Detect_centre/adapt_input_ouput_3"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\HDMI_bd_adapt_input_ouput_4_0\HDMI_bd_adapt_input_ouput_4_0.xci" Type="IP">
+        <Instance HierarchyPath="Detect_centre/adapt_input_ouput_4"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\HDMI_bd_detect_end_image_0_1_1\HDMI_bd_detect_end_image_0_1.xci" Type="IP">
+        <Instance HierarchyPath="Detect_centre/detect_end_image_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\HDMI_bd_div_xAxis_1_1\HDMI_bd_div_xAxis_1.xci" Type="IP">
+        <Instance HierarchyPath="Detect_centre/div_xAxis"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\HDMI_bd_div_yAxis_1_1\HDMI_bd_div_yAxis_1.xci" Type="IP">
+        <Instance HierarchyPath="Detect_centre/div_yAxis"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\HDMI_bd_divideur_select_outp_0_1_1\HDMI_bd_divideur_select_outp_0_1.xci" Type="IP">
+        <Instance HierarchyPath="Detect_centre/divideur_select_outp_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\HDMI_bd_divideur_select_outp_1_1_1\HDMI_bd_divideur_select_outp_1_1.xci" Type="IP">
+        <Instance HierarchyPath="Detect_centre/divideur_select_outp_1"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\HDMI_bd_reg_1bit_4_0\HDMI_bd_reg_1bit_4_0.xci" Type="IP">
+        <Instance HierarchyPath="filtrage_intensif/reg_1bit_5"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\HDMI_bd_column_counter_0\HDMI_bd_column_counter_0.xci" Type="IP">
+        <Instance HierarchyPath="Detect_centre/column_counter1"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\HDMI_bd_ligne_counter_0\HDMI_bd_ligne_counter_0.xci" Type="IP">
+        <Instance HierarchyPath="Detect_centre/ligne_counter1"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\HDMI_bd_xlconstant_0_2\HDMI_bd_xlconstant_0_2.xci" Type="IP">
+        <Instance HierarchyPath="Detect_centre/xlconstant_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\HDMI_bd_xlconstant_1_0_2\HDMI_bd_xlconstant_1_0.xci" Type="IP">
+        <Instance HierarchyPath="Detect_centre/xlconstant_1"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
@@ -94,102 +446,6 @@
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="HW_HANDOFF"/>
-      </File>
-      <File Name="ip\HDMI_bd_Ligne_counter_0\HDMI_bd_Ligne_counter_0.xci" Type="IP">
-        <Instance HierarchyPath="detection_centre/Ligne_counter"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
-      <File Name="ip\HDMI_bd_add_yAxis_0\HDMI_bd_add_yAxis_0.xci" Type="IP">
-        <Instance HierarchyPath="detection_centre/add_yAxis"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
-      <File Name="ip\HDMI_bd_divideur_select_outp_0_0\HDMI_bd_divideur_select_outp_0_0.xci" Type="IP">
-        <Instance HierarchyPath="detection_centre/divideur_select_outp_0"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
-      <File Name="ip\HDMI_bd_divideur_select_outp_1_0\HDMI_bd_divideur_select_outp_1_0.xci" Type="IP">
-        <Instance HierarchyPath="detection_centre/divideur_select_outp_1"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
-      <File Name="ip\HDMI_bd_column_counter_0\HDMI_bd_column_counter_0.xci" Type="IP">
-        <Instance HierarchyPath="detection_centre/column_counter"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
-      <File Name="ip\HDMI_bd_div_yAxis_0\HDMI_bd_div_yAxis_0.xci" Type="IP">
-        <Instance HierarchyPath="detection_centre/div_yAxis"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
-      <File Name="ip\HDMI_bd_BlankPixel_counter_0\HDMI_bd_BlankPixel_counter_0.xci" Type="IP">
-        <Instance HierarchyPath="detection_centre/BlankPixel_counter"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
-      <File Name="ip\HDMI_bd_div_xAxis_0\HDMI_bd_div_xAxis_0.xci" Type="IP">
-        <Instance HierarchyPath="detection_centre/div_xAxis"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
-      <File Name="ip\HDMI_bd_add_xAxis_0\HDMI_bd_add_xAxis_0.xci" Type="IP">
-        <Instance HierarchyPath="detection_centre/add_xAxis"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
-      <File Name="ip\HDMI_bd_detect_end_image_0_0\HDMI_bd_detect_end_image_0_0.xci" Type="IP">
-        <Instance HierarchyPath="detection_centre/detect_end_image_0"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
-      <File Name="ip\HDMI_bd_xlconstant_0_2\HDMI_bd_xlconstant_0_2.xci" Type="IP">
-        <Instance HierarchyPath="detection_centre/xlconstant_2"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
-      <File Name="ip\HDMI_bd_rdc_1bit_0_0\HDMI_bd_rdc_1bit_0_0.xci" Type="IP">
-        <Instance HierarchyPath="detection_centre/rdc_1bit_0"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
-        <UsedIn Val="SIMULATION"/>
       </File>
     </FileCollection>
   </CompositeFile>

@@ -24,26 +24,33 @@ set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
-set_property webtalk.parent_dir {E:/Conception de systemes VLSI/Laboratoire 4/ZYBO_HDMI_MGA/project_1/project_1.cache/wt} [current_project]
-set_property parent.project_path {E:/Conception de systemes VLSI/Laboratoire 4/ZYBO_HDMI_MGA/project_1/project_1.xpr} [current_project]
+set_property webtalk.parent_dir C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.cache/wt [current_project]
+set_property parent.project_path C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.xpr [current_project]
 set_property XPM_LIBRARIES XPM_CDC [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language VHDL [current_project]
 set_property board_part digilentinc.com:zybo-z7-20:part0:1.0 [current_project]
-set_property ip_repo_paths {{e:/Conception de systemes VLSI/Laboratoire 4/ZYBO_HDMI_MGA/repo}} [current_project]
-set_property ip_output_repo {e:/Conception de systemes VLSI/Laboratoire 4/ZYBO_HDMI_MGA/project_1/project_1.cache/ip} [current_project]
+set_property ip_repo_paths c:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/repo [current_project]
+set_property ip_output_repo c:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
-read_vhdl -library xil_defaultlib {{E:/Conception de systemes VLSI/Laboratoire 4/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/hdl/HDMI_bd_wrapper.vhd}}
-add_files {{E:/Conception de systemes VLSI/Laboratoire 4/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/HDMI_bd.bd}}
-set_property used_in_implementation false [get_files -all {{e:/Conception de systemes VLSI/Laboratoire 4/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/ip/HDMI_bd_clk_wiz_0_0/HDMI_bd_clk_wiz_0_0_board.xdc}}]
-set_property used_in_implementation false [get_files -all {{e:/Conception de systemes VLSI/Laboratoire 4/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/ip/HDMI_bd_clk_wiz_0_0/HDMI_bd_clk_wiz_0_0.xdc}}]
-set_property used_in_implementation false [get_files -all {{e:/Conception de systemes VLSI/Laboratoire 4/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/ip/HDMI_bd_clk_wiz_0_0/HDMI_bd_clk_wiz_0_0_ooc.xdc}}]
-set_property used_in_implementation false [get_files -all {{e:/Conception de systemes VLSI/Laboratoire 4/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/ip/HDMI_bd_dvi2rgb_0_1/src/dvi2rgb.xdc}}]
-set_property used_in_implementation false [get_files -all {{e:/Conception de systemes VLSI/Laboratoire 4/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/ip/HDMI_bd_dvi2rgb_0_1/src/dvi2rgb_ooc.xdc}}]
-set_property used_in_implementation false [get_files -all {{e:/Conception de systemes VLSI/Laboratoire 4/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/ip/HDMI_bd_rgb2dvi_0_1/src/rgb2dvi.xdc}}]
-set_property used_in_implementation false [get_files -all {{e:/Conception de systemes VLSI/Laboratoire 4/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/ip/HDMI_bd_rgb2dvi_0_1/src/rgb2dvi_ooc.xdc}}]
-set_property used_in_implementation false [get_files -all {{e:/Conception de systemes VLSI/Laboratoire 4/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/ip/HDMI_bd_rgb2dvi_0_1/src/rgb2dvi_clocks.xdc}}]
-set_property used_in_implementation false [get_files -all {{E:/Conception de systemes VLSI/Laboratoire 4/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/HDMI_bd_ooc.xdc}}]
+read_vhdl -library xil_defaultlib C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/hdl/HDMI_bd_wrapper.vhd
+add_files C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/HDMI_bd.bd
+set_property used_in_implementation false [get_files -all c:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/ip/HDMI_bd_clk_wiz_0_0/HDMI_bd_clk_wiz_0_0_board.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/ip/HDMI_bd_clk_wiz_0_0/HDMI_bd_clk_wiz_0_0.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/ip/HDMI_bd_clk_wiz_0_0/HDMI_bd_clk_wiz_0_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/ip/HDMI_bd_dvi2rgb_0_1/src/dvi2rgb.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/ip/HDMI_bd_dvi2rgb_0_1/src/dvi2rgb_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/ip/HDMI_bd_rgb2dvi_0_1/src/rgb2dvi.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/ip/HDMI_bd_rgb2dvi_0_1/src/rgb2dvi_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/ip/HDMI_bd_rgb2dvi_0_1/src/rgb2dvi_clocks.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/ip/HDMI_bd_c_addsub_0_0/HDMI_bd_c_addsub_0_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/ip/HDMI_bd_c_addsub_0_1/HDMI_bd_c_addsub_0_1_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/ip/HDMI_bd_c_addsub_0_2/HDMI_bd_c_addsub_0_2_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/ip/HDMI_bd_c_addsub_2_0/HDMI_bd_c_addsub_2_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/ip/HDMI_bd_c_addsub_0_4/HDMI_bd_c_addsub_0_4_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/ip/HDMI_bd_div_xAxis_1_1/HDMI_bd_div_xAxis_1_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/ip/HDMI_bd_div_yAxis_1_1/HDMI_bd_div_yAxis_1_ooc.xdc]
+set_property used_in_implementation false [get_files -all C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/HDMI_bd_ooc.xdc]
 
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
@@ -53,8 +60,8 @@ set_property used_in_implementation false [get_files -all {{E:/Conception de sys
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc {{E:/Conception de systemes VLSI/Laboratoire 4/ZYBO_HDMI_MGA/project_1/project_1.srcs/constrs_1/imports/constraints/Zybo-Z7-Master.xdc}}
-set_property used_in_implementation false [get_files {{E:/Conception de systemes VLSI/Laboratoire 4/ZYBO_HDMI_MGA/project_1/project_1.srcs/constrs_1/imports/constraints/Zybo-Z7-Master.xdc}}]
+read_xdc C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/constrs_1/imports/constraints/Zybo-Z7-Master.xdc
+set_property used_in_implementation false [get_files C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/constrs_1/imports/constraints/Zybo-Z7-Master.xdc]
 
 read_xdc dont_touch.xdc
 set_property used_in_implementation false [get_files dont_touch.xdc]

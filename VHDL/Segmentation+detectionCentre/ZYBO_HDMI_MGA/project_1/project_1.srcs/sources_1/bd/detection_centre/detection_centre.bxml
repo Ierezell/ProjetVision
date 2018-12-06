@@ -2,21 +2,13 @@
 <Root MajorVersion="0" MinorVersion="36">
   <CompositeFile CompositeFileTopName="detection_centre" CanBeSetAsTop="false" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="STALE" Timestamp="1542817657"/>
-    <Generation Name="IMPLEMENTATION" State="STALE" Timestamp="1542817657"/>
-    <Generation Name="SIMULATION" State="STALE" Timestamp="1542817657"/>
-    <Generation Name="HW_HANDOFF" State="STALE" Timestamp="1542813712"/>
+    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1543608849"/>
+    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1543608849"/>
+    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1543608849"/>
+    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1543608849"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
       <File Name="ip\detection_centre_BlankPixel_counter_0\detection_centre_BlankPixel_counter_0.xci" Type="IP">
         <Instance HierarchyPath="BlankPixel_counter"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
-      <File Name="ip\detection_centre_Ligne_counter_0\detection_centre_Ligne_counter_0.xci" Type="IP">
-        <Instance HierarchyPath="Ligne_counter"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
@@ -33,14 +25,6 @@
       </File>
       <File Name="ip\detection_centre_add_yAxis_0\detection_centre_add_yAxis_0.xci" Type="IP">
         <Instance HierarchyPath="add_yAxis"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
-      <File Name="ip\detection_centre_column_counter_0\detection_centre_column_counter_0.xci" Type="IP">
-        <Instance HierarchyPath="column_counter"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
@@ -113,12 +97,51 @@
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SIMULATION"/>
       </File>
+      <File Name="ip\detection_centre_rdc_1bit_0_0\detection_centre_rdc_1bit_0_0.xci" Type="IP">
+        <Instance HierarchyPath="rdc_1bit_1"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\detection_centre_Counter_0_0\detection_centre_Counter_0_0.xci" Type="IP">
+        <Instance HierarchyPath="column_counter"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\detection_centre_Counter_0_1\detection_centre_Counter_0_1.xci" Type="IP">
+        <Instance HierarchyPath="ligne_counter"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
       <File Name="detection_centre_ooc.xdc" Type="XDC">
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="OUT_OF_CONTEXT"/>
+      </File>
+      <File Name="hw_handoff\detection_centre.hwh" Type="HwHandoff">
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="HW_HANDOFF"/>
+      </File>
+      <File Name="hw_handoff\detection_centre_bd.tcl">
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="HW_HANDOFF"/>
+      </File>
+      <File Name="synth\detection_centre.hwdef">
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="HW_HANDOFF"/>
       </File>
     </FileCollection>
   </CompositeFile>
