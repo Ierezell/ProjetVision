@@ -3,8 +3,8 @@
 // Tool Version: Vivado v.2018.2.1 (win64) Build 2288692 Thu Jul 26 18:24:02 MDT 2018
 // Date        : Wed Dec  5 11:13:41 2018
 // Host        : pcetu-135 running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode synth_stub
-//               c:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/ip/HDMI_bd_xlconstant_0_2/HDMI_bd_xlconstant_0_2_stub.v
+// Command     : write_verilog -force -mode synth_stub -rename_top HDMI_bd_xlconstant_0_2 -prefix
+//               HDMI_bd_xlconstant_0_2_ HDMI_bd_xlconstant_0_2_stub.v
 // Design      : HDMI_bd_xlconstant_0_2
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7z020clg400-1

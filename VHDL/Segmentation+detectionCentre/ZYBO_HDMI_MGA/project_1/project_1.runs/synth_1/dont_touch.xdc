@@ -129,9 +129,6 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==HDMI_bd_adapt_i
 # IP: bd/HDMI_bd/ip/HDMI_bd_adapt_input_ouput_4_0/HDMI_bd_adapt_input_ouput_4_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==HDMI_bd_adapt_input_ouput_4_0 || ORIG_REF_NAME==HDMI_bd_adapt_input_ouput_4_0} -quiet] -quiet
 
-# IP: bd/HDMI_bd/ip/HDMI_bd_detect_end_image_0_1_1/HDMI_bd_detect_end_image_0_1.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==HDMI_bd_detect_end_image_0_1 || ORIG_REF_NAME==HDMI_bd_detect_end_image_0_1} -quiet] -quiet
-
 # IP: bd/HDMI_bd/ip/HDMI_bd_div_xAxis_1_1/HDMI_bd_div_xAxis_1.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==HDMI_bd_div_xAxis_1 || ORIG_REF_NAME==HDMI_bd_div_xAxis_1} -quiet] -quiet
 
@@ -158,5 +155,8 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==HDMI_bd_xlconst
 
 # IP: bd/HDMI_bd/ip/HDMI_bd_xlconstant_1_0_2/HDMI_bd_xlconstant_1_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==HDMI_bd_xlconstant_1_0 || ORIG_REF_NAME==HDMI_bd_xlconstant_1_0} -quiet] -quiet
+
+# IP: bd/HDMI_bd/ip/HDMI_bd_not_1bit_0_0/HDMI_bd_not_1bit_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==HDMI_bd_not_1bit_0_0 || ORIG_REF_NAME==HDMI_bd_not_1bit_0_0} -quiet] -quiet
 
 # XDC: bd/HDMI_bd/HDMI_bd_ooc.xdc

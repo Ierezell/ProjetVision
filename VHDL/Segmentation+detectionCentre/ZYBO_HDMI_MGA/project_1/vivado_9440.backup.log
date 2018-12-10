@@ -1,0 +1,68 @@
+#-----------------------------------------------------------
+# Vivado v2018.2.1 (64-bit)
+# SW Build 2288692 on Thu Jul 26 18:24:02 MDT 2018
+# IP Build 2289599 on Thu Jul 26 21:09:20 MDT 2018
+# Start of session at: Sat Dec  8 17:53:24 2018
+# Process ID: 9440
+# Current directory: C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent10076 C:\Users\NMLEM1\Desktop\Segmentation+detectionCentre\ZYBO_HDMI_MGA\project_1\project_1.xpr
+# Log file: C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/vivado.log
+# Journal file: C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/repo'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Programs/Xilinx/Vivado/2018.2/data/ip'.
+WARNING: [IP_Flow 19-3664] IP 'TEST2_FSM_mesure_mouvement_0_0' generated file not found 'c:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/TEST2/ip/TEST2_FSM_mesure_mouvement_0_0/TEST2_FSM_mesure_mouvement_0_0.dcp'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'TEST2_FSM_mesure_mouvement_0_0' generated file not found 'c:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/TEST2/ip/TEST2_FSM_mesure_mouvement_0_0/TEST2_FSM_mesure_mouvement_0_0_stub.v'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'TEST2_FSM_mesure_mouvement_0_0' generated file not found 'c:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/TEST2/ip/TEST2_FSM_mesure_mouvement_0_0/TEST2_FSM_mesure_mouvement_0_0_stub.vhdl'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'TEST2_FSM_mesure_mouvement_0_0' generated file not found 'c:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/TEST2/ip/TEST2_FSM_mesure_mouvement_0_0/TEST2_FSM_mesure_mouvement_0_0_sim_netlist.v'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'TEST2_FSM_mesure_mouvement_0_0' generated file not found 'c:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/TEST2/ip/TEST2_FSM_mesure_mouvement_0_0/TEST2_FSM_mesure_mouvement_0_0_sim_netlist.vhdl'. Please regenerate to continue.
+open_project: Time (s): cpu = 00:00:15 ; elapsed = 00:00:09 . Memory (MB): peak = 930.867 ; gain = 188.434
+update_compile_order -fileset sources_1
+open_bd_design {C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/TEST2/TEST2.bd}
+Adding cell -- xilinx.com:ip:xlconstant:1.1 - VDD
+Adding cell -- xilinx.com:ip:clk_wiz:6.0 - clk_wiz_0
+Adding cell -- digilentinc.com:ip:dvi2rgb:1.8 - dvi2rgb_0
+Adding cell -- digilentinc.com:ip:rgb2dvi:1.4 - rgb2dvi_0
+Adding cell -- xilinx.com:module_ref:FSM_mesure_mouvement:1.0 - FSM_mesure_mouvement_0
+Adding cell -- xilinx.com:ip:xlconstant:1.1 - xlconstant_0
+Adding cell -- xilinx.com:module_ref:ColorDetection:1.0 - ColorDetection_0
+WARNING: [BD 41-635] Illegal Net <D_1>. Missing internal and external connections. Ignored
+WARNING: [BD 41-635] Illegal Net <PixelNoirBlanc_in_1>. Missing internal and external connections. Ignored
+WARNING: [BD 41-1731] Type mismatch between connected pins: /reset(rst) and /dvi2rgb_0/aRst(undef)
+WARNING: [BD 41-1731] Type mismatch between connected pins: /reset(rst) and /dvi2rgb_0/pRst(undef)
+Adding cell -- xilinx.com:module_ref:adapt_input_ouput:1.0 - adapt_input_ouput_3
+Adding cell -- xilinx.com:ip:xlconstant:1.1 - xlconstant_0
+Adding cell -- xilinx.com:ip:xlconstant:1.1 - xlconstant_1
+Adding cell -- xilinx.com:module_ref:counter_autoreload:1.0 - column_counter1
+Adding cell -- xilinx.com:module_ref:counter_autoreload:1.0 - ligne_counter1
+Adding cell -- xilinx.com:module_ref:not_1bit:1.0 - not_1bit_0
+WARNING: [BD 41-1731] Type mismatch between connected pins: /count_pos/not_1bit_0/S(undef) and /count_pos/column_counter1/RESET(rst)
+WARNING: [BD 41-1731] Type mismatch between connected pins: /count_pos/not_1bit_0/S(undef) and /count_pos/ligne_counter1/RESET(rst)
+Successfully read diagram <TEST2> from BD file <C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/TEST2/TEST2.bd>
+open_bd_design: Time (s): cpu = 00:00:08 ; elapsed = 00:00:06 . Memory (MB): peak = 1082.398 ; gain = 97.152
+reset_run TEST2_FSM_mesure_mouvement_0_0_synth_1
+launch_runs impl_1 -jobs 8
+[Sat Dec  8 17:54:40 2018] Launched TEST2_FSM_mesure_mouvement_0_0_synth_1, synth_1...
+Run output will be captured here:
+TEST2_FSM_mesure_mouvement_0_0_synth_1: C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/TEST2_FSM_mesure_mouvement_0_0_synth_1/runme.log
+synth_1: C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/runme.log
+[Sat Dec  8 17:54:41 2018] Launched impl_1...
+Run output will be captured here: C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/impl_1/runme.log
+update_module_reference TEST2_FSM_mesure_mouvement_0_0
+INFO: [IP_Flow 19-5107] Inferred bus interface 'RESET' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'CLK' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-4728] Bus Interface 'CLK': Added interface parameter 'ASSOCIATED_RESET' with value 'RESET'.
+WARNING: [IP_Flow 19-3153] Bus Interface 'CLK': ASSOCIATED_BUSIF bus parameter is missing.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/repo'.
+Upgrading 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/TEST2/TEST2.bd'
+INFO: [IP_Flow 19-1972] Upgraded TEST2_FSM_mesure_mouvement_0_0 from FSM_mesure_mouvement_v1_0 1.0 to FSM_mesure_mouvement_v1_0 1.0
+Wrote  : <C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/TEST2/TEST2.bd> 
+Wrote  : <C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/TEST2/ui/bd_a2b9d740.ui> 
+exit
+INFO: [Common 17-206] Exiting Vivado at Sat Dec  8 18:01:13 2018...

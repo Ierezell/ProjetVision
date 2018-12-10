@@ -40,7 +40,7 @@ if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
 
 # The design that will be created by this Tcl script contains the following 
 # module references:
-# RGB_to_Y, affiche_centre, Additionneur_Nbits, Additionneur_Nbits, Counter, adapt_input_ouput, adapt_input_ouput, adapt_input_ouput, adapt_input_ouput, adapt_input_ouput, counter_autoreload, detect_end_image, divideur_select_output, divideur_select_output, counter_autoreload, div_16, reg_Nbits, reg_Nbits, reg_Nbits, reg_Nbits, Seuillage, abs_8bits_signed, reg_Nbits, reg_Nbits, reg_Nbits, ET_logique_5entree, reg_1bit, reg_1bit, reg_1bit, reg_1bit, reg_1bit, reg_1bit
+# RGB_to_Y, affiche_centre, Additionneur_Nbits, Additionneur_Nbits, Counter, adapt_input_ouput, adapt_input_ouput, adapt_input_ouput, adapt_input_ouput, adapt_input_ouput, counter_autoreload, divideur_select_output, divideur_select_output, counter_autoreload, not_1bit, div_16, reg_Nbits, reg_Nbits, reg_Nbits, reg_Nbits, Seuillage, abs_8bits_signed, reg_Nbits, reg_Nbits, reg_Nbits, ET_logique_5entree, reg_1bit, reg_1bit, reg_1bit, reg_1bit, reg_1bit, reg_1bit
 
 # Please add the sources of those modules before sourcing this Tcl script.
 
@@ -673,11 +673,12 @@ proc create_hier_cell_Detect_centre { parentCell nameHier } {
   create_bd_pin -dir I EN_count
   create_bd_pin -dir I Pixel_White_Black
   create_bd_pin -dir I RESET
+  create_bd_pin -dir I Vsync
   create_bd_pin -dir O -from 10 -to 0 nb_column
   create_bd_pin -dir O -from 10 -to 0 nb_ligne
-  create_bd_pin -dir O -from 11 -to 0 xMoy
+  create_bd_pin -dir O -from 10 -to 0 xMoy
   create_bd_pin -dir O xmoy_tvalid
-  create_bd_pin -dir O -from 11 -to 0 yMoy
+  create_bd_pin -dir O -from 10 -to 0 yMoy
   create_bd_pin -dir O ymoy_tvalid
 
   # Create instance: Additionneur_Nbits_0, and set properties
@@ -811,51 +812,40 @@ proc create_hier_cell_Detect_centre { parentCell nameHier } {
    CONFIG.N {11} \
  ] $column_counter1
 
-  # Create instance: detect_end_image_0, and set properties
-  set block_name detect_end_image
-  set block_cell_name detect_end_image_0
-  if { [catch {set detect_end_image_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
-     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
-     return 1
-   } elseif { $detect_end_image_0 eq "" } {
-     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
-     return 1
-   }
-  
   # Create instance: div_xAxis, and set properties
   set div_xAxis [ create_bd_cell -type ip -vlnv xilinx.com:ip:div_gen:5.1 div_xAxis ]
   set_property -dict [ list \
-   CONFIG.ACLKEN {false} \
+   CONFIG.ACLKEN {true} \
    CONFIG.OutTLASTBehv {Null} \
-   CONFIG.algorithm_type {Radix2} \
+   CONFIG.algorithm_type {High_Radix} \
    CONFIG.clocks_per_division {1} \
    CONFIG.divide_by_zero_detect {false} \
    CONFIG.dividend_and_quotient_width {18} \
    CONFIG.dividend_has_tlast {false} \
    CONFIG.dividend_has_tuser {false} \
    CONFIG.divisor_width {11} \
-   CONFIG.fractional_width {11} \
-   CONFIG.latency {20} \
-   CONFIG.operand_sign {Unsigned} \
-   CONFIG.remainder_type {Remainder} \
+   CONFIG.fractional_width {0} \
+   CONFIG.latency {21} \
+   CONFIG.operand_sign {Signed} \
+   CONFIG.remainder_type {Fractional} \
  ] $div_xAxis
 
   # Create instance: div_yAxis, and set properties
   set div_yAxis [ create_bd_cell -type ip -vlnv xilinx.com:ip:div_gen:5.1 div_yAxis ]
   set_property -dict [ list \
-   CONFIG.ACLKEN {false} \
+   CONFIG.ACLKEN {true} \
    CONFIG.OutTLASTBehv {Null} \
-   CONFIG.algorithm_type {Radix2} \
+   CONFIG.algorithm_type {High_Radix} \
    CONFIG.clocks_per_division {1} \
    CONFIG.divide_by_zero_detect {false} \
    CONFIG.dividend_and_quotient_width {18} \
    CONFIG.dividend_has_tlast {false} \
    CONFIG.dividend_has_tuser {false} \
    CONFIG.divisor_width {11} \
-   CONFIG.fractional_width {11} \
-   CONFIG.latency {20} \
-   CONFIG.operand_sign {Unsigned} \
-   CONFIG.remainder_type {Remainder} \
+   CONFIG.fractional_width {0} \
+   CONFIG.latency {21} \
+   CONFIG.operand_sign {Signed} \
+   CONFIG.remainder_type {Fractional} \
  ] $div_yAxis
 
   # Create instance: divideur_select_outp_0, and set properties
@@ -894,6 +884,17 @@ proc create_hier_cell_Detect_centre { parentCell nameHier } {
    CONFIG.N {11} \
  ] $ligne_counter1
 
+  # Create instance: not_1bit_0, and set properties
+  set block_name not_1bit
+  set block_cell_name not_1bit_0
+  if { [catch {set not_1bit_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $not_1bit_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
   # Create instance: xlconstant_0, and set properties
   set xlconstant_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_0 ]
   set_property -dict [ list \
@@ -904,33 +905,34 @@ proc create_hier_cell_Detect_centre { parentCell nameHier } {
   # Create instance: xlconstant_1, and set properties
   set xlconstant_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_1 ]
   set_property -dict [ list \
-   CONFIG.CONST_VAL {1199} \
+   CONFIG.CONST_VAL {899} \
    CONFIG.CONST_WIDTH {11} \
  ] $xlconstant_1
 
   # Create port connections
   connect_bd_net -net Additionneur_Nbits_0_S [get_bd_pins Additionneur_Nbits_0/A] [get_bd_pins Additionneur_Nbits_0/S] [get_bd_pins adapt_input_ouput_2/entree]
   connect_bd_net -net Additionneur_Nbits_1_S [get_bd_pins Additionneur_Nbits_1/A] [get_bd_pins Additionneur_Nbits_1/S] [get_bd_pins adapt_input_ouput_1/entree]
-  connect_bd_net -net CLK_1 [get_bd_pins CLK] [get_bd_pins Additionneur_Nbits_0/CLK] [get_bd_pins Additionneur_Nbits_1/CLK] [get_bd_pins Blank_pixel_counter/CLK] [get_bd_pins column_counter1/CLK] [get_bd_pins detect_end_image_0/CLK] [get_bd_pins div_xAxis/aclk] [get_bd_pins div_yAxis/aclk] [get_bd_pins ligne_counter1/CLK]
+  connect_bd_net -net CLK_1 [get_bd_pins CLK] [get_bd_pins Additionneur_Nbits_0/CLK] [get_bd_pins Additionneur_Nbits_1/CLK] [get_bd_pins Blank_pixel_counter/CLK] [get_bd_pins column_counter1/CLK] [get_bd_pins div_xAxis/aclk] [get_bd_pins div_yAxis/aclk] [get_bd_pins ligne_counter1/CLK]
   connect_bd_net -net EN_count_1 [get_bd_pins EN_count] [get_bd_pins column_counter1/EN]
-  connect_bd_net -net Net [get_bd_pins detect_end_image_0/fin] [get_bd_pins div_xAxis/s_axis_dividend_tvalid] [get_bd_pins div_xAxis/s_axis_divisor_tvalid] [get_bd_pins div_yAxis/s_axis_dividend_tvalid] [get_bd_pins div_yAxis/s_axis_divisor_tvalid]
   connect_bd_net -net Net1 [get_bd_pins Pixel_White_Black] [get_bd_pins Additionneur_Nbits_0/EN] [get_bd_pins Additionneur_Nbits_1/EN] [get_bd_pins Blank_pixel_counter/EN]
-  connect_bd_net -net RESET_counter_ligne_and_column_1 [get_bd_pins RESET] [get_bd_pins Additionneur_Nbits_0/RESET] [get_bd_pins Additionneur_Nbits_1/RESET] [get_bd_pins Blank_pixel_counter/RESET] [get_bd_pins column_counter1/RESET] [get_bd_pins ligne_counter1/RESET]
+  connect_bd_net -net RESET_1 [get_bd_pins RESET] [get_bd_pins Additionneur_Nbits_0/RESET] [get_bd_pins Additionneur_Nbits_1/RESET] [get_bd_pins Blank_pixel_counter/RESET]
+  connect_bd_net -net Vsync_1 [get_bd_pins Vsync] [get_bd_pins div_xAxis/aclken] [get_bd_pins div_xAxis/s_axis_dividend_tvalid] [get_bd_pins div_xAxis/s_axis_divisor_tvalid] [get_bd_pins div_yAxis/aclken] [get_bd_pins div_yAxis/s_axis_dividend_tvalid] [get_bd_pins div_yAxis/s_axis_divisor_tvalid] [get_bd_pins not_1bit_0/A]
   connect_bd_net -net adapt_input_ouput_0_sortie [get_bd_pins adapt_input_ouput_0/sortie] [get_bd_pins div_xAxis/s_axis_divisor_tdata] [get_bd_pins div_yAxis/s_axis_divisor_tdata]
   connect_bd_net -net adapt_input_ouput_1_sortie [get_bd_pins adapt_input_ouput_1/sortie] [get_bd_pins div_xAxis/s_axis_dividend_tdata]
   connect_bd_net -net adapt_input_ouput_2_sortie [get_bd_pins adapt_input_ouput_2/sortie] [get_bd_pins div_yAxis/s_axis_dividend_tdata]
   connect_bd_net -net adapt_input_ouput_3_sortie [get_bd_pins Additionneur_Nbits_1/B] [get_bd_pins adapt_input_ouput_3/sortie]
   connect_bd_net -net adapt_input_ouput_4_sortie [get_bd_pins Additionneur_Nbits_0/B] [get_bd_pins adapt_input_ouput_4/sortie]
   connect_bd_net -net column_counter1_endOfCount [get_bd_pins column_counter1/endOfCount] [get_bd_pins ligne_counter1/EN]
-  connect_bd_net -net column_counter_Q [get_bd_pins nb_column] [get_bd_pins adapt_input_ouput_4/entree] [get_bd_pins column_counter1/Q] [get_bd_pins detect_end_image_0/column]
+  connect_bd_net -net column_counter_Q [get_bd_pins nb_column] [get_bd_pins adapt_input_ouput_4/entree] [get_bd_pins column_counter1/Q]
   connect_bd_net -net div_xAxis_m_axis_dout_tdata [get_bd_pins div_xAxis/m_axis_dout_tdata] [get_bd_pins divideur_select_outp_0/Entree]
   connect_bd_net -net div_xAxis_m_axis_dout_tvalid [get_bd_pins xmoy_tvalid] [get_bd_pins div_xAxis/m_axis_dout_tvalid]
   connect_bd_net -net div_yAxis_m_axis_dout_tdata [get_bd_pins div_yAxis/m_axis_dout_tdata] [get_bd_pins divideur_select_outp_1/Entree]
   connect_bd_net -net div_yAxis_m_axis_dout_tvalid [get_bd_pins ymoy_tvalid] [get_bd_pins div_yAxis/m_axis_dout_tvalid]
-  connect_bd_net -net divideur_select_outp_0_Output [get_bd_pins xMoy] [get_bd_pins divideur_select_outp_0/Sortie]
-  connect_bd_net -net divideur_select_outp_1_Output [get_bd_pins yMoy] [get_bd_pins divideur_select_outp_1/Sortie]
+  connect_bd_net -net divideur_select_outp_0_Sortie [get_bd_pins xMoy] [get_bd_pins divideur_select_outp_0/Sortie]
+  connect_bd_net -net divideur_select_outp_1_Sortie [get_bd_pins yMoy] [get_bd_pins divideur_select_outp_1/Sortie]
   connect_bd_net -net ligne_counter2_Q [get_bd_pins Blank_pixel_counter/Q] [get_bd_pins adapt_input_ouput_0/entree]
-  connect_bd_net -net ligne_counter_Q [get_bd_pins nb_ligne] [get_bd_pins adapt_input_ouput_3/entree] [get_bd_pins detect_end_image_0/ligne] [get_bd_pins ligne_counter1/Q]
+  connect_bd_net -net ligne_counter_Q [get_bd_pins nb_ligne] [get_bd_pins adapt_input_ouput_3/entree] [get_bd_pins ligne_counter1/Q]
+  connect_bd_net -net not_1bit_0_S [get_bd_pins column_counter1/RESET] [get_bd_pins ligne_counter1/RESET] [get_bd_pins not_1bit_0/S]
   connect_bd_net -net xlconstant_0_dout [get_bd_pins column_counter1/comparator] [get_bd_pins xlconstant_0/dout]
   connect_bd_net -net xlconstant_1_dout [get_bd_pins ligne_counter1/comparator] [get_bd_pins xlconstant_1/dout]
 
@@ -981,6 +983,9 @@ proc create_root_design { parentCell } {
   set_property -dict [ list \
    CONFIG.FREQ_HZ {125000000} \
  ] $CLK
+  set LED [ create_bd_port -dir O LED ]
+  set LEDx [ create_bd_port -dir O LEDx ]
+  set LEDy [ create_bd_port -dir O LEDy ]
   set USER_RESET [ create_bd_port -dir I USER_RESET ]
   set hdmi_in_hpd [ create_bd_port -dir O -from 0 -to 0 hdmi_in_hpd ]
   set reset [ create_bd_port -dir I -type rst reset ]
@@ -1074,7 +1079,9 @@ proc create_root_design { parentCell } {
   connect_bd_net -net Detect_centre_nb_column [get_bd_pins Detect_centre/nb_column] [get_bd_pins affiche_centre_0/nb_column]
   connect_bd_net -net Detect_centre_nb_ligne [get_bd_pins Detect_centre/nb_ligne] [get_bd_pins affiche_centre_0/nb_ligne]
   connect_bd_net -net Detect_centre_xMoy [get_bd_pins Detect_centre/xMoy] [get_bd_pins affiche_centre_0/m_Xaxis_dout_tdata]
+  connect_bd_net -net Detect_centre_xmoy_tvalid [get_bd_ports LEDx] [get_bd_pins Detect_centre/xmoy_tvalid]
   connect_bd_net -net Detect_centre_yMoy [get_bd_pins Detect_centre/yMoy] [get_bd_pins affiche_centre_0/m_Yaxis_dout_tdata]
+  connect_bd_net -net Detect_centre_ymoy_tvalid [get_bd_ports LEDy] [get_bd_pins Detect_centre/ymoy_tvalid]
   connect_bd_net -net PixelNoirBlanc_in_1 [get_bd_pins Segmentation/PixelNoirBlanc] [get_bd_pins filtrage_intensif/PixelNoirBlanc_in]
   connect_bd_net -net VDD_dout [get_bd_ports hdmi_in_hpd] [get_bd_pins VDD/dout]
   connect_bd_net -net affiche_centre_0_RGB_OUT [get_bd_pins affiche_centre_0/RGB_OUT] [get_bd_pins rgb2dvi_0/vid_pData]
@@ -1082,7 +1089,7 @@ proc create_root_design { parentCell } {
   connect_bd_net -net dvi2rgb_0_vid_pData [get_bd_pins RGB_to_Y_0/RGB] [get_bd_pins dvi2rgb_0/vid_pData]
   connect_bd_net -net dvi2rgb_0_vid_pHSync [get_bd_pins dvi2rgb_0/vid_pHSync] [get_bd_pins rgb2dvi_0/vid_pHSync]
   connect_bd_net -net dvi2rgb_0_vid_pVDE [get_bd_pins Detect_centre/EN_count] [get_bd_pins dvi2rgb_0/vid_pVDE] [get_bd_pins rgb2dvi_0/vid_pVDE]
-  connect_bd_net -net dvi2rgb_0_vid_pVSync [get_bd_pins dvi2rgb_0/vid_pVSync] [get_bd_pins rgb2dvi_0/vid_pVSync]
+  connect_bd_net -net dvi2rgb_0_vid_pVSync [get_bd_ports LED] [get_bd_pins Detect_centre/Vsync] [get_bd_pins dvi2rgb_0/vid_pVSync] [get_bd_pins rgb2dvi_0/vid_pVSync]
   connect_bd_net -net filtrage_intensif_PixelNoirBlanc_out [get_bd_pins Detect_centre/Pixel_White_Black] [get_bd_pins affiche_centre_0/PixelNoirBlanc] [get_bd_pins filtrage_intensif/PixelNoirBlanc_out]
   connect_bd_net -net reg_1bit_0_Q [get_bd_ports USER_RESET] [get_bd_pins Detect_centre/RESET] [get_bd_pins Moyenneur/RESET] [get_bd_pins Segmentation/RESET] [get_bd_pins filtrage_intensif/RESET]
   connect_bd_net -net reset_1 [get_bd_ports reset] [get_bd_pins clk_wiz_0/reset] [get_bd_pins dvi2rgb_0/aRst] [get_bd_pins dvi2rgb_0/pRst] [get_bd_pins rgb2dvi_0/aRst]

@@ -1,2 +1,6 @@
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.ip_user_files/bd/test/sim/test.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity test
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.ip_user_files/bd/test/ip/test_div_gen_0_0/sim/test_div_gen_0_0.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity test_div_gen_0_0
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/test/hdl/test_wrapper.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity test_wrapper

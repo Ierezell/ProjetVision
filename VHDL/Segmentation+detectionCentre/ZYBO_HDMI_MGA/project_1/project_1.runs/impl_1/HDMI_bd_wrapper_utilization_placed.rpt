@@ -1,8 +1,8 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.2.1 (win64) Build 2288692 Thu Jul 26 18:24:02 MDT 2018
-| Date         : Wed Dec  5 14:37:52 2018
-| Host         : pcetu-135 running 64-bit major release  (build 9200)
+| Date         : Sun Dec  9 19:08:10 2018
+| Host         : pcetu-136 running 64-bit major release  (build 9200)
 | Command      : report_utilization -file HDMI_bd_wrapper_utilization_placed.rpt -pb HDMI_bd_wrapper_utilization_placed.pb
 | Design       : HDMI_bd_wrapper
 | Device       : 7z020clg400-1
@@ -31,13 +31,13 @@ Table of Contents
 +----------------------------+------+-------+-----------+-------+
 |          Site Type         | Used | Fixed | Available | Util% |
 +----------------------------+------+-------+-----------+-------+
-| Slice LUTs                 |  602 |     0 |     53200 |  1.13 |
-|   LUT as Logic             |  578 |     0 |     53200 |  1.09 |
-|   LUT as Memory            |   24 |     0 |     17400 |  0.14 |
+| Slice LUTs                 | 1085 |     0 |     53200 |  2.04 |
+|   LUT as Logic             |  975 |     0 |     53200 |  1.83 |
+|   LUT as Memory            |  110 |     0 |     17400 |  0.63 |
 |     LUT as Distributed RAM |   24 |     0 |           |       |
-|     LUT as Shift Register  |    0 |     0 |           |       |
-| Slice Registers            |  669 |     0 |    106400 |  0.63 |
-|   Register as Flip Flop    |  669 |     0 |    106400 |  0.63 |
+|     LUT as Shift Register  |   86 |     0 |           |       |
+| Slice Registers            | 1724 |     0 |    106400 |  1.62 |
+|   Register as Flip Flop    | 1724 |     0 |    106400 |  1.62 |
 |   Register as Latch        |    0 |     0 |    106400 |  0.00 |
 | F7 Muxes                   |   19 |     0 |     26600 |  0.07 |
 | F8 Muxes                   |    8 |     0 |     13300 |  0.06 |
@@ -57,9 +57,9 @@ Table of Contents
 | 0     |            _ |       Reset |            - |
 | 0     |          Yes |           - |            - |
 | 25    |          Yes |           - |          Set |
-| 55    |          Yes |           - |        Reset |
+| 114   |          Yes |           - |        Reset |
 | 27    |          Yes |         Set |            - |
-| 562   |          Yes |       Reset |            - |
+| 1558  |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -69,24 +69,27 @@ Table of Contents
 +-------------------------------------------+------+-------+-----------+-------+
 |                 Site Type                 | Used | Fixed | Available | Util% |
 +-------------------------------------------+------+-------+-----------+-------+
-| Slice                                     |  238 |     0 |     13300 |  1.79 |
-|   SLICEL                                  |  168 |     0 |           |       |
-|   SLICEM                                  |   70 |     0 |           |       |
-| LUT as Logic                              |  578 |     0 |     53200 |  1.09 |
+| Slice                                     |  518 |     0 |     13300 |  3.89 |
+|   SLICEL                                  |  310 |     0 |           |       |
+|   SLICEM                                  |  208 |     0 |           |       |
+| LUT as Logic                              |  975 |     0 |     53200 |  1.83 |
 |   using O5 output only                    |    0 |       |           |       |
-|   using O6 output only                    |  436 |       |           |       |
-|   using O5 and O6                         |  142 |       |           |       |
-| LUT as Memory                             |   24 |     0 |     17400 |  0.14 |
+|   using O6 output only                    |  717 |       |           |       |
+|   using O5 and O6                         |  258 |       |           |       |
+| LUT as Memory                             |  110 |     0 |     17400 |  0.63 |
 |   LUT as Distributed RAM                  |   24 |     0 |           |       |
 |     using O5 output only                  |    0 |       |           |       |
 |     using O6 output only                  |    0 |       |           |       |
 |     using O5 and O6                       |   24 |       |           |       |
-|   LUT as Shift Register                   |    0 |     0 |           |       |
-| LUT Flip Flop Pairs                       |  321 |     0 |     53200 |  0.60 |
-|   fully used LUT-FF pairs                 |   72 |       |           |       |
-|   LUT-FF pairs with one unused LUT output |  224 |       |           |       |
-|   LUT-FF pairs with one unused Flip Flop  |  194 |       |           |       |
-| Unique Control Sets                       |   54 |       |           |       |
+|   LUT as Shift Register                   |   86 |     0 |           |       |
+|     using O5 output only                  |    8 |       |           |       |
+|     using O6 output only                  |   20 |       |           |       |
+|     using O5 and O6                       |   58 |       |           |       |
+| LUT Flip Flop Pairs                       |  753 |     0 |     53200 |  1.42 |
+|   fully used LUT-FF pairs                 |  222 |       |           |       |
+|   LUT-FF pairs with one unused LUT output |  496 |       |           |       |
+|   LUT-FF pairs with one unused Flip Flop  |  426 |       |           |       |
+| Unique Control Sets                       |   76 |       |           |       |
 +-------------------------------------------+------+-------+-----------+-------+
 * Note: Review the Control Sets Report for more information regarding control sets.
 
@@ -94,24 +97,26 @@ Table of Contents
 3. Memory
 ---------
 
-+----------------+------+-------+-----------+-------+
-|    Site Type   | Used | Fixed | Available | Util% |
-+----------------+------+-------+-----------+-------+
-| Block RAM Tile |    0 |     0 |       140 |  0.00 |
-|   RAMB36/FIFO* |    0 |     0 |       140 |  0.00 |
-|   RAMB18       |    0 |     0 |       280 |  0.00 |
-+----------------+------+-------+-----------+-------+
++-------------------+------+-------+-----------+-------+
+|     Site Type     | Used | Fixed | Available | Util% |
++-------------------+------+-------+-----------+-------+
+| Block RAM Tile    |    1 |     0 |       140 |  0.71 |
+|   RAMB36/FIFO*    |    0 |     0 |       140 |  0.00 |
+|   RAMB18          |    2 |     0 |       280 |  0.71 |
+|     RAMB18E1 only |    2 |       |           |       |
++-------------------+------+-------+-----------+-------+
 * Note: Each Block RAM Tile only has one FIFO logic available and therefore can accommodate only one FIFO36E1 or one FIFO18E1. However, if a FIFO18E1 occupies a Block RAM Tile, that tile can still accommodate a RAMB18E1
 
 
 4. DSP
 ------
 
-+-----------+------+-------+-----------+-------+
-| Site Type | Used | Fixed | Available | Util% |
-+-----------+------+-------+-----------+-------+
-| DSPs      |    0 |     0 |       220 |  0.00 |
-+-----------+------+-------+-----------+-------+
++----------------+------+-------+-----------+-------+
+|    Site Type   | Used | Fixed | Available | Util% |
++----------------+------+-------+-----------+-------+
+| DSPs           |   14 |     0 |       220 |  6.36 |
+|   DSP48E1 only |   14 |       |           |       |
++----------------+------+-------+-----------+-------+
 
 
 5. IO and GT Specific
@@ -120,8 +125,8 @@ Table of Contents
 +-----------------------------+------+-------+-----------+-------+
 |          Site Type          | Used | Fixed | Available | Util% |
 +-----------------------------+------+-------+-----------+-------+
-| Bonded IOB                  |   22 |    22 |       125 | 17.60 |
-|   IOB Master Pads           |   11 |       |           |       |
+| Bonded IOB                  |   25 |    25 |       125 | 20.00 |
+|   IOB Master Pads           |   13 |       |           |       |
 |   IOB Slave Pads            |   11 |       |           |       |
 | Bonded IPADs                |    0 |     0 |         2 |  0.00 |
 | Bonded IOPADs               |    0 |     0 |       130 |  0.00 |
@@ -182,34 +187,38 @@ Table of Contents
 +------------+------+---------------------+
 |  Ref Name  | Used | Functional Category |
 +------------+------+---------------------+
-| FDRE       |  562 |        Flop & Latch |
-| LUT6       |  247 |                 LUT |
-| LUT5       |  118 |                 LUT |
-| LUT4       |  111 |                 LUT |
-| LUT3       |  108 |                 LUT |
-| LUT2       |  101 |                 LUT |
-| FDCE       |   55 |        Flop & Latch |
+| FDRE       | 1558 |        Flop & Latch |
+| LUT6       |  345 |                 LUT |
+| LUT3       |  295 |                 LUT |
+| LUT2       |  221 |                 LUT |
+| LUT4       |  171 |                 LUT |
+| LUT5       |  147 |                 LUT |
+| SRL16E     |  142 |  Distributed Memory |
+| FDCE       |  114 |        Flop & Latch |
+| CARRY4     |   55 |          CarryLogic |
+| LUT1       |   54 |                 LUT |
 | RAMD32     |   36 |  Distributed Memory |
-| LUT1       |   35 |                 LUT |
 | FDSE       |   27 |        Flop & Latch |
 | FDPE       |   25 |        Flop & Latch |
-| CARRY4     |   24 |          CarryLogic |
 | MUXF7      |   19 |               MuxFx |
+| DSP48E1    |   14 |    Block Arithmetic |
 | RAMS32     |   12 |  Distributed Memory |
 | OSERDESE2  |    8 |                  IO |
 | MUXF8      |    8 |               MuxFx |
 | ISERDESE2  |    6 |                  IO |
 | IBUF       |    5 |                  IO |
 | OBUFDS     |    4 |                  IO |
+| OBUF       |    4 |                  IO |
 | IBUFDS     |    4 |                  IO |
 | IDELAYE2   |    3 |                  IO |
 | BUFR       |    3 |               Clock |
 | BUFG       |    3 |               Clock |
+| SRLC32E    |    2 |  Distributed Memory |
+| RAMB18E1   |    2 |        Block Memory |
 | OBUFT      |    2 |                  IO |
 | MMCME2_ADV |    2 |               Clock |
 | BUFIO      |    2 |               Clock |
 | PLLE2_ADV  |    1 |               Clock |
-| OBUF       |    1 |                  IO |
 | IDELAYCTRL |    1 |                  IO |
 +------------+------+---------------------+
 
@@ -225,30 +234,44 @@ Table of Contents
 10. Instantiated Netlists
 -------------------------
 
-+--------------------------------+------+
-|            Ref Name            | Used |
-+--------------------------------+------+
-| HDMI_bd_xlconstant_0_3         |    1 |
-| HDMI_bd_xlconstant_0_1         |    1 |
-| HDMI_bd_rgb2dvi_0_1            |    1 |
-| HDMI_bd_reg_Nbits_1_0          |    1 |
-| HDMI_bd_reg_Nbits_0_5          |    1 |
-| HDMI_bd_reg_Nbits_0_4          |    1 |
-| HDMI_bd_reg_1bit_4_0           |    1 |
-| HDMI_bd_reg_1bit_3_0           |    1 |
-| HDMI_bd_reg_1bit_2_0           |    1 |
-| HDMI_bd_reg_1bit_0_2           |    1 |
-| HDMI_bd_reg_1bit_0_1           |    1 |
-| HDMI_bd_reg_1bit_0_0           |    1 |
-| HDMI_bd_dvi2rgb_0_1            |    1 |
-| HDMI_bd_column_counter_0       |    1 |
-| HDMI_bd_clk_wiz_0_0            |    1 |
-| HDMI_bd_c_addsub_0_4           |    1 |
-| HDMI_bd_affiche_centre_0_0     |    1 |
-| HDMI_bd_abs_8bits_signed_0_0   |    1 |
-| HDMI_bd_Seuillage_0_3          |    1 |
-| HDMI_bd_RGB_to_Y_0_0           |    1 |
-| HDMI_bd_ET_logique_5entree_0_0 |    1 |
-+--------------------------------+------+
++----------------------------------+------+
+|             Ref Name             | Used |
++----------------------------------+------+
+| HDMI_bd_xlconstant_0_3           |    1 |
+| HDMI_bd_xlconstant_0_1           |    1 |
+| HDMI_bd_rgb2dvi_0_1              |    1 |
+| HDMI_bd_reg_Nbits_1_0            |    1 |
+| HDMI_bd_reg_Nbits_0_5            |    1 |
+| HDMI_bd_reg_Nbits_0_4            |    1 |
+| HDMI_bd_reg_1bit_4_0             |    1 |
+| HDMI_bd_reg_1bit_3_0             |    1 |
+| HDMI_bd_reg_1bit_2_0             |    1 |
+| HDMI_bd_reg_1bit_0_2             |    1 |
+| HDMI_bd_reg_1bit_0_1             |    1 |
+| HDMI_bd_reg_1bit_0_0             |    1 |
+| HDMI_bd_not_1bit_0_0             |    1 |
+| HDMI_bd_ligne_counter_0          |    1 |
+| HDMI_bd_dvi2rgb_0_1              |    1 |
+| HDMI_bd_divideur_select_outp_1_1 |    1 |
+| HDMI_bd_divideur_select_outp_0_1 |    1 |
+| HDMI_bd_div_yAxis_1              |    1 |
+| HDMI_bd_div_xAxis_1              |    1 |
+| HDMI_bd_column_counter_0         |    1 |
+| HDMI_bd_clk_wiz_0_0              |    1 |
+| HDMI_bd_c_addsub_0_4             |    1 |
+| HDMI_bd_affiche_centre_0_0       |    1 |
+| HDMI_bd_adapt_input_ouput_4_0    |    1 |
+| HDMI_bd_adapt_input_ouput_3_0    |    1 |
+| HDMI_bd_adapt_input_ouput_2_1    |    1 |
+| HDMI_bd_adapt_input_ouput_1_1    |    1 |
+| HDMI_bd_adapt_input_ouput_0_1    |    1 |
+| HDMI_bd_abs_8bits_signed_0_0     |    1 |
+| HDMI_bd_Seuillage_0_3            |    1 |
+| HDMI_bd_RGB_to_Y_0_0             |    1 |
+| HDMI_bd_ET_logique_5entree_0_0   |    1 |
+| HDMI_bd_Blank_pixel_counter_1    |    1 |
+| HDMI_bd_Additionneur_Nbits_1_0   |    1 |
+| HDMI_bd_Additionneur_Nbits_0_0   |    1 |
++----------------------------------+------+
 
 

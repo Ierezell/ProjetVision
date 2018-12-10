@@ -1,7 +1,7 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.2.1 (win64) Build 2288692 Thu Jul 26 18:24:02 MDT 2018
-// Date        : Wed Dec  5 13:47:40 2018
+// Date        : Fri Dec  7 17:38:19 2018
 // Host        : pcetu-135 running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
 //               C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/ip/HDMI_bd_affiche_centre_0_0/HDMI_bd_affiche_centre_0_0_sim_netlist.v
@@ -22,8 +22,8 @@ module HDMI_bd_affiche_centre_0_0
     nb_ligne,
     PixelNoirBlanc,
     RGB_OUT);
-  input [11:0]m_Xaxis_dout_tdata;
-  input [11:0]m_Yaxis_dout_tdata;
+  input [10:0]m_Xaxis_dout_tdata;
+  input [10:0]m_Yaxis_dout_tdata;
   input [10:0]nb_column;
   input [10:0]nb_ligne;
   input PixelNoirBlanc;
@@ -31,9 +31,10 @@ module HDMI_bd_affiche_centre_0_0
 
   wire PixelNoirBlanc;
   wire [23:15]\^RGB_OUT ;
-  wire \RGB_OUT[16]_INST_0_i_1_n_0 ;
-  wire \RGB_OUT[16]_INST_0_i_2_n_0 ;
+  wire [10:0]m_Xaxis_dout_tdata;
+  wire [10:0]m_Yaxis_dout_tdata;
   wire [10:0]nb_column;
+  wire [10:0]nb_ligne;
 
   assign RGB_OUT[23] = \^RGB_OUT [23];
   assign RGB_OUT[22] = \^RGB_OUT [23];
@@ -59,40 +60,161 @@ module HDMI_bd_affiche_centre_0_0
   assign RGB_OUT[2] = \^RGB_OUT [15];
   assign RGB_OUT[1] = \^RGB_OUT [15];
   assign RGB_OUT[0] = \^RGB_OUT [15];
+  HDMI_bd_affiche_centre_0_0_affiche_centre U0
+       (.PixelNoirBlanc(PixelNoirBlanc),
+        .RGB_OUT({\^RGB_OUT [23],\^RGB_OUT [15]}),
+        .m_Xaxis_dout_tdata(m_Xaxis_dout_tdata),
+        .m_Yaxis_dout_tdata(m_Yaxis_dout_tdata),
+        .nb_column(nb_column),
+        .nb_ligne(nb_ligne));
+endmodule
+
+(* ORIG_REF_NAME = "affiche_centre" *) 
+module HDMI_bd_affiche_centre_0_0_affiche_centre
+   (RGB_OUT,
+    PixelNoirBlanc,
+    nb_column,
+    m_Yaxis_dout_tdata,
+    nb_ligne,
+    m_Xaxis_dout_tdata);
+  output [1:0]RGB_OUT;
+  input PixelNoirBlanc;
+  input [10:0]nb_column;
+  input [10:0]m_Yaxis_dout_tdata;
+  input [10:0]nb_ligne;
+  input [10:0]m_Xaxis_dout_tdata;
+
+  wire PixelNoirBlanc;
+  wire [1:0]RGB_OUT;
+  wire RGB_OUT2;
+  wire RGB_OUT20_out;
+  wire RGB_OUT2__3_carry_i_1_n_0;
+  wire RGB_OUT2__3_carry_i_2_n_0;
+  wire RGB_OUT2__3_carry_i_3_n_0;
+  wire RGB_OUT2__3_carry_i_4_n_0;
+  wire RGB_OUT2__3_carry_n_1;
+  wire RGB_OUT2__3_carry_n_2;
+  wire RGB_OUT2__3_carry_n_3;
+  wire RGB_OUT2_carry_i_1_n_0;
+  wire RGB_OUT2_carry_i_2_n_0;
+  wire RGB_OUT2_carry_i_3_n_0;
+  wire RGB_OUT2_carry_i_4_n_0;
+  wire RGB_OUT2_carry_n_1;
+  wire RGB_OUT2_carry_n_2;
+  wire RGB_OUT2_carry_n_3;
+  wire [10:0]m_Xaxis_dout_tdata;
+  wire [10:0]m_Yaxis_dout_tdata;
+  wire [10:0]nb_column;
+  wire [10:0]nb_ligne;
+  wire [3:0]NLW_RGB_OUT2__3_carry_O_UNCONNECTED;
+  wire [3:0]NLW_RGB_OUT2_carry_O_UNCONNECTED;
+
+  CARRY4 RGB_OUT2__3_carry
+       (.CI(1'b0),
+        .CO({RGB_OUT20_out,RGB_OUT2__3_carry_n_1,RGB_OUT2__3_carry_n_2,RGB_OUT2__3_carry_n_3}),
+        .CYINIT(1'b1),
+        .DI({1'b0,1'b0,1'b0,1'b0}),
+        .O(NLW_RGB_OUT2__3_carry_O_UNCONNECTED[3:0]),
+        .S({RGB_OUT2__3_carry_i_1_n_0,RGB_OUT2__3_carry_i_2_n_0,RGB_OUT2__3_carry_i_3_n_0,RGB_OUT2__3_carry_i_4_n_0}));
   LUT4 #(
-    .INIT(16'hB0E0)) 
-    \RGB_OUT[0]_INST_0 
-       (.I0(\RGB_OUT[16]_INST_0_i_1_n_0 ),
-        .I1(\RGB_OUT[16]_INST_0_i_2_n_0 ),
-        .I2(PixelNoirBlanc),
-        .I3(nb_column[5]),
-        .O(\^RGB_OUT [15]));
+    .INIT(16'h9009)) 
+    RGB_OUT2__3_carry_i_1
+       (.I0(nb_ligne[9]),
+        .I1(m_Xaxis_dout_tdata[9]),
+        .I2(nb_ligne[10]),
+        .I3(m_Xaxis_dout_tdata[10]),
+        .O(RGB_OUT2__3_carry_i_1_n_0));
+  LUT6 #(
+    .INIT(64'h9009000000009009)) 
+    RGB_OUT2__3_carry_i_2
+       (.I0(nb_ligne[6]),
+        .I1(m_Xaxis_dout_tdata[6]),
+        .I2(m_Xaxis_dout_tdata[8]),
+        .I3(nb_ligne[8]),
+        .I4(m_Xaxis_dout_tdata[7]),
+        .I5(nb_ligne[7]),
+        .O(RGB_OUT2__3_carry_i_2_n_0));
+  LUT6 #(
+    .INIT(64'h9009000000009009)) 
+    RGB_OUT2__3_carry_i_3
+       (.I0(nb_ligne[3]),
+        .I1(m_Xaxis_dout_tdata[3]),
+        .I2(m_Xaxis_dout_tdata[5]),
+        .I3(nb_ligne[5]),
+        .I4(m_Xaxis_dout_tdata[4]),
+        .I5(nb_ligne[4]),
+        .O(RGB_OUT2__3_carry_i_3_n_0));
+  LUT6 #(
+    .INIT(64'h9009000000009009)) 
+    RGB_OUT2__3_carry_i_4
+       (.I0(nb_ligne[0]),
+        .I1(m_Xaxis_dout_tdata[0]),
+        .I2(m_Xaxis_dout_tdata[2]),
+        .I3(nb_ligne[2]),
+        .I4(m_Xaxis_dout_tdata[1]),
+        .I5(nb_ligne[1]),
+        .O(RGB_OUT2__3_carry_i_4_n_0));
+  CARRY4 RGB_OUT2_carry
+       (.CI(1'b0),
+        .CO({RGB_OUT2,RGB_OUT2_carry_n_1,RGB_OUT2_carry_n_2,RGB_OUT2_carry_n_3}),
+        .CYINIT(1'b1),
+        .DI({1'b0,1'b0,1'b0,1'b0}),
+        .O(NLW_RGB_OUT2_carry_O_UNCONNECTED[3:0]),
+        .S({RGB_OUT2_carry_i_1_n_0,RGB_OUT2_carry_i_2_n_0,RGB_OUT2_carry_i_3_n_0,RGB_OUT2_carry_i_4_n_0}));
   LUT4 #(
-    .INIT(16'hFF41)) 
-    \RGB_OUT[16]_INST_0 
-       (.I0(\RGB_OUT[16]_INST_0_i_1_n_0 ),
-        .I1(\RGB_OUT[16]_INST_0_i_2_n_0 ),
-        .I2(nb_column[5]),
-        .I3(PixelNoirBlanc),
-        .O(\^RGB_OUT [23]));
-  LUT5 #(
-    .INIT(32'hFEFFFFFF)) 
-    \RGB_OUT[16]_INST_0_i_1 
-       (.I0(nb_column[6]),
-        .I1(nb_column[9]),
+    .INIT(16'h9009)) 
+    RGB_OUT2_carry_i_1
+       (.I0(nb_column[9]),
+        .I1(m_Yaxis_dout_tdata[9]),
         .I2(nb_column[10]),
+        .I3(m_Yaxis_dout_tdata[10]),
+        .O(RGB_OUT2_carry_i_1_n_0));
+  LUT6 #(
+    .INIT(64'h9009000000009009)) 
+    RGB_OUT2_carry_i_2
+       (.I0(nb_column[6]),
+        .I1(m_Yaxis_dout_tdata[6]),
+        .I2(m_Yaxis_dout_tdata[8]),
         .I3(nb_column[8]),
-        .I4(nb_column[7]),
-        .O(\RGB_OUT[16]_INST_0_i_1_n_0 ));
-  LUT5 #(
-    .INIT(32'h0001FFFF)) 
-    \RGB_OUT[16]_INST_0_i_2 
-       (.I0(nb_column[2]),
-        .I1(nb_column[3]),
-        .I2(nb_column[0]),
-        .I3(nb_column[1]),
-        .I4(nb_column[4]),
-        .O(\RGB_OUT[16]_INST_0_i_2_n_0 ));
+        .I4(m_Yaxis_dout_tdata[7]),
+        .I5(nb_column[7]),
+        .O(RGB_OUT2_carry_i_2_n_0));
+  LUT6 #(
+    .INIT(64'h9009000000009009)) 
+    RGB_OUT2_carry_i_3
+       (.I0(nb_column[3]),
+        .I1(m_Yaxis_dout_tdata[3]),
+        .I2(m_Yaxis_dout_tdata[5]),
+        .I3(nb_column[5]),
+        .I4(m_Yaxis_dout_tdata[4]),
+        .I5(nb_column[4]),
+        .O(RGB_OUT2_carry_i_3_n_0));
+  LUT6 #(
+    .INIT(64'h9009000000009009)) 
+    RGB_OUT2_carry_i_4
+       (.I0(nb_column[0]),
+        .I1(m_Yaxis_dout_tdata[0]),
+        .I2(m_Yaxis_dout_tdata[2]),
+        .I3(nb_column[2]),
+        .I4(m_Yaxis_dout_tdata[1]),
+        .I5(nb_column[1]),
+        .O(RGB_OUT2_carry_i_4_n_0));
+  (* SOFT_HLUTNM = "soft_lutpair0" *) 
+  LUT3 #(
+    .INIT(8'h2A)) 
+    \RGB_OUT[0]_INST_0 
+       (.I0(PixelNoirBlanc),
+        .I1(RGB_OUT2),
+        .I2(RGB_OUT20_out),
+        .O(RGB_OUT[0]));
+  (* SOFT_HLUTNM = "soft_lutpair0" *) 
+  LUT3 #(
+    .INIT(8'hF8)) 
+    \RGB_OUT[16]_INST_0 
+       (.I0(RGB_OUT2),
+        .I1(RGB_OUT20_out),
+        .I2(PixelNoirBlanc),
+        .O(RGB_OUT[1]));
 endmodule
 `ifndef GLBL
 `define GLBL

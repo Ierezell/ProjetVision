@@ -34,20 +34,20 @@
     <Option Name="DSAVendor" Val="xilinx"/>
     <Option Name="DSABoardId" Val="zybo-z7-20"/>
     <Option Name="DSANumComputeUnits" Val="60"/>
-    <Option Name="WTXSimLaunchSim" Val="128"/>
+    <Option Name="WTXSimLaunchSim" Val="132"/>
     <Option Name="WTModelSimLaunchSim" Val="0"/>
     <Option Name="WTQuestaLaunchSim" Val="0"/>
     <Option Name="WTIesLaunchSim" Val="0"/>
     <Option Name="WTVcsLaunchSim" Val="0"/>
     <Option Name="WTRivieraLaunchSim" Val="0"/>
     <Option Name="WTActivehdlLaunchSim" Val="0"/>
-    <Option Name="WTXSimExportSim" Val="50"/>
-    <Option Name="WTModelSimExportSim" Val="50"/>
-    <Option Name="WTQuestaExportSim" Val="50"/>
-    <Option Name="WTIesExportSim" Val="50"/>
-    <Option Name="WTVcsExportSim" Val="50"/>
-    <Option Name="WTRivieraExportSim" Val="50"/>
-    <Option Name="WTActivehdlExportSim" Val="50"/>
+    <Option Name="WTXSimExportSim" Val="52"/>
+    <Option Name="WTModelSimExportSim" Val="52"/>
+    <Option Name="WTQuestaExportSim" Val="52"/>
+    <Option Name="WTIesExportSim" Val="52"/>
+    <Option Name="WTVcsExportSim" Val="52"/>
+    <Option Name="WTRivieraExportSim" Val="52"/>
+    <Option Name="WTActivehdlExportSim" Val="52"/>
     <Option Name="GenerateIPUpgradeLog" Val="TRUE"/>
     <Option Name="XSimRadix" Val="hex"/>
     <Option Name="XSimTimeUnit" Val="ns"/>
@@ -148,12 +148,6 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/new/detect_end_image.vhd">
-        <FileInfo>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
       <File Path="$PSRCDIR/sources_1/new/divideur_select_output.vhd">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -166,86 +160,59 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
+      <File Path="$PSRCDIR/sources_1/new/not_1bit.vhd">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <File Path="$PSRCDIR/sources_1/bd/HDMI_bd/HDMI_bd.bd">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
-        <CompFileExtendedInfo CompFileName="HDMI_bd.bd" FileRelPathName="ip/HDMI_bd_reg_Nbits_0_3/HDMI_bd_reg_Nbits_0_3.xci">
-          <Proxy FileSetName="HDMI_bd_reg_Nbits_0_3"/>
-        </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="HDMI_bd.bd" FileRelPathName="ip/HDMI_bd_clk_wiz_0_0/HDMI_bd_clk_wiz_0_0.xci">
           <Proxy FileSetName="HDMI_bd_clk_wiz_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="HDMI_bd.bd" FileRelPathName="ip/HDMI_bd_reg_1bit_0_2/HDMI_bd_reg_1bit_0_2.xci">
-          <Proxy FileSetName="HDMI_bd_reg_1bit_0_2"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="HDMI_bd.bd" FileRelPathName="ip/HDMI_bd_Additionneur_Nbits_0_0/HDMI_bd_Additionneur_Nbits_0_0.xci">
-          <Proxy FileSetName="HDMI_bd_Additionneur_Nbits_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="HDMI_bd.bd" FileRelPathName="ip/HDMI_bd_Blank_pixel_counter_1/HDMI_bd_Blank_pixel_counter_1.xci">
-          <Proxy FileSetName="HDMI_bd_Blank_pixel_counter_1"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="HDMI_bd.bd" FileRelPathName="ip/HDMI_bd_adapt_input_ouput_4_0/HDMI_bd_adapt_input_ouput_4_0.xci">
-          <Proxy FileSetName="HDMI_bd_adapt_input_ouput_4_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="HDMI_bd.bd" FileRelPathName="ip/HDMI_bd_reg_1bit_4_0/HDMI_bd_reg_1bit_4_0.xci">
-          <Proxy FileSetName="HDMI_bd_reg_1bit_4_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="HDMI_bd.bd" FileRelPathName="ip/HDMI_bd_column_counter_0/HDMI_bd_column_counter_0.xci">
-          <Proxy FileSetName="HDMI_bd_column_counter_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="HDMI_bd.bd" FileRelPathName="ip/HDMI_bd_detect_end_image_0_1_1/HDMI_bd_detect_end_image_0_1.xci">
-          <Proxy FileSetName="HDMI_bd_detect_end_image_0_1"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="HDMI_bd.bd" FileRelPathName="ip/HDMI_bd_reg_Nbits_0_2/HDMI_bd_reg_Nbits_0_2.xci">
-          <Proxy FileSetName="HDMI_bd_reg_Nbits_0_2"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="HDMI_bd.bd" FileRelPathName="ip/HDMI_bd_divideur_select_outp_0_1_1/HDMI_bd_divideur_select_outp_0_1.xci">
           <Proxy FileSetName="HDMI_bd_divideur_select_outp_0_1"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="HDMI_bd.bd" FileRelPathName="ip/HDMI_bd_divideur_select_outp_1_1_1/HDMI_bd_divideur_select_outp_1_1.xci">
-          <Proxy FileSetName="HDMI_bd_divideur_select_outp_1_1"/>
+        <CompFileExtendedInfo CompFileName="HDMI_bd.bd" FileRelPathName="ip/HDMI_bd_Blank_pixel_counter_1/HDMI_bd_Blank_pixel_counter_1.xci">
+          <Proxy FileSetName="HDMI_bd_Blank_pixel_counter_1"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="HDMI_bd.bd" FileRelPathName="ip/HDMI_bd_ligne_counter_0/HDMI_bd_ligne_counter_0.xci">
           <Proxy FileSetName="HDMI_bd_ligne_counter_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="HDMI_bd.bd" FileRelPathName="ip/HDMI_bd_reg_1bit_3_0/HDMI_bd_reg_1bit_3_0.xci">
-          <Proxy FileSetName="HDMI_bd_reg_1bit_3_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="HDMI_bd.bd" FileRelPathName="ip/HDMI_bd_RGB_to_Y_0_0/HDMI_bd_RGB_to_Y_0_0.xci">
-          <Proxy FileSetName="HDMI_bd_RGB_to_Y_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="HDMI_bd.bd" FileRelPathName="ip/HDMI_bd_Seuillage_0_3/HDMI_bd_Seuillage_0_3.xci">
-          <Proxy FileSetName="HDMI_bd_Seuillage_0_3"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="HDMI_bd.bd" FileRelPathName="ip/HDMI_bd_dvi2rgb_0_1/HDMI_bd_dvi2rgb_0_1.xci">
-          <Proxy FileSetName="HDMI_bd_dvi2rgb_0_1"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="HDMI_bd.bd" FileRelPathName="ip/HDMI_bd_reg_Nbits_1_0/HDMI_bd_reg_Nbits_1_0.xci">
-          <Proxy FileSetName="HDMI_bd_reg_Nbits_1_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="HDMI_bd.bd" FileRelPathName="ip/HDMI_bd_div_16_0_0/HDMI_bd_div_16_0_0.xci">
-          <Proxy FileSetName="HDMI_bd_div_16_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="HDMI_bd.bd" FileRelPathName="ip/HDMI_bd_reg_1bit_0_0/HDMI_bd_reg_1bit_0_0.xci">
-          <Proxy FileSetName="HDMI_bd_reg_1bit_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="HDMI_bd.bd" FileRelPathName="ip/HDMI_bd_ET_logique_5entree_0_0/HDMI_bd_ET_logique_5entree_0_0.xci">
-          <Proxy FileSetName="HDMI_bd_ET_logique_5entree_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="HDMI_bd.bd" FileRelPathName="ip/HDMI_bd_reg_Nbits_0_1/HDMI_bd_reg_Nbits_0_1.xci">
-          <Proxy FileSetName="HDMI_bd_reg_Nbits_0_1"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="HDMI_bd.bd" FileRelPathName="ip/HDMI_bd_affiche_centre_0_0/HDMI_bd_affiche_centre_0_0.xci">
-          <Proxy FileSetName="HDMI_bd_affiche_centre_0_0"/>
+        <CompFileExtendedInfo CompFileName="HDMI_bd.bd" FileRelPathName="ip/HDMI_bd_adapt_input_ouput_4_0/HDMI_bd_adapt_input_ouput_4_0.xci">
+          <Proxy FileSetName="HDMI_bd_adapt_input_ouput_4_0"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="HDMI_bd.bd" FileRelPathName="ip/HDMI_bd_Additionneur_Nbits_1_0/HDMI_bd_Additionneur_Nbits_1_0.xci">
           <Proxy FileSetName="HDMI_bd_Additionneur_Nbits_1_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="HDMI_bd.bd" FileRelPathName="ip/HDMI_bd_adapt_input_ouput_0_1_1/HDMI_bd_adapt_input_ouput_0_1.xci">
-          <Proxy FileSetName="HDMI_bd_adapt_input_ouput_0_1"/>
+        <CompFileExtendedInfo CompFileName="HDMI_bd.bd" FileRelPathName="ip/HDMI_bd_div_yAxis_1_1/HDMI_bd_div_yAxis_1.xci">
+          <Proxy FileSetName="HDMI_bd_div_yAxis_1"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="HDMI_bd.bd" FileRelPathName="ip/HDMI_bd_affiche_centre_0_0/HDMI_bd_affiche_centre_0_0.xci">
+          <Proxy FileSetName="HDMI_bd_affiche_centre_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="HDMI_bd.bd" FileRelPathName="ip/HDMI_bd_Additionneur_Nbits_0_0/HDMI_bd_Additionneur_Nbits_0_0.xci">
+          <Proxy FileSetName="HDMI_bd_Additionneur_Nbits_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="HDMI_bd.bd" FileRelPathName="ip/HDMI_bd_adapt_input_ouput_3_0/HDMI_bd_adapt_input_ouput_3_0.xci">
+          <Proxy FileSetName="HDMI_bd_adapt_input_ouput_3_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="HDMI_bd.bd" FileRelPathName="ip/HDMI_bd_reg_Nbits_0_0/HDMI_bd_reg_Nbits_0_0.xci">
+          <Proxy FileSetName="HDMI_bd_reg_Nbits_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="HDMI_bd.bd" FileRelPathName="ip/HDMI_bd_dvi2rgb_0_1/HDMI_bd_dvi2rgb_0_1.xci">
+          <Proxy FileSetName="HDMI_bd_dvi2rgb_0_1"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="HDMI_bd.bd" FileRelPathName="ip/HDMI_bd_Seuillage_0_3/HDMI_bd_Seuillage_0_3.xci">
+          <Proxy FileSetName="HDMI_bd_Seuillage_0_3"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="HDMI_bd.bd" FileRelPathName="ip/HDMI_bd_reg_Nbits_0_2/HDMI_bd_reg_Nbits_0_2.xci">
+          <Proxy FileSetName="HDMI_bd_reg_Nbits_0_2"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="HDMI_bd.bd" FileRelPathName="ip/HDMI_bd_adapt_input_ouput_2_1_1/HDMI_bd_adapt_input_ouput_2_1.xci">
           <Proxy FileSetName="HDMI_bd_adapt_input_ouput_2_1"/>
@@ -253,32 +220,65 @@
         <CompFileExtendedInfo CompFileName="HDMI_bd.bd" FileRelPathName="ip/HDMI_bd_adapt_input_ouput_1_1_1/HDMI_bd_adapt_input_ouput_1_1.xci">
           <Proxy FileSetName="HDMI_bd_adapt_input_ouput_1_1"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="HDMI_bd.bd" FileRelPathName="ip/HDMI_bd_adapt_input_ouput_3_0/HDMI_bd_adapt_input_ouput_3_0.xci">
-          <Proxy FileSetName="HDMI_bd_adapt_input_ouput_3_0"/>
+        <CompFileExtendedInfo CompFileName="HDMI_bd.bd" FileRelPathName="ip/HDMI_bd_reg_Nbits_1_0/HDMI_bd_reg_Nbits_1_0.xci">
+          <Proxy FileSetName="HDMI_bd_reg_Nbits_1_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="HDMI_bd.bd" FileRelPathName="ip/HDMI_bd_abs_8bits_signed_0_0/HDMI_bd_abs_8bits_signed_0_0.xci">
-          <Proxy FileSetName="HDMI_bd_abs_8bits_signed_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="HDMI_bd.bd" FileRelPathName="ip/HDMI_bd_reg_Nbits_0_4/HDMI_bd_reg_Nbits_0_4.xci">
-          <Proxy FileSetName="HDMI_bd_reg_Nbits_0_4"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="HDMI_bd.bd" FileRelPathName="ip/HDMI_bd_reg_Nbits_0_0/HDMI_bd_reg_Nbits_0_0.xci">
-          <Proxy FileSetName="HDMI_bd_reg_Nbits_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="HDMI_bd.bd" FileRelPathName="ip/HDMI_bd_reg_1bit_0_1/HDMI_bd_reg_1bit_0_1.xci">
-          <Proxy FileSetName="HDMI_bd_reg_1bit_0_1"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="HDMI_bd.bd" FileRelPathName="ip/HDMI_bd_reg_Nbits_0_5/HDMI_bd_reg_Nbits_0_5.xci">
-          <Proxy FileSetName="HDMI_bd_reg_Nbits_0_5"/>
+        <CompFileExtendedInfo CompFileName="HDMI_bd.bd" FileRelPathName="ip/HDMI_bd_reg_1bit_0_2/HDMI_bd_reg_1bit_0_2.xci">
+          <Proxy FileSetName="HDMI_bd_reg_1bit_0_2"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="HDMI_bd.bd" FileRelPathName="ip/HDMI_bd_reg_1bit_2_0/HDMI_bd_reg_1bit_2_0.xci">
           <Proxy FileSetName="HDMI_bd_reg_1bit_2_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="HDMI_bd.bd" FileRelPathName="ip/HDMI_bd_xlconstant_1_0_2/HDMI_bd_xlconstant_1_0.xci">
-          <Proxy FileSetName="HDMI_bd_xlconstant_1_0"/>
+        <CompFileExtendedInfo CompFileName="HDMI_bd.bd" FileRelPathName="ip/HDMI_bd_RGB_to_Y_0_0/HDMI_bd_RGB_to_Y_0_0.xci">
+          <Proxy FileSetName="HDMI_bd_RGB_to_Y_0_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="HDMI_bd.bd" FileRelPathName="ip/HDMI_bd_xlconstant_0_2/HDMI_bd_xlconstant_0_2.xci">
-          <Proxy FileSetName="HDMI_bd_xlconstant_0_2"/>
+        <CompFileExtendedInfo CompFileName="HDMI_bd.bd" FileRelPathName="ip/HDMI_bd_reg_Nbits_0_5/HDMI_bd_reg_Nbits_0_5.xci">
+          <Proxy FileSetName="HDMI_bd_reg_Nbits_0_5"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="HDMI_bd.bd" FileRelPathName="ip/HDMI_bd_divideur_select_outp_1_1_1/HDMI_bd_divideur_select_outp_1_1.xci">
+          <Proxy FileSetName="HDMI_bd_divideur_select_outp_1_1"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="HDMI_bd.bd" FileRelPathName="ip/HDMI_bd_ET_logique_5entree_0_0/HDMI_bd_ET_logique_5entree_0_0.xci">
+          <Proxy FileSetName="HDMI_bd_ET_logique_5entree_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="HDMI_bd.bd" FileRelPathName="ip/HDMI_bd_column_counter_0/HDMI_bd_column_counter_0.xci">
+          <Proxy FileSetName="HDMI_bd_column_counter_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="HDMI_bd.bd" FileRelPathName="ip/HDMI_bd_reg_1bit_4_0/HDMI_bd_reg_1bit_4_0.xci">
+          <Proxy FileSetName="HDMI_bd_reg_1bit_4_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="HDMI_bd.bd" FileRelPathName="ip/HDMI_bd_not_1bit_0_0/HDMI_bd_not_1bit_0_0.xci">
+          <Proxy FileSetName="HDMI_bd_not_1bit_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="HDMI_bd.bd" FileRelPathName="ip/HDMI_bd_abs_8bits_signed_0_0/HDMI_bd_abs_8bits_signed_0_0.xci">
+          <Proxy FileSetName="HDMI_bd_abs_8bits_signed_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="HDMI_bd.bd" FileRelPathName="ip/HDMI_bd_reg_Nbits_0_1/HDMI_bd_reg_Nbits_0_1.xci">
+          <Proxy FileSetName="HDMI_bd_reg_Nbits_0_1"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="HDMI_bd.bd" FileRelPathName="ip/HDMI_bd_div_16_0_0/HDMI_bd_div_16_0_0.xci">
+          <Proxy FileSetName="HDMI_bd_div_16_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="HDMI_bd.bd" FileRelPathName="ip/HDMI_bd_reg_Nbits_0_3/HDMI_bd_reg_Nbits_0_3.xci">
+          <Proxy FileSetName="HDMI_bd_reg_Nbits_0_3"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="HDMI_bd.bd" FileRelPathName="ip/HDMI_bd_reg_Nbits_0_4/HDMI_bd_reg_Nbits_0_4.xci">
+          <Proxy FileSetName="HDMI_bd_reg_Nbits_0_4"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="HDMI_bd.bd" FileRelPathName="ip/HDMI_bd_reg_1bit_0_1/HDMI_bd_reg_1bit_0_1.xci">
+          <Proxy FileSetName="HDMI_bd_reg_1bit_0_1"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="HDMI_bd.bd" FileRelPathName="ip/HDMI_bd_reg_1bit_3_0/HDMI_bd_reg_1bit_3_0.xci">
+          <Proxy FileSetName="HDMI_bd_reg_1bit_3_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="HDMI_bd.bd" FileRelPathName="ip/HDMI_bd_reg_1bit_0_0/HDMI_bd_reg_1bit_0_0.xci">
+          <Proxy FileSetName="HDMI_bd_reg_1bit_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="HDMI_bd.bd" FileRelPathName="ip/HDMI_bd_adapt_input_ouput_0_1_1/HDMI_bd_adapt_input_ouput_0_1.xci">
+          <Proxy FileSetName="HDMI_bd_adapt_input_ouput_0_1"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="HDMI_bd.bd" FileRelPathName="ip/HDMI_bd_div_xAxis_1_1/HDMI_bd_div_xAxis_1.xci">
+          <Proxy FileSetName="HDMI_bd_div_xAxis_1"/>
         </CompFileExtendedInfo>
       </File>
       <File Path="$PSRCDIR/sources_1/bd/HDMI_bd/hdl/HDMI_bd_wrapper.vhd">
@@ -287,22 +287,68 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/new/not_1bit.vhd">
+      <File Path="$PSRCDIR/sources_1/new/ColorDetection.vhd">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/bd/c_counter_binary/c_counter_binary.bd">
+      <File Path="$PSRCDIR/sources_1/new/rdc_MxNbits.vhd">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/new/sauvegarde_position.vhd">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/new/FSM_mesure_mouvement.vhd">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/bd/TEST2/TEST2.bd">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
+        <CompFileExtendedInfo CompFileName="TEST2.bd" FileRelPathName="ip/TEST2_ColorDetection_0_0/TEST2_ColorDetection_0_0.xci">
+          <Proxy FileSetName="TEST2_ColorDetection_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="TEST2.bd" FileRelPathName="ip/TEST2_not_1bit_0_0/TEST2_not_1bit_0_0.xci">
+          <Proxy FileSetName="TEST2_not_1bit_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="TEST2.bd" FileRelPathName="ip/TEST2_adapt_input_ouput_3_0/TEST2_adapt_input_ouput_3_0.xci">
+          <Proxy FileSetName="TEST2_adapt_input_ouput_3_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="TEST2.bd" FileRelPathName="ip/TEST2_column_counter1_0/TEST2_column_counter1_0.xci">
+          <Proxy FileSetName="TEST2_column_counter1_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="TEST2.bd" FileRelPathName="ip/TEST2_FSM_mesure_mouvement_0_0/TEST2_FSM_mesure_mouvement_0_0.xci">
+          <Proxy FileSetName="TEST2_FSM_mesure_mouvement_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="TEST2.bd" FileRelPathName="ip/TEST2_ligne_counter1_0/TEST2_ligne_counter1_0.xci">
+          <Proxy FileSetName="TEST2_ligne_counter1_0"/>
+        </CompFileExtendedInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/bd/c_counter_binary/hdl/c_counter_binary_wrapper.vhd">
+      <File Path="$PSRCDIR/sources_1/bd/TEST2/hdl/TEST2_wrapper.vhd">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/new/detect_end_image.vhd">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -375,20 +421,6 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/new/rdc_MxNbits.vhd">
-        <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/new/Starter.vhd">
-        <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
         <Option Name="TopModule" Val="HDMI_bd_wrapper"/>
@@ -413,6 +445,7 @@
       <Filter Type="Srcs"/>
       <File Path="$PSRCDIR/sim_1/new/c_counter_binary_wrapper_tb.vhd">
         <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
@@ -445,11 +478,10 @@
       </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
-        <Option Name="TopModule" Val="c_counter_binary_wrapper_tb"/>
+        <Option Name="TopModule" Val="test_wrapper"/>
         <Option Name="TopLib" Val="xil_defaultlib"/>
         <Option Name="TransportPathDelay" Val="0"/>
         <Option Name="TransportIntDelay" Val="0"/>
-        <Option Name="SimMode" Val="post-synthesis"/>
         <Option Name="SrcSet" Val="sources_1"/>
         <Option Name="XSimWcfgFile" Val="$PPRDIR/detection_centre_wrapper_behav.wcfg"/>
         <Option Name="xsim.simulate.runtime" Val="10us"/>
@@ -570,18 +602,6 @@
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
-    <FileSet Name="HDMI_bd_detect_end_image_0_1" Type="BlockSrcs" RelSrcDir="$PSRCDIR/HDMI_bd_detect_end_image_0_1">
-      <Config>
-        <Option Name="TopModule" Val="HDMI_bd_detect_end_image_0_1"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="HDMI_bd_divideur_select_outp_0_1" Type="BlockSrcs" RelSrcDir="$PSRCDIR/HDMI_bd_divideur_select_outp_0_1">
-      <Config>
-        <Option Name="TopModule" Val="HDMI_bd_divideur_select_outp_0_1"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
     <FileSet Name="HDMI_bd_Additionneur_Nbits_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/HDMI_bd_Additionneur_Nbits_0_0">
       <Config>
         <Option Name="TopModule" Val="HDMI_bd_Additionneur_Nbits_0_0"/>
@@ -591,12 +611,6 @@
     <FileSet Name="HDMI_bd_adapt_input_ouput_4_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/HDMI_bd_adapt_input_ouput_4_0">
       <Config>
         <Option Name="TopModule" Val="HDMI_bd_adapt_input_ouput_4_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="HDMI_bd_divideur_select_outp_1_1" Type="BlockSrcs" RelSrcDir="$PSRCDIR/HDMI_bd_divideur_select_outp_1_1">
-      <Config>
-        <Option Name="TopModule" Val="HDMI_bd_divideur_select_outp_1_1"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
@@ -642,18 +656,6 @@
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
-    <FileSet Name="HDMI_bd_xlconstant_0_2" Type="BlockSrcs" RelSrcDir="$PSRCDIR/HDMI_bd_xlconstant_0_2">
-      <Config>
-        <Option Name="TopModule" Val="HDMI_bd_xlconstant_0_2"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="HDMI_bd_xlconstant_1_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/HDMI_bd_xlconstant_1_0">
-      <Config>
-        <Option Name="TopModule" Val="HDMI_bd_xlconstant_1_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
     <FileSet Name="HDMI_bd_column_counter_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/HDMI_bd_column_counter_0">
       <Config>
         <Option Name="TopModule" Val="HDMI_bd_column_counter_0"/>
@@ -666,9 +668,75 @@
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
+    <FileSet Name="HDMI_bd_not_1bit_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/HDMI_bd_not_1bit_0_0">
+      <Config>
+        <Option Name="TopModule" Val="HDMI_bd_not_1bit_0_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
     <FileSet Name="HDMI_bd_affiche_centre_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/HDMI_bd_affiche_centre_0_0">
       <Config>
         <Option Name="TopModule" Val="HDMI_bd_affiche_centre_0_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="TEST2_adapt_input_ouput_3_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/TEST2_adapt_input_ouput_3_0">
+      <Config>
+        <Option Name="TopModule" Val="TEST2_adapt_input_ouput_3_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="TEST2_column_counter1_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/TEST2_column_counter1_0">
+      <Config>
+        <Option Name="TopModule" Val="TEST2_column_counter1_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="TEST2_ligne_counter1_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/TEST2_ligne_counter1_0">
+      <Config>
+        <Option Name="TopModule" Val="TEST2_ligne_counter1_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="TEST2_not_1bit_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/TEST2_not_1bit_0_0">
+      <Config>
+        <Option Name="TopModule" Val="TEST2_not_1bit_0_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="TEST2_ColorDetection_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/TEST2_ColorDetection_0_0">
+      <Config>
+        <Option Name="TopModule" Val="TEST2_ColorDetection_0_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="TEST2_FSM_mesure_mouvement_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/TEST2_FSM_mesure_mouvement_0_0">
+      <Config>
+        <Option Name="TopModule" Val="TEST2_FSM_mesure_mouvement_0_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="HDMI_bd_div_yAxis_1" Type="BlockSrcs" RelSrcDir="$PSRCDIR/HDMI_bd_div_yAxis_1">
+      <Config>
+        <Option Name="TopModule" Val="HDMI_bd_div_yAxis_1"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="HDMI_bd_div_xAxis_1" Type="BlockSrcs" RelSrcDir="$PSRCDIR/HDMI_bd_div_xAxis_1">
+      <Config>
+        <Option Name="TopModule" Val="HDMI_bd_div_xAxis_1"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="HDMI_bd_divideur_select_outp_0_1" Type="BlockSrcs" RelSrcDir="$PSRCDIR/HDMI_bd_divideur_select_outp_0_1">
+      <Config>
+        <Option Name="TopModule" Val="HDMI_bd_divideur_select_outp_0_1"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="HDMI_bd_divideur_select_outp_1_1" Type="BlockSrcs" RelSrcDir="$PSRCDIR/HDMI_bd_divideur_select_outp_1_1">
+      <Config>
+        <Option Name="TopModule" Val="HDMI_bd_divideur_select_outp_1_1"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
@@ -872,24 +940,6 @@
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="HDMI_bd_detect_end_image_0_1_synth_1" Type="Ft3:Synth" SrcSet="HDMI_bd_detect_end_image_0_1" Part="xc7z020clg400-1" ConstrsSet="HDMI_bd_detect_end_image_0_1" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/HDMI_bd_detect_end_image_0_1_synth_1" IncludeInArchive="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-    </Run>
-    <Run Id="HDMI_bd_divideur_select_outp_0_1_synth_1" Type="Ft3:Synth" SrcSet="HDMI_bd_divideur_select_outp_0_1" Part="xc7z020clg400-1" ConstrsSet="HDMI_bd_divideur_select_outp_0_1" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/HDMI_bd_divideur_select_outp_0_1_synth_1" IncludeInArchive="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-    </Run>
     <Run Id="HDMI_bd_Additionneur_Nbits_0_0_synth_1" Type="Ft3:Synth" SrcSet="HDMI_bd_Additionneur_Nbits_0_0" Part="xc7z020clg400-1" ConstrsSet="HDMI_bd_Additionneur_Nbits_0_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/HDMI_bd_Additionneur_Nbits_0_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
@@ -900,15 +950,6 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
     <Run Id="HDMI_bd_adapt_input_ouput_4_0_synth_1" Type="Ft3:Synth" SrcSet="HDMI_bd_adapt_input_ouput_4_0" Part="xc7z020clg400-1" ConstrsSet="HDMI_bd_adapt_input_ouput_4_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/HDMI_bd_adapt_input_ouput_4_0_synth_1" IncludeInArchive="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-    </Run>
-    <Run Id="HDMI_bd_divideur_select_outp_1_1_synth_1" Type="Ft3:Synth" SrcSet="HDMI_bd_divideur_select_outp_1_1" Part="xc7z020clg400-1" ConstrsSet="HDMI_bd_divideur_select_outp_1_1" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/HDMI_bd_divideur_select_outp_1_1_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
         <Step Id="synth_design"/>
@@ -980,24 +1021,6 @@
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="HDMI_bd_xlconstant_0_2_synth_1" Type="Ft3:Synth" SrcSet="HDMI_bd_xlconstant_0_2" Part="xc7z020clg400-1" ConstrsSet="HDMI_bd_xlconstant_0_2" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/HDMI_bd_xlconstant_0_2_synth_1" IncludeInArchive="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-    </Run>
-    <Run Id="HDMI_bd_xlconstant_1_0_synth_1" Type="Ft3:Synth" SrcSet="HDMI_bd_xlconstant_1_0" Part="xc7z020clg400-1" ConstrsSet="HDMI_bd_xlconstant_1_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/HDMI_bd_xlconstant_1_0_synth_1" IncludeInArchive="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-    </Run>
     <Run Id="HDMI_bd_column_counter_0_synth_1" Type="Ft3:Synth" SrcSet="HDMI_bd_column_counter_0" Part="xc7z020clg400-1" ConstrsSet="HDMI_bd_column_counter_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/HDMI_bd_column_counter_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
@@ -1016,9 +1039,116 @@
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
+    <Run Id="HDMI_bd_not_1bit_0_0_synth_1" Type="Ft3:Synth" SrcSet="HDMI_bd_not_1bit_0_0" Part="xc7z020clg400-1" ConstrsSet="HDMI_bd_not_1bit_0_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/HDMI_bd_not_1bit_0_0_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
     <Run Id="HDMI_bd_affiche_centre_0_0_synth_1" Type="Ft3:Synth" SrcSet="HDMI_bd_affiche_centre_0_0" Part="xc7z020clg400-1" ConstrsSet="HDMI_bd_affiche_centre_0_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/HDMI_bd_affiche_centre_0_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="TEST2_adapt_input_ouput_3_0_synth_1" Type="Ft3:Synth" SrcSet="TEST2_adapt_input_ouput_3_0" Part="xc7z020clg400-1" ConstrsSet="TEST2_adapt_input_ouput_3_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/TEST2_adapt_input_ouput_3_0_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="TEST2_column_counter1_0_synth_1" Type="Ft3:Synth" SrcSet="TEST2_column_counter1_0" Part="xc7z020clg400-1" ConstrsSet="TEST2_column_counter1_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/TEST2_column_counter1_0_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="TEST2_ligne_counter1_0_synth_1" Type="Ft3:Synth" SrcSet="TEST2_ligne_counter1_0" Part="xc7z020clg400-1" ConstrsSet="TEST2_ligne_counter1_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/TEST2_ligne_counter1_0_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="TEST2_not_1bit_0_0_synth_1" Type="Ft3:Synth" SrcSet="TEST2_not_1bit_0_0" Part="xc7z020clg400-1" ConstrsSet="TEST2_not_1bit_0_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/TEST2_not_1bit_0_0_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="TEST2_ColorDetection_0_0_synth_1" Type="Ft3:Synth" SrcSet="TEST2_ColorDetection_0_0" Part="xc7z020clg400-1" ConstrsSet="TEST2_ColorDetection_0_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/TEST2_ColorDetection_0_0_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="TEST2_FSM_mesure_mouvement_0_0_synth_1" Type="Ft3:Synth" SrcSet="TEST2_FSM_mesure_mouvement_0_0" Part="xc7z020clg400-1" ConstrsSet="TEST2_FSM_mesure_mouvement_0_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/TEST2_FSM_mesure_mouvement_0_0_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="HDMI_bd_div_yAxis_1_synth_1" Type="Ft3:Synth" SrcSet="HDMI_bd_div_yAxis_1" Part="xc7z020clg400-1" ConstrsSet="HDMI_bd_div_yAxis_1" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/HDMI_bd_div_yAxis_1_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="HDMI_bd_div_xAxis_1_synth_1" Type="Ft3:Synth" SrcSet="HDMI_bd_div_xAxis_1" Part="xc7z020clg400-1" ConstrsSet="HDMI_bd_div_xAxis_1" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/HDMI_bd_div_xAxis_1_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="HDMI_bd_divideur_select_outp_0_1_synth_1" Type="Ft3:Synth" SrcSet="HDMI_bd_divideur_select_outp_0_1" Part="xc7z020clg400-1" ConstrsSet="HDMI_bd_divideur_select_outp_0_1" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/HDMI_bd_divideur_select_outp_0_1_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="HDMI_bd_divideur_select_outp_1_1_synth_1" Type="Ft3:Synth" SrcSet="HDMI_bd_divideur_select_outp_1_1" Part="xc7z020clg400-1" ConstrsSet="HDMI_bd_divideur_select_outp_1_1" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/HDMI_bd_divideur_select_outp_1_1_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -1346,38 +1476,6 @@
       <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2018"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="HDMI_bd_detect_end_image_0_1_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="HDMI_bd_detect_end_image_0_1" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="HDMI_bd_detect_end_image_0_1_synth_1" IncludeInArchive="false" GenFullBitstream="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2018"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-    </Run>
-    <Run Id="HDMI_bd_divideur_select_outp_0_1_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="HDMI_bd_divideur_select_outp_0_1" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="HDMI_bd_divideur_select_outp_0_1_synth_1" IncludeInArchive="false" GenFullBitstream="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2018"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-    </Run>
     <Run Id="HDMI_bd_Additionneur_Nbits_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="HDMI_bd_Additionneur_Nbits_0_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="HDMI_bd_Additionneur_Nbits_0_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
@@ -1395,22 +1493,6 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
     <Run Id="HDMI_bd_adapt_input_ouput_4_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="HDMI_bd_adapt_input_ouput_4_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="HDMI_bd_adapt_input_ouput_4_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2018"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-    </Run>
-    <Run Id="HDMI_bd_divideur_select_outp_1_1_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="HDMI_bd_divideur_select_outp_1_1" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="HDMI_bd_divideur_select_outp_1_1_synth_1" IncludeInArchive="false" GenFullBitstream="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
         <Step Id="init_design"/>
@@ -1538,38 +1620,6 @@
       <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2018"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="HDMI_bd_xlconstant_0_2_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="HDMI_bd_xlconstant_0_2" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="HDMI_bd_xlconstant_0_2_synth_1" IncludeInArchive="false" GenFullBitstream="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2018"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-    </Run>
-    <Run Id="HDMI_bd_xlconstant_1_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="HDMI_bd_xlconstant_1_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="HDMI_bd_xlconstant_1_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2018"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-    </Run>
     <Run Id="HDMI_bd_column_counter_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="HDMI_bd_column_counter_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="HDMI_bd_column_counter_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
@@ -1602,9 +1652,193 @@
       <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2018"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
+    <Run Id="HDMI_bd_not_1bit_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="HDMI_bd_not_1bit_0_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="HDMI_bd_not_1bit_0_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2018"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
     <Run Id="HDMI_bd_affiche_centre_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="HDMI_bd_affiche_centre_0_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="HDMI_bd_affiche_centre_0_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2018"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="TEST2_adapt_input_ouput_3_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="TEST2_adapt_input_ouput_3_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="TEST2_adapt_input_ouput_3_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2018"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="TEST2_column_counter1_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="TEST2_column_counter1_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="TEST2_column_counter1_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2018"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="TEST2_ligne_counter1_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="TEST2_ligne_counter1_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="TEST2_ligne_counter1_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2018"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="TEST2_not_1bit_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="TEST2_not_1bit_0_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="TEST2_not_1bit_0_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2018"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="TEST2_ColorDetection_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="TEST2_ColorDetection_0_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="TEST2_ColorDetection_0_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2018"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="TEST2_FSM_mesure_mouvement_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="TEST2_FSM_mesure_mouvement_0_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="TEST2_FSM_mesure_mouvement_0_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2018"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="HDMI_bd_div_yAxis_1_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="HDMI_bd_div_yAxis_1" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="HDMI_bd_div_yAxis_1_synth_1" IncludeInArchive="false" GenFullBitstream="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2018"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="HDMI_bd_div_xAxis_1_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="HDMI_bd_div_xAxis_1" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="HDMI_bd_div_xAxis_1_synth_1" IncludeInArchive="false" GenFullBitstream="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2018"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="HDMI_bd_divideur_select_outp_0_1_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="HDMI_bd_divideur_select_outp_0_1" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="HDMI_bd_divideur_select_outp_0_1_synth_1" IncludeInArchive="false" GenFullBitstream="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2018"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="HDMI_bd_divideur_select_outp_1_1_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="HDMI_bd_divideur_select_outp_1_1" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="HDMI_bd_divideur_select_outp_1_1_synth_1" IncludeInArchive="false" GenFullBitstream="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>

@@ -52,7 +52,7 @@
 
 (* X_CORE_INFO = "xlconstant_v1_1_5_xlconstant,Vivado 2018.2.1" *)
 (* CHECK_LICENSE_TYPE = "HDMI_bd_xlconstant_1_0,xlconstant_v1_1_5_xlconstant,{}" *)
-(* CORE_GENERATION_INFO = "HDMI_bd_xlconstant_1_0,xlconstant_v1_1_5_xlconstant,{x_ipProduct=Vivado 2018.2.1,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=xlconstant,x_ipVersion=1.1,x_ipCoreRevision=5,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED,CONST_WIDTH=11,CONST_VAL=0x4AF}" *)
+(* CORE_GENERATION_INFO = "HDMI_bd_xlconstant_1_0,xlconstant_v1_1_5_xlconstant,{x_ipProduct=Vivado 2018.2.1,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=xlconstant,x_ipVersion=1.1,x_ipCoreRevision=5,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED,CONST_WIDTH=11,CONST_VAL=0x383}" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module HDMI_bd_xlconstant_1_0 (
   dout
@@ -62,7 +62,7 @@ output wire [10 : 0] dout;
 
   xlconstant_v1_1_5_xlconstant #(
     .CONST_WIDTH(11),
-    .CONST_VAL('H4AF)
+    .CONST_VAL('H383)
   ) inst (
     .dout(dout)
   );

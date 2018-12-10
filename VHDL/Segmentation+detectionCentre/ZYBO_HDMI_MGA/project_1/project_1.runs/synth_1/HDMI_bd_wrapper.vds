@@ -2,8 +2,8 @@
 # Vivado v2018.2.1 (64-bit)
 # SW Build 2288692 on Thu Jul 26 18:24:02 MDT 2018
 # IP Build 2289599 on Thu Jul 26 21:09:20 MDT 2018
-# Start of session at: Wed Dec  5 14:32:20 2018
-# Process ID: 12352
+# Start of session at: Sun Dec  9 19:03:45 2018
+# Process ID: 4756
 # Current directory: C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1
 # Command line: vivado.exe -log HDMI_bd_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source HDMI_bd_wrapper.tcl
 # Log file: C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/HDMI_bd_wrapper.vds
@@ -13,141 +13,141 @@ source HDMI_bd_wrapper.tcl -notrace
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/repo'.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Programs/Xilinx/Vivado/2018.2/data/ip'.
-add_files: Time (s): cpu = 00:00:05 ; elapsed = 00:01:32 . Memory (MB): peak = 344.973 ; gain = 103.879
+add_files: Time (s): cpu = 00:00:05 ; elapsed = 00:01:39 . Memory (MB): peak = 344.145 ; gain = 102.063
 Command: synth_design -top HDMI_bd_wrapper -part xc7z020clg400-1
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 5068 
+INFO: Helper process launched with PID 3420 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 460.902 ; gain = 102.520
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 460.363 ; gain = 102.902
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'HDMI_bd_wrapper' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/hdl/HDMI_bd_wrapper.vhd:33]
-INFO: [Synth 8-3491] module 'HDMI_bd' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:842' bound to instance 'HDMI_bd_i' of component 'HDMI_bd' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/hdl/HDMI_bd_wrapper.vhd:71]
-INFO: [Synth 8-638] synthesizing module 'HDMI_bd' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:869]
-INFO: [Synth 8-638] synthesizing module 'Detect_centre_imp_Y7EHMB' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:29]
-INFO: [Synth 8-3491] module 'HDMI_bd_Additionneur_Nbits_0_0' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-12352-pcetu-135/realtime/HDMI_bd_Additionneur_Nbits_0_0_stub.vhdl:5' bound to instance 'Additionneur_Nbits_0' of component 'HDMI_bd_Additionneur_Nbits_0_0' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:202]
-INFO: [Synth 8-638] synthesizing module 'HDMI_bd_Additionneur_Nbits_0_0' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-12352-pcetu-135/realtime/HDMI_bd_Additionneur_Nbits_0_0_stub.vhdl:18]
-INFO: [Synth 8-3491] module 'HDMI_bd_Additionneur_Nbits_1_0' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-12352-pcetu-135/realtime/HDMI_bd_Additionneur_Nbits_1_0_stub.vhdl:5' bound to instance 'Additionneur_Nbits_1' of component 'HDMI_bd_Additionneur_Nbits_1_0' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:212]
-INFO: [Synth 8-638] synthesizing module 'HDMI_bd_Additionneur_Nbits_1_0' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-12352-pcetu-135/realtime/HDMI_bd_Additionneur_Nbits_1_0_stub.vhdl:18]
-INFO: [Synth 8-3491] module 'HDMI_bd_Blank_pixel_counter_1' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-12352-pcetu-135/realtime/HDMI_bd_Blank_pixel_counter_1_stub.vhdl:5' bound to instance 'Blank_pixel_counter' of component 'HDMI_bd_Blank_pixel_counter_1' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:222]
-INFO: [Synth 8-638] synthesizing module 'HDMI_bd_Blank_pixel_counter_1' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-12352-pcetu-135/realtime/HDMI_bd_Blank_pixel_counter_1_stub.vhdl:15]
-INFO: [Synth 8-3491] module 'HDMI_bd_adapt_input_ouput_0_1' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-12352-pcetu-135/realtime/HDMI_bd_adapt_input_ouput_0_1_stub.vhdl:5' bound to instance 'adapt_input_ouput_0' of component 'HDMI_bd_adapt_input_ouput_0_1' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:229]
-INFO: [Synth 8-638] synthesizing module 'HDMI_bd_adapt_input_ouput_0_1' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-12352-pcetu-135/realtime/HDMI_bd_adapt_input_ouput_0_1_stub.vhdl:13]
-INFO: [Synth 8-3491] module 'HDMI_bd_adapt_input_ouput_1_1' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-12352-pcetu-135/realtime/HDMI_bd_adapt_input_ouput_1_1_stub.vhdl:5' bound to instance 'adapt_input_ouput_1' of component 'HDMI_bd_adapt_input_ouput_1_1' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:234]
-INFO: [Synth 8-638] synthesizing module 'HDMI_bd_adapt_input_ouput_1_1' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-12352-pcetu-135/realtime/HDMI_bd_adapt_input_ouput_1_1_stub.vhdl:13]
-INFO: [Synth 8-3491] module 'HDMI_bd_adapt_input_ouput_2_1' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-12352-pcetu-135/realtime/HDMI_bd_adapt_input_ouput_2_1_stub.vhdl:5' bound to instance 'adapt_input_ouput_2' of component 'HDMI_bd_adapt_input_ouput_2_1' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:239]
-INFO: [Synth 8-638] synthesizing module 'HDMI_bd_adapt_input_ouput_2_1' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-12352-pcetu-135/realtime/HDMI_bd_adapt_input_ouput_2_1_stub.vhdl:13]
-INFO: [Synth 8-3491] module 'HDMI_bd_adapt_input_ouput_3_0' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-12352-pcetu-135/realtime/HDMI_bd_adapt_input_ouput_3_0_stub.vhdl:5' bound to instance 'adapt_input_ouput_3' of component 'HDMI_bd_adapt_input_ouput_3_0' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:244]
-INFO: [Synth 8-638] synthesizing module 'HDMI_bd_adapt_input_ouput_3_0' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-12352-pcetu-135/realtime/HDMI_bd_adapt_input_ouput_3_0_stub.vhdl:13]
-INFO: [Synth 8-3491] module 'HDMI_bd_adapt_input_ouput_4_0' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-12352-pcetu-135/realtime/HDMI_bd_adapt_input_ouput_4_0_stub.vhdl:5' bound to instance 'adapt_input_ouput_4' of component 'HDMI_bd_adapt_input_ouput_4_0' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:249]
-INFO: [Synth 8-638] synthesizing module 'HDMI_bd_adapt_input_ouput_4_0' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-12352-pcetu-135/realtime/HDMI_bd_adapt_input_ouput_4_0_stub.vhdl:13]
-INFO: [Synth 8-3491] module 'HDMI_bd_column_counter_0' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-12352-pcetu-135/realtime/HDMI_bd_column_counter_0_stub.vhdl:5' bound to instance 'column_counter1' of component 'HDMI_bd_column_counter_0' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:254]
-INFO: [Synth 8-638] synthesizing module 'HDMI_bd_column_counter_0' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-12352-pcetu-135/realtime/HDMI_bd_column_counter_0_stub.vhdl:17]
-INFO: [Synth 8-3491] module 'HDMI_bd_detect_end_image_0_1' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-12352-pcetu-135/realtime/HDMI_bd_detect_end_image_0_1_stub.vhdl:5' bound to instance 'detect_end_image_0' of component 'HDMI_bd_detect_end_image_0_1' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:263]
-INFO: [Synth 8-638] synthesizing module 'HDMI_bd_detect_end_image_0_1' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-12352-pcetu-135/realtime/HDMI_bd_detect_end_image_0_1_stub.vhdl:15]
-INFO: [Synth 8-3491] module 'HDMI_bd_div_xAxis_1' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-12352-pcetu-135/realtime/HDMI_bd_div_xAxis_1_stub.vhdl:5' bound to instance 'div_xAxis' of component 'HDMI_bd_div_xAxis_1' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:270]
-INFO: [Synth 8-638] synthesizing module 'HDMI_bd_div_xAxis_1' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-12352-pcetu-135/realtime/HDMI_bd_div_xAxis_1_stub.vhdl:18]
-INFO: [Synth 8-3491] module 'HDMI_bd_div_yAxis_1' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-12352-pcetu-135/realtime/HDMI_bd_div_yAxis_1_stub.vhdl:5' bound to instance 'div_yAxis' of component 'HDMI_bd_div_yAxis_1' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:280]
-INFO: [Synth 8-638] synthesizing module 'HDMI_bd_div_yAxis_1' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-12352-pcetu-135/realtime/HDMI_bd_div_yAxis_1_stub.vhdl:18]
-INFO: [Synth 8-3491] module 'HDMI_bd_divideur_select_outp_0_1' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-12352-pcetu-135/realtime/HDMI_bd_divideur_select_outp_0_1_stub.vhdl:5' bound to instance 'divideur_select_outp_0' of component 'HDMI_bd_divideur_select_outp_0_1' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:290]
-INFO: [Synth 8-638] synthesizing module 'HDMI_bd_divideur_select_outp_0_1' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-12352-pcetu-135/realtime/HDMI_bd_divideur_select_outp_0_1_stub.vhdl:13]
-INFO: [Synth 8-3491] module 'HDMI_bd_divideur_select_outp_1_1' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-12352-pcetu-135/realtime/HDMI_bd_divideur_select_outp_1_1_stub.vhdl:5' bound to instance 'divideur_select_outp_1' of component 'HDMI_bd_divideur_select_outp_1_1' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:295]
-INFO: [Synth 8-638] synthesizing module 'HDMI_bd_divideur_select_outp_1_1' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-12352-pcetu-135/realtime/HDMI_bd_divideur_select_outp_1_1_stub.vhdl:13]
-INFO: [Synth 8-3491] module 'HDMI_bd_ligne_counter_0' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-12352-pcetu-135/realtime/HDMI_bd_ligne_counter_0_stub.vhdl:5' bound to instance 'ligne_counter1' of component 'HDMI_bd_ligne_counter_0' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:300]
-INFO: [Synth 8-638] synthesizing module 'HDMI_bd_ligne_counter_0' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-12352-pcetu-135/realtime/HDMI_bd_ligne_counter_0_stub.vhdl:17]
-INFO: [Synth 8-3491] module 'HDMI_bd_xlconstant_0_2' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-12352-pcetu-135/realtime/HDMI_bd_xlconstant_0_2_stub.vhdl:5' bound to instance 'xlconstant_0' of component 'HDMI_bd_xlconstant_0_2' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:309]
-INFO: [Synth 8-638] synthesizing module 'HDMI_bd_xlconstant_0_2' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-12352-pcetu-135/realtime/HDMI_bd_xlconstant_0_2_stub.vhdl:12]
-INFO: [Synth 8-3491] module 'HDMI_bd_xlconstant_1_0' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-12352-pcetu-135/realtime/HDMI_bd_xlconstant_1_0_stub.vhdl:5' bound to instance 'xlconstant_1' of component 'HDMI_bd_xlconstant_1_0' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:313]
-INFO: [Synth 8-638] synthesizing module 'HDMI_bd_xlconstant_1_0' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-12352-pcetu-135/realtime/HDMI_bd_xlconstant_1_0_stub.vhdl:12]
-INFO: [Synth 8-256] done synthesizing module 'Detect_centre_imp_Y7EHMB' (1#1) [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:29]
-INFO: [Synth 8-638] synthesizing module 'Moyenneur_imp_FLWLV2' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:331]
-INFO: [Synth 8-3491] module 'HDMI_bd_xlconstant_1_2' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-12352-pcetu-135/realtime/HDMI_bd_xlconstant_1_2_stub.vhdl:5' bound to instance 'ENABLE' of component 'HDMI_bd_xlconstant_1_2' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:452]
-INFO: [Synth 8-638] synthesizing module 'HDMI_bd_xlconstant_1_2' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-12352-pcetu-135/realtime/HDMI_bd_xlconstant_1_2_stub.vhdl:12]
-INFO: [Synth 8-3491] module 'HDMI_bd_c_addsub_0_0' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-12352-pcetu-135/realtime/HDMI_bd_c_addsub_0_0_stub.vhdl:5' bound to instance 'c_addsub_0' of component 'HDMI_bd_c_addsub_0_0' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:456]
-INFO: [Synth 8-638] synthesizing module 'HDMI_bd_c_addsub_0_0' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-12352-pcetu-135/realtime/HDMI_bd_c_addsub_0_0_stub.vhdl:15]
-INFO: [Synth 8-3491] module 'HDMI_bd_c_addsub_0_1' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-12352-pcetu-135/realtime/HDMI_bd_c_addsub_0_1_stub.vhdl:5' bound to instance 'c_addsub_1' of component 'HDMI_bd_c_addsub_0_1' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:463]
-INFO: [Synth 8-638] synthesizing module 'HDMI_bd_c_addsub_0_1' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-12352-pcetu-135/realtime/HDMI_bd_c_addsub_0_1_stub.vhdl:15]
-INFO: [Synth 8-3491] module 'HDMI_bd_c_addsub_0_2' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-12352-pcetu-135/realtime/HDMI_bd_c_addsub_0_2_stub.vhdl:5' bound to instance 'c_addsub_2' of component 'HDMI_bd_c_addsub_0_2' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:470]
-INFO: [Synth 8-638] synthesizing module 'HDMI_bd_c_addsub_0_2' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-12352-pcetu-135/realtime/HDMI_bd_c_addsub_0_2_stub.vhdl:15]
-INFO: [Synth 8-3491] module 'HDMI_bd_c_addsub_2_0' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-12352-pcetu-135/realtime/HDMI_bd_c_addsub_2_0_stub.vhdl:5' bound to instance 'c_addsub_3' of component 'HDMI_bd_c_addsub_2_0' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:477]
-INFO: [Synth 8-638] synthesizing module 'HDMI_bd_c_addsub_2_0' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-12352-pcetu-135/realtime/HDMI_bd_c_addsub_2_0_stub.vhdl:15]
-INFO: [Synth 8-3491] module 'HDMI_bd_div_16_0_0' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-12352-pcetu-135/realtime/HDMI_bd_div_16_0_0_stub.vhdl:5' bound to instance 'div_16_0' of component 'HDMI_bd_div_16_0_0' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:484]
-INFO: [Synth 8-638] synthesizing module 'HDMI_bd_div_16_0_0' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-12352-pcetu-135/realtime/HDMI_bd_div_16_0_0_stub.vhdl:13]
-INFO: [Synth 8-3491] module 'HDMI_bd_mult_gen_0_0' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-12352-pcetu-135/realtime/HDMI_bd_mult_gen_0_0_stub.vhdl:5' bound to instance 'mult_gen_0' of component 'HDMI_bd_mult_gen_0_0' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:489]
-INFO: [Synth 8-638] synthesizing module 'HDMI_bd_mult_gen_0_0' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-12352-pcetu-135/realtime/HDMI_bd_mult_gen_0_0_stub.vhdl:13]
-INFO: [Synth 8-3491] module 'HDMI_bd_mult_gen_0_2' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-12352-pcetu-135/realtime/HDMI_bd_mult_gen_0_2_stub.vhdl:5' bound to instance 'mult_gen_1' of component 'HDMI_bd_mult_gen_0_2' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:494]
-INFO: [Synth 8-638] synthesizing module 'HDMI_bd_mult_gen_0_2' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-12352-pcetu-135/realtime/HDMI_bd_mult_gen_0_2_stub.vhdl:13]
-INFO: [Synth 8-3491] module 'HDMI_bd_mult_gen_0_3' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-12352-pcetu-135/realtime/HDMI_bd_mult_gen_0_3_stub.vhdl:5' bound to instance 'mult_gen_2' of component 'HDMI_bd_mult_gen_0_3' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:499]
-INFO: [Synth 8-638] synthesizing module 'HDMI_bd_mult_gen_0_3' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-12352-pcetu-135/realtime/HDMI_bd_mult_gen_0_3_stub.vhdl:13]
-INFO: [Synth 8-3491] module 'HDMI_bd_reg_Nbits_0_0' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-12352-pcetu-135/realtime/HDMI_bd_reg_Nbits_0_0_stub.vhdl:5' bound to instance 'reg_Nbits_0' of component 'HDMI_bd_reg_Nbits_0_0' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:504]
-INFO: [Synth 8-638] synthesizing module 'HDMI_bd_reg_Nbits_0_0' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-12352-pcetu-135/realtime/HDMI_bd_reg_Nbits_0_0_stub.vhdl:16]
-INFO: [Synth 8-3491] module 'HDMI_bd_reg_Nbits_0_1' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-12352-pcetu-135/realtime/HDMI_bd_reg_Nbits_0_1_stub.vhdl:5' bound to instance 'reg_Nbits_1' of component 'HDMI_bd_reg_Nbits_0_1' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:512]
-INFO: [Synth 8-638] synthesizing module 'HDMI_bd_reg_Nbits_0_1' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-12352-pcetu-135/realtime/HDMI_bd_reg_Nbits_0_1_stub.vhdl:16]
-INFO: [Synth 8-3491] module 'HDMI_bd_reg_Nbits_0_2' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-12352-pcetu-135/realtime/HDMI_bd_reg_Nbits_0_2_stub.vhdl:5' bound to instance 'reg_Nbits_2' of component 'HDMI_bd_reg_Nbits_0_2' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:520]
-INFO: [Synth 8-638] synthesizing module 'HDMI_bd_reg_Nbits_0_2' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-12352-pcetu-135/realtime/HDMI_bd_reg_Nbits_0_2_stub.vhdl:16]
-INFO: [Synth 8-3491] module 'HDMI_bd_reg_Nbits_0_3' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-12352-pcetu-135/realtime/HDMI_bd_reg_Nbits_0_3_stub.vhdl:5' bound to instance 'reg_Nbits_3' of component 'HDMI_bd_reg_Nbits_0_3' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:528]
-INFO: [Synth 8-638] synthesizing module 'HDMI_bd_reg_Nbits_0_3' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-12352-pcetu-135/realtime/HDMI_bd_reg_Nbits_0_3_stub.vhdl:16]
-INFO: [Synth 8-256] done synthesizing module 'Moyenneur_imp_FLWLV2' (2#1) [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:331]
-INFO: [Synth 8-3491] module 'HDMI_bd_RGB_to_Y_0_0' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-12352-pcetu-135/realtime/HDMI_bd_RGB_to_Y_0_0_stub.vhdl:5' bound to instance 'RGB_to_Y_0' of component 'HDMI_bd_RGB_to_Y_0_0' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:1035]
-INFO: [Synth 8-638] synthesizing module 'HDMI_bd_RGB_to_Y_0_0' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-12352-pcetu-135/realtime/HDMI_bd_RGB_to_Y_0_0_stub.vhdl:13]
-INFO: [Synth 8-638] synthesizing module 'Segmentation_imp_1V2EHQ9' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:551]
-INFO: [Synth 8-3491] module 'HDMI_bd_xlconstant_0_3' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-12352-pcetu-135/realtime/HDMI_bd_xlconstant_0_3_stub.vhdl:5' bound to instance 'ENABLE' of component 'HDMI_bd_xlconstant_0_3' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:624]
-INFO: [Synth 8-638] synthesizing module 'HDMI_bd_xlconstant_0_3' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-12352-pcetu-135/realtime/HDMI_bd_xlconstant_0_3_stub.vhdl:12]
-INFO: [Synth 8-3491] module 'HDMI_bd_Seuillage_0_3' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-12352-pcetu-135/realtime/HDMI_bd_Seuillage_0_3_stub.vhdl:5' bound to instance 'Seuillage_0' of component 'HDMI_bd_Seuillage_0_3' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:628]
-INFO: [Synth 8-638] synthesizing module 'HDMI_bd_Seuillage_0_3' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-12352-pcetu-135/realtime/HDMI_bd_Seuillage_0_3_stub.vhdl:14]
-INFO: [Synth 8-3491] module 'HDMI_bd_abs_8bits_signed_0_0' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-12352-pcetu-135/realtime/HDMI_bd_abs_8bits_signed_0_0_stub.vhdl:5' bound to instance 'abs_8bits_signed_0' of component 'HDMI_bd_abs_8bits_signed_0_0' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:634]
-INFO: [Synth 8-638] synthesizing module 'HDMI_bd_abs_8bits_signed_0_0' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-12352-pcetu-135/realtime/HDMI_bd_abs_8bits_signed_0_0_stub.vhdl:13]
-INFO: [Synth 8-3491] module 'HDMI_bd_c_addsub_0_4' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-12352-pcetu-135/realtime/HDMI_bd_c_addsub_0_4_stub.vhdl:5' bound to instance 'c_addsub_1' of component 'HDMI_bd_c_addsub_0_4' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:639]
-INFO: [Synth 8-638] synthesizing module 'HDMI_bd_c_addsub_0_4' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-12352-pcetu-135/realtime/HDMI_bd_c_addsub_0_4_stub.vhdl:15]
-INFO: [Synth 8-3491] module 'HDMI_bd_reg_Nbits_0_4' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-12352-pcetu-135/realtime/HDMI_bd_reg_Nbits_0_4_stub.vhdl:5' bound to instance 'reg_Nbits_0' of component 'HDMI_bd_reg_Nbits_0_4' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:646]
-INFO: [Synth 8-638] synthesizing module 'HDMI_bd_reg_Nbits_0_4' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-12352-pcetu-135/realtime/HDMI_bd_reg_Nbits_0_4_stub.vhdl:16]
-INFO: [Synth 8-3491] module 'HDMI_bd_reg_Nbits_0_5' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-12352-pcetu-135/realtime/HDMI_bd_reg_Nbits_0_5_stub.vhdl:5' bound to instance 'reg_Nbits_1' of component 'HDMI_bd_reg_Nbits_0_5' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:654]
-INFO: [Synth 8-638] synthesizing module 'HDMI_bd_reg_Nbits_0_5' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-12352-pcetu-135/realtime/HDMI_bd_reg_Nbits_0_5_stub.vhdl:16]
-INFO: [Synth 8-3491] module 'HDMI_bd_reg_Nbits_1_0' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-12352-pcetu-135/realtime/HDMI_bd_reg_Nbits_1_0_stub.vhdl:5' bound to instance 'reg_Nbits_2' of component 'HDMI_bd_reg_Nbits_1_0' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:662]
-INFO: [Synth 8-638] synthesizing module 'HDMI_bd_reg_Nbits_1_0' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-12352-pcetu-135/realtime/HDMI_bd_reg_Nbits_1_0_stub.vhdl:16]
-INFO: [Synth 8-256] done synthesizing module 'Segmentation_imp_1V2EHQ9' (3#1) [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:551]
-INFO: [Synth 8-3491] module 'HDMI_bd_xlconstant_0_1' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-12352-pcetu-135/realtime/HDMI_bd_xlconstant_0_1_stub.vhdl:5' bound to instance 'VDD' of component 'HDMI_bd_xlconstant_0_1' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:1048]
-INFO: [Synth 8-638] synthesizing module 'HDMI_bd_xlconstant_0_1' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-12352-pcetu-135/realtime/HDMI_bd_xlconstant_0_1_stub.vhdl:12]
-INFO: [Synth 8-3491] module 'HDMI_bd_affiche_centre_0_0' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-12352-pcetu-135/realtime/HDMI_bd_affiche_centre_0_0_stub.vhdl:5' bound to instance 'affiche_centre_0' of component 'HDMI_bd_affiche_centre_0_0' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:1052]
-INFO: [Synth 8-638] synthesizing module 'HDMI_bd_affiche_centre_0_0' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-12352-pcetu-135/realtime/HDMI_bd_affiche_centre_0_0_stub.vhdl:17]
-INFO: [Synth 8-3491] module 'HDMI_bd_clk_wiz_0_0' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-12352-pcetu-135/realtime/HDMI_bd_clk_wiz_0_0_stub.vhdl:5' bound to instance 'clk_wiz_0' of component 'HDMI_bd_clk_wiz_0_0' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:1061]
-INFO: [Synth 8-638] synthesizing module 'HDMI_bd_clk_wiz_0_0' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-12352-pcetu-135/realtime/HDMI_bd_clk_wiz_0_0_stub.vhdl:15]
-INFO: [Synth 8-3491] module 'HDMI_bd_dvi2rgb_0_1' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-12352-pcetu-135/realtime/HDMI_bd_dvi2rgb_0_1_stub.vhdl:5' bound to instance 'dvi2rgb_0' of component 'HDMI_bd_dvi2rgb_0_1' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:1068]
-INFO: [Synth 8-638] synthesizing module 'HDMI_bd_dvi2rgb_0_1' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-12352-pcetu-135/realtime/HDMI_bd_dvi2rgb_0_1_stub.vhdl:30]
-INFO: [Synth 8-638] synthesizing module 'filtrage_intensif_imp_EBE6GW' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:684]
-INFO: [Synth 8-3491] module 'HDMI_bd_ET_logique_5entree_0_0' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-12352-pcetu-135/realtime/HDMI_bd_ET_logique_5entree_0_0_stub.vhdl:5' bound to instance 'ET_logique_5entree_0' of component 'HDMI_bd_ET_logique_5entree_0_0' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:774]
-INFO: [Synth 8-638] synthesizing module 'HDMI_bd_ET_logique_5entree_0_0' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-12352-pcetu-135/realtime/HDMI_bd_ET_logique_5entree_0_0_stub.vhdl:19]
-INFO: [Synth 8-3491] module 'HDMI_bd_reg_1bit_0_0' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-12352-pcetu-135/realtime/HDMI_bd_reg_1bit_0_0_stub.vhdl:5' bound to instance 'reg_1bit_0' of component 'HDMI_bd_reg_1bit_0_0' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:785]
-INFO: [Synth 8-638] synthesizing module 'HDMI_bd_reg_1bit_0_0' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-12352-pcetu-135/realtime/HDMI_bd_reg_1bit_0_0_stub.vhdl:16]
-INFO: [Synth 8-3491] module 'HDMI_bd_reg_1bit_0_1' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-12352-pcetu-135/realtime/HDMI_bd_reg_1bit_0_1_stub.vhdl:5' bound to instance 'reg_1bit_1' of component 'HDMI_bd_reg_1bit_0_1' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:793]
-INFO: [Synth 8-638] synthesizing module 'HDMI_bd_reg_1bit_0_1' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-12352-pcetu-135/realtime/HDMI_bd_reg_1bit_0_1_stub.vhdl:16]
-INFO: [Synth 8-3491] module 'HDMI_bd_reg_1bit_0_2' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-12352-pcetu-135/realtime/HDMI_bd_reg_1bit_0_2_stub.vhdl:5' bound to instance 'reg_1bit_2' of component 'HDMI_bd_reg_1bit_0_2' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:801]
-INFO: [Synth 8-638] synthesizing module 'HDMI_bd_reg_1bit_0_2' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-12352-pcetu-135/realtime/HDMI_bd_reg_1bit_0_2_stub.vhdl:16]
-INFO: [Synth 8-3491] module 'HDMI_bd_reg_1bit_2_0' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-12352-pcetu-135/realtime/HDMI_bd_reg_1bit_2_0_stub.vhdl:5' bound to instance 'reg_1bit_3' of component 'HDMI_bd_reg_1bit_2_0' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:809]
-INFO: [Synth 8-638] synthesizing module 'HDMI_bd_reg_1bit_2_0' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-12352-pcetu-135/realtime/HDMI_bd_reg_1bit_2_0_stub.vhdl:16]
-INFO: [Synth 8-3491] module 'HDMI_bd_reg_1bit_3_0' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-12352-pcetu-135/realtime/HDMI_bd_reg_1bit_3_0_stub.vhdl:5' bound to instance 'reg_1bit_4' of component 'HDMI_bd_reg_1bit_3_0' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:817]
-INFO: [Synth 8-638] synthesizing module 'HDMI_bd_reg_1bit_3_0' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-12352-pcetu-135/realtime/HDMI_bd_reg_1bit_3_0_stub.vhdl:16]
-INFO: [Synth 8-3491] module 'HDMI_bd_reg_1bit_4_0' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-12352-pcetu-135/realtime/HDMI_bd_reg_1bit_4_0_stub.vhdl:5' bound to instance 'reg_1bit_5' of component 'HDMI_bd_reg_1bit_4_0' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:825]
-INFO: [Synth 8-638] synthesizing module 'HDMI_bd_reg_1bit_4_0' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-12352-pcetu-135/realtime/HDMI_bd_reg_1bit_4_0_stub.vhdl:16]
-INFO: [Synth 8-3491] module 'HDMI_bd_xlconstant_0_0' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-12352-pcetu-135/realtime/HDMI_bd_xlconstant_0_0_stub.vhdl:5' bound to instance 'xlconstant_0' of component 'HDMI_bd_xlconstant_0_0' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:833]
-INFO: [Synth 8-638] synthesizing module 'HDMI_bd_xlconstant_0_0' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-12352-pcetu-135/realtime/HDMI_bd_xlconstant_0_0_stub.vhdl:12]
-INFO: [Synth 8-256] done synthesizing module 'filtrage_intensif_imp_EBE6GW' (4#1) [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:684]
-INFO: [Synth 8-3491] module 'HDMI_bd_rgb2dvi_0_1' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-12352-pcetu-135/realtime/HDMI_bd_rgb2dvi_0_1_stub.vhdl:5' bound to instance 'rgb2dvi_0' of component 'HDMI_bd_rgb2dvi_0_1' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:1097]
-INFO: [Synth 8-638] synthesizing module 'HDMI_bd_rgb2dvi_0_1' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-12352-pcetu-135/realtime/HDMI_bd_rgb2dvi_0_1_stub.vhdl:21]
-INFO: [Synth 8-256] done synthesizing module 'HDMI_bd' (5#1) [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:869]
-INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Programs/Xilinx/Vivado/2018.2/scripts/rt/data/unisim_comp.v:22660' bound to instance 'hdmi_in_ddc_scl_iobuf' of component 'IOBUF' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/hdl/HDMI_bd_wrapper.vhd:92]
+INFO: [Synth 8-638] synthesizing module 'HDMI_bd_wrapper' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/hdl/HDMI_bd_wrapper.vhd:36]
+INFO: [Synth 8-3491] module 'HDMI_bd' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:857' bound to instance 'HDMI_bd_i' of component 'HDMI_bd' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/hdl/HDMI_bd_wrapper.vhd:77]
+INFO: [Synth 8-638] synthesizing module 'HDMI_bd' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:887]
+INFO: [Synth 8-638] synthesizing module 'Detect_centre_imp_Y7EHMB' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:30]
+INFO: [Synth 8-3491] module 'HDMI_bd_Additionneur_Nbits_0_0' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-4756-pcetu-136/realtime/HDMI_bd_Additionneur_Nbits_0_0_stub.vhdl:5' bound to instance 'Additionneur_Nbits_0' of component 'HDMI_bd_Additionneur_Nbits_0_0' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:213]
+INFO: [Synth 8-638] synthesizing module 'HDMI_bd_Additionneur_Nbits_0_0' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-4756-pcetu-136/realtime/HDMI_bd_Additionneur_Nbits_0_0_stub.vhdl:18]
+INFO: [Synth 8-3491] module 'HDMI_bd_Additionneur_Nbits_1_0' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-4756-pcetu-136/realtime/HDMI_bd_Additionneur_Nbits_1_0_stub.vhdl:5' bound to instance 'Additionneur_Nbits_1' of component 'HDMI_bd_Additionneur_Nbits_1_0' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:223]
+INFO: [Synth 8-638] synthesizing module 'HDMI_bd_Additionneur_Nbits_1_0' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-4756-pcetu-136/realtime/HDMI_bd_Additionneur_Nbits_1_0_stub.vhdl:18]
+INFO: [Synth 8-3491] module 'HDMI_bd_Blank_pixel_counter_1' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-4756-pcetu-136/realtime/HDMI_bd_Blank_pixel_counter_1_stub.vhdl:5' bound to instance 'Blank_pixel_counter' of component 'HDMI_bd_Blank_pixel_counter_1' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:233]
+INFO: [Synth 8-638] synthesizing module 'HDMI_bd_Blank_pixel_counter_1' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-4756-pcetu-136/realtime/HDMI_bd_Blank_pixel_counter_1_stub.vhdl:15]
+INFO: [Synth 8-3491] module 'HDMI_bd_adapt_input_ouput_0_1' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-4756-pcetu-136/realtime/HDMI_bd_adapt_input_ouput_0_1_stub.vhdl:5' bound to instance 'adapt_input_ouput_0' of component 'HDMI_bd_adapt_input_ouput_0_1' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:240]
+INFO: [Synth 8-638] synthesizing module 'HDMI_bd_adapt_input_ouput_0_1' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-4756-pcetu-136/realtime/HDMI_bd_adapt_input_ouput_0_1_stub.vhdl:13]
+INFO: [Synth 8-3491] module 'HDMI_bd_adapt_input_ouput_1_1' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-4756-pcetu-136/realtime/HDMI_bd_adapt_input_ouput_1_1_stub.vhdl:5' bound to instance 'adapt_input_ouput_1' of component 'HDMI_bd_adapt_input_ouput_1_1' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:245]
+INFO: [Synth 8-638] synthesizing module 'HDMI_bd_adapt_input_ouput_1_1' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-4756-pcetu-136/realtime/HDMI_bd_adapt_input_ouput_1_1_stub.vhdl:13]
+INFO: [Synth 8-3491] module 'HDMI_bd_adapt_input_ouput_2_1' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-4756-pcetu-136/realtime/HDMI_bd_adapt_input_ouput_2_1_stub.vhdl:5' bound to instance 'adapt_input_ouput_2' of component 'HDMI_bd_adapt_input_ouput_2_1' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:250]
+INFO: [Synth 8-638] synthesizing module 'HDMI_bd_adapt_input_ouput_2_1' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-4756-pcetu-136/realtime/HDMI_bd_adapt_input_ouput_2_1_stub.vhdl:13]
+INFO: [Synth 8-3491] module 'HDMI_bd_adapt_input_ouput_3_0' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-4756-pcetu-136/realtime/HDMI_bd_adapt_input_ouput_3_0_stub.vhdl:5' bound to instance 'adapt_input_ouput_3' of component 'HDMI_bd_adapt_input_ouput_3_0' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:255]
+INFO: [Synth 8-638] synthesizing module 'HDMI_bd_adapt_input_ouput_3_0' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-4756-pcetu-136/realtime/HDMI_bd_adapt_input_ouput_3_0_stub.vhdl:13]
+INFO: [Synth 8-3491] module 'HDMI_bd_adapt_input_ouput_4_0' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-4756-pcetu-136/realtime/HDMI_bd_adapt_input_ouput_4_0_stub.vhdl:5' bound to instance 'adapt_input_ouput_4' of component 'HDMI_bd_adapt_input_ouput_4_0' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:260]
+INFO: [Synth 8-638] synthesizing module 'HDMI_bd_adapt_input_ouput_4_0' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-4756-pcetu-136/realtime/HDMI_bd_adapt_input_ouput_4_0_stub.vhdl:13]
+INFO: [Synth 8-3491] module 'HDMI_bd_column_counter_0' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-4756-pcetu-136/realtime/HDMI_bd_column_counter_0_stub.vhdl:5' bound to instance 'column_counter1' of component 'HDMI_bd_column_counter_0' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:265]
+INFO: [Synth 8-638] synthesizing module 'HDMI_bd_column_counter_0' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-4756-pcetu-136/realtime/HDMI_bd_column_counter_0_stub.vhdl:17]
+INFO: [Synth 8-3491] module 'HDMI_bd_div_xAxis_1' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-4756-pcetu-136/realtime/HDMI_bd_div_xAxis_1_stub.vhdl:5' bound to instance 'div_xAxis' of component 'HDMI_bd_div_xAxis_1' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:274]
+INFO: [Synth 8-638] synthesizing module 'HDMI_bd_div_xAxis_1' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-4756-pcetu-136/realtime/HDMI_bd_div_xAxis_1_stub.vhdl:21]
+INFO: [Synth 8-3491] module 'HDMI_bd_div_yAxis_1' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-4756-pcetu-136/realtime/HDMI_bd_div_yAxis_1_stub.vhdl:5' bound to instance 'div_yAxis' of component 'HDMI_bd_div_yAxis_1' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:287]
+INFO: [Synth 8-638] synthesizing module 'HDMI_bd_div_yAxis_1' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-4756-pcetu-136/realtime/HDMI_bd_div_yAxis_1_stub.vhdl:21]
+INFO: [Synth 8-3491] module 'HDMI_bd_divideur_select_outp_0_1' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-4756-pcetu-136/realtime/HDMI_bd_divideur_select_outp_0_1_stub.vhdl:5' bound to instance 'divideur_select_outp_0' of component 'HDMI_bd_divideur_select_outp_0_1' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:300]
+INFO: [Synth 8-638] synthesizing module 'HDMI_bd_divideur_select_outp_0_1' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-4756-pcetu-136/realtime/HDMI_bd_divideur_select_outp_0_1_stub.vhdl:13]
+INFO: [Synth 8-3491] module 'HDMI_bd_divideur_select_outp_1_1' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-4756-pcetu-136/realtime/HDMI_bd_divideur_select_outp_1_1_stub.vhdl:5' bound to instance 'divideur_select_outp_1' of component 'HDMI_bd_divideur_select_outp_1_1' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:305]
+INFO: [Synth 8-638] synthesizing module 'HDMI_bd_divideur_select_outp_1_1' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-4756-pcetu-136/realtime/HDMI_bd_divideur_select_outp_1_1_stub.vhdl:13]
+INFO: [Synth 8-3491] module 'HDMI_bd_ligne_counter_0' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-4756-pcetu-136/realtime/HDMI_bd_ligne_counter_0_stub.vhdl:5' bound to instance 'ligne_counter1' of component 'HDMI_bd_ligne_counter_0' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:310]
+INFO: [Synth 8-638] synthesizing module 'HDMI_bd_ligne_counter_0' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-4756-pcetu-136/realtime/HDMI_bd_ligne_counter_0_stub.vhdl:17]
+INFO: [Synth 8-3491] module 'HDMI_bd_not_1bit_0_0' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-4756-pcetu-136/realtime/HDMI_bd_not_1bit_0_0_stub.vhdl:5' bound to instance 'not_1bit_0' of component 'HDMI_bd_not_1bit_0_0' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:319]
+INFO: [Synth 8-638] synthesizing module 'HDMI_bd_not_1bit_0_0' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-4756-pcetu-136/realtime/HDMI_bd_not_1bit_0_0_stub.vhdl:13]
+INFO: [Synth 8-3491] module 'HDMI_bd_xlconstant_0_2' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-4756-pcetu-136/realtime/HDMI_bd_xlconstant_0_2_stub.vhdl:5' bound to instance 'xlconstant_0' of component 'HDMI_bd_xlconstant_0_2' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:324]
+INFO: [Synth 8-638] synthesizing module 'HDMI_bd_xlconstant_0_2' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-4756-pcetu-136/realtime/HDMI_bd_xlconstant_0_2_stub.vhdl:12]
+INFO: [Synth 8-3491] module 'HDMI_bd_xlconstant_1_0' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-4756-pcetu-136/realtime/HDMI_bd_xlconstant_1_0_stub.vhdl:5' bound to instance 'xlconstant_1' of component 'HDMI_bd_xlconstant_1_0' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:328]
+INFO: [Synth 8-638] synthesizing module 'HDMI_bd_xlconstant_1_0' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-4756-pcetu-136/realtime/HDMI_bd_xlconstant_1_0_stub.vhdl:12]
+INFO: [Synth 8-256] done synthesizing module 'Detect_centre_imp_Y7EHMB' (1#1) [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:30]
+INFO: [Synth 8-638] synthesizing module 'Moyenneur_imp_FLWLV2' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:346]
+INFO: [Synth 8-3491] module 'HDMI_bd_xlconstant_1_2' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-4756-pcetu-136/realtime/HDMI_bd_xlconstant_1_2_stub.vhdl:5' bound to instance 'ENABLE' of component 'HDMI_bd_xlconstant_1_2' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:467]
+INFO: [Synth 8-638] synthesizing module 'HDMI_bd_xlconstant_1_2' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-4756-pcetu-136/realtime/HDMI_bd_xlconstant_1_2_stub.vhdl:12]
+INFO: [Synth 8-3491] module 'HDMI_bd_c_addsub_0_0' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-4756-pcetu-136/realtime/HDMI_bd_c_addsub_0_0_stub.vhdl:5' bound to instance 'c_addsub_0' of component 'HDMI_bd_c_addsub_0_0' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:471]
+INFO: [Synth 8-638] synthesizing module 'HDMI_bd_c_addsub_0_0' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-4756-pcetu-136/realtime/HDMI_bd_c_addsub_0_0_stub.vhdl:15]
+INFO: [Synth 8-3491] module 'HDMI_bd_c_addsub_0_1' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-4756-pcetu-136/realtime/HDMI_bd_c_addsub_0_1_stub.vhdl:5' bound to instance 'c_addsub_1' of component 'HDMI_bd_c_addsub_0_1' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:478]
+INFO: [Synth 8-638] synthesizing module 'HDMI_bd_c_addsub_0_1' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-4756-pcetu-136/realtime/HDMI_bd_c_addsub_0_1_stub.vhdl:15]
+INFO: [Synth 8-3491] module 'HDMI_bd_c_addsub_0_2' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-4756-pcetu-136/realtime/HDMI_bd_c_addsub_0_2_stub.vhdl:5' bound to instance 'c_addsub_2' of component 'HDMI_bd_c_addsub_0_2' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:485]
+INFO: [Synth 8-638] synthesizing module 'HDMI_bd_c_addsub_0_2' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-4756-pcetu-136/realtime/HDMI_bd_c_addsub_0_2_stub.vhdl:15]
+INFO: [Synth 8-3491] module 'HDMI_bd_c_addsub_2_0' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-4756-pcetu-136/realtime/HDMI_bd_c_addsub_2_0_stub.vhdl:5' bound to instance 'c_addsub_3' of component 'HDMI_bd_c_addsub_2_0' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:492]
+INFO: [Synth 8-638] synthesizing module 'HDMI_bd_c_addsub_2_0' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-4756-pcetu-136/realtime/HDMI_bd_c_addsub_2_0_stub.vhdl:15]
+INFO: [Synth 8-3491] module 'HDMI_bd_div_16_0_0' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-4756-pcetu-136/realtime/HDMI_bd_div_16_0_0_stub.vhdl:5' bound to instance 'div_16_0' of component 'HDMI_bd_div_16_0_0' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:499]
+INFO: [Synth 8-638] synthesizing module 'HDMI_bd_div_16_0_0' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-4756-pcetu-136/realtime/HDMI_bd_div_16_0_0_stub.vhdl:13]
+INFO: [Synth 8-3491] module 'HDMI_bd_mult_gen_0_0' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-4756-pcetu-136/realtime/HDMI_bd_mult_gen_0_0_stub.vhdl:5' bound to instance 'mult_gen_0' of component 'HDMI_bd_mult_gen_0_0' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:504]
+INFO: [Synth 8-638] synthesizing module 'HDMI_bd_mult_gen_0_0' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-4756-pcetu-136/realtime/HDMI_bd_mult_gen_0_0_stub.vhdl:13]
+INFO: [Synth 8-3491] module 'HDMI_bd_mult_gen_0_2' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-4756-pcetu-136/realtime/HDMI_bd_mult_gen_0_2_stub.vhdl:5' bound to instance 'mult_gen_1' of component 'HDMI_bd_mult_gen_0_2' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:509]
+INFO: [Synth 8-638] synthesizing module 'HDMI_bd_mult_gen_0_2' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-4756-pcetu-136/realtime/HDMI_bd_mult_gen_0_2_stub.vhdl:13]
+INFO: [Synth 8-3491] module 'HDMI_bd_mult_gen_0_3' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-4756-pcetu-136/realtime/HDMI_bd_mult_gen_0_3_stub.vhdl:5' bound to instance 'mult_gen_2' of component 'HDMI_bd_mult_gen_0_3' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:514]
+INFO: [Synth 8-638] synthesizing module 'HDMI_bd_mult_gen_0_3' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-4756-pcetu-136/realtime/HDMI_bd_mult_gen_0_3_stub.vhdl:13]
+INFO: [Synth 8-3491] module 'HDMI_bd_reg_Nbits_0_0' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-4756-pcetu-136/realtime/HDMI_bd_reg_Nbits_0_0_stub.vhdl:5' bound to instance 'reg_Nbits_0' of component 'HDMI_bd_reg_Nbits_0_0' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:519]
+INFO: [Synth 8-638] synthesizing module 'HDMI_bd_reg_Nbits_0_0' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-4756-pcetu-136/realtime/HDMI_bd_reg_Nbits_0_0_stub.vhdl:16]
+INFO: [Synth 8-3491] module 'HDMI_bd_reg_Nbits_0_1' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-4756-pcetu-136/realtime/HDMI_bd_reg_Nbits_0_1_stub.vhdl:5' bound to instance 'reg_Nbits_1' of component 'HDMI_bd_reg_Nbits_0_1' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:527]
+INFO: [Synth 8-638] synthesizing module 'HDMI_bd_reg_Nbits_0_1' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-4756-pcetu-136/realtime/HDMI_bd_reg_Nbits_0_1_stub.vhdl:16]
+INFO: [Synth 8-3491] module 'HDMI_bd_reg_Nbits_0_2' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-4756-pcetu-136/realtime/HDMI_bd_reg_Nbits_0_2_stub.vhdl:5' bound to instance 'reg_Nbits_2' of component 'HDMI_bd_reg_Nbits_0_2' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:535]
+INFO: [Synth 8-638] synthesizing module 'HDMI_bd_reg_Nbits_0_2' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-4756-pcetu-136/realtime/HDMI_bd_reg_Nbits_0_2_stub.vhdl:16]
+INFO: [Synth 8-3491] module 'HDMI_bd_reg_Nbits_0_3' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-4756-pcetu-136/realtime/HDMI_bd_reg_Nbits_0_3_stub.vhdl:5' bound to instance 'reg_Nbits_3' of component 'HDMI_bd_reg_Nbits_0_3' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:543]
+INFO: [Synth 8-638] synthesizing module 'HDMI_bd_reg_Nbits_0_3' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-4756-pcetu-136/realtime/HDMI_bd_reg_Nbits_0_3_stub.vhdl:16]
+INFO: [Synth 8-256] done synthesizing module 'Moyenneur_imp_FLWLV2' (2#1) [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:346]
+INFO: [Synth 8-3491] module 'HDMI_bd_RGB_to_Y_0_0' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-4756-pcetu-136/realtime/HDMI_bd_RGB_to_Y_0_0_stub.vhdl:5' bound to instance 'RGB_to_Y_0' of component 'HDMI_bd_RGB_to_Y_0_0' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:1057]
+INFO: [Synth 8-638] synthesizing module 'HDMI_bd_RGB_to_Y_0_0' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-4756-pcetu-136/realtime/HDMI_bd_RGB_to_Y_0_0_stub.vhdl:13]
+INFO: [Synth 8-638] synthesizing module 'Segmentation_imp_1V2EHQ9' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:566]
+INFO: [Synth 8-3491] module 'HDMI_bd_xlconstant_0_3' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-4756-pcetu-136/realtime/HDMI_bd_xlconstant_0_3_stub.vhdl:5' bound to instance 'ENABLE' of component 'HDMI_bd_xlconstant_0_3' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:639]
+INFO: [Synth 8-638] synthesizing module 'HDMI_bd_xlconstant_0_3' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-4756-pcetu-136/realtime/HDMI_bd_xlconstant_0_3_stub.vhdl:12]
+INFO: [Synth 8-3491] module 'HDMI_bd_Seuillage_0_3' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-4756-pcetu-136/realtime/HDMI_bd_Seuillage_0_3_stub.vhdl:5' bound to instance 'Seuillage_0' of component 'HDMI_bd_Seuillage_0_3' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:643]
+INFO: [Synth 8-638] synthesizing module 'HDMI_bd_Seuillage_0_3' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-4756-pcetu-136/realtime/HDMI_bd_Seuillage_0_3_stub.vhdl:14]
+INFO: [Synth 8-3491] module 'HDMI_bd_abs_8bits_signed_0_0' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-4756-pcetu-136/realtime/HDMI_bd_abs_8bits_signed_0_0_stub.vhdl:5' bound to instance 'abs_8bits_signed_0' of component 'HDMI_bd_abs_8bits_signed_0_0' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:649]
+INFO: [Synth 8-638] synthesizing module 'HDMI_bd_abs_8bits_signed_0_0' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-4756-pcetu-136/realtime/HDMI_bd_abs_8bits_signed_0_0_stub.vhdl:13]
+INFO: [Synth 8-3491] module 'HDMI_bd_c_addsub_0_4' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-4756-pcetu-136/realtime/HDMI_bd_c_addsub_0_4_stub.vhdl:5' bound to instance 'c_addsub_1' of component 'HDMI_bd_c_addsub_0_4' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:654]
+INFO: [Synth 8-638] synthesizing module 'HDMI_bd_c_addsub_0_4' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-4756-pcetu-136/realtime/HDMI_bd_c_addsub_0_4_stub.vhdl:15]
+INFO: [Synth 8-3491] module 'HDMI_bd_reg_Nbits_0_4' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-4756-pcetu-136/realtime/HDMI_bd_reg_Nbits_0_4_stub.vhdl:5' bound to instance 'reg_Nbits_0' of component 'HDMI_bd_reg_Nbits_0_4' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:661]
+INFO: [Synth 8-638] synthesizing module 'HDMI_bd_reg_Nbits_0_4' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-4756-pcetu-136/realtime/HDMI_bd_reg_Nbits_0_4_stub.vhdl:16]
+INFO: [Synth 8-3491] module 'HDMI_bd_reg_Nbits_0_5' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-4756-pcetu-136/realtime/HDMI_bd_reg_Nbits_0_5_stub.vhdl:5' bound to instance 'reg_Nbits_1' of component 'HDMI_bd_reg_Nbits_0_5' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:669]
+INFO: [Synth 8-638] synthesizing module 'HDMI_bd_reg_Nbits_0_5' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-4756-pcetu-136/realtime/HDMI_bd_reg_Nbits_0_5_stub.vhdl:16]
+INFO: [Synth 8-3491] module 'HDMI_bd_reg_Nbits_1_0' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-4756-pcetu-136/realtime/HDMI_bd_reg_Nbits_1_0_stub.vhdl:5' bound to instance 'reg_Nbits_2' of component 'HDMI_bd_reg_Nbits_1_0' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:677]
+INFO: [Synth 8-638] synthesizing module 'HDMI_bd_reg_Nbits_1_0' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-4756-pcetu-136/realtime/HDMI_bd_reg_Nbits_1_0_stub.vhdl:16]
+INFO: [Synth 8-256] done synthesizing module 'Segmentation_imp_1V2EHQ9' (3#1) [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:566]
+INFO: [Synth 8-3491] module 'HDMI_bd_xlconstant_0_1' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-4756-pcetu-136/realtime/HDMI_bd_xlconstant_0_1_stub.vhdl:5' bound to instance 'VDD' of component 'HDMI_bd_xlconstant_0_1' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:1070]
+INFO: [Synth 8-638] synthesizing module 'HDMI_bd_xlconstant_0_1' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-4756-pcetu-136/realtime/HDMI_bd_xlconstant_0_1_stub.vhdl:12]
+INFO: [Synth 8-3491] module 'HDMI_bd_affiche_centre_0_0' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-4756-pcetu-136/realtime/HDMI_bd_affiche_centre_0_0_stub.vhdl:5' bound to instance 'affiche_centre_0' of component 'HDMI_bd_affiche_centre_0_0' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:1074]
+INFO: [Synth 8-638] synthesizing module 'HDMI_bd_affiche_centre_0_0' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-4756-pcetu-136/realtime/HDMI_bd_affiche_centre_0_0_stub.vhdl:17]
+INFO: [Synth 8-3491] module 'HDMI_bd_clk_wiz_0_0' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-4756-pcetu-136/realtime/HDMI_bd_clk_wiz_0_0_stub.vhdl:5' bound to instance 'clk_wiz_0' of component 'HDMI_bd_clk_wiz_0_0' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:1083]
+INFO: [Synth 8-638] synthesizing module 'HDMI_bd_clk_wiz_0_0' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-4756-pcetu-136/realtime/HDMI_bd_clk_wiz_0_0_stub.vhdl:15]
+INFO: [Synth 8-3491] module 'HDMI_bd_dvi2rgb_0_1' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-4756-pcetu-136/realtime/HDMI_bd_dvi2rgb_0_1_stub.vhdl:5' bound to instance 'dvi2rgb_0' of component 'HDMI_bd_dvi2rgb_0_1' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:1090]
+INFO: [Synth 8-638] synthesizing module 'HDMI_bd_dvi2rgb_0_1' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-4756-pcetu-136/realtime/HDMI_bd_dvi2rgb_0_1_stub.vhdl:30]
+INFO: [Synth 8-638] synthesizing module 'filtrage_intensif_imp_EBE6GW' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:699]
+INFO: [Synth 8-3491] module 'HDMI_bd_ET_logique_5entree_0_0' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-4756-pcetu-136/realtime/HDMI_bd_ET_logique_5entree_0_0_stub.vhdl:5' bound to instance 'ET_logique_5entree_0' of component 'HDMI_bd_ET_logique_5entree_0_0' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:789]
+INFO: [Synth 8-638] synthesizing module 'HDMI_bd_ET_logique_5entree_0_0' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-4756-pcetu-136/realtime/HDMI_bd_ET_logique_5entree_0_0_stub.vhdl:19]
+INFO: [Synth 8-3491] module 'HDMI_bd_reg_1bit_0_0' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-4756-pcetu-136/realtime/HDMI_bd_reg_1bit_0_0_stub.vhdl:5' bound to instance 'reg_1bit_0' of component 'HDMI_bd_reg_1bit_0_0' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:800]
+INFO: [Synth 8-638] synthesizing module 'HDMI_bd_reg_1bit_0_0' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-4756-pcetu-136/realtime/HDMI_bd_reg_1bit_0_0_stub.vhdl:16]
+INFO: [Synth 8-3491] module 'HDMI_bd_reg_1bit_0_1' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-4756-pcetu-136/realtime/HDMI_bd_reg_1bit_0_1_stub.vhdl:5' bound to instance 'reg_1bit_1' of component 'HDMI_bd_reg_1bit_0_1' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:808]
+INFO: [Synth 8-638] synthesizing module 'HDMI_bd_reg_1bit_0_1' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-4756-pcetu-136/realtime/HDMI_bd_reg_1bit_0_1_stub.vhdl:16]
+INFO: [Synth 8-3491] module 'HDMI_bd_reg_1bit_0_2' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-4756-pcetu-136/realtime/HDMI_bd_reg_1bit_0_2_stub.vhdl:5' bound to instance 'reg_1bit_2' of component 'HDMI_bd_reg_1bit_0_2' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:816]
+INFO: [Synth 8-638] synthesizing module 'HDMI_bd_reg_1bit_0_2' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-4756-pcetu-136/realtime/HDMI_bd_reg_1bit_0_2_stub.vhdl:16]
+INFO: [Synth 8-3491] module 'HDMI_bd_reg_1bit_2_0' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-4756-pcetu-136/realtime/HDMI_bd_reg_1bit_2_0_stub.vhdl:5' bound to instance 'reg_1bit_3' of component 'HDMI_bd_reg_1bit_2_0' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:824]
+INFO: [Synth 8-638] synthesizing module 'HDMI_bd_reg_1bit_2_0' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-4756-pcetu-136/realtime/HDMI_bd_reg_1bit_2_0_stub.vhdl:16]
+INFO: [Synth 8-3491] module 'HDMI_bd_reg_1bit_3_0' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-4756-pcetu-136/realtime/HDMI_bd_reg_1bit_3_0_stub.vhdl:5' bound to instance 'reg_1bit_4' of component 'HDMI_bd_reg_1bit_3_0' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:832]
+INFO: [Synth 8-638] synthesizing module 'HDMI_bd_reg_1bit_3_0' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-4756-pcetu-136/realtime/HDMI_bd_reg_1bit_3_0_stub.vhdl:16]
+INFO: [Synth 8-3491] module 'HDMI_bd_reg_1bit_4_0' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-4756-pcetu-136/realtime/HDMI_bd_reg_1bit_4_0_stub.vhdl:5' bound to instance 'reg_1bit_5' of component 'HDMI_bd_reg_1bit_4_0' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:840]
+INFO: [Synth 8-638] synthesizing module 'HDMI_bd_reg_1bit_4_0' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-4756-pcetu-136/realtime/HDMI_bd_reg_1bit_4_0_stub.vhdl:16]
+INFO: [Synth 8-3491] module 'HDMI_bd_xlconstant_0_0' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-4756-pcetu-136/realtime/HDMI_bd_xlconstant_0_0_stub.vhdl:5' bound to instance 'xlconstant_0' of component 'HDMI_bd_xlconstant_0_0' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:848]
+INFO: [Synth 8-638] synthesizing module 'HDMI_bd_xlconstant_0_0' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-4756-pcetu-136/realtime/HDMI_bd_xlconstant_0_0_stub.vhdl:12]
+INFO: [Synth 8-256] done synthesizing module 'filtrage_intensif_imp_EBE6GW' (4#1) [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:699]
+INFO: [Synth 8-3491] module 'HDMI_bd_rgb2dvi_0_1' declared at 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-4756-pcetu-136/realtime/HDMI_bd_rgb2dvi_0_1_stub.vhdl:5' bound to instance 'rgb2dvi_0' of component 'HDMI_bd_rgb2dvi_0_1' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:1119]
+INFO: [Synth 8-638] synthesizing module 'HDMI_bd_rgb2dvi_0_1' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/.Xil/Vivado-4756-pcetu-136/realtime/HDMI_bd_rgb2dvi_0_1_stub.vhdl:21]
+INFO: [Synth 8-256] done synthesizing module 'HDMI_bd' (5#1) [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/synth/HDMI_bd.vhd:887]
+INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Programs/Xilinx/Vivado/2018.2/scripts/rt/data/unisim_comp.v:22660' bound to instance 'hdmi_in_ddc_scl_iobuf' of component 'IOBUF' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/hdl/HDMI_bd_wrapper.vhd:101]
 INFO: [Synth 8-6157] synthesizing module 'IOBUF' [C:/Programs/Xilinx/Vivado/2018.2/scripts/rt/data/unisim_comp.v:22660]
 	Parameter DRIVE bound to: 12 - type: integer 
 	Parameter IBUF_LOW_PWR bound to: TRUE - type: string 
 	Parameter IOSTANDARD bound to: DEFAULT - type: string 
 	Parameter SLEW bound to: SLOW - type: string 
 INFO: [Synth 8-6155] done synthesizing module 'IOBUF' (6#1) [C:/Programs/Xilinx/Vivado/2018.2/scripts/rt/data/unisim_comp.v:22660]
-INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Programs/Xilinx/Vivado/2018.2/scripts/rt/data/unisim_comp.v:22660' bound to instance 'hdmi_in_ddc_sda_iobuf' of component 'IOBUF' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/hdl/HDMI_bd_wrapper.vhd:99]
-INFO: [Synth 8-256] done synthesizing module 'HDMI_bd_wrapper' (7#1) [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/hdl/HDMI_bd_wrapper.vhd:33]
+INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Programs/Xilinx/Vivado/2018.2/scripts/rt/data/unisim_comp.v:22660' bound to instance 'hdmi_in_ddc_sda_iobuf' of component 'IOBUF' [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/hdl/HDMI_bd_wrapper.vhd:108]
+INFO: [Synth 8-256] done synthesizing module 'HDMI_bd_wrapper' (7#1) [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/hdl/HDMI_bd_wrapper.vhd:36]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 518.203 ; gain = 159.820
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 517.262 ; gain = 159.801
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -160,10 +160,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 518.203 ; gain = 159.820
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 517.262 ; gain = 159.801
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 518.203 ; gain = 159.820
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 517.262 ; gain = 159.801
 ---------------------------------------------------------------------------------
 INFO: [Netlist 29-17] Analyzing 2 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -254,12 +254,10 @@ Parsing XDC File [c:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI
 Finished Parsing XDC File [c:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/ip/HDMI_bd_adapt_input_ouput_3_0/HDMI_bd_adapt_input_ouput_3_0/HDMI_bd_adapt_input_ouput_3_0_in_context.xdc] for cell 'HDMI_bd_i/Detect_centre/adapt_input_ouput_3'
 Parsing XDC File [c:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/ip/HDMI_bd_adapt_input_ouput_4_0/HDMI_bd_adapt_input_ouput_4_0/HDMI_bd_adapt_input_ouput_4_0_in_context.xdc] for cell 'HDMI_bd_i/Detect_centre/adapt_input_ouput_4'
 Finished Parsing XDC File [c:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/ip/HDMI_bd_adapt_input_ouput_4_0/HDMI_bd_adapt_input_ouput_4_0/HDMI_bd_adapt_input_ouput_4_0_in_context.xdc] for cell 'HDMI_bd_i/Detect_centre/adapt_input_ouput_4'
-Parsing XDC File [c:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/ip/HDMI_bd_detect_end_image_0_1_1/HDMI_bd_detect_end_image_0_1/HDMI_bd_detect_end_image_0_1_in_context.xdc] for cell 'HDMI_bd_i/Detect_centre/detect_end_image_0'
-Finished Parsing XDC File [c:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/ip/HDMI_bd_detect_end_image_0_1_1/HDMI_bd_detect_end_image_0_1/HDMI_bd_detect_end_image_0_1_in_context.xdc] for cell 'HDMI_bd_i/Detect_centre/detect_end_image_0'
-Parsing XDC File [c:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/ip/HDMI_bd_div_xAxis_1_1/HDMI_bd_div_xAxis_1/c_counter_binary_div_yAxis_0_in_context.xdc] for cell 'HDMI_bd_i/Detect_centre/div_xAxis'
-Finished Parsing XDC File [c:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/ip/HDMI_bd_div_xAxis_1_1/HDMI_bd_div_xAxis_1/c_counter_binary_div_yAxis_0_in_context.xdc] for cell 'HDMI_bd_i/Detect_centre/div_xAxis'
-Parsing XDC File [c:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/ip/HDMI_bd_div_yAxis_1_1/HDMI_bd_div_yAxis_1/c_counter_binary_div_yAxis_0_in_context.xdc] for cell 'HDMI_bd_i/Detect_centre/div_yAxis'
-Finished Parsing XDC File [c:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/ip/HDMI_bd_div_yAxis_1_1/HDMI_bd_div_yAxis_1/c_counter_binary_div_yAxis_0_in_context.xdc] for cell 'HDMI_bd_i/Detect_centre/div_yAxis'
+Parsing XDC File [c:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/ip/HDMI_bd_div_xAxis_1_1/HDMI_bd_div_xAxis_1/HDMI_bd_div_yAxis_1_in_context.xdc] for cell 'HDMI_bd_i/Detect_centre/div_xAxis'
+Finished Parsing XDC File [c:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/ip/HDMI_bd_div_xAxis_1_1/HDMI_bd_div_xAxis_1/HDMI_bd_div_yAxis_1_in_context.xdc] for cell 'HDMI_bd_i/Detect_centre/div_xAxis'
+Parsing XDC File [c:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/ip/HDMI_bd_div_yAxis_1_1/HDMI_bd_div_yAxis_1/HDMI_bd_div_yAxis_1_in_context.xdc] for cell 'HDMI_bd_i/Detect_centre/div_yAxis'
+Finished Parsing XDC File [c:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/ip/HDMI_bd_div_yAxis_1_1/HDMI_bd_div_yAxis_1/HDMI_bd_div_yAxis_1_in_context.xdc] for cell 'HDMI_bd_i/Detect_centre/div_yAxis'
 Parsing XDC File [c:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/ip/HDMI_bd_divideur_select_outp_0_1_1/HDMI_bd_divideur_select_outp_0_1/HDMI_bd_divideur_select_outp_0_1_in_context.xdc] for cell 'HDMI_bd_i/Detect_centre/divideur_select_outp_0'
 Finished Parsing XDC File [c:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/ip/HDMI_bd_divideur_select_outp_0_1_1/HDMI_bd_divideur_select_outp_0_1/HDMI_bd_divideur_select_outp_0_1_in_context.xdc] for cell 'HDMI_bd_i/Detect_centre/divideur_select_outp_0'
 Parsing XDC File [c:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/ip/HDMI_bd_divideur_select_outp_1_1_1/HDMI_bd_divideur_select_outp_1_1/HDMI_bd_divideur_select_outp_1_1_in_context.xdc] for cell 'HDMI_bd_i/Detect_centre/divideur_select_outp_1'
@@ -274,8 +272,19 @@ Parsing XDC File [c:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI
 Finished Parsing XDC File [c:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/ip/HDMI_bd_xlconstant_0_2/HDMI_bd_xlconstant_0_2/HDMI_bd_xlconstant_0_2_in_context.xdc] for cell 'HDMI_bd_i/Detect_centre/xlconstant_0'
 Parsing XDC File [c:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/ip/HDMI_bd_xlconstant_1_0_2/HDMI_bd_xlconstant_1_0/HDMI_bd_xlconstant_1_0_in_context.xdc] for cell 'HDMI_bd_i/Detect_centre/xlconstant_1'
 Finished Parsing XDC File [c:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/ip/HDMI_bd_xlconstant_1_0_2/HDMI_bd_xlconstant_1_0/HDMI_bd_xlconstant_1_0_in_context.xdc] for cell 'HDMI_bd_i/Detect_centre/xlconstant_1'
+Parsing XDC File [c:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/ip/HDMI_bd_not_1bit_0_0/HDMI_bd_not_1bit_0_0/HDMI_bd_not_1bit_0_0_in_context.xdc] for cell 'HDMI_bd_i/Detect_centre/not_1bit_0'
+Finished Parsing XDC File [c:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/ip/HDMI_bd_not_1bit_0_0/HDMI_bd_not_1bit_0_0/HDMI_bd_not_1bit_0_0_in_context.xdc] for cell 'HDMI_bd_i/Detect_centre/not_1bit_0'
 Parsing XDC File [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/constrs_1/imports/constraints/Zybo-Z7-Master.xdc]
+WARNING: [Vivado 12-584] No ports matched 'LED[3]'. [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/constrs_1/imports/constraints/Zybo-Z7-Master.xdc:209]
+WARNING: [Vivado 12-584] No ports matched 'LED[2]'. [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/constrs_1/imports/constraints/Zybo-Z7-Master.xdc:210]
+WARNING: [Vivado 12-584] No ports matched 'LED[1]'. [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/constrs_1/imports/constraints/Zybo-Z7-Master.xdc:211]
+WARNING: [Vivado 12-584] No ports matched 'LED[0]'. [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/constrs_1/imports/constraints/Zybo-Z7-Master.xdc:212]
+WARNING: [Vivado 12-584] No ports matched 'LED[3]'. [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/constrs_1/imports/constraints/Zybo-Z7-Master.xdc:213]
+WARNING: [Vivado 12-584] No ports matched 'LED[2]'. [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/constrs_1/imports/constraints/Zybo-Z7-Master.xdc:214]
+WARNING: [Vivado 12-584] No ports matched 'LED[1]'. [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/constrs_1/imports/constraints/Zybo-Z7-Master.xdc:215]
+WARNING: [Vivado 12-584] No ports matched 'LED[0]'. [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/constrs_1/imports/constraints/Zybo-Z7-Master.xdc:216]
 Finished Parsing XDC File [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/constrs_1/imports/constraints/Zybo-Z7-Master.xdc]
+WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/constrs_1/imports/constraints/Zybo-Z7-Master.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/HDMI_bd_wrapper_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/constrs_1/imports/constraints/Zybo-Z7-Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/HDMI_bd_wrapper_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/HDMI_bd_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Parsing XDC File [C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/dont_touch.xdc]
@@ -286,23 +295,23 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 2 instances were transformed.
   IOBUF => IOBUF (IBUF, OBUFT): 2 instances
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.013 . Memory (MB): peak = 871.309 ; gain = 0.000
-WARNING: [Timing 38-316] Clock period '1000.000' specified during out-of-context synthesis of instance 'HDMI_bd_i/Detect_centre/div_xAxis' at clock pin 'aclk' is different from the actual clock period '6.060', this can lead to different synthesis results.
-WARNING: [Timing 38-316] Clock period '1000.000' specified during out-of-context synthesis of instance 'HDMI_bd_i/Detect_centre/div_yAxis' at clock pin 'aclk' is different from the actual clock period '6.060', this can lead to different synthesis results.
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.014 . Memory (MB): peak = 876.887 ; gain = 0.000
+WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'HDMI_bd_i/Detect_centre/div_xAxis' at clock pin 'aclk' is different from the actual clock period '6.060', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'HDMI_bd_i/Detect_centre/div_yAxis' at clock pin 'aclk' is different from the actual clock period '6.060', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'HDMI_bd_i/Moyenneur/c_addsub_0' at clock pin 'CLK' is different from the actual clock period '6.060', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'HDMI_bd_i/Moyenneur/c_addsub_1' at clock pin 'CLK' is different from the actual clock period '6.060', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'HDMI_bd_i/Moyenneur/c_addsub_2' at clock pin 'CLK' is different from the actual clock period '6.060', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'HDMI_bd_i/Moyenneur/c_addsub_3' at clock pin 'CLK' is different from the actual clock period '6.060', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'HDMI_bd_i/Segmentation/c_addsub_1' at clock pin 'CLK' is different from the actual clock period '6.060', this can lead to different synthesis results.
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 871.309 ; gain = 512.926
+Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 876.887 ; gain = 519.426
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 871.309 ; gain = 512.926
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 876.887 ; gain = 519.426
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -383,7 +392,6 @@ Applied set_property DONT_TOUCH = true for HDMI_bd_i/Detect_centre/adapt_input_o
 Applied set_property DONT_TOUCH = true for HDMI_bd_i/Detect_centre/adapt_input_ouput_2. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for HDMI_bd_i/Detect_centre/adapt_input_ouput_3. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for HDMI_bd_i/Detect_centre/adapt_input_ouput_4. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for HDMI_bd_i/Detect_centre/detect_end_image_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for HDMI_bd_i/Detect_centre/div_xAxis. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for HDMI_bd_i/Detect_centre/div_yAxis. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for HDMI_bd_i/Detect_centre/divideur_select_outp_0. (constraint file  auto generated constraint, line ).
@@ -393,11 +401,12 @@ Applied set_property DONT_TOUCH = true for HDMI_bd_i/Detect_centre/column_counte
 Applied set_property DONT_TOUCH = true for HDMI_bd_i/Detect_centre/ligne_counter1. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for HDMI_bd_i/Detect_centre/xlconstant_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for HDMI_bd_i/Detect_centre/xlconstant_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for HDMI_bd_i/Detect_centre/not_1bit_0. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 871.309 ; gain = 512.926
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 876.887 ; gain = 519.426
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 871.309 ; gain = 512.926
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 876.887 ; gain = 519.426
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -433,7 +442,7 @@ Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 871.309 ; gain = 512.926
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 876.887 ; gain = 519.426
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -448,13 +457,13 @@ INFO: [Synth 8-5578] Moved timing constraint from pin 'HDMI_bd_i/clk_wiz_0/clk_o
 INFO: [Synth 8-5578] Moved timing constraint from pin 'HDMI_bd_i/dvi2rgb_0/PixelClk' to pin 'HDMI_bd_i/dvi2rgb_0/bbstub_PixelClk/O'
 INFO: [Synth 8-5819] Moved 2 constraints on hierarchical pins to their respective driving/loading pins
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 871.309 ; gain = 512.926
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 876.887 ; gain = 519.426
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 871.309 ; gain = 512.926
+Finished Timing Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 876.887 ; gain = 519.426
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -466,7 +475,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 871.309 ; gain = 512.926
+Finished Technology Mapping : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 876.887 ; gain = 519.426
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -490,7 +499,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:19 ; elapsed = 00:00:22 . Memory (MB): peak = 871.309 ; gain = 512.926
+Finished IO Insertion : Time (s): cpu = 00:00:19 ; elapsed = 00:00:22 . Memory (MB): peak = 876.887 ; gain = 519.426
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -503,7 +512,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:19 ; elapsed = 00:00:22 . Memory (MB): peak = 871.309 ; gain = 512.926
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:19 ; elapsed = 00:00:22 . Memory (MB): peak = 876.887 ; gain = 519.426
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -515,25 +524,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:19 ; elapsed = 00:00:22 . Memory (MB): peak = 871.309 ; gain = 512.926
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:19 ; elapsed = 00:00:22 . Memory (MB): peak = 876.887 ; gain = 519.426
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:19 ; elapsed = 00:00:22 . Memory (MB): peak = 871.309 ; gain = 512.926
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:19 ; elapsed = 00:00:22 . Memory (MB): peak = 876.887 ; gain = 519.426
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:19 ; elapsed = 00:00:22 . Memory (MB): peak = 871.309 ; gain = 512.926
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:19 ; elapsed = 00:00:22 . Memory (MB): peak = 876.887 ; gain = 519.426
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:19 ; elapsed = 00:00:22 . Memory (MB): peak = 871.309 ; gain = 512.926
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:19 ; elapsed = 00:00:22 . Memory (MB): peak = 876.887 ; gain = 519.426
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -558,12 +567,12 @@ Report BlackBoxes:
 |13    |HDMI_bd_adapt_input_ouput_3_0    |         1|
 |14    |HDMI_bd_adapt_input_ouput_4_0    |         1|
 |15    |HDMI_bd_column_counter_0         |         1|
-|16    |HDMI_bd_detect_end_image_0_1     |         1|
-|17    |HDMI_bd_div_xAxis_1              |         1|
-|18    |HDMI_bd_div_yAxis_1              |         1|
-|19    |HDMI_bd_divideur_select_outp_0_1 |         1|
-|20    |HDMI_bd_divideur_select_outp_1_1 |         1|
-|21    |HDMI_bd_ligne_counter_0          |         1|
+|16    |HDMI_bd_div_xAxis_1              |         1|
+|17    |HDMI_bd_div_yAxis_1              |         1|
+|18    |HDMI_bd_divideur_select_outp_0_1 |         1|
+|19    |HDMI_bd_divideur_select_outp_1_1 |         1|
+|20    |HDMI_bd_ligne_counter_0          |         1|
+|21    |HDMI_bd_not_1bit_0_0             |         1|
 |22    |HDMI_bd_xlconstant_0_2           |         1|
 |23    |HDMI_bd_xlconstant_1_0           |         1|
 |24    |HDMI_bd_xlconstant_1_2           |         1|
@@ -620,17 +629,17 @@ Report Cell Usage:
 |18    |HDMI_bd_c_addsub_2_0_bbox_21             |     1|
 |19    |HDMI_bd_clk_wiz_0_0_bbox_40              |     1|
 |20    |HDMI_bd_column_counter_0_bbox_8          |     1|
-|21    |HDMI_bd_detect_end_image_0_1_bbox_9      |     1|
-|22    |HDMI_bd_div_16_0_0_bbox_22               |     1|
-|23    |HDMI_bd_div_xAxis_1_bbox_10              |     1|
-|24    |HDMI_bd_div_yAxis_1_bbox_11              |     1|
-|25    |HDMI_bd_divideur_select_outp_0_1_bbox_12 |     1|
-|26    |HDMI_bd_divideur_select_outp_1_1_bbox_13 |     1|
-|27    |HDMI_bd_dvi2rgb_0_1_bbox_41              |     1|
-|28    |HDMI_bd_ligne_counter_0_bbox_14          |     1|
-|29    |HDMI_bd_mult_gen_0_0_bbox_23             |     1|
-|30    |HDMI_bd_mult_gen_0_2_bbox_24             |     1|
-|31    |HDMI_bd_mult_gen_0_3_bbox_25             |     1|
+|21    |HDMI_bd_div_16_0_0_bbox_22               |     1|
+|22    |HDMI_bd_div_xAxis_1_bbox_9               |     1|
+|23    |HDMI_bd_div_yAxis_1_bbox_10              |     1|
+|24    |HDMI_bd_divideur_select_outp_0_1_bbox_11 |     1|
+|25    |HDMI_bd_divideur_select_outp_1_1_bbox_12 |     1|
+|26    |HDMI_bd_dvi2rgb_0_1_bbox_41              |     1|
+|27    |HDMI_bd_ligne_counter_0_bbox_13          |     1|
+|28    |HDMI_bd_mult_gen_0_0_bbox_23             |     1|
+|29    |HDMI_bd_mult_gen_0_2_bbox_24             |     1|
+|30    |HDMI_bd_mult_gen_0_3_bbox_25             |     1|
+|31    |HDMI_bd_not_1bit_0_0_bbox_14             |     1|
 |32    |HDMI_bd_reg_1bit_0_0_bbox_43             |     1|
 |33    |HDMI_bd_reg_1bit_0_1_bbox_44             |     1|
 |34    |HDMI_bd_reg_1bit_0_2_bbox_45             |     1|
@@ -653,26 +662,26 @@ Report Cell Usage:
 |51    |HDMI_bd_xlconstant_1_2_bbox_17           |     1|
 |52    |IBUF                                     |     2|
 |53    |IOBUF                                    |     2|
-|54    |OBUF                                     |     1|
+|54    |OBUF                                     |     4|
 +------+-----------------------------------------+------+
 
 Report Instance Areas: 
 +------+----------------------+-----------------------------+------+
 |      |Instance              |Module                       |Cells |
 +------+----------------------+-----------------------------+------+
-|1     |top                   |                             |   583|
-|2     |  HDMI_bd_i           |HDMI_bd                      |   578|
-|3     |    Detect_centre     |Detect_centre_imp_Y7EHMB     |   302|
+|1     |top                   |                             |   556|
+|2     |  HDMI_bd_i           |HDMI_bd                      |   548|
+|3     |    Detect_centre     |Detect_centre_imp_Y7EHMB     |   272|
 |4     |    Moyenneur         |Moyenneur_imp_FLWLV2         |   125|
 |5     |    Segmentation      |Segmentation_imp_1V2EHQ9     |    67|
 |6     |    filtrage_intensif |filtrage_intensif_imp_EBE6GW |     8|
 +------+----------------------+-----------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:19 ; elapsed = 00:00:22 . Memory (MB): peak = 871.309 ; gain = 512.926
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:19 ; elapsed = 00:00:22 . Memory (MB): peak = 876.887 ; gain = 519.426
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:10 ; elapsed = 00:00:15 . Memory (MB): peak = 871.309 ; gain = 159.820
-Synthesis Optimization Complete : Time (s): cpu = 00:00:19 ; elapsed = 00:00:22 . Memory (MB): peak = 871.309 ; gain = 512.926
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:10 ; elapsed = 00:00:15 . Memory (MB): peak = 876.887 ; gain = 159.801
+Synthesis Optimization Complete : Time (s): cpu = 00:00:19 ; elapsed = 00:00:22 . Memory (MB): peak = 876.887 ; gain = 519.426
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 4 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -683,11 +692,11 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   IOBUF => IOBUF (IBUF, OBUFT): 2 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-139 Infos, 7 Warnings, 0 Critical Warnings and 0 Errors encountered.
+139 Infos, 16 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:21 ; elapsed = 00:00:25 . Memory (MB): peak = 874.504 ; gain = 529.336
+synth_design: Time (s): cpu = 00:00:21 ; elapsed = 00:00:25 . Memory (MB): peak = 876.887 ; gain = 532.598
 WARNING: [Constraints 18-5210] No constraint will be written out.
 INFO: [Common 17-1381] The checkpoint 'C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.runs/synth_1/HDMI_bd_wrapper.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file HDMI_bd_wrapper_utilization_synth.rpt -pb HDMI_bd_wrapper_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.036 . Memory (MB): peak = 874.746 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Wed Dec  5 14:34:26 2018...
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.036 . Memory (MB): peak = 876.887 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Sun Dec  9 19:05:52 2018...

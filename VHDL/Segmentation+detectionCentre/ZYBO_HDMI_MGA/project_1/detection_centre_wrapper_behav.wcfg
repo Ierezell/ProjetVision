@@ -3,49 +3,45 @@
    <wave_state>
    </wave_state>
    <db_ref_list>
-      <db_ref path="counter_autoreload_tb_func_synth.wdb" id="1">
+      <db_ref path="test_wrapper_behav.wdb" id="1">
          <top_modules>
-            <top_module name="counter_autoreload_tb" />
             <top_module name="glbl" />
+            <top_module name="test_wrapper" />
          </top_modules>
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="15988000000fs"></ZoomStartTime>
-      <ZoomEndTime time="16138200001fs"></ZoomEndTime>
-      <Cursor1Time time="16023600000fs"></Cursor1Time>
+      <ZoomStartTime time="196376400fs"></ZoomStartTime>
+      <ZoomEndTime time="341776401fs"></ZoomEndTime>
+      <Cursor1Time time="330000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="111"></NameColumnWidth>
-      <ValueColumnWidth column_width="115"></ValueColumnWidth>
+      <NameColumnWidth column_width="139"></NameColumnWidth>
+      <ValueColumnWidth column_width="111"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="7" />
-   <wvobject fp_name="/counter_autoreload_tb/CLK" type="logic">
+   <WVObjectSize size="6" />
+   <wvobject fp_name="/test_wrapper/CLK" type="logic">
       <obj_property name="ElementShortName">CLK</obj_property>
       <obj_property name="ObjectShortName">CLK</obj_property>
    </wvobject>
-   <wvobject fp_name="/counter_autoreload_tb/RESET" type="logic">
-      <obj_property name="ElementShortName">RESET</obj_property>
-      <obj_property name="ObjectShortName">RESET</obj_property>
-   </wvobject>
-   <wvobject fp_name="/counter_autoreload_tb/EN" type="logic">
+   <wvobject fp_name="/test_wrapper/EN" type="logic">
       <obj_property name="ElementShortName">EN</obj_property>
       <obj_property name="ObjectShortName">EN</obj_property>
    </wvobject>
-   <wvobject fp_name="/counter_autoreload_tb/endOfCount" type="logic">
-      <obj_property name="ElementShortName">endOfCount</obj_property>
-      <obj_property name="ObjectShortName">endOfCount</obj_property>
+   <wvobject fp_name="/test_wrapper/data_out_tvalid" type="logic">
+      <obj_property name="ElementShortName">data_out_tvalid</obj_property>
+      <obj_property name="ObjectShortName">data_out_tvalid</obj_property>
    </wvobject>
-   <wvobject fp_name="/counter_autoreload_tb/Q" type="array">
-      <obj_property name="ElementShortName">Q[10:0]</obj_property>
-      <obj_property name="ObjectShortName">Q[10:0]</obj_property>
+   <wvobject fp_name="/test_wrapper/data_valid" type="array">
+      <obj_property name="ElementShortName">data_valid[39:0]</obj_property>
+      <obj_property name="ObjectShortName">data_valid[39:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/counter_autoreload_tb/comparator" type="array">
-      <obj_property name="ElementShortName">comparator[10:0]</obj_property>
-      <obj_property name="ObjectShortName">comparator[10:0]</obj_property>
+   <wvobject fp_name="/test_wrapper/dividend" type="array">
+      <obj_property name="ElementShortName">dividend[23:0]</obj_property>
+      <obj_property name="ObjectShortName">dividend[23:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/counter_autoreload_tb/N" type="other">
-      <obj_property name="ElementShortName">N</obj_property>
-      <obj_property name="ObjectShortName">N</obj_property>
+   <wvobject fp_name="/test_wrapper/divisor" type="array">
+      <obj_property name="ElementShortName">divisor[15:0]</obj_property>
+      <obj_property name="ObjectShortName">divisor[15:0]</obj_property>
    </wvobject>
 </wave_config>

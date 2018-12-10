@@ -1,7 +1,7 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2018.2.1 (win64) Build 2288692 Thu Jul 26 18:24:02 MDT 2018
--- Date        : Wed Dec  5 13:47:40 2018
+-- Date        : Fri Dec  7 17:38:19 2018
 -- Host        : pcetu-135 running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim -rename_top decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix -prefix
 --               decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ HDMI_bd_affiche_centre_0_0_sim_netlist.vhdl
@@ -14,10 +14,199 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
+entity decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_affiche_centre is
+  port (
+    RGB_OUT : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    PixelNoirBlanc : in STD_LOGIC;
+    nb_column : in STD_LOGIC_VECTOR ( 10 downto 0 );
+    m_Yaxis_dout_tdata : in STD_LOGIC_VECTOR ( 10 downto 0 );
+    nb_ligne : in STD_LOGIC_VECTOR ( 10 downto 0 );
+    m_Xaxis_dout_tdata : in STD_LOGIC_VECTOR ( 10 downto 0 )
+  );
+end decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_affiche_centre;
+
+architecture STRUCTURE of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_affiche_centre is
+  signal RGB_OUT2 : STD_LOGIC;
+  signal RGB_OUT20_out : STD_LOGIC;
+  signal \RGB_OUT2__3_carry_i_1_n_0\ : STD_LOGIC;
+  signal \RGB_OUT2__3_carry_i_2_n_0\ : STD_LOGIC;
+  signal \RGB_OUT2__3_carry_i_3_n_0\ : STD_LOGIC;
+  signal \RGB_OUT2__3_carry_i_4_n_0\ : STD_LOGIC;
+  signal \RGB_OUT2__3_carry_n_1\ : STD_LOGIC;
+  signal \RGB_OUT2__3_carry_n_2\ : STD_LOGIC;
+  signal \RGB_OUT2__3_carry_n_3\ : STD_LOGIC;
+  signal RGB_OUT2_carry_i_1_n_0 : STD_LOGIC;
+  signal RGB_OUT2_carry_i_2_n_0 : STD_LOGIC;
+  signal RGB_OUT2_carry_i_3_n_0 : STD_LOGIC;
+  signal RGB_OUT2_carry_i_4_n_0 : STD_LOGIC;
+  signal RGB_OUT2_carry_n_1 : STD_LOGIC;
+  signal RGB_OUT2_carry_n_2 : STD_LOGIC;
+  signal RGB_OUT2_carry_n_3 : STD_LOGIC;
+  signal \NLW_RGB_OUT2__3_carry_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 0 );
+  signal NLW_RGB_OUT2_carry_O_UNCONNECTED : STD_LOGIC_VECTOR ( 3 downto 0 );
+  attribute SOFT_HLUTNM : string;
+  attribute SOFT_HLUTNM of \RGB_OUT[0]_INST_0\ : label is "soft_lutpair0";
+  attribute SOFT_HLUTNM of \RGB_OUT[16]_INST_0\ : label is "soft_lutpair0";
+begin
+\RGB_OUT2__3_carry\: unisim.vcomponents.CARRY4
+     port map (
+      CI => '0',
+      CO(3) => RGB_OUT20_out,
+      CO(2) => \RGB_OUT2__3_carry_n_1\,
+      CO(1) => \RGB_OUT2__3_carry_n_2\,
+      CO(0) => \RGB_OUT2__3_carry_n_3\,
+      CYINIT => '1',
+      DI(3 downto 0) => B"0000",
+      O(3 downto 0) => \NLW_RGB_OUT2__3_carry_O_UNCONNECTED\(3 downto 0),
+      S(3) => \RGB_OUT2__3_carry_i_1_n_0\,
+      S(2) => \RGB_OUT2__3_carry_i_2_n_0\,
+      S(1) => \RGB_OUT2__3_carry_i_3_n_0\,
+      S(0) => \RGB_OUT2__3_carry_i_4_n_0\
+    );
+\RGB_OUT2__3_carry_i_1\: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"9009"
+    )
+        port map (
+      I0 => nb_ligne(9),
+      I1 => m_Xaxis_dout_tdata(9),
+      I2 => nb_ligne(10),
+      I3 => m_Xaxis_dout_tdata(10),
+      O => \RGB_OUT2__3_carry_i_1_n_0\
+    );
+\RGB_OUT2__3_carry_i_2\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"9009000000009009"
+    )
+        port map (
+      I0 => nb_ligne(6),
+      I1 => m_Xaxis_dout_tdata(6),
+      I2 => m_Xaxis_dout_tdata(8),
+      I3 => nb_ligne(8),
+      I4 => m_Xaxis_dout_tdata(7),
+      I5 => nb_ligne(7),
+      O => \RGB_OUT2__3_carry_i_2_n_0\
+    );
+\RGB_OUT2__3_carry_i_3\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"9009000000009009"
+    )
+        port map (
+      I0 => nb_ligne(3),
+      I1 => m_Xaxis_dout_tdata(3),
+      I2 => m_Xaxis_dout_tdata(5),
+      I3 => nb_ligne(5),
+      I4 => m_Xaxis_dout_tdata(4),
+      I5 => nb_ligne(4),
+      O => \RGB_OUT2__3_carry_i_3_n_0\
+    );
+\RGB_OUT2__3_carry_i_4\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"9009000000009009"
+    )
+        port map (
+      I0 => nb_ligne(0),
+      I1 => m_Xaxis_dout_tdata(0),
+      I2 => m_Xaxis_dout_tdata(2),
+      I3 => nb_ligne(2),
+      I4 => m_Xaxis_dout_tdata(1),
+      I5 => nb_ligne(1),
+      O => \RGB_OUT2__3_carry_i_4_n_0\
+    );
+RGB_OUT2_carry: unisim.vcomponents.CARRY4
+     port map (
+      CI => '0',
+      CO(3) => RGB_OUT2,
+      CO(2) => RGB_OUT2_carry_n_1,
+      CO(1) => RGB_OUT2_carry_n_2,
+      CO(0) => RGB_OUT2_carry_n_3,
+      CYINIT => '1',
+      DI(3 downto 0) => B"0000",
+      O(3 downto 0) => NLW_RGB_OUT2_carry_O_UNCONNECTED(3 downto 0),
+      S(3) => RGB_OUT2_carry_i_1_n_0,
+      S(2) => RGB_OUT2_carry_i_2_n_0,
+      S(1) => RGB_OUT2_carry_i_3_n_0,
+      S(0) => RGB_OUT2_carry_i_4_n_0
+    );
+RGB_OUT2_carry_i_1: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"9009"
+    )
+        port map (
+      I0 => nb_column(9),
+      I1 => m_Yaxis_dout_tdata(9),
+      I2 => nb_column(10),
+      I3 => m_Yaxis_dout_tdata(10),
+      O => RGB_OUT2_carry_i_1_n_0
+    );
+RGB_OUT2_carry_i_2: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"9009000000009009"
+    )
+        port map (
+      I0 => nb_column(6),
+      I1 => m_Yaxis_dout_tdata(6),
+      I2 => m_Yaxis_dout_tdata(8),
+      I3 => nb_column(8),
+      I4 => m_Yaxis_dout_tdata(7),
+      I5 => nb_column(7),
+      O => RGB_OUT2_carry_i_2_n_0
+    );
+RGB_OUT2_carry_i_3: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"9009000000009009"
+    )
+        port map (
+      I0 => nb_column(3),
+      I1 => m_Yaxis_dout_tdata(3),
+      I2 => m_Yaxis_dout_tdata(5),
+      I3 => nb_column(5),
+      I4 => m_Yaxis_dout_tdata(4),
+      I5 => nb_column(4),
+      O => RGB_OUT2_carry_i_3_n_0
+    );
+RGB_OUT2_carry_i_4: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"9009000000009009"
+    )
+        port map (
+      I0 => nb_column(0),
+      I1 => m_Yaxis_dout_tdata(0),
+      I2 => m_Yaxis_dout_tdata(2),
+      I3 => nb_column(2),
+      I4 => m_Yaxis_dout_tdata(1),
+      I5 => nb_column(1),
+      O => RGB_OUT2_carry_i_4_n_0
+    );
+\RGB_OUT[0]_INST_0\: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"2A"
+    )
+        port map (
+      I0 => PixelNoirBlanc,
+      I1 => RGB_OUT2,
+      I2 => RGB_OUT20_out,
+      O => RGB_OUT(0)
+    );
+\RGB_OUT[16]_INST_0\: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"F8"
+    )
+        port map (
+      I0 => RGB_OUT2,
+      I1 => RGB_OUT20_out,
+      I2 => PixelNoirBlanc,
+      O => RGB_OUT(1)
+    );
+end STRUCTURE;
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+library UNISIM;
+use UNISIM.VCOMPONENTS.ALL;
 entity decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix is
   port (
-    m_Xaxis_dout_tdata : in STD_LOGIC_VECTOR ( 11 downto 0 );
-    m_Yaxis_dout_tdata : in STD_LOGIC_VECTOR ( 11 downto 0 );
+    m_Xaxis_dout_tdata : in STD_LOGIC_VECTOR ( 10 downto 0 );
+    m_Yaxis_dout_tdata : in STD_LOGIC_VECTOR ( 10 downto 0 );
     nb_column : in STD_LOGIC_VECTOR ( 10 downto 0 );
     nb_ligne : in STD_LOGIC_VECTOR ( 10 downto 0 );
     PixelNoirBlanc : in STD_LOGIC;
@@ -37,8 +226,6 @@ end decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix;
 
 architecture STRUCTURE of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix is
   signal \^rgb_out\ : STD_LOGIC_VECTOR ( 23 downto 15 );
-  signal \RGB_OUT[16]_INST_0_i_1_n_0\ : STD_LOGIC;
-  signal \RGB_OUT[16]_INST_0_i_2_n_0\ : STD_LOGIC;
 begin
   RGB_OUT(23) <= \^rgb_out\(23);
   RGB_OUT(22) <= \^rgb_out\(23);
@@ -64,50 +251,14 @@ begin
   RGB_OUT(2) <= \^rgb_out\(15);
   RGB_OUT(1) <= \^rgb_out\(15);
   RGB_OUT(0) <= \^rgb_out\(15);
-\RGB_OUT[0]_INST_0\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"B0E0"
-    )
-        port map (
-      I0 => \RGB_OUT[16]_INST_0_i_1_n_0\,
-      I1 => \RGB_OUT[16]_INST_0_i_2_n_0\,
-      I2 => PixelNoirBlanc,
-      I3 => nb_column(5),
-      O => \^rgb_out\(15)
-    );
-\RGB_OUT[16]_INST_0\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"FF41"
-    )
-        port map (
-      I0 => \RGB_OUT[16]_INST_0_i_1_n_0\,
-      I1 => \RGB_OUT[16]_INST_0_i_2_n_0\,
-      I2 => nb_column(5),
-      I3 => PixelNoirBlanc,
-      O => \^rgb_out\(23)
-    );
-\RGB_OUT[16]_INST_0_i_1\: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"FEFFFFFF"
-    )
-        port map (
-      I0 => nb_column(6),
-      I1 => nb_column(9),
-      I2 => nb_column(10),
-      I3 => nb_column(8),
-      I4 => nb_column(7),
-      O => \RGB_OUT[16]_INST_0_i_1_n_0\
-    );
-\RGB_OUT[16]_INST_0_i_2\: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"0001FFFF"
-    )
-        port map (
-      I0 => nb_column(2),
-      I1 => nb_column(3),
-      I2 => nb_column(0),
-      I3 => nb_column(1),
-      I4 => nb_column(4),
-      O => \RGB_OUT[16]_INST_0_i_2_n_0\
+U0: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_affiche_centre
+     port map (
+      PixelNoirBlanc => PixelNoirBlanc,
+      RGB_OUT(1) => \^rgb_out\(23),
+      RGB_OUT(0) => \^rgb_out\(15),
+      m_Xaxis_dout_tdata(10 downto 0) => m_Xaxis_dout_tdata(10 downto 0),
+      m_Yaxis_dout_tdata(10 downto 0) => m_Yaxis_dout_tdata(10 downto 0),
+      nb_column(10 downto 0) => nb_column(10 downto 0),
+      nb_ligne(10 downto 0) => nb_ligne(10 downto 0)
     );
 end STRUCTURE;

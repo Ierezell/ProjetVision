@@ -55,8 +55,8 @@ USE ieee.numeric_std.ALL;
 
 ENTITY HDMI_bd_affiche_centre_0_0 IS
   PORT (
-    m_Xaxis_dout_tdata : IN STD_LOGIC_VECTOR(11 DOWNTO 0);
-    m_Yaxis_dout_tdata : IN STD_LOGIC_VECTOR(11 DOWNTO 0);
+    m_Xaxis_dout_tdata : IN STD_LOGIC_VECTOR(10 DOWNTO 0);
+    m_Yaxis_dout_tdata : IN STD_LOGIC_VECTOR(10 DOWNTO 0);
     nb_column : IN STD_LOGIC_VECTOR(10 DOWNTO 0);
     nb_ligne : IN STD_LOGIC_VECTOR(10 DOWNTO 0);
     PixelNoirBlanc : IN STD_LOGIC;
@@ -69,8 +69,8 @@ ARCHITECTURE HDMI_bd_affiche_centre_0_0_arch OF HDMI_bd_affiche_centre_0_0 IS
   ATTRIBUTE DowngradeIPIdentifiedWarnings OF HDMI_bd_affiche_centre_0_0_arch: ARCHITECTURE IS "yes";
   COMPONENT affiche_centre IS
     PORT (
-      m_Xaxis_dout_tdata : IN STD_LOGIC_VECTOR(11 DOWNTO 0);
-      m_Yaxis_dout_tdata : IN STD_LOGIC_VECTOR(11 DOWNTO 0);
+      m_Xaxis_dout_tdata : IN STD_LOGIC_VECTOR(10 DOWNTO 0);
+      m_Yaxis_dout_tdata : IN STD_LOGIC_VECTOR(10 DOWNTO 0);
       nb_column : IN STD_LOGIC_VECTOR(10 DOWNTO 0);
       nb_ligne : IN STD_LOGIC_VECTOR(10 DOWNTO 0);
       PixelNoirBlanc : IN STD_LOGIC;

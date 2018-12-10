@@ -57,7 +57,7 @@
 #include "systemc.h"
 class HDMI_bd_xlconstant_1_0 : public sc_module {
   public:
-  xlconstant_v1_1_5<11,1199> mod;
+  xlconstant_v1_1_5<11,899> mod;
   sc_out< sc_bv<11> > dout;
 HDMI_bd_xlconstant_1_0 (sc_core::sc_module_name name) :sc_module(name), mod("mod") {
     mod.dout(dout);

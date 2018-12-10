@@ -52,13 +52,19 @@ begin
     if RESET='0' then
         count<=(others=>'0');
         endcount<='0';   
-    elsif CLK='1' and CLK'event and EN='1' then
-        if count=comparator then
-            count<=(others=>'0');
-            endcount<='1';
-        else 
-            count<=count+'1';
+    elsif CLK='1' and CLK'event then
+        
+        if EN='1' then 
+            if count=comparator then
+                  count<=(others=>'0');
+                  endcount<='1';
+            else
+                count<=count+'1';
+                endcount<='0';
+            end if;
+         else
             endcount<='0';
+            count<=count;
         end if;
     else 
         count <= count;

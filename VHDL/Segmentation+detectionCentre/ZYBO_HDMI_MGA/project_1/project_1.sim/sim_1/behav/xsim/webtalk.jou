@@ -1,12 +1,12 @@
 #-----------------------------------------------------------
-# Webtalk v2018.2 (64-bit)
-# SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
-# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
-# Start of session at: Tue Dec  4 00:02:30 2018
-# Process ID: 12720
-# Current directory: D:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.sim/sim_1/behav/xsim
-# Command line: wbtcv.exe -mode batch -source D:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.sim/sim_1/behav/xsim/xsim.dir/test_wrapper_tb_behav/webtalk/xsim_webtalk.tcl -notrace
-# Log file: D:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.sim/sim_1/behav/xsim/webtalk.log
-# Journal file: D:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.sim/sim_1/behav/xsim\webtalk.jou
+# Webtalk v2018.2.1 (64-bit)
+# SW Build 2288692 on Thu Jul 26 18:24:02 MDT 2018
+# IP Build 2289599 on Thu Jul 26 21:09:20 MDT 2018
+# Start of session at: Fri Dec  7 18:29:31 2018
+# Process ID: 12828
+# Current directory: C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.sim/sim_1/behav/xsim
+# Command line: wbtcv.exe -mode batch -source C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.sim/sim_1/behav/xsim/xsim.dir/test_wrapper_behav/webtalk/xsim_webtalk.tcl -notrace
+# Log file: C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.sim/sim_1/behav/xsim/webtalk.log
+# Journal file: C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.sim/sim_1/behav/xsim\webtalk.jou
 #-----------------------------------------------------------
-source D:/nicol/Documents/GitHub/ProjetVision/VHDL/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.sim/sim_1/behav/xsim/xsim.dir/test_wrapper_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+source C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.sim/sim_1/behav/xsim/xsim.dir/test_wrapper_behav/webtalk/xsim_webtalk.tcl -notrace

@@ -1,4 +1,4 @@
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.sim/sim_1/synth/func/xsim/c_counter_binary_wrapper_tb_func_synth.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.sim/sim_1/synth/func/xsim/test_wrapper_func_synth.vhd" into library xil_defaultlib
 INFO: [VRFC 10-307] analyzing entity HDMI_bd_Additionneur_Nbits_0_0_Additionneur_Nbits
 INFO: [VRFC 10-307] analyzing entity HDMI_bd_Additionneur_Nbits_1_0_Additionneur_Nbits
 INFO: [VRFC 10-307] analyzing entity HDMI_bd_Blank_pixel_counter_1_Counter
@@ -11,10 +11,9 @@ INFO: [VRFC 10-307] analyzing entity HDMI_bd_adapt_input_ouput_1_1
 INFO: [VRFC 10-307] analyzing entity HDMI_bd_adapt_input_ouput_2_1
 INFO: [VRFC 10-307] analyzing entity HDMI_bd_adapt_input_ouput_3_0
 INFO: [VRFC 10-307] analyzing entity HDMI_bd_adapt_input_ouput_4_0
-INFO: [VRFC 10-307] analyzing entity HDMI_bd_affiche_centre_0_0
+INFO: [VRFC 10-307] analyzing entity HDMI_bd_affiche_centre_0_0_affiche_centre
 INFO: [VRFC 10-307] analyzing entity HDMI_bd_clk_wiz_0_0_HDMI_bd_clk_wiz_0_0_clk_wiz
 INFO: [VRFC 10-307] analyzing entity HDMI_bd_column_counter_0_counter_autoreload
-INFO: [VRFC 10-307] analyzing entity HDMI_bd_detect_end_image_0_1_detect_end_image
 INFO: [VRFC 10-307] analyzing entity HDMI_bd_div_16_0_0
 INFO: [VRFC 10-307] analyzing entity HDMI_bd_divideur_select_outp_0_1
 INFO: [VRFC 10-307] analyzing entity HDMI_bd_divideur_select_outp_1_1
@@ -45,6 +44,7 @@ INFO: [VRFC 10-307] analyzing entity \HDMI_bd_dvi2rgb_0_1_SyncAsync__parameteriz
 INFO: [VRFC 10-307] analyzing entity HDMI_bd_ligne_counter_0_counter_autoreload
 INFO: [VRFC 10-307] analyzing entity HDMI_bd_mult_gen_0_0
 INFO: [VRFC 10-307] analyzing entity HDMI_bd_mult_gen_0_3
+INFO: [VRFC 10-307] analyzing entity HDMI_bd_not_1bit_0_0
 INFO: [VRFC 10-307] analyzing entity HDMI_bd_reg_1bit_0_0_reg_1bit
 INFO: [VRFC 10-307] analyzing entity HDMI_bd_reg_1bit_0_1_reg_1bit
 INFO: [VRFC 10-307] analyzing entity HDMI_bd_reg_1bit_0_2_reg_1bit
@@ -121,7 +121,6 @@ INFO: [VRFC 10-307] analyzing entity HDMI_bd_xlconstant_0_0
 INFO: [VRFC 10-307] analyzing entity HDMI_bd_xlconstant_0_1
 INFO: [VRFC 10-307] analyzing entity HDMI_bd_xlconstant_0_2
 INFO: [VRFC 10-307] analyzing entity HDMI_bd_xlconstant_0_3
-INFO: [VRFC 10-307] analyzing entity HDMI_bd_xlconstant_0_4
 INFO: [VRFC 10-307] analyzing entity HDMI_bd_xlconstant_1_0
 INFO: [VRFC 10-307] analyzing entity HDMI_bd_xlconstant_1_2
 INFO: [VRFC 10-307] analyzing entity \HDMI_bd_c_addsub_0_0__c_reg_fd_v12_0_5_viv\
@@ -363,9 +362,9 @@ INFO: [VRFC 10-307] analyzing entity HDMI_bd_ET_logique_5entree_0_0
 INFO: [VRFC 10-307] analyzing entity HDMI_bd_RGB_to_Y_0_0
 INFO: [VRFC 10-307] analyzing entity HDMI_bd_Seuillage_0_3
 INFO: [VRFC 10-307] analyzing entity HDMI_bd_abs_8bits_signed_0_0
+INFO: [VRFC 10-307] analyzing entity HDMI_bd_affiche_centre_0_0
 INFO: [VRFC 10-307] analyzing entity HDMI_bd_clk_wiz_0_0
 INFO: [VRFC 10-307] analyzing entity HDMI_bd_column_counter_0
-INFO: [VRFC 10-307] analyzing entity HDMI_bd_detect_end_image_0_1
 INFO: [VRFC 10-307] analyzing entity HDMI_bd_dvi2rgb_0_1_ResetBridge
 INFO: [VRFC 10-307] analyzing entity HDMI_bd_dvi2rgb_0_1_ResetBridge_2
 INFO: [VRFC 10-307] analyzing entity HDMI_bd_dvi2rgb_0_1_ResetBridge_3

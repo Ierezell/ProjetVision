@@ -50,13 +50,13 @@ begin
 
 registres : for i in 0 to M-1 generate
     reg0: if i=0 generate
-        reg0: entity work.reg_Nbits generic map(N=>8) port map (D=>D,CLK=>CLK,RESET=>RESET,EN=>EN,Q=>T(0));
+        reg0: entity work.reg_Nbits generic map(N=>N) port map (D=>D,CLK=>CLK,RESET=>RESET,EN=>EN,Q=>T(0));
     end generate;
     regint: if i>0 and i<M-1 generate
-        regin: entity work.reg_Nbits generic map(N=>8) port map (D=>T(i-1),CLK=>CLK,RESET=>RESET,EN=>EN,Q=>T(i));
+        regin: entity work.reg_Nbits generic map(N=>N) port map (D=>T(i-1),CLK=>CLK,RESET=>RESET,EN=>EN,Q=>T(i));
     end generate;
     reglast: if i=M-1 generate
-        regM_1: entity work.reg_Nbits generic map(N=>8) port map (D=>T(i-1),CLK=>CLK,RESET=>RESET,EN=>EN,Q=>Q);
+        regM_1: entity work.reg_Nbits generic map(N=>N) port map (D=>T(i-1),CLK=>CLK,RESET=>RESET,EN=>EN,Q=>Q);
     end generate;
 end generate;
     

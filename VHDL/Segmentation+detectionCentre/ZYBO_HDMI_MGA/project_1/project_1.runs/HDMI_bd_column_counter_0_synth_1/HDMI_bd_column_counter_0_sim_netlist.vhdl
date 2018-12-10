@@ -1,7 +1,7 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2018.2.1 (win64) Build 2288692 Thu Jul 26 18:24:02 MDT 2018
--- Date        : Wed Dec  5 14:13:47 2018
+-- Date        : Fri Dec  7 16:45:12 2018
 -- Host        : pcetu-135 running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim -rename_top decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix -prefix
 --               decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ HDMI_bd_column_counter_0_sim_netlist.vhdl
@@ -18,9 +18,9 @@ entity decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_counter_autoreload is
   port (
     Q : out STD_LOGIC_VECTOR ( 10 downto 0 );
     endOfCount : out STD_LOGIC;
-    EN : in STD_LOGIC;
     CLK : in STD_LOGIC;
     RESET : in STD_LOGIC;
+    EN : in STD_LOGIC;
     comparator : in STD_LOGIC_VECTOR ( 10 downto 0 )
   );
 end decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_counter_autoreload;
@@ -30,10 +30,6 @@ architecture STRUCTURE of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_counter_auto
   signal \count[0]_i_1_n_0\ : STD_LOGIC;
   signal \count[10]_i_1_n_0\ : STD_LOGIC;
   signal \count[10]_i_2_n_0\ : STD_LOGIC;
-  signal \count[1]_i_1_n_0\ : STD_LOGIC;
-  signal \count[2]_i_1_n_0\ : STD_LOGIC;
-  signal \count[3]_i_1_n_0\ : STD_LOGIC;
-  signal \count[4]_i_1_n_0\ : STD_LOGIC;
   signal \count[5]_i_1_n_0\ : STD_LOGIC;
   signal \count[5]_i_2_n_0\ : STD_LOGIC;
   signal \count[6]_i_1_n_0\ : STD_LOGIC;
@@ -41,7 +37,9 @@ architecture STRUCTURE of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_counter_auto
   signal \count[7]_i_1_n_0\ : STD_LOGIC;
   signal \count[8]_i_1_n_0\ : STD_LOGIC;
   signal \count[9]_i_1_n_0\ : STD_LOGIC;
-  signal endcount_i_1_n_0 : STD_LOGIC;
+  signal endcount : STD_LOGIC;
+  signal endcount_i_2_n_0 : STD_LOGIC;
+  signal eqOp : STD_LOGIC;
   signal eqOp_carry_i_1_n_0 : STD_LOGIC;
   signal eqOp_carry_i_2_n_0 : STD_LOGIC;
   signal eqOp_carry_i_3_n_0 : STD_LOGIC;
@@ -49,15 +47,17 @@ architecture STRUCTURE of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_counter_auto
   signal eqOp_carry_n_1 : STD_LOGIC;
   signal eqOp_carry_n_2 : STD_LOGIC;
   signal eqOp_carry_n_3 : STD_LOGIC;
-  signal load : STD_LOGIC;
+  signal p_0_in : STD_LOGIC_VECTOR ( 4 downto 1 );
   signal NLW_eqOp_carry_O_UNCONNECTED : STD_LOGIC_VECTOR ( 3 downto 0 );
   attribute SOFT_HLUTNM : string;
-  attribute SOFT_HLUTNM of \count[0]_i_1\ : label is "soft_lutpair3";
-  attribute SOFT_HLUTNM of \count[1]_i_1\ : label is "soft_lutpair3";
+  attribute SOFT_HLUTNM of \count[0]_i_1\ : label is "soft_lutpair4";
+  attribute SOFT_HLUTNM of \count[10]_i_2\ : label is "soft_lutpair2";
+  attribute SOFT_HLUTNM of \count[1]_i_1\ : label is "soft_lutpair4";
   attribute SOFT_HLUTNM of \count[2]_i_1\ : label is "soft_lutpair1";
   attribute SOFT_HLUTNM of \count[3]_i_1\ : label is "soft_lutpair1";
+  attribute SOFT_HLUTNM of \count[5]_i_1\ : label is "soft_lutpair3";
   attribute SOFT_HLUTNM of \count[6]_i_1\ : label is "soft_lutpair2";
-  attribute SOFT_HLUTNM of \count[7]_i_1\ : label is "soft_lutpair2";
+  attribute SOFT_HLUTNM of \count[7]_i_1\ : label is "soft_lutpair3";
   attribute SOFT_HLUTNM of \count[8]_i_1\ : label is "soft_lutpair0";
   attribute SOFT_HLUTNM of \count[9]_i_1\ : label is "soft_lutpair0";
 begin
@@ -67,8 +67,8 @@ begin
       INIT => X"1"
     )
         port map (
-      I0 => load,
-      I1 => \^q\(0),
+      I0 => \^q\(0),
+      I1 => eqOp,
       O => \count[0]_i_1_n_0\
     );
 \count[10]_i_1\: unisim.vcomponents.LUT6
@@ -81,7 +81,7 @@ begin
       I2 => \^q\(8),
       I3 => \^q\(9),
       I4 => \count[10]_i_2_n_0\,
-      I5 => load,
+      I5 => eqOp,
       O => \count[10]_i_1_n_0\
     );
 \count[10]_i_2\: unisim.vcomponents.LUT2
@@ -100,8 +100,8 @@ begin
         port map (
       I0 => \^q\(1),
       I1 => \^q\(0),
-      I2 => load,
-      O => \count[1]_i_1_n_0\
+      I2 => eqOp,
+      O => p_0_in(1)
     );
 \count[2]_i_1\: unisim.vcomponents.LUT4
     generic map(
@@ -111,8 +111,8 @@ begin
       I0 => \^q\(2),
       I1 => \^q\(0),
       I2 => \^q\(1),
-      I3 => load,
-      O => \count[2]_i_1_n_0\
+      I3 => eqOp,
+      O => p_0_in(2)
     );
 \count[3]_i_1\: unisim.vcomponents.LUT5
     generic map(
@@ -123,8 +123,8 @@ begin
       I1 => \^q\(1),
       I2 => \^q\(0),
       I3 => \^q\(2),
-      I4 => load,
-      O => \count[3]_i_1_n_0\
+      I4 => eqOp,
+      O => p_0_in(3)
     );
 \count[4]_i_1\: unisim.vcomponents.LUT6
     generic map(
@@ -136,8 +136,8 @@ begin
       I2 => \^q\(0),
       I3 => \^q\(1),
       I4 => \^q\(3),
-      I5 => load,
-      O => \count[4]_i_1_n_0\
+      I5 => eqOp,
+      O => p_0_in(4)
     );
 \count[5]_i_1\: unisim.vcomponents.LUT3
     generic map(
@@ -146,7 +146,7 @@ begin
         port map (
       I0 => \^q\(5),
       I1 => \count[5]_i_2_n_0\,
-      I2 => load,
+      I2 => eqOp,
       O => \count[5]_i_1_n_0\
     );
 \count[5]_i_2\: unisim.vcomponents.LUT5
@@ -168,7 +168,7 @@ begin
         port map (
       I0 => \^q\(6),
       I1 => \count[6]_i_2_n_0\,
-      I2 => load,
+      I2 => eqOp,
       O => \count[6]_i_1_n_0\
     );
 \count[6]_i_2\: unisim.vcomponents.LUT6
@@ -191,7 +191,7 @@ begin
         port map (
       I0 => \^q\(7),
       I1 => \count[10]_i_2_n_0\,
-      I2 => load,
+      I2 => eqOp,
       O => \count[7]_i_1_n_0\
     );
 \count[8]_i_1\: unisim.vcomponents.LUT4
@@ -202,7 +202,7 @@ begin
       I0 => \^q\(8),
       I1 => \count[10]_i_2_n_0\,
       I2 => \^q\(7),
-      I3 => load,
+      I3 => eqOp,
       O => \count[8]_i_1_n_0\
     );
 \count[9]_i_1\: unisim.vcomponents.LUT5
@@ -214,14 +214,14 @@ begin
       I1 => \^q\(8),
       I2 => \^q\(7),
       I3 => \count[10]_i_2_n_0\,
-      I4 => load,
+      I4 => eqOp,
       O => \count[9]_i_1_n_0\
     );
 \count_reg[0]\: unisim.vcomponents.FDCE
      port map (
       C => CLK,
       CE => EN,
-      CLR => endcount_i_1_n_0,
+      CLR => endcount_i_2_n_0,
       D => \count[0]_i_1_n_0\,
       Q => \^q\(0)
     );
@@ -229,7 +229,7 @@ begin
      port map (
       C => CLK,
       CE => EN,
-      CLR => endcount_i_1_n_0,
+      CLR => endcount_i_2_n_0,
       D => \count[10]_i_1_n_0\,
       Q => \^q\(10)
     );
@@ -237,39 +237,39 @@ begin
      port map (
       C => CLK,
       CE => EN,
-      CLR => endcount_i_1_n_0,
-      D => \count[1]_i_1_n_0\,
+      CLR => endcount_i_2_n_0,
+      D => p_0_in(1),
       Q => \^q\(1)
     );
 \count_reg[2]\: unisim.vcomponents.FDCE
      port map (
       C => CLK,
       CE => EN,
-      CLR => endcount_i_1_n_0,
-      D => \count[2]_i_1_n_0\,
+      CLR => endcount_i_2_n_0,
+      D => p_0_in(2),
       Q => \^q\(2)
     );
 \count_reg[3]\: unisim.vcomponents.FDCE
      port map (
       C => CLK,
       CE => EN,
-      CLR => endcount_i_1_n_0,
-      D => \count[3]_i_1_n_0\,
+      CLR => endcount_i_2_n_0,
+      D => p_0_in(3),
       Q => \^q\(3)
     );
 \count_reg[4]\: unisim.vcomponents.FDCE
      port map (
       C => CLK,
       CE => EN,
-      CLR => endcount_i_1_n_0,
-      D => \count[4]_i_1_n_0\,
+      CLR => endcount_i_2_n_0,
+      D => p_0_in(4),
       Q => \^q\(4)
     );
 \count_reg[5]\: unisim.vcomponents.FDCE
      port map (
       C => CLK,
       CE => EN,
-      CLR => endcount_i_1_n_0,
+      CLR => endcount_i_2_n_0,
       D => \count[5]_i_1_n_0\,
       Q => \^q\(5)
     );
@@ -277,7 +277,7 @@ begin
      port map (
       C => CLK,
       CE => EN,
-      CLR => endcount_i_1_n_0,
+      CLR => endcount_i_2_n_0,
       D => \count[6]_i_1_n_0\,
       Q => \^q\(6)
     );
@@ -285,7 +285,7 @@ begin
      port map (
       C => CLK,
       CE => EN,
-      CLR => endcount_i_1_n_0,
+      CLR => endcount_i_2_n_0,
       D => \count[7]_i_1_n_0\,
       Q => \^q\(7)
     );
@@ -293,7 +293,7 @@ begin
      port map (
       C => CLK,
       CE => EN,
-      CLR => endcount_i_1_n_0,
+      CLR => endcount_i_2_n_0,
       D => \count[8]_i_1_n_0\,
       Q => \^q\(8)
     );
@@ -301,30 +301,39 @@ begin
      port map (
       C => CLK,
       CE => EN,
-      CLR => endcount_i_1_n_0,
+      CLR => endcount_i_2_n_0,
       D => \count[9]_i_1_n_0\,
       Q => \^q\(9)
     );
-endcount_i_1: unisim.vcomponents.LUT1
+endcount_i_1: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"8"
+    )
+        port map (
+      I0 => eqOp,
+      I1 => EN,
+      O => endcount
+    );
+endcount_i_2: unisim.vcomponents.LUT1
     generic map(
       INIT => X"1"
     )
         port map (
       I0 => RESET,
-      O => endcount_i_1_n_0
+      O => endcount_i_2_n_0
     );
 endcount_reg: unisim.vcomponents.FDCE
      port map (
       C => CLK,
-      CE => EN,
-      CLR => endcount_i_1_n_0,
-      D => load,
+      CE => '1',
+      CLR => endcount_i_2_n_0,
+      D => endcount,
       Q => endOfCount
     );
 eqOp_carry: unisim.vcomponents.CARRY4
      port map (
       CI => '0',
-      CO(3) => load,
+      CO(3) => eqOp,
       CO(2) => eqOp_carry_n_1,
       CO(1) => eqOp_carry_n_2,
       CO(0) => eqOp_carry_n_3,
@@ -418,7 +427,7 @@ architecture STRUCTURE of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix is
   attribute x_interface_parameter : string;
   attribute x_interface_parameter of CLK : signal is "XIL_INTERFACENAME CLK, ASSOCIATED_RESET RESET, FREQ_HZ 100000000, PHASE 0.000, CLK_DOMAIN HDMI_bd_dvi2rgb_0_1_PixelClk";
   attribute x_interface_info of RESET : signal is "xilinx.com:signal:reset:1.0 RESET RST";
-  attribute x_interface_parameter of RESET : signal is "XIL_INTERFACENAME RESET, POLARITY ACTIVE_HIGH";
+  attribute x_interface_parameter of RESET : signal is "XIL_INTERFACENAME RESET, POLARITY ACTIVE_LOW";
 begin
 U0: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_counter_autoreload
      port map (

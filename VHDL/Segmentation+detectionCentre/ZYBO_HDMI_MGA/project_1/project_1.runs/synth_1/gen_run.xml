@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z020clg400-1" LaunchTime="1544038338">
+<GenRun Id="synth_1" LaunchPart="xc7z020clg400-1" LaunchTime="1544400183">
   <File Type="PA-TCL" Name="HDMI_bd_wrapper.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="HDMI_bd_wrapper_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="HDMI_bd_wrapper_reports.tcl"/>
@@ -97,12 +97,6 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/detect_end_image.vhd">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <File Path="$PSRCDIR/sources_1/new/divideur_select_output.vhd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -110,6 +104,12 @@
       </FileInfo>
     </File>
     <File Path="$PSRCDIR/sources_1/new/counter_autoreload.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/not_1bit.vhd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -128,14 +128,35 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/not_1bit.vhd">
+    <File Path="$PSRCDIR/sources_1/new/ColorDetection.vhd">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/bd/c_counter_binary/c_counter_binary.bd">
+    <File Path="$PSRCDIR/sources_1/new/rdc_MxNbits.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/sauvegarde_position.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/FSM_mesure_mouvement.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/bd/TEST2/TEST2.bd">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -143,7 +164,14 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/bd/c_counter_binary/hdl/c_counter_binary_wrapper.vhd">
+    <File Path="$PSRCDIR/sources_1/bd/TEST2/hdl/TEST2_wrapper.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/detect_end_image.vhd">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -216,20 +244,6 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/rdc_MxNbits.vhd">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/new/Starter.vhd">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
       <Option Name="TopModule" Val="HDMI_bd_wrapper"/>
@@ -275,19 +289,25 @@
   <BlockFileSet Type="BlockSrcs" Name="HDMI_bd_ET_logique_5entree_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="HDMI_bd_reg_1bit_0_2"/>
   <BlockFileSet Type="BlockSrcs" Name="HDMI_bd_reg_1bit_2_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="HDMI_bd_not_1bit_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="HDMI_bd_reg_1bit_0_1"/>
   <BlockFileSet Type="BlockSrcs" Name="HDMI_bd_reg_1bit_3_0"/>
   <BlockFileSet Type="BlockSrcs" Name="HDMI_bd_adapt_input_ouput_1_1"/>
-  <BlockFileSet Type="BlockSrcs" Name="HDMI_bd_Blank_pixel_counter_1"/>
-  <BlockFileSet Type="BlockSrcs" Name="HDMI_bd_detect_end_image_0_1"/>
   <BlockFileSet Type="BlockSrcs" Name="HDMI_bd_Additionneur_Nbits_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="HDMI_bd_div_xAxis_1"/>
   <BlockFileSet Type="BlockSrcs" Name="HDMI_bd_adapt_input_ouput_4_0"/>
   <BlockFileSet Type="BlockSrcs" Name="HDMI_bd_Additionneur_Nbits_1_0"/>
   <BlockFileSet Type="BlockSrcs" Name="HDMI_bd_adapt_input_ouput_0_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="HDMI_bd_Blank_pixel_counter_1"/>
   <BlockFileSet Type="BlockSrcs" Name="HDMI_bd_adapt_input_ouput_3_0"/>
   <BlockFileSet Type="BlockSrcs" Name="HDMI_bd_adapt_input_ouput_2_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="TEST2_ColorDetection_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="HDMI_bd_reg_1bit_4_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="HDMI_bd_xlconstant_0_2"/>
-  <BlockFileSet Type="BlockSrcs" Name="HDMI_bd_xlconstant_1_0"/>
   <BlockFileSet Type="BlockSrcs" Name="HDMI_bd_column_counter_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="TEST2_adapt_input_ouput_3_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="TEST2_column_counter1_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="TEST2_ligne_counter1_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="TEST2_not_1bit_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="TEST2_FSM_mesure_mouvement_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="HDMI_bd_div_yAxis_1"/>
 </GenRun>

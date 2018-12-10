@@ -1,8 +1,8 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2018.2.1 (win64) Build 2288692 Thu Jul 26 18:24:02 MDT 2018
--- Date        : Wed Dec  5 09:42:32 2018
--- Host        : pcetu-135 running 64-bit major release  (build 9200)
+-- Date        : Sun Dec  9 19:03:44 2018
+-- Host        : pcetu-136 running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim
 --               C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/ip/HDMI_bd_divideur_select_outp_1_1_1/HDMI_bd_divideur_select_outp_1_1_sim_netlist.vhdl
 -- Design      : HDMI_bd_divideur_select_outp_1_1
@@ -16,8 +16,8 @@ library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
 entity HDMI_bd_divideur_select_outp_1_1 is
   port (
-    Entree : in STD_LOGIC_VECTOR ( 39 downto 0 );
-    Sortie : out STD_LOGIC_VECTOR ( 11 downto 0 )
+    Entree : in STD_LOGIC_VECTOR ( 23 downto 0 );
+    Sortie : out STD_LOGIC_VECTOR ( 10 downto 0 )
   );
   attribute NotValidForBitStream : boolean;
   attribute NotValidForBitStream of HDMI_bd_divideur_select_outp_1_1 : entity is true;
@@ -32,8 +32,8 @@ entity HDMI_bd_divideur_select_outp_1_1 is
 end HDMI_bd_divideur_select_outp_1_1;
 
 architecture STRUCTURE of HDMI_bd_divideur_select_outp_1_1 is
-  signal \^entree\ : STD_LOGIC_VECTOR ( 39 downto 0 );
+  signal \^entree\ : STD_LOGIC_VECTOR ( 23 downto 0 );
 begin
-  Sortie(11 downto 0) <= \^entree\(27 downto 16);
-  \^entree\(27 downto 16) <= Entree(27 downto 16);
+  Sortie(10 downto 0) <= \^entree\(10 downto 0);
+  \^entree\(10 downto 0) <= Entree(10 downto 0);
 end STRUCTURE;

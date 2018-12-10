@@ -37,13 +37,6 @@ if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
 # To test this script, run the following commands from Vivado Tcl console:
 # source test_script.tcl
 
-
-# The design that will be created by this Tcl script contains the following 
-# module references:
-# Counter, adapt_input_ouput, adapt_input_ouput, adapt_input_ouput, adapt_input_ouput, adapt_input_ouput, add_Nbits, add_Nbits, Counter, detect_end_image, divideur_select_output, divideur_select_output, Counter, rdc_1bit, reg_Nbits, reg_Nbits
-
-# Please add the sources of those modules before sourcing this Tcl script.
-
 # If there is no project opened, this script will create a
 # project, but make sure you do not have an existing project
 # <./myproj/project_1.xpr> in the current working folder.
@@ -165,257 +158,30 @@ proc create_root_design { parentCell } {
   # Create interface ports
 
   # Create ports
-  set CE_column_count [ create_bd_port -dir I CE_column_count ]
-  set CE_ligne_count [ create_bd_port -dir I CE_ligne_count ]
   set CLK [ create_bd_port -dir I -type clk CLK ]
-  set Pixel_White_Black [ create_bd_port -dir I Pixel_White_Black ]
-  set RESET [ create_bd_port -dir I -type rst RESET ]
-  set nb_column [ create_bd_port -dir O -from 10 -to 0 nb_column ]
-  set nb_ligne [ create_bd_port -dir O -from 10 -to 0 nb_ligne ]
-  set xMoy [ create_bd_port -dir O -from 11 -to 0 xMoy ]
-  set yMoy [ create_bd_port -dir O -from 11 -to 0 yMoy ]
+  set EN [ create_bd_port -dir I EN ]
+  set data_out_tvalid [ create_bd_port -dir O data_out_tvalid ]
+  set data_valid [ create_bd_port -dir O -from 39 -to 0 data_valid ]
+  set dividend [ create_bd_port -dir I -from 23 -to 0 dividend ]
+  set divisor [ create_bd_port -dir I -from 15 -to 0 divisor ]
 
-  # Create instance: Blank_pixel_counter, and set properties
-  set block_name Counter
-  set block_cell_name Blank_pixel_counter
-  if { [catch {set Blank_pixel_counter [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
-     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
-     return 1
-   } elseif { $Blank_pixel_counter eq "" } {
-     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
-     return 1
-   }
-    set_property -dict [ list \
-   CONFIG.N {11} \
- ] $Blank_pixel_counter
-
-  # Create instance: adapt_input_ouput_0, and set properties
-  set block_name adapt_input_ouput
-  set block_cell_name adapt_input_ouput_0
-  if { [catch {set adapt_input_ouput_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
-     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
-     return 1
-   } elseif { $adapt_input_ouput_0 eq "" } {
-     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
-     return 1
-   }
-    set_property -dict [ list \
-   CONFIG.M {40} \
-   CONFIG.N {11} \
- ] $adapt_input_ouput_0
-
-  # Create instance: adapt_input_ouput_1, and set properties
-  set block_name adapt_input_ouput
-  set block_cell_name adapt_input_ouput_1
-  if { [catch {set adapt_input_ouput_1 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
-     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
-     return 1
-   } elseif { $adapt_input_ouput_1 eq "" } {
-     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
-     return 1
-   }
-    set_property -dict [ list \
-   CONFIG.M {40} \
-   CONFIG.N {18} \
- ] $adapt_input_ouput_1
-
-  # Create instance: adapt_input_ouput_2, and set properties
-  set block_name adapt_input_ouput
-  set block_cell_name adapt_input_ouput_2
-  if { [catch {set adapt_input_ouput_2 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
-     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
-     return 1
-   } elseif { $adapt_input_ouput_2 eq "" } {
-     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
-     return 1
-   }
-    set_property -dict [ list \
-   CONFIG.M {40} \
-   CONFIG.N {18} \
- ] $adapt_input_ouput_2
-
-  # Create instance: adapt_input_ouput_3, and set properties
-  set block_name adapt_input_ouput
-  set block_cell_name adapt_input_ouput_3
-  if { [catch {set adapt_input_ouput_3 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
-     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
-     return 1
-   } elseif { $adapt_input_ouput_3 eq "" } {
-     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
-     return 1
-   }
-    set_property -dict [ list \
-   CONFIG.M {18} \
-   CONFIG.N {11} \
- ] $adapt_input_ouput_3
-
-  # Create instance: adapt_input_ouput_4, and set properties
-  set block_name adapt_input_ouput
-  set block_cell_name adapt_input_ouput_4
-  if { [catch {set adapt_input_ouput_4 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
-     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
-     return 1
-   } elseif { $adapt_input_ouput_4 eq "" } {
-     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
-     return 1
-   }
-    set_property -dict [ list \
-   CONFIG.M {18} \
-   CONFIG.N {11} \
- ] $adapt_input_ouput_4
-
-  # Create instance: add_Nbits_0, and set properties
-  set block_name add_Nbits
-  set block_cell_name add_Nbits_0
-  if { [catch {set add_Nbits_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
-     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
-     return 1
-   } elseif { $add_Nbits_0 eq "" } {
-     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
-     return 1
-   }
-    set_property -dict [ list \
-   CONFIG.N {18} \
- ] $add_Nbits_0
-
-  # Create instance: add_Nbits_1, and set properties
-  set block_name add_Nbits
-  set block_cell_name add_Nbits_1
-  if { [catch {set add_Nbits_1 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
-     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
-     return 1
-   } elseif { $add_Nbits_1 eq "" } {
-     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
-     return 1
-   }
-    set_property -dict [ list \
-   CONFIG.N {18} \
- ] $add_Nbits_1
-
-  # Create instance: column_counter, and set properties
-  set block_name Counter
-  set block_cell_name column_counter
-  if { [catch {set column_counter [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
-     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
-     return 1
-   } elseif { $column_counter eq "" } {
-     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
-     return 1
-   }
-    set_property -dict [ list \
-   CONFIG.N {11} \
- ] $column_counter
-
-  # Create instance: detect_end_image_0, and set properties
-  set block_name detect_end_image
-  set block_cell_name detect_end_image_0
-  if { [catch {set detect_end_image_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
-     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
-     return 1
-   } elseif { $detect_end_image_0 eq "" } {
-     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
-     return 1
-   }
-  
-  # Create instance: divideur_select_outp_0, and set properties
-  set block_name divideur_select_output
-  set block_cell_name divideur_select_outp_0
-  if { [catch {set divideur_select_outp_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
-     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
-     return 1
-   } elseif { $divideur_select_outp_0 eq "" } {
-     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
-     return 1
-   }
-  
-  # Create instance: divideur_select_outp_1, and set properties
-  set block_name divideur_select_output
-  set block_cell_name divideur_select_outp_1
-  if { [catch {set divideur_select_outp_1 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
-     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
-     return 1
-   } elseif { $divideur_select_outp_1 eq "" } {
-     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
-     return 1
-   }
-  
-  # Create instance: ligne_counter, and set properties
-  set block_name Counter
-  set block_cell_name ligne_counter
-  if { [catch {set ligne_counter [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
-     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
-     return 1
-   } elseif { $ligne_counter eq "" } {
-     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
-     return 1
-   }
-    set_property -dict [ list \
-   CONFIG.N {11} \
- ] $ligne_counter
-
-  # Create instance: rdc_1bit_1, and set properties
-  set block_name rdc_1bit
-  set block_cell_name rdc_1bit_1
-  if { [catch {set rdc_1bit_1 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
-     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
-     return 1
-   } elseif { $rdc_1bit_1 eq "" } {
-     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
-     return 1
-   }
-  
-  # Create instance: reg_Nbits_0, and set properties
-  set block_name reg_Nbits
-  set block_cell_name reg_Nbits_0
-  if { [catch {set reg_Nbits_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
-     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
-     return 1
-   } elseif { $reg_Nbits_0 eq "" } {
-     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
-     return 1
-   }
-    set_property -dict [ list \
-   CONFIG.N {18} \
- ] $reg_Nbits_0
-
-  # Create instance: reg_Nbits_1, and set properties
-  set block_name reg_Nbits
-  set block_cell_name reg_Nbits_1
-  if { [catch {set reg_Nbits_1 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
-     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
-     return 1
-   } elseif { $reg_Nbits_1 eq "" } {
-     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
-     return 1
-   }
-    set_property -dict [ list \
-   CONFIG.N {18} \
- ] $reg_Nbits_1
-
-  # Create instance: xlconstant_0, and set properties
-  set xlconstant_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_0 ]
+  # Create instance: div_gen_0, and set properties
+  set div_gen_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:div_gen:5.1 div_gen_0 ]
+  set_property -dict [ list \
+   CONFIG.ACLKEN {true} \
+   CONFIG.dividend_and_quotient_width {18} \
+   CONFIG.divisor_width {11} \
+   CONFIG.fractional_width {11} \
+   CONFIG.latency {22} \
+ ] $div_gen_0
 
   # Create port connections
-  connect_bd_net -net CE_column_count_1 [get_bd_ports CE_column_count] [get_bd_pins column_counter/EN]
-  connect_bd_net -net CE_ligne_count_1 [get_bd_ports CE_ligne_count] [get_bd_pins ligne_counter/EN]
-  connect_bd_net -net CLK_1 [get_bd_ports CLK] [get_bd_pins Blank_pixel_counter/CLK] [get_bd_pins column_counter/CLK] [get_bd_pins detect_end_image_0/CLK] [get_bd_pins ligne_counter/CLK] [get_bd_pins rdc_1bit_1/CLK] [get_bd_pins reg_Nbits_0/CLK] [get_bd_pins reg_Nbits_1/CLK]
-  connect_bd_net -net Net1 [get_bd_pins Blank_pixel_counter/EN] [get_bd_pins rdc_1bit_1/Q] [get_bd_pins reg_Nbits_0/EN] [get_bd_pins reg_Nbits_1/EN]
-  connect_bd_net -net Pixel_White_Black_1 [get_bd_ports Pixel_White_Black] [get_bd_pins rdc_1bit_1/D]
-  connect_bd_net -net RESET_counter_ligne_and_column_1 [get_bd_ports RESET] [get_bd_pins Blank_pixel_counter/RESET] [get_bd_pins add_Nbits_0/RESET] [get_bd_pins add_Nbits_1/RESET] [get_bd_pins column_counter/RESET] [get_bd_pins ligne_counter/RESET] [get_bd_pins rdc_1bit_1/RESET] [get_bd_pins reg_Nbits_0/RESET] [get_bd_pins reg_Nbits_1/RESET]
-  connect_bd_net -net adapt_input_ouput_1_sortie [get_bd_pins adapt_input_ouput_1/sortie] [get_bd_pins divideur_select_outp_0/Entree]
-  connect_bd_net -net adapt_input_ouput_2_sortie [get_bd_pins adapt_input_ouput_2/sortie] [get_bd_pins divideur_select_outp_1/Entree]
-  connect_bd_net -net adapt_input_ouput_3_sortie [get_bd_pins adapt_input_ouput_3/sortie] [get_bd_pins add_Nbits_0/B]
-  connect_bd_net -net adapt_input_ouput_4_sortie [get_bd_pins adapt_input_ouput_4/sortie] [get_bd_pins add_Nbits_1/B]
-  connect_bd_net -net add_Nbits_0_S [get_bd_pins adapt_input_ouput_1/entree] [get_bd_pins add_Nbits_0/S] [get_bd_pins reg_Nbits_0/D]
-  connect_bd_net -net add_Nbits_1_S [get_bd_pins adapt_input_ouput_2/entree] [get_bd_pins add_Nbits_1/S] [get_bd_pins reg_Nbits_1/D]
-  connect_bd_net -net column_counter_Q [get_bd_ports nb_column] [get_bd_pins adapt_input_ouput_4/entree] [get_bd_pins column_counter/Q] [get_bd_pins detect_end_image_0/column]
-  connect_bd_net -net divideur_select_outp_0_Output [get_bd_ports xMoy] [get_bd_pins divideur_select_outp_0/Sortie]
-  connect_bd_net -net divideur_select_outp_1_Output [get_bd_ports yMoy] [get_bd_pins divideur_select_outp_1/Sortie]
-  connect_bd_net -net ligne_counter2_Q [get_bd_pins Blank_pixel_counter/Q] [get_bd_pins adapt_input_ouput_0/entree]
-  connect_bd_net -net ligne_counter_Q [get_bd_ports nb_ligne] [get_bd_pins adapt_input_ouput_3/entree] [get_bd_pins detect_end_image_0/ligne] [get_bd_pins ligne_counter/Q]
-  connect_bd_net -net reg_Nbits_0_Q [get_bd_pins add_Nbits_0/A] [get_bd_pins reg_Nbits_0/Q]
-  connect_bd_net -net reg_Nbits_1_Q [get_bd_pins add_Nbits_1/A] [get_bd_pins reg_Nbits_1/Q]
-  connect_bd_net -net xlconstant_0_dout [get_bd_pins rdc_1bit_1/EN] [get_bd_pins xlconstant_0/dout]
+  connect_bd_net -net CLK_1 [get_bd_ports CLK] [get_bd_pins div_gen_0/aclk]
+  connect_bd_net -net EN_1 [get_bd_ports EN] [get_bd_pins div_gen_0/aclken] [get_bd_pins div_gen_0/s_axis_dividend_tvalid] [get_bd_pins div_gen_0/s_axis_divisor_tvalid]
+  connect_bd_net -net div_gen_0_m_axis_dout_tdata [get_bd_ports data_valid] [get_bd_pins div_gen_0/m_axis_dout_tdata]
+  connect_bd_net -net div_gen_0_m_axis_dout_tvalid [get_bd_ports data_out_tvalid] [get_bd_pins div_gen_0/m_axis_dout_tvalid]
+  connect_bd_net -net dividend_1 [get_bd_ports dividend] [get_bd_pins div_gen_0/s_axis_dividend_tdata]
+  connect_bd_net -net divisor_1 [get_bd_ports divisor] [get_bd_pins div_gen_0/s_axis_divisor_tdata]
 
   # Create address segments
 

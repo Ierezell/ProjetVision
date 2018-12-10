@@ -1,8 +1,8 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.2.1 (win64) Build 2288692 Thu Jul 26 18:24:02 MDT 2018
-// Date        : Wed Dec  5 09:42:31 2018
-// Host        : pcetu-135 running 64-bit major release  (build 9200)
+// Date        : Sun Dec  9 19:03:44 2018
+// Host        : pcetu-136 running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
 //               C:/Users/NMLEM1/Desktop/Segmentation+detectionCentre/ZYBO_HDMI_MGA/project_1/project_1.srcs/sources_1/bd/HDMI_bd/ip/HDMI_bd_divideur_select_outp_0_1_1/HDMI_bd_divideur_select_outp_0_1_sim_netlist.v
 // Design      : HDMI_bd_divideur_select_outp_0_1
@@ -18,12 +18,12 @@
 module HDMI_bd_divideur_select_outp_0_1
    (Entree,
     Sortie);
-  input [39:0]Entree;
-  output [11:0]Sortie;
+  input [23:0]Entree;
+  output [10:0]Sortie;
 
-  wire [39:0]Entree;
+  wire [23:0]Entree;
 
-  assign Sortie[11:0] = Entree[27:16];
+  assign Sortie[10:0] = Entree[10:0];
 endmodule
 `ifndef GLBL
 `define GLBL

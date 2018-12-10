@@ -1,8 +1,8 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.2.1 (win64) Build 2288692 Thu Jul 26 18:24:02 MDT 2018
-| Date         : Wed Dec  5 14:38:17 2018
-| Host         : pcetu-135 running 64-bit major release  (build 9200)
+| Date         : Sun Dec  9 19:08:39 2018
+| Host         : pcetu-136 running 64-bit major release  (build 9200)
 | Command      : report_drc -file HDMI_bd_wrapper_drc_routed.rpt -pb HDMI_bd_wrapper_drc_routed.pb -rpx HDMI_bd_wrapper_drc_routed.rpx
 | Design       : HDMI_bd_wrapper
 | Device       : xc7z020clg400-1
@@ -24,18 +24,110 @@ Table of Contents
       Design limits: <entire design considered>
            Ruledeck: default
              Max violations: <unlimited>
-             Violations found: 1
-+--------+----------+--------------------+------------+
-| Rule   | Severity | Description        | Violations |
-+--------+----------+--------------------+------------+
-| ZPS7-1 | Warning  | PS7 block required | 1          |
-+--------+----------+--------------------+------------+
+             Violations found: 19
++--------+----------+-------------------------------------------------------------------+------------+
+| Rule   | Severity | Description                                                       | Violations |
++--------+----------+-------------------------------------------------------------------+------------+
+| ZPS7-1 | Warning  | PS7 block required                                                | 1          |
+| AVAL-4 | Advisory | enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND | 12         |
+| AVAL-5 | Advisory | enum_USE_MULT_NONE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND   | 6          |
++--------+----------+-------------------------------------------------------------------+------------+
 
 2. REPORT DETAILS
 -----------------
 ZPS7-1#1 Warning
 PS7 block required  
 The PS7 cell must be used in this Zynq design in order to enable correct default configuration.
+Related violations: <none>
+
+AVAL-4#1 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+HDMI_bd_i/Detect_centre/div_xAxis/U0/i_synth/i_zero_fract.i_synth/opt_high_radix.i_zero_fract.i_high_radix/i_estimator/i_multadd/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-4#2 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+HDMI_bd_i/Detect_centre/div_xAxis/U0/i_synth/i_zero_fract.i_synth/opt_high_radix.i_zero_fract.i_high_radix/i_iterative_unit/i_extra_digits.i_add/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-4#3 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+HDMI_bd_i/Detect_centre/div_xAxis/U0/i_synth/i_zero_fract.i_synth/opt_high_radix.i_zero_fract.i_high_radix/i_iterative_unit/i_extra_digits.i_multadd/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-4#4 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+HDMI_bd_i/Detect_centre/div_xAxis/U0/i_synth/i_zero_fract.i_synth/opt_high_radix.i_zero_fract.i_high_radix/i_iterative_unit/i_splice[1].i_add/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-4#5 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+HDMI_bd_i/Detect_centre/div_xAxis/U0/i_synth/i_zero_fract.i_synth/opt_high_radix.i_zero_fract.i_high_radix/i_iterative_unit/i_splice[1].i_mult/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-4#6 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+HDMI_bd_i/Detect_centre/div_xAxis/U0/i_synth/i_zero_fract.i_synth/opt_high_radix.i_zero_fract.i_high_radix/i_quotient_collector/i_typical_case.i_addsub/i_vx5_sp3.i_trivial.i_addsub/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-4#7 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+HDMI_bd_i/Detect_centre/div_yAxis/U0/i_synth/i_zero_fract.i_synth/opt_high_radix.i_zero_fract.i_high_radix/i_estimator/i_multadd/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-4#8 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+HDMI_bd_i/Detect_centre/div_yAxis/U0/i_synth/i_zero_fract.i_synth/opt_high_radix.i_zero_fract.i_high_radix/i_iterative_unit/i_extra_digits.i_add/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-4#9 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+HDMI_bd_i/Detect_centre/div_yAxis/U0/i_synth/i_zero_fract.i_synth/opt_high_radix.i_zero_fract.i_high_radix/i_iterative_unit/i_extra_digits.i_multadd/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-4#10 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+HDMI_bd_i/Detect_centre/div_yAxis/U0/i_synth/i_zero_fract.i_synth/opt_high_radix.i_zero_fract.i_high_radix/i_iterative_unit/i_splice[1].i_add/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-4#11 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+HDMI_bd_i/Detect_centre/div_yAxis/U0/i_synth/i_zero_fract.i_synth/opt_high_radix.i_zero_fract.i_high_radix/i_iterative_unit/i_splice[1].i_mult/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-4#12 Advisory
+enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+HDMI_bd_i/Detect_centre/div_yAxis/U0/i_synth/i_zero_fract.i_synth/opt_high_radix.i_zero_fract.i_high_radix/i_quotient_collector/i_typical_case.i_addsub/i_vx5_sp3.i_trivial.i_addsub/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-5#1 Advisory
+enum_USE_MULT_NONE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+HDMI_bd_i/Detect_centre/div_xAxis/U0/i_synth/i_zero_fract.i_synth/opt_high_radix.i_zero_fract.i_high_radix/i_iterative_unit/i_extra_digits.i_add/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the Multiplier (USE_MULT = NONE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-5#2 Advisory
+enum_USE_MULT_NONE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+HDMI_bd_i/Detect_centre/div_xAxis/U0/i_synth/i_zero_fract.i_synth/opt_high_radix.i_zero_fract.i_high_radix/i_iterative_unit/i_splice[1].i_add/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the Multiplier (USE_MULT = NONE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-5#3 Advisory
+enum_USE_MULT_NONE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+HDMI_bd_i/Detect_centre/div_xAxis/U0/i_synth/i_zero_fract.i_synth/opt_high_radix.i_zero_fract.i_high_radix/i_quotient_collector/i_typical_case.i_addsub/i_vx5_sp3.i_trivial.i_addsub/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the Multiplier (USE_MULT = NONE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-5#4 Advisory
+enum_USE_MULT_NONE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+HDMI_bd_i/Detect_centre/div_yAxis/U0/i_synth/i_zero_fract.i_synth/opt_high_radix.i_zero_fract.i_high_radix/i_iterative_unit/i_extra_digits.i_add/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the Multiplier (USE_MULT = NONE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-5#5 Advisory
+enum_USE_MULT_NONE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+HDMI_bd_i/Detect_centre/div_yAxis/U0/i_synth/i_zero_fract.i_synth/opt_high_radix.i_zero_fract.i_high_radix/i_iterative_unit/i_splice[1].i_add/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the Multiplier (USE_MULT = NONE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+Related violations: <none>
+
+AVAL-5#6 Advisory
+enum_USE_MULT_NONE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
+HDMI_bd_i/Detect_centre/div_yAxis/U0/i_synth/i_zero_fract.i_synth/opt_high_radix.i_zero_fract.i_high_radix/i_quotient_collector/i_typical_case.i_addsub/i_vx5_sp3.i_trivial.i_addsub/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the Multiplier (USE_MULT = NONE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
 Related violations: <none>
 
 
