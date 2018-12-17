@@ -10,6 +10,7 @@
  - thirdTest.py: 
 	effectue une soustraction de la premiere frame pour eliminer le fond, et place un carre autour de la main. Le centre de la main
 	est repéré par un point bleu.
+	basé sur la méthode trouvée sur https://www.pyimagesearch.com/2015/05/25/basic-motion-detection-and-tracking-with-python-and-opencv/
 	L'analyse de la position du point central permettra de détecter les mouvements de la main. (haut, bas, gauche, droite). L'analyse 
 	de la taille du carré permettra de détecter l'ouverture ou la fermeture de la main (ou son éloignement?).
 
