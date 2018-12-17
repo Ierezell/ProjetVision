@@ -113,6 +113,7 @@ while(True):
             if abs(diffX) > seuilDeplacement or abs(diffY) >seuilDeplacement:
                 print('diffX = ' + str(diffX))
                 print('diffY = ' + str(diffY))
+                """
                 if abs(diffX) > abs(diffY):
                     print('mouvement horizontal')
                     if diffX > 0:
@@ -129,10 +130,28 @@ while(True):
                     else:
                         print('vers le haut')
                         text = 'haut'
-            
+                """
+                if diffX >= seuilDeplacement and diffY >= seuilDeplacement:
+                    text = 'en bas a droite'
+                elif diffX >= seuilDeplacement and -diffY >= seuilDeplacement:
+                    text = 'en haut a droite'
+                elif diffX >= seuilDeplacement and abs(diffY) < seuilDeplacement:
+                    text = 'a droite'
+                elif -diffX >= seuilDeplacement and diffY >= seuilDeplacement:
+                    text = 'en bas a gauche'
+                elif -diffX >= seuilDeplacement and -diffY >= seuilDeplacement:
+                    text = 'en haut a gauche'
+                elif -diffX >= seuilDeplacement and abs(diffY) < seuilDeplacement:
+                    text = 'a gauche'
+                elif abs(diffX) < seuilDeplacement and diffY >= seuilDeplacement:
+                    text = 'en bas'
+                elif abs(diffX) < seuilDeplacement and -diffY >= seuilDeplacement:
+                    text = 'en haut'
+                    
             previousCenter = center
         
         imageToSave = thresh[y:y+h, x:x+w]
+        
         
         # Display the resulting frames
         cv2.putText(frame, "dernier mouvement: {}".format(text), (10, 20),
@@ -148,6 +167,26 @@ while(True):
         #save a picture with 's' or quit with 'q'
         touche = cv2.waitKey(1) & 0xFF
         if touche == ord('s'):
+            #resize image
+            imageToSave = cv2.resize(imageToSave,(200, 200),
+                                     
+                                     
+                                     
+                                     
+                                     
+                                     
+                                     
+                                     
+                                     
+                                     
+                                     
+                                     
+                                     
+                                     
+                                     
+                                     
+                                     
+                                     interpolation = cv2.INTER_CUBIC)
             name = 'hand'+str(nImage)+'.png'
             cv2.imwrite(name, imageToSave)
             nImage += 1
