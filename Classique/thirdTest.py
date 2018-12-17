@@ -18,7 +18,7 @@ detectionZoneRight = 250
 detectionZoneBottom = int(camHeight-1)
 seuilDeplacement = 30 #exprimé en pixels
 imagePerClass = 20
-imageName = 'test'
+imageName = 'truc'
 #end parameters
 
 #init values
