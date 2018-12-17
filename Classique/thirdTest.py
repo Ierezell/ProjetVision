@@ -5,18 +5,21 @@ import imutils
 def nothing(x):
     pass
 
+#einit video stream
+cap = cv2.VideoCapture(0)
+camWidth = cap.get(cv2.CAP_PROP_FRAME_WIDTH)
+camHeight = cap.get(cv2.CAP_PROP_FRAME_HEIGHT)
 
 #parameters
 minArea = 1500
 detectionZoneLeft = 1
 detectionZoneTop = 1
 detectionZoneRight = 250
-detectionZoneBottom = 480-1
+detectionZoneBottom = int(camHeight-1)
 seuilDeplacement = 30 #exprimé en pixels
 imagePerClass = 20
-imageName = 'hand'
+imageName = 'test'
 #end parameters
-
 
 #init values
 previousRoi = None
@@ -28,9 +31,9 @@ h = 0
 w = 0
 nImage = 0
 text = ''
+nextClass = 'index'
 
-cap = cv2.VideoCapture(0)
-print('classe index')
+print('classe '+nextClass)
 
 while(True):
     # Capture frame-by-frame
@@ -98,8 +101,6 @@ while(True):
             diffX = center[0] - previousCenter[0]
             diffY = center[1] - previousCenter[1]
             if abs(diffX) > seuilDeplacement or abs(diffY) >seuilDeplacement:
-                print('diffX = ' + str(diffX))
-                print('diffY = ' + str(diffY))
                 """
                 if abs(diffX) > abs(diffY):
                     print('mouvement horizontal')
@@ -155,30 +156,42 @@ while(True):
         if touche == ord('s'):
             #resize image
             imageToSave = cv2.resize(imageToSave,(256, 256),interpolation = cv2.INTER_CUBIC)
+            
             name = imageName+str(nImage)+'.png'
-            if nImage<imagePerClass:
-                print('classe index')
+            
+            if nImage<imagePerClass:              
                 relativePath = 'dataset/index/'
+                if nImage == imagePerClass -1:
+                    nextClass = 'spock'
             elif nImage <2*imagePerClass:
-                print('classe spock')
                 relativePath = 'dataset/spock/'
+                if nImage == 2*imagePerClass -1:
+                    nextClass = 'poing'
             elif nImage < 3*imagePerClass:
-                print('classe poing')
                 relativePath = 'dataset/poing/'
+                if nImage == 3*imagePerClass -1:
+                    nextClass = 'plat'
             elif nImage < 4*imagePerClass:
-                print('classe plat')
                 relativePath = 'dataset/plat/'
+                if nImage == 4*imagePerClass -1:
+                    nextClass = 'pouceGauche'
             elif nImage < 5*imagePerClass:
-                print('classe pouceGauche')
                 relativePath = 'dataset/pouceGauche/'
+                if nImage == 5*imagePerClass -1:
+                    nextClass = 'pouceDroit'
             elif nImage < 6*imagePerClass:
-                print('classe pouceDroit')
                 relativePath = 'dataset/pouceDroit/'
+                if nImage == 6*imagePerClass -1:
+                    nextClass = 'metal'
             elif nImage <7*imagePerClass:
-                print('classe metal')
                 relativePath = 'dataset/metal/'
-                
+            
+            #save image
             cv2.imwrite(relativePath+name, imageToSave)
+            
+            #print next class
+            print('classe '+nextClass)
+            
             nImage += 1
         elif touche==ord('r'):
             previousRoi=gray
