@@ -17,7 +17,6 @@ seuilDeplacement = 30 #exprimé en pixels
 
 
 #init values
-firstRoi = None
 previousRoi = None
 previousCenter = None
 frameCounter = 0
@@ -46,30 +45,17 @@ while(True):
         gray = cv2.cvtColor(roi, cv2.COLOR_BGR2GRAY)
         gray = cv2.GaussianBlur(gray, (5, 5), 0)
     
-    	# if the first frame is None, initialize it
-        if firstRoi is None:
-    	    firstRoi = gray
-    	    continue  
+    	# if the previous frame is None, initialize it
         
         if previousRoi is None:
             previousRoi = gray
             continue
         
     	# compute the absolute difference between the current frame and
-    	#the first frame
-        roiDelta = cv2.absdiff(firstRoi, gray)
+    	#the first frame after reset
+        roiDelta = cv2.absdiff(previousRoi, gray)
         thresh = cv2.threshold(roiDelta, 25, 255, cv2.THRESH_BINARY)[1]
-        thresh = cv2.dilate(thresh, None, iterations=2)
-        
-        #compute the absolute difference between the current frame and 
-        #the previous frame
-        roiDelta2 = cv2.absdiff(previousRoi, gray)
-        thresh2 = cv2.threshold(roiDelta2, 25, 255, cv2.THRESH_BINARY)[1]
-        thresh2 = cv2.dilate(thresh2, None, iterations=2)
-        
-        #previousRoi set for the next iteration
-        previousRoi = gray
-        
+        thresh = cv2.dilate(thresh, None, iterations=2)  
         
         #select contours
         cnts = cv2.findContours(thresh.copy(), cv2.RETR_EXTERNAL,
@@ -101,9 +87,7 @@ while(True):
         if previousCenter is None:
             previousCenter = center
             continue
-        
-
-        
+                
         #update the reference center after 15 frames
         if frameCounter >= 15:
             frameCounter = 0
@@ -160,37 +144,19 @@ while(True):
         cv2.imshow('gray',gray)
         cv2.imshow('frameDelta',roiDelta)
         cv2.imshow('thresh',thresh) 
-        cv2.imshow('thresh2',thresh2)
         
         
-        
-        #save a picture with 's' or quit with 'q'
+        #save a picture with 's', refresh the background with 'r' 
+        #or quit with 'q'
         touche = cv2.waitKey(1) & 0xFF
         if touche == ord('s'):
             #resize image
-            imageToSave = cv2.resize(imageToSave,(200, 200),
-                                     
-                                     
-                                     
-                                     
-                                     
-                                     
-                                     
-                                     
-                                     
-                                     
-                                     
-                                     
-                                     
-                                     
-                                     
-                                     
-                                     
-                                     interpolation = cv2.INTER_CUBIC)
+            imageToSave = cv2.resize(imageToSave,(256, 256),interpolation = cv2.INTER_CUBIC)
             name = 'hand'+str(nImage)+'.png'
             cv2.imwrite(name, imageToSave)
             nImage += 1
-        
+        elif touche==ord('r'):
+            previousRoi=gray
         elif touche == ord('q'):
             break
     else:
