@@ -3,20 +3,24 @@
    commentid: "",
    guistr: "# # String gsaved with Nlview 6.8.5  2018-01-30 bk=1.4354 VDI=40 GEI=35 GUI=JA:1.6 non-TLS
 #  -string -flagsOSRD
+preplace port tvalid_dividend -pg 1 -y 280 -defaultsOSRD
 preplace port EN -pg 1 -y 250 -defaultsOSRD
 preplace port data_out_tvalid -pg 1 -y 190 -defaultsOSRD
 preplace port CLK -pg 1 -y 220 -defaultsOSRD
+preplace port tvalid_divisor -pg 1 -y 130 -defaultsOSRD
 preplace portBus divisor -pg 1 -y 80 -defaultsOSRD
 preplace portBus data_valid -pg 1 -y 90 -defaultsOSRD
 preplace portBus dividend -pg 1 -y 160 -defaultsOSRD
-preplace inst div_gen_0 -pg 1 -lvl 1 -y 140 -defaultsOSRD
-preplace netloc dividend_1 1 0 1 -60
+preplace inst div_gen_0 -pg 1 -lvl 1 -y 160 -defaultsOSRD
+preplace netloc tvalid_dividend_1 1 0 1 -60
+preplace netloc dividend_1 1 0 1 -70
+preplace netloc tvalid_divisor_1 1 0 1 N
 preplace netloc div_gen_0_m_axis_dout_tvalid 1 1 1 380
-preplace netloc CLK_1 1 0 1 -40
-preplace netloc divisor_1 1 0 1 -60
+preplace netloc CLK_1 1 0 1 -70
+preplace netloc divisor_1 1 0 1 -70
 preplace netloc EN_1 1 0 1 -50
 preplace netloc div_gen_0_m_axis_dout_tdata 1 1 1 380
-levelinfo -pg 1 -80 170 400 -top -10 -bot 270
+levelinfo -pg 1 -90 170 400 -top -10 -bot 300
 ",
 }
 0

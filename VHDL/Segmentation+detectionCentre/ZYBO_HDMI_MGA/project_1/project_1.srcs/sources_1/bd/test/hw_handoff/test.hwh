@@ -1,17 +1,17 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Fri Dec  7 18:03:54 2018" VIVADOVERSION="2018.2.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Mon Dec 10 17:03:51 2018" VIVADOVERSION="2018.2.2">
 
   <SYSTEMINFO ARCH="zynq" BOARD="digilentinc.com:zybo-z7-20:part0:1.0" DEVICE="7z020" NAME="test" PACKAGE="clg400" SPEEDGRADE="-1"/>
 
   <EXTERNALPORTS>
-    <PORT DIR="I" LEFT="23" NAME="dividend" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_dividend">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="div_gen_0" PORT="s_axis_dividend_tdata"/>
-      </CONNECTIONS>
-    </PORT>
     <PORT DIR="I" LEFT="15" NAME="divisor" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_divisor">
       <CONNECTIONS>
         <CONNECTION INSTANCE="div_gen_0" PORT="s_axis_divisor_tdata"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="23" NAME="dividend" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_dividend">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="div_gen_0" PORT="s_axis_dividend_tdata"/>
       </CONNECTIONS>
     </PORT>
     <PORT CLKFREQUENCY="100000000" DIR="I" NAME="CLK" SIGIS="clk" SIGNAME="External_Ports_CLK">
@@ -22,8 +22,11 @@
     <PORT DIR="I" NAME="EN" SIGIS="undef" SIGNAME="External_Ports_EN">
       <CONNECTIONS>
         <CONNECTION INSTANCE="div_gen_0" PORT="aclken"/>
-        <CONNECTION INSTANCE="div_gen_0" PORT="s_axis_dividend_tvalid"/>
-        <CONNECTION INSTANCE="div_gen_0" PORT="s_axis_divisor_tvalid"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="39" NAME="data_valid" RIGHT="0" SIGIS="undef" SIGNAME="div_gen_0_m_axis_dout_tdata">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="div_gen_0" PORT="m_axis_dout_tdata"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="O" NAME="data_out_tvalid" SIGIS="undef" SIGNAME="div_gen_0_m_axis_dout_tvalid">
@@ -31,9 +34,14 @@
         <CONNECTION INSTANCE="div_gen_0" PORT="m_axis_dout_tvalid"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" LEFT="39" NAME="data_valid" RIGHT="0" SIGIS="undef" SIGNAME="div_gen_0_m_axis_dout_tdata">
+    <PORT DIR="I" NAME="tvalid_divisor" SIGIS="undef" SIGNAME="External_Ports_tvalid_divisor">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="div_gen_0" PORT="m_axis_dout_tdata"/>
+        <CONNECTION INSTANCE="div_gen_0" PORT="s_axis_divisor_tvalid"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="tvalid_dividend" SIGIS="undef" SIGNAME="External_Ports_tvalid_dividend">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="div_gen_0" PORT="s_axis_dividend_tvalid"/>
       </CONNECTIONS>
     </PORT>
   </EXTERNALPORTS>
@@ -106,9 +114,9 @@
             <CONNECTION INSTANCE="External_Ports" PORT="EN"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="s_axis_divisor_tvalid" SIGIS="undef" SIGNAME="External_Ports_EN">
+        <PORT DIR="I" NAME="s_axis_divisor_tvalid" SIGIS="undef" SIGNAME="External_Ports_tvalid_divisor">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="EN"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="tvalid_divisor"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" LEFT="15" NAME="s_axis_divisor_tdata" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_divisor">
@@ -116,9 +124,9 @@
             <CONNECTION INSTANCE="External_Ports" PORT="divisor"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="s_axis_dividend_tvalid" SIGIS="undef" SIGNAME="External_Ports_EN">
+        <PORT DIR="I" NAME="s_axis_dividend_tvalid" SIGIS="undef" SIGNAME="External_Ports_tvalid_dividend">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="EN"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="tvalid_dividend"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" LEFT="23" NAME="s_axis_dividend_tdata" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_dividend">

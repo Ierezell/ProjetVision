@@ -164,6 +164,8 @@ proc create_root_design { parentCell } {
   set data_valid [ create_bd_port -dir O -from 39 -to 0 data_valid ]
   set dividend [ create_bd_port -dir I -from 23 -to 0 dividend ]
   set divisor [ create_bd_port -dir I -from 15 -to 0 divisor ]
+  set tvalid_dividend [ create_bd_port -dir I tvalid_dividend ]
+  set tvalid_divisor [ create_bd_port -dir I tvalid_divisor ]
 
   # Create instance: div_gen_0, and set properties
   set div_gen_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:div_gen:5.1 div_gen_0 ]
@@ -177,11 +179,13 @@ proc create_root_design { parentCell } {
 
   # Create port connections
   connect_bd_net -net CLK_1 [get_bd_ports CLK] [get_bd_pins div_gen_0/aclk]
-  connect_bd_net -net EN_1 [get_bd_ports EN] [get_bd_pins div_gen_0/aclken] [get_bd_pins div_gen_0/s_axis_dividend_tvalid] [get_bd_pins div_gen_0/s_axis_divisor_tvalid]
+  connect_bd_net -net EN_1 [get_bd_ports EN] [get_bd_pins div_gen_0/aclken]
   connect_bd_net -net div_gen_0_m_axis_dout_tdata [get_bd_ports data_valid] [get_bd_pins div_gen_0/m_axis_dout_tdata]
   connect_bd_net -net div_gen_0_m_axis_dout_tvalid [get_bd_ports data_out_tvalid] [get_bd_pins div_gen_0/m_axis_dout_tvalid]
   connect_bd_net -net dividend_1 [get_bd_ports dividend] [get_bd_pins div_gen_0/s_axis_dividend_tdata]
   connect_bd_net -net divisor_1 [get_bd_ports divisor] [get_bd_pins div_gen_0/s_axis_divisor_tdata]
+  connect_bd_net -net tvalid_dividend_1 [get_bd_ports tvalid_dividend] [get_bd_pins div_gen_0/s_axis_dividend_tvalid]
+  connect_bd_net -net tvalid_divisor_1 [get_bd_ports tvalid_divisor] [get_bd_pins div_gen_0/s_axis_divisor_tvalid]
 
   # Create address segments
 
