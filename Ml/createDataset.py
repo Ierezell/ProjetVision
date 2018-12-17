@@ -43,8 +43,8 @@ while(True):
 
     if i % (3*frameRate) == 0:
         i = 1
-        filenamePic = './Dataset/image'+str(int(imgNb)) + ".jpg"
-        filenameTxt = './Dataset/image' + str(int(imgNb)) + ".txt"
+        filenamePic = './Dataset/image'+str(imgNb) + ".jpg"
+        filenameTxt = './Dataset/image' + str(imgNb) + ".txt"
         imgNb += 1
         cv2.imwrite(filenamePic, cv2.resize(frame, (448, 448)))
         with open(filenameTxt, "w+") as filetxt:
