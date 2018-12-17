@@ -23,8 +23,8 @@ ENV/
 env.bak/
 venv.bak/
 
-Ml/Dataset
-Ml/Ml
 
 #folder
+Ml/Dataset
+Ml/Backup
 VHDL/

@@ -5,28 +5,20 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 import torchvision.transforms as transforms
+
 from torch.utils.data import Dataset
 from utils import Iou
 from PIL import Image
 
-
-BATCH = 1
-EPOCHS = 1
-SUBDIVISIONS = 64
 IMHEIGHT = 448
 IMWIDTH = 448
-CHANNELS = 3
-MOMENTUM = 0.9
-DECAY = 0.0005
 NB_CLASSES = 7
-IOU_THRESOLD = 0.4
-TRUE_BOX_WIDTH = 250
-TRUE_BOX_HEIGHT = 250
-LBD_NOOBJ = 0.5
-LBD_OBJ = 5
+IOU_THRESOLD = 0.2
+TRUE_BOX_WIDTH = 250/448
+TRUE_BOX_HEIGHT = 250/448
 GRID_SIZE = 7
-SCALE_FACTOR = 32
-LEARNING_RATE = 0.0001
+LBD_COORD = 5
+LBD_NOOBJ = 0.5
 
 
 class HandYolo(nn.Module):
@@ -36,19 +28,19 @@ class HandYolo(nn.Module):
         self.B1 = nn.BatchNorm2d(16)
         self.C2 = nn.Conv2d(16, 32, kernel_size=3, padding=1)
         self.B2 = nn.BatchNorm2d(32)
-        self.C3 = nn.Conv2d(32, 16, kernel_size=3, padding=1)
-        self.B3 = nn.BatchNorm2d(16)
-        self.C4 = nn.Conv2d(16, 32, kernel_size=3, padding=1)
-        self.B4 = nn.BatchNorm2d(32)
-        self.C5 = nn.Conv2d(32, 16, kernel_size=3, padding=1)
-        self.B5 = nn.BatchNorm2d(16)
-        self.C6 = nn.Conv2d(16, 32, kernel_size=3, padding=1)
+        self.C3 = nn.Conv2d(32, 64, kernel_size=3, padding=1)
+        self.B3 = nn.BatchNorm2d(64)
+        self.C4 = nn.Conv2d(64, 128, kernel_size=5, padding=2)
+        self.B4 = nn.BatchNorm2d(128)
+        self.C5 = nn.Conv2d(128, 64, kernel_size=3, padding=1)
+        self.B5 = nn.BatchNorm2d(64)
+        self.C6 = nn.Conv2d(64, 32, kernel_size=3, padding=1)
         self.B6 = nn.BatchNorm2d(32)
         self.C7 = nn.Conv2d(32, 16, kernel_size=3, padding=1)
         self.B7 = nn.BatchNorm2d(16)
-        self.C8 = nn.Conv2d(16, 32, kernel_size=3, padding=1)
-        self.B8 = nn.BatchNorm2d(32)
-        self.C9 = nn.Conv2d(32, 5+NB_CLASSES, kernel_size=3, padding=1)
+        self.C8 = nn.Conv2d(16, 8, kernel_size=3, padding=1)
+        self.B8 = nn.BatchNorm2d(8)
+        self.C9 = nn.Conv2d(8, 5+NB_CLASSES, kernel_size=3, padding=1)
         self.B9 = nn.BatchNorm2d(5+NB_CLASSES)
 
     def conv_forward(self, x):
@@ -89,10 +81,10 @@ class Yololoss(nn.Module):
         self.im_height = IMHEIGHT
         self.classes = NB_CLASSES
         self.iou_thresold = IOU_THRESOLD
-        self.true_box_width = TRUE_BOX_WIDTH/IMWIDTH
-        self.true_box_height = TRUE_BOX_HEIGHT/IMHEIGHT
+        self.true_box_width = TRUE_BOX_WIDTH
+        self.true_box_height = TRUE_BOX_HEIGHT
         self.lbd_noobj = LBD_NOOBJ
-        self.lbd_coord = LBD_OBJ
+        self.lbd_coord = LBD_COORD
         self.grid_size = GRID_SIZE
 
     def forward(self, y_pred, y_true, batch):
@@ -106,56 +98,28 @@ class Yololoss(nn.Module):
 
         y_pred = Grid*Grid*Ancres*(5+NB_classes)
         y_true = Grid*Grid*[bx_t, by_t, bh_t, bw_t, 1, ClassInOneHotVector]
-
-        We calculate the bounding box predictor
-        j that is responsible for an object by choosing the
-        bounding box with the largest intersection over union (IoU)
-        from the grid cell i where the object center is known to lie.
-
-        Thus, in our given example, for each of the two objects in
-        the image, we would loop through the j = 0, .., B predictions
-        in the known grid cell i (where the object center lies)
-        and find j with the highest IoU value.
-
-        prend y_pred et reshape en Grid*Grid*((1*5)+6)
-        crée une grille d'offset des angles.
-        prend y_pred reshape 0 c'est tx passe lui la sigmoide et ajoute l'offset
-        prend y_pred reshape 1 c'est ty passe lui la sigmoide et ajoute l'offset
-        prend y_pred reshape 2 c'est tw, eponentielle le et mulitplie par largeur ancre
-        prend y_pred reshape 3 c'est th, eponentielle le et mulitplie par hauteur ancre
 """
         self.batch = batch
         y_pred = y_pred.type(torch.FloatTensor)
         y_true = y_true.type(torch.FloatTensor)
 
-        # print("y_pred", y_pred)
-        # print("y_true", y_true)
-        offset = torch.linspace(0, 6, self.grid_size).repeat(
-            self.batch).repeat(
-            self.grid_size).view(
-            self.batch,  self.classes,  self.classes)
+        # Creating the offset grid to apply on the prediction.
+        offset = torch.linspace(0, 1-1/self.grid_size,  self.grid_size)
+        offset = offset.repeat(self.batch).repeat(self.grid_size)
+        offset = offset.view(self.batch,  self.grid_size,  self.grid_size)
+
         cl_t = y_true[:, 0]
+        # Label in % of the picture, so getting the real coordinates
         bx_t = y_true[:, 1]
         by_t = y_true[:, 2]
         bw_t = y_true[:, 3]
         bh_t = y_true[:, 4]
-        bx = ((torch.sigmoid(y_pred[:, :, :, 1]) +
-               offset)/self.grid_size)*self.im_width
-        by = ((torch.sigmoid(y_pred[:, :, :, 2]) +
-               offset)/self.grid_size)*self.im_height
-        bw = self.true_box_width * torch.exp(y_pred[:, :, :, 3])
-        bh = self.true_box_height * torch.exp(y_pred[:, :, :, 4])
-
-        C_pred = torch.sigmoid(y_pred[:, :, :, 0])
-        C_true = Iou(bx-bw/2, by-bh/2, bx+bw/2, by+bh/2,
-                     bx_t-bw_t/2, by_t-bh_t/2, bx_t+bw_t/2, by_t+bh_t/2,
-                     self.im_width, self.im_height,
-                     self.batch, self.grid_size)
-        ind_obj = torch.where(
-            C_true > 0.0002,  torch.tensor([1.0]), torch.tensor([0.0]))
-        ind_noobj = torch.where(
-            C_true < 0.0002, torch.tensor([1.0]), torch.tensor([0.0]))
-        # print(ind_noobj)
+        # Computation from the paper YoloV1
+        bx = (torch.sigmoid(y_pred[:, 1, :, :])*offset[0, 0, 1]) + offset
+        by = (torch.sigmoid(y_pred[:, 2, :, :])*offset[0, 0, 1]) + offset
+        bw = self.true_box_width * torch.exp(y_pred[:, 3, :, :])
+        bh = self.true_box_height * torch.exp(y_pred[:, 4, :, :])
+        # Creating a grid of the groundtruth to apply them easily on prediction
         bx_t = torch.cat([bx_t[i].repeat(self.grid_size).repeat(self.grid_size)
                           for i in range(len(bx_t))]).view(
             self.batch, self.grid_size, self.grid_size)
@@ -171,35 +135,100 @@ class Yololoss(nn.Module):
         bh_t = torch.cat([bh_t[i].repeat(self.grid_size).repeat(self.grid_size)
                           for i in range(len(bh_t))]).view(
             self.batch, self.grid_size, self.grid_size)
-
+        # The real label for confidence is the IoU of the predicted
+        # and the groundtruth box
+        C_pred = torch.sigmoid(y_pred[:, 0, :, :])
+        # zeros = torch.zeros([batch, self.grid_size, self.grid_size])
+        # screen = torch.ones(
+        #     [batch, self.grid_size, self.grid_size])*self.im_width
+        # xbox_upleft = torch.max(bx-bw/2, zeros)
+        # ybox_upleft = torch.max(by-bh/2, zeros)
+        # xbox_downright = torch.min(bx+bw/2, screen)
+        # ybox_downright = torch.min(by+bh/2, screen)
+        iou = Iou(bx*self.im_width-bw*self.im_width/2,
+                  by*self.im_width-bh*self.im_width/2,
+                  bx*self.im_width+bw*self.im_width/2,
+                  by*self.im_width+bh*self.im_width/2,
+                  bx_t*self.im_width-bw_t*self.im_width/2,
+                  by_t*self.im_width-bh_t*self.im_width/2,
+                  bx_t*self.im_width+bw_t*self.im_width/2,
+                  by_t*self.im_width+bh_t*self.im_width/2,
+                  self.im_width, self.im_height,
+                  self.batch, self.grid_size)
+        x_position_objet = (
+            bx_t//(self.im_width/self.grid_size)).type(torch.int64)
+        y_position_objet = (
+            by_t//(self.im_height/self.grid_size)).type(torch.int64)
+        C_true = torch.zeros(
+            [batch, self.grid_size, self.grid_size])
+        C_true[0, x_position_objet, y_position_objet] = 1
+        # C_true[0, x_position_objet-1, y_position_objet] = 1
+        # C_true[0, x_position_objet+1, y_position_objet] = 1
+        # C_true[0, x_position_objet, y_position_objet-1] = 1
+        # C_true[0, x_position_objet, y_position_objet+1] = 1
+        # C_true[0, x_position_objet-1, y_position_objet-1] = 1
+        # C_true[0, x_position_objet+1, y_position_objet+1] = 1
+        # C_true[0, x_position_objet+1, y_position_objet-1] = 1
+        # C_true[0, x_position_objet-1, y_position_objet+1] = 1
+        # Applying a thresold on the confidence score. The big 1 in the paper
+        # print(iou)
+        ind_obj = torch.where(iou > self.iou_thresold,
+                              torch.tensor([1.0]), torch.tensor([0.0]))
+        ind_noobj = 1 - ind_obj
         # Compute the first part of the loss for xi and yi
-        loss_coord = self.lbd_coord * ind_obj * \
-            (F.mse_loss(bx, bx_t) + F.mse_loss(by, by_t))
+        loss_coord = self.lbd_coord *\
+            (F.mse_loss(ind_obj*bx_t, ind_obj*bx,
+                        reduction='sum') +
+             F.mse_loss(ind_obj*by_t, ind_obj*by,
+                        reduction='sum'))/(bx.size()[0]*self.grid_size*self.grid_size)
 
         # Compute the second part of the loss for wi and hi
-        loss_size = self.lbd_coord * ind_obj * \
-            (F.mse_loss(torch.sqrt(bw), torch.sqrt(bw_t)) +
-             F.mse_loss(torch.sqrt(bh), torch.sqrt(bh_t)))
+        loss_size = self.lbd_coord *\
+            (F.mse_loss(ind_obj*torch.sqrt(bw), ind_obj*torch.sqrt(bw_t),
+                        reduction='sum') +
+             F.mse_loss(ind_obj*torch.sqrt(bh), ind_obj*torch.sqrt(bh_t),
+                        reduction='sum'))/(bw.size()[0]*self.grid_size*self.grid_size)
 
-        # Compute the third part of the loss for wi and hi
-        loss_conf_obj = ind_obj * F.mse_loss(C_pred, C_true)
+        # Compute the third part of the loss for confidence of object
+        loss_conf_obj = F.mse_loss(
+            ind_obj*C_pred, ind_obj*C_true, reduction='sum')/(C_pred.size()[0]*self.grid_size*self.grid_size)
 
-        # Compute the third part of the loss for wi and hi
-        loss__conf_noobj = self.lbd_noobj * \
-            ind_noobj * F.mse_loss(C_pred, C_true)
+        # Compute the fourth part of the loss for confidence of no object
+        loss_conf_noobj = self.lbd_noobj *\
+            F.mse_loss(ind_noobj*C_pred, ind_noobj*C_true,
+                       reduction='sum')/(C_pred.size()[0]*self.grid_size*self.grid_size)
 
         # Compute the last part of the loss for pci
-        classes_true = torch.zeros(7)
+        classes_true = torch.zeros(self.classes, 1)
         classes_true[cl_t.numpy()-1] = 1
-        classes_true = classes_true.repeat(self.grid_size).repeat(
-            self.classes).repeat(self.batch).view(
-            self.batch, self.classes, self.grid_size, self.grid_size)
-        loss_class = ind_obj * \
-            F.mse_loss(classes_true, y_pred[:, :, :, 5:5+self.classes])
+        classes_true = classes_true.repeat(
+            1, self.grid_size).repeat(1, self.grid_size)
+        classes_true = classes_true.repeat(1, self.batch)
+        classes_true = classes_true.view(self.batch, self.classes,
+                                         self.grid_size, self.grid_size)
+        ind_obj_class = ind_obj.repeat(self.classes, 1, 1, 1).view(
+            self.batch,
+            self.classes,
+            self.grid_size,
+            self.grid_size)
+        # print(ind_obj_class*y_pred[:, 5:, :, :])
+        loss_class = \
+            F.mse_loss(ind_obj_class*classes_true,
+                       ind_obj_class*y_pred[:, 5:, :, :],
+                       reduction='sum')/(y_pred.size()[0]*self.grid_size*self.grid_size*self.classes)
 
-        loss = torch.sum(loss_coord) + torch.sum(loss_size) +\
-            torch.sum(loss_conf_obj) + torch.sum(loss__conf_noobj) +\
-            torch.sum(loss_class)
+        # loss_coord = torch.max(loss_coord)
+        # loss_size = torch.max(loss_size)
+        # loss_conf_obj = torch.max(loss_conf_obj)
+        # loss_conf_noobj = torch.max(loss_conf_noobj)
+        # loss_class = torch.max(loss_class)
+        print(loss_coord.data,
+              loss_size.data,
+              loss_conf_obj.data,
+              loss_conf_noobj.data,
+              loss_class.data)
+        loss = loss_coord + loss_size + loss_conf_obj + loss_conf_noobj +\
+            loss_class
         return loss
 
 
@@ -209,14 +238,29 @@ class HandDataset(Dataset):
         self.root_dir = root_dir
         self.txt_files = glob.glob(self.root_dir+"/*.txt")
         self.img_files = glob.glob(self.root_dir+"/*.jpg")
+        self.transform_train = transforms.Compose([
+            transforms.RandomHorizontalFlip(),
+            transforms.RandomCrop(416),
+            transforms.RandomRotation(
+                30, resample=False, expand=False, center=None),
+            transforms.ColorJitter(
+                brightness=1, contrast=1, saturation=1, hue=0.25),
+            transforms.ToTensor(),
+            transforms.Normalize((0.4914, 0.4822, 0.4465),
+                                 (0.2023, 0.1994, 0.2010)),
+        ])
 
     def __getitem__(self, index):
         with open(self.img_files[index], 'rb') as f:
-            img = Image.open(f).convert('RGB')
+            x = Image.open(f).convert('RGB')
+        # for trsf in [self.transform_train]:
+        #     x = trsf(x)
+        x = transforms.ToTensor()(x)
+        x = transforms.Normalize((0.4914, 0.4822, 0.4465),
+                                 (0.2023, 0.1994, 0.2010))(x)
         with open(self.txt_files[index], 'r') as f:
             label = np.array(f.read().split(" "), dtype=float)
-            x = transforms.ToTensor()(img)
-            y = label
+        y = torch.from_numpy(label)
         return x, y
 
     def __len__(self):
