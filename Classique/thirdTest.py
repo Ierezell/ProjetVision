@@ -13,6 +13,8 @@ detectionZoneTop = 1
 detectionZoneRight = 250
 detectionZoneBottom = 480-1
 seuilDeplacement = 30 #exprimé en pixels
+imagePerClass = 20
+imageName = 'hand'
 #end parameters
 
 
@@ -153,26 +155,26 @@ while(True):
         if touche == ord('s'):
             #resize image
             imageToSave = cv2.resize(imageToSave,(256, 256),interpolation = cv2.INTER_CUBIC)
-            name = 'hand'+str(nImage)+'.png'
-            if nImage<20:
+            name = imageName+str(nImage)+'.png'
+            if nImage<imagePerClass:
                 print('classe index')
                 relativePath = 'dataset/index/'
-            elif nImage <40:
+            elif nImage <2*imagePerClass:
                 print('classe spock')
                 relativePath = 'dataset/spock/'
-            elif nImage < 60:
+            elif nImage < 3*imagePerClass:
                 print('classe poing')
                 relativePath = 'dataset/poing/'
-            elif nImage < 80:
+            elif nImage < 4*imagePerClass:
                 print('classe plat')
                 relativePath = 'dataset/plat/'
-            elif nImage < 100:
+            elif nImage < 5*imagePerClass:
                 print('classe pouceGauche')
                 relativePath = 'dataset/pouceGauche/'
-            elif nImage < 120:
+            elif nImage < 6*imagePerClass:
                 print('classe pouceDroit')
                 relativePath = 'dataset/pouceDroit/'
-            elif nImage <140:
+            elif nImage <7*imagePerClass:
                 print('classe metal')
                 relativePath = 'dataset/metal/'
                 
@@ -199,6 +201,9 @@ import time
 start = time.time()
 end = time.time()
 print(end-start)
+
+camWidth = cap.get(cv2.CAP_PROP_FRAME_WIDTH)
+camHeight = cap.get(cv2.CAP_PROP_FRAME_HEIGHT)
 """
 
 
