@@ -34,6 +34,7 @@ w = 0
 nImage = 0
 text = ''
 nextClass = 'index'
+classDetected = '?'
 
 print('classe '+nextClass)
 
@@ -145,7 +146,9 @@ while(True):
         
         # Display the resulting frames
         cv2.putText(frame, "dernier mouvement: {}".format(text), (10, 20),
-		            cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 255), 2)
+		            cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 255), 2)
+        cv2.putText(frame, "classe: {}".format(classDetected), (10, 450),
+		            cv2.FONT_HERSHEY_SIMPLEX, 0.7, (10, 10, 255), 2)
         cv2.imshow('frame',frame)
         cv2.imshow('gray',gray)
         cv2.imshow('frameDelta',roiDelta)
