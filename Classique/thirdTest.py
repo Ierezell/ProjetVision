@@ -28,6 +28,7 @@ nImage = 0
 text = ''
 
 cap = cv2.VideoCapture(0)
+print('classe index')
 
 while(True):
     # Capture frame-by-frame
@@ -153,7 +154,29 @@ while(True):
             #resize image
             imageToSave = cv2.resize(imageToSave,(256, 256),interpolation = cv2.INTER_CUBIC)
             name = 'hand'+str(nImage)+'.png'
-            cv2.imwrite(name, imageToSave)
+            if nImage<20:
+                print('classe index')
+                relativePath = 'dataset/index/'
+            elif nImage <40:
+                print('classe spock')
+                relativePath = 'dataset/spock/'
+            elif nImage < 60:
+                print('classe poing')
+                relativePath = 'dataset/poing/'
+            elif nImage < 80:
+                print('classe plat')
+                relativePath = 'dataset/plat/'
+            elif nImage < 100:
+                print('classe pouceGauche')
+                relativePath = 'dataset/pouceGauche/'
+            elif nImage < 120:
+                print('classe pouceDroit')
+                relativePath = 'dataset/pouceDroit/'
+            elif nImage <140:
+                print('classe metal')
+                relativePath = 'dataset/metal/'
+                
+            cv2.imwrite(relativePath+name, imageToSave)
             nImage += 1
         elif touche==ord('r'):
             previousRoi=gray
