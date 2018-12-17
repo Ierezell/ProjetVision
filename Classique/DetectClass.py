@@ -10,8 +10,7 @@ import time
 from torchvision import transforms
 from torchvision.datasets import ImageFolder
 import numpy as np
-from matplotlib.pyplot import plot, ion, show, draw
-import matplotlib.pyplot as plt
+from matplotlib.pyplot import plot, ion, show, draw, pause
 from PIL import Image
 
 
@@ -112,17 +111,19 @@ class DetectHandPerceptron():
                 time.time()-start_time))
             print(' [-] epoch {:4}/{:}, test loss {:.6f}'.format(
                 i_epoch+1, epoch, np.mean(test_losses)))
-            self.save(path=f"./Backup/HandYolo_{str(i_epoch)}.pt")
+            self.save(path=f"./Backup/DetectHand_{str(i_epoch)}.pt")
             plot(plop)
             plot(plop2)
             draw()
-            plt.pause(0.001)
+            pause(0.001)
+        plot(plop)
+        plot(plop2)
+        show()
 
     def predict(self, image_in_numpy):
         img = torch.from_numpy(image_in_numpy)
         self.model.eval()
-        prediction = self.model(img)
-        print(prediction)
+        return self.model(img)
 
     def score(self):
         accuracy = 0
@@ -144,7 +145,7 @@ class DetectHandPerceptron():
 
 
 detector = DetectHandPerceptron(nb_classes=7)
-detector.train(batch_size=32, epoch=5)
+detector.train(batch_size=32, epoch=20)
 imagepath = "./dataset/index/hand0.png"
 pilImage = Image.open(imagepath).convert("L")
 # detector.predict(transforms.ToTensor()(pilImage))
