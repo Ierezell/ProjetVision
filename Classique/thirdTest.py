@@ -1,6 +1,8 @@
 import numpy as np
 import cv2
 import imutils
+import glob
+import re
 
 def nothing(x):
     pass
@@ -17,8 +19,8 @@ detectionZoneTop = 1
 detectionZoneRight = 250
 detectionZoneBottom = int(camHeight-1)
 seuilDeplacement = 30 #exprimé en pixels
-imagePerClass = 20
-imageName = 'test'
+imagePerClass = 10
+imageName = 'hand'
 #end parameters
 
 #init values
@@ -157,34 +159,46 @@ while(True):
             #resize image
             imageToSave = cv2.resize(imageToSave,(256, 256),interpolation = cv2.INTER_CUBIC)
             
-            name = imageName+str(nImage)+'.png'
+            """getImgNb = re.compile(r"hand(\d+)\.png")"""
             
             if nImage<imagePerClass:              
                 relativePath = 'dataset/index/'
                 if nImage == imagePerClass -1:
-                    nextClass = 'spock'
+                    nextClass = 'spock'  
+                """print(glob.glob('./dataset/index/*'))
+                imgNb = max([int(getImgNb.findall(filename)[0])
+                for filename in glob.glob('./dataset/index/*.png')], default=0)+1"""
+    
             elif nImage <2*imagePerClass:
                 relativePath = 'dataset/spock/'
                 if nImage == 2*imagePerClass -1:
                     nextClass = 'poing'
+    
             elif nImage < 3*imagePerClass:
                 relativePath = 'dataset/poing/'
                 if nImage == 3*imagePerClass -1:
                     nextClass = 'plat'
+    
             elif nImage < 4*imagePerClass:
                 relativePath = 'dataset/plat/'
                 if nImage == 4*imagePerClass -1:
                     nextClass = 'pouceGauche'
+    
             elif nImage < 5*imagePerClass:
                 relativePath = 'dataset/pouceGauche/'
                 if nImage == 5*imagePerClass -1:
                     nextClass = 'pouceDroit'
+                    
             elif nImage < 6*imagePerClass:
                 relativePath = 'dataset/pouceDroit/'
                 if nImage == 6*imagePerClass -1:
                     nextClass = 'metal'
+                                       
             elif nImage <7*imagePerClass:
                 relativePath = 'dataset/metal/'
+                
+            #name of the image        
+            name = imageName+str(imgNb)+'.png'
             
             #save image
             cv2.imwrite(relativePath+name, imageToSave)
