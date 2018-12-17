@@ -58,7 +58,10 @@ class DetectHandPerceptron():
         self.model = _DetectHandNet(
             len(self.dataset[0][0][0][0])*len(self.dataset[0][0][0][:, 0]),
             nb_classes)
-
+        
+    def getDicClasses(self):
+        return self.dataset.class_to_idx
+    
     def train(self, batch_size=32, epoch=50, lr=0.01, momentum=0.7):
         self._indices = list(range(len(self.dataset.imgs)))
         self._train_idx = np.random.choice(self._indices, size=int(

@@ -3,6 +3,14 @@ import cv2
 import imutils
 import glob
 import re
+from DetectClass import DetectHandPerceptron
+
+perceptron = DetectHandPerceptron()
+# perceptron.train(batch=32, epochs=5)
+perceptron.load('Backup/HandYolo_4.pt')
+dico_des_classes = perceptron.getDicClasses()
+
+
 
 def nothing(x):
     pass
@@ -64,7 +72,8 @@ while(True):
     	#the first frame after reset
         roiDelta = cv2.absdiff(previousRoi, gray)
         thresh = cv2.threshold(roiDelta, 25, 255, cv2.THRESH_BINARY)[1]
-        thresh = cv2.dilate(thresh, None, iterations=2)  
+        thresh = cv2.dilate(thresh, None, iterations=2)
+               
         
         #select contours
         cnts = cv2.findContours(thresh.copy(), cv2.RETR_EXTERNAL,
@@ -143,6 +152,10 @@ while(True):
         
         imageToSave = thresh[y:y+h, x:x+w]
         
+        #identify class
+        prediction = perceptron.predict(imageToSave) # [probC1, probC2,... probC7]
+        indexClasse = prediction.index(max(prediction))
+        
         
         # Display the resulting frames
         cv2.putText(frame, "dernier mouvement: {}".format(text), (10, 20),
@@ -212,6 +225,8 @@ while(True):
             nImage += 1
         elif touche==ord('r'):
             previousRoi=gray
+            
+        
         elif touche == ord('q'):
             break
     else:
