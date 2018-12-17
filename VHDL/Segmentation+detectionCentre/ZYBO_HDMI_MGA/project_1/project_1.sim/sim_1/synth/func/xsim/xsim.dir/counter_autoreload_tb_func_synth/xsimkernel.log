@@ -1,7 +1,0 @@
-Running: xsim.dir/counter_autoreload_tb_func_synth/xsimk.exe -simmode gui -wdb counter_autoreload_tb_func_synth.wdb -simrunnum 0 -socket 1336
-Design successfully loaded
-Design Loading Memory Usage: 5344 KB (Peak: 5344 KB)
-Design Loading CPU Usage: 0 ms
-Simulation completed
-Simulation Memory Usage: 14104 KB (Peak: 14104 KB)
-Simulation CPU Usage: 3061 ms

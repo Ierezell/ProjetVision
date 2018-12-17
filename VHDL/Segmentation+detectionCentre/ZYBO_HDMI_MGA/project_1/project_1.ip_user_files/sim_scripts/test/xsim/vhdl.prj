@@ -1,5 +1,0 @@
-vhdl xil_defaultlib  \
-"../../../bd/test/sim/test.vhd" \
-"../../../bd/test/ip/test_div_gen_0_0/sim/test_div_gen_0_0.vhd" \
-
-nosort

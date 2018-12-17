@@ -1,7 +1,0 @@
-Running: xsim.dir/divideur_Nbit_by_Mbits_behav/xsimk.exe -simmode gui -wdb divideur_Nbit_by_Mbits_behav.wdb -simrunnum 0 -socket 62739
-Design successfully loaded
-Design Loading Memory Usage: 4864 KB (Peak: 4864 KB)
-Design Loading CPU Usage: 15 ms
-Simulation completed
-Simulation Memory Usage: 5516 KB (Peak: 5516 KB)
-Simulation CPU Usage: 46 ms

@@ -1,3 +1,0 @@
-test.vhd,vhdl,xil_defaultlib,../../../bd/test/sim/test.vhd,
-test_div_gen_0_0.vhd,vhdl,xil_defaultlib,../../../bd/test/ip/test_div_gen_0_0/sim/test_div_gen_0_0.vhd,
-glbl.v,Verilog,xil_defaultlib,glbl.v

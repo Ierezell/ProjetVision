@@ -1,7 +1,0 @@
-# compile vhdl design source files
-vhdl xil_defaultlib  \
-"test_wrapper_tb_func_synth.vhd" \
-"../../../../../project_1.srcs/sim_1/new/test_wrapper_tb.vhd" \
-
-# Do not sort compile order
-nosort
