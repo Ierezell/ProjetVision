@@ -58,7 +58,7 @@ for i_epoch in range(EPOCHS):
     model.eval()
     for batch_test in test_loader:
         images_test, targets_test = batch_test
-        images_test.clone().detach().requires_grad_(True)
+        images_test.clone().detach().requires_grad_(False)
         predictions_test = model(images_test)
         loss_test = criterion(
             predictions_test, targets_test, images_test.shape[0])
