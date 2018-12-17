@@ -30,7 +30,7 @@ nImage = 0
 text = ''
 
 cap = cv2.VideoCapture(0)
-print('classe index')
+#print('classe index')
 
 while(True):
     # Capture frame-by-frame
@@ -98,8 +98,8 @@ while(True):
             diffX = center[0] - previousCenter[0]
             diffY = center[1] - previousCenter[1]
             if abs(diffX) > seuilDeplacement or abs(diffY) >seuilDeplacement:
-                print('diffX = ' + str(diffX))
-                print('diffY = ' + str(diffY))
+                #print('diffX = ' + str(diffX))
+                #print('diffY = ' + str(diffY))
                 """
                 if abs(diffX) > abs(diffY):
                     print('mouvement horizontal')
