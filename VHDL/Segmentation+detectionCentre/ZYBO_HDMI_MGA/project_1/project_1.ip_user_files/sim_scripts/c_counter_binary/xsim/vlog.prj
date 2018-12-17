@@ -1,8 +1,0 @@
-verilog xil_defaultlib  \
-"../../../bd/c_counter_binary/ip/c_counter_binary_xlconstant_0_0/sim/c_counter_binary_xlconstant_0_0.v" \
-"../../../bd/c_counter_binary/ip/c_counter_binary_xlconstant_0_1/sim/c_counter_binary_xlconstant_0_1.v" \
-"../../../bd/c_counter_binary/ip/c_counter_binary_xlconstant_0_2/sim/c_counter_binary_xlconstant_0_2.v" \
-
-verilog xil_defaultlib "glbl.v"
-
-nosort

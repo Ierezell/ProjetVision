@@ -1,7 +1,0 @@
-Running: xsim.dir/c_counter_binary_wrapper_tb_func_synth/xsimk.exe -simmode gui -wdb c_counter_binary_wrapper_tb_func_synth.wdb -simrunnum 0 -socket 65313
-Design successfully loaded
-Design Loading Memory Usage: 12324 KB (Peak: 12324 KB)
-Design Loading CPU Usage: 92 ms
-Simulation completed
-Simulation Memory Usage: 14616 KB (Peak: 14616 KB)
-Simulation CPU Usage: 796 ms
