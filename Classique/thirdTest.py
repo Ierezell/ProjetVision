@@ -18,7 +18,7 @@ def nothing(x):
     pass
 
 
-# einit video stream
+# init video stream
 cap = cv2.VideoCapture(0)
 camWidth = cap.get(cv2.CAP_PROP_FRAME_WIDTH)
 camHeight = cap.get(cv2.CAP_PROP_FRAME_HEIGHT)
@@ -38,6 +38,10 @@ imageName = 'hand'
 previousRoi = None
 previousCenter = None
 frameCounter = 0
+green = (0, 255, 0)
+blue = (255, 0, 0)
+red = (0, 0, 255)
+pink = (255, 0, 255)
 x = 0
 y = 0
 h = 0
@@ -61,7 +65,7 @@ while(True):
         cv2.rectangle(frame,
                       (detectionZoneLeft-1, detectionZoneTop-1),
                       (detectionZoneRight+1, detectionZoneBottom+1),
-                      (255, 0, 255), 0)
+                      pink, 0)
         roi = frame[detectionZoneTop:detectionZoneBottom,
                     detectionZoneLeft:detectionZoneRight]
 
@@ -77,7 +81,7 @@ while(True):
         # the first frame after reset
         roiDelta = cv2.absdiff(previousRoi, gray)
         thresh = cv2.threshold(roiDelta, 25, 255, cv2.THRESH_BINARY)[1]
-        thresh = cv2.dilate(thresh, None, iterations=2)
+        thresh = cv2.dilate(thresh, None, iterations=4)
 
         # select contours
         cnts = cv2.findContours(thresh.copy(), cv2.RETR_EXTERNAL,
@@ -85,36 +89,63 @@ while(True):
         cnts = imutils.grab_contours(cnts)
 
         # loop over the contours
+        minAreaVar = minArea
         for c in cnts:
-                # if the contour is too small, ignore it
-            if cv2.contourArea(c) >= minArea:
-                # compute the bounding box for the contour, draw it on the frame,
-                # and update the rectangle
+                # if the contour is too small, ignore it: else, keep the maximum
+            if cv2.contourArea(c) > minAreaVar:
+                # compute the bounding box for the contour
+                minAreaVar = cv2.contourArea(c)
                 (x, y, w, h) = cv2.boundingRect(c)
                 x = x + detectionZoneLeft
                 y = y + detectionZoneTop
                 w = w + detectionZoneLeft
                 h = w
-                cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 2)
-                break   # que fait un break ici ?  
-                        #Il permet de n'avoir qu'un seul carré à l'écran
+        #draw the bounding box on the frame
+        cv2.rectangle(frame, (x, y), (x + w, y + h), green, 2)
+                
 
         # compute the center of the hand and display a circle on it
         centerX = x+(w//2)
         centerY = y+(h//2)
         center = (centerX, centerY)
-        cv2.circle(frame, center, 5, (255, 0, 0))
+        cv2.circle(frame, center, 5, green)
+
+        #second iteration
+        thresh2 = thresh[y:y+h,x:x+w]
+        cnts2 = cv2.findContours(thresh2.copy(), cv2.RETR_EXTERNAL,
+                                cv2.CHAIN_APPROX_SIMPLE)
+        cnts2 = imutils.grab_contours(cnts2)
+        # loop over the contours
+        for c2 in cnts2:
+                # if the contour is too small, ignore it
+            if cv2.contourArea(c2) >= minArea:
+                # compute the bounding box for the contour, draw it on the frame,
+                # and update the rectangle
+                (x2, y2, w2, h2) = cv2.boundingRect(c2)
+                print('x2 = '+str(x2)+', y2 = '+str(y2)+', w2 = '+str(w2)+', h2 = '+str(h2))
+                x2 = x2 + x
+                y2 = y2 + y
+                h2 = w2
+                cv2.rectangle(frame, (x2, y2), (x2 + w2, y2 + h2), blue, 2)
+                #break  
+        # compute the center of the hand and display a circle on it
+        centerX2 = x2+(w2//2)
+        centerY2 = y2+(h2//2)
+        center2 = (centerX2, centerY2)
+        cv2.circle(frame, center2, 5, blue)
+
+        
 
         # if the previous center is None, initialize it
         if previousCenter is None:
-            previousCenter = center
+            previousCenter = center2
 
         # update the reference center after 15 frames
         if frameCounter >= 15:
             frameCounter = 0
             # operation to compute the movement of the center here
-            diffX = center[0] - previousCenter[0]
-            diffY = center[1] - previousCenter[1]
+            diffX = center2[0] - previousCenter[0]
+            diffY = center2[1] - previousCenter[1]
             if abs(diffX) > seuilDeplacement or abs(diffY) > seuilDeplacement:
                 """
                 if abs(diffX) > abs(diffY):
@@ -151,16 +182,16 @@ while(True):
                 elif abs(diffX) < seuilDeplacement and -diffY >= seuilDeplacement:
                     text = 'en haut'
 
-            previousCenter = center
+            previousCenter = center2
 
-            imageToSave = thresh[y:y+h, x:x+w]
+            imageToSave = thresh2  #interieur du rectangle vert
 
         try:
             imageToSave = cv2.resize(
                 imageToSave, (256, 256), interpolation=cv2.INTER_CUBIC)
         except:
             imageToSave = np.zeros((256, 256))
-
+        """
         # identify class
         #print(imageToSave.shape)
         # [probC1, probC2,... probC7]
@@ -169,13 +200,13 @@ while(True):
         print(prediction)
         #print(max_value, max_index)
         print(dico_des_classes[int(max_index)])
-
+        """
 
         # Display the resulting frames
         cv2.putText(frame, "dernier mouvement: {}".format(text), (10, 20),
-                    cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 255), 2)
+                    cv2.FONT_HERSHEY_SIMPLEX, 0.7, red, 2)
         cv2.putText(frame, f"classe: {dico_des_classes[int(max_index)]}",
-                    (10, 450), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (10, 10, 255), 2)
+                    (10, 450), cv2.FONT_HERSHEY_SIMPLEX, 0.7, red, 2)
         cv2.imshow('frame', frame)
         cv2.imshow('gray', gray)
         cv2.imshow('frameDelta', roiDelta)
