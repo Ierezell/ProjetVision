@@ -203,9 +203,6 @@ while(True):
                 relativePath = 'dataset/index/'
                 if nImage == imagePerClass -1:
                     nextClass = 'spock'  
-                """print(glob.glob('./dataset/index/*'))
-                imgNb = max([int(getImgNb.findall(filename)[0])
-                for filename in glob.glob('./dataset/index/*.png')], default=0)+1"""
     
             elif nImage <2*imagePerClass:
                 relativePath = 'dataset/spock/'
@@ -236,7 +233,7 @@ while(True):
                 relativePath = 'dataset/metal/'
                 
             #name of the image        
-            name = imageName+str(imgNb)+'.png'
+            name = imageName+str(nImage)+'.png'
             
             #save image
             cv2.imwrite(relativePath+name, imageToSave)
