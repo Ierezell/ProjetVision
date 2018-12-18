@@ -72,7 +72,6 @@ while(True):
 
         if previousRoi is None:
             previousRoi = gray
-            continue # Pas besoin de continue il va contiuer tout seul
 
         # compute the absolute difference between the current frame and
         # the first frame after reset
@@ -88,19 +87,17 @@ while(True):
         # loop over the contours
         for c in cnts:
                 # if the contour is too small, ignore it
-            if cv2.contourArea(c) < minArea:
-                continue                    # A quoi sert le if si on continue
-                                            # a chaque fois ??
-
-            # compute the bounding box for the contour, draw it on the frame,
-            # and update the text
-            (x, y, w, h) = cv2.boundingRect(c)
-            x = x + detectionZoneLeft
-            y = y + detectionZoneTop
-            w = w + detectionZoneLeft
-            h = w
-            cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 2)
-            break   # que fait un break ici ?
+            if cv2.contourArea(c) >= minArea:
+                # compute the bounding box for the contour, draw it on the frame,
+                # and update the rectangle
+                (x, y, w, h) = cv2.boundingRect(c)
+                x = x + detectionZoneLeft
+                y = y + detectionZoneTop
+                w = w + detectionZoneLeft
+                h = w
+                cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 2)
+                break   # que fait un break ici ?  
+                        #Il permet de n'avoir qu'un seul carré à l'écran
 
         # compute the center of the hand and display a circle on it
         centerX = x+(w//2)
@@ -111,8 +108,6 @@ while(True):
         # if the previous center is None, initialize it
         if previousCenter is None:
             previousCenter = center
-            continue                # pourquoi le continue ?
-                                    # on continue apres un if de base...
 
         # update the reference center after 15 frames
         if frameCounter >= 15:
@@ -167,28 +162,14 @@ while(True):
             imageToSave = np.zeros((256, 256))
 
         # identify class
-        print(imageToSave.shape)
+        #print(imageToSave.shape)
         # [probC1, probC2,... probC7]
         prediction = perceptron.predict(imageToSave)
         max_value, max_index = torch.max(prediction, 1)
         print(prediction)
-        print(max_value, max_index)
-        #indexClass = prediction.index(max(prediction))
+        #print(max_value, max_index)
         print(dico_des_classes[int(max_index)])
-        # if indexClass == 0:
-        #     classDetected = 'index'
-        # elif indexClass == 1:
-        #     classDetected = 'metal'
-        # elif indexClass == 2:
-        #     classDetected = 'plat'
-        # elif indexClass == 3:
-        #     classDetected = 'poing'
-        # elif indexClass == 4:
-        #     classDetected = 'pouceDroit'
-        # elif indexClass == 5:
-        #     classDetected = 'pouceGauche'
-        # elif indexClass == 6:
-        #     classDetected = 'spock'
+
 
         # Display the resulting frames
         cv2.putText(frame, "dernier mouvement: {}".format(text), (10, 20),
@@ -208,24 +189,13 @@ while(True):
             imageToSave = cv2.resize(
                 imageToSave, (256, 256), interpolation=cv2.INTER_CUBIC)
 
-            """getImgNb = re.compile(r"hand(\d+)\.png")"""
 
             if nImage < imagePerClass:
                 relativePath = 'dataset/index/'
-<<<<<<< HEAD
-                if nImage == imagePerClass - 1:
-                    nextClass = 'spock'
-                """print(glob.glob('./dataset/index/*'))
-                imgNb = max([int(getImgNb.findall(filename)[0])
-                for filename in glob.glob('./dataset/index/*.png')], default=0)+1"""
-
-            elif nImage < 2*imagePerClass:
-=======
                 if nImage == imagePerClass -1:
                     nextClass = 'spock'  
     
             elif nImage <2*imagePerClass:
->>>>>>> f198be696752746aef39231e30d9f7a1024704dd
                 relativePath = 'dataset/spock/'
                 if nImage == 2*imagePerClass - 1:
                     nextClass = 'poing'
@@ -252,19 +222,12 @@ while(True):
 
             elif nImage < 7*imagePerClass:
                 relativePath = 'dataset/metal/'
-<<<<<<< HEAD
 
-            # name of the image
-            name = imageName+str(imgNb)+'.png'
-
-            # save image
-=======
                 
             #name of the image        
             name = imageName+str(nImage)+'.png'
             
             #save image
->>>>>>> f198be696752746aef39231e30d9f7a1024704dd
             cv2.imwrite(relativePath+name, imageToSave)
 
             # print next class
@@ -286,7 +249,7 @@ cv2.destroyAllWindows()
 
 """
 ==================
-   somes notes
+   some notes
 ==================
 
 import time
