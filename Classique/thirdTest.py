@@ -3,6 +3,15 @@ import cv2
 import imutils
 import glob
 import re
+from DetectClass import DetectHandPerceptron
+
+#init detectClass
+perceptron = DetectHandPerceptron(nb_classes = 7)
+"perceptron.train(batch=32, epochs=5)"
+perceptron.load('Backup/HandYolo_4.pt')
+dico_des_classes = perceptron.getDicClasses()
+print(dico_des_classes)
+
 
 def nothing(x):
     pass
@@ -64,7 +73,8 @@ while(True):
     	#the first frame after reset
         roiDelta = cv2.absdiff(previousRoi, gray)
         thresh = cv2.threshold(roiDelta, 25, 255, cv2.THRESH_BINARY)[1]
-        thresh = cv2.dilate(thresh, None, iterations=2)  
+        thresh = cv2.dilate(thresh, None, iterations=2)
+               
         
         #select contours
         cnts = cv2.findContours(thresh.copy(), cv2.RETR_EXTERNAL,
@@ -141,7 +151,32 @@ while(True):
                     
             previousCenter = center
         
-        imageToSave = thresh[y:y+h, x:x+w]
+        
+            imageToSave = thresh[y:y+h, x:x+w]
+        
+        try :
+            imageToSave = cv2.resize(imageToSave,(256, 256),interpolation = cv2.INTER_CUBIC)
+        except :
+            imageToSave = np.zeros((256,256))
+            
+        #identify class
+        print(imageToSave.shape)
+        prediction = perceptron.predict(imageToSave) # [probC1, probC2,... probC7]
+        indexClass = prediction.index(max(prediction))
+        if indexClass == 0:
+            classDetected = 'index'
+        elif indexClass == 1:
+            classDetected = 'metal'
+        elif indexClass == 2:
+            classDetected = 'plat'
+        elif indexClass == 3:
+            classDetected = 'poing'
+        elif indexClass == 4:
+            classDetected = 'pouceDroit'
+        elif indexClass == 5:
+            classDetected = 'pouceGauche'
+        elif indexClass == 6:
+            classDetected = 'spock'
         
         
         # Display the resulting frames
@@ -212,6 +247,8 @@ while(True):
             nImage += 1
         elif touche==ord('r'):
             previousRoi=gray
+            
+        
         elif touche == ord('q'):
             break
     else:

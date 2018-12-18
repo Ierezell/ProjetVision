@@ -59,7 +59,10 @@ class DetectHandPerceptron():
         self.model = _DetectHandNet(
             len(self.dataset[0][0][0][0])*len(self.dataset[0][0][0][:, 0]),
             nb_classes)
-
+        
+    def getDicClasses(self):
+        return self.dataset.class_to_idx
+    
     def train(self, batch_size=32, epoch=50, lr=0.01, momentum=0.7):
         self._indices = list(range(len(self.dataset.imgs)))
         self._train_idx = np.random.choice(self._indices, size=int(
@@ -134,6 +137,8 @@ class DetectHandPerceptron():
 
     def predict(self, image_in_numpy):
         img = torch.from_numpy(image_in_numpy)
+        img = img.view(1,1,img.size()[0],img.size()[1])
+        img = img.type(torch.DoubleTensor) 
         self.model.eval()
         return self.model(img)
 
@@ -158,9 +163,10 @@ class DetectHandPerceptron():
     def load(self, path='./Backup/DetectHandNet.pt'):
         self.model.load_state_dict(torch.load(path))
 
-
+"""
 detector = DetectHandPerceptron(nb_classes=7)
 detector.train(batch_size=32, epoch=20)
 imagepath = "./dataset/index/hand0.png"
 pilImage = Image.open(imagepath).convert("L")
 # detector.predict(transforms.ToTensor()(pilImage))
+"""
