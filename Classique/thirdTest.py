@@ -212,6 +212,7 @@ while(True):
 
             if nImage < imagePerClass:
                 relativePath = 'dataset/index/'
+<<<<<<< HEAD
                 if nImage == imagePerClass - 1:
                     nextClass = 'spock'
                 """print(glob.glob('./dataset/index/*'))
@@ -219,6 +220,12 @@ while(True):
                 for filename in glob.glob('./dataset/index/*.png')], default=0)+1"""
 
             elif nImage < 2*imagePerClass:
+=======
+                if nImage == imagePerClass -1:
+                    nextClass = 'spock'  
+    
+            elif nImage <2*imagePerClass:
+>>>>>>> f198be696752746aef39231e30d9f7a1024704dd
                 relativePath = 'dataset/spock/'
                 if nImage == 2*imagePerClass - 1:
                     nextClass = 'poing'
@@ -245,11 +252,19 @@ while(True):
 
             elif nImage < 7*imagePerClass:
                 relativePath = 'dataset/metal/'
+<<<<<<< HEAD
 
             # name of the image
             name = imageName+str(imgNb)+'.png'
 
             # save image
+=======
+                
+            #name of the image        
+            name = imageName+str(nImage)+'.png'
+            
+            #save image
+>>>>>>> f198be696752746aef39231e30d9f7a1024704dd
             cv2.imwrite(relativePath+name, imageToSave)
 
             # print next class
