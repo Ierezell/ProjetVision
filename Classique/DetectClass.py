@@ -10,7 +10,7 @@ import time
 from torchvision import transforms
 from torchvision.datasets import ImageFolder
 import numpy as np
-from matplotlib.pyplot import plot, ion, show, draw, pause
+from matplotlib.pyplot import plot, ion, show, draw, pause, figure
 from PIL import Image
 
 
@@ -51,19 +51,19 @@ class DetectHandPerceptron():
     def __init__(self, nb_classes):
         transform_train = transforms.Compose([transforms.RandomRotation(
             20, resample=Image.BILINEAR),
-            transforms.ToTensor(),
-        ])
+            transforms.ToTensor()])
         self.nb_classes = nb_classes
         self.dataset = ImageFolder(
             root='dataset', transform=transform_train)
+        print(len(self.dataset.imgs))
         self.model = _DetectHandNet(
             len(self.dataset[0][0][0][0])*len(self.dataset[0][0][0][:, 0]),
             nb_classes)
-        
+
     def getDicClasses(self):
         return self.dataset.class_to_idx
-    
-    def train(self, batch_size=32, epoch=50, lr=0.01, momentum=0.7):
+
+    def train(self, batch_size=32, epoch=50, lr=0.01):
         self._indices = list(range(len(self.dataset.imgs)))
         self._train_idx = np.random.choice(self._indices, size=int(
             np.floor(0.9*len(self._indices))), replace=False)
@@ -98,7 +98,8 @@ class DetectHandPerceptron():
                 predictions = self.model(images)
                 # predictions = predictions.view(len(pred))
                 # print("predictions", predictions, "--- Target", targets)
-                loss = criterion(predictions, new_label)/len(targets)
+                loss = criterion(predictions, new_label)/(
+                    self.nb_classes*len(targets))
                 loss.backward()
                 optimizer.step()
                 train_losses.append(loss.item())
@@ -116,7 +117,8 @@ class DetectHandPerceptron():
                 images_test.clone().detach().requires_grad_(False)
                 predictions_test = self.model(images_test)
                 loss_test = criterion(
-                    predictions_test, new_label_test)/len(targets_test)
+                    predictions_test, new_label_test)/(
+                        self.nb_classes*len(targets_test))
                 test_losses.append(loss_test.item())
             plop2.append(np.mean(test_losses))
             self.model.train()
@@ -131,15 +133,15 @@ class DetectHandPerceptron():
             plot(plop2)
             draw()
             pause(0.001)
+        figure()
         plot(plop)
         plot(plop2)
         show()
 
     def predict(self, image_in_numpy):
-        img = torch.from_numpy(image_in_numpy)
-        img = img.view(1,1,img.size()[0],img.size()[1])
-        img = img.type(torch.DoubleTensor) 
-        self.model.eval()
+        img = torch.from_numpy(image_in_numpy).double()
+        img = img.view(1, 1, img.size()[0], img.size()[1])
+        img = Variable(img).float()
         return self.model(img)
 
     def getDicoClasse(self):
@@ -162,11 +164,3 @@ class DetectHandPerceptron():
 
     def load(self, path='./Backup/DetectHandNet.pt'):
         self.model.load_state_dict(torch.load(path))
-
-"""
-detector = DetectHandPerceptron(nb_classes=7)
-detector.train(batch_size=32, epoch=20)
-imagepath = "./dataset/index/hand0.png"
-pilImage = Image.open(imagepath).convert("L")
-# detector.predict(transforms.ToTensor()(pilImage))
-"""
