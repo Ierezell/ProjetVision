@@ -53,6 +53,7 @@ class DetectHandPerceptron():
             20, resample=Image.BILINEAR),
             transforms.ToTensor(),
         ])
+        self.nb_classes = nb_classes
         self.dataset = ImageFolder(
             root='dataset', transform=transform_train)
         self.model = _DetectHandNet(
@@ -74,21 +75,27 @@ class DetectHandPerceptron():
         self.test_loader =\
             torch.utils.data.DataLoader(self.dataset, batch_size=batch_size,
                                         sampler=self._test_sampler)
-
+        self.model.train()
         optimizer = Adam(self.model.parameters(), lr=lr)
-        criterion = nn.CrossEntropyLoss(reduction='sum')
+        criterion = nn.BCELoss(reduction='sum')
         plop, plop2 = [], []
         ion()
         for i_epoch in range(epoch):
             start_time, train_losses = time.time(), []
             for i_batch, batch in enumerate(self.train_loader):
                 images, targets = batch
+                new_label = torch.zeros(targets.size()[0], self.nb_classes)
+                # print(targets.size()[0])
+                for i in range(targets.size()[0]):
+                    new_label[i][targets[i]] = 1
+                # print(targets)
+                # print(new_label)
                 images.clone().detach().requires_grad_(True)
                 optimizer.zero_grad()
                 predictions = self.model(images)
                 # predictions = predictions.view(len(pred))
                 # print("predictions", predictions, "--- Target", targets)
-                loss = criterion(predictions, targets)/len(targets)
+                loss = criterion(predictions, new_label)/len(targets)
                 loss.backward()
                 optimizer.step()
                 train_losses.append(loss.item())
@@ -98,10 +105,15 @@ class DetectHandPerceptron():
             self.model.eval()
             for batch_test in self.test_loader:
                 images_test, targets_test = batch_test
+                new_label_test = torch.zeros(
+                    targets_test.size()[0], self.nb_classes)
+                # print(targets.size()[0])
+                for i in range(targets_test.size()[0]):
+                    new_label_test[i][targets_test[i]] = 1
                 images_test.clone().detach().requires_grad_(False)
                 predictions_test = self.model(images_test)
                 loss_test = criterion(
-                    predictions_test, targets_test)/len(targets)
+                    predictions_test, new_label_test)/len(targets_test)
                 test_losses.append(loss_test.item())
             plop2.append(np.mean(test_losses))
             self.model.train()
@@ -124,6 +136,9 @@ class DetectHandPerceptron():
         img = torch.from_numpy(image_in_numpy)
         self.model.eval()
         return self.model(img)
+
+    def getDicoClasse(self):
+        return dict((v, k) for k, v in self.dataset.class_to_idx.items())
 
     def score(self):
         accuracy = 0
