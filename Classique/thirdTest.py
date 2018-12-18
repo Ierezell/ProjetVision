@@ -5,11 +5,12 @@ import glob
 import re
 from DetectClass import DetectHandPerceptron
 
-perceptron = DetectHandPerceptron()
-# perceptron.train(batch=32, epochs=5)
+#init detectClass
+perceptron = DetectHandPerceptron(nb_classes = 7)
+"perceptron.train(batch=32, epochs=5)"
 perceptron.load('Backup/HandYolo_4.pt')
 dico_des_classes = perceptron.getDicClasses()
-
+print(dico_des_classes)
 
 
 def nothing(x):
@@ -150,11 +151,32 @@ while(True):
                     
             previousCenter = center
         
-        imageToSave = thresh[y:y+h, x:x+w]
         
+            imageToSave = thresh[y:y+h, x:x+w]
+        
+        try :
+            imageToSave = cv2.resize(imageToSave,(256, 256),interpolation = cv2.INTER_CUBIC)
+        except :
+            imageToSave = np.zeros((256,256))
+            
         #identify class
+        print(imageToSave.shape)
         prediction = perceptron.predict(imageToSave) # [probC1, probC2,... probC7]
-        indexClasse = prediction.index(max(prediction))
+        indexClass = prediction.index(max(prediction))
+        if indexClass == 0:
+            classDetected = 'index'
+        elif indexClass == 1:
+            classDetected = 'metal'
+        elif indexClass == 2:
+            classDetected = 'plat'
+        elif indexClass == 3:
+            classDetected = 'poing'
+        elif indexClass == 4:
+            classDetected = 'pouceDroit'
+        elif indexClass == 5:
+            classDetected = 'pouceGauche'
+        elif indexClass == 6:
+            classDetected = 'spock'
         
         
         # Display the resulting frames
