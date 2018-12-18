@@ -122,7 +122,6 @@ while(True):
                 # compute the bounding box for the contour, draw it on the frame,
                 # and update the rectangle
                 (x2, y2, w2, h2) = cv2.boundingRect(c2)
-                print('x2 = '+str(x2)+', y2 = '+str(y2)+', w2 = '+str(w2)+', h2 = '+str(h2))
                 x2 = x2 + x
                 y2 = y2 + y
                 h2 = w2
