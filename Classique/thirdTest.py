@@ -81,7 +81,7 @@ while(True):
         # the first frame after reset
         roiDelta = cv2.absdiff(previousRoi, gray)
         thresh = cv2.threshold(roiDelta, 25, 255, cv2.THRESH_BINARY)[1]
-        thresh = cv2.dilate(thresh, None, iterations=4)
+        thresh = cv2.dilate(thresh, None, iterations=2)
 
         # select contours
         cnts = cv2.findContours(thresh.copy(), cv2.RETR_EXTERNAL,
@@ -191,7 +191,7 @@ while(True):
                 imageToSave, (256, 256), interpolation=cv2.INTER_CUBIC)
         except:
             imageToSave = np.zeros((256, 256))
-        """
+        
         # identify class
         #print(imageToSave.shape)
         # [probC1, probC2,... probC7]
@@ -200,7 +200,7 @@ while(True):
         print(prediction)
         #print(max_value, max_index)
         print(dico_des_classes[int(max_index)])
-        """
+        
 
         # Display the resulting frames
         cv2.putText(frame, "dernier mouvement: {}".format(text), (10, 20),
