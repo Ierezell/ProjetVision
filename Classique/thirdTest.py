@@ -23,11 +23,13 @@ cap = cv2.VideoCapture(0)
 camWidth = cap.get(cv2.CAP_PROP_FRAME_WIDTH)
 camHeight = cap.get(cv2.CAP_PROP_FRAME_HEIGHT)
 
+capFilm = cv2.VideoCapture('film.mp4')
+
 # parameters
 minArea = 1500
 detectionZoneLeft = 1
 detectionZoneTop = 1
-detectionZoneRight = 250
+detectionZoneRight = int(camWidth/2.5)
 detectionZoneBottom = int(camHeight-1)
 seuilDeplacement = 30  # exprimé en pixels
 imagePerClass = 10
@@ -54,6 +56,21 @@ classDetected = '?'
 print('classe '+nextClass)
 
 while(True):
+
+    retFilm, frameFilm = capFilm.read()
+    if text == 'en haut' :
+        if retFilm == True:
+            cv2.imshow('film',frameFilm)
+        else:
+            capFilm.set( cv2.CAP_PROP_POS_AVI_RATIO , 0)
+    elif text == 'a gauche':
+        capFilm.set( cv2.CAP_PROP_POS_AVI_RATIO , 0)
+        cv2.imshow('film',frameFilm)
+    elif text == 'a droite':
+        nothing(0)
+    elif text == 'en bas':
+        nothing(0)
+            
     # Capture frame-by-frame
     ret, frame = cap.read()
     if ret == True:  # Possibilité de changer en if ret:   plus pythonesque
@@ -62,6 +79,7 @@ while(True):
 
         # operations on frame: flip,select region,convert to grayscale, blur.
         frame = cv2.flip(frame, 1)
+
         cv2.rectangle(frame,
                       (detectionZoneLeft-1, detectionZoneTop-1),
                       (detectionZoneRight+1, detectionZoneBottom+1),
@@ -73,13 +91,14 @@ while(True):
         gray = cv2.GaussianBlur(gray, (5, 5), 0)
 
         # if the previous frame is None, initialize it
-
         if previousRoi is None:
             previousRoi = gray
 
         # compute the absolute difference between the current frame and
         # the first frame after reset
         roiDelta = cv2.absdiff(previousRoi, gray)
+        
+        #set a thesold and dilate
         thresh = cv2.threshold(roiDelta, 25, 255, cv2.THRESH_BINARY)[1]
         thresh = cv2.dilate(thresh, None, iterations=2)
 
@@ -116,6 +135,7 @@ while(True):
                                 cv2.CHAIN_APPROX_SIMPLE)
         cnts2 = imutils.grab_contours(cnts2)
         # loop over the contours
+        center2 = (0,0)
         for c2 in cnts2:
                 # if the contour is too small, ignore it
             if cv2.contourArea(c2) >= minArea:
@@ -126,44 +146,27 @@ while(True):
                 y2 = y2 + y
                 h2 = w2
                 cv2.rectangle(frame, (x2, y2), (x2 + w2, y2 + h2), blue, 2)
+                centerX2 = x2+(w2//2)
+                centerY2 = y2+(h2//2)
+                center2 = (centerX2, centerY2)
+                cv2.circle(frame, center2, 5, blue)
                 #break  
-        # compute the center of the hand and display a circle on it
-        centerX2 = x2+(w2//2)
-        centerY2 = y2+(h2//2)
-        center2 = (centerX2, centerY2)
-        cv2.circle(frame, center2, 5, blue)
-
         
 
         # if the previous center is None, initialize it
         if previousCenter is None:
-            previousCenter = center2
+            previousCenter = (0,0)
 
-        # update the reference center after 15 frames
-        if frameCounter >= 15:
+        # update the reference center after 10 frames
+        if frameCounter >= 10:
             frameCounter = 0
             # operation to compute the movement of the center here
+            
             diffX = center2[0] - previousCenter[0]
             diffY = center2[1] - previousCenter[1]
+
             if abs(diffX) > seuilDeplacement or abs(diffY) > seuilDeplacement:
-                """
-                if abs(diffX) > abs(diffY):
-                    print('mouvement horizontal')
-                    if diffX > 0:
-                        print('vers la droite')
-                        text = 'droite'
-                    else:
-                        print('vers la gauche')
-                        text = 'gauche'
-                else:
-                    print('mouvement vertical')
-                    if diffY> 0 :
-                        print('vers le bas')
-                        text = 'bas'
-                    else:
-                        print('vers le haut')
-                        text = 'haut'
-                """
+                
                 if diffX >= seuilDeplacement and diffY >= seuilDeplacement:
                     text = 'en bas a droite'
                 elif diffX >= seuilDeplacement and -diffY >= seuilDeplacement:
@@ -185,12 +188,13 @@ while(True):
 
             imageToSave = thresh2  #interieur du rectangle vert
 
+        #resize image to be compatible with DetectClass
         try:
             imageToSave = cv2.resize(
                 imageToSave, (256, 256), interpolation=cv2.INTER_CUBIC)
         except:
             imageToSave = np.zeros((256, 256))
-        
+        '''
         # identify class
         #print(imageToSave.shape)
         # [probC1, probC2,... probC7]
@@ -199,15 +203,15 @@ while(True):
         print(prediction)
         #print(max_value, max_index)
         print(dico_des_classes[int(max_index)])
-        
+        '''
 
         # Display the resulting frames
         cv2.putText(frame, "dernier mouvement: {}".format(text), (10, 20),
                     cv2.FONT_HERSHEY_SIMPLEX, 0.7, red, 2)
-        cv2.putText(frame, f"classe: {dico_des_classes[int(max_index)]}",
-                    (10, 450), cv2.FONT_HERSHEY_SIMPLEX, 0.7, red, 2)
+        #cv2.putText(frame, f"classe: {dico_des_classes[int(max_index)]}",
+        #            (10, 450), cv2.FONT_HERSHEY_SIMPLEX, 0.7, red, 2)
         cv2.imshow('frame', frame)
-        cv2.imshow('gray', gray)
+        #cv2.imshow('gray', gray)
         cv2.imshow('frameDelta', roiDelta)
         cv2.imshow('thresh', thresh)
 
@@ -252,8 +256,7 @@ while(True):
 
             elif nImage < 7*imagePerClass:
                 relativePath = 'dataset/metal/'
-
-                
+              
             #name of the image        
             name = imageName+str(nImage)+'.png'
             
@@ -274,6 +277,7 @@ while(True):
         break
 # When everything done, release the capture
 cap.release()
+capFilm.release()
 cv2.destroyAllWindows()
 
 
