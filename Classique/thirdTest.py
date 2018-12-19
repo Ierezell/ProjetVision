@@ -58,18 +58,21 @@ print('classe '+nextClass)
 while(True):
 
     retFilm, frameFilm = capFilm.read()
-    if text == 'en haut' :
-        if retFilm == True:
+    if text == 'en bas' :
+        #pause video
+        nothing(0)
+    else:
+        if text == 'a gauche':
+            #reset to the beginning
+            capFilm.set( cv2.CAP_PROP_POS_AVI_RATIO , 0)
             cv2.imshow('film',frameFilm)
         else:
-            capFilm.set( cv2.CAP_PROP_POS_AVI_RATIO , 0)
-    elif text == 'a gauche':
-        capFilm.set( cv2.CAP_PROP_POS_AVI_RATIO , 0)
-        cv2.imshow('film',frameFilm)
-    elif text == 'a droite':
-        nothing(0)
-    elif text == 'en bas':
-        nothing(0)
+            #no pause, no reset: read video
+            if retFilm == True:
+                cv2.imshow('film',frameFilm)
+            else:
+                #end of video: reset to the beginning
+                capFilm.set( cv2.CAP_PROP_POS_AVI_RATIO , 0)
             
     # Capture frame-by-frame
     ret, frame = cap.read()
@@ -135,7 +138,7 @@ while(True):
                                 cv2.CHAIN_APPROX_SIMPLE)
         cnts2 = imutils.grab_contours(cnts2)
         # loop over the contours
-        center2 = (0,0)
+        center2 = center     #default value
         for c2 in cnts2:
                 # if the contour is too small, ignore it
             if cv2.contourArea(c2) >= minArea:
