@@ -127,7 +127,7 @@ class DetectHandPerceptron():
                 time.time()-start_time))
             print(' [-] epoch {:4}/{:}, test loss {:.6f}'.format(
                 i_epoch+1, epoch, np.mean(test_losses)))
-            self.save(path=f"./Backup/DetectHand_{str(i_epoch)}.pt")
+            self.save(path=f"./Backup/DetectHand2_{str(i_epoch)}.pt")
             plot(plop)
             plot(plop2)
             draw()
