@@ -15,18 +15,21 @@ from PIL import Image
 
 
 class _DetectHandNet(nn.Module):
-    def __init__(self, input_size, nb_class):
+    def __init__(self, nb_class):
         super(_DetectHandNet, self).__init__()
-
-        self.C1 = nn.Conv2d(1, 8, kernel_size=3, padding=1)
-        self.B1 = nn.BatchNorm2d(8)
-        self.C2 = nn.Conv2d(8, 16, kernel_size=3, padding=1)
-        self.B2 = nn.BatchNorm2d(16)
-        self.C3 = nn.Conv2d(16, 32, kernel_size=3, padding=1)
-        self.B3 = nn.BatchNorm2d(32)
-        self.C4 = nn.Conv2d(32, 64, kernel_size=3, padding=1)
+        self.C1 = nn.Conv2d(1, 32, kernel_size=3, padding=1, stride=2)
+        self.B1 = nn.BatchNorm2d(32)
+        self.C2 = nn.Conv2d(32, 64, kernel_size=3, padding=1, stride=2)
+        self.B2 = nn.BatchNorm2d(64)
+        self.C3 = nn.Conv2d(64, 64, kernel_size=3, padding=1, stride=2)
+        self.B3 = nn.BatchNorm2d(64)
+        self.C4 = nn.Conv2d(64, 64, kernel_size=3, padding=1, stride=2)
         self.B4 = nn.BatchNorm2d(64)
-        self.L1 = nn.Linear(64, nb_class)
+        self.C5 = nn.Conv2d(64, 64, kernel_size=3, padding=1, stride=2)
+        self.B5 = nn.BatchNorm2d(64)
+        self.L1 = nn.Linear(64, 64*2)
+        self.L2 = nn.Linear(64*2, 64*2)
+        self.L3 = nn.Linear(64*2, nb_class)
         self.drop = nn.Dropout(p=0.6)
         self.Sig = nn.Sigmoid()
 
@@ -34,17 +37,17 @@ class _DetectHandNet(nn.Module):
         conv_batch_relu1 = F.relu(self.B1(self.C1(x)))
         conv_batch_relu2 = F.relu(self.B2(self.C2(conv_batch_relu1)))
         conv_batch_relu3 = F.relu(self.B3(self.C3(conv_batch_relu2)))
-        return F.relu(self.B4(self.C4(conv_batch_relu3)))
+        conv_batch_relu4 = F.relu(self.B4(self.C4(conv_batch_relu3)))
+        return F.relu(self.B5(self.C5(conv_batch_relu4)))
 
     def forward(self, x):
         y = self.conv_forward(x)
-        # print("AAAAAAAA", y.size()[0])
         y = y.view(y.size()[0], y.size()[1], -1).mean(dim=2)
-        # print("BBBBBBBB", y.size())
+        y = F.relu((self.L1(y)))
         y = self.drop(y)
-        y = self.Sig((self.L1(y)))
-        # y = y.mean(dim=2)
-        return y
+        y = F.relu((self.L2(y)))
+        y = self.drop(y)
+        return torch.sigmoid((self.L3(y)))
 
 
 class DetectHandPerceptron():
@@ -56,14 +59,12 @@ class DetectHandPerceptron():
         self.dataset = ImageFolder(
             root='dataset', transform=transform_train)
         print(len(self.dataset.imgs))
-        self.model = _DetectHandNet(
-            len(self.dataset[0][0][0][0])*len(self.dataset[0][0][0][:, 0]),
-            nb_classes)
+        self.model = _DetectHandNet(nb_classes)
 
     def getDicClasses(self):
         return self.dataset.class_to_idx
 
-    def train(self, batch_size=32, epoch=50, lr=0.01):
+    def train(self, batch_size=256, epoch=50, lr=0.01):
         self._indices = list(range(len(self.dataset.imgs)))
         self._train_idx = np.random.choice(self._indices, size=int(
             np.floor(0.9*len(self._indices))), replace=False)
@@ -87,17 +88,14 @@ class DetectHandPerceptron():
             start_time, train_losses = time.time(), []
             for i_batch, batch in enumerate(self.train_loader):
                 images, targets = batch
+
                 new_label = torch.zeros(targets.size()[0], self.nb_classes)
-                # print(targets.size()[0])
                 for i in range(targets.size()[0]):
                     new_label[i][targets[i]] = 1
-                # print(targets)
-                # print(new_label)
-                images.clone().detach().requires_grad_(True)
+
+                # images.clone().detach().requires_grad_(True)
                 optimizer.zero_grad()
                 predictions = self.model(images)
-                # predictions = predictions.view(len(pred))
-                # print("predictions", predictions, "--- Target", targets)
                 loss = criterion(predictions, new_label)/(
                     self.nb_classes*len(targets))
                 loss.backward()
@@ -109,12 +107,13 @@ class DetectHandPerceptron():
             self.model.eval()
             for batch_test in self.test_loader:
                 images_test, targets_test = batch_test
+
                 new_label_test = torch.zeros(
                     targets_test.size()[0], self.nb_classes)
-                # print(targets.size()[0])
                 for i in range(targets_test.size()[0]):
                     new_label_test[i][targets_test[i]] = 1
-                images_test.clone().detach().requires_grad_(False)
+
+                # images_test.clone().detach().requires_grad_(False)
                 predictions_test = self.model(images_test)
                 loss_test = criterion(
                     predictions_test, new_label_test)/(

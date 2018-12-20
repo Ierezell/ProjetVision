@@ -8,8 +8,8 @@ import torch
 
 # init detectClass
 perceptron = DetectHandPerceptron(nb_classes=7)
-perceptron.load('Backup/DetectHand_3.pt')
-#perceptron.train(batch_size=32, epoch=5)
+#perceptron.load('Backup/DetectHand_18.pt')
+perceptron.train(batch_size=512, epoch=50, lr=0.1)
 dico_des_classes = perceptron.getDicoClasse()
 print(dico_des_classes)
 
@@ -212,20 +212,10 @@ while(True):
 
             if nImage < imagePerClass:
                 relativePath = 'dataset/index/'
-<<<<<<< HEAD
-                if nImage == imagePerClass - 1:
-                    nextClass = 'spock'
-                """print(glob.glob('./dataset/index/*'))
-                imgNb = max([int(getImgNb.findall(filename)[0])
-                for filename in glob.glob('./dataset/index/*.png')], default=0)+1"""
-
-            elif nImage < 2*imagePerClass:
-=======
                 if nImage == imagePerClass -1:
-                    nextClass = 'spock'  
-    
+                    nextClass = 'spock'
+
             elif nImage <2*imagePerClass:
->>>>>>> f198be696752746aef39231e30d9f7a1024704dd
                 relativePath = 'dataset/spock/'
                 if nImage == 2*imagePerClass - 1:
                     nextClass = 'poing'
@@ -252,19 +242,11 @@ while(True):
 
             elif nImage < 7*imagePerClass:
                 relativePath = 'dataset/metal/'
-<<<<<<< HEAD
 
-            # name of the image
-            name = imageName+str(imgNb)+'.png'
-
-            # save image
-=======
-                
-            #name of the image        
+            #name of the image
             name = imageName+str(nImage)+'.png'
-            
+
             #save image
->>>>>>> f198be696752746aef39231e30d9f7a1024704dd
             cv2.imwrite(relativePath+name, imageToSave)
 
             # print next class
