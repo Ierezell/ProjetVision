@@ -51,13 +51,13 @@ class _DetectHandNet(nn.Module):
 
 
 class DetectHandPerceptron():
-    def __init__(self, nb_classes):
+    def __init__(self, nb_classes, path):
         transform_train = transforms.Compose([transforms.RandomRotation(
             20, resample=Image.BILINEAR),
             transforms.ToTensor()])
         self.nb_classes = nb_classes
         self.dataset = ImageFolder(
-            root='dataset', transform=transform_train)
+            root=path, transform=transform_train)
         print(len(self.dataset.imgs))
         self.model = _DetectHandNet(nb_classes)
 

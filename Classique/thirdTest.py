@@ -7,7 +7,7 @@ from DetectClass import DetectHandPerceptron
 import torch
 
 # init detectClass
-perceptron = DetectHandPerceptron(nb_classes=7)
+perceptron = DetectHandPerceptron(nb_classes=7, path='dataset')
 # perceptron.load('Backup/DetectHand_18.pt')
 perceptron.train(batch_size=512, epoch=50, lr=0.1)
 dico_des_classes = perceptron.getDicoClasse()
