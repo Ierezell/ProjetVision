@@ -57,7 +57,7 @@ class DetectHandPerceptron():
             transforms.ToTensor()])
         self.nb_classes = nb_classes
         self.dataset = ImageFolder(
-            root='dataset', transform=transform_train)
+            root='dataset2', transform=transform_train)
         print(len(self.dataset.imgs))
         self.model = _DetectHandNet(nb_classes)
 
@@ -127,7 +127,7 @@ class DetectHandPerceptron():
                 time.time()-start_time))
             print(' [-] epoch {:4}/{:}, test loss {:.6f}'.format(
                 i_epoch+1, epoch, np.mean(test_losses)))
-            self.save(path=f"./Backup/DetectHand_{str(i_epoch)}.pt")
+            self.save(path=f"./Backup/DetectHand2_{str(i_epoch)}.pt")
             plot(plop)
             plot(plop2)
             draw()
