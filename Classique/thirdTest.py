@@ -7,9 +7,9 @@ from DetectClass import DetectHandPerceptron
 import torch
 
 # init detectClass
-perceptron = DetectHandPerceptron(nb_classes=7, path='dataset')
-# perceptron.load('Backup/DetectHand_18.pt')
-perceptron.train(batch_size=512, epoch=50, lr=0.1)
+perceptron = DetectHandPerceptron(nb_classes=3, path='dataset2')
+perceptron.load('Backup/DetectHand2_26.pt')
+#perceptron.train(batch_size=128, epoch=50, lr=0.01)
 dico_des_classes = perceptron.getDicoClasse()
 print(dico_des_classes)
 
@@ -195,7 +195,7 @@ while(True):
                 imageToSave, (256, 256), interpolation=cv2.INTER_CUBIC)
         except:
             imageToSave = np.zeros((256, 256))
-        '''
+        
         # identify class
         #print(imageToSave.shape)
         # [probC1, probC2,... probC7]
@@ -204,13 +204,13 @@ while(True):
         print(prediction)
         #print(max_value, max_index)
         print(dico_des_classes[int(max_index)])
-        '''
+        
 
         # Display the resulting frames
         cv2.putText(frame, "dernier mouvement: {}".format(text), (10, 20),
                     cv2.FONT_HERSHEY_SIMPLEX, 0.7, red, 2)
-        # cv2.putText(frame, f"classe: {dico_des_classes[int(max_index)]}",
-        #            (10, 450), cv2.FONT_HERSHEY_SIMPLEX, 0.7, red, 2)
+        cv2.putText(frame, f"classe: {dico_des_classes[int(max_index)]}",
+                    (10, 450), cv2.FONT_HERSHEY_SIMPLEX, 0.7, red, 2)
         cv2.imshow('frame', frame)
         #cv2.imshow('gray', gray)
         cv2.imshow('frameDelta', roiDelta)
